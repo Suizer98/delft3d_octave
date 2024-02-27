@@ -11,7 +11,8 @@ For now the working codes are:
 ## Setting up Docker Ubuntu environment
 
 - Dockerfile and docker-compose.yml are created in such a way that you don't need to build environment by yourself, all you need is to run docker's command.
-- After cloning this repo, in your terminal simply run:
+- After cloning this repo, copy your desired *.dat and *.def model results from Delft3D Flow outputs,
+- In your terminal simply run:
 
 ```
 docker-compose up --build  # Start the containers in the background
@@ -24,7 +25,7 @@ root@7e8c9bfe1c7a:/usr/src/app# ls
 root@7e8c9bfe1c7a:/usr/src/app# ./batch_trim2nc.sh
 ```
 
-## Preparing Conda environment on Window machine
+## Preparing environment on Window machine
 
 ### Prerequisites
 
