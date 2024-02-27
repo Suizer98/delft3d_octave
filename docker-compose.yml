@@ -1,0 +1,8 @@
+version: '3'
+services:
+  delft3d-octave:
+    image: delft3d-otcave
+    build: .
+    volumes:
+      - ./:/usr/src/app
+    command: bash -c "while true; do sleep 3600; done"

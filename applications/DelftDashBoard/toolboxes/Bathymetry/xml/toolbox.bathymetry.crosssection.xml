@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>listbox</style>
+    <text>Available Databases</text>
+    <textposition>above-center</textposition>
+    <variable>handles.toolbox.bathymetry.activeDataset</variable>
+    <type>integer</type>
+    <position>10 10 250 105</position>
+    <tooltipstring>Select bathymetry database</tooltipstring>
+    <onchange>ddb_BathymetryToolbox_export</onchange>
+    <option1>selectdataset</option1>
+    <listtext>
+      <variable>handles.bathymetry.longNames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>270 95 120 20</position>
+    <text>Draw Line</text>
+    <callback>ddb_BathymetryToolbox_crosssection</callback>
+    <option1>drawline</option1>
+  </element>
+</root>

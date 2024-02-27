@@ -1,0 +1,6 @@
+function [r,ISEED]=ran(ISEED);
+IA=7141;
+IC=54773;
+IM=259200;
+ISEED=mod(ISEED*IA+IC,IM);
+r=ISEED/IM;

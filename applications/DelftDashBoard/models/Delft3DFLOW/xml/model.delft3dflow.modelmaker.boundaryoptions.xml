@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<root>
+  <title>Boundary Options</title>
+  <width>240</width>
+  <height>155</height>
+  <element>
+    <style>popupmenu</style>
+    <position>60 125 100 20</position>
+    <variable>type</variable>
+    <type>string</type>
+    <text>Type</text>
+    <textposition>left</textposition>
+    <tooltipstring>Select boundary type</tooltipstring>
+    <listtext>Water Level</listtext>
+    <listtext>Riemann</listtext>
+    <listvalue>Z</listvalue>
+    <listvalue>R</listvalue>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>60 100 100 20</position>
+    <variable>forcing</variable>
+    <type>string</type>
+    <text>Forcing</text>
+    <textposition>left</textposition>
+    <tooltipstring>Select boundary forcing</tooltipstring>
+    <listtext>Astronomic</listtext>
+    <listtext>Harmonic</listtext>
+    <listtext>Time series</listtext>
+    <listvalue>A</listvalue>
+    <listvalue>H</listvalue>
+    <listvalue>T</listvalue>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>60 75 100 20</position>
+    <variable>minimum_depth</variable>
+    <type>real</type>
+    <text>Min Depth</text>
+    <tooltipstring>Minimum depth for boundaries (in metres). For Riemann boundaries, it is recommend to set this value to at least 2 times the expected tide range.</tooltipstring>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>60 50 50 20</position>
+    <variable>auto_section_length</variable>
+    <type>boolean</type>
+    <text>Use automatic section length</text>
+    <tooltipstring>Use automatic section length based on bathymetry gradients</tooltipstring>
+  </element>
+  <element>
+    <style>pushok</style>
+    <position>180 10 50 20</position>
+  </element>
+  <element>
+    <style>pushcancel</style>
+    <position>120 10 50 20</position>
+  </element>
+</root>

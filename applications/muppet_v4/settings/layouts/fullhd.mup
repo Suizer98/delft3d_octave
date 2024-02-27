@@ -1,0 +1,19 @@
+# Muppet v4.03 - File created by ormondt - 2015-10-23 15:39:19 
+ 
+Figure "1" 
+ 
+   PaperSize  24.3522         13.7 
+ 
+   Subplot "Subplot 1" 
+ 
+      Position 0            0      24.3522         13.7 
+ 
+   EndSubplot 
+ 
+   OutputFile   "figure1.png" 
+   Format       "png" 
+   Resolution   200 
+   AntiAliasing yes 
+   Renderer     "OpenGL" 
+ 
+EndFigure 

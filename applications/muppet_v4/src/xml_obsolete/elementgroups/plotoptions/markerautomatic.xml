@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 80</position>
+    <text>Marker Properties</text>
+  </element>
+  <element>
+    <variable>marker</variable>
+    <type>string</type>
+    <style>selectmarker</style>
+    <position>70 40 100 20</position>
+    <text>Type</text>
+  </element>
+  <element>
+    <variable>markersize</variable>
+    <type>int</type>
+    <style>selectmarkersize</style>
+    <position>240 40 100 20</position>
+    <text>Size</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>marker</variable>
+        <value>none</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>markeredgecolor</variable>
+    <type>string</type>
+    <style>selectcolor</style>
+    <position>70 10 100 20</position>
+    <includenone>yes</includenone>
+    <includeauto>yes</includeauto>
+    <text>Edge Color</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>marker</variable>
+        <value>none</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>markerfacecolor</variable>
+    <type>string</type>
+    <style>selectcolor</style>
+    <position>240 10 100 20</position>
+    <includenone>yes</includenone>
+    <includeauto>yes</includeauto>
+    <text>Face Color</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>marker</variable>
+        <value>none</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

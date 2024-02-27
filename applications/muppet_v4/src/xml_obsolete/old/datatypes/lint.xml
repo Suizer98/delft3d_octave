@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<root>
+  <name>lint</name>
+  <longname>Lint Transports</longname>
+  <plot>
+    <type>map</type>
+    <plotroutine>
+      <name>plotlint</name>
+      <plotoption>
+        <name>plotroutine</name>
+      </plotoption>
+      <plotoption>
+        <name>lintgroup</name>
+      </plotoption>
+      <plotoption>
+        <name>polygongroup</name>
+      </plotoption>
+      <plotoption>
+        <name>linegroup</name>
+      </plotoption>
+      <plotoption>
+        <name>legendtext</name>
+      </plotoption>
+    </plotroutine>
+  </plot>
+</root>

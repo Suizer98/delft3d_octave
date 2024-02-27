@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>listbox</style>
+    <text>Available Tide Models</text>
+    <textposition>above-center</textposition>
+    <variable>handles.toolbox.tidedatabase.activeModel</variable>
+    <type>integer</type>
+    <position>10 10 200 105</position>
+    <tooltipstring>Select tide model</tooltipstring>
+    <onchange>ddb_TideDatabaseToolbox_calibrate</onchange>
+    <option1>selectmodel</option1>
+    <listtext>
+      <variable>handles.tideModels.longNames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>250 60 130 20</position>
+    <text>Select Fourier File</text>
+    <variable>handles.toolbox.tidedatabase.fourierFile</variable>
+    <onchange>ddb_TideDatabaseToolbox_calibrate</onchange>
+    <option1>selectfourierfile</option1>
+    <showfilename>yes</showfilename>
+    <extension>*.tek</extension>
+    <selectiontext>Select fourier file</selectiontext>
+    <tooltipstring>Select fourier file</tooltipstring>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>250 35 130 20</position>
+    <text>Save Fourier File</text>
+    <variable>handles.toolbox.tidedatabase.fourierOutFile</variable>
+    <onchange>ddb_TideDatabaseToolbox_calibrate</onchange>
+    <option1>savenewfourierfile</option1>
+    <showfilename>no</showfilename>
+    <extension>*.tek</extension>
+    <selectiontext>Select new fourier file</selectiontext>
+    <tooltipstring>Select new fourier file</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>250 10 130 20</position>
+    <text>Calibrate</text>
+    <callback>ddb_TideDatabaseToolbox_calibrate</callback>
+    <option1>calibrate</option1>
+    <tooltipstring>Make astronomic corrections</tooltipstring>
+  </element>
+</root>

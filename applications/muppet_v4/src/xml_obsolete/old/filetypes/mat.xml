@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<root>
+  <name>mat</name>
+  <longname>Binary MAT file</longname>
+  <title>MAT File</title>
+  <filterspec>*.mat</filterspec>
+  <callback>muppet_addDatasetMat</callback>
+  <option>
+    <name>filetype</name>
+  </option>
+  <option>
+    <name>filename</name>
+  </option>
+  <option>
+    <name>parameter</name>
+  </option>
+  <option>
+    <name>plotcoordinate</name>
+  </option>
+  <option>
+    <name>component</name>
+  </option>
+  <option>
+    <name>timestep</name>
+  </option>
+  <option>
+    <name>time</name>
+  </option>
+  <option>
+    <name>station</name>
+  </option>
+  <option>
+    <name>m</name>
+  </option>
+  <option>
+    <name>n</name>
+  </option>
+  <option>
+    <name>k</name>
+  </option>
+</root>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+  <dataproperty>
+    <name>uniformvalue</name>
+    <keyword>UniformValue</keyword>
+    <type>real</type>
+    <check>
+      <variable>datasetb</variable>
+      <operator>eq</operator>
+      <value>isempty</value>
+    </check>
+  </dataproperty>
+</root>

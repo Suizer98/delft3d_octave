@@ -1,0 +1,1 @@
+function ddb_sfincs_observation_points

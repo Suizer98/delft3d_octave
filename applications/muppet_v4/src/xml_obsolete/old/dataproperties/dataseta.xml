@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <dataproperty>
+    <name>dataseta</name>
+    <keyword>DatasetA</keyword>
+    <type>string</type>
+  </dataproperty>
+</root>

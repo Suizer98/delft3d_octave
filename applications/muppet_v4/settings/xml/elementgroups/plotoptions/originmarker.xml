@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 110</position>
+    <text>Origin Marker</text>
+  </element>
+  <element>
+    <variable>originmarker.enable</variable>
+    <type>boolean</type>
+    <style>checkbox</style>
+    <position>10 70 60 20</position>
+    <text>Origin Marker</text>
+  </element>
+  <element>
+    <variable>originmarker.marker</variable>
+    <type>string</type>
+    <style>selectmarker</style>
+    <position>70 40 100 20</position>
+    <text>Type</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>originmarker.enable</variable>
+        <operator>eq</operator>
+        <value>1</value>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>originmarker.size</variable>
+    <type>int</type>
+    <style>selectmarkersize</style>
+    <position>240 40 100 20</position>
+    <text>Size</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>originmarker.enable</variable>
+        <operator>eq</operator>
+        <value>1</value>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>originmarker.edgecolor</variable>
+    <type>string</type>
+    <style>selectcolor</style>
+    <position>70 10 100 20</position>
+    <includenone>yes</includenone>
+    <text>Edge Color</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>originmarker.enable</variable>
+        <operator>eq</operator>
+        <value>1</value>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>originmarker.facecolor</variable>
+    <type>string</type>
+    <style>selectcolor</style>
+    <position>240 10 100 20</position>
+    <includenone>yes</includenone>
+    <text>Face Color</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>originmarker.enable</variable>
+        <operator>eq</operator>
+        <value>1</value>
+      </check>
+    </dependency>
+  </element>
+</root>

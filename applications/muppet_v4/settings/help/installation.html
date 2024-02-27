@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<title>Muppet</title>
+		<link rel="stylesheet" type="text/css" media="screen" href="da.css" title="Normal"/>
+	</head>
+
+	<body>
+
+        <h2>Muppet</h2>
+
+        <h3>Download</h3>
+
+        <p>The file muppet.zip contains the Muppet executable (version 3.21) as well as all of the settings files.</p>
+        <a href="muppet.zip">muppet.zip</a>
+
+        <p>In order to run Muppet, you must first install version 7.6 of MATLAB Compiler Runtime (MCR)</p>
+        <a href="MCRInstaller.exe">MCRInstaller.exe</a>
+
+        <p>MATLAB Compiler uses the MATLAB Compiler Runtime (MCR), a standalone set of shared libraries that enables the execution of MATLAB files on computers without an installed version of MATLAB.</p>
+        <p>MATLAB Compiler Runtime needs to be installed only once. In other words, when you update your Muppet version, you do not have to re-install the MCR.</p>
+
+        <h3>Installation</h3>
+
+        <p>Installing Muppet is easier than you think!</p>
+
+        <ol>
+          <li>Copy the entire directory Muppet to your Delft3D\w32 directory (usually c:\delft3d\w32\)</li>
+          <li>Copy MCRInstaller.exe to local directory (e.g. d:\temp)</li>
+          <li>Run MCRInstaller.exe</li>
+          <li>Reboot PC</li>
+        </ol>
+
+        <p>When working with TotalCommander it is recommended to add a Muppet button to your button bar. You'll find some icons for the button in muppet\settings\icons. It is also possible to add a link to Muppet in the Delft3D menu by editing the d3d_menu.pc file.</p>
+
+		<p>It is possible call Muppet in a DOS batch file followed by the name of a session file. This will generate the figure(s) in
+		the session file without actually opening the Muppet GUI, e.g.:</p>
+
+		<p>c:\delft3d\w32\muppet\bin\muppet waterlevels.mup</p>
+
+		<p>If you do not have Delft3D installed, you can still run Muppet. Just copy the entire muppet directory to any other folder.</p>
+
+		<p>Copy the folder gs8x to c:\Progam File\MATLAB\Matlab Component Runtime\v76\sys !!!</p>
+
+		<p>Sometimes Muppet won't start. This can sometimes be solved by deleting the folder c:\delft3d\w32\muppet\bin\muppet_mcr.</p>
+
+	</body>
+
+</html>

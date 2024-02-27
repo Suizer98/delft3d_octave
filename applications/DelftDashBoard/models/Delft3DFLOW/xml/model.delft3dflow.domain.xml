@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <position>45 10 900 140</position>
+    <style>tabpanel</style>
+    <tab>
+      <tabstring>Grid</tabstring>
+      <callback>ddb_Delft3DFLOW_grid</callback>
+      <element>model.delft3dflow.domain.grid.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Bathymetry</tabstring>
+      <callback>ddb_Delft3DFLOW_bathymetry</callback>
+      <element>model.delft3dflow.domain.bathymetry.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Dry Points</tabstring>
+      <callback>ddb_Delft3DFLOW_dryPoints</callback>
+      <element>model.delft3dflow.domain.drypoints.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Thin Dams</tabstring>
+      <callback>ddb_Delft3DFLOW_thinDams</callback>
+      <element>model.delft3dflow.domain.thindams.xml</element>
+    </tab>
+    <tab>
+      <tabstring>2D Weirs</tabstring>
+      <callback>ddb_Delft3DFLOW_weirs2D</callback>
+      <element>model.delft3dflow.domain.weirs2d.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Structures</tabstring>
+      <callback>ddb_Delft3DFLOW_structures</callback>
+      <element>model.delft3dflow.domain.structures.xml</element>
+    </tab>
+  </element>
+</root>

@@ -1,0 +1,253 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>40 10 900 160</position>
+    <text>Sediment Transport</text>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Transport Formula</text>
+    <position>200 135 120 20</position>
+    <type>string</type>
+    <variable>handles.model.shorelines.domain.trform</variable>
+    <callback>ddb_shorelines_sediment_transport</callback>
+    <option1>selecttransportoption</option1>
+    <listtext>
+      <variable>handles.model.shorelines.transport_opts_long</variable>
+    </listtext>
+    <listvalue>
+      <variable>handles.model.shorelines.transport_opts_short</variable>
+    </listvalue>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 105 60 20</position>
+    <text>coefficient b</text>
+    <variable>handles.model.shorelines.domain.b</variable>
+    <type>real</type>
+    <tooltipstring>Edit value for b in CERC formula</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.model.shorelines.domain.trform</variable>
+        <value>cerc</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.model.shorelines.domain.trform</variable>
+        <value>cerc3</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 80 60 20</position>
+    <text>Calibration coefficient</text>
+    <variable>handles.model.shorelines.domain.qscal</variable>
+    <type>real</type>
+    <tooltipstring>Edit calibration factor</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>500 130 60 20</position>
+    <text>D50 (m)</text>
+    <variable>handles.model.shorelines.domain.d50</variable>
+    <type>real</type>
+    <tooltipstring>Edit value for D50 grain size</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.model.shorelines.domain.trform</variable>
+        <value>kamp</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.model.shorelines.domain.trform</variable>
+        <value>milh</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.model.shorelines.domain.trform</variable>
+        <value>vr14</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>  </element>
+  <element>
+    <style>edit</style>
+    <position>500 105 60 20</position>
+    <text>Porosity (-)</text>
+    <variable>handles.model.shorelines.domain.porosity</variable>
+    <type>real</type>
+    <tooltipstring>Edit value for porosity</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.model.shorelines.domain.trform</variable>
+        <value>kamp</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.model.shorelines.domain.trform</variable>
+        <value>milh</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.model.shorelines.domain.trform</variable>
+        <value>vr14</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>  </element>
+  <element>
+    <style>edit</style>
+    <position>500 80 60 20</position>
+    <text>Mean bed slope (-)</text>
+    <variable>handles.model.shorelines.domain.tanbeta</variable>
+    <type>real</type>
+    <tooltipstring>Edit value for mean bed slope</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.model.shorelines.domain.trform</variable>
+        <value>kamp</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.model.shorelines.domain.trform</variable>
+        <value>milh</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.model.shorelines.domain.trform</variable>
+        <value>vr14</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>500 55 60 20</position>
+    <text>Percentage swell (%)</text>
+    <variable>handles.model.shorelines.domain.Pswell</variable>
+    <type>real</type>
+    <tooltipstring>Edit value for percentage of swell</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.model.shorelines.domain.trform</variable>
+        <value>vr14</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>700 130 60 20</position>
+    <text>Density of water (kg/m3)</text>
+    <variable>handles.model.shorelines.domain.rhow</variable>
+    <type>real</type>
+    <tooltipstring>Edit value for water density </tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.model.shorelines.domain.trform</variable>
+        <value>kamp</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.model.shorelines.domain.trform</variable>
+        <value>milh</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.model.shorelines.domain.trform</variable>
+        <value>vr14</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>  </element>
+  <element>
+    <style>edit</style>
+    <position>700 105 60 20</position>
+    <text>Density of sand (kg/m3)</text>
+    <variable>handles.model.shorelines.domain.rhos</variable>
+    <type>real</type>
+    <tooltipstring>Edit value for water density (</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.model.shorelines.domain.trform</variable>
+        <value>kamp</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.model.shorelines.domain.trform</variable>
+        <value>milh</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.model.shorelines.domain.trform</variable>
+        <value>vr14</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>  </element>
+  <element>
+    <style>edit</style>
+    <position>700 80 60 20</position>
+    <text>Alpha (-)</text>
+    <variable>handles.model.shorelines.domain.alpha</variable>
+    <type>real</type>
+    <tooltipstring>Edit calibration factor for point of breaking (</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.model.shorelines.domain.trform</variable>
+        <value>kamp</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.model.shorelines.domain.trform</variable>
+        <value>milh</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.model.shorelines.domain.trform</variable>
+        <value>vr14</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>  </element>
+  <element>
+    <style>edit</style>
+    <position>700 55 60 20</position>
+    <text>Gamma (-)</text>
+    <variable>handles.model.shorelines.domain.gamma</variable>
+    <type>real</type>
+    <tooltipstring>Edit breaking coefficient (Hs/h) with 5% breaking waves(</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.model.shorelines.domain.trform</variable>
+        <value>kamp</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.model.shorelines.domain.trform</variable>
+        <value>milh</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.model.shorelines.domain.trform</variable>
+        <value>vr14</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>  </element>
+</root>

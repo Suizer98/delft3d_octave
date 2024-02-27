@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <name>tekallandboundary</name>
+  <longname>Land boundary file (*.ldb,*.pol,*.pli)</longname>
+  <title>Land Boundary File</title>
+  <filterspec>*.ldb;*.pol;*.pli</filterspec>
+  <callback>muppet_addDatasetTekalLandboundary</callback>
+</root>

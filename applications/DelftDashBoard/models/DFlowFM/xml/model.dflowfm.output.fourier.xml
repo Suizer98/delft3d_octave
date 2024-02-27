@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>popupmenu</style>
+    <position>10 110 80 20</position>
+    <variable>handles.model.dflowfm.domain(ad).fourier.tableOption</variable>
+    <type>string</type>
+    <value>edit</value>
+    <listtext>Generate</listtext>
+    <listtext>Edit</listtext>
+    <listvalue>generate</listvalue>
+    <listvalue>edit</listvalue>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <text>Use Fourier</text>
+    <position>10 55</position>
+    <variable>handles.model.dflowfm.domain(ad).fourier.include</variable>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>10 10 50 20</position>
+    <text>Open</text>
+    <variable>handles.model.dflowfm.domain(ad).foufile</variable>
+    <type>string</type>
+    <onchange>ddb_DFlowFM_fourier</onchange>
+    <option1>openfoufile</option1>
+    <showfilename>no</showfilename>
+    <extension>*.fou</extension>
+    <selectiontext>Select fourier file</selectiontext>
+    <tooltipstring>Select Delft3D fourier file</tooltipstring>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>65 10 50 20</position>
+    <text>Save</text>
+    <variable>handles.model.dflowfm.domain(ad).foufile</variable>
+    <type>string</type>
+    <onchange>ddb_DFlowFM_fourier</onchange>
+    <option1>savefoufile</option1>
+    <extension>*.fou</extension>
+    <selectiontext>Select fourier file</selectiontext>
+    <tooltipstring>Select Delft3D fourier file</tooltipstring>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>100 35 790 95</position>
+    <tag>editpanel</tag>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain(ad).fourier.tableOption</variable>
+        <value>edit</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>table</style>
+    <position>20 20</position>
+    <nrrows>3</nrrows>
+    <includenumbers>no</includenumbers>
+    <includebuttons>yes</includebuttons>
+    <onchange>ddb_DFlowFM_fourier</onchange>
+    <option1>changetable1</option1>
+    <parent>editpanel</parent>
+    <column>
+      <style>popupmenu</style>
+      <variable>handles.model.dflowfm.domain(ad).fourier.editTable.parameterNumber</variable>
+      <type>integer</type>
+      <width>110</width>
+      <text>Parameter</text>
+      <listtext>
+        <variable>handles.model.dflowfm.domain(ad).fourier.parameterList</variable>
+      </listtext>
+    </column>
+    <column>
+      <style>edittime</style>
+      <variable>handles.model.dflowfm.domain(ad).fourier.editTable.startTime</variable>
+      <width>110</width>
+      <text>Start Time</text>
+    </column>
+    <column>
+      <style>edittime</style>
+      <variable>handles.model.dflowfm.domain(ad).fourier.editTable.stopTime</variable>
+      <width>110</width>
+      <text>Stop Time</text>
+    </column>
+    <column>
+      <style>editreal</style>
+      <variable>handles.model.dflowfm.domain(ad).fourier.editTable.nrCycles</variable>
+      <width>40</width>
+      <text>Cycles</text>
+    </column>
+    <column>
+      <style>editreal</style>
+      <variable>handles.model.dflowfm.domain(ad).fourier.editTable.nodalAmplificationFactor</variable>
+      <width>80</width>
+      <text>Nodal Factor</text>
+    </column>
+    <column>
+      <style>editreal</style>
+      <variable>handles.model.dflowfm.domain(ad).fourier.editTable.astronomicalArgument</variable>
+      <width>80</width>
+      <text>Argument</text>
+    </column>
+    <column>
+      <style>popupmenu</style>
+      <variable>handles.model.dflowfm.domain(ad).fourier.editTable.layer</variable>
+      <type>integer</type>
+      <width>40</width>
+      <text>Layer</text>
+      <listtext>
+        <variable>handles.model.dflowfm.domain(ad).fourier.layerList</variable>
+      </listtext>
+    </column>
+    <column>
+      <style>popupmenu</style>
+      <variable>handles.model.dflowfm.domain(ad).fourier.editTable.option</variable>
+      <type>integer</type>
+      <width>70</width>
+      <text>Option</text>
+      <listtext>
+        <variable>handles.model.dflowfm.domain(ad).fourier.optionList</variable>
+      </listtext>
+    </column>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>150 35 690 95</position>
+    <tag>generatepanel</tag>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain(ad).fourier.tableOption</variable>
+        <value>generate</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>table</style>
+    <position>20 20</position>
+    <nrrows>3</nrrows>
+    <includenumbers>no</includenumbers>
+    <includebuttons>yes</includebuttons>
+    <onchange>ddb_DFlowFM_fourier</onchange>
+    <option1>changetable2</option1>
+    <parent>generatepanel</parent>
+    <column>
+      <style>popupmenu</style>
+      <variable>handles.model.dflowfm.domain(ad).fourier.generateTable.parameterNumber</variable>
+      <type>integer</type>
+      <width>110</width>
+      <text>Parameter</text>
+      <listtext>
+        <variable>handles.model.dflowfm.domain(ad).fourier.parameterList</variable>
+      </listtext>
+    </column>
+    <column>
+      <style>popupmenu</style>
+      <variable>handles.model.dflowfm.domain(ad).fourier.generateTable.componentNumber</variable>
+      <type>integer</type>
+      <width>60</width>
+      <text>Component</text>
+      <listtext>
+        <variable>handles.model.dflowfm.domain(ad).fourier.astronomicalComponents</variable>
+      </listtext>
+    </column>
+    <column>
+      <style>popupmenu</style>
+      <variable>handles.model.dflowfm.domain(ad).fourier.generateTable.layer</variable>
+      <type>integer</type>
+      <width>40</width>
+      <text>Layer</text>
+      <listtext>
+        <variable>handles.model.dflowfm.domain(ad).fourier.layerList</variable>
+      </listtext>
+    </column>
+    <column>
+      <style>checkbox</style>
+      <variable>handles.model.dflowfm.domain(ad).fourier.generateTable.fourier</variable>
+      <width>25</width>
+      <text>F</text>
+    </column>
+    <column>
+      <style>checkbox</style>
+      <variable>handles.model.dflowfm.domain(ad).fourier.generateTable.max</variable>
+      <width>25</width>
+      <text>Max</text>
+    </column>
+    <column>
+      <style>checkbox</style>
+      <variable>handles.model.dflowfm.domain(ad).fourier.generateTable.min</variable>
+      <width>25</width>
+      <text>Min</text>
+    </column>
+    <column>
+      <style>checkbox</style>
+      <variable>handles.model.dflowfm.domain(ad).fourier.generateTable.ellipse</variable>
+      <width>25</width>
+      <text>Ell</text>
+    </column>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>303 5 65 20</position>
+    <text>Fill Table</text>
+    <callback>ddb_DFlowFM_fourier</callback>
+    <option1>maketable</option1>
+    <parent>generatepanel</parent>
+    <tooltipstring>Click to fill table with M2, S2, N2, K2, K1, O1, P1, Q1.</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>550 30 70 20</position>
+    <text>Generate</text>
+    <callback>ddb_DFlowFM_fourier</callback>
+    <option1>generateinput</option1>
+    <parent>generatepanel</parent>
+    <tooltipstring>Click to compute values in the Fourier table. Make sure you have correctly set start and stop times of the model.</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>550 55 70 20</position>
+    <text>Spin-up time (min)</text>
+    <parent>generatepanel</parent>
+    <variable>handles.model.dflowfm.domain(ad).fourier.spinUpTime</variable>
+    <type>real</type>
+    <tooltipstring>Edit spin-up time of the model. This time will not be included in the Fourier analysis.</tooltipstring>
+  </element>
+</root>

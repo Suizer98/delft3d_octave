@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<root>
+  <toolbox>DredgePlume</toolbox>
+  <longname>Dredge Plume</longname>
+  <enable>1</enable>
+  <element>
+    <style>tabpanel</style>
+    <position>45 10 900 140</position>
+    <tab>
+      <tabstring>Dredge Tracks</tabstring>
+      <callback>ddb_DredgePlumeToolbox</callback>
+      <formodel>delft3dflow</formodel>
+      <element>toolbox.dredgeplume.delft3dflow.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Dredge Tracks</tabstring>
+      <callback>ddb_dummyTabCallback</callback>
+      <formodel>ww3</formodel>
+      <element>toolbox.dredgeplume.notimplemented.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Dredge Tracks</tabstring>
+      <callback>ddb_dummyTabCallback</callback>
+      <formodel>delft3dwave</formodel>
+      <element>toolbox.dredgeplume.notimplemented.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Dredge Tracks</tabstring>
+      <callback>ddb_dummyTabCallback</callback>
+      <formodel>dflowfm</formodel>
+      <element>toolbox.dredgeplume.notimplemented.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Dredge Tracks</tabstring>
+      <callback>ddb_dummyTabCallback</callback>
+      <formodel>xbeach</formodel>
+      <element>toolbox.dredgeplume.notimplemented.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Dredge Tracks</tabstring>
+      <callback>ddb_dummyTabCallback</callback>
+      <formodel>fast</formodel>
+      <element>toolbox.dredgeplume.notimplemented.xml</element>
+    </tab>
+  </element>
+</root>

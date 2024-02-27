@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+  <subplotoption>
+    <name>type</name>
+  </subplotoption>
+  <subplotoption>
+    <name>position</name>
+  </subplotoption>
+  <subplotoption>
+    <name>drawbox</name>
+  </subplotoption>
+</root>

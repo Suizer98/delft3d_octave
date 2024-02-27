@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>checkbox</style>
+    <text>swave</text>
+    <position>70.000,107.500</position>
+    <tooltipstring>Include short waves (1), exclude short waves (0) [-]</tooltipstring>
+    <variable>handles.model.xbeach.domain.swave</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Include short wave forcing on NLSW equations and boundary conditions (1), or exclude (0) [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>lwave</text>
+    <position>70.000,80.000</position>
+    <variable>handles.model.xbeach.domain.lwave</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Include flow calculation (1), or exclude (0) [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>flow</text>
+    <position>70.000,52.500</position>
+    <variable>handles.model.xbeach.domain.flow</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Include sediment transport (1) or exclude (0) [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>sedtrans</text>
+    <position>70.000,25.000</position>
+    <variable>handles.model.xbeach.domain.sedtrans</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Include morphology (1) or exclude (0) [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>morphology</text>
+    <position>230.000,107.500</position>
+    <variable>handles.model.xbeach.domain.morphology</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Include avalanching (1) or exclude (0) [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>avalanching</text>
+    <position>230.000, 80.000</position>
+    <variable>handles.model.xbeach.domain.avalanching</variable>
+    <type>integer</type>
+  </element>
+</root>

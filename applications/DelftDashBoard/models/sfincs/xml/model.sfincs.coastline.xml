@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>listbox</style>
+    <position>20 20 80 120</position>
+    <tooltipstring>Select point</tooltipstring>
+    <variable>handles.model.sfincs.domain(ad).coastline.active_point</variable>
+    <text>Points</text>
+    <textposition>above</textposition>
+    <type>int</type>
+    <callback>ddb_sfincs_coastline</callback>
+    <option1>selectpoint</option1>
+    <listtext>
+      <variable>handles.model.sfincs.domain(ad).coastline.point_list</variable>
+    </listtext>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).coastline.length</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>170 120 80 20</position>
+    <tooltipstring>Edit x coordinate</tooltipstring>
+    <text>X</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.model.sfincs.domain(ad).coastline.x(handles.model.sfincs.domain(ad).coastline.active_point)</variable>
+    <callback>ddb_sfincs_coastline</callback>
+    <option1>editpointdata</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).coastline.length</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>  
+  <element>
+    <style>edit</style>
+    <position>170 95 80 20</position>
+    <tooltipstring>Edit y coordinate</tooltipstring>
+    <text>Y</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.model.sfincs.domain(ad).coastline.y(handles.model.sfincs.domain(ad).coastline.active_point)</variable>
+    <callback>ddb_sfincs_coastline</callback>
+    <option1>editpointdata</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).coastline.length</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>  
+  <element>
+    <style>edit</style>
+    <position>170 70 80 20</position>
+    <tooltipstring>Edit orientation</tooltipstring>
+    <text>Orientation</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.model.sfincs.domain(ad).coastline.orientation(handles.model.sfincs.domain(ad).coastline.active_point)</variable>
+    <callback>ddb_sfincs_coastline</callback>
+    <option1>editpointdata</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).coastline.length</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>  
+  <element>
+    <style>popupmenu</style>
+    <position>170 45 150 20</position>
+    <tooltipstring>Select type</tooltipstring>
+    <variable>handles.model.sfincs.domain(ad).coastline.type(handles.model.sfincs.domain(ad).coastline.active_point)</variable>
+    <text>Type</text>
+    <type>int</type>
+    <callback>ddb_sfincs_coastline</callback>
+    <option1>selecttype</option1>
+    <listtext>1) plain sloping beach</listtext>
+    <listtext>2) natural sloping beach</listtext>
+    <listtext>3) fringing reef</listtext>
+    <listvalue>1</listvalue>
+    <listvalue>2</listvalue>
+    <listvalue>3</listvalue>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).coastline.length</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>360 120 80 20</position>
+    <tooltipstring>Edit slope</tooltipstring>
+    <text>Slope</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.model.sfincs.domain(ad).coastline.slope(handles.model.sfincs.domain(ad).coastline.active_point)</variable>
+    <callback>ddb_sfincs_coastline</callback>
+    <option1>editpointdata</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).coastline.length</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).coastline.type(handles.model.sfincs.domain(ad).coastline.active_point)</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>  
+  <element>
+    <style>edit</style>
+    <position>360 95 80 20</position>
+    <tooltipstring>Edit slope</tooltipstring>
+    <text>Dean</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.model.sfincs.domain(ad).coastline.dean(handles.model.sfincs.domain(ad).coastline.active_point)</variable>
+    <callback>ddb_sfincs_coastline</callback>
+    <option1>editpointdata</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).coastline.length</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).coastline.type(handles.model.sfincs.domain(ad).coastline.active_point)</variable>
+        <value>2</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>  
+
+
+</root>

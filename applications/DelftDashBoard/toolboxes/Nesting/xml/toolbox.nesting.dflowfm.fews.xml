@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>10 10 760 130</position>
+    <text>Create output folders and files for nesting in FEWS</text>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Model Type</text>
+    <position>80 100 100 20</position>
+    <tooltipstring>Select type of detailed model</tooltipstring>
+    <variable>handles.toolbox.nesting.fews.detailmodeltype</variable>
+    <type>string</type>
+    <listtext>DFlow-FM/SWAN</listtext>
+    <listtext>DFlow-FM</listtext>    
+    <listvalue>dflowfmwave</listvalue>
+    <listvalue>dflowfm</listvalue>    
+  </element>
+  <element>
+    <style>edit</style>
+    <position>400 100 80 20</position>
+    <text>Run ID</text>
+    <variable>handles.toolbox.nesting.fews.runid</variable>
+    <type>string</type>
+    <tooltipstring>Change Run ID </tooltipstring>
+  </element>
+   <element>
+    <style>pushselectfile</style>
+    <position>20 70 120 20</position>
+    <text>Select DFlowFM model</text>
+    <variable>handles.toolbox.nesting.fews.mduFile</variable>
+    <onchange>ddb_NestingToolbox_DFlowFM_Fews</onchange>
+    <option1>selectdflowfmdir</option1>
+    <showfilename>yes</showfilename>
+    <extension>*.mdu</extension>
+    <selectiontext>Select DflowFM model using *.mdu file</selectiontext>
+    <tooltipstring>Select DflowFM model using *.mdu file to get right folder</tooltipstring>
+   </element>    
+   <element>
+    <style>pushselectfile</style>
+    <position>20 50 120 20</position>
+    <text>Select SWAN model</text>
+    <variable>handles.toolbox.nesting.fews.mdwFile</variable>
+    <onchange>ddb_NestingToolbox_DFlowFM_Fews</onchange>
+    <option1>selectwavedir</option1>
+    <showfilename>yes</showfilename>
+    <extension>*.mdw</extension>
+    <selectiontext>Select SWAN model folder using *.mdw file</selectiontext>
+    <tooltipstring>Select SWAN model folder using *.mdw file to get right folder</tooltipstring>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.nesting.fews.detailmodeltype</variable>
+        <value>dflowfmwave</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>      
+ <element>
+    <style>edit</style>
+    <position>400 50 80 20</position>
+    <text>Initial water level (m)</text>
+    <onchange>ddb_NestingToolbox_DFlowFM_Fews</onchange>
+    <option1>change_zsini</option1>    
+    <type>real</type>
+    <tooltipstring>Edit initial water level. This value will be inserted as 'WaterLevIni' in the .mdu-file.</tooltipstring>
+    <variable>handles.toolbox.nesting.fews.zsini</variable>    
+  </element>  
+  <element>
+    <style>pushbutton</style>
+    <position>600 50 80 20</position>
+    <text>Prepare for FEWS</text>
+    <callback>ddb_NestingToolbox_DFlowFM_Fews</callback>
+    <option1>prepare_for_fews</option1>
+    <tooltipstring>Prepare model for input in FEWS</tooltipstring>
+  </element>   
+   <element>
+    <style>pushselectfile</style>
+    <position>20 30 120 20</position>
+    <text>Select .xyn File</text>
+    <variable>handles.toolbox.nesting.fews.xynFile</variable>
+    <onchange>ddb_NestingToolbox_DFlowFM_Fews</onchange>
+    <option1>selectxynfile</option1>
+    <showfilename>yes</showfilename>
+    <extension>*.xyn</extension>
+    <selectiontext>Select observation point file of DFlowFM model</selectiontext>
+    <tooltipstring>Select observation point file (*.xyn) of DFlowFM model</tooltipstring>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.nesting.fews.detailmodeltype</variable>
+        <value>dflowfmwave</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>600 30 80 20</position>
+    <text>Convert xyn to csv</text>
+    <callback>ddb_NestingToolbox_DFlowFM_Fews</callback>
+    <option1>xyn_to_csv</option1>
+    <tooltipstring>Convert .xyn-file to Fews .csv-file</tooltipstring>
+  </element>    
+</root>

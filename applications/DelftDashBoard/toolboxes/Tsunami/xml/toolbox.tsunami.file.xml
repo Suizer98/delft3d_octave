@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>pushselectfile</style>
+    <position>10 110 130 20</position>
+    <tooltipstring>Select ESRI grid file (coordinates must be geographic (i.e. WGS 84)!)</tooltipstring>
+    <text>File</text>
+    <variable>handles.toolbox.tsunami.gridFile</variable>
+    <extension>*.asc</extension>
+    <selectiontext>Select tsunami grid file</selectiontext>
+    <callback>ddb_TsunamiToolbox</callback>
+    <option1>selectgridfile</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>10 70 130 20</position>
+    <text>Make Ini File</text>
+    <callback>ddb_TsunamiToolbox</callback>
+    <option1>computewaterlevel</option1>
+    <option2>fromfile</option2>
+    <tooltipstring>Create initial tsunami wave</tooltipstring>
+  </element>
+</root>

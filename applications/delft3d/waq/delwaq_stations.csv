@@ -1,0 +1,598 @@
+# longitude,latitude,x,y,id,name,institute
+5.42388,52.32863,157499.9968,482299.7426,adlwg       ,Adelaarsweg (Hoge Vaart)                  ,RWS
+5.40758,51.97424,156400.0056,442869.831,amrgbndn    ,Amerongen beneden                         ,RWS
+5.41049,51.97433,156599.9949,442879.6533,amrgbvn     ,Amerongen boven                           ,RWS
+4.90571,52.37953,122215.0991,488071.287,amsdm       ,Amsterdam (Km 25 IJtunnel),RWS
+4.91132,52.92937,123000.002,549249.5785,amsdp       ,Amsteldiep                                ,RWS
+3.36698,51.38104,14368.49183,378821.9018,appzk1      ,Appelzak 1 km from the coast                 ,RWS
+3.2645,51.43437,7408.85434,384955.7266,appzk10     ,Appelzak 10 km from the coast                ,RWS
+3.35226,51.38604,13359.52022,379405.7618,appzk2      ,Appelzak 2 km from the coast                 ,RWS
+3.20509,51.49574,3483.01794,391903.16,appzk20     ,Appelzak 20 km from the coast                ,RWS
+3.05066,51.55574,-7023.71449,398908.0688,appzk30     ,Appelzak 30 km from the coast                ,RWS
+3.33115,51.39882,11930.65919,380868.7029,appzk4      ,Appelzak 4 km from the coast                 ,RWS
+2.8366,51.6763,-21393.05457,412812.8707,appzk50     ,Appelzak 50 km from the coast                ,RWS
+2.61997,51.79573,-35864.94443,426640.2327,appzk70     ,Appelzak 70 km from the coast                ,RWS
+4.16543,51.38368,69949.99805,377879.8581,bathbi71    ,Bath boei 71                              ,RWS
+4.23564,51.4021,74870.00775,379849.5333,bathssknzd  ,Bathse Spuikanaal south                    ,RWS
+4.99533,51.90051,128030.0012,434739.6987,bazdk       ,Bazeldijk (Km 14.5)                ,RWS
+6.11333,51.3186,205620.0199,370179.6129,belfbvn     ,Belfeld boven                             ,RWS
+4.24387,51.47389,75567.99638,387826.8492,bergozm     ,Bergen op Zoom                            ,RWS
+5.63323,52.51577,171700.0183,503149.5836,biddwg      ,Biddingweg (Lage Vaart)                   ,RWS
+4.25191,51.4935,76160.01878,389999.7362,binnsde     ,Binnenschelde                             ,RWS
+5.27791,53.22456,147700.0096,581999.7727,blauwsot    ,Blauwe Slenk east                         ,RWS
+5.20182,53.23057,142619.9942,582679.6521,blauwswt    ,Blauwe Slenk west                         ,RWS
+4.12274,51.68482,67559.99693,411429.8141,bochtvsjcb  ,Bocht van St Jacob                        ,RWS
+6.94394,53.33493,258700.0076,595399.7646,bochtvwtm   ,Bocht van Watum                           ,RWS
+6.91134,53.34928,256495.0066,596949.7844,bochtvwtmdot,Bocht van Watum middle east               ,RWS
+6.90402,53.37363,255949.9927,599649.8507,bochtvwtmdwt,Bocht van Watum middle west               ,RWS
+6.89428,53.40458,255230.0026,603079.7474,bochtvwtnd  ,Bocht van Watum north                     ,RWS
+6.95834,53.33036,259669.9985,594911.6508,bochtvwtzd  ,Bocht van Watum south                      ,RWS
+5.16853,53.3797,140447.565,599282.7581,boomkdp     ,Boomkensdiep                              ,RWS
+5.33721,53.08487,151650.0174,566449.5868,boonts      ,Boontjes                                  ,RWS
+5.69616,50.86895,176749.9991,319949.7015,borghrbndn  ,Borgharen beneden                         ,RWS
+5.69829,50.86921,176899.9911,319979.6195,borghrbvn   ,Borgharen boven                           ,RWS
+5.79922,51.03717,183900.007,338699.7316,born        ,Born                                      ,RWS
+5.60163,53.43916,169249.9997,605899.654,borndp      ,Borndiep                                  ,RWS
+3.70702,51.42553,38150.00288,383169.7492,borsslnnl   ,Borssele northnol                         ,RWS
+5.55176,53.42082,165939.9949,603849.5928,boschgt     ,Boschgat                                  ,RWS
+5.50373,53.40335,162749.9909,601899.6861,boschgwt    ,Boschgat west                             ,RWS
+6.52323,53.49797,230390.0129,613019.8167,boschnot    ,Boschnaad east                            ,RWS
+4.49338,51.69246,93200.02132,411899.8808,bovss       ,Bovensluis                                ,RWS
+4.96763,52.95115,126799.9982,551649.5482,breehn      ,Breehorn                                  ,RWS
+3.56737,51.40051,28370.00466,380619.8682,breskbsd    ,Breskens badstrand                        ,RWS
+4.0656,51.92753,64099.99452,438499.5702,brielsgt    ,Brielse Gat                               ,RWS
+4.52559,51.89989,95699.99143,434949.6642,brienod     ,Brienenorth (Km 996.5)             ,RWS
+3.82432,51.74927,47080.01118,418999.6543,brouwdbsd   ,Brouwersdam badstrand                     ,RWS
+4.09355,51.66724,65507.04171,409509.8703,bruinsbnn   ,Bruinisse binnen                          ,RWS
+4.57979,52.46907,100134.9884,498231.6706,buithvn3    ,Buitenhaven 3                             ,RWS
+4.59345,52.47211,101067.0023,498558.8308,buithvn4    ,Buitenhaven 4                             ,RWS
+4.58236,52.4639,100303.0003,497653.7755,buithvn5    ,Buitenhaven 5                             ,RWS
+5.43284,52.4868,158099.9946,499899.6971,buizwg      ,Buizerdweg (Lage Dwarsvaart)              ,RWS
+3.38973,51.38052,15950.01363,378719.7399,cadzbsd     ,Cadzand badstrand                         ,RWS
+4.68976,52.83482,108000.0199,538849.9057,callobsd    ,Callantsoog badstrand                     ,RWS
+4.68634,52.86282,107800.0204,541967.7879,callog1     ,Callantsoog 1 km from the coast              ,RWS
+4.56303,52.89614,99537.99277,545763.6727,callog10    ,Callantsoog 10 km from the coast             ,RWS
+4.67301,52.86476,106904.012,542192.6454,callog2     ,Callantsoog 2 km from the coast              ,RWS
+4.41638,52.91225,89693.99668,547678.8717,callog20    ,Callantsoog 20 km from the coast             ,RWS
+4.27057,52.92559,79909.0052,549304.5968,callog30    ,Callantsoog 30 km from the coast             ,RWS
+4.64301,52.86837,104888.0038,542614.5974,callog4     ,Callantsoog 4 km from the coast              ,RWS
+3.98312,52.95892,60652.01186,553350.909,callog50    ,Callantsoog 50 km from the coast             ,RWS
+3.68038,52.99058,40395.00224,557311.6509,callog70    ,Callantsoog 70 km from the coast             ,RWS
+4.6394,52.72532,104480.0116,526699.5549,campdbsd    ,Camperduin badstrand                      ,RWS
+5.76468,52.55587,180600.0045,507649.8852,colpd       ,Colijnpad (Hoge Vaart)                    ,RWS
+3.85468,51.61015,48850.01044,403479.6651,colpt       ,Colijnsplaat                              ,RWS
+5.75157,52.57523,179700.0089,509799.8627,colwg       ,Colijnweg (Lage Vaart)                    ,RWS
+5.72098,53.4025,177199.988,601849.8361,dantzgnd    ,Dantziggat north                          ,RWS
+5.72698,53.40113,177600.0064,601699.7135,dantzgt     ,Dantziggat                                ,RWS
+5.22405,52.4157,143900.0046,491999.8892,debvkflhgvt ,De Blocq van Kuffeler Hoge Vaart          ,RWS
+5.22772,52.41661,144149.9909,492099.9266,debvkfllgvt ,De Blocq van Kuffeler Lage Vaart          ,RWS
+6.96407,53.32101,260075.0088,593879.6083,delfzbthvn  ,Delfzijl buitenhaven                      ,RWS
+3.88991,51.74563,51599.99936,418499.5969,denose      ,Den Osse                                  ,RWS
+5.10387,52.93456,135950.007,549759.6747,denovr      ,Den Oever                                 ,RWS
+5.0284,52.94281,130879.9992,550699.5757,denovssz    ,Den Oever spuisluizen                     ,RWS
+5.30819,52.29976,149609.9971,479089.8917,dodhd       ,De dode hond                              ,RWS
+6.84774,53.46644,251995.019,609899.7033,doekgt      ,Doekegat                                  ,RWS
+3.473,51.55679,22261.01263,398169.8416,dombbsd     ,Domburg badstrand                         ,RWS
+5.28721,53.08438,148299.9924,566399.5743,doovbot     ,Doove Balg east                           ,RWS
+5.03226,53.0529,131200.0163,562949.9176,doovbwt     ,Doove Balg west                           ,RWS
+4.71961,51.80857,108960.0044,424649.661,dorddwtilt  ,Dordrecht drinkwaterinlaat                ,RWS
+4.00227,51.70836,59279.98695,414199.622,dreisgml    ,Dreischor gemaal                          ,RWS
+3.99933,51.71462,59090.0069,414899.8452,dreisr      ,Dreischor                                 ,RWS
+5.80624,51.96298,183800.0082,441699.8902,drielbndn   ,Driel beneden                             ,RWS
+5.80712,51.96315,183859.9992,441719.7605,drielbvn    ,Driel boven                               ,RWS
+5.01262,52.37172,129489.9933,487159.8925,durgdm      ,Durgerdam                                 ,RWS
+5.14218,52.5226,138370.0135,503909.8995,edm         ,Edam                                      ,RWS
+6.23396,52.15977,212940.012,463849.8935,eefde       ,Eefde                                     ,RWS
+5.83783,52.48174,185612.0192,499430.8085,eekt        ,Eekt                                      ,RWS
+5.35511,52.27875,152809.9988,476749.659,eemmdk23    ,Eemmeerdijk Km 23                 ,RWS
+6.88382,53.44326,254445.0047,607369.6797,eemsctle    ,Eemscentrale                              ,RWS
+4.6187,52.61866,102956.0123,514846.9169,egmazbsd    ,Egmond aan Zee badstrand                  ,RWS
+4.60718,52.62006,102177.0152,515010.6204,egmaze1     ,Egmond aan Zee 1 km from the coast           ,RWS
+4.47303,52.63562,93115.00393,516848.7195,egmaze10    ,Egmond aan Zee 10 km from the coast          ,RWS
+4.59469,52.62229,101334.0198,515267.6896,egmaze2     ,Egmond aan Zee 2 km from the coast           ,RWS
+4.33004,52.64168,83445.50481,517654.6331,egmaze20    ,Egmond aan Zee 20 km from the coast          ,RWS
+4.17974,52.66729,73320.99792,520662.6506,egmaze30    ,Egmond aan Zee 30 km from the coast          ,RWS
+4.56803,52.62562,99533.00649,515658.7664,egmaze4     ,Egmond aan Zee 4 km from the coast           ,RWS
+3.88646,52.69561,53549.00794,524185.8147,egmaze50    ,Egmond aan Zee 50 km from the coast          ,RWS
+3.59317,52.72811,33815.00859,528252.9293,egmaze70    ,Egmond aan Zee 70 km from the coast          ,RWS
+5.69911,50.7795,176999.9986,309999.6638,eijsdptn    ,Eijsden ponton                            ,RWS
+6.33525,53.4747,217950.0094,610249.6527,eildbg      ,Eilanderbalg                              ,RWS
+5.76979,52.42342,181024.0058,492914.8622,ellsd       ,Ellerstrand                               ,RWS
+5.69401,52.5709,175800.0167,509299.5711,elwg        ,Elandweg (Swiftervaart)                   ,RWS
+7.10872,53.33082,269686.0182,595192.6128,emdvwtr     ,Emden vaarwater                           ,RWS
+6.9416,53.45942,258245.008,609249.7346,emshpte     ,Emshornplate                              ,RWS
+5.41623,52.69283,156962.015,522823.8865,enkhzzd     ,Enkhuizerzand                             ,RWS
+5.54286,52.29094,165619.9932,478116.6743,ermlo       ,Ermelo                                    ,RWS
+5.52294,52.5802,164199.9922,510299.7572,flevctle    ,Flevocentrale                             ,RWS
+5.6373,52.38744,172026.0167,488871.7089,flevsd      ,Flevostrand                               ,RWS
+5.26995,51.73356,146899.9946,416099.5258,fortcvcr    ,Fort Crevecoeur (monding van de Dieze)    ,RWS
+7.02295,53.32795,263980.0115,594739.7066,gaatjbnd    ,Gaatje Bocht north                        ,RWS
+7.01494,53.32273,263460.0008,594146.9353,gaatjbnwt   ,Gaatje Bocht northwest                    ,RWS
+7.01549,53.31933,263504.9972,593769.5518,gaatjbwt    ,Gaatje Bocht west                         ,RWS
+5.15252,52.87662,139200.0179,543299.8618,gamms       ,Gammels                                   ,RWS
+6.12611,53.44292,204099.9982,606549.7503,gatvsmnog   ,Gat van Schiermonnikoog                   ,RWS
+3.76214,51.55334,42299.99526,397299.637,geersdk     ,Geersdijk                                 ,RWS
+4.84992,51.71549,117870.0045,414219.6223,geertdbg    ,Geertruidenberg Amercentrale              ,RWS
+6.02977,52.62927,198505.3803,515944.3488,genmdn      ,Genemuiden                                ,RWS
+5.94574,51.71431,193599.9988,414099.7167,gennp       ,Gennep                                    ,RWS
+3.83025,51.89568,47837.93761,435277.3455,goere10     ,Goeree 10 km from the coast                  ,RWS
+3.9168,51.84689,53684.63394,429725.476,goere2      ,Goeree 2 km from the coast                   ,RWS
+3.72167,51.95417,40514.35924,441948.4514,goere20     ,Goeree 20 km from the coast                  ,RWS
+3.61363,52.01511,33254.50378,448902.8091,goere30     ,Goeree 30 km from the coast                  ,RWS
+3.3982,52.13583,18837.08199,462714.3851,goere50     ,Goeree 50 km from the coast                  ,RWS
+3.87361,51.86972,50761.96005,432326.2264,goere6      ,Goeree 6 km from the coast                   ,RWS
+3.18251,52.25222,4467.699,476086.6152,goere70     ,Goeree 70 km from the coast                  ,RWS
+5.1968,52.32287,142018.9977,481675.65,gooimmdn    ,Gooimeer middle                           ,RWS
+4.97442,51.83671,126550.0013,427649.5449,gorcbnn     ,Gorinchem binnen                          ,RWS
+4.07695,51.52314,64069.9978,393499.8679,gorhk       ,Gorishoek                                 ,RWS
+4.67243,51.98555,105900.013,444369.9056,goudrk      ,Gouderak                                  ,RWS
+4.6895,51.99622,107084.0032,445545.5541,goudvhvn    ,Gouda voorhaven                           ,RWS
+5.73418,51.76906,178950.0185,420099.6604,gravbndn    ,Grave beneden                             ,RWS
+5.7349,51.76861,178999.9905,420049.8195,gravbvn     ,Grave boven                               ,RWS
+6.40622,53.45076,222699.998,607649.683,grongwd     ,Groningerwad                              ,RWS
+7.15666,53.30429,272952.012,592317.5268,grootgnd    ,Groote Gat north                          ,RWS
+7.16364,53.27778,273490.0151,589379.8658,grootgzd    ,Groote Gat south                           ,RWS
+5.13461,51.99042,137650.0051,444699.6957,hagsbvn     ,Hagestein boven                           ,RWS
+5.13271,51.99086,137519.9889,444749.806,hagsn       ,Hagestein                                 ,RWS
+4.01326,51.7564,60140.00503,419529.8888,hals        ,Hals                                      ,RWS
+3.8527,51.6602,48830.01357,409049.7729,hammot      ,Hammen east                               ,RWS
+3.75499,51.672,42100.00709,410509.6559,hammwt      ,Hammen west                               ,RWS
+4.01415,51.43611,59530.01915,383899.67,hanswgl     ,Hansweert geul                            ,RWS
+4.87671,51.81583,119800.0097,425369.5575,hardvd      ,Hardinxveld (Km 962)               ,RWS
+5.39693,53.17698,155649.9907,576699.9201,harlghvmwt  ,Harlingen havenmond west                  ,RWS
+5.32885,53.19449,151100.0075,578649.6272,harlgvgl    ,Harlingen vaargeul                        ,RWS
+4.20991,51.90273,73979.98795,435569.6705,harmsbg     ,Harmsenbrug                               ,RWS
+4.39531,51.71253,86450.01096,414219.8989,harvbg      ,Haringvlietbrug                           ,RWS
+4.05833,51.82947,63399.99136,427599.732,harvss      ,Haringvlietsluis                          ,RWS
+5.8086,51.82679,184050.0093,426549.641,hatt        ,Hatert                                    ,RWS
+5.26848,51.73985,146800.0098,416799.5249,hedl        ,Hedel                                     ,RWS
+4.39001,51.6972,86060.01441,412519.7869,hellgt      ,Hellegat                                  ,RWS
+4.14376,51.8198,69270.01864,426419.8267,hellvss     ,Hellevoetsluis                            ,RWS
+4.75023,52.96232,112200.0051,552999.8095,helsdr      ,Helsdeur                                  ,RWS
+6.80196,52.24616,251615.8687,474066.4794,henglbndn   ,Hengelo beneden                           ,RWS
+5.34553,52.9703,152200.0146,553699.8684,hindlpn     ,Hindeloopen                               ,RWS
+3.92058,51.42508,53000.00508,382799.619,hoedkkkbi4  ,Hoedekenskerke boei 4                     ,RWS
+4.09839,51.98597,66470.00921,444959.9207,hoekvhlbsd  ,Hoek van Holland badstrand                ,RWS
+4.132,51.97096,68750.01597,443249.5991,hoekvhld    ,Hoek van Holland                          ,RWS
+4.11045,51.97657,67279.99608,443899.6513,hoekvhldnovr,Hoek van Holland northoever               ,RWS
+5.53702,52.38426,165200.0098,488499.7134,hogekss     ,Hoge Knarsluis (Hoge Vaart)               ,RWS
+5.87201,53.39614,187250.0201,601199.6933,holwd       ,Holwerd                                   ,RWS
+5.95986,53.44608,193050.0198,606799.689,holwdbg     ,Holwerderbalg                             ,RWS
+3.70161,51.4161,37750.00683,382129.5267,honte       ,Honte                                     ,RWS
+5.12021,52.33995,136804.0151,483591.8943,hoofd       ,Hoofd                                     ,RWS
+4.32642,51.87957,81960.02062,432869.843,hoogvt      ,Hoogvliet (Km 1005.5)              ,RWS
+5.06239,52.61309,132999.9938,513999.7471,hoornshp    ,Hoornsche Hop                             ,RWS
+5.07965,52.29714,134020.0115,478839.8392,horn        ,Horn                                      ,RWS
+5.52456,52.62693,164299.9975,515499.6347,houtrb      ,Houtrib                                   ,RWS
+5.4388,52.54163,158500.0117,505999.8067,houtrbi     ,Houtribbaai                               ,RWS
+5.48677,52.60895,161743.994,513494.5123,houtrdk     ,Houtribdijk                               ,RWS
+6.67935,53.56211,240622.0163,620332.514,huibgnot    ,Huibertgat northeast                      ,RWS
+6.6612,53.55913,239424.9893,619979.8904,huibgot     ,Huibertgat east                           ,RWS
+4.73088,52.96257,110900.017,553039.9003,huisdnbsd   ,Huisduinen badstrand                      ,RWS
+5.2829,52.31648,147888.0031,480952.7961,huizn       ,Huizen                                    ,RWS
+4.622,52.46601,102999.9957,497859.7014,ijmdn1      ,IJmuiden (Km 2)                    ,RWS
+4.29151,52.55995,80700.00419,508599.6326,ijmdn20     ,IJmuiden 20 km from the coast                ,RWS
+4.50533,52.48713,95100.00346,500299.9348,ijmdn3      ,IJmuiden 3 km from the coast                 ,RWS
+4.57037,52.46033,99483.99838,497265.6282,ijmdsmfbsd  ,IJmuiden semafoor badstrand               ,RWS
+5.18537,53.16199,141499.9962,575049.9186,inst        ,Inschot                                   ,RWS
+5.0928,52.03796,134800.0154,449999.5311,jutps       ,Jutphaas                                  ,RWS
+5.91792,52.55165,190995.9762,507246.1122,kampn       ,Kampen                                    ,RWS
+5.62307,52.4074,171050.0199,491089.5641,karkwg      ,Karekietweg (Hoge Dwarsvaart)             ,RWS
+4.39895,52.21395,87459.99384,469999.8008,katwnbsd    ,Katwijk north badstrand                   ,RWS
+4.38295,52.20303,86350.0137,468799.7577,katwzbsd    ,Katwijk south badstrand                    ,RWS
+4.89444,51.71875,120948.9297,414560.7107,keizvr      ,Keizersveer                               ,RWS
+5.78263,52.58412,181799.9958,510799.9071,ketmd       ,Ketelmond                                 ,RWS
+5.64202,52.60919,172260.4753,513546.6147,ketmwt      ,Ketelmeer west                            ,RWS
+4.21891,52.07055,74900.00378,454229.634,kijkdbsd    ,Kijkduin badstrand                        ,RWS
+5.46739,53.26456,160349.9903,586449.8292,kimsgot     ,Kimstergat east                           ,RWS
+5.45015,53.26278,159199.9903,586249.5729,kimsgwt     ,Kimstergat west                           ,RWS
+4.63762,51.89078,103399.9986,433849.9177,kinddadlk   ,Kinderdijk a/d Lek (Km 988)        ,RWS
+4.62617,51.88081,102599.9978,432749.5987,kinddk      ,Kinderdijk (Km 984)                ,RWS
+4.5267,51.68948,95500.00305,411539.8309,klundt      ,Klundert                                  ,RWS
+4.75619,53.10035,112735.0089,568356.8576,koogbsd     ,De Koog badstrand                         ,RWS
+5.34621,53.03832,152250.012,561269.685,kornwd      ,Kornwerd                                  ,RWS
+5.33423,53.07903,151450.014,565799.7906,kornwdztggl ,Kornwerderzand toegangsgeul               ,RWS
+5.33573,53.07184,151550.0049,564999.926,kornwdzvhvn ,Kornwerderzand Voorhaven                  ,RWS
+3.80564,51.54648,45300.01173,396469.8855,kortgne     ,Kortgene                                  ,RWS
+5.31323,52.70697,150000.0034,524399.558,krabbgbtn   ,Krabbersgat buiten                        ,RWS
+4.10489,51.61037,66180.00012,403169.7784,krabbkk     ,Krabbenkreek                              ,RWS
+4.12769,51.66039,67855.01989,408705.9022,krammszn    ,Krammersluizen                            ,RWS
+4.2409,51.43883,75299.99746,383929.8623,kreekrszn   ,Kreekraksluizen                           ,RWS
+4.57905,51.91645,99400.00932,436749.6837,krimpadijsl ,Krimpen a/d IJssel                        ,RWS
+5.27099,52.47894,147104.9911,499029.8127,kuilvmkn    ,Kuil van Marken                           ,RWS
+5.43501,52.44816,158250.0202,495599.6873,lagkss      ,Lage Knarsluis (Lage Vaart)               ,RWS
+4.06262,51.37195,62770.00302,376699.9322,lamswdbi59  ,Lamswaarde boei 59                        ,RWS
+5.22183,53.20607,143950.0148,579949.6024,langzd      ,Lange Zand                                ,RWS
+6.20609,53.415,209449.9976,603499.6198,lauwobthvn  ,Lauwersoog buitenhaven                    ,RWS
+6.19999,53.41055,209049.9913,602999.5721,lauwohvmd   ,Lauwersoog havenmond                      ,RWS
+6.19022,53.41062,208400.0075,602999.9145,lauwossbtn  ,Lauwersoog spuisluis buiten               ,RWS
+6.44249,53.51784,224999.9994,615149.6281,lauws       ,Lauwers                                   ,RWS
+6.45276,53.50652,225700.0174,613899.6216,lauwzd      ,Lauwers south                              ,RWS
+5.92192,51.1679,192399.9946,353299.6958,linnbndn    ,Linne beneden                             ,RWS
+5.9225,51.1679,192440.0187,353299.5651,linnbvn     ,Linne boven                               ,RWS
+5.45245,51.80911,159500.0089,424499.8943,lithbndn    ,Lith beneden                              ,RWS
+5.45391,51.81046,159600.0051,424649.7999,lithbvn     ,Lith boven                                ,RWS
+6.09118,51.8542,203499.9934,429749.6722,lobptn      ,Lobith ponton                             ,RWS
+4.12705,51.49434,67491.76175,390235.5652,lodsgt      ,Lodijkse Gat                              ,RWS
+5.03745,52.2013,131090.014,468189.55,loendvsps   ,Loenderveense Plas                        ,RWS
+5.58285,51.21661,168670.0027,358599.6035,loozgs      ,Loozen grens                              ,RWS
+5.03915,52.1338,131169.9887,460679.6923,maarssn     ,Maarssen                                  ,RWS
+5.88106,51.14417,189560.0163,350639.5146,maasbt      ,Maasbracht                                ,RWS
+5.80028,51.09182,183940.0191,344779.8062,maasek      ,Maaseik                                   ,RWS
+4.24979,51.90461,76727.54671,435734.7644,maasss      ,Maassluis                                 ,RWS
+5.67691,50.87978,175390.0126,321149.8252,maastt      ,Maastricht                                ,RWS
+4.79033,52.96836,114900.0082,553649.6025,malzmrnhvn  ,Malzwin marinehaven                       ,RWS
+4.90095,52.99313,122349.9946,556349.691,malzn       ,Malzwin                                   ,RWS
+5.08558,52.46037,134500.0058,496999.9213,markgze     ,Marken Gouwzee                            ,RWS
+5.19597,52.45161,142000.0177,495999.871,markmmdn    ,Markermeer middle (zwaartepunt Markermeer),RWS
+5.35476,52.56365,152800.0142,508449.8615,markmnot    ,Markermeer northeast                      ,RWS
+4.74993,52.98254,112200.0064,555249.7996,marsdnd     ,Marsdiep north                            ,RWS
+3.61658,51.49549,32050.01627,391099.8842,middbdbg    ,Middelburg draaibrug                      ,RWS
+4.19754,51.77703,72900.02167,421599.8356,middhns     ,Middelharnis                              ,RWS
+4.63949,51.71677,103330.0074,414489.7221,moerdbgn    ,Moerdijk bruggen                          ,RWS
+5.72689,53.42719,177579.9944,604599.8723,molgt       ,Molengat                                  ,RWS
+4.21997,51.49786,73949.98985,390519.8033,molpmdn     ,Molenplaat middle                         ,RWS
+4.85908,51.71131,118500.0073,413749.8543,mondddgbg   ,Mond der Donge brug                       ,RWS
+7.08154,53.31191,267925.0041,593045.549,mondvddld   ,Mond van de Dollard                       ,RWS
+7.08248,53.31684,267974.993,593595.8669,mondvddlnd  ,Mond van de Dollard north                 ,RWS
+5.06886,52.33,133299.99,482499.5144,muidn       ,Muiden                                    ,RWS
+5.22875,52.90892,144340.0164,546880.5216,munnpt      ,Munnikplaat                               ,RWS
+5.16187,52.31096,139632.996,480356.5399,naardn      ,Naarden                                   ,RWS
+5.74975,51.27239,180300.0185,364849.9337,nedwt       ,Nederweert                                ,RWS
+3.70764,51.64265,38750.01427,407319.873,neeltjbsd   ,Neeltje Jans badstrand                    ,RWS
+5.11301,52.02273,136179.9915,448299.8459,nieuwgn     ,Nieuwegein                                ,RWS
+3.67708,51.70586,36800.00932,414399.611,nieuwhsdbsd ,Nieuw Haamstede badstrand                 ,RWS
+4.99956,52.20217,128500.008,468299.9059,nieuwss     ,Nieuwersluis                              ,RWS
+7.17542,53.25425,274340.9861,586780.8849,nieuwstzbtn ,Nieuwe Statenzijl buiten                  ,RWS
+4.20158,51.58461,72830.01232,400189.789,nieuwvsmr   ,Nieuw-Vossemeer                           ,RWS
+5.44788,52.25566,159143.0179,474181.8291,nijkk       ,Nijkerk                                   ,RWS
+5.47656,52.26299,161100.0107,474999.6172,nijkkss     ,Nijkerkersluis                            ,RWS
+5.38045,53.35804,154549.9886,596849.6273,noordbgn    ,Noorder Balgen                            ,RWS
+5.33392,53.33646,151450.0189,594449.6237,noordmot    ,Noord Meep east                           ,RWS
+6.59751,53.45483,235399.9981,608299.6435,noordpdzl   ,Noordpolderzijl                           ,RWS
+4.45525,52.2785,91400.01826,477129.8356,noordwbsd   ,Noordwijk badstrand                       ,RWS
+4.42028,52.25639,88980.68653,474701.651,noordwk1    ,Noordwijk 1 km from the coast                ,RWS
+4.3025,52.30222,81015.79888,479914.5854,noordwk10   ,Noordwijk 10 km from the coast               ,RWS
+4.40611,52.26139,88021.01217,475271.0382,noordwk2    ,Noordwijk 2 km from the coast                ,RWS
+4.175,52.34167,72393.39497,484440.614,noordwk20   ,Noordwijk 20 km from the coast               ,RWS
+4.04806,52.3875,63837.56167,489691.9413,noordwk30   ,Noordwijk 30 km from the coast               ,RWS
+4.3025,52.26889,80960.31251,476206.1658,noordwk4    ,Noordwijk 4 km from the coast                ,RWS
+3.78667,52.48083,46274.88796,500436.1387,noordwk50   ,Noordwijk 50 km from the coast               ,RWS
+3.53139,52.58611,29236.64074,512561.5357,noordwk70   ,Noordwijk 70 km from the coast               ,RWS
+5.50232,52.26733,162857.9882,475484.6808,nuldhk      ,Nulderhoek                                ,RWS
+5.56302,51.90337,167100.0194,434999.597,ochtn       ,Ochten                                    ,RWS
+4.22706,51.47393,74400.00472,387849.5482,oestdm      ,Oesterdam                                 ,RWS
+5.26728,52.75066,146903.0176,529264.8157,eastdk      ,Oosterdijk                                ,RWS
+6.95832,53.36094,259594.6118,598314.7153,eastfsgje   ,Oostfriese Gaatje                         ,RWS
+6.99001,53.39085,261629.9986,601689.6374,eastfsgjmdn ,Oostfriese Gaatje middle                  ,RWS
+6.91669,53.43413,256649.9922,606399.7895,eastfsgjnd  ,Oostfriese Gaatje north                   ,RWS
+7.01464,53.3166,263454.9895,593464.7658,easthd      ,Oosterhoofd                               ,RWS
+5.20283,52.60678,142509.9955,513264.65,eastlk      ,Oosterleek                                ,RWS
+5.44689,53.29333,158980,589649.5752,eastmot     ,Oost Meep east                            ,RWS
+5.41076,53.31131,156569.9993,591649.9278,eastmp      ,Oost Meep                                 ,RWS
+5.3587,53.32299,153100.0131,592949.592,eastmwt     ,Oost Meep west                            ,RWS
+5.45107,53.37823,159250.0034,599099.5436,eastrot     ,Oosterom east                             ,RWS
+5.37248,52.4967,154000.0041,500999.8427,eastvdpsn   ,Oostvaardersplassen                       ,RWS
+4.38557,51.82553,85950.01677,426799.9109,oudbeld     ,Oud Beijerland (Km 999)            ,RWS
+3.92628,51.83015,54300.00742,427849.8635,ouddbsd     ,Ouddorp badstrand                         ,RWS
+3.93477,51.79618,54810.01287,424059.7681,oudddppt    ,Ouddorp diepe put                         ,RWS
+5.46731,52.822,160400.0028,537199.8023,oudmdm      ,Oude Mirdum                               ,RWS
+5.23099,52.32484,144349.9898,481889.5162,oudndn      ,Oud Naarden                               ,RWS
+6.66291,53.52838,239599.0163,616559.6934,oudwtend    ,Oude Westereems north                     ,RWS
+6.75357,53.49567,245680.0119,613029.8818,oudwtes     ,Oude Westereems                           ,RWS
+6.94452,53.34894,258705.0114,596959.7348,paap        ,Paap                                      ,RWS
+5.08766,52.36648,134597.9947,486552.5241,pampot      ,Pampus east                               ,RWS
+5.05908,52.36368,132650.0049,486249.8378,pampwt      ,Pampus west                               ,RWS
+4.72361,51.82253,109249.9993,426199.5608,papdt       ,Papendrecht (Km 972.5)             ,RWS
+4.8603,51.76233,118624.9984,419424.644,paulzd      ,Pauluszand                                ,RWS
+4.39053,51.89658,86399.99598,434699.6896,perns       ,Pernis (Km 1008)                   ,RWS
+4.14049,51.95352,69300.01216,441299.7674,petluhvn4   ,Petroleumhaven 4e                         ,RWS
+4.21277,51.91561,74199.99317,436999.585,petluhvn7   ,Petroleumhaven 7e                         ,RWS
+4.1958,51.66167,72570.00004,408769.5828,phildm      ,Philipsdam east                           ,RWS
+3.69195,51.52142,37350.01295,393859.9168,piet        ,De Piet                                   ,RWS
+5.32309,52.63724,150659.996,516639.6041,pottgt      ,Pottengat                                 ,RWS
+6.61924,53.13129,237460.0105,572319.8346,punt        ,De Punt (Drentse Aa)                      ,RWS
+4.56599,51.81165,98370.01906,425099.7059,putthk      ,Puttershoek                               ,RWS
+6.66372,53.47913,239750.0063,611079.9329,ra          ,Ra                                        ,RWS
+5.70169,52.40731,176399.9916,491099.7152,ral         ,De Ral                                    ,RWS
+5.93171,52.63006,191865.0065,515977.7042,ramsdp      ,Ramsdiep (Km 10)                   ,RWS
+6.72382,53.52761,243639.9844,616546.9262,ransgt      ,Ranselgat                                 ,RWS
+6.81029,53.49393,249448.015,612909.7605,ransgzd     ,Ranselgat south                            ,RWS
+5.86061,52.51786,187132.9877,503458.9254,reve        ,Reve                                      ,RWS
+4.77634,51.74749,112815.0225,417819.926,rietpt      ,Rietplaat                                 ,RWS
+5.56661,52.43545,167200.0043,494199.9113,rietwg      ,Rietweg (Larsertocht)                     ,RWS
+6.8932,53.43546,255086.0009,606514.5735,robbpt      ,Robbenplaat                               ,RWS
+4.0287,51.88752,61479.0055,434095.7114,rockjbsd    ,Rockanje badstrand                        ,RWS
+5.98339,51.21075,196660.0128,358099.5639,roermbvn    ,Roermond boven                            ,RWS
+5.98234,51.19638,196600.0121,356499.9227,roermd      ,Roermond (monding van de Roer)            ,RWS
+3.76057,51.64556,42420.0005,407559.6112,roggpgwt    ,Roggenplaat geul west                     ,RWS
+5.42867,53.21363,157769.9952,580779.6035,roptzl      ,Roptazijl                                 ,RWS
+5.53386,52.76083,164900,530399.8483,rottdshk    ,Rotterdamse Hoek                          ,RWS
+6.52733,53.62456,230438.7765,627112.8612,rottmpt10   ,Rottumerplaat 10 km from the coast           ,RWS
+6.03697,54.36958,197241.9075,709644.9568,rottmpt100  ,Rottumerplaat 100 km from the coast          ,RWS
+6.499,53.66623,228492.7402,631720.5972,rottmpt15   ,Rottumerplaat 15 km from the coast           ,RWS
+6.47012,53.70955,226510.8317,636513.3273,rottmpt20   ,Rottumerplaat 20 km from the coast           ,RWS
+6.56417,53.56611,232982.5505,620647.1552,rottmpt3    ,Rottumerplaat 3 km from the coast            ,RWS
+6.41736,53.79287,222893.9402,645736.3691,rottmpt30   ,Rottumerplaat 30 km from the coast           ,RWS
+6.55483,53.5829,232333.6352,622505.9391,rottmpt5    ,Rottumerplaat 5 km from the coast            ,RWS
+6.31,53.95389,215587.7385,663562.7589,rottmpt50   ,Rottumerplaat 50 km from the coast           ,RWS
+6.21417,54.11806,209084.8023,681761.3188,rottmpt70   ,Rottumerplaat 70 km from the coast           ,RWS
+5.52422,52.51954,164299.9903,503549.7736,rundwg      ,Runderweg (Oostervaart)                   ,RWS
+4.21793,51.36709,73575.00632,375974.882,saeftgbi76  ,Saeftinge boei 76                         ,RWS
+5.985,51.64131,196380.0105,405999.7777,sambbndn    ,Sambeek beneden                           ,RWS
+5.98558,51.64104,196420.0012,405969.5482,sambbvn     ,Sambeek boven                             ,RWS
+3.80222,51.21029,44250.01229,359079.8105,sasvgt      ,Sas van Gent                              ,RWS
+4.24906,51.34868,75711.12453,373892.2479,schaarvoddl ,Schaar van Ouden Doel                     ,RWS
+3.84815,51.74288,48710.01376,418253.8231,schardkdppt ,Scharendijke diepe put                    ,RWS
+4.99687,52.34282,128399.9886,483949.599,schellwde   ,Schellingwoude                            ,RWS
+4.63064,51.74422,102750.0219,417549.9089,schenkdk    ,Schenkeldijk (Km 986)              ,RWS
+3.26983,51.40926,7698.00126,382151.5936,scheurwt    ,Scheur west                               ,RWS
+4.26549,52.10939,78160.02388,458499.9328,schevngvtrbs,Scheveningen Vuurtoren badstrand          ,RWS
+4.29349,52.12268,80100.00853,459949.6587,schevngztpbs,Scheveningen Zwarte Pad badstrand         ,RWS
+5.76616,52.59592,180676.9977,512106.7795,schokkhvn   ,Schokkerhaven                             ,RWS
+4.9445,52.95736,125250.0085,552349.9117,schore      ,Schore                                    ,RWS
+4.00643,51.46299,59050.00998,386899.6834,schorlwl    ,Schore loswal                             ,RWS
+3.59446,51.66655,30982.75708,410164.9579,schouwn1    ,Schouwen 1 km from the coast                 ,RWS
+3.49528,51.72,24277.31354,416283.4478,schouwn10   ,Schouwen 10 km from the coast                ,RWS
+3.38694,51.77945,16975.07698,423095.3341,schouwn20   ,Schouwen 20 km from the coast                ,RWS
+3.27451,51.83986,9413.71282,430034.4077,schouwn30   ,Schouwen 30 km from the coast                ,RWS
+3.56279,51.68322,28838.90773,412072.7459,schouwn4    ,Schouwen 4 km from the coast                 ,RWS
+3.05816,51.95485,-5081.78034,443277.7529,schouwn50   ,Schouwen 50 km from the coast                ,RWS
+2.82911,52.07347,-20356.0523,457000.0622,schouwn70   ,Schouwen 70 km from the coast                ,RWS
+5.21901,53.3546,143800.0054,596479.7178,schuitgt    ,Schuitengat                               ,RWS
+4.60273,51.89235,100999.9961,434049.6841,slikkvr     ,Slikkerveer (Km 990.5)             ,RWS
+3.38208,51.30917,15199.99623,370799.5151,sluis       ,Sluis                                     ,RWS
+3.83518,51.29362,46749.99531,368299.5997,sluiskl     ,Sluiskil                                  ,RWS
+3.73082,51.5422,40099.99417,396109.5497,soelkkpdot  ,Soelekerkepolder east                     ,RWS
+5.38867,52.26069,155099.9937,474739.9131,spakbg      ,Spakenburg                                ,RWS
+5.46282,52.28188,160159.9924,477099.9179,spiekwg     ,Spiekweg                                  ,RWS
+6.43931,53.51113,224800.0011,614399.7537,spruit      ,Spruit                                    ,RWS
+4.01524,51.60037,59950.01983,402169.8807,stavnsktn   ,Stavenisse keeten                         ,RWS
+5.32634,52.85347,150899.9925,540699.6968,stavrn      ,Stavoren                                  ,RWS
+4.24228,51.64119,75749.99739,406439.5937,steenbgn    ,Steenbergen (Roosendaalsevliet)           ,RWS
+5.62954,52.8281,171332.9934,537902.5641,steilbk     ,Steile bank                               ,RWS
+4.05683,51.8041,63245.00257,424779.6652,stelldm     ,Stellendam (Zuiderdiep)                   ,RWS
+5.84167,51.13108,186812,349165.5706,stevwt      ,Stevensweert                              ,RWS
+5.11859,53.32135,137100.0179,592799.5926,stortmk     ,Stortemelk                                ,RWS
+4.08346,51.93852,65350.01326,439699.5493,suurhbg     ,Suurhofbrug                               ,RWS
+4.16254,52.03052,70959.99622,449839.934,terhdbsd    ,Ter Heide badstrand                       ,RWS
+4.16863,52.04569,71405.98759,451520.6469,terhde1     ,Ter Heide 1 km from the coast                ,RWS
+4.08725,52.10901,65949.98808,458661.6038,terhde10    ,Ter Heide 10 km from the coast               ,RWS
+4.15974,52.05235,70809.01865,452271.8726,terhde2     ,Ter Heide 2 km from the coast                ,RWS
+3.99203,52.18253,59585.00642,466961.5722,terhde20    ,Ter Heide 20 km from the coast               ,RWS
+3.89978,52.25317,53438.00215,474944.9137,terhde30    ,Ter Heide 30 km from the coast               ,RWS
+4.14142,52.06625,69578.99251,453838.8445,terhde4     ,Ter Heide 4 km from the coast                ,RWS
+3.64316,52.34482,36163.00069,485530.7971,terhde50    ,Ter Heide 50 km from the coast               ,RWS
+3.38986,52.43398,19180.00208,495893.818,terhde70    ,Ter Heide 70 km from the coast               ,RWS
+5.68926,50.79121,176300.0016,311299.6066,ternen      ,Ternaaien                                 ,RWS
+3.82549,51.34653,46200.00309,374199.7587,ternzbi20   ,Terneuzen boei 20                         ,RWS
+3.82489,51.32203,46100.0109,371474.8189,ternzltg    ,Terneuzen landtong                        ,RWS
+5.10083,53.46111,135978.3168,608359.6189,terslg10    ,Terschelling 10 km from the coast            ,RWS
+4.34194,54.14944,86688.79724,685441.805,terslg100   ,Terschelling 100 km from the coast           ,RWS
+4.04111,54.41555,67587.50959,715394.6151,terslg135   ,Terschelling 135 km from the coast           ,RWS
+3.69167,54.71917,45701.13773,749679.2543,terslg175   ,Terschelling 175 km from the coast           ,RWS
+5.02176,53.53709,130768.9433,616839.6776,terslg20    ,Terschelling 20 km from the coast            ,RWS
+3.1575,55.17222,12854.66116,801069.6378,terslg235   ,Terschelling 235 km from the coast           ,RWS
+4.94096,53.61346,125464.1831,625370.5467,terslg30    ,Terschelling 30 km from the coast            ,RWS
+5.15056,53.41528,139264.1975,603246.43,terslg4     ,Terschelling 4 km from the coast             ,RWS
+4.76694,53.7675,114095.28,642601.3329,terslg50    ,Terschelling 50 km from the coast            ,RWS
+4.60935,53.92176,103888.9746,659873.3198,terslg70    ,Terschelling 70 km from the coast            ,RWS
+4.82465,53.01957,117250.0163,559329.5519,texsm       ,Texelstroom                               ,RWS
+5.11775,52.42099,136670.014,492609.7507,uitdm       ,Uitdam                                    ,RWS
+5.56456,52.65744,167000.0093,518899.567,urk         ,Urk                                       ,RWS
+5.7689,50.99143,181800.019,333599.87,urmd        ,Urmond (monding van de Ur)                ,RWS
+4.40376,52.16837,87719.98911,464924.6017,valkbg      ,Valkenburg                                ,RWS
+5.11187,51.78004,136000.0058,421299.833,veen        ,Veen (Afgedamde Maas)                     ,RWS
+3.67306,51.54829,36110.00829,396879.8449,veerhvmd    ,Veere havenmond                           ,RWS
+3.6348,51.57578,33529.99794,399999.6983,veersgdm    ,Veersegat dam                             ,RWS
+3.66744,51.54075,35700.00367,396049.7551,veersss     ,Veere schutsluis                          ,RWS
+6.00598,51.99176,197500.021,444999.6607,velp        ,Velp                                      ,RWS
+5.67784,52.40065,174779.9884,490351.8561,velwmmdn    ,Veluwemeer middle (zwaartepunt Veluwemeer),RWS
+5.2954,52.74111,148800.0199,528199.571,ven         ,De Ven                                    ,RWS
+5.09854,51.99528,135175.0052,445249.619,viann       ,Vianen                                    ,RWS
+4.32811,51.89424,82100.01526,434499.8748,vlaardgn    ,Vlaardingen                               ,RWS
+5.1599,53.31335,139849.9948,591899.8352,vliesm      ,Vliestroom                                ,RWS
+5.17201,53.26215,140640.0076,586199.5248,vlieszd     ,Vliestroom south                           ,RWS
+3.56562,51.41199,28279.99765,381899.6216,vlissgbissvh,Vlissingen boei SSVH                      ,RWS
+3.58599,51.44952,29799.99396,386039.5323,vlissgksbg  ,Vlissingen keersluisbrug                  ,RWS
+4.35741,51.66105,83749.99962,408529.8471,volkrk02    ,Volkerak meetplaats 02                   ,RWS
+5.85417,52.54701,186675.0132,506699.7328,vossmdk0.3  ,Vossemeerdijk Km 0.3              ,RWS
+3.64056,51.56489,33900.00804,398779.5595,vrouwpdr    ,Vrouwenpolder                             ,RWS
+5.39314,52.81034,155400.0082,535899.5831,vrouwzd     ,Vrouwezand                                ,RWS
+5.01008,51.8229,129000.0183,426099.8698,vurn        ,Vuren                                     ,RWS
+5.19888,52.80481,142299.9955,535299.739,wagpd       ,Wagenpad                                  ,RWS
+3.42281,51.56157,18795.69943,398794.1188,walcrn1     ,Walcheren 1 km from the coast                ,RWS
+3.32783,51.59712,12322.48796,402930.2743,walcrn10    ,Walcheren 10 km from the coast               ,RWS
+3.41083,51.54889,17926.89187,397406.6891,walcrn2     ,Walcheren 2 km from the coast                ,RWS
+3.22056,51.65861,5095.68467,409985.06,walcrn20    ,Walcheren 20 km from the coast               ,RWS
+3.11361,51.71833,-2094.34878,416852.8483,walcrn30    ,Walcheren 30 km from the coast               ,RWS
+3.39309,51.56157,16735.3917,398850.1074,walcrn4     ,Walcheren 4 km from the coast                ,RWS
+2.89667,51.84,-16616.84812,430873.9376,walcrn50    ,Walcheren 50 km from the coast               ,RWS
+2.67917,51.95694,-31114.87583,444414.1599,walcrn70    ,Walcheren 70 km from the coast               ,RWS
+4.34672,52.16344,83810.00016,464429.8594,wassnssbsd  ,Wassenaarsche Slag badstrand              ,RWS
+5.26892,52.67638,147000.0067,520999.6911,weed        ,De Weed                                   ,RWS
+4.00385,51.52409,59000.00014,393699.6985,wemdgodsz   ,Wemeldinge oude sluizen                   ,RWS
+6.99493,53.32022,262132.9894,593837.6584,westhd      ,Westerhoofd                               ,RWS
+5.22901,53.2883,144450.0115,589099.9277,westmp      ,West Meep                                 ,RWS
+5.18403,53.28868,141450.0193,589149.9042,westmwt     ,West Meep west                            ,RWS
+3.35829,51.4099,13853.00161,382048.7577,wielgn      ,Wielingen                                 ,RWS
+6.64185,52.23708,240700.0027,472854.7142,wiene       ,Wiene                                     ,RWS
+4.94876,52.97759,125549.9915,554599.7056,wierbnd     ,Wierbalg north                            ,RWS
+6.12615,52.39194,205299.9948,489599.795,wijhe       ,Wijhe                                     ,RWS
+4.58539,52.49714,100550.0127,501349.5754,wijkazbsd   ,Wijk aan Zee badstrand                    ,RWS
+3.72057,51.60157,39540.00034,402729.8298,wisskke     ,Wissenkerke                               ,RWS
+5.56786,52.34859,167309.3462,484535.5657,woldwmdn    ,Wolderwijd middle (zwaartepunt Wolderwijd),RWS
+5.15501,53.24685,139500.0035,584499.7883,wolfshk     ,Wolfshoek                                 ,RWS
+3.81497,51.54777,45950.01326,396599.7286,wolpdk      ,Wolphaartsdijk                            ,RWS
+4.10091,51.48097,65649.98666,388779.5289,yerskvwtps  ,Yerseke verwaterplaats                    ,RWS
+3.9167,51.54972,53010.00486,396669.6433,zandkk      ,Zandkreek                                 ,RWS
+3.86204,51.54165,49200.00533,395849.7134,zandksbnn   ,Zandkreeksluis binnen                     ,RWS
+4.53087,52.38441,96699.98879,488849.7216,zandvbsd    ,Zandvoort badstrand                       ,RWS
+4.2669,51.37589,77000.00151,376899.9271,zandvt      ,Zandvliet                                 ,RWS
+7.00623,53.3186,262890.0091,593674.5615,zeehvknmdg  ,Zeehavenkanaal monding                    ,RWS
+3.89114,51.62968,51420.0049,405599.7359,zierzdvl    ,Zierikzee De Val                          ,RWS
+4.68768,52.44462,107440.0082,495434.7572,zijknlb     ,Zijkanaal B                               ,RWS
+4.69351,52.42007,107810.0121,492699.7175,zijknlc     ,Zijkanaal C                               ,RWS
+4.09698,51.64472,65700.02316,406999.8682,zijpe       ,Zijpe                                     ,RWS
+6.13265,53.42941,204549.9951,605049.6166,zoutkplg    ,Zoutkamperlaag                            ,RWS
+6.07923,53.4751,200950.0101,610099.9073,zoutkplzgt  ,Zoutkamperlaag zeegat                     ,RWS
+4.03383,51.4127,60850.01778,381269.9206,zuidgbi44   ,Zuidergat boei 44                         ,RWS
+4.71769,51.74286,108760.0088,417339.9262,zuidhvn     ,Zuidhaven (Km 976.6)               ,RWS
+5.70013,52.60234,176199.9913,512799.7396,zuidmdk     ,Zuidermeerdijk                            ,RWS
+6.45218,53.48316,225699.9955,611299.5586,zuidolwnot  ,Zuid Oost Lauwers northeast               ,RWS
+6.4359,53.49499,224600.0035,612599.7615,zuidolwnwt  ,Zuid Oost Lauwers northwest               ,RWS
+6.51349,53.44914,229828.9979,607575.56,zuidolwot   ,Zuid Oost Lauwers east                    ,RWS
+5.24456,53.12029,145450.0004,570399.5436,zuidork     ,Zuideastrak                               ,RWS
+5.27223,53.10684,147299.998,568899.7958,zuidorzd    ,Zuideastrak south                          ,RWS
+6.18922,52.14256,209900.0137,461899.757,zutpn       ,Zutphen                                   ,RWS
+5.83315,52.5647,185236.9992,508658.9247,zwaan       ,De Zwaan                                  ,RWS
+5.61981,53.32187,170500.0108,592849.9037,zwarthn     ,Zwarte Haan                               ,RWS
+2.472,51.18283,-48794.26344,358891.3225,105,Station NR-105,MUMM
+2.59833,51.15367,-40089.51654,355303.1684, 115_A,Station NR-115A,MUMM
+2.688,51.181,-33706.70067,358106.8046,120,Station NR-120,MUMM
+2.84,51.22,-22931.77695,362062.1802,130,Station NR-130,MUMM
+2.96817,51.28383,-13745.84604,368856.2417,131,Station NR-131,MUMM
+3.32627,51.40955,11624.45632,382071.7759, 150B,Station NR-150B,MUMM
+3.39083,51.41617,16135.61232,382682.9386,150,Station NR-150,MUMM
+2.60783,51.26966,-38934.00406,368176.1078, 215_A,Station NR-215A,MUMM
+2.83967,51.29783,-22652.88224,370718.1036,230,Station NR-230,MUMM
+3.31,51.51405,10824.26838,393726.3655,250,Station NR-250,MUMM
+2.43783,51.318,-50574.35358,374016.0432,315,Station NR-315,MUMM
+2.78783,51.41733,-25792.75105,384134.1241, 330_A,Station NR-330A,MUMM
+2.4295,51.47875,-50429.69197,391912.7167,421,Station NR-421,MUMM
+2.755,51.55517,-27521.91289,399543.6562,435,Station NR-435,MUMM
+3.0455,51.7205,-6791.62592,417243.0696,545,Station NR-545,MUMM
+2.22101,51.37317,-65414.30663,380782.5466,700,Station NR-700,MUMM
+3.31133,51.37933,10490.08521,378740.6043, 702N,Station NR-702N,MUMM
+3.3101,51.3767,10395.90475,378450.303,702,Station NR-702,MUMM
+3.1245,51.41967,-2374.21033,383613.0141, 710_A,Station NR-710A,MUMM
+2.84,51.8325,-20549.75736,430175.1998,800,Station NR-800,MUMM
+2.16316,51.24838,-70053.20112,367086.2256, AMO_3,Station AMO3,MUMM
+1.33097,50.50022,-132720.2361,286837.4343, AMO_4,Station AMO4,MUMM
+1.6786,50.9834,-105355.5032,339239.338, AMO_5,Station AMO5,MUMM
+1.36667,51.91667,-121513.265,444115.8282, HAR,Station HAR,MUMM
+2.56,51.63334,-40701.49954,408742.1082, MH_1,Station MH1,MUMM
+2.33233,51.687,-56204.0927,415345.5416, MH_2,Station MH2,MUMM
+2.10333,51.74017,-71762.35011,421945.7674, MH_3,Station MH3,MUMM
+1.87433,51.79333,-87281.67376,428595.0713, MH_4,Station MH4,MUMM
+1.645,51.8465,-102784.9511,435293.6677, MH_5,Station MH5,MUMM
+1.45317,51.86666,-115869.4127,438232.632, MH_6,Station MH6,MUMM
+1.25175,51.77007,-130338.5871,428267.5206, TH,Station TH,MUMM
+0.0594,49.61427,-229958.8246,194212.8191, UNNAMED002,Station UN-002,MUMM
+0.24323,49.78168,-215391.8201,211867.478, UNNAMED003,Station UN-003,MUMM
+0.69404,49.9248,-181947.9995,225602.2897, UNNAMED004,Station UN-004,MUMM
+0.99945,50.08322,-158988.733,241854.1342, UNNAMED005,Station UN-005,MUMM
+1.53149,50.84868,-116466.1242,324800.7058, UNNAMED006,Station UN-006,MUMM
+1.59919,50.90753,-111364.0228,331092.7555, UNNAMED007,Station UN-007,MUMM
+1.70037,51.04563,-103479.0776,346079.4105, UNNAMED008,Station UN-008,MUMM
+1.70037,51.04563,-103478.9607,346079.4046, UNNAMED009,Station UN-009,MUMM
+1.75099,51.05848,-99861.30048,347330.1457, UNNAMED010,Station UN-010,MUMM
+1.78532,51.06382,-97426.64927,347803.7431, UNNAMED011,Station UN-011,MUMM
+1.87232,51.07657,-91264.90343,348924.4375, UNNAMED012,Station UN-012,MUMM
+1.85204,51.08712,-92628.27295,350165.4665, UNNAMED013,Station UN-013,MUMM
+1.94196,51.09813,-86274.73455,351089.2437, UNNAMED014,Station UN-014,MUMM
+2.67254,51.39082,-33919.00493,381477.8395, UNNAMED036,Station UN-036,MUMM
+2.64901,51.41397,-35459.15814,384113.4197, UNNAMED047,Station UN-047,MUMM
+2.70928,51.42143,-31237.90629,384787.8591, UNNAMED049,Station UN-049,MUMM
+2.66732,51.42502,-34140.23791,385294.6179, UNNAMED051,Station UN-051,MUMM
+2.71736,51.44728,-30571.06757,387642.0137, UNNAMED056,Station UN-056,MUMM
+2.8328,51.45243,-22528.9276,387927.1499, UNNAMED057,Station UN-057,MUMM
+2.69253,51.4575,-32254.25273,388841.4944, UNNAMED058,Station UN-058,MUMM
+2.66436,51.48603,-34092.24221,392087.1387, UNNAMED059,Station UN-059,MUMM
+2.70364,51.51242,-31257.392,394919.6743, UNNAMED060,Station UN-060,MUMM
+3.1875,51.375,1856.72795,378511.3264,W01,W01,MUMM
+2.85833,51.225,-21632.21464,362573.3753,W02,W02,MUMM
+2.66667,51.16833,-35250.15737,356753.8643,W03,W03,MUMM
+3.2525,51.41833,6522.23977,383196.4893,W04,W04,MUMM
+2.80833,51.41667,-24369.93326,384009.6793,W05,W05,MUMM
+2.46833,51.26333,-48692.49699,367852.0155,W06,W06,MUMM
+3.00833,51.58333,-9857.51499,402071.5602,W07,W07,MUMM
+2.35,51.45833,-56043.90807,389869.8602,W08,W08,MUMM
+2.7,51.75,-30534.49051,421348.317,W09,W09,MUMM
+2.41667,51.68333,-50392.46178,414696.5462,W10,W10,MUMM
+2.7,51.33333,-32244.1754,375014.9542,ZG01,ZG01,MUMM
+2.5,51.33333,-46175.34575,375547.405,ZG02,ZG02,MUMM
+2.66627,51.26167,-34891.22958,367132.9534,ZG03,ZG03,MUMM
+4.03867,54.414,67425.53655,715224.7557,OYSTER,Oyster Ground SmartBuoy,CEFAS
+1.024,51.5235,-147684.2708,401788.7123,WARP,Warp NMMP SmartBuoy,CEFAS
+2.08283,51.98034,-71962.75673,448710.8958,WESTGAB,West Gabbard SmartBuoy,CEFAS
+4.238689262,51.40268871,75083,379912,ANKA,Antwerps Kanaalpand,HMCZ
+4.399923284,51.22749864,86038,360259,ANTW,Antwerpen,HMCZ
+4.102371256,51.36583797,65526,375971,BAAL,Baalhoek,HMCZ
+4.209993201,51.39914832,73080,379550,BATH,Bath,HMCZ
+4.210080091,51.39967958,73087,379609,BAT1,Bath (golfbaak),HMCZ
+4.209993201,51.39914832,73080,379550,BAT2,Bath (golfbaak),HMCZ
+4.231179145,51.42511513,74600,382415,BBDT,Bathsebrug Spuikanaal,HMCZ
+4.161636453,51.5140398,69930,392386,BDSL,Bergsediepsluis West,HMCZ
+3.621746162,51.76652474,33140,421239,BG2,Brouwershavensche Gat 2,HMCZ
+3.814718143,51.74643758,46410,418699,BG8,Brouwershavensche Gat 8,HMCZ
+3.974293818,51.73870717,57412,417613,BOM1,Bommenede,HMCZ
+3.75788437,51.41139012,41652,381517,BORS,Borssele,HMCZ
+3.565095844,51.39845813,28206,380396,BRES,Breskens handelshaven,HMCZ
+3.825838953,51.74858201,47183,418921,BRBU,Brouwerssluis Buiten,HMCZ
+3.82737233,51.74821586,47288,418878,BRBI,Brouwerssluis Binnen,HMCZ
+4.375474059,51.596667,84900,401350,BSAS,Bovensas,HMCZ
+3.379175349,51.37998391,15214,378681,CADZ,Cadzand,HMCZ
+3.379175349,51.37998391,15214,378681,CAWI,Cadzand Wind,HMCZ
+3.369665017,51.39166088,14588,379998,CADW,Cadzand (directional waverider),HMCZ
+3.2420398,51.50269972,6071,392601,DEUR,Deurloo (directional waverider),HMCZ
+3.399064721,51.61943015,17325,405275,DORA,Domburger Rassen (waverider),HMCZ
+4.377835602,51.65268979,85150,407580,DSAS,Dintelsas,HMCZ
+3.854869924,51.86272161,49455,431575,HA10,Haringvliet 10,HMCZ
+3.997515645,51.44576777,58394,384996,HANS,Hansweert,HMCZ
+3.997515645,51.44576777,58394,384996,HAWI,Hansweert Wind,HMCZ
+3.993549673,51.44655652,58120,385089,HAN1,Hansweert (golfbaak),HMCZ
+4.148628199,51.67890427,69339,410741,HEVW,Grevelingendam Hevel West,HMCZ
+3.672339418,51.37791473,35614,377930,HFPL,Hoofdplaat,HMCZ
+3.67291647,51.37440796,35645,377539,HFP1,Hoofdplaat (golfbaak),HMCZ
+4.298589696,51.26781982,79027,364845,KALO,Kallo,HMCZ
+3.865273569,51.54396946,49430,396103,KATS,Sluis Kats Buiten,HMCZ
+3.966161934,51.60682894,56564,402954,KEET,Keeten (waverider),HMCZ
+3.834862165,51.29453493,46730,368402,KGTB,Sluiskil,HMCZ
+3.807424939,51.23033534,44662,361302,KGTS,Brug Sas van Gent,HMCZ
+3.821137537,51.32559189,45847,371877,KLGT,Kanaal Gent-Terneuzen,HMCZ
+4.159491308,51.65851386,70052,408460,KRBL,Krammersluizen Laagbekken,HMCZ
+4.142359658,51.6591959,68868,408556,KRSL,Krammersluizen West,HMCZ
+4.285836407,51.29641212,78185,368039,LIEF,Liefkenshoek,HMCZ
+4.19225185,51.47951383,71992,388510,MRG,Marollegat,HMCZ
+3.480328946,51.64328696,23021,407778,OS11,Oosterschelde 11,HMCZ
+3.676931214,51.7200096,36827,415974,OS14,Oosterschelde 14,HMCZ
+3.693952672,51.65587819,37837,408813,OS4,Oosterschelde 4,HMCZ
+3.966837193,51.40814434,56180,380852,OVHA,Overloop van Hansweert,HMCZ
+4.137882382,51.67321666,68585,410121,PLOT,Plaat van Oude-Tonge,HMCZ
+4.237930299,51.3483758,74935,373871,PROS,Prosperpolder,HMCZ
+3.686503683,51.61907204,37226,404731,RPBI,Roompot Binnen,HMCZ
+3.682224617,51.61956714,36931,404793,RPBU,Roompot Buiten,HMCZ
+3.808851791,51.35144358,45053,374771,PVT1,Pas van Terneuzen (waverider),HMCZ
+3.306661458,51.74666448,11332,419605,SCHB,Schouwenbank (directional waverider),HMCZ
+3.30199994,51.40276991,9915,381366,SCHO,Scheur Oost (waverider),HMCZ
+3.048050232,51.39337325,-7784,380857,SCHW,Scheur West (waverider),HMCZ
+4.225841281,51.46305157,74296,386641,SPUI,Inloop Bathse Spuikanaal,HMCZ
+4.006010623,51.59540398,59300,401630,STAV,Stavenisse,HMCZ
+4.164992522,51.37786542,69909,377234,SVDN,Schaar van de Noord,HMCZ
+3.819895084,51.33630043,45786,373070,TERN,Terneuzen,HMCZ
+3.816212327,51.32778208,45509,372128,TNWS,Terneuzen Westsluis,HMCZ
+3.824563563,51.31729505,46066,370949,TWKZ,Terneuzen Westsluis kanaalzijde,HMCZ
+3.812643105,51.33766801,45284,373233,TWZZ,Terneuzen Westsluis kanaalzijde,HMCZ
+4.316628367,51.65296398,80915,407671,VK,Volkerak Galathea,HMCZ
+3.597398145,51.44295834,30575,385290,VLIS,Vlissingen,HMCZ
+3.862659132,51.54368365,49248,396075,VM3,Veersemeer 3 (Sluis Kats binnen),HMCZ
+3.700256984,51.5164766,37914,393297,VM4,Veersemeer 4 (Oranjeplaat),HMCZ
+3.643262318,51.58156589,34132,400630,VM5,Veersemeer 5 (Schotsman / Ruiteplaat),HMCZ
+4.407151733,51.69632916,87244,412407,VOLK,Volkerak Spuisluis Noord,HMCZ
+4.201374535,51.58519682,72817,400256,VOSM,Vossemeer,HMCZ
+3.242049487,51.50371592,6075,392714,VR,Vlakte van de Raan,HMCZ
+4.026206102,51.39842427,60290,379692,WALS,Walsoorden,HMCZ
+3.707418011,51.428331,38185,383481,WCT1,Westerschelde Container Terminal waverider (waverider),HMCZ
+3.411999247,51.42724399,17641,383875,WIEL,Wielingen (waverider),HMCZ
+3.439887059,51.52144282,19860,394300,WKAP,Westkapelle,HMCZ
+4.072059135,51.50824702,63701,391850,YE,Yerseke,HMCZ
+3.865700672,51.54197925,49455,395881,ZKD,Zandkreekdam doorlaatmiddel (Katse Heule),HMCZ
+1.533333302,50.9,-116036.1311,330497.7199,AMO_6,Station AMO6,MUMM
+1.9,51.13333511,-89025.05738,355141.8289,AMO_7,Station AMO7,MUMM
+1.680148005,51.03991699,-104928.103,345515.9589,AMO_8,Station AMO8,MUMM
+2.0828,51.9803,-71965.22202,448707.1832,WGAB,Station WGAB,MUMM
+2.9775,51.4902,-12336.55307,391780.7931,340,Station 340,MUMM
+1.053166628,53.53133392,-132282.3438,624801.25,DOWSING,Station DOWSING,CEFAS
+5.40590143203735, 53.1742858886719, 156250, 576400,harlgvhvn,Station Harlgvhvn,RWS
+4.09039306640625, 51.9754524230957, 65900, 443800,beerknmdn, Station beerknmdn,RWS

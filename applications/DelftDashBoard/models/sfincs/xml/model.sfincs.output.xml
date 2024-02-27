@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <position>150 130 80 20</position>
+    <tooltipstring>Edit map output interval (in seconds)</tooltipstring>
+    <text>Map output interval</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.model.sfincs.domain(ad).input.dtout</variable>
+  </element>  
+  <element>
+    <style>edit</style>
+    <position>150 105 80 20</position>
+    <tooltipstring>Edit history output interval (in seconds)</tooltipstring>
+    <text>His output interval</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.model.sfincs.domain(ad).input.dthisout</variable>
+  </element>  
+  <element>
+    <style>popupmenu</style>
+    <position>150 80 80 20</position>
+    <text>Output Format</text>
+    <variable>handles.model.sfincs.domain(ad).input.outputformat</variable>
+    <type>string</type>
+    <listtext>Binary</listtext>
+    <listtext>ASCII</listtext>
+    <listvalue>bin</listvalue>
+    <listvalue>asc</listvalue>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>310 130 80 20</position>
+    <tooltipstring>Edit zs file</tooltipstring>
+    <text>Zs File</text>
+    <textposition>left</textposition>
+    <type>string</type>
+    <variable>handles.model.sfincs.domain(ad).input.zsfile</variable>
+  </element>  
+  <element>
+    <style>edit</style>
+    <position>310 105 80 20</position>
+    <tooltipstring>Edit Hmax file</tooltipstring>
+    <text>Hmax File</text>
+    <textposition>left</textposition>
+    <type>string</type>
+    <variable>handles.model.sfincs.domain(ad).input.hmaxfile</variable>
+  </element>  
+  <element>
+    <style>edit</style>
+    <position>310 80 80 20</position>
+    <tooltipstring>Edit Vmax file</tooltipstring>
+    <text>Vmax File</text>
+    <textposition>left</textposition>
+    <type>string</type>
+    <variable>handles.model.sfincs.domain(ad).input.vmaxfile</variable>
+  </element>  
+  <element>
+    <style>pushselectfile</style>
+    <position>400 130 80 20</position>
+    <tooltipstring>Select observation points file</tooltipstring>
+    <text>Obs File</text>
+    <variable>handles.model.sfincs.domain(ad).input.obsfile</variable>
+    <extension>*.obs</extension>
+    <selectiontext>Select observation points file</selectiontext>
+  </element>
+</root>

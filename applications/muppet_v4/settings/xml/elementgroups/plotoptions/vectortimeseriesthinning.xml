@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <variable>thinning</variable>
+    <type>int</type>
+    <style>edit</style>
+    <position>60 10 40 20</position>
+    <text>Thinning</text>
+  </element>
+</root>

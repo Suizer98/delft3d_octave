@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>listbox</style>
+    <text>Available Databases</text>
+    <textposition>above-center</textposition>
+    <variable>handles.toolbox.bathymetry.activeDataset</variable>
+    <type>integer</type>
+    <position>10 10 250 105</position>
+    <tooltipstring>Select bathymetry database</tooltipstring>
+    <onchange>ddb_BathymetryToolbox_export</onchange>
+    <option1>selectdataset</option1>
+    <listtext>
+      <variable>handles.bathymetry.longNames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>270 95 120 20</position>
+    <text>Draw Rectangle</text>
+    <callback>ddb_BathymetryToolbox_fillcache</callback>
+    <option1>drawrectangle</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>270 70 120 20</position>
+    <text>Delete Rectangle</text>
+    <callback>ddb_BathymetryToolbox_fillcache</callback>
+    <option1>deleterectangle</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>270 45 120 20</position>
+    <text>FILL CACHE</text>
+    <callback>ddb_BathymetryToolbox_fillcache</callback>
+    <option1>fillcache</option1>
+    <tooltipstring>Fill bathymetry cache with data inside rectangle</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.bathymetry.rectanglex0</variable>
+        <type>real</type>
+        <value>isempty</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>410 25 350 95</position>
+  </element>
+  <element>
+    <style>text</style>
+    <position>420 95 500 20</position>
+    <text>You can accelerate the use of Delft Dashboard by pre-downloading</text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>420 75 500 20</position>
+    <text>the bathymetry tiles into the Delft Dashboard cache folder. Draw a</text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>420 55 500 20</position>
+    <text>rectangle to indicate the area for which you want to download all</text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>420 35 500 20</position>
+    <text>zoomlevels of the selected bathymetry dataset.</text>
+  </element>
+</root>

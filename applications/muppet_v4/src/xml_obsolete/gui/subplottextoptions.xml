@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<root>
+  <title>Subplot Text Options</title>
+  <width>300</width>
+  <height>200</height>
+  <element>
+    <style>edit</style>
+    <position>60 160 220 20</position>
+    <variable>subplottext.string</variable>
+    <type>string</type>
+    <text>Text</text>
+  </element>
+  <element>
+    <style>selectfont</style>
+    <position>200 130 50 20</position>
+    <variable>subplottext.font</variable>
+  </element>
+  <element>
+    <variable>subplottext.position</variable>
+    <type>string</type>
+    <style>popupmenu</style>
+    <position>60 130 130 20</position>
+    <listtext>upper-left</listtext>
+    <listtext>upper-right</listtext>
+    <listtext>lower-left</listtext>
+    <listtext>lower-right</listtext>
+    <text>Position</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>140 100 50 20</position>
+    <variable>subplottext.horizontalmargin</variable>
+    <type>real</type>
+    <text>Horz Margin (cm)</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>140 70 50 20</position>
+    <variable>subplottext.verticalmargin</variable>
+    <type>real</type>
+    <text>Vert Margin (cm)</text>
+  </element>
+  <element>
+    <tag>cancel</tag>
+    <style>pushcancel</style>
+    <position>140 20 60 20</position>
+  </element>
+  <element>
+    <tag>ok</tag>
+    <style>pushok</style>
+    <position>210 20 70 20</position>
+  </element>
+</root>

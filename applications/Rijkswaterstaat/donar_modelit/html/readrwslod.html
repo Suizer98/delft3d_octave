@@ -1,0 +1,55 @@
+<html>
+   <header>
+      
+      <title>set_taxis</title>
+      <meta name="generator" content="MATLAB 7.7">
+      <meta name="date" content="2011Dec06">
+      <meta name="m-file" content="readrwslod">
+      <link type="text/css" rel="stylesheet" href="./toolbox.css">
+      
+   </header>
+   <body>
+      
+      <hr>
+      <div>
+         <h2>Function readrwslod</h2><pre>  Scan or read rwslod data file using mex file
+ 
+  </pre><h2>CALL:</h2><pre>   locs = readrwslod(fname)       (scan file)
+   locs = readrwslod(fname, locs) (read file)
+ 
+  </pre><h2>INPUT:</h2><pre>   fname: String, name of rwslod file. If this is the only input argument,
+          the output argument will only contain the header data.
+   locs:  Struct array, this value must be equal to or a subset of the 
+          output of an earlier call to readrwslod. It tells the function 
+          which data to retrieve from file.
+ 
+  </pre><h2>OUTPUT:</h2><pre>   locs: Struct array
+         If called with only filename (scanning mode), readrewslod will
+         only return the header fields. A struct array with the following
+         fields is returned:
+         +----longdate (double)
+         +----sLoccod (char array)
+         +----raailocatie (double array)
+         +----aantal (double)
+         +----marker (double)
+ 
+         If called with 2 argumenets (read mode) a more elaborate struct
+         array is returned:
+         +----longdate (double)
+         +----sLoccod (char array)
+         +----raailocatie (double array)
+         +----aantal (double)
+         +----marker (double)
+         +----xy (int32 array)
+         +----z (int32 array)
+         +----lBegdat (double)
+         +----iBegtyd (double)
+         +----lEnddat (double)
+         +----iEndtyd (double)
+ 
+  </pre><h2>EXAMPLE:</h2><pre></pre><pre class="codeinput">       locs = readrwslod(fname);
+       data = readrwslod(fname,locs(2:2:end));</pre><pre></pre><h2>See also:</h2><pre></pre><a href="readqinsy.html">readqinsy</a><br></div>
+      <hr>
+      
+   </body>
+</html>

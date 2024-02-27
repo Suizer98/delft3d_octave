@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>45 10 250 160</position>
+    <text>Geographical space</text>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>55 110</position>
+    <text>(SWAN 40.01/Second-order 40.11)</text>
+    <type>string</type>
+    <variable>handles.model.delft3dwave.domain.order</variable>
+    <value>First</value>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>55 55</position>
+    <text>Third-order (not yet operational)</text>
+    <type>string</type>
+    <variable>handles.model.delft3dwave.domain.order</variable>
+    <value>Third</value>
+    <enable>0</enable>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>305 10 250 160</position>
+    <text>Spectral space</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>360 110 50 20</position>
+    <text>CDD : </text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.dirspacecdd</variable>
+    <type>real</type>
+    <tooltipstring>Enter directional space</tooltipstring>
+  </element>
+  <element>
+    <style>text</style>
+    <position>420 110</position>
+    <text>[-] (0.0-1.0)</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>360 85 50 20</position>
+    <text>CSS : </text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.freqspacecss</variable>
+    <type>real</type>
+    <tooltipstring>Enter spectral space</tooltipstring>
+  </element>
+  <element>
+    <style>text</style>
+    <position>420 85</position>
+    <text>[-] (0.0-1.0)</text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>310 60</position>
+    <text>CDD and CSS determine the numerical scheme </text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>310 35</position>
+    <text>0 = central, 1 = upwind </text>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>565 10 400 160</position>
+    <text>Accuracy criteria (to terminate the iterative computations)</text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>570 130</position>
+    <text>Relative change : </text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>640 105 50 20</position>
+    <text>HS-Tm01 : </text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.rchhstm01</variable>
+    <type>real</type>
+    <tooltipstring>Enter HS-Tm01</tooltipstring>
+  </element>
+  <element>
+    <style>text</style>
+    <position>700 105</position>
+    <text>[-]</text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>570 80</position>
+    <text>Relative change w.r.t. mean value : </text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>640 55 50 20</position>
+    <text>Hs : </text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.rchmeanhs</variable>
+    <type>real</type>
+    <tooltipstring>Enter change in significant wave height</tooltipstring>
+  </element>
+  <element>
+    <style>text</style>
+    <position>700 55</position>
+    <text>[-]</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>640 30 50 20</position>
+    <text>Tm01 : </text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.rchmeantm01</variable>
+    <type>real</type>
+    <tooltipstring>Enter tm01</tooltipstring>
+  </element>
+  <element>
+    <style>text</style>
+    <position>700 30</position>
+    <text>[-]</text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>800 130</position>
+    <text>Percentage of wet grid points : </text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>800 105 50 20</position>
+    <text>[%]</text>
+    <textposition>right</textposition>
+    <variable>handles.model.delft3dwave.domain.percwet</variable>
+    <type>real</type>
+    <tooltipstring>Enter HS-Tm01</tooltipstring>
+  </element>
+  <element>
+    <style>text</style>
+    <position>800 80</position>
+    <text>Maximum number of iterations : </text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>800 55 50 20</position>
+    <variable>handles.model.delft3dwave.domain.maxiter</variable>
+    <type>integer</type>
+    <tooltipstring>Enter maximum number of iterations</tooltipstring>
+  </element>
+</root>

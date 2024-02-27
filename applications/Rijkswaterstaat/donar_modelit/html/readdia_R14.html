@@ -1,0 +1,40 @@
+<html>
+   <header>
+      
+      <title>set_taxis</title>
+      <meta name="generator" content="MATLAB 7.7">
+      <meta name="date" content="2011Dec06">
+      <meta name="m-file" content="readdia_R14">
+      <link type="text/css" rel="stylesheet" href="./toolbox.css">
+      
+   </header>
+   <body>
+      
+      <hr>
+      <div>
+         <h2>Function readdia_R14</h2><pre>  Read a DIA file to a Matlab structure.
+  
+  </pre><h2>CALL:</h2><pre>   data = readdia_R14(fname)
+  
+  </pre><h2>INPUT:</h2><pre>   fname: String with the name of the DIA file to be read.
+  
+  </pre><h2>OUTPUT:</h2><pre>   data: Structure (empty on error), with fields:
+         +----IDT                  
+         |    +----sFiltyp (char)  
+         |    +----sSyscod (char)  
+         |    +----lCredat (double)
+         |    +----sCmtrgl (char)  
+         +----blok                 
+              +----W3H (struct): see emptyW3H
+              +----MUX (struct): empty, see emptyMUX
+              +----TYP (struct): empty  
+              +----RGH (struct): empty, see emptyRGH
+              +----RKS (struct): see emptyRKS    
+              +----TPS (struct): empty, see emptyTPS    
+              +----WRD (struct): see emptyWRD  
+  
+  </pre><h2>See also:</h2><pre></pre><a href="writedia_R14.html">writedia_R14</a><br></div>
+      <hr>
+      
+   </body>
+</html>

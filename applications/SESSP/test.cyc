@@ -1,0 +1,16 @@
+# Tropical Cyclone Toolbox - DelftDashBoard v2.02.13673 - 2020-09-23 09:37:12 
+Name                   "KATRINA" 
+WindProfile            holland2010 
+WindPressureRelation   holland2008 
+RMaxRelation           gross2004 
+Backgroundpressure     1012 
+PhiSpiral              20 
+WindConversionFactor   0.9 
+SpiderwebRadius        1000 
+NrRadialBins           500 
+NrDirectionalBins      36 
+#
+#   Date   Time       Lat      Lon   Vmax (kts)   Pc (hPa)  Rmax (NM)  R35(NE)  R35(SE)  R35(SW)  R35(NW)  R50(NE)  R50(SE)  R50(SW)  R50(NW)  R65(NE)  R65(SE)  R65(SW)  R65(NW) R100(NE) R100(SE) R100(SW) R100(NE) 
+#
+20140129 120000    -1200000.0  0.00        120.0     -999      20.0   150.0   -999.0   -999.0   -999.0   -999.0   -999.0   -999.0   -999.0   -999.0   -999.0   -999.0   -999.0   -999.0   -999.0   -999.0   -999.0 
+20140202 060000      600000.0  0.00        120.0     -999      20.0   150.0   -999.0   -999.0   -999.0   -999.0   -999.0   -999.0   -999.0   -999.0   -999.0   -999.0   -999.0   -999.0   -999.0   -999.0   -999.0 

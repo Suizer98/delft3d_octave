@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <variable>rightaxis</variable>
+    <type>boolean</type>
+    <style>checkbox</style>
+    <position>10 0 50 20</position>
+    <text>Right Axis</text>
+  </element>
+</root>

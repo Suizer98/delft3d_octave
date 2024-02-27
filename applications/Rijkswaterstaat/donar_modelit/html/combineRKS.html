@@ -1,0 +1,33 @@
+<html>
+   <header>
+      
+      <title>set_taxis</title>
+      <meta name="generator" content="MATLAB 7.7">
+      <meta name="date" content="2011Dec06">
+      <meta name="m-file" content="combineRKS">
+      <link type="text/css" rel="stylesheet" href="./toolbox.css">
+      
+   </header>
+   <body>
+      
+      <hr>
+      <div>
+         <h2>Function combineRKS</h2><pre>  Combine two or more RKS (Reeksadministratie) blocks.
+  
+  </pre><h2>CALL:</h2><pre>   RKS = combineRKS(oldRKS, newRKS)
+  
+  </pre><h2>INPUT:</h2><pre>   oldRKS: Struct or struct array with one or more existing RKS blocks.
+   newRKS: Struct or struct array with RKS block to be added.
+  
+  </pre><h2>OUTPUT:</h2><pre>   RKS: Structure with combined RKS blocks.
+    
+  </pre><h2>APPROACH:</h2><pre>   The period is extended from first to last observation.
+   There are two different ways to call this function:
+   1. incremental: 1 RKS is added.
+   2. parallel: A struct array of RKS blocks is added.
+  
+  </pre><h2>See also:</h2><pre></pre><a href="emptyRKS.html">emptyRKS</a><br></div>
+      <hr>
+      
+   </body>
+</html>

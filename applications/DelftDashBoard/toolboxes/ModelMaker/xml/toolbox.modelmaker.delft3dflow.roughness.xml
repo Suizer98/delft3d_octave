@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <position>100 105 50 20</position>
+    <text>Land Elevation</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.roughness.landelevation</variable>
+    <tooltipstring>Elevation of dry land</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>100 80 50 20</position>
+    <text>Land Roughness</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.roughness.landroughness</variable>
+    <tooltipstring>Roughness on land</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>100 55 50 20</position>
+    <text>Sea Roughness</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.roughness.searoughness</variable>
+    <tooltipstring>Roughness on open water</tooltipstring>
+  </element>
+  <element>
+    <style>text</style>
+    <position>20 30 200 20</position>
+    <prefix>Roughness type : </prefix>
+    <type>string</type>
+    <variable>handles.model.delft3dflow.domain(ad).roughnessType</variable>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>870 10 100 20</position>
+    <text>GENERATE</text>
+    <callback>ddb_ModelMakerToolbox_Delft3DFLOW_roughness</callback>
+    <option1>generateroughness</option1>
+    <tooltipstring>Generate model roughness</tooltipstring>
+  </element>
+</root>

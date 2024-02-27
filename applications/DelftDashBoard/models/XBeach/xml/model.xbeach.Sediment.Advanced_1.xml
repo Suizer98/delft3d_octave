@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>checkbox</style>
+    <text>sws</text>
+    <position>70.000,107.500</position>
+    <tooltipstring>1 = short wave & roller stirring and undertow, 0 = no short wave & roller stirring and undertow [-]</tooltipstring>
+    <variable>handles.model.xbeach.domain.sws</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>1 = long wave stirring, 0 = no long wave stirring [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>lws</text>
+    <position>70.000,80.000</position>
+    <variable>handles.model.xbeach.domain.lws</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Calibration factor surface slope [-]</tooltipstring>
+    <style>edit</style>
+    <text>BRfac</text>
+    <position>70.000,52.500,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.BRfac</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Factor bedslope effect [-]</tooltipstring>
+    <style>edit</style>
+    <text>facsl</text>
+    <position>70.000,25.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.facsl</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Zero flow velocity level in Soulsby van Rijn (1997) sed.conc. expression [m]</tooltipstring>
+    <style>edit</style>
+    <text>z0</text>
+    <position>230.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.z0</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Being tested: maximum Shields parameter for ceq Diane Foster [-]</tooltipstring>
+    <style>edit</style>
+    <text>smax</text>
+    <position>230.000, 80.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.smax</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Coefficient determining Ts = tsfac * h/ws in sediment source term [-]</tooltipstring>
+    <style>edit</style>
+    <text>tsfac</text>
+    <position>230.000, 52.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.tsfac</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Calibration factor time averaged flows due to wave skewness and asymmetry [-]</tooltipstring>
+    <style>edit</style>
+    <text>facua</text>
+    <position>230.000, 25.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.facua</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Calibration factor time averaged flows due to wave skewness [-]</tooltipstring>
+    <style>edit</style>
+    <text>facSk</text>
+    <position>390.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.facSk</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Calibration factor time averaged flows due to wave asymmetry [-]</tooltipstring>
+    <style>edit</style>
+    <text>facAs</text>
+    <position>390.000, 80.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.facAs</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Switch 0/1 to activate turbulence advection model for short and or long wave turbulence [-]</tooltipstring>
+    <style>popupmenu</style>
+    <text>turbadv</text>
+    <position>390.000, 52.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.turbadv</variable>
+    <type>string</type>
+    <listtext>none</listtext>
+    <listtext>lagrangian</listtext>
+    <listtext>eulerian</listtext>
+  </element>
+  <element>
+    <tooltipstring>Switch to include short wave turbulence: [-]</tooltipstring>
+    <style>popupmenu</style>
+    <text>turb</text>
+    <position>390.000, 25.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.turb</variable>
+    <type>string</type>
+    <listtext>none</listtext>
+    <listtext>wave_averaged</listtext>
+    <listtext>bore_averaged</listtext>
+  </element>
+  <element>
+    <tooltipstring>Calibration factor for bore interval Tbore: Tbore = Tbfac*Tbore [-]</tooltipstring>
+    <style>edit</style>
+    <text>Tbfac</text>
+    <position>550.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.Tbfac</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Minimum adaptation time scale in advection diffusion equation sediment [s]</tooltipstring>
+    <style>edit</style>
+    <text>Tsmin</text>
+    <position>550.000, 80.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.Tsmin</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Switch 0/1 long wave turbulence [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>lwt</text>
+    <position>550.000, 52.500</position>
+    <variable>handles.model.xbeach.domain.lwt</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Dissipation parameter long wave breaking turbulence [-]</tooltipstring>
+    <style>edit</style>
+    <text>betad</text>
+    <position>550.000, 25.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.betad</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Calibration factor for suspensions transports [0..1] [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>sus</text>
+    <position>710.000,107.500</position>
+    <variable>handles.model.xbeach.domain.sus</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Calibration factor for bed transports [0..1] [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>bed</text>
+    <position>710.000, 80.000</position>
+    <variable>handles.model.xbeach.domain.bed</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Option to compute bedload and suspended load seperately; 0 = seperately, 1 = bulk (as in previous versions) [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>bulk</text>
+    <position>710.000, 52.500</position>
+    <variable>handles.model.xbeach.domain.bulk</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Option to control sediment diffusion coefficient [0..1] [-]</tooltipstring>
+    <style>edit</style>
+    <text>facDc</text>
+    <position>710.000, 25.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.facDc</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Option to mimic turbulence production near revetments [0..1] [-]</tooltipstring>
+    <style>edit</style>
+    <text>jetfac</text>
+    <position>870.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.jetfac</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Coefficient determining whether upwind (1) or central scheme (0.5) is used. [-]</tooltipstring>
+    <style>edit</style>
+    <text>thetanum</text>
+    <position>870.000, 80.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.thetanum</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>In suspended transport use source-sink terms to calculate bed level change (1) or sus transport gradients (0) [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>sourcesink</text>
+    <position>870.000, 52.500</position>
+    <variable>handles.model.xbeach.domain.sourcesink</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Maximum allowed sediment concentration [-]</tooltipstring>
+    <style>edit</style>
+    <text>cmax</text>
+    <position>870.000, 25.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.cmax</variable>
+    <type>real</type>
+  </element>
+</root>

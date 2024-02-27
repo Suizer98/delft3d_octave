@@ -1,0 +1,10 @@
+ LT run  :D:\2010\Unibest\0_LTcomputations\IJM5R04
+ profile :D:\2010\Unibest\0_LTcomputations\R5M1019
+ waves   :D:\2010\Unibest\0_LTcomputations\R5M1019
+ coef.Qs :DEF_R04.CFS                             
+ coef.Hs :D:\2010\Unibest\0_LTcomputations\DEFAULT
+ ray     :D:\2010\Unibest\0_LTcomputations\R5M1019
+    equi      c1     c2   h0    angle   fshape
+    9.87 -0.0480 0.0163 10.0   283.33     0.38
+       Xb      2 %      20%      50%      80%     100%
+   -559.6   -389.4   -233.8   -133.2    -72.3      7.3

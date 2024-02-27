@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <position>80 110 30 20</position>
+    <tooltipstring>Number of refinement steps</tooltipstring>
+    <text>Nr Steps</text>
+    <textposition>left</textposition>
+    <type>int</type>
+    <variable>handles.toolbox.modelmaker.dflowfm.nr_refinement_steps</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>80 80 30 20</position>
+    <tooltipstring>Edit maximum time step</tooltipstring>
+    <text>dT Max</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.dflowfm.dtmax</variable>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>80 50 100 20</position>
+    <tooltipstring>Refine grid</tooltipstring>
+    <text>Refine</text>
+    <callback>ddb_ModelMakerToolbox_DFlowFM_refine</callback>
+    <option1>refine</option1>
+  </element>
+
+  <element>
+    <style>pushbutton</style>
+    <position>300 110 80 20</position>
+    <text>Draw Polygon</text>
+    <callback>ddb_ModelMakerToolbox_DFlowFM_refine</callback>
+    <option1>drawpolygon</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>300 85 80 20</position>
+    <text>Delete Polygon</text>
+    <callback>ddb_ModelMakerToolbox_DFlowFM_refine</callback>
+    <option1>deletepolygon</option1>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>300 60 80 20</position>
+    <text>Load Polygon</text>
+    <variable>handles.toolbox.modelmaker.polygonFile</variable>
+    <onchange>ddb_ModelMakerToolbox_DFlowFM_refine</onchange>
+    <option1>loadpolygon</option1>
+    <showfilename>no</showfilename>
+    <extension>*.pol</extension>
+    <selectiontext>Select polygon file</selectiontext>
+    <tooltipstring>Select polygon file</tooltipstring>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>300 35 80 20</position>
+    <text>Save Polygon</text>
+    <variable>handles.toolbox.modelmaker.polygonFile</variable>
+    <onchange>ddb_ModelMakerToolbox_DFlowFM_refine</onchange>
+    <option1>savepolygon</option1>
+    <showfilename>no</showfilename>
+    <extension>*.pol</extension>
+    <selectiontext>Save polygon file</selectiontext>
+    <tooltipstring>Save polygon file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.modelmaker.polyLength</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>400 110 80 20</position>
+    <text>CLIP</text>
+    <callback>ddb_ModelMakerToolbox_DFlowFM_refine</callback>
+    <option1>clipmeshpolygon</option1>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>550 110 40 20</position>
+    <tooltipstring>Maximum elevation for clipping (cells above value will be clipped)</tooltipstring>
+    <text>Zmax</text>
+    <textposition>left</textposition>
+    <type>int</type>
+    <variable>handles.toolbox.modelmaker.clipzmax</variable>
+  </element>
+    <element>
+      <style>edit</style>
+      <position>550 85 40 20</position>
+      <tooltipstring>Minimum elevation for clipping (cells below value will be clipped)</tooltipstring>
+      <text>Zmin</text>
+      <textposition>left</textposition>
+      <type>int</type>
+      <variable>handles.toolbox.modelmaker.clipzmin</variable>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>600 110 80 20</position>
+    <text>Clip Above</text>
+    <callback>ddb_ModelMakerToolbox_DFlowFM_refine</callback>
+    <option1>clipmeshelevationabove</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>600 85 80 20</position>
+    <text>Clip Below</text>
+    <callback>ddb_ModelMakerToolbox_DFlowFM_refine</callback>
+    <option1>clipmeshelevationbelow</option1>
+  </element>
+</root>

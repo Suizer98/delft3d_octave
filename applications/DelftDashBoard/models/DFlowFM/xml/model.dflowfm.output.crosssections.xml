@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>listbox</style>
+    <position>10 10 150 115</position>
+    <tooltipstring>Select cross section</tooltipstring>
+    <text>Cross Sections</text>
+    <textposition>above-center</textposition>
+    <variable>handles.model.dflowfm.domain.activecrosssection</variable>
+    <type>integer</type>
+    <onchange>ddb_DFlowFM_crossSections</onchange>
+    <option1>selectfromlist</option1>
+    <listtext>
+      <variable>handles.model.dflowfm.domain.crosssectionnames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>170 10 180 115</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>210 95 130 20</position>
+    <text>Name</text>
+    <onchange>ddb_DFlowFM_crossSections</onchange>
+    <option1>edit</option1>
+    <tooltipstring>Edit cross section name</tooltipstring>
+    <variable>handles.model.dflowfm.domain.crosssections(handles.model.dflowfm.domain.activecrosssection).name</variable>
+    <type>string</type>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain.nrcrosssections</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>table</style>
+    <position>190 25</position>
+    <nrrows>3</nrrows>
+    <includenumbers>yes</includenumbers>
+    <includebuttons>no</includebuttons>
+    <onchange>ddb_DFlowFM_crossSections</onchange>
+    <option1>edit</option1>
+    <column>
+      <style>editreal</style>
+      <width>80</width>
+      <text>X</text>
+      <enable>1</enable>
+      <variable>handles.model.dflowfm.domain.crosssections(handles.model.dflowfm.domain.activecrosssection).x</variable>
+    </column>
+    <column>
+      <style>editreal</style>
+      <width>80</width>
+      <text>Y</text>
+      <enable>1</enable>
+      <variable>handles.model.dflowfm.domain.crosssections(handles.model.dflowfm.domain.activecrosssection).y</variable>
+    </column>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain.nrcrosssections</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>360 105 100 20</position>
+    <text>Add To Map</text>
+    <tooltipstring>Add cross section</tooltipstring>
+    <callback>ddb_DFlowFM_crossSections</callback>
+    <option1>add</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>360 80 100 20</position>
+    <text>Delete From List</text>
+    <tooltipstring>Delete cross section</tooltipstring>
+    <callback>ddb_DFlowFM_crossSections</callback>
+    <option1>deletefromlist</option1>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>580 60 70 20</position>
+    <tooltipstring>Open cross sections file</tooltipstring>
+    <text>Open</text>
+    <variable>handles.model.dflowfm.domain.crsfile</variable>
+    <extension>*_crs.pli</extension>
+    <selectiontext>Select cross sections file</selectiontext>
+    <onchange>ddb_DFlowFM_crossSections</onchange>
+    <option1>openfile</option1>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>580 35 70 20</position>
+    <tooltipstring>Save cross sections file</tooltipstring>
+    <text>Save</text>
+    <variable>handles.model.dflowfm.domain.crsfile</variable>
+    <showfilename>no</showfilename>
+    <extension>*_crs.pli</extension>
+    <selectiontext>Select cross sections file</selectiontext>
+    <onchange>ddb_DFlowFM_crossSections</onchange>
+    <option1>savefile</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain.nrcrosssections</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

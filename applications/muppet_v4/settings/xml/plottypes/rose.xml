@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<root>
+  <subplotoption>
+    <name>type</name>
+  </subplotoption>
+  <subplotoption>
+    <name>position</name>
+  </subplotoption>
+  <subplotoption>
+    <name>drawbox</name>
+  </subplotoption>
+  <subplotoption>
+    <name>titletext</name>
+  </subplotoption>
+  <subplotoption>
+    <name>titlefontname</name>
+  </subplotoption>
+  <subplotoption>
+    <name>titlefontsize</name>
+  </subplotoption>
+  <subplotoption>
+    <name>titlefontweight</name>
+  </subplotoption>
+  <subplotoption>
+    <name>titlefontangle</name>
+  </subplotoption>
+  <subplotoption>
+    <name>titlefontcolor</name>
+  </subplotoption>
+</root>

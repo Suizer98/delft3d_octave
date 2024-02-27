@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+  <title>No Data Found</title>
+  <width>400</width>
+  <height>300</height>
+  <element>
+    <style>listbox</style>
+    <position>20 50 380 220</position>
+    <variable>handles.toolbox.observationstations.dummy</variable>
+    <type>integer</type>
+    <text>No data found for the following stations</text>
+    <textposition>above-left</textposition>
+    <listtext>
+      <variable>handles.toolbox.observationstations.errorstrings</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>pushok</style>
+    <position>340 10 50 20</position>
+  </element>
+</root>

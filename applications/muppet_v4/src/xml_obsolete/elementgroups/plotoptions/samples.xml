@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 80</position>
+    <text>Sample Properties</text>
+  </element>
+  <element>
+    <variable>addtext</variable>
+    <type>boolean</type>
+    <style>checkbox</style>
+    <position>10 40 50 20</position>
+    <text>Add Text</text>
+  </element>
+  <element>
+    <variable>textposition</variable>
+    <type>string</type>
+    <style>popupmenu</style>
+    <position>150 40 90 20</position>
+    <listtext>North West</listtext>
+    <listtext>North</listtext>
+    <listtext>North East</listtext>
+    <listtext>West</listtext>
+    <listtext>Middle</listtext>
+    <listtext>East</listtext>
+    <listtext>South West</listtext>
+    <listtext>South</listtext>
+    <listtext>South East</listtext>
+    <listvalue>northwest</listvalue>
+    <listvalue>north</listvalue>
+    <listvalue>northeast</listvalue>
+    <listvalue>west</listvalue>
+    <listvalue>middle</listvalue>
+    <listvalue>east</listvalue>
+    <listvalue>southwest</listvalue>
+    <listvalue>south</listvalue>
+    <listvalue>southeast</listvalue>
+    <text>Position</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>addtext</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>font</variable>
+    <style>selectfont</style>
+    <position>260 40 50 20</position>
+    <text>Font</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>addtext</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>decimals</variable>
+    <type>integer</type>
+    <style>popupmenu</style>
+    <position>60 10 100 20</position>
+    <listtext>automatic</listtext>
+    <listtext>0</listtext>
+    <listtext>1</listtext>
+    <listtext>2</listtext>
+    <listtext>3</listtext>
+    <listtext>4</listtext>
+    <listtext>5</listtext>
+    <listtext>6</listtext>
+    <listvalue>-1</listvalue>
+    <listvalue>0</listvalue>
+    <listvalue>1</listvalue>
+    <listvalue>2</listvalue>
+    <listvalue>3</listvalue>
+    <listvalue>4</listvalue>
+    <listvalue>5</listvalue>
+    <listvalue>6</listvalue>
+    <text>Decimals</text>
+    <tooltipstring>Select number of decimals</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>addtext</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

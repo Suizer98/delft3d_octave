@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<!-- Written on 04-Jun-2012 17:09:44 using the XML Toolbox for Matlab -->
+<root>
+  <title>Animation Settings</title>
+  <width>217</width>
+  <height>451</height>
+  <tag>animationsettings</tag>
+    <element>
+      <tag>framerate</tag>
+      <style>edit</style>
+      <position>144 410 41 21</position>
+      <variable>framerate</variable>
+      <type>integer</type>
+      <text>Frame Rate (fps)</text>
+      <tooltipstring>Edit frame rate (in frames per second)</tooltipstring> 
+    </element>
+    <element>
+      <tag>starttime</tag>
+      <style>edit</style>
+      <position>77 380 108 21</position>
+      <variable>starttime</variable>
+      <type>datetime</type>
+      <text>Start Time</text>
+      <tooltipstring>Edit start time of animation</tooltipstring> 
+    </element>
+    <element>
+      <tag>stoptime</tag>
+      <style>edit</style>
+      <position>77 350 108 21</position>
+      <variable>stoptime</variable>
+      <type>datetime</type>
+      <text>Stop Time</text>
+      <tooltipstring>Edit stop time of animation</tooltipstring> 
+    </element>
+    <element>
+      <tag>timestep</tag>
+      <style>edit</style>
+      <position>100 320 85 21</position>
+      <variable>timestep</variable>
+      <type>real</type>
+      <text>Time Step (s)</text>
+      <tooltipstring>Edit time step of animation</tooltipstring> 
+    </element>
+    <element>
+      <tag>editfilename</tag>
+      <style>edit</style>
+      <position>66 280 119 21</position>
+      <variable>avifilename</variable>
+      <type>string</type>
+      <text>File Name</text>
+      <tooltipstring>Edit file name AVI file</tooltipstring> 
+    </element>
+    <element>
+      <tag>makekmz</tag>
+      <style>checkbox</style>
+      <position>12 250</position>
+      <variable>makekmz</variable>
+      <type>integer</type>
+      <text>Make KMZ</text>
+    </element>
+    <element>
+      <tag>keepfigures</tag>
+      <style>checkbox</style>
+      <position>108 250</position>
+      <variable>keepfigures</variable>
+      <type>integer</type>
+      <text>Keep Figures</text>
+      <tooltipstring>Keep figure files</tooltipstring> 
+    </element>
+    <element>
+      <tag>editprefix</tag>
+      <style>edit</style>
+      <position>66 220 119 21</position>
+      <variable>prefix</variable>
+      <type>string</type>
+      <text>Prefix</text>
+      <tooltipstring>Edit prefix of figure files</tooltipstring> 
+    </element>
+    <element>
+      <style>checkbox</style>
+      <position>12 190</position>
+      <variable>flightpath</variable>
+      <type>integer</type>
+      <text>Flight Path</text>
+      <tooltipstring>Keep figure files</tooltipstring> 
+    </element>
+    <element>
+      <style>pushselectfile</style>
+      <position>90 190 70 20</position>
+      <tooltipstring>Select flight path xml file</tooltipstring>
+      <text>File</text>
+      <variable>flightpathxml</variable>
+      <showfilename>no</showfilename>
+      <extension>*.xml</extension>
+      <selectiontext>Select flight path xml file</selectiontext>
+      <dependency>
+        <action>enable</action>
+        <checkfor>all</checkfor>
+        <check>
+          <variable>flightpath</variable>
+          <value>1</value>
+          <operator>eq</operator>
+        </check>
+      </dependency>
+    </element>
+    <element>
+      <tag>selectbits</tag>
+      <style>popupmenu</style>
+      <position>126 159 60 22</position>
+      <variable>selectbits</variable>
+      <type>integer</type>
+      <text>Bit Depth</text>
+      <list>
+        <texts>
+          <text>8</text>
+          <text>24</text>
+        </texts>
+        <values>
+          <value>8</value>
+          <value>24</value>
+        </values>
+      </list>
+    </element>
+    <element>
+      <tag>codecoptions</tag>
+      <style>pushbutton</style>
+      <position>64 129 121 22</position>
+      <text>Codec Options</text>
+      <tooltipstring>Edit codec options</tooltipstring> 
+      <callback>muppet_animationSettings</callback>
+      <option1>avioptions</option1>
+    </element>
+    <element>
+      <tag>pushopen</tag>
+      <style>pushbutton</style>
+      <position>64 99 121 22</position>
+      <text>Load Settings</text>
+      <tooltipstring>Load animation settings</tooltipstring> 
+      <callback>muppet_animationSettings</callback>
+      <option1>loadsettings</option1>
+    </element>
+    <element>
+      <tag>pushsave</tag>
+      <style>pushbutton</style>
+      <position>64 69 121 22</position>
+      <text>Save Settings</text>
+      <tooltipstring>Save animation settings</tooltipstring> 
+      <callback>muppet_animationSettings</callback>
+      <option1>savesettings</option1>
+    </element>
+    <element>
+      <tag>pushcancel</tag>
+      <style>pushcancel</style>
+      <position>30 31 71 22</position>
+    </element>
+    <element>
+      <tag>pushok</tag>
+      <style>pushok</style>
+      <position>114 30 71 22</position>
+    </element>
+</root>

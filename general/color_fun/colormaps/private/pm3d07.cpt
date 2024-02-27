@@ -1,0 +1,7 @@
+# pm3d97.cpt
+# extracted from http://gnuplot.sourceforge.net/demo/pm3dcolors.7.gnu
+# COLOR_MODEL = RGB
+0   0 255   0   1   0 100   0
+1 255 255   0   2 200 200   0
+2 255   0   0   3 139   0   0
+

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <position>45 10 900 140</position>
+    <style>tabpanel</style>
+    <tab>
+      <tabstring>Times and Files</tabstring>
+      <callback>ddb_DFlowFM_outputTimes</callback>
+      <element>model.dflowfm.output.times.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Observation Points</tabstring>
+      <callback>ddb_DFlowFM_observationPoints</callback>
+      <element>model.dflowfm.output.observationpoints.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Cross Sections</tabstring>
+      <callback>ddb_DFlowFM_crossSections</callback>
+      <element>model.dflowfm.output.crosssections.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Fourier Analysis</tabstring>
+      <callback>ddb_DFlowFM_fourier</callback>
+      <element>model.dflowfm.output.fourier.xml</element>
+    </tab>
+  </element>
+</root>

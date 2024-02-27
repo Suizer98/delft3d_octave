@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+  <name>interactivetext</name>
+  <longname>Interactive Text</longname>
+  <plot>
+    <type>map</type>
+    <plotroutine>
+      <name>plotinteractivetext</name>
+      <plotoption>
+        <name>plotroutine</name>
+      </plotoption> 
+      <plotoption>
+        <name>interactivetextgroup</name>
+      </plotoption>
+      <plotoption>
+        <name>markergroup</name>
+      </plotoption>
+    </plotroutine>
+  </plot>
+</root>

@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <position>75 85 50 20</position>
+    <tooltipstring>Edit length of the transects in offshore direction [m]</tooltipstring>
+    <text>X offshore</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_XBeach_quickMode_transects</onchange>
+    <option1>editgridoutline</option1>
+    <type>integer</type>
+    <variable>handles.toolbox.modelmaker.nX</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>75 60 50 20</position>
+    <tooltipstring>Edit minimum grid size in x direction [#]</tooltipstring>
+    <text>dx_min</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_XBeach_quickMode_transects</onchange>
+    <option1>editresolution</option1>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.dX</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 60 50 20</position>
+    <tooltipstring>Edit maximum grid size in x direction [m]</tooltipstring>
+    <text>dx_max</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.dxmax</variable>
+   </element>
+   <element>
+    <style>edit</style>
+    <position>200 85 50 20</position>
+    <tooltipstring>Edit length of the transects in offshore direction [#]</tooltipstring>
+    <text>X backshore</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_XBeach_quickMode_transects</onchange>
+    <option1>editgridoutline</option1>
+    <type>integer</type>
+    <variable>handles.toolbox.modelmaker.nY</variable>
+   </element>
+   <element>
+    <style>edit</style>
+    <position>300 85 50 20</position>
+    <tooltipstring>Edit number of transects per vertices [#]. If 0 in the middle of the vertices</tooltipstring>
+    <text>#</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.transects</variable>
+   </element>
+   <element>
+    <style>edit</style>
+    <position>400 85 50 20</position>
+    <tooltipstring>Average depth offshore [m]</tooltipstring>
+    <text>zmean</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.average_z</variable>
+   </element>
+   <element>
+    <style>edit</style>
+    <position>500 85 50 20</position>
+    <tooltipstring>Average distance between transects [m]</tooltipstring>
+    <text>xmean</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.average_dx</variable>
+   </element>
+  <element>
+    <style>edit</style>
+    <position>75 35 50 20</position>
+    <tooltipstring>Storm Surge Level (m)</tooltipstring>
+    <text>SSL</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.SSL</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>400 35 50 20</position>
+    <tooltipstring>Storm duration (s)</tooltipstring>
+    <text>T</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.model.xbeach.domain.tstop</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>300 35 50 20</position>
+    <tooltipstring>Peak wave period (s)</tooltipstring>
+    <text>Tp</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.Tp</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>75 10 50 20</position>
+    <tooltipstring>Wave direction (degrees)</tooltipstring>
+    <text>Wave dir</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.waveangle</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 10 50 20</position>
+    <tooltipstring>Grain size (um)</tooltipstring>
+    <text>D50</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.D50</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>300 10 50 20</position>
+    <tooltipstring>Maximum water depth: 2.5-3 times the Hs recommended</tooltipstring>
+    <text>Depth</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.depth</variable>
+  </element>  
+   <element>
+     <style>edit</style>
+     <position>200 35 50 20</position>
+     <tooltipstring>Significant wave height(m)</tooltipstring>
+     <text>Hs</text>
+     <textposition>left</textposition>
+     <type>real</type>
+     <variable>handles.toolbox.modelmaker.Hs</variable>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>600 75 125 20</position>
+    <tooltipstring>Push to show transects on the map</tooltipstring>
+    <text>1. Draw Transects XY</text>
+    <callback>ddb_ModelMakerToolbox_XBeach_quickMode_transects</callback>
+    <option1>drawtransectsxy</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>600 50 125 20</position>
+    <tooltipstring>Push to show transects in seperate figures</tooltipstring>
+    <text>2. Draw Transects Z</text>
+    <callback>ddb_ModelMakerToolbox_XBeach_quickMode_transects</callback>
+    <option1>drawtransectsz</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>800 50 125 20</position>
+    <tooltipstring>Push to retrieve 1/100 year FAST boundary conditions</tooltipstring>
+    <text>Retrieve FAST boundaries</text>
+    <callback>ddb_ModelMakerToolbox_XBeach_quickMode_transects</callback>
+    <option1>fastboundaries</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>25 110 125 20</position>
+    <tooltipstring>Push to draw polyline</tooltipstring>
+    <text>Draw Grid Vertices</text>
+    <callback>ddb_ModelMakerToolbox_XBeach_quickMode_transects</callback>
+    <option1>drawline</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>150 110 125 20</position>
+    <tooltipstring>Push to continu polyline</tooltipstring>
+    <text>Continu Vertices</text>
+    <callback>ddb_ModelMakerToolbox_XBeach_quickMode_transects</callback>
+    <option1>drawmorelines</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>275 110 125 20</position>
+    <tooltipstring>Push to delete plot handles</tooltipstring>
+    <text>Delete plot(s)</text>
+    <callback>ddb_ModelMakerToolbox_XBeach_quickMode_transects</callback>
+    <option1>delete</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>600 25 125 20</position>
+    <tooltipstring>Push to generate model grid</tooltipstring>
+    <text>3. Make grid and model</text>
+    <callback>ddb_ModelMakerToolbox_XBeach_quickMode_transects</callback>
+    <option1>generategrid</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>800 110 125 20</position>
+    <tooltipstring>Push to add a DEM</tooltipstring>
+    <text>Add DEM</text>
+    <callback>ddb_ModelMakerToolbox_XBeach_quickMode_transects</callback>
+    <option1>addDEM</option1>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>400 10 50 20</position>
+    <text>Dean profile</text>
+    <variable>handles.toolbox.modelmaker.dean</variable>
+    <tooltipstring>Check to apply a Dean profile for the bathymetry</tooltipstring>
+  </element>
+</root>

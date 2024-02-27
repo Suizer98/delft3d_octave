@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>10 10 500 130</position>
+    <text>Overall Model</text>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 100 120 20</position>
+    <text>Select SP2 File</text>
+    <variable>handles.toolbox.nesting.singleSP2file</variable>
+    <showfilename>yes</showfilename>
+    <extension>*.sp2</extension>
+    <selectiontext>Select any sp2 file from overall model (only ONE file needs to be selected!)</selectiontext>
+    <tooltipstring>Select sp2 file (*.sp2) of overall model</tooltipstring>
+  </element>
+
+  <element>
+    <style>pushbutton</style>
+    <position>20 75 80 20</position>
+    <text>Select CS</text>
+    <callback>ddb_NestingToolbox_Delft3DWAVE_nest2</callback>
+    <option1>selectcs</option1>
+    <tooltipstring>Select horizontal coordinate system of overall model (when not selected, it is assumed that the model is in the same coordinate system as the detail model)</tooltipstring>
+  </element>
+  <element>
+    <style>text</style>
+    <position>100 75</position>
+    <text>Projected :</text>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.nesting.delft3dwave.overallmodelcstype</variable>
+        <value>projected</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>165 75</position>
+    <text>Geographic :</text>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.nesting.delft3dwave.overallmodelcstype</variable>
+        <value>geographic</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>165 100</position>
+    <variable>handles.toolbox.nesting.delft3dwave.overallmodelcsname</variable>
+    <type>string</type>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.nesting.delft3dwave.overallmodelcsname</variable>
+        <value>unspecified</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+
+  <element>
+    <style>pushbutton</style>
+    <position>600 15 150 20</position>
+    <text>Merge SP2 Files</text>
+    <callback>ddb_NestingToolbox_Delft3DWAVE_nest2</callback>
+    <option1>nest2</option1>
+    <tooltipstring>Merge sp2 files from overall model</tooltipstring>
+  </element>
+</root>

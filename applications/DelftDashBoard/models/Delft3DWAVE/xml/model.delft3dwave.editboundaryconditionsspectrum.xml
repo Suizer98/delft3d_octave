@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+  <title>Boundary Conditions (Spectrum)</title>
+  <width>350</width>
+  <height>90</height>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 50 110 20</position>
+    <tooltipstring>Select spectrum file</tooltipstring>
+    <text>Select spectrum file</text>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).spectrum</variable>
+    <extension>*.sp2</extension>
+    <selectiontext>Select Spectrum File</selectiontext>
+  </element>
+  <element>
+    <style>pushok</style>
+    <position>270 10 50 20</position>
+  </element>
+  <element>
+    <style>pushcancel</style>
+    <position>210 10 50 20</position>
+  </element>
+</root>

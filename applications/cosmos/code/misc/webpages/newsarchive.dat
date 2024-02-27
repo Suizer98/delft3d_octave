@@ -1,0 +1,39 @@
+WebPage "News Archive"
+
+    PageDir      "news"
+    FileName     "newsarchive.html"
+    PageType     "news"
+    ActiveHeader "news"
+
+    LeftColumn1
+        Button "Back to news"
+            ButtonURL "news/news.html"
+        EndButton
+    EndLeftColumn1
+    
+    Main
+
+        Entry
+            Title "Santa Barbara Channel Model added as well!"
+            Date  "December 1, 2008"
+            Image "news/santabarbara.png"
+            Paragraph  "A Delft3D-FLOW / SWAN model covering the Santa Barbara Channel has been included in the operational model system. It is nested in the South California Model."
+        EndEntry
+
+        Entry
+            Title "South California Model added to the system"
+            Date  "November 26, 2008"
+            Image "news/southcal.png"
+            Paragraph  "A Delft3D-FLOW / SWAN model covering Southern California has been included in the operational model system. It takes in spectral wave information at its boundaries from a Wavewatch III model."
+        EndEntry
+
+        Entry
+            Title "Wavewatch III model running in operational mode"
+            Date  "November 22, 2008"
+            Image "news/globew.gif"
+            Paragraph  "The global Wavewatch III model (NWW3) has been included in the operational model system. It will be used to compute wave boundary conditions for the smaller domains."
+        EndEntry
+
+    EndMain
+
+EndPage

@@ -1,0 +1,294 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>10 10 180 130</position>
+    <text>Spiderweb Parameters</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>80 100 100 20</position>
+    <text>Name</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.tropicalcyclone.cyclonename</variable>
+    <type>string</type>
+    <tooltipstring>Edit name of tropical cyclone</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>80 75 50 20</position>
+    <text>Radius (km)</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.tropicalcyclone.radius</variable>
+    <type>real</type>
+    <tooltipstring>Edit radius of spider web</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>80 50 50 20</position>
+    <text>Dir Bins</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.tropicalcyclone.nrDirectionalBins</variable>
+    <type>integer</type>
+    <tooltipstring>Edit number of directional bins in spiderweb file</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>80 25 50 20</position>
+    <text>Radial Bins</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.tropicalcyclone.nrRadialBins</variable>
+    <type>integer</type>
+    <tooltipstring>Edit number of radial bins in spiderweb file</tooltipstring>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>200 10 260 130</position>
+    <text>Method</text>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>300 100 150 20</position>
+    <text>Wind Profile</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.tropicalcyclone.wind_profile</variable>
+    <type>string</type>
+    <tooltipstring>Select wind profile method to generate cyclone winds</tooltipstring>
+    <listtext>
+      <variable>handles.toolbox.tropicalcyclone.wind_profile_option_names</variable>
+    </listtext>
+    <listvalue>
+      <variable>handles.toolbox.tropicalcyclone.wind_profile_options</variable>
+    </listvalue>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>300 75 150 20</position>
+    <text>Vmax-Pc Relation</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.tropicalcyclone.wind_pressure_relation</variable>
+    <type>string</type>
+    <tooltipstring>Select wind-pressure relation to generate cyclone winds. This selected relation will be ignored if both Vmax and Pc are provided in the track data.</tooltipstring>
+    <listtext>
+      <variable>handles.toolbox.tropicalcyclone.wind_pressure_relation_options_names</variable>
+    </listtext>
+    <listvalue>
+      <variable>handles.toolbox.tropicalcyclone.wind_pressure_relation_options</variable>
+    </listvalue>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>300 50 150 20</position>
+    <text>Rmax Relation</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.tropicalcyclone.rmax_relation</variable>
+    <type>string</type>
+    <tooltipstring>Select Rmax relation to generate cyclone winds. This selected relation will be ignored if Rmax provided in the track data.</tooltipstring>
+    <listtext>
+      <variable>handles.toolbox.tropicalcyclone.rmax_relation_option_names</variable>
+    </listtext>
+    <listvalue>
+      <variable>handles.toolbox.tropicalcyclone.rmax_relation_options</variable>
+    </listvalue>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>230 25 40 20</position>
+    <text>Pn</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.tropicalcyclone.pn</variable>
+    <type>real</type>
+    <tooltipstring>Edit environmental pressure (in hPa)</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>300 25 40 20</position>
+    <text>Phi</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.tropicalcyclone.phi_spiral</variable>
+    <type>real</type>
+    <tooltipstring>Edit inflow angle (degrees)</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>420 25 30 20</position>
+    <text>Wind Factor</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.tropicalcyclone.windconversionfactor</variable>
+    <type>real</type>
+    <tooltipstring>Edit wind speed conversion factor (e.g. in order to convert from 1-minute to 10-minutes max sustained winds)</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>470 110 90 20</position>
+    <text>Draw Track</text>
+    <callback>ddb_TropicalCyclone_set_parameters</callback>
+    <option1>drawtrack</option1>
+    <tooltipstring>Draw cyclone track</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>570 110 90 20</position>
+    <text>Delete Track</text>
+    <callback>ddb_TropicalCyclone_set_parameters</callback>
+    <option1>deletetrack</option1>
+    <tooltipstring>Click to delete current cyclone track</tooltipstring>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <text>R35 relation</text>
+    <position>570 80</position>
+    <variable>handles.toolbox.tropicalcyclone.r35estimate</variable>
+    <tooltipstring>Select to include estimate R35 based on Nederhoff et al. (2019)</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>470 85 90 20</position>
+    <text>Load Track</text>
+    <callback>ddb_TropicalCyclone_set_parameters</callback>
+    <option1>loaddata</option1>
+    <tooltipstring>Load cyclone data (Delft Dashboard format)</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>470 60 90 20</position>
+    <text>Save Track</text>
+    <callback>ddb_TropicalCyclone_set_parameters</callback>
+    <option1>savedata</option1>
+    <tooltipstring>Save cyclone data (Delft Dashboard format)</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>470 35 90 20</position>
+    <text>Download Track</text>
+    <callback>ddb_TropicalCyclone_set_parameters</callback>
+    <option1>downloadtrack</option1>
+    <tooltipstring>Download track file from external source</tooltipstring>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>570 35 170 20</position>
+    <variable>handles.toolbox.tropicalcyclone.downloadLocation</variable>
+    <type>string</type>
+    <tooltipstring>Select download location</tooltipstring>
+    <listtext>
+      <variable>handles.toolbox.tropicalcyclone.downloadLocationNames</variable>
+    </listtext>
+    <listvalue>
+      <variable>handles.toolbox.tropicalcyclone.downloadLocations</variable>
+    </listvalue>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>470 10 90 20</position>
+    <text>Import Track</text>
+    <callback>ddb_TropicalCyclone_set_parameters</callback>
+    <option1>importtrack</option1>
+    <tooltipstring>Import cyclone track file from external source</tooltipstring>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>570 10 170 20</position>
+    <variable>handles.toolbox.tropicalcyclone.importFormat</variable>
+    <type>string</type>
+    <tooltipstring>Select import format</tooltipstring>
+    <listtext>
+      <variable>handles.toolbox.tropicalcyclone.importFormatNames</variable>
+    </listtext>
+    <listvalue>
+      <variable>handles.toolbox.tropicalcyclone.importFormats</variable>
+    </listvalue>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>890 10 100 20</position>
+    <text>Compute Cyclone</text>
+    <callback>ddb_TropicalCyclone_set_parameters</callback>
+    <option1>computecyclone</option1>
+    <tooltipstring>Compute cyclone winds to generate spider web file</tooltipstring>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>750 40 240 95</position>
+    <text>TC Basin Display</text>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>760 80</position>
+    <text>All</text>
+    <variable>handles.toolbox.tropicalcyclone.whichTCBasinOption</variable>
+    <type>integer</type>
+    <value>1</value>
+    <onchange>ddb_TropicalCyclone_set_parameters</onchange>
+    <option1>selectbasinoption</option1>
+    <tooltipstring>Select to display all known TC basins</tooltipstring>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.tropicalcyclone.whichTCBasinOption</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>760 60</position>
+    <text>Nearest</text>
+    <variable>handles.toolbox.tropicalcyclone.whichTCBasinOption</variable>
+    <type>integer</type>
+    <value>0</value>
+    <onchange>ddb_TropicalCyclone_set_parameters</onchange>
+    <option1>selectbasinoption</option1>
+    <tooltipstring>Select to display the basin in which the grid lies</tooltipstring>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.tropicalcyclone.whichTCBasinOption</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>855 60 120 20</position>
+    <text>Name</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.tropicalcyclone.TCBasinName</variable>
+    <type>string</type>
+    <tooltipstring>Name(s) of selected tropical cyclone basin(s)</tooltipstring>
+  </element>
+  <element>
+    <style>togglebutton</style>
+    <position>760 100 100 20</position>
+    <text>Show TC basins</text>
+    <variable>handles.toolbox.tropicalcyclone.showTCBasins</variable>
+    <tooltipstring>Show tropical cyclone basin boundaries (approximate)</tooltipstring>
+    <onchange>ddb_TropicalCyclone_set_parameters</onchange>
+    <option1>selectbasinoption</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.tropicalcyclone.whichTCBasinOption</variable>
+        <value>0</value>
+        <operator>ge</operator>
+      </check>
+    </dependency>
+  </element>
+
+  <element>
+    <style>edit</style>
+    <position>820 10 50 20</position>
+    <text>Rain</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.tropicalcyclone.rainfall</variable>
+    <type>real</type>
+    <tooltipstring>Edit rainfall</tooltipstring>
+  </element>
+
+
+</root>

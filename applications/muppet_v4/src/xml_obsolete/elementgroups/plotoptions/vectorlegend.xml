@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 50</position>
+    <text>Vector Legend</text>
+  </element>
+  <element>
+    <variable>vectorlegendlength</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>90 10 50 20</position>
+    <text>Arrow Length</text>
+    <tooltipstring>Edit length of vector in legend</tooltipstring>
+  </element>
+  <element>
+    <variable>vectorlegendtext</variable>
+    <type>string</type>
+    <style>edit</style>
+    <position>180 10 160 20</position>
+    <text>Text</text>
+    <tooltipstring>Edit text of vector in legend</tooltipstring>
+  </element>
+</root>

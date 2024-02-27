@@ -1,0 +1,16 @@
+Orientation p 
+PaperSize   18.4 27.3 
+Frame       WL1
+FrameText1  ""                      "Helvetica"     "normal"   10 
+FrameText2  ""                      "Helvetica"     "normal"   10
+FrameText3  ""                      "Helvetica"     "normal"   10 
+FrameText4  ""                      "Helvetica"     "normal"   10 
+FrameText5  ""                      "Helvetica"     "normal"   10 
+FrameText6  ""                      "Helvetica"     "normal"   10 
+FrameText7  ""                      "Helvetica"     "normal"   10 
+FrameText8  ""                      "Helvetica"     "normal"   10 
+FrameText9  "WL|Delft Hydraulics"   "Helvetica"     "normal"   13
+OutputFile "figure1.png" 
+Format     "png" 
+Resolution 300 
+Renderer   "zbuffer" 

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <text>Numerics</text>
+    <position>40 10 900 160</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 130 50 20</position>
+    <text>Automatic timestep factor (-)</text>
+    <variable>handles.model.shorelines.domain.tc</variable>
+    <type>real</type>
+    <tooltipstring>Edit factor timestep/critical timestep</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 105 50 20</position>
+    <text>Smoothing factor (-)</text>
+    <variable>handles.model.shorelines.domain.smoothfac</variable>
+    <tooltipstring>Edit smoothing coefficient (0-0.1)</tooltipstring>
+    <type>real</type>
+  </element>
+</root>

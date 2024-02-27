@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>text</style>
+    <position>0 -4 50 20</position>
+    <text>Station</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>size(2)</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>selectallstations</variable>
+    <style>checkbox</style>
+    <position>70 0 35 20</position>
+    <callback>muppet_datasetGUI</callback>
+    <option1>editstation</option1>
+    <option2>selectall</option2>
+    <text>All</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>size(2)</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>stationfromlist</variable>
+    <type>integer</type>
+    <style>popupmenu</style>
+    <position>110 0 220 20</position>
+    <listtext>
+      <variable>stations</variable>
+    </listtext>
+    <callback>muppet_datasetGUI</callback>
+    <option1>editstation</option1>
+    <option2>select</option2>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>size(2)</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>selectallstations</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

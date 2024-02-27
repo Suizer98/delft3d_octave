@@ -1,0 +1,232 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>listbox</style>
+    <position>10 10 160 110</position>
+    <tooltipstring>Select location set</tooltipstring>
+    <text>Location sets</text>
+    <textposition>above-center</textposition>
+    <variable>handles.model.delft3dwave.domain.activelocationset</variable>
+    <type>integer</type>
+    <callback>ddb_Delft3DWAVE_output_locations</callback>
+    <option1>selectlocationset</option1>
+    <listtext>
+      <variable>handles.model.delft3dwave.domain.locationfile</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>180 100 70 20</position>
+    <tooltipstring>Add location set</tooltipstring>
+    <text>Add</text>
+    <callback>ddb_Delft3DWAVE_output_locations</callback>
+    <option1>addlocationset</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>180 75 70 20</position>
+    <tooltipstring>Delete location set</tooltipstring>
+    <text>Delete</text>
+    <callback>ddb_Delft3DWAVE_output_locations</callback>
+    <option1>deletelocationset</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrlocationsets</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>180 50 70 20</position>
+    <tooltipstring>Load location file</tooltipstring>
+    <text>Load</text>
+    <variable>handles.model.delft3dwave.domain.newlocationfile</variable>
+    <extension>*.loc</extension>
+    <selectiontext>Select location file</selectiontext>
+    <showfilename>0</showfilename>
+    <callback>ddb_Delft3DWAVE_output_locations</callback>
+    <option1>loadlocationfile</option1>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>180 25 70 20</position>
+    <tooltipstring>Save location file</tooltipstring>
+    <text>Save</text>
+    <variable>handles.model.delft3dwave.domain.newlocationfile</variable>
+    <extension>*.loc</extension>
+    <selectiontext>Select location file name</selectiontext>
+    <showfilename>0</showfilename>
+    <callback>ddb_Delft3DWAVE_output_locations</callback>
+    <option1>savelocationfile</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrlocationsets</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>listbox</style>
+    <position>270 10 50 110</position>
+    <tooltipstring>Select location set</tooltipstring>
+    <text>Points</text>
+    <textposition>above-center</textposition>
+    <variable>handles.model.delft3dwave.domain.locationsets(handles.model.delft3dwave.domain.activelocationset).activepoint</variable>
+    <type>integer</type>
+    <callback>ddb_Delft3DWAVE_output_locations</callback>
+    <option1>selectpointfromlist</option1>
+    <listtext>
+      <variable>handles.model.delft3dwave.domain.locationsets(handles.model.delft3dwave.domain.activelocationset).pointtext</variable>
+    </listtext>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrlocationsets</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>330 100 70 20</position>
+    <tooltipstring>Add point</tooltipstring>
+    <text>Add</text>
+    <callback>ddb_Delft3DWAVE_output_locations</callback>
+    <option1>addpoint</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrlocationsets</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>330 75 70 20</position>
+    <tooltipstring>Delete point</tooltipstring>
+    <text>Delete</text>
+    <callback>ddb_Delft3DWAVE_output_locations</callback>
+    <option1>deletepoint</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrlocationsets</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.model.delft3dwave.domain.locationsets(handles.model.delft3dwave.domain.activelocationset).nrpoints</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>350 10 70 20</position>
+    <text>X</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.locationsets(handles.model.delft3dwave.domain.activelocationset).x(handles.model.delft3dwave.domain.locationsets(handles.model.delft3dwave.domain.activelocationset).activepoint)</variable>
+    <type>real</type>
+    <tooltipstring>Edit x coordinate</tooltipstring>
+    <callback>ddb_Delft3DWAVE_output_locations</callback>
+    <option1>editcoordinate</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrlocationsets</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.model.delft3dwave.domain.locationsets(handles.model.delft3dwave.domain.activelocationset).nrpoints</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>440 10 70 20</position>
+    <text>Y</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.locationsets(handles.model.delft3dwave.domain.activelocationset).y(handles.model.delft3dwave.domain.locationsets(handles.model.delft3dwave.domain.activelocationset).activepoint)</variable>
+    <type>real</type>
+    <tooltipstring>Edit y coordinate</tooltipstring>
+    <callback>ddb_Delft3DWAVE_output_locations</callback>
+    <option1>editcoordinate</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrlocationsets</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.model.delft3dwave.domain.locationsets(handles.model.delft3dwave.domain.activelocationset).nrpoints</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>800 55</position>
+    <text>Table</text>
+    <variable>handles.model.delft3dwave.domain.writetable</variable>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrlocationsets</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>800 35</position>
+    <text>1D Spectra</text>
+    <variable>handles.model.delft3dwave.domain.writespec1d</variable>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrlocationsets</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>800 15</position>
+    <text>2D Spectra</text>
+    <variable>handles.model.delft3dwave.domain.writespec2d</variable>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrlocationsets</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

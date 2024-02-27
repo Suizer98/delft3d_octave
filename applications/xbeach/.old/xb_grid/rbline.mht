@@ -1,0 +1,57 @@
+From: <Saved by Microsoft Internet Explorer 5>
+Subject: 
+Date: Wed, 4 Feb 2009 08:08:23 +0100
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.mathworks.com/matlabcentral/fx_files/1552/1/rbline.m
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.5579
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=3DContent-Type content=3D"text/html; =
+charset=3Dwindows-1252">
+<META content=3D"MSHTML 6.00.2900.5726" name=3DGENERATOR></HEAD>
+<BODY><PRE>function [p1,p2]=3Drbline(varargin)
+%function to draw a rubberband line and return the start and end points
+%Usage: [p1,p2]=3Drbline;     uses current axes
+% or    [p1,p2]=3Drbline(h);  uses axes refered to by handle, h
+
+% Created by Sandra Martinka March 2002
+
+switch nargin
+case 0
+  h=3Dgca;
+case 1
+  h=3Dvarargin{1};
+  axes(h);
+otherwise
+  disp('Too many input arguments.');
+end
+cudata=3Dget(gcf,'UserData'); %current UserData
+hold on;
+k=3Dwaitforbuttonpress;
+p1=3Dget(h,'CurrentPoint');       %get starting point
+p1=3Dp1(1,1:2);                   %extract x and y
+lh=3Dplot(p1(1),p1(2),'+:');      %plot starting point
+udata.p1=3Dp1;
+udata.h=3Dh;
+udata.lh=3Dlh;
+set(gcf,'UserData',udata,'WindowButtonMotionFcn','wbmf','DoubleBuffer','o=
+n');
+k=3Dwaitforbuttonpress;
+p2=3Dget(h,'Currentpoint');       %get end point
+p2=3Dp2(1,1:2);                   %extract x and y
+set(gcf,'UserData',cudata,'WindowButtonMotionFcn','','DoubleBuffer','off'=
+); %reset UserData, etc..
+delete(lh);
+
+function wbmf
+%window motion callback function
+
+utemp=3Dget(gcf,'UserData');
+ptemp=3Dget(utemp.h,'CurrentPoint');
+ptemp=3Dptemp(1,1:2);
+set(utemp.lh,'XData',[utemp.p1(1),ptemp(1)],'YData',[utemp.p1(2),ptemp(2)=
+]);</PRE></BODY></HTML>

@@ -1,0 +1,51 @@
+Groynes
+ 5
+Xw      Yw      TOP      Block (%)      Key_ar
+428265.37      6143187.97      80.00       50       0
+'LEFT2'
+Aantal klimaatpunten
+ 1
+  Xw        Yw        .RAY   .PRO    .CFS   .CFE   dform   h0   Smax0
+428349      6143334   'RAY_14' 'PROFILE14' 'SVR400' 'DEFAULT' 'kamphuis' 5 15
+'END'
+Xw      Yw      TOP      Block (%)      Key_ar
+428019.24      6143048.29      70.00       50       0
+'BETWEEN2'
+Aantal klimaatpunten
+ 1
+  Xw        Yw        .RAY   .PRO    .CFS   .CFE   dform   h0   Smax0
+428103      6143210   'RAY_14' 'PROFILE14' 'SVR400' 'DEFAULT' 'kamphuis' 5 15
+'END'
+Xw      Yw      TOP      Block (%)      Key_ar
+427753.90      6142931.45      65.00       50       0
+'BETWEEN2'
+Aantal klimaatpunten
+ 1
+  Xw        Yw        .RAY   .PRO    .CFS   .CFE   dform   h0   Smax0
+427837      6143096   'RAY_7' 'PROFILE7' 'SVR400' 'DEFAULT' 'kamphuis' 5 15
+'END'
+Xw      Yw      TOP      Block (%)      Key_ar
+427489.60      6142787.10      75.00       50       0
+'BETWEEN2'
+Aantal klimaatpunten
+ 1
+  Xw        Yw        .RAY   .PRO    .CFS   .CFE   dform   h0   Smax0
+427571      6142957   'RAY_13' 'PROFILE13' 'SVR400' 'DEFAULT' 'kamphuis' 5 15
+'END'
+Xw      Yw      TOP      Block (%)      Key_ar
+427205.00      6142761.50      80.00       50       0
+'BETWEEN2'
+Aantal klimaatpunten
+ 1
+  Xw        Yw        .RAY   .PRO    .CFS   .CFE   dform   h0   Smax0
+427335      6142780   'RAY_6' 'PROFILE6' 'SVR400' 'DEFAULT' 'kamphuis' 5 15
+'RIGHT2'
+Aantal klimaatpunten
+ 1
+  Xw        Yw        .RAY   .PRO    .CFS   .CFE   dform   h0   Smax0
+427138      6142606   'RAY_4' 'PROFILE4' 'SVR400' 'DEFAULT' 'kamphuis' 5 15
+'END'
+
+
+
+

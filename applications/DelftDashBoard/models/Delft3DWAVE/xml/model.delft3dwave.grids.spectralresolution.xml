@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <text>Grids</text>
+    <position>5 5 890 130</position>
+  </element>
+  <element>
+    <style>listbox</style>
+    <position>10 30 200 80</position>
+    <tooltipstring>Computational grids</tooltipstring>
+    <text>Computational Grids</text>
+    <textposition>above-center</textposition>
+    <variable>handles.activeWaveGrid</variable>
+    <type>integer</type>
+    <callback>ddb_Delft3DWAVE_grid</callback>
+    <option1>selectgrid</option1>
+    <listtext>
+      <variable>handles.model.delft3dwave.domain.gridnames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>text</style>
+    <position>10 10</position>
+    <prefix>Co-ordinate System : </prefix>
+    <type>text</type>
+    <variable>handles.model.delft3dwave.domain.domains(awg).coordsyst</variable>
+  </element>
+  <element>
+    <style>panel</style>
+    <text>Grid data</text>
+    <position>300 10 590 120</position>
+  </element>
+  <element>
+    <style>panel</style>
+    <text>Directional space</text>
+    <position>305 15 350 100</position>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>310 60</position>
+    <text>Circle</text>
+    <type>string</type>
+    <variable>handles.model.delft3dwave.domain.domains(awg).dirspace</variable>
+    <value>circle</value>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>310 40</position>
+    <text>Sector</text>
+    <type>string</type>
+    <variable>handles.model.delft3dwave.domain.domains(awg).dirspace</variable>
+    <value>sector</value>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>460 60 50 20</position>
+    <text>Start direction : </text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.domains(awg).startdir</variable>
+    <type>integer</type>
+    <tooltipstring>Enter start direction</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.domains(awg).dirspace</variable>
+        <value>sector</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>460 40 50 20</position>
+    <text>Start direction : </text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.domains(awg).enddir</variable>
+    <type>integer</type>
+    <tooltipstring>Enter end direction</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.domains(awg).dirspace</variable>
+        <value>sector</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>520 60</position>
+    <text>[deg] [couter clockwise]</text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>520 40</position>
+    <text>[deg] [couter clockwise]</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>460 20 50 20</position>
+    <text>Number of directions : </text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.domains(awg).ndir</variable>
+    <type>integer</type>
+    <tooltipstring>Enter number of directions</tooltipstring>
+  </element>
+  <element>
+    <style>panel</style>
+    <text>Frequency space</text>
+    <position>660 15 225 100</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>780 60 50 20</position>
+    <text>Lowest frequency : </text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.domains(awg).freqmin</variable>
+    <type>real</type>
+    <tooltipstring>Enter lowest frequency</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>780 40 50 20</position>
+    <text>Highest frequency : </text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.domains(awg).freqmax</variable>
+    <type>real</type>
+    <tooltipstring>Enter highest frequency</tooltipstring>
+  </element>
+  <element>
+    <style>text</style>
+    <position>840 60</position>
+    <text>[Hz]</text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>840 40</position>
+    <text>[Hz]</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>780 20 50 20</position>
+    <text>Number of directions : </text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.domains(awg).nfreq</variable>
+    <type>integer</type>
+    <tooltipstring>Enter number of frequencies</tooltipstring>
+  </element>
+</root>

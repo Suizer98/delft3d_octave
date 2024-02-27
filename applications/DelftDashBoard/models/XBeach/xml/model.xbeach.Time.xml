@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+  <longname>Time input</longname>
+  <element>
+    <style>tabpanel</style>
+    <position>10.000,  10.000,1200.000, 140.000</position>
+    <tab>
+      <tabstring>Model time</tabstring>
+      <tooltipstring>Model time</tooltipstring>
+      <element>model.xbeach.Time.ModelTime.xml</element>
+    </tab>
+  </element>
+</root>

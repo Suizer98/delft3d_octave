@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+  <shoreline>
+    <name>wvs</name>
+    <longName>World Vector Shoreline</longName>
+    <version>1</version>
+    <type>netCDFtiles</type>
+    <URL>https://opendap.deltares.nl/thredds/fileServer/opendap/deltares/delftdashboard/shorelines/wvs</URL>
+    <useCache>5</useCache>
+  </shoreline>
+</root>

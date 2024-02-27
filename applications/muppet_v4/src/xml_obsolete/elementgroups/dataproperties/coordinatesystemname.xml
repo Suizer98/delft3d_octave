@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <variable>coordinatesystem</variable>
+    <style>selectcoordinatesystem</style>
+    <position>0 0 120 50</position>
+    <callback>muppet_datasetGUI</callback>
+    <option1>selectcoordinatesystem</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>size(3)</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

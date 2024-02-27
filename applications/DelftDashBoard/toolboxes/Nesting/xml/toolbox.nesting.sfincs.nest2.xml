@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>pushselectfile</style>
+    <position>10 110 120 20</position>
+    <text>Select History File</text>
+    <variable>handles.toolbox.nesting.trihFile</variable>
+    <showfilename>yes</showfilename>
+    <extension>trih*.dat</extension>
+    <selectiontext>Select Delft3D trih file</selectiontext>
+    <tooltipstring>Select Delft3D history (trih) file</tooltipstring>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>10 85 120 20</position>
+    <text>Select Admin File</text>
+    <variable>handles.toolbox.nesting.admFile</variable>
+    <showfilename>yes</showfilename>
+    <extension>*.adm</extension>
+    <selectiontext>Select nesting administration file</selectiontext>
+    <tooltipstring>Select nesting administration file</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>500 40 80 20</position>
+    <text>Water Level Correction (m)</text>
+    <variable>handles.toolbox.nesting.zCor</variable>
+    <type>real</type>
+    <tooltipstring>Edit water level correction. This value will be added to the water levels that are read from the history file.</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>500 15 80 20</position>
+    <text>Run Nesting</text>
+    <callback>ddb_NestingToolbox_SFINCS_nest2</callback>
+    <option1>nest2</option1>
+    <tooltipstring>Run Nesting</tooltipstring>
+  </element>
+</root>

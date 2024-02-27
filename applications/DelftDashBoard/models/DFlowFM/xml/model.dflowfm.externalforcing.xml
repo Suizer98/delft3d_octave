@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <position>45 10 900 140</position>
+    <style>tabpanel</style>
+    <tab>
+      <tabstring>Boundaries</tabstring>
+      <callback>ddb_DFlowFM_boundaries</callback>
+      <element>model.dflowfm.externalforcing.boundaries.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Meteo</tabstring>
+      <callback>ddb_DFlowFM_meteo</callback>
+      <element>model.dflowfm.externalforcing.meteo.xml</element>
+    </tab>
+  </element>
+</root>

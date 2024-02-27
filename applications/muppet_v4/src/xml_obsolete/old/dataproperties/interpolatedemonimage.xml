@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<root>
+  <dataproperty>
+    <name>interpolatedemonimage</name>
+    <keyword>InterpolateDEMOnImage</keyword>
+    <type>boolean</type>
+    <defaultvalue>0</defaultvalue>
+    <check>
+      <variable>imagefile</variable>
+      <value>isempty</value>
+      <operator>ne</operator>
+    </check>
+    <element>
+      <style>checkbox</style>
+      <type>integer</type>
+      <variable>interpolatedemonimage</variable>
+      <text>Interpolate DEM onto image grid</text>
+      <tooltipstring>Check to interpolate DEM data onto image grid (if left unchecked, the image will be interpolated onto the DEM grid)</tooltipstring>
+      <position>10 0 270 20</position>
+      <dependency>
+        <action>enable</action>
+        <checkfor>all</checkfor>
+        <check>
+          <variable>imagefile</variable>
+          <value>isempty</value>
+          <operator>ne</operator>
+        </check>
+        <check>
+          <variable>georeferencefile</variable>
+          <value>isempty</value>
+          <operator>ne</operator>
+        </check>
+      </dependency>
+    </element>
+  </dataproperty>
+</root>

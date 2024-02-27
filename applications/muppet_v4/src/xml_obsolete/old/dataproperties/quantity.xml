@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+  <dataproperty>
+  <name>quantity</name>
+  <element>
+    <style>popupmenu</style>
+    <text>Quantity</text>
+    <variable>selectedquantity</variable>
+    <type>string</type>
+    <tooltipstring>Select quantity</tooltipstring>
+    <position>60 0 270 20</position>
+    <callback>muppet_datasetGUI</callback>
+    <option1>selectquantity</option1>
+    <listtext>
+      <variable>quantities</variable>
+    </listtext>
+    <defaultvalue>scalar</defaultvalue>
+  </element>
+  </dataproperty>
+</root>

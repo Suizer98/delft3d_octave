@@ -1,0 +1,201 @@
+function tabpanel(fig,panel,fcn,varargin)
+
+clr=get(gcf,'Color');
+
+width=[];
+inputarguments=[];
+for i=1:length(varargin)
+    if ischar(varargin{i})
+        switch lower(varargin{i})
+            case{'position'}
+                pos=varargin{i+1};
+            case{'strings'}
+                strings=varargin{i+1};
+            case{'tabname'}
+                tabname=varargin{i+1};
+            case{'callbacks'}
+                callbacks=varargin{i+1};
+            case{'inputarguments'}
+                inputarguments=varargin{i+1};
+            case{'width'}
+                width=varargin{i+1};
+        end
+    end
+end
+
+switch lower(fcn)
+    case{'create'}
+        createTabPanel(fig,panel,clr,pos,width,strings,callbacks,inputarguments);
+    case{'change'}
+        createTabPanel(fig,panel,clr,pos,width,strings,callbacks,inputarguments);
+    case{'select'}
+        select(fig,clr,tabname);
+    case{'delete'}
+        deleteTabPanel(fig,panel);
+    case{'resize'}
+        resizeTabPanel(fig,panel,pos);
+end
+
+%%
+function createTabPanel(fig,panel,clr,pos,width,strings,callbacks,inputarguments)
+
+if isempty(width)
+    width=zeros(length(strings))+80;
+end
+
+if isempty(inputarguments)
+    for i=1:length(strings)
+        inputarguments{i}=[];
+    end
+end
+
+h=findobj(fig,'Tag',panel);
+if ~isempty(h)
+    Panel=get(h,'UserData');
+    delete(Panel.Tabs);
+    delete(Panel.BlankText);
+    NewTabPanel=Panel.Handle;
+else
+    NewTabPanel=[];
+end
+
+pos0=pos(1)+3;
+for i=1:length(strings)
+    sz=width(i);
+    posi=[pos0 pos(2)+pos(4)-1 sz 20];
+    pos0=pos0+sz;
+    Tabs(i) = uicontrol(fig,'Style','pushbutton','String',strings{i},'Position',posi,'Tag',strings{i},'BackgroundColor',0.9*clr);
+    set(Tabs(i),'CallBack',{@selectTab});
+    usd.Nr=i;
+    usd.Panel=panel;
+    usd.Fig=fig;
+    usd.callback=callbacks{i};
+    usd.inputArguments=inputarguments{i};
+    set(Tabs(i),'UserData',usd);
+end
+
+pos5=pos;
+% pos5(4)=pos5(4)+2;
+
+if isempty(NewTabPanel)
+    NewTabPanel = uipanel('Title','','Units','pixels','Position',pos5,'BorderType','beveledout','BackgroundColor',clr,'Tag',panel);
+end
+
+pos0=pos(1)+4;
+for i=1:length(strings)
+    sz=width(i);
+    posi=[pos0+1 pos(2)+pos(4)-1 sz-4 3];
+    pos0=pos0+sz;
+    BlankText(i) = uicontrol(fig,'Style','text','String','','Position',posi);
+    set(BlankText(i),'BackgroundColor',0.9*clr);
+%    set(BlankText(i),'Visible','off');
+end
+set(Tabs(1),'BackgroundColor',clr);
+set(Tabs(1),'FontWeight','bold');
+posi=[pos(1)+4 pos(2)+pos(4)-5 width(1)-3 7];
+set(BlankText(1),'BackgroundColor',clr,'Position',posi,'Visible','on');
+Panel.Nr=length(strings);
+Panel.Strings=strings;
+Panel.Tabs=Tabs;
+Panel.BlankText=BlankText;
+Panel.Handle=NewTabPanel;
+Panel.Position=pos;
+Panel.Width=width;
+set(NewTabPanel,'UserData',Panel);
+%set(NewTabPanel,'Visible','off');
+
+%%
+function selectTab(hObject,eventdata)
+
+clr=get(gcf,'Color');
+Tabs=get(hObject,'UserData');
+h=findobj(gcf,'Tag',Tabs.Panel);
+Panel=get(h,'UserData');
+pos=Panel.Position;
+iac=Tabs.Nr;
+set(Panel.Tabs,'BackgroundColor',0.9*clr);
+set(Panel.Tabs,'FontWeight','normal');
+pos0(1)=pos(1)+4;
+for i=1:Panel.Nr
+    sz=Panel.Width(i);
+    posi=[pos0(i)+1 pos(2)+pos(4)-1 sz-4 3];
+    pos0(i+1)=pos0(i)+sz;
+    set(Panel.BlankText(i),'Position',posi,'BackgroundColor',0.9*clr);
+%     set(Panel.BlankText(i),'Position',posi,'BackgroundColor',[1 0 0]);
+end
+set(hObject,'BackgroundColor',clr);
+set(hObject,'FontWeight','bold');
+set(hObject,'SelectionHighlight','off');
+set(hObject,'Value',0);
+posi=[pos0(iac) pos(2)+pos(4)-5 Panel.Width(iac)-3 7];
+set(Panel.BlankText(iac),'BackgroundColor',clr,'Position',posi);
+if isempty(Tabs.inputArguments)
+    feval(Tabs.callback);
+else
+    feval(Tabs.callback,Tabs.inputArguments);
+end
+
+%%
+function select(fig,clr,tabname)
+
+tab=findobj(fig,'Tag',tabname);
+Tabs=get(tab,'UserData');
+h=findobj(fig,'Tag',Tabs.Panel);
+Panel=get(h,'UserData');
+pos=Panel.Position;
+iac=Tabs.Nr;
+set(Panel.Tabs,'BackgroundColor',0.9*clr);
+set(Panel.Tabs,'FontWeight','normal');
+pos0(1)=pos(1)+4;
+for i=1:Panel.Nr
+    sz=Panel.Width(i);
+    posi=[pos0(i) pos(2)+pos(4)-1 sz-3 3];
+    pos0(i+1)=pos0(i)+sz;
+    set(Panel.BlankText(i),'Position',posi,'BackgroundColor',0.9*clr);
+end
+set(tab,'BackgroundColor',clr);
+set(tab,'FontWeight','bold');
+set(tab,'SelectionHighlight','off');
+set(tab,'Value',0);
+posi=[pos0(iac) pos(2)+pos(4)-5 Panel.Width(iac)-3 7];
+set(Panel.BlankText(iac),'BackgroundColor',clr,'Position',posi);
+
+if isempty(Tabs.inputArguments)
+    feval(Tabs.callback);
+else
+    feval(Tabs.callback,Tabs.inputArguments);
+end
+
+%%
+function deleteTabPanel(fig,panel)
+
+h=findobj(fig,'Tag',panel);
+if ~isempty(h)
+    Panel=get(h,'UserData');
+    delete(Panel.Tabs);
+    delete(Panel.BlankText);
+    delete(Panel.Handle);
+end
+
+%%
+function resizeTabPanel(fig,panel,pos)
+
+h=findobj(fig,'Tag',panel);
+Panel=get(h,'UserData');
+set(h,'Position',pos);
+pos0=pos(1)+3;
+for i=1:Panel.Nr
+    pos00=get(Panel.Tabs(i),'Position');
+    sz=pos00(3);
+    posi=[pos0 pos(2)+pos(4)-1 sz 20];
+    set(Panel.Tabs(i),'Position',posi);
+    col=get(Panel.BlankText(i),'BackgroundColor');
+    if col==[0.8314 0.8157 0.7843]
+        set(Panel.BlankText(i),'Position',[pos0+1 pos(2)+pos(4)-5 sz-3 7]);
+    else
+        set(Panel.BlankText(i),'Position',[pos0+1 pos(2)+pos(4)-1 sz-3 3]);
+    end
+    pos0=pos0+sz;
+end
+Panel.Position=pos;
+set(h,'UserData',Panel);

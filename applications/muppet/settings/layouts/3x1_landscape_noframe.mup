@@ -1,0 +1,33 @@
+# Muppet v3.18 - File created by Maarten van Ormondt - 2007-12-19 15:11:14 
+ 
+Figure "1" 
+ 
+   Orientation p 
+   PaperSize   24.3 18.4 
+   Frame       none 
+ 
+   Subplot   "Subplot 1" 
+ 
+      Position   1.5            1          6.5         16.5 
+ 
+   EndSubplot 
+ 
+   Subplot   "Subplot 2" 
+ 
+      Position   9            1          6.5         16.5 
+ 
+   EndSubplot 
+ 
+   Subplot   "Subplot 3" 
+ 
+      Position   16.5            1          6.5         16.5 
+ 
+   EndSubplot 
+ 
+   OutputFile "figure1.png" 
+   Format     "png" 
+   Resolution 300 
+   Renderer   "zbuffer" 
+ 
+EndFigure 
+ 

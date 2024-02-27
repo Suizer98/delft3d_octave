@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <position>45 10 900 140</position>
+    <style>tabpanel</style>
+    <tab>
+      <tabstring>Net</tabstring>
+      <element>model.dflowfm.geometry.net.xml</element>
+      <callback>ddb_DFlowFM_net</callback>
+    </tab>
+    <tab>
+      <tabstring>Structures</tabstring>
+      <element>model.dflowfm.geometry.structures.xml</element>
+      <callback>ddb_DFlowFM_structures</callback>
+    </tab>
+    <tab>
+      <tabstring>Initial Conditions</tabstring>
+      <element>model.dflowfm.geometry.initialconditions.xml</element>
+      <callback>ddb_DFlowFM_initialConditions</callback>
+    </tab>
+    <tab>
+      <tabstring>Miscellaneous</tabstring>
+      <element>model.dflowfm.geometry.misc.xml</element>
+      <callback>ddb_DFlowFM_misc</callback>
+    </tab>
+  </element>
+</root>

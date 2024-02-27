@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <variable>polygonfile</variable>
+    <type>string</type>
+    <style>pushselectfile</style>
+    <position>40 0 90 20</position>
+    <text>Polygon File</text>
+    <tooltipstring>Select polygon file</tooltipstring>
+    <extension>*.pol</extension>
+    <extension>*.ldb</extension>
+  </element>
+</root>

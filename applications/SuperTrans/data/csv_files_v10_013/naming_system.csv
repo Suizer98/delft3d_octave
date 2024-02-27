@@ -1,0 +1,48 @@
+NAMING_SYSTEM_CODE,NAMING_SYSTEM_NAME,REMARKS,INFORMATION_SOURCE,DATA_SOURCE,REVISION_DATE,CHANGE_ID,DEPRECATED
+7300,EPSG alternative spelling,An alternative spelling of the EPSG name; assigned by EPSG.,OGP,EPSG,7-5-2000,NaN,0
+1041,EPSG/Energistics abbreviation,A symbol assigned by Energistics in its Unit of Measure standard and used in the EPSG Dataset as an abbreviation.,IOGP,EPSG,22-11-2015,2015.062,0
+1029,EU INSPIRE identifier,"Identifiers defined in EU INSPIRE specification for CRS, 2009-06-29",OGP,EPSG,19-2-2010,2010.003,0
+7307,EuroGeographics Identifier,A unique identifier used in the compilation of European national mapping agency data by EuroGeographics.,EuroGeographics; http://crs.ifag.de/,EPSG,5-6-2001,NaN,0
+1030,Finland alternative identifier,"An alternative name used in Finland, following the style of the EU INSPIRE identifier.",OGP,EPSG,20-3-2010,2008.112,0
+1049,Geoid model name,Name by which a geoid model or height-correction model is commonly known. The model is described as a coordinate transformation in the EPSG Dataset.,IOGP,EPSG,16-5-2020,2020.045,0
+7310,Germany alternative identifier,An alternative name used by the BfK.,OGP,EPSG,5-6-2001,NaN,0
+1025,Germany Brandenburg alternative identifier,An alternative name used by the state of Brandenburg.,OGP,EPSG,22-3-2009,2009.014,0
+1027,Germany Schleswig-Holstein alternative identifier,An alternative name used in the state of Schleswig-Holstein.,OGP,EPSG,17-11-2009,2009.071,0
+1026,Guam alias or abbreviation,Name or abbreviation used in Guam.,OGP,EPSG,24-6-2009,2009.044,0
+7311,Indonesia alternative identifier,An alternative name used by Bakosurtanal.,OGP,EPSG,30-3-2010,2009.102,0
+1024,Iraq alternative identifier,An alternative name used in Iraq.,"Survey Department, Ministry of Water Resources (MoWR).",EPSG,30-3-2010,2009.003 2009.102,0
+1046,ISO Geodetic Register code,Code of entity recorded in the ISO Geodetic Register.,https://registry.isotc211.org/,EPSG,17-5-2019,2019.031,0
+1047,ISO Geodetic Register name,Name of entity recorded in the ISO Geodetic Register.,https://registry.isotc211.org/,EPSG,17-5-2019,2019.031,0
+1051,Italy alternative identifier,NaN,IOGP,EPSG,14-12-2020,2020.109,0
+1045,Macedonia alternative identifier,An alternative name used in North Macedonia.,IOGP,EPSG,17-5-2019,2018.024 2019.030,0
+1028,Mexico alternative identifier,NaN,NaN,EPSG,24-11-2009,2009.087,0
+7315,Netherlands alternative identifier,An alternative name used in The Netherlands.,OGP,EPSG,3-2-2006,NaN,0
+1031,Petrobras alternative identifier,Identifier used in Brazil by Petrobras,OGP,EPSG,25-3-2010,2010.039,0
+7314,Poland alternative identifier,An alternative name used in Poland.,OGP,EPSG,2-11-2005,NaN,0
+7316,Romania alternative identifier,An alternative name used in Romania.,OGP,EPSG,24-9-2008,NaN,0
+1043,Slovak alternative identifier,An alternative name used in the Slovak Republic.,IOGP,EPSG,20-10-2017,2017.037,0
+7309,Slovenia alternative identifier,An alternative name used in Slovenia.,OGP,EPSG,5-6-2001,NaN,0
+1050,Spain alternative identifier,An alternative identifier used in Spain.,IOGP,EPSG,27-6-2020,2020.056,0
+1032,Spain Catalonia ICC alternative identifier,An alternative identifier used by ICC in Catalonia.,OGP,EPSG,7-6-2010,2010.053,0
+1034,Uruguay alternate identifier,NaN,NaN,EPSG,4-3-2011,2011.018,0
+7313,US DMA/NIMA/NGA alternative identifier,An alternative name used by the US National Geospatial Intelligence Agency.,OGP,EPSG,21-5-2005,NaN,0
+1039,US DMA/NIMA/NGA code,Code used by the US National Geospatial Intelligence Agency.,OGP,EPSG,3-8-2014,2014.037,0
+7305,User abbreviation,An abbreviation assigned by user; not populated by EPSG.,(User to insert),EPSG,7-5-2000,NaN,0
+7304,User alias,A secondary alternative name assigned by user; not populated by EPSG.,(User to insert),EPSG,7-5-2000,NaN,0
+7303,User name,An alternative name assigned by user; not populated by EPSG.,(User to insert),EPSG,7-5-2000,NaN,0
+1048,WKT alias,An alternative name assigned for use in WKT conforming to ISO 19162.,ISO 19162.,EPSG,4-11-2019,2019.083,0
+1038,Albania alternative identifier,An alternative name used by ASIG.,OGP,EPSG,21-11-2014,2014.008 2014.078,0
+1036,Algeria alternative identifier,An alternative name used by INCT.,OGP,EPSG,20-3-2012,2011.111,0
+1033,Argentina alternative identifier,An alternative name used in Argentina.,OGP,EPSG,24-3-2011,2009.028,0
+7312,Austria alternative identifier,An alternative name used by the BEV.,OGP,EPSG,19-9-2002,NaN,0
+1052,Bangladesh alternative identifier,An alternative name used in Bangladesh.,IOGP,EPSG,13-1-2021,2020.132,0
+1044,BosniaHerzegovina alternative identifier,An alternative name used in Bosnia and Herzegovina.,IOGP,EPSG,7-7-2018,2018.024,0
+1035,Brazil alternative identifier,An alternative name used in Brazil.,OGP,EPSG,23-7-2011,2011.053,0
+7308,Croatia alternative identifier,An alternative name used in Croatia.,OGP,EPSG,5-6-2001,NaN,0
+1037,Cyprus alternative identifier,NaN,IOGP,EPSG,2-4-2015,2014.091,0
+1042,Czech alternative identifier,An alternative name used in Czechia.,IOGP,EPSG,17-5-2019,2017.037 2019.030,0
+1040,Energistics name,A name assigned by Energistics in its Unit of Measure standard.,Energistics,EPSG,21-11-2015,2015.062,0
+7306,Energistics symbol,A symbol assigned by Energistics in its Unit of Measure standard but not used in the EPSG Dataset as an abbreviation.,Energistics,EPSG,25-11-2015,2015.062,0
+7302,EPSG abbreviation,An abbreviation assigned by EPSG.,OGP,EPSG,7-5-2000,NaN,0
+7301,EPSG alias,An alternative name assigned by EPSG.,OGP,EPSG,7-5-2000,NaN,0
+7317,EPSG alias and abbreviation,An alternative name assigned by EPSG also used as an abbreviation.,OGP,EPSG,17-10-2008,NaN,0

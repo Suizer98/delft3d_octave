@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <position>45.000, 10.000,500.000,140.000</position>
+    <variable>handles.model.xbeach.domain.Description</variable>
+    <type>string</type>
+    <tooltipstring>Project description (optional)</tooltipstring>
+    <nrlines>10</nrlines>
+    <text>Description (max. 10 lines)</text>
+    <textposition>above-left</textposition>
+  </element>
+</root>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+  <plottype>
+    <name>image</name>  
+    <option>
+      <name>type</name>
+    </option>
+    <option>
+      <name>position</name>
+    </option>
+    <option>
+      <name>drawbox</name>
+    </option>
+  </plottype>
+</root>

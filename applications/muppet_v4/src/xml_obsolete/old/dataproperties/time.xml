@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <dataproperty>
+    <name>time</name>
+    <keyword>Time</keyword>
+    <type>datetime</type>
+  </dataproperty>
+</root>

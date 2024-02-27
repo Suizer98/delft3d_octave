@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<root>
+  <name>scalar1dxy</name>
+  <longname>Samples</longname>
+  <plot>
+    <type>map</type>
+    <plotroutine>
+      <name>plotsamples</name>
+      <plotoption>
+        <name>plotroutine</name>
+      </plotoption>
+      <plotoption>
+        <name>samplesgroup</name>
+      </plotoption>
+      <plotoption>
+        <name>markerautomaticgroup</name>
+      </plotoption>
+    </plotroutine>
+  </plot>
+  <plot>
+    <type>xy</type>
+    <plotroutine>
+      <name>plotsamples</name>
+      <plotoption>
+        <name>plotroutine</name>
+      </plotoption>
+      <plotoption>
+        <name>samplesgroup</name>
+      </plotoption>
+      <plotoption>
+        <name>markerautomaticgroup</name>
+      </plotoption>
+    </plotroutine>
+  </plot>
+</root>

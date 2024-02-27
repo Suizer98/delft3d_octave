@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<root>
+  <dataproperty>
+    <name>annotationtext</name>
+    <keyword>Text</keyword>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>alltextselected</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+    <element>
+      <style>listbox</style>
+      <type>integer</type>
+      <variable>selectedtextnumber</variable>
+      <tooltipstring>Select text</tooltipstring>
+      <position>60 30 270 100</position>
+      <listtext>
+        <variable>text</variable>
+      </listtext>
+      <dependency>
+        <action>enable</action>
+        <checkfor>all</checkfor>
+        <check>
+          <variable>alltextselected</variable>
+          <value>0</value>
+          <operator>eq</operator>
+        </check>
+      </dependency>
+    </element>
+    <element>
+      <style>checkbox</style>
+      <type>integer</type>
+      <variable>alltextselected</variable>
+      <text>Select All Text</text>
+      <tooltipstring>Select all texts</tooltipstring>
+      <position>60 0 270 20</position>
+      <listtext>
+        <variable>text</variable>
+      </listtext>
+    </element>
+  </dataproperty>
+</root>

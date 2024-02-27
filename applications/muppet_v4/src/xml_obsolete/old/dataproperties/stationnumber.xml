@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <dataproperty>
+    <name>stationnumber</name>
+    <keyword>StationNumber</keyword>
+    <type>int</type>
+  </dataproperty>
+</root>

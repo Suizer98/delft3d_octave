@@ -1,0 +1,106 @@
+NetCDF-3 Classic example.nc {
+
+dimensions:
+	time = UNLIMITED ; (18 currently)
+	y = 625 ;
+	x = 500 ;
+
+variables:
+	// Preference 'PRESERVE_FVD':  false,
+	// dimensions consistent with ncBrowse, not with native MATLAB netcdf package.
+	int32 EPSG(y), shape = [625]
+		EPSG:name = "Amersfoort / RD New" 
+		EPSG:epsg = 28992 
+		EPSG:epsg_name = "Oblique Stereographic" 
+		EPSG:grid_mapping_name = "" 
+		EPSG:semi_major_axis = 6.3774e+006 
+		EPSG:semi_minor_axis = 6.35608e+006 
+		EPSG:inverse_flattening = 299.153 
+		EPSG:latitude_of_projection_origin = 52.0922 
+		EPSG:longitude_of_projection_origin = 5.23155 
+		EPSG:false_easting = 155000 
+		EPSG:false_northing = 463000 
+		EPSG:scale_factor_at_projection_origin = 0.999908 
+		EPSG:proj4_params = "+proj=sterea +lat_0=52.15616055555555 +lon_0=5.38763888888889 +k=0.999908 +x_0=155000 +y_0=463000 +ellps=bessel +units=m +towgs84=565.4174,50.3319,465.5542,-0.398957388243134,0.343987817378283,-1.87740163998045,4.0725 +no_defs" 
+		EPSG:EPSG_code = "EPSG:28992" 
+		EPSG:projection_name = "Dutch rijksdriekhoek system" 
+		EPSG:wkt = "" 
+		EPSG:comment = "value is equal to EPSG code" 
+	int32 WGS84(y), shape = [625]
+		WGS84:name = "WGS 84" 
+		WGS84:epsg = 4326 
+		WGS84:grid_mapping_name = "latitude_longitude" 
+		WGS84:semi_major_axis = 6.37814e+006 
+		WGS84:semi_minor_axis = 6.35675e+006 
+		WGS84:inverse_flattening = 298.257 
+		WGS84:proj4_params = "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs " 
+		WGS84:EPSG_code = "EPSG:4326" 
+		WGS84:projection_name = "Latitude Longitude" 
+		WGS84:wkt = "GEOGCS["WGS 84",
+    DATUM["WGS_1984",
+        SPHEROID["WGS 84",6378137,298.257223563,
+            AUTHORITY["EPSG","7030"]],
+        AUTHORITY["EPSG","6326"]],
+    PRIMEM["Greenwich",0,
+        AUTHORITY["EPSG","8901"]],
+    UNIT["degree",0.01745329251994328,
+        AUTHORITY["EPSG","9122"]],
+    AUTHORITY["EPSG","4326"]]" 
+		WGS84:comment = "value is equal to EPSG code" 
+	double time(time), shape = [18]
+		time:standard_name = "time" 
+		time:long_name = "time" 
+		time:units = "days since 1970-01-01 00:00:00 +01:00" 
+		time:_FillValue = 9.96921e+036 
+	double lon(y,x), shape = [625 500]
+		lon:standard_name = "longitude" 
+		lon:long_name = "longitude" 
+		lon:units = "degree_east" 
+		lon:_FillValue = 9.96921e+036 
+		lon:grid_mapping = "WGS84" 
+	double lat(y,x), shape = [625 500]
+		lat:standard_name = "latitude" 
+		lat:long_name = "latitude" 
+		lat:units = "degree_north" 
+		lat:_FillValue = 9.96921e+036 
+		lat:grid_mapping = "WGS84" 
+	double x(x), shape = [500]
+		x:standard_name = "projection_x_coordinate" 
+		x:long_name = "x-coordinate" 
+		x:units = "m" 
+		x:_FillValue = 9.96921e+036 
+		x:grid_mapping = "EPSG" 
+		x:coordinates = "lon lat" 
+		x:actual_range = -10000 0 
+	double y(y), shape = [625]
+		y:standard_name = "projection_y_coordinate" 
+		y:long_name = "y-coordinate" 
+		y:units = "m" 
+		y:_FillValue = 9.96921e+036 
+		y:grid_mapping = "EPSG" 
+		y:coordinates = "lon lat" 
+		y:actual_range = 362500 375000 
+	single z(time,y,x), shape = [18 625 500]
+		z:standard_name = "altitude" 
+		z:long_name = "altitude" 
+		z:units = "m" 
+		z:_FillValue = 9969209968386869000000000000000000000.000000 f
+		z:grid_mapping = "EPSG" 
+		z:coordinates = "lon lat" 
+		z:actual_range = -8.3 0.1 
+
+//global Attributes:
+		:Conventions = "CF-1.5" 
+		:CF:featureType = "grid" 
+		:title = "" 
+		:institution = "" 
+		:source = "" 
+		:history = "Created with: $Id$ $HeadURL$" 
+		:references = "." 
+		:comment = "." 
+		:email = " " 
+		:version = " " 
+		:terms_for_use = " " 
+		:disclaimer = "" 
+
+}

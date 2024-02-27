@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>text</style>
+    <position>50 70</position>
+    <text>The tsunami toolbox is not implemented for WAVEWATCH III ...</text>
+  </element>
+</root>

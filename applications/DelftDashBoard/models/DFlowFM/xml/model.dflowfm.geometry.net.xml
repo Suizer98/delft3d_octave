@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 110 130 20</position>
+    <tooltipstring>Select net file</tooltipstring>
+    <text>Net File</text>
+    <variable>handles.model.dflowfm.domain.netfile</variable>
+    <extension>*_net.nc</extension>
+    <selectiontext>Select net file</selectiontext>
+    <callback>ddb_DFlowFM_net</callback>
+    <option1>selectnetfile</option1>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 85 130 20</position>
+    <tooltipstring>Select bathymetry file (*.xyb)</tooltipstring>
+    <text>Bathymetry File</text>
+    <variable>handles.model.dflowfm.domain.bathymetryfile</variable>
+    <extension>*.xyb</extension>
+    <selectiontext>Select bathymetry file</selectiontext>
+    <callback>ddb_DFlowFM_net</callback>
+    <option1>selectbathymetryfile</option1>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>110 60 40 20</position>
+    <tooltipstring>Edit uniform bed level</tooltipstring>
+    <text>Uniform Bed Level</text>
+    <variable>handles.model.dflowfm.domain.botlevuni</variable>
+    <type>real</type>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain.botlevtype</variable>
+        <value>3</value>
+        <operator>ge</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Bottom Level Type</text>
+    <position>110 35 40 20</position>
+    <tooltipstring>1 : Bottom levels at waterlevel cells (=flow nodes), like tiles xz, yz, bl , bob = max(bl left, bl right), # 2 : Bottom levels at velocity points  (=flow links), xu, yu, blu, bob = blu,bl = lowest connected link # 3 : Bottom levels at velocity points  (=flow links), using mean network levels xk, yk, zk  bl = lowest connected link # 4 : Bottom levels at velocity points  (=flow links), using min  network levels xk, yk, zk  bl = lowest connected linkz # 5 : Bottom levels at velocity points  (=flow links), using max  network levels xk, yk, zk  bl = lowest connected link</tooltipstring>
+    <variable>handles.model.dflowfm.domain.botlevtype</variable>
+    <type>integer</type>
+    <listtext>1</listtext>
+    <listtext>2</listtext>
+    <listtext>3</listtext>
+    <listtext>4</listtext>
+    <listtext>5</listtext>
+    <listvalue>1</listvalue>
+    <listvalue>2</listvalue>
+    <listvalue>3</listvalue>
+    <listvalue>4</listvalue>
+    <listvalue>5</listvalue>
+  </element>
+</root>

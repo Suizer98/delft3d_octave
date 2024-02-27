@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<root>
+  <title>Cyclone Parameters</title>
+  <width>250</width>
+  <height>190</height>
+  <element>
+    <style>edit</style>
+    <position>90 150 110 20</position>
+    <variable>handles.toolbox.tropicalcyclone.startTime</variable>
+    <type>datetime</type>
+    <text>Start Time</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit start time of track</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>90 125 110 20</position>
+    <variable>handles.toolbox.tropicalcyclone.timeStep</variable>
+    <type>real</type>
+    <text>Time Step (hrs)</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit time step of cyclone track</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>90 100 110 20</position>
+    <variable>handles.toolbox.tropicalcyclone.vmax</variable>
+    <type>real</type>
+    <text>Vmax (kts)</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit maximum wind speed (in knots)</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>90 75 110 20</position>
+    <variable>handles.toolbox.tropicalcyclone.rmax</variable>
+    <type>real</type>
+    <text>Rmax (NM)</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit radius of maximum winds (in NM)</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>90 50 110 20</position>
+    <variable>handles.toolbox.tropicalcyclone.pc</variable>
+    <type>real</type>
+    <text>Pc (hPa)</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit central pressure (in hPa)</tooltipstring>
+  </element>
+  <element>
+    <style>pushok</style>
+    <position>150 10 50 20</position>
+  </element>
+  <element>
+    <style>pushcancel</style>
+    <position>90 10 50 20</position>
+  </element>
+</root>

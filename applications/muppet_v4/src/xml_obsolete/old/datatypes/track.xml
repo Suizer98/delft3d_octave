@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+  <name>track</name>
+  <longname>Track</longname>
+  <plot>
+    <type>map</type>
+    <plotroutine>
+      <name>plotpolyline</name>
+      <plotoption>
+        <name>plotroutine</name>
+      </plotoption>
+      <plotoption>
+        <name>linegroup</name>
+      </plotoption>
+      <plotoption>
+        <name>markergroup</name>
+      </plotoption>
+      <plotoption>
+        <name>timemarkergroup</name>
+      </plotoption>
+    </plotroutine>
+  </plot>
+</root>

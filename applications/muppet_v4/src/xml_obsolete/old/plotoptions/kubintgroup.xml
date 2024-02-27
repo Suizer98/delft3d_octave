@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<root>
+  <plotoption>
+    <name>kubintgroup</name>
+    <element>
+      <style>panel</style>
+      <text>Area Properties</text>
+      <position>0 0 350 100</position>
+    </element>
+    <element>
+      <keyword>FillAreas</keyword>
+      <default>1</default>
+      <style>checkbox</style>
+      <type>boolean</type>
+      <variable>kubfill</variable>
+      <text>Fill Areas</text>
+      <position>20 60 50 20</position>
+    </element>
+    <element>
+      <keyword>Opacity</keyword>
+      <style>edit</style>
+      <variable>opacity</variable>
+      <default>1</default>
+      <type>real</type>
+      <text>Opacity</text>
+      <tooltipstring>Edit opacity (only works in combination with OpenGL renderer)</tooltipstring>
+      <position>160 60 50 20</position>
+      <dependency>
+        <action>enable</action>
+        <checkfor>all</checkfor>
+        <check>
+          <variable>kubfill</variable>
+          <value>1</value>
+          <operator>eq</operator>
+        </check>
+      </dependency>
+    </element>
+    <element>
+      <keyword>AddText</keyword>
+      <default>values</default>
+      <style>popupmenu</style>
+      <type>string</type>
+      <variable>areatext</variable>
+      <text>Add Text</text>
+      <position>60 35 120 20</position>
+      <listtext>Values</listtext>
+      <listtext>Polygon Names</listtext>
+      <listtext>Polygon Numbers</listtext>
+      <listtext>None</listtext>
+      <listvalue>values</listvalue>
+      <listvalue>polygonnames</listvalue>
+      <listvalue>polygonnumbers</listvalue>
+      <listvalue>none</listvalue>
+    </element>
+    <element>
+      <keyword>MultiplyNumbers</keyword>
+      <style>edit</style>
+      <variable>multiply</variable>
+      <default>1</default>
+      <type>real</type>
+      <text>Multiply</text>
+      <tooltipstring>Edit multiplication factor</tooltipstring>
+      <position>60 10 50 20</position>
+      <dependency>
+        <action>enable</action>
+        <checkfor>all</checkfor>
+        <check>
+          <variable>areatext</variable>
+          <value>values</value>
+          <operator>eq</operator>
+        </check>
+      </dependency>
+    </element>
+    <element>
+      <keyword>Decimals</keyword>
+      <style>edit</style>
+      <variable>decimals</variable>
+      <default>0</default>
+      <type>integer</type>
+      <text>Decimals</text>
+      <tooltipstring>Edit number of decimals</tooltipstring>
+      <position>200 10 50 20</position>
+      <dependency>
+        <action>enable</action>
+        <checkfor>all</checkfor>
+        <check>
+          <variable>areatext</variable>
+          <value>values</value>
+          <operator>eq</operator>
+        </check>
+      </dependency>
+    </element>
+    <element>
+      <style>selectfont</style>
+      <horizontalalignment>1</horizontalalignment>
+      <verticalalignment>1</verticalalignment>
+      <text>Font</text>
+      <position>200 35 50 20</position>
+      <variable>font</variable>
+      <dependency>
+        <action>enable</action>
+        <checkfor>all</checkfor>
+        <check>
+          <variable>areatext</variable>
+          <value>none</value>
+          <operator>ne</operator>
+        </check>
+      </dependency>
+    </element>
+    <element>
+      <name>fontname</name>
+      <variable>font.name</variable>
+      <keyword>FontName</keyword>
+      <default>Helvetica</default>
+    </element>
+    <element>
+      <name>fontsize</name>
+      <variable>font.size</variable>
+      <keyword>FontSize</keyword>
+      <type>real</type>
+      <default>8</default>
+    </element>
+      <element>
+      <name>fontangle</name>
+      <variable>font.angle</variable>
+      <default>normal</default>
+    <keyword>FontAngle</keyword>
+    </element>
+      <element>
+      <name>fontweight</name>
+      <variable>font.weight</variable>
+      <keyword>FontWeight</keyword>
+      <default>normal</default>
+    </element>
+    <element>
+      <name>fonthorizontalalignment</name>
+      <variable>font.horizontalalignment</variable>
+      <keyword>FontHorizontalAlignment</keyword>
+      <default>left</default>
+    </element>
+    <element>
+      <name>fontverticalalignment</name>
+      <variable>font.verticalalignment</variable>
+      <keyword>FontVerticalAlignment</keyword>
+      <default>top</default>
+    </element>
+  </plotoption>
+</root>

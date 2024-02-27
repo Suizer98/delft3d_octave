@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <text>Map File</text>
+    <position>10 10 210 125</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>100 90 110 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).mapStartTime</variable>
+    <type>datetime</type>
+    <tooltipstring>Edit map start time</tooltipstring>
+    <text>Start Time</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>100 60 110 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).mapStopTime</variable>
+    <type>datetime</type>
+    <tooltipstring>Edit map stop time</tooltipstring>
+    <text>Stop Time</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>100 30 110 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).mapInterval</variable>
+    <type>real</type>
+    <tooltipstring>Edit map time step</tooltipstring>
+    <text>Time Step (min)</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <style>panel</style>
+    <text>Communication File</text>
+    <position>230 10 210 125</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>320 90 110 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).comStartTime</variable>
+    <type>datetime</type>
+    <tooltipstring>Edit com start time</tooltipstring>
+    <text>Start Time</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>320 60 110 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).comStopTime</variable>
+    <type>datetime</type>
+    <tooltipstring>Edit com stop time</tooltipstring>
+    <text>Stop Time</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>320 30 110 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).comInterval</variable>
+    <type>real</type>
+    <tooltipstring>Edit com time step</tooltipstring>
+    <text>Time Step (min)</text>
+    <textposition>left</textposition>
+    <callback>ddb_Delft3DFLOW_storage</callback>
+    <option1>editcominterval</option1>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>570 110 50 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).hisInterval</variable>
+    <type>real</type>
+    <tooltipstring>Edit history start time</tooltipstring>
+    <text>History Time Step (min)</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>570 80 50 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).rstInterval</variable>
+    <type>real</type>
+    <tooltipstring>Edit restart interval</tooltipstring>
+    <text>Restart Interval (min)</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <text>Online Visualization</text>
+    <position>460 45</position>
+    <variable>handles.model.delft3dflow.domain(ad).onlineVisualisation</variable>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <text>Online Coupling</text>
+    <position>460 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).onlineCoupling</variable>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <text>Atmospheric Forcing</text>
+    <position>650 110</position>
+    <variable>handles.model.delft3dflow.domain(ad).airOut</variable>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).wind</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <text>Heat Exchange</text>
+    <position>650 85</position>
+    <variable>handles.model.delft3dflow.domain(ad).heatOut</variable>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).temperature.include</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <text>Re-use TMP files</text>
+    <position>650 60</position>
+    <variable>handles.model.delft3dflow.domain(ad).retmp</variable>
+    <value>1</value>
+    <tooltipstring>Re-use temporary input files.</tooltipstring>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <text>Store GLM velocities</text>
+    <position>650 35</position>
+    <variable>handles.model.delft3dflow.domain(ad).storeglm</variable>
+    <value>1</value>
+    <tooltipstring>Store GLM velocities i.s.o. Eulerian velocities.</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).waves</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

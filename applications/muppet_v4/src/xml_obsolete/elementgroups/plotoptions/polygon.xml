@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 50</position>
+    <text>Fill Properties</text>
+  </element>
+  <element>
+    <variable>closepolygons</variable>
+    <type>boolean</type>
+    <style>checkbox</style>
+    <position>10 10 100 20</position>
+    <text>Close Polygons</text>
+  </element>
+  <element>
+    <variable>fillclosedpolygons</variable>
+    <type>boolean</type>
+    <style>checkbox</style>
+    <position>110 10 100 20</position>
+    <text>Fill Polygons</text>
+  </element>
+  <element>
+    <variable>fillcolor</variable>
+    <type>string</type>
+    <style>selectcolor</style>
+    <position>240 10 100 20</position>
+    <includenone>no</includenone>
+    <text>Color</text>
+    <tooltipstring>Select fill color</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>fillclosedpolygons</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

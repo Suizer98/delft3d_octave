@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>pushbutton</style>
+    <position>20 110 100 20</position>
+    <text>Draw Coast Line</text>
+    <callback>ddb_ModelMakerToolbox_esm_quickMode</callback>
+    <option1>drawcoastline</option1>
+    <tooltipstring>Draw coastline</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>20 85 100 20</position>
+    <text>Delete Coast Line</text>
+    <callback>ddb_ModelMakerToolbox_esm_quickMode</callback>
+    <option1>deletecoastline</option1>
+    <tooltipstring>Delete coastline</tooltipstring>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 60 100 20</position>
+    <text>Load Coastline</text>
+    <variable>handles.toolbox.modelmaker.esm.coastline.filename</variable>
+    <onchange>ddb_ModelMakerToolbox_esm_quickMode</onchange>
+    <option1>loadcoastline</option1>
+    <showfilename>no</showfilename>
+    <extension>*.pol</extension>
+    <selectiontext>Select coastline file</selectiontext>
+    <tooltipstring>Select coastline file</tooltipstring>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>20 35 100 20</position>
+    <text>Save Coastline</text>
+    <variable>handles.toolbox.modelmaker.esm.coastline.filename</variable>
+    <onchange>ddb_ModelMakerToolbox_esm_quickMode</onchange>
+    <option1>savecoastline</option1>
+    <showfilename>no</showfilename>
+    <extension>*.pol</extension>
+    <selectiontext>Select coastline file</selectiontext>
+    <tooltipstring>Select coastline file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.modelmaker.esm.coastline.length</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>230 110 50 20</position>
+    <text>Xon</text>
+    <variable>handles.toolbox.modelmaker.esm.coastline.xon</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>230 85 50 20</position>
+    <text>Xoff</text>
+    <variable>handles.toolbox.modelmaker.esm.coastline.xoff</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>230 60 50 20</position>
+    <text>dX</text>
+    <variable>handles.toolbox.modelmaker.esm.coastline.dx</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>130 35 150 20</position>
+    <text>Compute Shore Normals</text>
+    <callback>ddb_ModelMakerToolbox_esm_quickMode</callback>
+    <option1>computeshorenormals</option1>
+    <tooltipstring>Compute shore normals</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>320 110 50 20</position>
+    <text>Contour</text>
+    <variable>handles.toolbox.modelmaker.esm.depthcontour.value</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>320 85 50 20</position>
+    <text>Update</text>
+    <callback>ddb_ModelMakerToolbox_esm_quickMode</callback>
+    <option1>updatedepthcontour</option1>
+    <tooltipstring>Re-plot depth contour</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>320 60 100 20</position>
+    <text>Draw Depth Contour</text>
+    <callback>ddb_ModelMakerToolbox_esm_quickMode</callback>
+    <option1>drawdepthcontour</option1>
+    <tooltipstring>Draw depth contour</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>900 15 80 20</position>
+    <text>Compute IID</text>
+    <callback>ddb_ModelMakerToolbox_esm_quickMode</callback>
+    <option1>computeiid</option1>
+    <tooltipstring>Compute IID for all points</tooltipstring>
+  </element>
+</root>

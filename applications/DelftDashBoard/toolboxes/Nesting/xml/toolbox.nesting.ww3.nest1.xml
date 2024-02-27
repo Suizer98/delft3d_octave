@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>10 10 500 130</position>
+    <text>Detailed Model</text>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Model Type</text>
+    <position>80 100 150 20</position>
+    <tooltipstring>Select type of detailed model</tooltipstring>
+    <variable>handles.toolbox.nesting.ww3.detailmodeltype</variable>
+    <type>string</type>
+    <listtext>WAVEWATCH III</listtext>
+    <listtext>Delft3D-WAVE</listtext>
+    <listvalue>ww3</listvalue>
+    <listvalue>delft3dwave</listvalue>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 75 150 20</position>
+    <text>Select ww3_grid.inp</text>
+    <variable>handles.toolbox.nesting.ww3.ww3_grid_file</variable>
+    <showfilename>yes</showfilename>
+    <extension>ww3_grid.inp</extension>
+    <selectiontext>Select ww3_grid.inp file of detailed model</selectiontext>
+    <tooltipstring>Select ww3_grid.inp file of detailed model</tooltipstring>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.nesting.ww3.detailmodeltype</variable>
+        <type>string</type>
+        <value>ww3</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 75 120 20</position>
+    <text>Select Grid File</text>
+    <variable>handles.toolbox.nesting.ww3.grdFile</variable>
+    <showfilename>yes</showfilename>
+    <extension>*.grd</extension>
+    <selectiontext>Select grid file of detailed model</selectiontext>
+    <tooltipstring>Select grid file (*.grd) of detailed model</tooltipstring>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.nesting.ww3.detailmodeltype</variable>
+        <type>string</type>
+        <value>delft3dwave</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 50 120 20</position>
+    <text>Select Depth File</text>
+    <variable>handles.toolbox.nesting.ww3.depFile</variable>
+    <showfilename>yes</showfilename>
+    <extension>*.dep</extension>
+    <selectiontext>Select depth file of detailed model</selectiontext>
+    <tooltipstring>Select depth file (*.dep) of detailed model</tooltipstring>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.nesting.ww3.detailmodeltype</variable>
+        <type>string</type>
+        <value>delft3dwave</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+
+
+
+  <element>
+    <style>pushbutton</style>
+    <position>600 15 150 20</position>
+    <text>Make Nesting Sections</text>
+    <callback>ddb_NestingToolbox_ww3_nest1</callback>
+    <option1>nest1</option1>
+    <tooltipstring>Make nesting sections for overall model</tooltipstring>
+  </element>
+</root>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <variable>ucomponent</variable>
+    <type>string</type>
+    <style>popupmenu</style>
+    <position>60 0 270 20</position>
+    <listtext>
+      <variable>parameternames</variable>
+    </listtext>
+    <callback>muppet_datasetGUI</callback>
+    <option1>selectucomponent</option1>
+    <text>U</text>
+    <tooltipstring>Select U component</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>selectedquantity</variable>
+        <value>vector2d</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>selectuvcomponent</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<root>
+  <dataproperty>
+    <name>coordinatesystemname</name>
+    <variable>coordinatesystem.name</variable>
+    <keyword>CoordinateSystemName</keyword>
+    <type>string</type>
+    <check>
+      <variable>coordinatesystem.name</variable>
+      <value>unspecified</value>
+      <operator>ne</operator>
+    </check>
+    <element>
+      <style>selectcoordinatesystem</style>
+      <position>0 0 120 50</position>
+      <variable>coordinatesystem</variable>
+      <callback>muppet_datasetGUI</callback>
+      <option1>selectcoordinatesystem</option1>
+      <dependency>
+        <action>enable</action>
+        <checkfor>all</checkfor>
+        <check>
+          <variable>size(3)</variable>
+          <value>0</value>
+          <operator>gt</operator>
+        </check>
+      </dependency>
+    </element>
+  </dataproperty>
+</root>

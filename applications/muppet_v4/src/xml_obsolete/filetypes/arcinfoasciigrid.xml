@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<root>
+  <longname>ArcInfo ASCII Grid</longname>
+  <title>ArcInfo ASCII Grid file</title>
+  <filterspec>*.asc</filterspec>
+  <callback>muppet_addDatasetArcInfoASCIIGrid</callback>
+  <dataproperty>
+    <name>filetype</name>
+  </dataproperty>
+  <dataproperty>
+    <name>filename</name>
+  </dataproperty>
+  <dataproperty>
+    <name>plotcoordinate</name>
+  </dataproperty>
+  <dataproperty>
+    <name>m</name>
+  </dataproperty>
+  <dataproperty>
+    <name>n</name>
+  </dataproperty>
+  <dataproperty>
+    <name>imagefile</name>
+  </dataproperty>
+  <dataproperty>
+    <name>georeferencefile</name>
+  </dataproperty>
+  <dataproperty>
+    <name>interpolatedemonimage</name>
+  </dataproperty>
+  <elementgroup>plotcoordinate</elementgroup>
+  <elementgroup>m</elementgroup>
+  <elementgroup>n</elementgroup>
+  <elementgroup>imagefile</elementgroup>
+  <elementgroup>georeferencefile</elementgroup>
+  <elementgroup>interpolatedemonimage</elementgroup>
+</root>

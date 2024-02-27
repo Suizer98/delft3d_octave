@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>popupmenu</style>
+    <text>instat</text>
+    <position>70.000,107.500, 80.000, 20.000</position>
+    <tooltipstring>Wave boundary condtion type [-]</tooltipstring>
+    <variable>handles.model.xbeach.domain.instat</variable>
+    <type>string</type>
+    <listtext>stat</listtext>
+    <listtext>bichrom</listtext>
+    <listtext>ts_1</listtext>
+    <listtext>ts_2</listtext>
+    <listtext>jons</listtext>
+    <listtext>swan</listtext>
+    <listtext>vardens</listtext>
+    <listtext>reuse</listtext>
+    <listtext>ts_nonh</listtext>
+    <listtext>off</listtext>
+    <listtext>stat_table</listtext>
+    <listtext>jons_table</listtext>
+  </element>
+  <element>
+    <tooltipstring>Spin-up time of wave boundary conditions, in morphological time [s]</tooltipstring>
+    <style>edit</style>
+    <text>taper</text>
+    <position>70.000,80.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.taper</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Hrms wave height for instat = 0,1,2,3 [m]</tooltipstring>
+    <style>edit</style>
+    <text>Hrms</text>
+    <position>70.000,52.500,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.Hrms</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Representative wave period for instat = 0,1,2,3 [s]</tooltipstring>
+    <style>edit</style>
+    <text>Trep</text>
+    <position>70.000,25.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.Trep</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Wave group period for case instat = 1 [s]</tooltipstring>
+    <style>edit</style>
+    <text>Tlong</text>
+    <position>230.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.Tlong</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Mean wave direction (Nautical convention) for instat = 0,1,2,3 [deg]</tooltipstring>
+    <style>edit</style>
+    <text>dir0</text>
+    <position>230.000, 80.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.dir0</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Power in cos^m directional distribution for instat = 0,1,2,3 [-]</tooltipstring>
+    <style>edit</style>
+    <text>m</text>
+    <position>230.000, 52.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.m</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>old name for lateralwave [-]</tooltipstring>
+    <style>popupmenu</style>
+    <text>leftwave</text>
+    <position>230.000, 25.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.leftwave</variable>
+    <type>string</type>
+    <listtext>neumann</listtext>
+    <listtext>wavecrest</listtext>
+  </element>
+  <element>
+    <tooltipstring>old name for lateralwave [-]</tooltipstring>
+    <style>popupmenu</style>
+    <text>rightwave</text>
+    <position>390.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.rightwave</variable>
+    <type>string</type>
+    <listtext>neumann</listtext>
+    <listtext>wavecrest</listtext>
+  </element>
+</root>

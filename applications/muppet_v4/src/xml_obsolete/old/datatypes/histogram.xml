@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<root>
+  <name>histogram</name>
+  <longname>Histogram</longname>
+  <plot>
+    <type>xy</type>
+    <plotroutine>
+      <name>plothistogram</name>
+      <longname>Plot Histogram</longname>
+      <plotoption>
+        <name>plotroutine</name>
+      </plotoption>
+      <plotoption>
+        <name>polygongroup</name>
+      </plotoption>
+      <plotoption>
+        <name>linegroup</name>
+      </plotoption>
+      <plotoption>
+        <name>rightaxis</name>
+      </plotoption>
+      <plotoption>
+        <name>legendtext</name>
+      </plotoption>
+    </plotroutine>
+  </plot>
+</root>

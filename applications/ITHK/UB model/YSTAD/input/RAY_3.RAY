@@ -1,0 +1,10 @@
+ LT run  :D:\2014\Ystad\Model\LTR_SVR400\YSTAD.LTR
+ profile :D:\2014\Ystad\Model\LTR_SVR400\PROFILE3.PRO
+ waves   :D:\2014\Ystad\Model\LTR_SVR400\RAY_3.SCO
+ coef.Qs :D:\2014\Ystad\Model\LTR_SVR400\SOULRIJ.CFS
+ coef.Hs :D:\2014\Ystad\Model\LTR_SVR400\DEFAULT.CFE
+ ray     :D:\2014\Ystad\Model\LTR_SVR400\RAY_3.RAY
+    equi      c1     c2   h0    angle   fshape
+  -0.284658E+02  -0.139056E-02   0.125759E-01   0.600000E+01   0.145000E+03   0.362996E+00
+       Xb      2 %      20%      50%      80%     100%
+ -0.358000E+03 -0.126254E+03 -0.617680E+02 -0.254922E+02 -0.107909E+02  0.198545E+00  1.0000

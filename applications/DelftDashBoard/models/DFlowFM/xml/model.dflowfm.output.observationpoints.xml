@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>listbox</style>
+    <position>10 10 150 105</position>
+    <tooltipstring>Select observation point</tooltipstring>
+    <text>Observation Points</text>
+    <textposition>above-center</textposition>
+    <variable>handles.model.dflowfm.domain.activeobservationpoint</variable>
+    <type>integer</type>
+    <onchange>ddb_DFlowFM_observationPoints</onchange>
+    <option1>selectfromlist</option1>
+    <listtext>
+      <variable>handles.model.dflowfm.domain.observationpointnames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>170 10 170 70</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>210 50 120 20</position>
+    <text>Name</text>
+    <onchange>ddb_DFlowFM_observationPoints</onchange>
+    <option1>edit</option1>
+    <tooltipstring>Edit observation point name</tooltipstring>
+    <variable>handles.model.dflowfm.domain.observationpoints(handles.model.dflowfm.domain.activeobservationpoint).name</variable>
+    <type>string</type>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain.nrobservationpoints</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>210 25 50 20</position>
+    <text>X</text>
+    <onchange>ddb_DFlowFM_observationPoints</onchange>
+    <option1>edit</option1>
+    <tooltipstring>Edit observation point x coordinate</tooltipstring>
+    <variable>handles.model.dflowfm.domain.observationpoints(handles.model.dflowfm.domain.activeobservationpoint).x</variable>
+    <type>real</type>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain.nrobservationpoints</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>280 25 50 20</position>
+    <text>Y</text>
+    <onchange>ddb_DFlowFM_observationPoints</onchange>
+    <option1>edit</option1>
+    <variable>handles.model.dflowfm.domain.observationpoints(handles.model.dflowfm.domain.activeobservationpoint).y</variable>
+    <type>real</type>
+    <tooltipstring>Edit observation point y coordinate</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain.nrobservationpoints</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>togglebutton</style>
+    <position>360 85 100 20</position>
+    <text>Add To Map</text>
+    <tooltipstring>Add observation point</tooltipstring>
+    <callback>ddb_DFlowFM_observationPoints</callback>
+    <option1>add</option1>
+    <variable>handles.model.dflowfm.domain.addobservationpoint</variable>
+  </element>
+  <element>
+    <style>togglebutton</style>
+    <position>360 60 100 20</position>
+    <text>Delete From Map</text>
+    <tooltipstring>Delete observation point</tooltipstring>
+    <callback>ddb_DFlowFM_observationPoints</callback>
+    <option1>deletefrommap</option1>
+    <variable>handles.model.dflowfm.domain.deleteobservationpoint</variable>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>360 35 100 20</position>
+    <text>Delete From List</text>
+    <tooltipstring>Delete observation point</tooltipstring>
+    <callback>ddb_DFlowFM_observationPoints</callback>
+    <option1>deletefromlist</option1>
+  </element>
+  <element>
+    <style>togglebutton</style>
+    <position>360 10 100 20</position>
+    <text>Change</text>
+    <tooltipstring>Change observation point</tooltipstring>
+    <onchange>ddb_DFlowFM_observationPoints</onchange>
+    <option1>change</option1>
+    <variable>handles.model.dflowfm.domain.changeobservationpoint</variable>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>580 60 70 20</position>
+    <tooltipstring>Open observation points file</tooltipstring>
+    <text>Open</text>
+    <variable>handles.model.dflowfm.domain.obsfile</variable>
+    <extension>*.xyn</extension>
+    <selectiontext>Select observation points file</selectiontext>
+    <onchange>ddb_DFlowFM_observationPoints</onchange>
+    <option1>openfile</option1>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>580 35 70 20</position>
+    <tooltipstring>Save observation points file</tooltipstring>
+    <text>Save</text>
+    <variable>handles.model.dflowfm.domain.obsfile</variable>
+    <showfilename>no</showfilename>
+    <extension>*.xyn</extension>
+    <selectiontext>Select observation points file</selectiontext>
+    <onchange>ddb_DFlowFM_observationPoints</onchange>
+    <option1>savefile</option1>
+  </element>
+</root>

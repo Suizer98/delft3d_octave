@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<root>
+  <title>Combine Datasets</title>
+  <width>520</width>
+  <height>480</height>
+  <tag>combinedatasets</tag>
+  <element>
+    <style>listbox</style>
+    <position>30 230 210 220</position>
+    <variable>datasetnumbera</variable>
+    <type>integer</type>
+    <text>Dataset A</text>
+    <textposition>above-center</textposition>
+    <listtext>
+      <variable>datasetsa</variable>
+    </listtext>
+    <listvalue>
+      <variable>datasetnumbersa</variable> 
+    </listvalue>
+    <callback>muppet_editCombinedDatasets</callback>
+    <option1>selectdataseta</option1>
+  </element>
+  <element>
+    <style>listbox</style>
+    <position>260 230 210 220</position>
+    <variable>datasetnumberb</variable>
+    <type>integer</type>
+    <text>Dataset B</text>
+    <textposition>above-center</textposition>
+    <listtext>
+      <variable>datasetsb</variable>
+    </listtext>
+    <listvalue>
+      <variable>datasetnumbersb</variable> 
+    </listvalue>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>usedatasetb</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>120 200 80 20</position>
+    <variable>multiplya</variable>
+    <type>real</type>
+    <text>Multiply A</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>350 200 80 20</position>
+    <variable>multiplyb</variable>
+    <type>real</type>
+    <text>Multiply B</text>
+    <textposition>left</textposition>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>usedatasetb</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>40 130 120 20</position>
+    <variable>operation</variable>
+    <type>string</type>
+    <text>Operation</text>
+    <textposition>above-left</textposition>
+    <listtext>
+      <variable>operationstrings</variable>
+    </listtext>
+    <listvalue>
+      <variable>operations</variable> 
+    </listvalue>
+  </element>
+  <element>
+    <style>text</style>
+    <position>190 165</position>
+    <text>Combine with :</text>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>190 145 50 20</position>
+    <variable>usedatasetb</variable>
+    <value>1</value>
+    <type>integer</type>
+    <text>Dataset B</text>
+    <callback>muppet_editCombinedDatasets</callback>
+    <option1>usedatasetb</option1>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>190 125 50 20</position>
+    <variable>usedatasetb</variable>
+    <value>0</value>
+    <type>integer</type>
+    <text>Uniform Value</text>
+    <callback>muppet_editCombinedDatasets</callback>
+    <option1>useuniformvalue</option1>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>330 130 110 20</position>
+    <variable>uniformvalue</variable>
+    <type>real</type>
+    <text>Uniform Value</text>
+    <textposition>above-left</textposition>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>usedatasetb</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>165 80 305 20</position>
+    <variable>resultantdatasetname</variable>
+    <type>string</type>
+    <text>Resulant Dataset Name</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <style>pushcancel</style>
+    <position>240 30 70 30</position>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>320 30 70 30</position>
+    <text>Add</text>
+    <callback>muppet_editCombinedDatasets</callback>
+    <option1>adddataset</option1>
+  </element>
+  <element>
+    <style>pushok</style>
+    <position>400 30 70 30</position>
+  </element>
+</root>

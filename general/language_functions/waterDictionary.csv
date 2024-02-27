@@ -1,0 +1,24 @@
+id            , Unit, en                    , nl                          , es
+eta           ,   m , Elevation             , Hoogte                      , Elevación
+dist          ,   m , Distance              , Afstand                     , Distancia
+dist_prof     ,   m , Distance along section, Afstand langs gevaren track , Distancia a lo largo de la sección
+etaw          ,   m , Water level           , Waterstand                  , Nivel del agua
+waterlevel    ,   m , Water level           , Waterstand                  , Nivel del agua
+tide          ,   m , Tide                  , Getij                       , Marea
+surge         ,   m , Surge                 , Opzet                       , Marejada ciclónica
+plotted period,     , Plotted period        , Weergegeven periode         , Período trazado
+entire period ,     , Entire period         , Gehele periode              , Todo el período
+h             ,   m , Depth                 , Diepte                      , Profundidad
+sal           ,  psu, Salinity              , Saliniteit                  , Salinidad
+tem           ,  ^oC, Temperature           , Temperatuur                 , Temperatura
+chl           , mg/l, Chloride              , Chloride                    , Cloruro
+simulation    ,     , Simulation            , Berekening                  , Simulación
+measurement   ,     , Measurement           , Meting                      , Medición
+difference    ,     , Difference            , Verschil                    , Diferencia
+date          ,     , Date                  , Datum                       , Fecha
+model         ,     , Model                 , Model                       , Modelo
+easting       ,  ^o , Easting               , Breedtegraad                , Este
+northing      ,  ^o , Northing              , Hoogtegraad                 , Norte
+X             ,   m , X                     , X-RD                        , X
+Y             ,   m , Y                     , Y-RD                        , Y
+O2           , mg/l, Dissolved Oxygen      , Zuurstof                    , Oxígeno disuelto

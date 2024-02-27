@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>checkbox</style>
+    <text>ARC</text>
+    <position>70.000,107.500</position>
+    <tooltipstring>Switch for active reflection compensation at seaward boundary: 0 = reflective, 1 = weakly (non) reflective [-]</tooltipstring>
+    <variable>handles.model.xbeach.domain.ARC</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Switch for order of wave steering, 1 = first order wave steering (short wave energy only), 2 = second oder wave steering (bound long wave corresponding to short wave forcing is added) [-]</tooltipstring>
+    <style>edit</style>
+    <text>order</text>
+    <position>70.000,80.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.order</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Switch for free wave propagation 0 = use cg (default); 1 = use sqrt(gh) in instat = 3 [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>freewave</text>
+    <position>70.000,52.500</position>
+    <variable>handles.model.xbeach.domain.freewave</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Ratio of mean current to time varying current through offshore boundary [-]</tooltipstring>
+    <style>edit</style>
+    <text>epsi</text>
+    <position>70.000,25.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.epsi</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Smoothing distance (defined as nr of cells) for estimating umean [-]</tooltipstring>
+    <style>edit</style>
+    <text>nc</text>
+    <position>230.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.nc</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Switch for offfshore boundary, velocity boundary or instant water level boundary (default) [-]</tooltipstring>
+    <style>popupmenu</style>
+    <text>tidetype</text>
+    <position>230.000, 80.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.tidetype</variable>
+    <type>string</type>
+    <listtext>instant</listtext>
+    <listtext>velocity</listtext>
+  </element>
+  <element>
+    <tooltipstring>Number of discharge locations [-]</tooltipstring>
+    <style>edit</style>
+    <text>ndischarge</text>
+    <position>230.000, 52.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.ndischarge</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Length of discharge time series [-]</tooltipstring>
+    <style>edit</style>
+    <text>ntdischarge</text>
+    <position>230.000, 25.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.ntdischarge</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Name of discharge locations file [-]</tooltipstring>
+    <style>pushselectfile</style>
+    <text>disch_loc_file</text>
+    <position>390.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.disch_loc_file</variable>
+    <type>character</type>
+    <extension>*.*</extension>
+    <selectiontext>Select file</selectiontext>
+  </element>
+  <element>
+    <tooltipstring>Name of discharge timeseries file [-]</tooltipstring>
+    <style>pushselectfile</style>
+    <text>disch_timeseries_file</text>
+    <position>390.000, 80.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.disch_timeseries_file</variable>
+    <type>character</type>
+    <extension>*.*</extension>
+    <selectiontext>Select file</selectiontext>
+  </element>
+  <element>
+    <tooltipstring>Friction coefficient flow [-]</tooltipstring>
+    <style>edit</style>
+    <text>cf</text>
+    <position>390.000, 52.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.cf</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Viscosity switch for roller induced turbulent horizontal viscosity [-]</tooltipstring>
+    <style>edit</style>
+    <text>nuhfac</text>
+    <position>390.000, 25.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.nuhfac</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Longshore viscosity enhancement factor, following Svendsen (?) [-]</tooltipstring>
+    <style>edit</style>
+    <text>nuhv</text>
+    <position>550.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.nuhv</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Switch for smagorinsky subgrid model for viscocity [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>smag</text>
+    <position>550.000, 80.000</position>
+    <variable>handles.model.xbeach.domain.smag</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Angular velocity of earth calculated as: 1/rotation_time (in hours), later changed in calculation code to rad/s [hour^-1]</tooltipstring>
+    <style>edit</style>
+    <text>wearth</text>
+    <position>550.000, 52.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.wearth</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Latitude at model location  for computing Coriolis [deg]</tooltipstring>
+    <style>edit</style>
+    <text>lat</text>
+    <position>550.000, 25.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.lat</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Air density [kgm^-3]</tooltipstring>
+    <style>edit</style>
+    <text>rhoa</text>
+    <position>710.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.rhoa</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Wind drag coefficient [-]</tooltipstring>
+    <style>edit</style>
+    <text>Cd</text>
+    <position>710.000, 80.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.Cd</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Use second order corrections to advection/non-linear terms based on mcCormack scheme [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>secorder</text>
+    <position>710.000, 52.500</position>
+    <variable>handles.model.xbeach.domain.secorder</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Turn on / off old hu calculation [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>oldhu</text>
+    <position>710.000, 25.000</position>
+    <variable>handles.model.xbeach.domain.oldhu</variable>
+    <type>integer</type>
+  </element>
+</root>

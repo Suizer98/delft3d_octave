@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>listbox</style>
+    <text>Available Databases</text>
+    <textposition>above-center</textposition>
+    <variable>handles.toolbox.shoreline.activeDataset</variable>
+    <type>integer</type>
+    <position>10 10 150 105</position>
+    <tooltipstring>Select shoreline database</tooltipstring>
+    <onchange>ddb_ShorelineToolbox_export</onchange>
+    <option1>selectdataset</option1>
+    <listtext>
+      <variable>handles.shorelines.longName</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>170 95 80 20</position>
+    <text>Draw Polygon</text>
+    <callback>ddb_ShorelineToolbox_export</callback>
+    <option1>drawpolygon</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>170 70 80 20</position>
+    <text>Delete Polygon</text>
+    <callback>ddb_ShorelineToolbox_export</callback>
+    <option1>deletepolygon</option1>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>170 40 80 20</position>
+    <text>Load Polygon</text>
+    <variable>handles.toolbox.shoreline.polygonFile</variable>
+    <onchange>ddb_ShorelineToolbox_export</onchange>
+    <option1>loadpolygon</option1>
+    <showfilename>no</showfilename>
+    <extension>*.pol</extension>
+    <selectiontext>Select polygon file</selectiontext>
+    <tooltipstring>Select polygon file</tooltipstring>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>170 15 80 20</position>
+    <text>Save Polygon</text>
+    <variable>handles.toolbox.shoreline.polygonFile</variable>
+    <onchange>ddb_ShorelineToolbox_export</onchange>
+    <option1>savepolygon</option1>
+    <showfilename>no</showfilename>
+    <extension>*.pol</extension>
+    <selectiontext>Save polygon file</selectiontext>
+    <tooltipstring>Save polygon file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.shoreline.polyLength</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Scale</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.shoreline.activeScale</variable>
+    <type>integer</type>
+    <position>350 95 100 20</position>
+    <tooltipstring>Select scale</tooltipstring>
+    <listtext>
+      <variable>handles.toolbox.shoreline.scaleText</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>text</style>
+    <variable>handles.toolbox.shoreline.resolutionText</variable>
+    <type>string</type>
+    <position>420 96</position>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Export Type</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.shoreline.activeExportType</variable>
+    <position>350 70 60 20</position>
+    <tooltipstring>Select zoom level</tooltipstring>
+    <type>string</type>
+    <listtext>
+      <variable>handles.toolbox.shoreline.exportTypes</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>290 15 120 20</position>
+    <text>Export</text>
+    <variable>handles.toolbox.shoreline.shorelineFile</variable>
+    <onchange>ddb_ShorelineToolbox_export</onchange>
+    <option1>export</option1>
+    <showfilename>no</showfilename>
+    <extension>*.ldb</extension>
+    <selectiontext>Save shoreline file</selectiontext>
+    <tooltipstring>Export shoreline</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.shoreline.polyLength</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

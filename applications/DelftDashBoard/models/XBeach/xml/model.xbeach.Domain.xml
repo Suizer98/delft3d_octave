@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+  <longname>Model domain</longname>
+  <element>
+    <style>tabpanel</style>
+    <position>10.000,  10.000,1200.000, 140.000</position>
+    <tab>
+      <tabstring>Grid parameters</tabstring>
+      <tooltipstring>Grid parameters</tooltipstring>
+      <element>model.xbeach.Domain.GridParameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Initial conditions</tabstring>
+      <tooltipstring>Initial conditions</tooltipstring>
+      <element>model.xbeach.Domain.InitialConditions.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Domain advanced options</tabstring>
+      <tooltipstring>Domain advanced options</tooltipstring>
+      <element>model.xbeach.Domain.Advanced_1.xml</element>
+    </tab>
+  </element>
+</root>

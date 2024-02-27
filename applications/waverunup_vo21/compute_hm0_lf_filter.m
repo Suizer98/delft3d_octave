@@ -1,0 +1,30 @@
+function v=compute_hm0_lf(hm0,tp,sl1,sl2,ztide,phi,drspr)
+%
+beta(1)=3.4547125e+00;
+beta(2)=5.8790748e-01;
+beta(3)=3.6906975e+00;
+beta(4)=2.3378556e-01;
+beta(5)=2.3038164e+00;
+beta(6)=0.0000000e+00;
+beta(7)=5.0000000e-01;
+beta(8)=0.0000000e+00;
+%
+[c cg nnn k] = wavevelocity(tp,1000);
+l1=2*pi./k;
+surfslope=sl1;
+tlow=compute_tm01_ig_filter(hm0,tp,sl1,sl2,0,phi,drspr);
+higin=compute_ig_in_filter(hm0,tp,sl1,sl2,0,phi,drspr);
+l0=sqrt(9.81*0.33333*hm0).*tlow;
+ksib=sl2./(sqrt(higin./l0));
+ksib=ksib-beta(6);
+ksib=max(ksib,0);
+ksibm=beta(5)*surfslope.^beta(4); % should increase with surfslope ie beta(5)>0
+cb=beta(3)*sqrt(surfslope); % assume linear decrease ie beta(3)<0
+psibd=beta(1)*ksib.^beta(2);
+psibr=(beta(1)*ksibm.^beta(2) - 2.0).*(exp(-(ksib-ksibm)./(beta(3)))) + 2;
+psib=psibd;
+psib(ksib>ksibm)=psibr(ksib>ksibm);
+v=higin.*psib;
+fac1=compute_dirspreadfac_lf(hm0,tp,sl1,drspr);
+fac2=compute_directionfac_lf(hm0,tp,sl1,phi);
+v=v.*fac1.*fac2;

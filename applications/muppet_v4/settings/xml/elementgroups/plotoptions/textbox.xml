@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 220</position>
+    <text>Text Box</text>
+  </element>
+  <element>
+    <variable>string</variable>
+    <type>string</type>
+    <style>edit</style>
+    <nrlines>5</nrlines>
+    <text>Text</text>
+    <position>40 50 300 150</position>
+  </element>
+  <element>
+    <variable>font</variable>
+    <style>selectfont</style>
+    <horizontalalignment>1</horizontalalignment>
+    <verticalalignment>1</verticalalignment>
+    <position>10 10 50 20</position>
+    <text>Font</text>
+  </element>
+  <element>
+    <variable>box</variable>
+    <type>boolean</type>
+    <style>checkbox</style>
+    <text>Box</text>
+    <position>100 10 50 20</position>
+  </element>
+  <element>
+    <style>selectcolor</style>
+    <position>180 10 150 20</position>
+    <text>Color</text>
+    <textposition>above-left</textposition>
+    <variable>backgroundcolor</variable>
+    <tooltipstring>Select background color</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>box</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

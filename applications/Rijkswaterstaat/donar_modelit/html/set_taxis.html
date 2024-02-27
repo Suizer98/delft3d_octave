@@ -1,0 +1,71 @@
+<html>
+   <header>
+      
+      <title>set_taxis</title>
+      <meta name="generator" content="MATLAB 7.7">
+      <meta name="date" content="2011Dec06">
+      <meta name="m-file" content="set_taxis">
+      <link type="text/css" rel="stylesheet" href="./toolbox.css">
+      
+   </header>
+   <body>
+      
+      <hr>
+      <div>
+         <h2>Function set_taxis</h2><pre>  Make RKS or TPS block by specifying begintime, endtime,
+  timeunit and timestep.
+  
+  </pre><h2>CALL:</h2><pre>   S = set_taxis(S, tbegin, teind, tijdstapeenheid, tijdstap)
+  
+  </pre><h2>INPUT:</h2><pre>   S:               Existing RKS or TPS administrationbuffer, may be empty.
+   tbegin:          Datenum with begin time.
+   teind:           Datenum with end time.
+   tijdstapeenheid: (Optional) String with timeunit, 
+                    see DONAR Manual Part 7, section 2.9.3
+   tijdstap:        (Optional) timestep in tijdstapeenheid units.
+  
+  </pre><h2>OUTPUT:</h2><pre>   S: Structure with RKS or TPS (reeksadministratiebuffer) with new values.
+  
+  </pre><h2>APPROACH:</h2><pre>   Convert Matlab datenum to DONAR date and time.
+   Substitute values. Check if timeunit en timestep need to be added.
+   Check if timeunit and timestep are valid
+  
+  </pre><h2>EXAMPLE:</h2><pre></pre><pre class="codeinput">   blok = emptyblok;
+   blok.RKS=set_taxis(blok.RKS,now-1, now+1);
+   blok.RKS</pre><pre>ans = 
+    sRefvlk: ''
+    lBemhgt: -999999999
+    lBegdat: 20111205
+    iBegtyd: 345
+    sSyscod: ''
+    sTydehd: ''
+    iTydstp: 0
+    lXcrdgs: -999999999
+    lYcrdgs: -999999999
+    lVakstp: -999999999
+    lEnddat: 20111207
+    iEndtyd: 345
+    sRkssta: ''
+    lBeginv: 0
+    lEndinv: 0
+    sVzmcod: ''
+    sVzmoms: ''
+    sSvzcod: ''
+    sSvzoms: ''
+    sSsvcod: ''
+    sSsvoms: ''
+    sSsscod: ''
+    sSssoms: ''
+    lXcrdwb: -999999999
+    lYcrdzb: -999999999
+    lXcrdob: -999999999
+    lYcrdnb: -999999999
+    lXcrdmn: -999999999
+    lYcrdmn: -999999999
+    lXcrdmx: -999999999
+    lYcrdmx: -999999999
+</pre><h2>See also:</h2><pre></pre><a href="combineRKS.html">combineRKS</a><br><a href="combineTPS.html">combineTPS</a><br><a href="cmp_taxis.html">cmp_taxis</a><br></div>
+      <hr>
+      
+   </body>
+</html>

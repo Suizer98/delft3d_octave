@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root>
+  <name>interactivetext</name>
+  <longname>Interactive Text</longname>
+  <callback>muppet_addDatasetInteractiveText</callback>
+  <option>
+    <name>filetype</name>
+  </option>
+  <option>
+    <name>text</name>
+  </option>
+  <option>
+    <name>x</name>
+  </option>
+  <option>
+    <name>y</name>
+  </option>
+</root>

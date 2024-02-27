@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!-- Written on 05-Jul-2012 16:52:49 using the XML Toolbox for Matlab -->
+<root>
+  <file>
+    <name>co-ops.mat</name>
+    <type>data</type>
+    <version>1</version>
+    <URL>http://opendap.deltares.nl/static/deltares/delftdashboard/toolboxes/ObservationStations/co-ops.mat</URL>
+  </file>
+  <file>
+    <name>dart.mat</name>
+    <type>data</type>
+    <version>1</version>
+    <URL>http://opendap.deltares.nl/static/deltares/delftdashboard/toolboxes/ObservationStations/dart.mat</URL>
+  </file>
+  <file>
+    <name>matroos.mat</name>
+    <type>data</type>
+    <version>1</version>
+    <URL>http://opendap.deltares.nl/static/deltares/delftdashboard/toolboxes/ObservationStations/matroos.mat</URL>
+  </file>
+  <file>
+    <name>ndbc.mat</name>
+    <type>data</type>
+    <version>1</version>
+    <URL>http://opendap.deltares.nl/static/deltares/delftdashboard/toolboxes/ObservationStations/ndbc.mat</URL>
+  </file>
+</root>

@@ -1,0 +1,126 @@
+#!/usr/bin/env python
+import sys
+import subprocess
+import datetime
+
+# name of variables that are greped from 'qstat -f' 
+field_jobid  = 'Job ID' 
+collen_jobid = 16
+fields = ['Job_Name', 'Job_Owner', 'start_time', 'job_state', 'exec_host', 'Output_Path']
+collen = [20,         20,          14,           6,           30,          50]
+
+# grep content of 'qstat -f'
+proc = subprocess.Popen(["qstat", "-f"], stdout=subprocess.PIPE)
+output = proc.stdout.read()
+
+# convert string in list by splitting it at new lines
+output = output.split('\n')
+# splitting also splits lines that did not fit in one line of the 'qstat -f' command 
+# now we revers that by:
+# merging lines that start with \t with the lines above them
+contlines = []
+for nn in range(len(output)-1,-1,-1):
+  if output[nn].startswith('\t'):
+    output[nn-1] = output[nn-1]+output[nn]
+    contlines.append(nn)
+# removing lines that start with \t since their content is now in lines above them
+for nn in range(len(contlines)):
+  output.pop(contlines[nn])
+# removing \t symbols
+for nn in range(len(output)):
+  output[nn] = output[nn].replace('\t','')
+
+# save all jobs in 'jobids' and all attributes specified by 'fields' in 'jobfields' 
+jobids = []       # list strings
+jobfields  = []   # list of dictionaries
+for l in output:
+  # remove trailing spaces
+  l = l.strip()
+  # get Job ID
+  if l.startswith("Job Id:"):
+    jobids.append( l.split()[2] )
+    jobfields.append( dict() )
+
+  ll = l.split(' = ')
+  if len(ll)>0 and ll[0] in fields:
+    jobfields[-1][ll[0]] = ll[1]
+
+# improve some fields for display
+nodes_used = []
+for kk, jobfield in enumerate(jobfields):
+  # 'exec_host'
+  if jobfield.has_key('exec_host'):
+    old_cont = jobfield['exec_host']
+    nodes = old_cont.split('+')
+    for nn, node in enumerate(nodes):
+      nodes[nn] = node[:6]
+    nodes2 = list(set(nodes))
+    new_cont = ''
+    num_cors = 0
+    for node in nodes2:
+      nodes_used.append(node)
+      new_cont += "n%s*%d + " % (node[-2:], nodes.count(node))
+      num_cors += nodes.count(node)
+    new_cont = new_cont[:-2]+'= %d' % num_cors
+    jobfield['exec_host'] = new_cont
+  else:
+    jobfield['exec_host'] = '---'
+  # 'Job_Owner'
+  if jobfield.has_key('Job_Owner'):
+    jobfield['Job_Owner'] = jobfield['Job_Owner'].split('@')[0]
+  # 'Job_Name'
+  if jobfield.has_key('Job_Name'):
+    nf = collen[fields.index('Job_Name')]
+    if len(jobfield['Job_Name']) > nf:
+      jobfield['Job_Name'] = '...' + jobfield['Job_Name'][-(nf-3):]
+  # 'Output_Path'
+  if jobfield.has_key('Output_Path'):
+    nf = collen[fields.index('Output_Path')]
+    tmp = jobfield['Output_Path'].split(':')[1]
+    jobfield['Output_Path'] = tmp[:tmp.rfind('/')]
+    if len(jobfield['Output_Path']) > nf:
+      jobfield['Output_Path'] = '...' + jobfield['Output_Path'][-(nf-3):]
+  # 'job_state'
+  if jobfield.has_key('job_state'):
+    jobfield['state'] = jobfield['job_state']
+    if 'job_state' in fields:
+      fields[fields.index('job_state')] = 'state'
+  # 'start_time'
+  if jobfield.has_key('start_time'):
+    dt = (datetime.datetime.now() - datetime.datetime.strptime(jobfield['start_time'],'%a %b %d %H:%M:%S %Y') ).total_seconds()
+    jobfield['duration'] = '{: 2.0f}d {:02.0f}:{:02.0f}:{:02.0f}'.format( dt//86400, dt%86400//3600, dt%86400%3600//60, dt%86400%3600%60 )
+    if 'start_time' in fields:
+      fields[ fields.index('start_time') ] = 'duration'
+  else:
+    jobfield['duration'] = '---'
+
+# write headline of overview
+firstline = (' {0:<'+'{:d}'.format(collen_jobid)+'s}').format(field_jobid)
+for nn, field in enumerate(fields):
+  firstline += (' {0:<'+'{:d}'.format(collen[nn])+'s}').format(field)
+print firstline
+print '-'*len(firstline)
+
+# write line for all jobs
+for kk, jobid in enumerate(jobids):
+  showstring = (' {0:<'+'{:d}'.format(collen_jobid)+'s}').format(jobid)
+  for nn, field in enumerate(fields):
+    #showstring += '{0:<25s}'.format(jobfields[nn][field])
+    showstring += (' {0:<'+'{:d}'.format(collen[nn])+'s}').format(jobfields[kk][field])
+  print showstring
+
+# print information about unused nodes
+nodes_used = list(set(nodes_used)) 
+nodes_notused = []
+nodes_notusedstr = 'nodes not used:'
+for n in range(1,13):
+  if 'n08-%02d' % (n) not in nodes_used:
+    nodes_notused.append('n08-%02d' % (n))
+    nodes_notusedstr += ' n%02d,' % (n)
+if nodes_notusedstr[-1]==':':
+  nodes_notusedstr += ' --- '
+else:
+  nodes_notusedstr = nodes_notusedstr[:-1]
+print nodes_notusedstr
+  
+

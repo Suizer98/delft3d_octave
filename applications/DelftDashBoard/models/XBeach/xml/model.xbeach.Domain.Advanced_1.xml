@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>checkbox</style>
+    <text>hotstartflow</text>
+    <position>70.000,107.500</position>
+    <tooltipstring>Switch to hotstart flow conditions with pressure gradient balanced by wind and bed stress [-]</tooltipstring>
+    <variable>handles.model.xbeach.domain.hotstartflow</variable>
+    <type>integer</type>
+  </element>
+</root>

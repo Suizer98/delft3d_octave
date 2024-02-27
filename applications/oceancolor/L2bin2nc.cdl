@@ -1,0 +1,78 @@
+NetCDF-3 64bit L2bin2nc.nc {
+
+  dimensions:
+    time = 2 ;
+    dim1 = 1121 ;
+    dim2 = 785 ;
+    bounds4 = 4 ;
+
+  variables:
+    // Preference 'PRESERVE_FVD':  false,
+    // dimensions consistent with ncBrowse, not with native MATLAB netcdf package.
+    double time(time), shape = [2]
+      :standard_name = "time" 
+      :long_name = "time" 
+      :units = "days since 1970-01-01 00:00:00 +00:00" 
+      :axis = "T" 
+      :actual_range = NaN NaN 
+    int32 crs([]), shape = [1]
+      :name = "WGS 84" 
+      :epsg = 4326 
+      :grid_mapping_name = "latitude_longitude" 
+      :semi_major_axis = 6.37814e+006 
+      :semi_minor_axis = 6.35675e+006 
+      :inverse_flattening = 298.257 
+      :proj4_params = "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs " 
+      :EPSG_code = "EPSG:4326" 
+      :projection_name = "Latitude Longitude" 
+      :wkt = "" 
+      :comment = "value is equal to EPSG code" 
+    double lon(dim1,dim2), shape = [1121 785]
+      :standard_name = "longitude" 
+      :long_name = "pixel center longitude" 
+      :units = "degrees_east" 
+      :coordinates = "lat lon" 
+      :axis = "X" 
+      :_FillValue = 9.96921e+036 
+      :actual_range = -7.68832 12.0889 
+    double lat(dim1,dim2), shape = [1121 785]
+      :standard_name = "latitude" 
+      :long_name = "pixel center latitude" 
+      :units = "degrees_north" 
+      :coordinates = "lat lon" 
+      :axis = "Y" 
+      :_FillValue = 9.96921e+036 
+      :actual_range = 45.8291 56.6645 
+    double TSM(time,dim1,dim2), shape = [2 1121 785]
+      :standard_name = "concentration_of_suspended_matter_in_sea_water" 
+      :long_name = "suspended particulate matter" 
+      :units = "g m-3" 
+      :coordinates = "lat lon time" 
+      :_FillValue = 9.96921e+036 
+      :missing_value = 9.96921e+036 
+      :missing_value_comment = "attr missing_value needed or DINEOF 3.0" 
+      :actual_range = NaN NaN 
+      :grid_mapping = "crs" 
+    int32 mask(dim1,dim2), shape = [1121 785]
+      :long_name = "mask" 
+      :units = "0/1" 
+      :actual_range = 0 1 
+      :coordinates = "lat lon" 
+      :grid_mapping = "crs" 
+      :_FillValue = 2147483647 d
+
+  //global Attributes:
+      :title = "" 
+      :institution = "" 
+      :history = "Version:, tranformation to netCDF: $HeadURL: https://svn.oss.deltares.nl/repos/openearthtools/trunk/matlab/applications/oceancolor/meris2nc.m $" 
+      :references = "" 
+      :email = "" 
+      :comment = "" 
+      :version = "" 
+      :Conventions = "CF-1.6" 
+      :terms_for_use = "These data can be used freely for research purposes provided that the following source is acknowledged:" 
+      :disclaimer = "This data is made available in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE." 
+
+
+}
+>> 

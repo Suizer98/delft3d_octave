@@ -1,0 +1,27 @@
+# Ordnace Survey 1:250000 map relief scale (feet)
+# 
+# Extracted from the file 250k-raster-legend.pdf
+# by J.J. Green 2011
+#
+# $Id: os250k-feet.cpt,v 1.2 2011/12/09 13:41:42 jjg Exp $
+#
+# Contains Ordnance Survey data (c) Crown copyright
+# and database right 2011
+#
+# Released under the Open Government Licence for
+# public sector information
+#
+# COLOR MODEL RGB
+0    255 255 255  200  255 255 255 
+200  255 254 238  600  255 254 238 
+600  255 252 221  1000 255 252 221 
+1000 255 234 195  1400 255 234 195 
+1400 255 216 168  2000 255 216 168 
+2000 255 199 146  3000 255 199 146 
+3000 255 186 139  4409 255 186 139 
+
+
+
+
+
+

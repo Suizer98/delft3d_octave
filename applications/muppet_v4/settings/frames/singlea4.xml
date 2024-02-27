@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+  <frame>
+    <name>singlea4</name>
+    <longname>Single A4</longname>
+    <box>
+      <position>1.00  1.00 19.00 27.70</position>
+      <linewidth>1.0</linewidth>
+      <color>Black</color>
+    </box>
+  </frame>
+</root>

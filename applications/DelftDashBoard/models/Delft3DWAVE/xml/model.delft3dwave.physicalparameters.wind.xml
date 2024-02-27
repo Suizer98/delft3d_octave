@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>radiobutton</style>
+    <position>10 110</position>
+    <text>Uniform</text>
+    <type>string</type>
+    <variable>handles.model.delft3dwave.domain.wind</variable>
+    <value>uniform</value>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>10 90</position>
+    <text>Space-varying</text>
+    <type>string</type>
+    <variable>handles.model.delft3dwave.domain.wind</variable>
+    <value>spacevarying</value>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>70 65 50 20</position>
+    <text>Speed : </text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.windspeed</variable>
+    <type>real</type>
+    <tooltipstring>Enter wind speed</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.wind</variable>
+        <value>uniform</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>130 65</position>
+    <text>[m/s]</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.wind</variable>
+        <value>uniform</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>70 40 50 20</position>
+    <text>Direction : </text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.winddir</variable>
+    <type>real</type>
+    <tooltipstring>Enter wind direction</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.wind</variable>
+        <value>uniform</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>130 40</position>
+    <text>[deg]</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.wind</variable>
+        <value>uniform</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>180 110 150 20</position>
+    <tooltipstring>Select wind field file</tooltipstring>
+    <text>Select wind field file</text>
+    <variable>handles.model.delft3dwave.domain.meteofile</variable>
+    <extension>*.wnd</extension>
+    <selectiontext>Select wind field file</selectiontext>
+    <onchange>ddb_Delft3DWAVE_wind</onchange>
+    <option1>file</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.wind</variable>
+        <value>spacevarying</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

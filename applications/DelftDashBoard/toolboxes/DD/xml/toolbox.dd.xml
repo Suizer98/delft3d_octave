@@ -1,0 +1,190 @@
+<?xml version="1.0"?>
+<root>
+  <toolbox>DD</toolbox>
+  <longname>Domain Decomposition</longname>
+  <enable>1</enable>
+  <formodel>delft3dflow</formodel>
+  <element>
+    <style>panel</style>
+    <position>40 10 900 160</position>
+    <text>Domain Decomposition</text>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>50 20 330 135</position>
+    <text>New Domain</text>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>390 20 170 135</position>
+    <text>DD Boundaries</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>160 115 70 20</position>
+    <text>Runid New Domain</text>
+    <textposition>left</textposition>
+    <onchange>ddb_DDToolbox</onchange>
+    <option1>editnewdomain</option1>
+    <variable>handles.toolbox.dd.newRunid</variable>
+    <type>string</type>
+    <tooltipstring>Edit runid for new domain</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>160 90 70 20</position>
+    <text>Attribute Names</text>
+    <textposition>left</textposition>
+    <onchange>ddb_DDToolbox</onchange>
+    <option1>editattributename</option1>
+    <variable>handles.toolbox.dd.attributeName</variable>
+    <type>string</type>
+    <tooltipstring>Edit filename of attribute files of new domain</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>250 115 120 20</position>
+    <text>Select Corner Points</text>
+    <callback>ddb_DDToolbox</callback>
+    <option1>selectcornerpoints</option1>
+    <tooltipstring>Select corner points for new domain</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>250 90 120 20</position>
+    <text>Generate New Domain</text>
+    <callback>ddb_DDToolbox</callback>
+    <option1>generatenewdomain</option1>
+    <tooltipstring>Generate new domain</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>160 60 40 20</position>
+    <text>M Refinement</text>
+    <textposition>left</textposition>
+    <onchange>ddb_DDToolbox</onchange>
+    <option1>editrefinement</option1>
+    <variable>handles.toolbox.dd.mRefinement</variable>
+    <type>integer</type>
+    <tooltipstring>Edit M refinement factor</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>250 60 45 20</position>
+    <text>M1</text>
+    <textposition>left</textposition>
+    <onchange>ddb_DDToolbox</onchange>
+    <option1>editm1</option1>
+    <variable>handles.toolbox.dd.firstCornerPointM</variable>
+    <type>integer</type>
+    <tooltipstring>Edit first corner point M1</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.dd.firstCornerPointM</variable>
+        <type>integer</type>
+        <value>NaN</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>325 60 45 20</position>
+    <text>M2</text>
+    <textposition>left</textposition>
+    <onchange>ddb_DDToolbox</onchange>
+    <option1>editm2</option1>
+    <variable>handles.toolbox.dd.secondCornerPointM</variable>
+    <type>integer</type>
+    <tooltipstring>Edit second corner point M2</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.dd.secondCornerPointM</variable>
+        <type>integer</type>
+        <value>NaN</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>160 30 40 20</position>
+    <text>N Refinement</text>
+    <textposition>left</textposition>
+    <onchange>ddb_DDToolbox</onchange>
+    <option1>editrefinement</option1>
+    <variable>handles.toolbox.dd.nRefinement</variable>
+    <type>integer</type>
+    <tooltipstring>Edit N refinement factor</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>250 30 45 20</position>
+    <text>N1</text>
+    <textposition>left</textposition>
+    <onchange>ddb_DDToolbox</onchange>
+    <option1>editn1</option1>
+    <variable>handles.toolbox.dd.firstCornerPointN</variable>
+    <type>integer</type>
+    <tooltipstring>Edit first corner point N1</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.dd.firstCornerPointN</variable>
+        <type>integer</type>
+        <value>NaN</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>325 30 45 20</position>
+    <text>N2</text>
+    <textposition>left</textposition>
+    <onchange>ddb_DDToolbox</onchange>
+    <option1>editn2</option1>
+    <variable>handles.toolbox.dd.secondCornerPointN</variable>
+    <type>integer</type>
+    <tooltipstring>Edit second corner point N2</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.dd.secondCornerPointN</variable>
+        <type>integer</type>
+        <value>NaN</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>440 110 100 20</position>
+    <text>DD File</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dflow.ddFile</variable>
+    <type>string</type>
+    <tooltipstring>Edit name of DD file</tooltipstring>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <text>Adjust Bathymetry</text>
+    <position>440 80</position>
+    <variable>handles.toolbox.dd.adjustBathymetry</variable>
+    <tooltipstring>Automatically adjust bathymetry along boundaries of high-res domains</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>430 30 120 20</position>
+    <text>Make DD Boundaries</text>
+    <callback>ddb_DDToolbox</callback>
+    <option1>makeddboundaries</option1>
+    <tooltipstring>Finds DD boundaries for all available domains and saves ddbound file</tooltipstring>
+  </element>
+</root>

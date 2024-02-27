@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<root>
+  <model>shorelines</model>
+  <longname>ShorelineS</longname>
+  <multipledomains>no</multipledomains>
+  <enable>1</enable>
+  <menu>
+    <menuopenfile>
+      <menuitem>
+        <string>Open ShorelineS Input</string>
+        <callback>ddb_shorelines_open_input</callback>
+        <option>open</option>
+      </menuitem>
+    </menuopenfile>
+    <menusavefile>
+      <menuitem>
+        <string>Save ShorelineS Input</string>
+        <callback>ddb_shorelines_save_input</callback>
+        <option>save</option>
+      </menuitem>
+    </menusavefile>
+    <menuview>
+      <attribute>
+        <string>Shoreline</string>
+        <callback>ddb_menu_view_shorelines</callback>
+        <option>shoreline</option>
+      </attribute>
+    </menuview>
+  </menu>
+  <element>
+    <style>tabpanel</style>
+    <position>10 10 900 400</position>
+    <tab>
+      <tabstring>Toolbox</tabstring>
+    </tab>
+    <tab>
+      <tabstring>Shorelines</tabstring>
+      <element>model.shorelines.shorelines.xml</element>
+      <callback>ddb_shorelines_shorelines</callback>
+    </tab>
+    <tab>
+      <tabstring>Time Frame</tabstring>
+      <element>model.shorelines.timeframe.xml</element>
+      <callback>ddb_shorelines_timeframe</callback>
+    </tab>
+    <tab>
+      <tabstring>Wave conditions</tabstring>
+      <element>model.shorelines.wave_conditions.xml</element>
+      <callback>ddb_shorelines_wave_conditions</callback>
+    </tab>
+    <tab>
+      <tabstring>Sediment transport</tabstring>
+      <element>model.shorelines.sediment_transport.xml</element>
+      <callback>ddb_shorelines_sediment_transport</callback>
+    </tab>
+    <tab>
+      <tabstring>Spits and channels</tabstring>
+      <element>model.shorelines.spits_and_channels.xml</element>
+      <callback>ddb_shorelines_spits_and_channels</callback>
+    </tab>
+    <tab>
+      <tabstring>Structures</tabstring>
+      <element>model.shorelines.structures.xml</element>
+      <callback>ddb_shorelines_structures</callback>
+    </tab>
+    <tab>
+      <tabstring>Nourishments</tabstring>
+      <element>model.shorelines.nourishments.xml</element>
+      <callback>ddb_shorelines_nourishments</callback>
+    </tab>
+    <tab>
+      <tabstring>Numerics</tabstring>
+      <element>model.shorelines.numerics.xml</element>
+      <callback>ddb_shorelines_numerics</callback>
+    </tab>
+    <tab>
+      <tabstring>Output</tabstring>
+      <element>model.shorelines.output.xml</element>
+      <callback>ddb_shorelines_output</callback>
+    </tab>
+  </element>
+</root>

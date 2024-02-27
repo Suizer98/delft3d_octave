@@ -1,0 +1,23 @@
+function Pointdata=xb_readpoint(fname,XBdims,nvar)
+%XB_READPOINT load xbeach point
+%
+% Pointdata=readpoint(fname,XBdims,nvar)
+%
+% Output Point is [ntp,nvar+1] array, where ntp is XBdims.ntp
+%                 First column of Pointdata is time
+%                 Second and further columns of Pointdata are values of
+%                 variables
+% Input - fname : name of data file to open, e.g. 'point001.dat' or 'rugau001.dat'
+%       - XBdims: dimension data provided by getdimensions function
+%       - nvar  : number of variables output at this point location
+%
+%See also: xbeach
+
+% Created 19-06-2008 : XBeach-group Delft
+ 
+Pointdata=zeros(XBdims.ntp,nvar+1);
+fid=fopen(fname,'r');
+for i=1:XBdims.ntp
+    Pointdata(i,:)=fread(fid,nvar+1,'double');
+end
+fclose(fid);

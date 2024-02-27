@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<root>
+  <longname>Morphology input</longname>
+  <element>
+    <style>tabpanel</style>
+    <position>10.000,  10.000,1200.000, 140.000</position>
+    <tab>
+      <tabstring>Bed composition para...</tabstring>
+      <tooltipstring>Bed composition parameters</tooltipstring>
+      <element>model.xbeach.Morphology.BedCompositionParameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Morphology parameters</tabstring>
+      <tooltipstring>Morphology parameters</tooltipstring>
+      <element>model.xbeach.Morphology.MorphologyParameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Bed update numerics ...</tabstring>
+      <tooltipstring>Bed update numerics parameters</tooltipstring>
+      <element>model.xbeach.Morphology.BedUpdateNumericsParameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Morphology advanced ...</tabstring>
+      <tooltipstring>Morphology advanced options</tooltipstring>
+      <element>model.xbeach.Morphology.Advanced_1.xml</element>
+    </tab>
+  </element>
+</root>

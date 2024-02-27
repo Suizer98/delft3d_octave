@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<root>
+  <toolbox>NavigationCharts</toolbox>
+  <longname>Navigation Charts</longname>
+  <enable>1</enable>
+  <element>
+    <style>listbox</style>
+    <text>Available Databases</text>
+    <textposition>above-center</textposition>
+    <variable>handles.toolbox.navigationcharts.activeDatabase</variable>
+    <type>integer</type>
+    <position>40 10 150 140</position>
+    <tooltipstring>Select chart database</tooltipstring>
+    <onchange>ddb_NavigationChartsToolbox</onchange>
+    <option1>selectdatabase</option1>
+    <listtext>
+      <variable>handles.toolbox.navigationcharts.databases</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>200 130 120 20</position>
+    <text>Select Chart</text>
+    <callback>ddb_NavigationChartsToolbox</callback>
+    <option1>selectchart</option1>
+    <tooltipstring>Select navigation chart</tooltipstring>
+  </element>
+  <element>
+    <style>text</style>
+    <type>string</type>
+    <position>200 10</position>
+    <variable>handles.toolbox.navigationcharts.activeChartName</variable>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>350 130 120 20</position>
+    <text>Export Shoreline</text>
+    <callback>ddb_NavigationChartsToolbox</callback>
+    <option1>exportshoreline</option1>
+    <tooltipstring>Export shoreline to ldb file</tooltipstring>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <text>Show Shoreline</text>
+    <position>480 130</position>
+    <variable>handles.toolbox.navigationcharts.showShoreline</variable>
+    <onchange>ddb_NavigationChartsToolbox</onchange>
+    <option1>toggleshoreline</option1>
+    <tooltipstring>Show shorelines</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>350 105 120 20</position>
+    <text>Export Contours</text>
+    <callback>ddb_NavigationChartsToolbox</callback>
+    <option1>exportcontours</option1>
+    <tooltipstring>Export depth contours to xyz file</tooltipstring>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <text>Show Contours</text>
+    <position>480 105</position>
+    <variable>handles.toolbox.navigationcharts.showContours</variable>
+    <onchange>ddb_NavigationChartsToolbox</onchange>
+    <option1>togglecontours</option1>
+    <tooltipstring>Show depth contours</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>350 80 120 20</position>
+    <text>Export Soundings</text>
+    <callback>ddb_NavigationChartsToolbox</callback>
+    <option1>exportsoundings</option1>
+    <tooltipstring>Export depth soundings to xyz file</tooltipstring>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <text>Show Soundings</text>
+    <position>480 80</position>
+    <variable>handles.toolbox.navigationcharts.showSoundings</variable>
+    <onchange>ddb_NavigationChartsToolbox</onchange>
+    <option1>togglesoundings</option1>
+    <tooltipstring>Show depth soundings</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>650 130 80 20</position>
+    <text>Draw Polygon</text>
+    <callback>ddb_NavigationChartsToolbox</callback>
+    <option1>drawpolygon</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>650 105 80 20</position>
+    <text>Export All</text>
+    <callback>ddb_NavigationChartsToolbox</callback>
+    <option1>exportalldatainpolygon</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.navigationcharts.polygonLength</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

@@ -1,0 +1,7 @@
+Boundary conditions
+Left side
+Type      Qs[(m3/y)]      Nr. File      Column
+       3      0.00             0       1
+Right side
+Type      Qs[(m3/y)]      Nr. File      Column
+       3      0.00             0       1

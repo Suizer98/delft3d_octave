@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<root>
+
+  <element>
+    <style>listbox</style>
+    <text>Refinement Polygons</text>
+    <textposition>above-center</textposition>
+    <variable>handles.toolbox.modelmaker.sfincs.buq.active_refinement_polygon</variable>
+    <type>integer</type>
+    <position>10 20 90 100</position>
+    <tooltipstring>Select refinement polygon</tooltipstring>
+    <onchange>ddb_ModelMakerToolbox_sfincs_buq</onchange>
+    <option1>select_refinement_polygon</option1>
+    <listtext>
+      <variable>handles.toolbox.modelmaker.sfincs.buq.refinement_polygon_names</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>100 100 80 20</position>
+    <text>Draw Polygon</text>
+    <callback>ddb_ModelMakerToolbox_sfincs_buq</callback>
+    <option1>draw_refinement_polygon</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>100 75 80 20</position>
+    <text>Delete Polygon</text>
+    <callback>ddb_ModelMakerToolbox_sfincs_buq</callback>
+    <option1>delete_refinement_polygon</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.modelmaker.sfincs.buq.nr_refinement_polygons</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>100 50 80 20</position>
+    <text>Load Polygon</text>
+    <variable>handles.toolbox.modelmaker.sfincs.buq.refinement_polygonfile</variable>
+    <onchange>ddb_ModelMakerToolbox_sfincs_buq</onchange>
+    <option1>load_refinement_polygon</option1>
+    <showfilename>no</showfilename>
+    <extension>*.pol</extension>
+    <selectiontext>Select polygon file</selectiontext>
+    <tooltipstring>Select polygon file</tooltipstring>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>100 25 80 20</position>
+    <text>Save Polygon</text>
+    <variable>handles.toolbox.modelmaker.sfincs.buq.refinement_polygonfile</variable>
+    <onchange>ddb_ModelMakerToolbox_sfincs_buq</onchange>
+    <option1>save_refinement_polygon</option1>
+    <showfilename>no</showfilename>
+    <extension>*.pol</extension>
+    <selectiontext>Save polygon file</selectiontext>
+    <tooltipstring>Save polygon file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.modelmaker.sfincs.buq.nr_refinement_polygons</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Resolution</text>
+    <textposition>above-center</textposition>
+    <variable>handles.toolbox.modelmaker.sfincs.buq.active_refinement_level</variable>
+    <type>integer</type>
+    <position>200 100 80 20</position>
+    <tooltipstring>Select refinement</tooltipstring>
+    <onchange>ddb_ModelMakerToolbox_sfincs_buq</onchange>
+    <option1>select_refinement_level</option1>
+    <listtext>
+      <variable>handles.toolbox.modelmaker.sfincs.buq.refinement_level_strings</variable>
+    </listtext>
+  </element>
+
+
+
+  <element>
+    <style>edit</style>
+    <position>920 110 50 20</position>
+    <tooltipstring>Edit maximum elevation SFINCS model</tooltipstring>
+    <text>Zmax</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.modelmaker.sfincs.zmax</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>920 85 50 20</position>
+    <tooltipstring>Edit minimum elevation SFINCS model</tooltipstring>
+    <text>Zmin</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.modelmaker.sfincs.zmin</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>870 10 100 20</position>
+    <tooltipstring>Push to generate block uniform quadtree mesh</tooltipstring>
+    <text>Make BUQ</text>
+    <callback>ddb_ModelMakerToolbox_sfincs_buq</callback>
+    <option1>generate_buq_grid</option1>
+    <enable>1</enable>
+  </element>
+  
+</root>

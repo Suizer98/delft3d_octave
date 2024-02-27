@@ -1,0 +1,264 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <text>Constants</text>
+    <position>40 95 180 75</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>160 130 50 20</position>
+    <text>Air Density (kg/m3)</text>
+    <variable>handles.model.sfincs.domain(ad).input.rhoa</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>160 105 50 20</position>
+    <text>Water Density (kg/m3)</text>
+    <variable>handles.model.sfincs.domain(ad).input.rhow</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>panel</style>
+    <text>Advection</text>
+    <position>40 10 180 85</position>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Advection</text>
+    <position>140 55 60 20</position>
+    <type>integer</type>
+    <variable>handles.model.sfincs.domain(ad).input.advection</variable>
+    <listtext>none</listtext>
+    <listtext>1D</listtext>
+    <listtext>2D</listtext>
+    <listvalue>0</listvalue>
+    <listvalue>1</listvalue>
+    <listvalue>2</listvalue>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>140 30 60 20</position>
+    <text>Advection Limiter</text>
+    <variable>handles.model.sfincs.domain(ad).input.advlim</variable>
+    <type>real</type>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).input.advection</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>panel</style>
+    <text>Roughness</text>
+    <position>230 10 260 160</position>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>330 130 150 20</position>
+    <text>Roughness Type</text>
+    <variable>handles.model.sfincs.domain(ad).roughness_type</variable>
+    <type>string</type>
+    <listtext>Uniform</listtext>
+    <listtext>Land-sea interface</listtext>
+    <listtext>File</listtext>
+    <listvalue>uniform</listvalue>
+    <listvalue>landsea</listvalue>
+    <listvalue>file</listvalue>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>330 105 50 20</position>
+    <text>Manning</text>
+    <variable>handles.model.sfincs.domain(ad).input.manning</variable>
+    <type>real</type>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).roughness_type</variable>
+        <value>uniform</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>330 105 50 20</position>
+    <text>Manning (land)</text>
+    <variable>handles.model.sfincs.domain(ad).input.manning_land</variable>
+    <type>real</type>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).roughness_type</variable>
+        <value>landsea</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>330 80 50 20</position>
+    <text>Manning (sea)</text>
+    <variable>handles.model.sfincs.domain(ad).input.manning_sea</variable>
+    <type>real</type>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).roughness_type</variable>
+        <value>landsea</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>330 55 50 20</position>
+    <text>Land level</text>
+    <variable>handles.model.sfincs.domain(ad).input.rgh_lev_land</variable>
+    <type>real</type>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).roughness_type</variable>
+        <value>landsea</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>240 105 80 20</position>
+    <tooltipstring>Select Manning file</tooltipstring>
+    <text>Manning File</text>
+    <variable>handles.model.sfincs.domain(ad).input.manningfile</variable>
+    <extension>*.rgh</extension>
+    <selectiontext>Select Manning file</selectiontext>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).roughness_type</variable>
+        <value>file</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>500 10 210 160</position>
+    <text>Wind Drag Coefficients</text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>510 116</position>
+    <text>Breakpoint 1</text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>510 96</position>
+    <text>Breakpoint 2</text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>510 76</position>
+    <text>Breakpoint 3</text>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).input.cdnrb</variable>
+        <value>3</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>table</style>
+    <position>580 75</position>
+    <nrrows>3</nrrows>
+    <includenumbers>no</includenumbers>
+    <column>
+      <style>editreal</style>
+      <variable>handles.model.sfincs.domain(ad).input.cdwnd</variable>
+      <width>60</width>
+      <text>Coef (-)</text>
+    </column>
+    <column>
+      <style>editreal</style>
+      <variable>handles.model.sfincs.domain(ad).input.cdval</variable>
+      <width>60</width>
+      <text>Speed (m/s)</text>
+    </column>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Number of breakpoints</text>
+    <position>670 20 30 20</position>
+    <variable>handles.model.sfincs.domain(ad).input.cdnrb</variable>
+    <type>integer</type>
+    <onchange>ddb_sfincs_physics</onchange>
+    <option1>changenrbreakpoints</option1>
+    <listtext>2</listtext>
+    <listtext>3</listtext>
+    <listvalue>2</listvalue>
+    <listvalue>3</listvalue>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>720 70 200 100</position>
+    <text>Barometric Pressure</text>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>730 130 50 20</position>
+    <text>Include pressure</text>
+    <variable>handles.model.sfincs.domain(ad).input.baro</variable>
+    <type>boolean</type>
+    <tooltipstring>Check to include barometric pressure gradients in flux computation</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>730 105 50 20</position>
+    <text>Pressure Correction (Pa)</text>
+    <variable>handles.model.sfincs.domain(ad).input.pavbnd</variable>
+    <type>real</type>
+    <tooltipstring>Edit background pressure for inverse barometer correction at the boundaries</tooltipstring>
+    <textposition>right</textposition>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>730 80 50 20</position>
+    <text>Ambient Pressure (Pa)</text>
+    <variable>handles.model.sfincs.domain(ad).input.gapres</variable>
+    <type>real</type>
+    <tooltipstring>Edit background air pressure</tooltipstring>
+    <textposition>right</textposition>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>720 10 200 60</position>
+    <text>Infiltration</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>730 30 50 20</position>
+    <text>Infiltration Rate (mm/h)</text>
+    <variable>handles.model.sfincs.domain(ad).input.qinf</variable>
+    <type>real</type>
+    <tooltipstring>Edit infiltration rate</tooltipstring>
+    <textposition>right</textposition>
+  </element>
+</root>

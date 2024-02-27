@@ -1,0 +1,2 @@
+Scripts voor meenemen zeespiegelstijging in duinafslagberekeningen. Ontvangen van Thomas van Walsem op 6-7-2022. Gemaakt door Maurits (afstudeerder).
+Whole package was not functional for us, so only moved the functions to this folder.

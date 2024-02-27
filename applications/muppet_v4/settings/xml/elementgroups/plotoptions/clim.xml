@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <variable>adddatestring</variable>
+    <style>panel</style>
+    <position>0 0 350 80</position>
+    <text>Contours</text>
+  </element>
+  <element>
+    <variable>cmin</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>40 40 40 20</position>
+    <text>C Min</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>usecustomcontours</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>cstep</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>125 40 40 20</position>
+    <text>C Step</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>usecustomcontours</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>cmax</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>210 40 40 20</position>
+    <text>C Max</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>usecustomcontours</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>usecustomcontours</variable>
+    <type>boolean</type>
+    <style>checkbox</style>
+    <position>40 10 60 20</position>
+    <text>Custom Contours</text>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>150 10 70 20</position>
+    <callback>muppet_editCustomContours</callback>
+    <text>Edit ...</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>usecustomcontours</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

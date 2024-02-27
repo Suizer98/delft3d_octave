@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<root>
+  <toolbox>Shoreline</toolbox>
+  <longname>Shoreline</longname>
+  <enable>1</enable>
+  <element>
+    <position>10 10 1000 140</position>
+    <style>tabpanel</style>
+    <tab>
+      <tabstring>Export</tabstring>
+      <callback>ddb_ShorelineToolbox_export</callback>
+      <element>toolbox.shoreline.export.xml</element>
+    </tab>
+  </element>
+</root>

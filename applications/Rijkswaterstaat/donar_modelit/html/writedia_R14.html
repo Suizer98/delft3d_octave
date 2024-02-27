@@ -1,0 +1,43 @@
+<html>
+   <header>
+      
+      <title>set_taxis</title>
+      <meta name="generator" content="MATLAB 7.7">
+      <meta name="date" content="2011Dec06">
+      <meta name="m-file" content="writedia_R14">
+      <link type="text/css" rel="stylesheet" href="./toolbox.css">
+      
+   </header>
+   <body>
+      
+      <hr>
+      <div>
+         <h2>Function writedia_R14</h2><pre>  Write DIA structure to file.
+  
+  </pre><h2>CALL:</h2><pre>   rc = writedia_R14(S, fname)
+  
+  </pre><h2>INPUT:</h2><pre>   S: Dia structure to save, fields:
+      +----IDT
+      |    +----sFiltyp (char)
+      |    +----sSyscod (char)
+      |    +----lCredat (double)
+      |    +----sCmtrgl (char)
+      +----blok
+      +----W3H (struct): see emptyW3H
+      +----MUX (struct): empty, see emptyMUX
+      +----TYP (struct): empty
+      +----RGH (struct): empty, see emptyRGH
+      +----RKS (struct): see emptyRKS
+      +----TPS (struct): empty, see emptyTPS
+      +----WRD (struct): see emptyWRD
+   fname: String with the name of the file to create.
+         
+  </pre><h2>OUTPUT:</h2><pre>   rc: Integer returncode:
+       rc == 0 operation successful.
+       rc ~= 0 error, rc contains the DIM errorcode.
+         
+  </pre><h2>See also:</h2><pre></pre><a href="readdia_R14.html">readdia_R14</a><br><a href="verifyDia.html">verifyDia</a><br></div>
+      <hr>
+      
+   </body>
+</html>

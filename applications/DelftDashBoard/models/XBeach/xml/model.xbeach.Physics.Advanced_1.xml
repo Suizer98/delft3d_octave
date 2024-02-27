@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>checkbox</style>
+    <text>nonh</text>
+    <position>70.000,107.500</position>
+    <tooltipstring>Non-hydrostatic pressure option: 0 = NSWE, 1 = NSW + non-hydrostatic pressure compensation Stelling & Zijlema, 2003 [-]</tooltipstring>
+    <variable>handles.model.xbeach.domain.nonh</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Turn on (1) or off (0) groundwater flow module [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>gwflow</text>
+    <position>70.000,80.000</position>
+    <variable>handles.model.xbeach.domain.gwflow</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Turn on (1) or off (0) quasi-3D sediment transport module [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>q3d</text>
+    <position>70.000,52.500</position>
+    <variable>handles.model.xbeach.domain.q3d</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Turn on (1) or off (0) short wave runup [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>swrunup</text>
+    <position>70.000,25.000</position>
+    <variable>handles.model.xbeach.domain.swrunup</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Turn on (1) or off (0) ship waves [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>ships</text>
+    <position>230.000,107.500</position>
+    <variable>handles.model.xbeach.domain.ships</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Turn on (1) or off (0) interaction of waves and flow with vegetation [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>vegetation</text>
+    <position>230.000, 80.000</position>
+    <variable>handles.model.xbeach.domain.vegetation</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Turn on (1) or off (0) Snell's law for wave refraction [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>snells</text>
+    <position>230.000, 52.500</position>
+    <variable>handles.model.xbeach.domain.snells</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>depthscale of (lab)test simulated. 1 = default, which corresponds to teh real world (nature) [-]</tooltipstring>
+    <style>edit</style>
+    <text>depthscale</text>
+    <position>230.000, 25.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.depthscale</variable>
+    <type>real</type>
+  </element>
+</root>

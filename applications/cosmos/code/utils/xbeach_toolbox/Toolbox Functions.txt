@@ -1,0 +1,55 @@
+Coastal Hazards Toolbox Functions:
+
+GENERATING XBEACH INPUT:
+
+read_mopsp_mult.m   Function reads the MOP spectral files (all spectra for one month and one site) and just 
+                    needs the mopid and monthid as input.  You can add start and end dates to cut to a
+                    specific time period.  This stores the 1d data and generates a 2d spectral timeseries by 
+                    placing the energy at each frequency in the direction of the Sxy angle.
+
+plot_mopspec.m	 Function that plots the 2d spectra created from MOP data for review/check.
+
+mopsp2xbeach.m   Function that reads in the 2d spectral timeseries from read_mopsp_mult.m, converts angles to
+		 xbeach coordinate system, and writes 2D spectral files using write2DxbeachSpec.m function.
+
+write2DXbeachSpec.m    This function writes 2D formatted variance density specral input files (instat = 6, 
+		       xbeach manual p.43) for Xbeach from the spectral structure SS named specin_NAME_date.dat
+                       and Filelist.txt with the names of each individual file for use with the 'bcfile' 
+		       command for time-varying spectra (Xbeach manual p.45). 
+
+writeXbeachjonswapSpec.m    This function reads in the MOP parameter file and writes jonswap spectral input 
+		            files (instat=4, xbeach manual p.40) for Xbeach named jonswap_NAME_datestr.inp
+			    and jonswaplist.txt with the names of each individual file for use with the
+			    'bcfile' command for time-varying spectra (Xbeach manual p.45).
+
+makexbeachinput.m    A function to generate an xbeach .dep and param.txt file for running in profile mode 
+		     from input bathy (includes longshore uniform bathy consisting of 3 rows of data for 
+		     depth file).
+
+WORKING WITH XBEACH OUTPUT:
+
+plotdata.m	This program will plot a movie of the xbeach output for a quick look (from Xbeach code 
+		provided with test cases).
+
+xbeach2nc.m	This function is the main code that you run to store xbeach output data in netcdf format.  
+                It calls the functions ncwrite_xbeach.m and nccreate_xbeach.m in order to write the 
+                netcdf file.  You must include the getdimensions.m, readvar.m and readpoint.m matlab 
+                scripts provided in the xbeach manual since it applies those as well. You will need 
+		the netcdf toolbox and mexnc interface in order to run this, since it uses those 
+		utilities and you can download them at http://mexcdf.sourceforge.net/.
+
+		These files must exist in the folder since the program reads them in:
+
+		params.txt
+		name.dep (depth file for xbeach)
+		name.dat (output data files, it will look for dims, xy, zs, zb, H, thetamean, u, v
+		 	  and rugau001)
+
+
+nccreate_xbeach.m  A function to gather metadata and create empty netCDF files that will store xbeach
+		   output data.
+
+ncwrite_adcpWvs.m  A function to write the xbeach data to a netCDF file.
+
+ncdump.m	   This function lists the NetCDF file header information (function in netcdf toolbox).
+ncoad.m		   This function loads NetCDF file to Matlab (function in netcdf toolbox).

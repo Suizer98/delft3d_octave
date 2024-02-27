@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<root>
+  <model>modflowusg</model>
+  <longname>MODFLOW USG</longname>
+  <multipledomains>no</multipledomains>
+  <enable>1</enable>
+  <menu>
+    <menuopenfile>
+      <menuitem>
+        <string>Open MODFLOW File</string>
+        <callback>ddb_openDelft3DFLOW</callback>
+        <option>openpresent</option>
+      </menuitem>
+    </menuopenfile>
+    <menusavefile>
+      <menuitem>
+        <string>Save MODFLOW File</string>
+        <callback>ddb_saveDelft3DFLOW</callback>
+        <option>save</option>
+      </menuitem>
+    </menusavefile>
+    <menuview>
+      <attribute>
+        <string>Grid</string>
+        <callback>ddb_menuViewDelft3DFLOW</callback>
+        <option>grid</option>
+      </attribute>
+      <attribute>
+        <string>Bathymetry</string>
+        <callback>ddb_menuViewDelft3DFLOW</callback>
+        <option>bathymetry</option>
+      </attribute>
+    </menuview>
+  </menu>
+  <element>
+    <style>tabpanel</style>
+    <position>10 10 900 400</position>
+    <tab>
+      <tabstring>Toolbox</tabstring>
+    </tab>
+    <tab>
+      <tabstring>Time Frame</tabstring>
+      <callback>ddb_modflowusg_timetrame</callback>
+      <element>model.modflowusg.timeframe.xml</element>
+    </tab>
+  </element>
+</root>

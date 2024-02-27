@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <text>Numerical Parameters</text>
+    <position>40 10 900 160</position>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Depth at Grid Cell Centres</text>
+    <position>200 120 60 20</position>
+    <type>string</type>
+    <variable>handles.model.delft3dflow.domain(ad).dpsOpt</variable>
+    <onchange>ddb_Delft3DFLOW_numericalParameters</onchange>
+    <option1>selectdps</option1>
+    <listtext>MAX</listtext>
+    <listtext>MEAN</listtext>
+    <listtext>MIN</listtext>
+    <listtext>DP</listtext>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Depth at Grid Cell Faces</text>
+    <position>200 90 60 20</position>
+    <type>string</type>
+    <variable>handles.model.delft3dflow.domain(ad).dpuOpt</variable>
+    <listtext>
+      <variable>handles.model.delft3dflow.domain(ad).dpuOptions</variable>
+    </listtext>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>50 62</position>
+    <text>Drying and Flooding Check at</text>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>200 60</position>
+    <text>Cell Centres and Faces</text>
+    <variable>handles.model.delft3dflow.domain(ad).dryFlp</variable>
+    <type>integer</type>
+    <value>1</value>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).dryFlp</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>200 40</position>
+    <text>Cell Centres</text>
+    <variable>handles.model.delft3dflow.domain(ad).dryFlp</variable>
+    <type>integer</type>
+    <value>0</value>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).dryFlp</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>480 120 50 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).dryFlc</variable>
+    <type>real</type>
+    <tooltipstring>Edit threshold depth</tooltipstring>
+    <text>Threshold Depth (m)</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>480 90 50 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).dco</variable>
+    <type>real</type>
+    <tooltipstring>Edit marginal depth</tooltipstring>
+    <text>Marginal Depth (m)</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>480 60 50 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).smoothingTime</variable>
+    <type>real</type>
+    <tooltipstring>Edit smoothing time</tooltipstring>
+    <text>Smoothing Time (min)</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Advection Scheme for Momentum</text>
+    <position>780 120 60 20</position>
+    <type>string</type>
+    <variable>handles.model.delft3dflow.domain(ad).momSol</variable>
+    <listtext>Cyclic</listtext>
+    <listtext>Waqua</listtext>
+    <listtext>Flood</listtext>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>780 90 60 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).dgcuni</variable>
+    <type>real</type>
+    <tooltipstring>Edit smoothing time</tooltipstring>
+    <text>Threshold Depth Critical Flow Limiter (m)</text>
+    <textposition>left</textposition>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).momSol</variable>
+        <value>Flood</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

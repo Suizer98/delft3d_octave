@@ -1,0 +1,357 @@
+                                                            RUN STARTED AT
+0=== NUMBER OF OBSERVATIONS:                      RECORDS ===
+0===================
+  FMT:          FREE
+ NAME:             N
+ ===================
+ PAGE
+      INFMT: NOTHING READ
+  100 FORMAT(15X,I5)
+0=== START TIME OF OBSERVATIONS:                  RECORDS ===
+0======================================================
+  FMT:     I2     I2     I2   (2X)     I2     I2     I2
+  COL:    1-2    3-4    5-6    7-8   9-10  11-12  13-14
+         YEAR  MONTH    DAY         HOURS    MIN    SEC
+* ======================================================
+ PAGE
+  102 FORMAT(3I2,2X,3I2)
+  103 FORMAT(6X,3I7,7X,3I7)
+0=== END TIME OF OBSERVATIONS:                    RECORDS ===
+0======================================================
+  FMT:     I2     I2     I2   (2X)     I2     I2     I2
+  COL:    1-2    3-4    5-6    7-8   9-10  11-12  13-14
+         YEAR  MONTH    DAY         HOURS    MIN    SEC
+ ======================================================
+ PAGE
+  102 FORMAT(3I2,2X,3I2)
+  103 FORMAT(6X,3I7,7X,3I7)
+0=== UNIT OF OBSERVATIONS:                        RECORDS ===
+0===================
+  FMT:      A8
+  COL:      1-8
+            UNIT
+ ===================
+ PAGE
+  105 FORMAT(A8)
+  106 FORMAT(12X,A8)
+0=== OPTIONS SET:                                 RECORDS ===
+0=====================================================================
+
+
+
+
+
+
+
+
+
+
+  FMT:                          (FREE)
+          GRAPHICS          PRINT    ACCURACY       LINEAR    INACTIVE
+         PARAMETER    MATRIX OF    ANALYSIS   MEAN LEVEL     PARAMETER
+                     NORMAL EQ.      WANTED    ELEVATION
+ NAME:     INFO1          INFO2       INFO3        INFO4         INFO5
+ =====================================================================
+ PAGE
+      INFMT: NOTHING READ
+  109 FORMAT(15X,I1,14X,I1,11X,I1,12X,I1,13X,I1)
+0=== NUMBER OF HARMONIC COMPONENTS:               RECORDS ===
+0===================
+  FMT:          FREE
+ NAME:             K
+ ===================
+ PAGE
+      INFMT: NOTHING READ
+  100 FORMAT(15X,I5)
+0=== COMPONENT NAMES:                             RECORDS ===
+0==========================
+  FMT:             A8
+  COL:             1-8
+        NR.        NAME
+ ==========================
+ PAGE
+  112 FORMAT(A8)
+  113 FORMAT(7X,I3,9X,A8)
+0=== GROUPS OF ASTR. COUPLED COMPS.:              RECORDS ===
+0===================
+  FMT:          FREE
+ NAME:        ISIGMA
+ ===================
+ PAGE
+      INFMT: NOTHING READ
+  100 FORMAT(15X,I5)
+0=== SEQ. NUMBERS OF MAIN COMPONENTS:             RECORD GROUPS ===
+0===================================================================
+  FMT:                          (FREE)
+ NAME:   ICV1  ICV2  ICV3  ICV4  ICV5  ICV6  ICV7  ICV8  ICV9  ICV10
+ ===================================================================
+ PAGE
+      INFMT: NOTHING READ
+  100 FORMAT(7X,9I6,I7)
+0=== NUMBERS OF SUBCOMPONENTS:                    RECORD GROUPS ===
+0===================================================================
+  FMT:                          (FREE)
+ NAME:   LAB1  LAB2  LAB3  LAB4  LAB5  LAB6  LAB7  LAB8  LAB9  LAB10
+ ===================================================================
+ PAGE
+      INFMT: NOTHING READ
+  100 FORMAT(7X,9I6,I7)
+0=== AMPLITUDE RELATIONS:                         RECORD GROUPS ===
+0=======================================================================================
+  FMT:                          (FREE)
+ NAME:     RHO1    RHO2    RHO3    RHO4    RHO5    RHO6    RHO7    RHO8    RHO9    RHO10
+   NR.
+ =======================================================================================
+ PAGE
+      INFMT: NOTHING READ
+  100 FORMAT(I5,2X,9F8.3,F9.3)
+0=== PHASE SHIFTS:                                RECORD GROUPS ===
+0=======================================================================================
+  FMT:                          (FREE)
+ NAME:     PSI1    PSI2    PSI3    PSI4    PSI5    PSI6    PSI7    PSI8    PSI9    PSI10
+   NR.
+ =======================================================================================
+ PAGE
+      INFMT: NOTHING READ
+  100 FORMAT(I5,2X,9F8.1,F9.1)
+0=== NUMBER OF INSTRUMENTS:                       RECORDS ===
+0===================
+  FMT:          FREE
+ NAME:            IQ
+ ===================
+ PAGE
+      INFMT: NOTHING READ
+  100 FORMAT(15X,I5)
+0=== DEFINITION OF OBSERVED PERIODS:              RECORD GROUPS ===
+0======================================================================================================================
+  FMT:                          (FREE)
+       INS1        INS2        INS3        INS4        INS5        INS6        INS7        INS8        INS9       INS10
+ ----------  ----------  ----------  ----------  ----------  ----------  ----------  ----------  ----------  ----------
+    OBSERV.     OBSERV.     OBSERV.     OBSERV.     OBSERV.     OBSERV.     OBSERV.     OBSERV.     OBSERV.     OBSERV.
+  SEQ. NRS.   SEQ. NRS.   SEQ. NRS.   SEQ. NRS.   SEQ. NRS.   SEQ. NRS.   SEQ. NRS.   SEQ. NRS.   SEQ. NRS.   SEQ. NRS.
+ ======================================================================================================================
+ PAGE
+      INFMT: NOTHING READ
+  130 FORMAT(1X,2I5,9(2X,2I5))
+0=== RELATED TIME POINTS:                         RECORDS ===
+0===============================================================
+  FMT:              I2     I2     I2   (2X)     I2     I2     I2
+  COL:             1-2    3-4    5-6    7-8   9-10  11-12  13-14
+      INS         YEAR  MONTH    DAY         HOURS    MIN    SEC
+ ===============================================================
+ PAGE
+  102 FORMAT(3I2,2X,3I2)
+  103 FORMAT(7X,I2,2X,A5,I6,2I7,7X,3I7)
+0=== NUMBER OF ANALYZABLE SUBPERIODS:             RECORDS ===
+0===================
+  FMT:          FREE
+ NAME:            IU
+ ===================
+ PAGE
+      INFMT: NOTHING READ
+  100 FORMAT(15X,I5)
+0=== RELATED TIME POINTS:                         RECORDS ===
+0===============================================================
+  FMT:              I2     I2     I2   (2X)     I2     I2     I2
+  COL:             1-2    3-4    5-6    7-8   9-10  11-12  13-14
+      IMP         YEAR  MONTH    DAY          HOUR    MIN    SEC
+ ===============================================================
+ PAGE
+  102 FORMAT(3I2,2X,3I2)
+  103 FORMAT(7X,I2,2X,A5,I6,2I7,7X,3I7)
+0=== NUMBER OF INFLUENCED COMPS:                  RECORDS ===
+0===================
+  FMT:          FREE
+ NAME:           NAB
+ ===================
+ PAGE
+      INFMT: NOTHING READ
+  100 FORMAT(15X,I5)
+0=== SEQUENCE NUMBERS INFL. COMPS:                RECORD GROUPS ===
+0=====================================================================
+  FMT:                          (FREE)
+          SEQUENCE NUMBERS
+          ------------------------------------------------------------
+              1    2    3    4    5    6    7    8    9   10   11   12
+             13   14   15   16  ...
+ NAME:                                                          NALGBE
+ =====================================================================
+ PAGE
+      INFMT: NOTHING READ
+  100 FORMAT(10X,12I5/(10X,12I5))
+0=== START TIME DISCHARGE 1:                      RECORDS ===
+0======================================================
+  FMT:     I2     I2     I2   (2X)     I2     I2     I2
+  COL:    1-2    3-4    5-6    7-8   9-10  11-12  13-14
+         YEAR  MONTH    DAY          HOUR    MIN    SEC
+ ======================================================
+ PAGE
+  102 FORMAT(3I2,2X,3I2)
+  103 FORMAT(6X,3I7,7X,3I7)
+0=== TIME STEP (HOURS) DISCHARGE 1:               RECORDS ===
+0===================
+  FMT:          FREE
+ NAME:           DT1
+ ===================
+ PAGE
+      INFMT: NOTHING READ
+  100 FORMAT(12X,F8.3)
+0=== NUMBER OF D VALUES GIVEN:                    RECORDS ===
+0===================
+  FMT:          FREE
+ NAME:           ND1
+ ===================
+ PAGE
+      INFMT: NOTHING READ
+  100 FORMAT(15X,I5)
+0=== DISCHARGES D:                                RECORD GROUPS ===
+0=================================================================================================================================
+  FMT:                          (FREE)
+          VALUES
+          ------------------------------------------------------------------------------------------------------------------------
+                   1         2         3         4         5         6         7         8         9        10        11        12
+                  13        14        15        16       ...
+ NAME:                                                                                                                           D
+ =================================================================================================================================
+ PAGE
+      INFMT: NOTHING READ
+  100 FORMAT(10X,12F10.3/(10X,12F10.3))
+0=== START TIME DISCHARGE 2:                      RECORDS ===
+0======================================================
+  FMT:     I2     I2     I2   (2X)     I2     I2     I2
+  COL:    1-2    3-4    5-6    7-8   9-10  11-12  13-14
+         YEAR  MONTH    DAY          HOUR    MIN    SEC
+ ======================================================
+ PAGE
+  102 FORMAT(3I2,2X,3I2)
+  103 FORMAT(6X,3I7,7X,3I7)
+0=== TIME STEP (HOURS) DISCHARGE 1:               RECORDS ===
+0===================
+  FMT:          FREE
+ NAME:           DT2
+ ===================
+ PAGE
+      INFMT: NOTHING READ
+  100 FORMAT(12X,F8.3)
+0=== NUMBER OF E VALUES GIVEN:                    RECORDS ===
+0===================
+  FMT:          FREE
+ NAME:           ND2
+ ===================
+ PAGE
+      INFMT: NOTHING READ
+  100 FORMAT(15X,I5)
+0=== DISCHARGES E:                                RECORD GROUPS ===
+0=================================================================================================================================
+  FMT:                          (FREE)
+          VALUES
+          ------------------------------------------------------------------------------------------------------------------------
+                   1         2         3         4         5         6         7         8         9        10        11        12
+                  13        14        15        16       ...
+ NAME:                                                                                                                           E
+ =================================================================================================================================
+ PAGE
+      INFMT: NOTHING READ
+  100 FORMAT(10X,12F10.3/(10X,12F10.3))
+0=== UNIT OF DISCHARGE 1:                         RECORDS ===
+0===================
+  FMT:      A8
+  COL:      1-8
+            UNIT
+ NAME:      EEND
+ ===================
+ PAGE
+  105 FORMAT(A8)
+  106 FORMAT(12X,A8)
+0=== UNIT OF DISCHARGE 2:                         RECORDS ===
+0===================
+  FMT:      A8
+  COL:      1-8
+            UNIT
+ NAME:      EENE
+ ===================
+ PAGE
+  105 FORMAT(A8)
+  106 FORMAT(12X,A8)
+0=== HLW FILTER CONSTANTS:                        RECORDS ===
+0===========================================================
+  ++ BLOCK FILTER PARAMETERS FOR THE COARSE LOCATION   ++
+  ++ OF THE HIGH AND LOW WATERS. GIVEN VALUES OUT OF   ++
+  ++ RANGE WILL BE SET TO THE FOLLOWING DEFAULT VALUES ++
+  ++ NAME AND RANGE:                    DEFAULT:       ++
+  ++ 0.01 .LE. AFILTR .LE. 1.0          0.2            ++
+  ++    1 .LE. NFILTR .LE. 6            2              ++
+  ++    1 .LE. MFILTR .LE. 3            2              ++
+  ++ NOTE:  FILTER WIDTH ::= 2 * NFILTR + 1            ++
+ ===========================================================
+  FMT:                 (FREE)
+            SMOOTHING       HALF    NUMBER OF
+               FACTOR      WIDTH   ITERATIONS
+ NAME:         AFILTR     NFILTR       MFILTR
+ ============================================
+ PAGE
+      INFMT: NOTHING READ
+  125 FORMAT(11X,F10.3,I11,I13)
+0UNIT OF THE OBSERVATIONS   :
+0THE TYPE OF ANALYSIS IS    : WITHOUT LINEAR CHANGE OF MEAN SEA LEVEL
+0THE TYPE OF ANALYSIS IS    : WITH LINEAR CHANGE OF MEAN SEA LEVEL
+0                             NO INFLUENCE BY DISCHARGES
+0                             MEAN LEVEL INFLUENCED BY ONE DISCHARGE
+0                             MEAN LEVEL INFLUENCED BY TWO DISCHARGES
+0                             GENERAL INFLUENCE BY ONE DISCHARGE
+0                             GENERAL INFLUENCE BY TWO DISCHARGES
+0                             GENERAL INFLUENCE BY TWO DISCHARGES, BUT WITHOUT THE TERM C1 * DQ
+0DATE AND TIME OF THE FIRST OBSERVATION WAS :
+ DATE AND TIME OF THE LAST  OBSERVATION WAS :
+0THE NUMBER OF OBSERVATIONS GIVEN  :
+0THE NUMBER OF INSTRUMENTS USED WAS:
+0INSTRUMENT
+0TIME OF FIRST OBSERVATION  :             HRS AFTER 0000/01/01  DATE:
+ TIME OF LAST  OBSERVATION  :             HRS AFTER 0000/01/01  DATE:
+ MEAN TIME STEP             :             HOURS
+ MEAN LEVEL                 :                               MN.ERROR:
+ LINEAR MEAN LEVEL CHANGE   :                     /HOUR     MN.ERROR:
+0PERIOD     BELONGING TO INSTRUMENT:
+0NUMBER OF OBSERVATIONS     :
+ MIDDLE TIME POINT          :             HRS AFTER 0000/01/01  DATE:
+ TIME OF FIRST OBSERVATION  :             HRS AFTER 0000/01/01  DATE:                         SEQ.NUMBER:
+ TIME OF LAST  OBSERVATION  :             HRS AFTER 0000/01/01  DATE:                         SEQ.NUMBER:
+0COMPONENT                FREQUENCY              V0+U                 F
+                         DEGREES/HOUR         IN DEGREES
+ ------------------------------------------------------------------------
+0*: ASTRONOMICALLY RELATED TO THE PREVIOUS MAIN COMPONENT
+0TIDAL AMPLITUDES (H) AND PHASE LAGS (G):
+0COMPONENT                FREQUENCY                H                   G
+                         DEGREES/HOUR          IN                 IN DEGREES
+ ---------------------------------------------------------------------------
+0*: ASTRONOMICALLY RELATED TO THE PREVIOUS MAIN COMPONENT
+0VV1 =
+0VV2 =
+0STANDARD DEVIATION =
+0GENERALLY INFLUENCED COMPONENTS:
+0COMPONENT                FREQUENCY                H                   G
+                         DEGREES/HOUR          IN                 IN DEGREES
+ ---------------------------------------------------------------------------
+0    =                  UNIT   :                            MN.ERROR:
+0    =                  UNIT   :                            MN.ERROR:
+0ESTIMATED ERRORS:
+0COMPONENT                FREQUENCY           COS COMP.        MN.ERROR          SIN COMP.        MN.ERROR
+ ----------------------------------------------------------------------------------------------------------
+0GENERALLY INFLUENCED COMPONENTS:
+0COMPONENT                FREQUENCY           COS COMP.        MN.ERROR          SIN COMP.        MN.ERROR
+ ----------------------------------------------------------------------------------------------------------
+0MATRIX OF THE NORMAL EQUATIONS:
+0INSTRUMENT   :
+0   K*DELT            COVARIANCE          COVARIANCE          COVARIANCE        AUTOCORRELATION         ENERGY
+                     OBSERVATIONS          HINDCAST             RESIDU              RESIDU              RESIDU
+ ----------------------------------------------------------------------------------------------------------------
+0  NR.  OBSERVATION   HINDCAST     RESIDU      NR.  OBSERVATION   HINDCAST     RESIDU      NR.  OBSERVATION   HINDCAST     RESIDU
+ --------------------------------------------------------------------------------------------------------------------------------
+  PERIOD         T0 =               YEAR     =
+START TIME  =            HOURS AFTER 0000/01/01
+END   TIME  =            HOURS AFTER 0000/01/01
+NAME     AMPLITUDE   PHASE (G)         FREQUENCY (OM)   V0 + U      F
+FOR THE GENERALLY INFLUENCED COMPONENTS:
+NAME     AMPLITUDE   PHASE (G)         FREQUENCY (OM)   V0 + U      F
+                                                           RUN TERMINATED AT
+

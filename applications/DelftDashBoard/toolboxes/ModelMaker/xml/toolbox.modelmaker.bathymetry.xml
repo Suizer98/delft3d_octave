@@ -1,0 +1,261 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>listbox</style>
+    <text>Available Datasets</text>
+    <textposition>above-center</textposition>
+    <variable>handles.toolbox.modelmaker.bathymetry.activeDataset</variable>
+    <type>integer</type>
+    <position>10 10 180 105</position>
+    <tooltipstring>Available bathymetry datasets</tooltipstring>
+    <onchange>ddb_ModelMakerToolbox_bathymetry</onchange>
+    <option1>selectdataset</option1>
+    <listtext>
+      <variable>handles.bathymetry.longNames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>195 95 80 20</position>
+    <text>Use Dataset</text>
+    <callback>ddb_ModelMakerToolbox_bathymetry</callback>
+    <option1>usedataset</option1>
+    <tooltipstring>Use selected dataset (from list on the left)</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>195 70 80 20</position>
+    <text>Info</text>
+    <callback>ddb_ModelMakerToolbox_bathymetry</callback>
+    <option1>showinfo</option1>
+    <tooltipstring>Show meta data of selected dataset</tooltipstring>
+    <enable>0</enable>
+  </element>
+  <element>
+    <style>listbox</style>
+    <text>Selection</text>
+    <textposition>above-center</textposition>
+    <variable>handles.toolbox.modelmaker.bathymetry.activeSelectedDataset</variable>
+    <type>integer</type>
+    <position>280 10 150 105</position>
+    <tooltipstring>Selected datasets. Datasets should be ordered from high resolution (will be used first) to low resolution.</tooltipstring>
+    <onchange>ddb_ModelMakerToolbox_bathymetry</onchange>
+    <option1>pickselecteddataset</option1>
+    <listtext>
+      <variable>handles.toolbox.modelmaker.bathymetry.selectedDatasetNames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>440 95 80 20</position>
+    <text>Remove</text>
+    <callback>ddb_ModelMakerToolbox_bathymetry</callback>
+    <option1>removedataset</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>440 70 80 20</position>
+    <text>Move Up</text>
+    <callback>ddb_ModelMakerToolbox_bathymetry</callback>
+    <option1>datasetup</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>440 45 80 20</position>
+    <text>Move Down</text>
+    <callback>ddb_ModelMakerToolbox_bathymetry</callback>
+    <option1>datasetdown</option1>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>580 95 50 20</position>
+    <text>Z Max</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.bathymetry.selectedDatasets(handles.toolbox.modelmaker.bathymetry.activeSelectedDataset).zMax</variable>
+    <tooltipstring>Edit maximum height (positive upward) to be used from this dataset.</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.modelmaker.bathymetry.nrSelectedDatasets</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>580 70 50 20</position>
+    <text>Z Min</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.bathymetry.selectedDatasets(handles.toolbox.modelmaker.bathymetry.activeSelectedDataset).zMin</variable>
+    <tooltipstring>Edit minimum height (positive upward) to be used from this dataset.</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.modelmaker.bathymetry.nrSelectedDatasets</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>580 45 50 20</position>
+    <text>Offset</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.bathymetry.selectedDatasets(handles.toolbox.modelmaker.bathymetry.activeSelectedDataset).verticalLevel</variable>
+    <tooltipstring>Offset in metres between vertical datum of this dataset and Mean Sea Level (positive value indicates that vertical datum lies above MSL)</tooltipstring>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.modelmaker.bathymetry.nrSelectedDatasets</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>640 45 100 20</position>
+    <prefix>Datum : </prefix>
+    <variable>handles.toolbox.modelmaker.bathymetry.selectedDatasets(handles.toolbox.modelmaker.bathymetry.activeSelectedDataset).verticalDatum</variable>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.modelmaker.bathymetry.nrSelectedDatasets</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>760 95 70 20</position>
+    <text>Start Date</text>
+    <textposition>left</textposition>
+    <type>date</type>
+    <variable>handles.toolbox.modelmaker.bathymetry.selectedDatasets(handles.toolbox.modelmaker.bathymetry.activeSelectedDataset).startDate</variable>
+    <tooltipstring>Start date for bathymetry data.</tooltipstring>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.modelmaker.bathymetry.selectedDatasets(handles.toolbox.modelmaker.bathymetry.activeSelectedDataset).type</variable>
+        <type>string</type>
+        <value>kaartblad</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>760 70 70 20</position>
+    <text>Search Interval (days)</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.bathymetry.selectedDatasets(handles.toolbox.modelmaker.bathymetry.activeSelectedDataset).searchInterval</variable>
+    <tooltipstring>Search interval (relative to start date) for bathymetry data in days. Positive means looking forward in time, negative means looking backward.</tooltipstring>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.modelmaker.bathymetry.selectedDatasets(handles.toolbox.modelmaker.bathymetry.activeSelectedDataset).type</variable>
+        <type>string</type>
+        <value>kaartblad</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>870 115 50 20</position>
+    <text>Internal Diffusion</text>
+    <type>integer</type>
+    <variable>handles.toolbox.modelmaker.bathymetry.internalDiffusion</variable>
+    <tooltipstring>Apply internal diffusion to fill missing data points after generating bathymetry</tooltipstring>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>580 25 50 20</position>
+    <text>Apply FAST intertidal bathymetry</text>
+    <type>integer</type>
+    <variable>handles.toolbox.modelmaker.bathymetry.intertidalbathy</variable>
+    <tooltipstring>Apply the FAST intertidal bathymetry data</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>870 90 50 20</position>
+    <text>Minimum Elevation</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.bathymetry.internalDiffusionRange(1)</variable>
+    <tooltipstring>Minimum elevation of cell filled by internal diffusion</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.modelmaker.bathymetry.internalDiffusion</variable>
+        <type>integer</type>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>870 65 50 20</position>
+    <text>Maximum Elevation</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.bathymetry.internalDiffusionRange(2)</variable>
+    <tooltipstring>Maximum elevation of cell filled by internal diffusion</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.modelmaker.bathymetry.internalDiffusion</variable>
+        <type>integer</type>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>870 35 50 20</position>
+    <text>Model Offset</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.bathymetry.verticalDatum</variable>
+    <tooltipstring>Offset in metres between vertical datum of model and Mean Sea Level (positive value indicates that vertical datum lies above MSL)</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>870 10 100 20</position>
+    <text>GENERATE</text>
+    <callback>ddb_ModelMakerToolbox_bathymetry</callback>
+    <option1>generatebathymetry</option1>
+    <tooltipstring>Generate model bathymetry</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.modelmaker.bathymetry.nrSelectedDatasets</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

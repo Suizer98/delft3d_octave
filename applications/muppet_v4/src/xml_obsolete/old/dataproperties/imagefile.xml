@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<root>
+  <dataproperty>
+    <name>imagefile</name>
+    <keyword>ImageFile</keyword>
+    <element>
+      <style>pushselectfile</style>
+      <type>string</type>
+      <text>Image File</text>
+      <variable>imagefile</variable>
+      <tooltipstring>Select image file</tooltipstring>
+      <position>40 0 120 20</position>
+      <showfilename>yes</showfilename>
+      <extension>*.png;*.jpg</extension>
+      <selectiontext>Select image file</selectiontext>
+    </element>
+  </dataproperty>
+</root>

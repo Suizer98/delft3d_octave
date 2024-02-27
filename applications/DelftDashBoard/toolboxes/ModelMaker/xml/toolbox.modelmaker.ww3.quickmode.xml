@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <position>50 110 50 20</position>
+    <tooltipstring>Edit x coordinate or longitude of grid origin</tooltipstring>
+    <text>X Origin</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_ww3_quickMode</onchange>
+    <option1>editgridoutline</option1>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.xOri</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>50 85 50 20</position>
+    <tooltipstring>Edit number of grid cells in M direction</tooltipstring>
+    <text>M Max</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_ww3_quickMode</onchange>
+    <option1>editgridoutline</option1>
+    <type>integer</type>
+    <variable>handles.toolbox.modelmaker.nX</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>50 60 50 20</position>
+    <tooltipstring>Edit grid size in m direction</tooltipstring>
+    <text>Delta X</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_ww3_quickMode</onchange>
+    <option1>editresolution</option1>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.dX</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>150 110 50 20</position>
+    <tooltipstring>Edit y coordinate or longitude of grid origin</tooltipstring>
+    <text>Y Origin</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_ww3_quickMode</onchange>
+    <option1>editgridoutline</option1>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.yOri</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>150 85 50 20</position>
+    <tooltipstring>Edit number of grid cells in N direction</tooltipstring>
+    <text>N Max</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_ww3_quickMode</onchange>
+    <option1>editgridoutline</option1>
+    <type>integer</type>
+    <variable>handles.toolbox.modelmaker.nY</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>150 60 50 20</position>
+    <tooltipstring>Edit grid size in n direction</tooltipstring>
+    <text>Delta Y</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_ww3_quickMode</onchange>
+    <option1>editresolution</option1>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.dY</variable>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>210 110 100 20</position>
+    <tooltipstring>Push to draw grid outline</tooltipstring>
+    <text>Draw Grid Outline</text>
+    <callback>ddb_ModelMakerToolbox_ww3_quickMode</callback>
+    <option1>drawgridoutline</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>320 110 140 20</position>
+    <tooltipstring>Push to generate model grid</tooltipstring>
+    <text>Make Rectangular Grid</text>
+    <callback>ddb_ModelMakerToolbox_ww3_quickMode</callback>
+    <option1>generategrid</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>320 85 140 20</position>
+    <tooltipstring>Push to generate model bathymetry</tooltipstring>
+    <text>Make Bathymetry</text>
+    <callback>ddb_ModelMakerToolbox_ww3_quickMode</callback>
+    <option1>generatebathymetry</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>320 60 140 20</position>
+    <tooltipstring>Push to generate model obstructions</tooltipstring>
+    <text>Make Obstructions</text>
+    <callback>ddb_ModelMakerToolbox_ww3_quickMode</callback>
+    <option1>generateobstructions</option1>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>600 10 390 120</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>810 75 110 20</position>
+    <tooltipstring>Edit start time</tooltipstring>
+    <text>Start Time</text>
+    <textposition>left</textposition>
+    <variable>handles.model.ww3.domain(ad).start_time</variable>
+    <type>datetime</type>
+    <onchange>ddb_ww3_update_output_times</onchange>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>810 50 110 20</position>
+    <tooltipstring>Edit stop time</tooltipstring>
+    <text>Stop Time</text>
+    <textposition>left</textposition>
+    <variable>handles.model.ww3.domain(ad).stop_time</variable>
+    <type>datetime</type>
+    <onchange>ddb_ww3_update_output_times</onchange>
+  </element>
+</root>

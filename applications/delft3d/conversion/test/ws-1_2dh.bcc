@@ -1,0 +1,26 @@
+table-name           'Boundary Section : 1'
+contents             'Uniform   '
+location             'zee                 '
+time-function        'non-equidistant'
+reference-time       20021218
+time-unit            'minutes'
+interpolation        'linear'
+parameter            'time                '  unit '[min]'
+parameter            'Salinity             end A uniform'       unit '[ppt]'
+parameter            'Salinity             end B uniform'       unit '[ppt]'
+records-in-table     2
+ 0.0000000e+000  3.1000000e+001  3.1000000e+001
+ 1.0080000e+004  3.1000000e+001  3.1000000e+001
+table-name           'Boundary Section : 2'
+contents             'Uniform   '
+location             'rivier              '
+time-function        'non-equidistant'
+reference-time       20021218
+time-unit            'minutes'
+interpolation        'linear'
+parameter            'time                '  unit '[min]'
+parameter            'Salinity             end A uniform'       unit '[ppt]'
+parameter            'Salinity             end B uniform'       unit '[ppt]'
+records-in-table     2
+ 0.0000000e+000  0.0000000e+000  0.0000000e+000
+ 1.0080000e+004  0.0000000e+000  0.0000000e+000

@@ -1,0 +1,346 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>10 10 250 150</position>
+    <text>Splines</text>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>20 120 130 20</position>
+    <text>Draw Boundary Spline</text>
+    <callback>ddb_sfincs_boundary_conditions</callback>
+    <option1>drawboundaryspline</option1>
+    <tooltipstring>Draw boundary spline</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>20 95 130 20</position>
+    <text>Delete Boundary Spline</text>
+    <callback>ddb_sfincs_boundary_conditions</callback>
+    <option1>deleteboundaryspline</option1>
+    <tooltipstring>Delete boundary spline</tooltipstring>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 70 130 20</position>
+    <text>Load Boundary Spline</text>
+    <variable>handles.model.sfincs.boundaryspline.filename</variable>
+    <onchange>ddb_sfincs_boundary_conditions</onchange>
+    <option1>loadboundaryspline</option1>
+    <showfilename>no</showfilename>
+    <extension>*.pol</extension>
+    <selectiontext>Select boundary spline file</selectiontext>
+    <tooltipstring>Select boundary spline file</tooltipstring>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>20 45 130 20</position>
+    <text>Save Boundary Spline</text>
+    <variable>handles.model.sfincs.boundaryspline.filename</variable>
+    <onchange>ddb_sfincs_boundary_conditions</onchange>
+    <option1>saveboundaryspline</option1>
+    <showfilename>no</showfilename>
+    <extension>*.pol</extension>
+    <selectiontext>Select boundary spline file</selectiontext>
+    <tooltipstring>Select boundary spline file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.boundaryspline.length</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 120 50 20</position>
+    <text>Contour</text>
+    <variable>handles.model.sfincs.depthcontour.value</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>200 95 50 20</position>
+    <text>Update</text>
+    <callback>ddb_sfincs_boundary_conditions</callback>
+    <option1>updatedepthcontour</option1>
+    <tooltipstring>Re-plot depth contour</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>200 70 50 20</position>
+    <text>Snap</text>
+    <callback>ddb_sfincs_boundary_conditions</callback>
+    <option1>snapboundarysplinetodepthcontour</option1>
+    <tooltipstring>Snap boundary spline to depth contour</tooltipstring>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>270 10 270 150</position>
+    <text>Tide and Surge</text>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>280 120 100 20</position>
+    <text>Create points</text>
+    <callback>ddb_sfincs_boundary_conditions</callback>
+    <option1>createflowboundarypoints</option1>
+    <tooltipstring>Create boundary points</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.boundaryspline.length</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>280 95 100 20</position>
+    <text>Delete points</text>
+    <callback>ddb_sfincs_boundary_conditions</callback>
+    <option1>removeflowboundarypoints</option1>
+    <tooltipstring>Delete boundary points</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).flowboundarypoints.length</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>330 70 50 20</position>
+    <text>Distance</text>
+    <variable>handles.model.sfincs.boundaryspline.flowdx</variable>
+    <type>real</type>
+    <tooltipstring>Edit distance between boundary points</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>400 70 50 20</position>
+    <text>Snap</text>
+    <callback>ddb_sfincs_boundary_conditions</callback>
+    <option1>snapboundarypointstodepthcontour</option1>
+    <tooltipstring>Snap boundary points to depth contour</tooltipstring>
+  </element>  
+  <element>
+    <style>pushselectfile</style>
+    <position>400 120 130 20</position>
+    <text>Load Boundary Points</text>
+    <variable>handles.model.sfincs.domain(ad).input.bndfile</variable>
+    <onchange>ddb_sfincs_boundary_conditions</onchange>
+    <option1>loadflowboundarypoints</option1>
+    <showfilename>no</showfilename>
+    <extension>*.bnd</extension>
+    <selectiontext>Select boundary points file</selectiontext>
+    <tooltipstring>Select boundary points file</tooltipstring>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>400 95 130 20</position>
+    <text>Save Boundary Points</text>
+    <variable>handles.model.sfincs.domain(ad).input.bndfile</variable>
+    <onchange>ddb_sfincs_boundary_conditions</onchange>
+    <option1>saveflowboundarypoints</option1>
+    <showfilename>no</showfilename>
+    <extension>*.bnd</extension>
+    <selectiontext>Select boundary points file</selectiontext>
+    <tooltipstring>Select boundary points file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).flowboundarypoints.length</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>480 20 50 20</position>
+    <text>water level</text>
+    <variable>handles.model.sfincs.boundaryconditions.zs</variable>
+    <type>real</type>
+    <tooltipstring>Edit water level</tooltipstring>
+  </element>
+
+  <element>
+    <style>pushbutton</style>
+    <position>280 20 120 20</position>
+    <text>Generate Tides</text>
+    <callback>ddb_sfincs_boundary_conditions</callback>
+    <option1>generatetides</option1>
+    <tooltipstring>Generate tidal boundary conditions</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).flowboundarypoints.length</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+
+  <element>
+    <style>panel</style>
+    <position>550 10 270 150</position>
+    <text>Waves</text>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>560 120 100 20</position>
+    <text>Create points</text>
+    <callback>ddb_sfincs_boundary_conditions</callback>
+    <option1>createwaveboundarypoints</option1>
+    <tooltipstring>Create boundary points</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.boundaryspline.length</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>560 95 100 20</position>
+    <text>Delete points</text>
+    <callback>ddb_sfincs_boundary_conditions</callback>
+    <option1>removewaveboundarypoints</option1>
+    <tooltipstring>Delete boundary points</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).waveboundarypoints.length</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>610 70 50 20</position>
+    <text>Distance</text>
+    <variable>handles.model.sfincs.boundaryspline.wavedx</variable>
+    <type>real</type>
+    <tooltipstring>Edit distance between boundary points</tooltipstring>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>680 120 130 20</position>
+    <text>Load Boundary Points</text>
+    <variable>handles.model.sfincs.domain(ad).input.bwvfile</variable>
+    <onchange>ddb_sfincs_boundary_conditions</onchange>
+    <option1>loadwaveboundarypoints</option1>
+    <showfilename>no</showfilename>
+    <extension>*.bwv</extension>
+    <selectiontext>Select boundary points file</selectiontext>
+    <tooltipstring>Select boundary points file</tooltipstring>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>680 95 130 20</position>
+    <text>Save Boundary Points</text>
+    <variable>handles.model.sfincs.domain(ad).input.bwvfile</variable>
+    <onchange>ddb_sfincs_boundary_conditions</onchange>
+    <option1>savewaveboundarypoints</option1>
+    <showfilename>no</showfilename>
+    <extension>*.bwv</extension>
+    <selectiontext>Select boundary points file</selectiontext>
+    <tooltipstring>Select boundary points file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).waveboundarypoints.length</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>760 70 50 20</position>
+    <text>wave height</text>
+    <variable>handles.model.sfincs.boundaryconditions.hs</variable>
+    <type>real</type>
+    <tooltipstring>Edit wave height</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>760 45 50 20</position>
+    <text>wave period</text>
+    <variable>handles.model.sfincs.boundaryconditions.tp</variable>
+    <type>real</type>
+    <tooltipstring>Edit wave period</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>760 20 50 20</position>
+    <text>wave direction</text>
+    <variable>handles.model.sfincs.boundaryconditions.wd</variable>
+    <type>real</type>
+    <tooltipstring>Edit wave direction</tooltipstring>
+  </element>
+
+
+  <element>
+    <style>panel</style>
+    <position>830 10 220 150</position>
+    <text>Boundary conditions</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>890 120 150 20</position>
+    <text>BZS file</text>
+    <variable>handles.model.sfincs.domain(ad).input.bzsfile</variable>
+    <type>string</type>
+    <tooltipstring>Edit bzs file name</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>890 95 150 20</position>
+    <text>BHS file</text>
+    <variable>handles.model.sfincs.domain(ad).input.bhsfile</variable>
+    <type>string</type>
+    <tooltipstring>Edit bzs file name</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>890 70 150 20</position>
+    <text>BTP file</text>
+    <variable>handles.model.sfincs.domain(ad).input.btpfile</variable>
+    <type>string</type>
+    <tooltipstring>Edit bzs file name</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>890 45 150 20</position>
+    <text>BWD file</text>
+    <variable>handles.model.sfincs.domain(ad).input.bwdfile</variable>
+    <type>string</type>
+    <tooltipstring>Edit bzs file name</tooltipstring>
+  </element>
+</root>

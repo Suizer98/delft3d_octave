@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <text>Model</text>
+    <position>40 10 900 160</position>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Auto Start</text>
+    <position>100 125 120 20</position>
+    <tooltipstring>Autostart simulation after loading MDU</tooltipstring>
+    <variable>handles.model.dflowfm.domain.autostart</variable>
+    <type>integer</type>
+    <listtext>No</listtext>
+    <listtext>Auto Start</listtext>
+    <listtext>Auto Start-Stop</listtext>
+    <listvalue>0</listvalue>
+    <listvalue>1</listvalue>
+    <listvalue>2</listvalue>
+  </element>
+</root>

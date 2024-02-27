@@ -1,0 +1,44 @@
+<html>
+   <header>
+      
+      <title>set_taxis</title>
+      <meta name="generator" content="MATLAB 7.7">
+      <meta name="date" content="2011Dec06">
+      <meta name="m-file" content="long2datenum">
+      <link type="text/css" rel="stylesheet" href="./toolbox.css">
+      
+   </header>
+   <body>
+      
+      <hr>
+      <div>
+         <h2>Function long2datenum</h2><pre>  Convert two Longs with date with format yyyymmdd and time 
+  with format HHMM to Matlab datenum format.
+ 
+  </pre><h2>CALL:</h2><pre>   taxis = long2datenum(taxisdatum, taxistime, timeunit)
+ 
+  </pre><h2>INPUT:</h2><pre>   taxisdate: Vector of Long with format yyyymmdd.
+   taxistime: Vector of Long with format HHMM.
+   timeunit: 
+ 
+  </pre><h2>OUTPUT:</h2><pre>   taxis: Vector with corresponding values in Matlab datenum format.
+ 
+  </pre><h2>APPROACH:</h2><pre>   Using the Matlab 'rem' en 'round' operators Year, Month, Day, Hour and 
+   minute are extracted, followed by a call to datenum to get the Matlab 
+   datenum format of the specified dates.
+  
+  </pre><h2>EXAMPLE:</h2><pre></pre><pre class="codeinput">   taxis = long2datenum('20110327','1135');
+   datestr(taxis)</pre><pre>ans =
+19-Feb-0000 00:49:00
+17-Feb-0000 00:49:00
+18-Feb-0000 00:49:00
+18-Feb-0000 00:49:00
+17-Feb-0000 00:49:00
+20-Feb-0000 00:49:00
+19-Feb-0000 00:49:00
+24-Feb-0000 00:49:00
+</pre><h2>See also:</h2><pre></pre><a href="datenum2long.html">datenum2long</a><br></div>
+      <hr>
+      
+   </body>
+</html>

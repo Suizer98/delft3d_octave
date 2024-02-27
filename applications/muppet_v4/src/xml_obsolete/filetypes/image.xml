@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+  <longname>Image File</longname>
+  <title>Image File (*.jpg;*.jpeg;*.png;*.tif)</title>
+  <filterspec>*.jpg;*.jpeg;*.png;*.tif</filterspec>
+  <callback>muppet_addDatasetImage</callback>
+  <dataproperty>
+    <name>filename</name>
+  </dataproperty>
+  <dataproperty>
+    <name>filetype</name>
+  </dataproperty>
+  <dataproperty>
+    <name>georeferencefile</name>
+  </dataproperty>
+  <elementgroup>georeferencefile</elementgroup>
+</root>

@@ -1,0 +1,621 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>listbox</style>
+    <mx>1000</mx>
+    <position>10 10 150 140</position>
+    <tooltipstring>Select open boundary</tooltipstring>
+    <text>Open Boundaries</text>
+    <textposition>above-center</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).activeOpenBoundary</variable>
+    <multivariable>handles.model.delft3dflow.domain(ad).activeOpenBoundaries</multivariable>
+    <max>1000</max>
+    <type>integer</type>
+    <onchange>ddb_Delft3DFLOW_openBoundaries</onchange>
+    <option1>selectfromlist</option1>
+    <listtext>
+      <variable>handles.model.delft3dflow.domain(ad).openBoundaryNames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>170 10 310 155</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>210 130 95 20</position>
+    <text>Name</text>
+    <onchange>ddb_Delft3DFLOW_openBoundaries</onchange>
+    <option1>editname</option1>
+    <tooltipstring>Edit name boundary section index M1</tooltipstring>
+    <variable>handles.model.delft3dflow.domain(ad).openBoundaries(handles.model.delft3dflow.domain(ad).activeOpenBoundary).name</variable>
+    <type>string</type>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrOpenBoundaries</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>210 105 35 20</position>
+    <text>M1</text>
+    <onchange>ddb_Delft3DFLOW_openBoundaries</onchange>
+    <option1>editindices</option1>
+    <tooltipstring>Edit open boundary index M1</tooltipstring>
+    <variable>handles.model.delft3dflow.domain(ad).openBoundaries(handles.model.delft3dflow.domain(ad).activeOpenBoundary).M1</variable>
+    <type>integer</type>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrOpenBoundaries</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>270 105 35 20</position>
+    <text>N1</text>
+    <onchange>ddb_Delft3DFLOW_openBoundaries</onchange>
+    <option1>editindices</option1>
+    <variable>handles.model.delft3dflow.domain(ad).openBoundaries(handles.model.delft3dflow.domain(ad).activeOpenBoundary).N1</variable>
+    <type>integer</type>
+    <tooltipstring>Edit open boundary index N1</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrOpenBoundaries</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>210 80 35 20</position>
+    <text>M2</text>
+    <onchange>ddb_Delft3DFLOW_openBoundaries</onchange>
+    <option1>editindices</option1>
+    <variable>handles.model.delft3dflow.domain(ad).openBoundaries(handles.model.delft3dflow.domain(ad).activeOpenBoundary).M2</variable>
+    <type>integer</type>
+    <tooltipstring>Edit open boundary index M2</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrOpenBoundaries</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>270 80 35 20</position>
+    <text>N2</text>
+    <onchange>ddb_Delft3DFLOW_openBoundaries</onchange>
+    <option1>editindices</option1>
+    <variable>handles.model.delft3dflow.domain(ad).openBoundaries(handles.model.delft3dflow.domain(ad).activeOpenBoundary).N2</variable>
+    <type>integer</type>
+    <tooltipstring>Edit open boundary index N2</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrOpenBoundaries</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Type</text>
+    <position>350 130 120 20</position>
+    <onchange>ddb_Delft3DFLOW_openBoundaries</onchange>
+    <option1>selecttype</option1>
+    <variable>handles.model.delft3dflow.domain(ad).openBoundaries(handles.model.delft3dflow.domain(ad).activeOpenBoundary).type</variable>
+    <type>string</type>
+    <listtext>Water Level</listtext>
+    <listtext>Current</listtext>
+    <listtext>Neumann</listtext>
+    <listtext>Total Discharge</listtext>
+    <listtext>Discharge per Cell</listtext>
+    <listtext>Riemann</listtext>
+    <listtext>Riemann + Tangential</listtext>
+    <listvalue>Z</listvalue>
+    <listvalue>C</listvalue>
+    <listvalue>N</listvalue>
+    <listvalue>T</listvalue>
+    <listvalue>Q</listvalue>
+    <listvalue>R</listvalue>
+    <listvalue>X</listvalue>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrOpenBoundaries</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>350 105 120 20</position>
+    <text>Alpha</text>
+    <onchange>ddb_Delft3DFLOW_openBoundaries</onchange>
+    <option1>editalpha</option1>
+    <tooltipstring>Edit reflection coefficient alpha</tooltipstring>
+    <variable>handles.model.delft3dflow.domain(ad).openBoundaries(handles.model.delft3dflow.domain(ad).activeOpenBoundary).alpha</variable>
+    <type>real</type>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).openBoundaries(handles.model.delft3dflow.domain(ad).activeOpenBoundary).type</variable>
+        <value>N</value>
+        <operator>ne</operator>
+      </check>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).openBoundaries(handles.model.delft3dflow.domain(ad).activeOpenBoundary).type</variable>
+        <value>R</value>
+        <operator>ne</operator>
+      </check>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrOpenBoundaries</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Forcing</text>
+    <position>350 80 120 20</position>
+    <onchange>ddb_Delft3DFLOW_openBoundaries</onchange>
+    <option1>selectforcing</option1>
+    <variable>handles.model.delft3dflow.domain(ad).openBoundaries(handles.model.delft3dflow.domain(ad).activeOpenBoundary).forcing</variable>
+    <type>string</type>
+    <listtext>Astronomic</listtext>
+    <listtext>Harmonic</listtext>
+    <listtext>Time Series</listtext>
+    <listtext>QH Relation</listtext>
+    <listvalue>A</listvalue>
+    <listvalue>H</listvalue>
+    <listvalue>T</listvalue>
+    <listvalue>Q</listvalue>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrOpenBoundaries</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Profile</text>
+    <position>350 55 120 20</position>
+    <onchange>ddb_Delft3DFLOW_openBoundaries</onchange>
+    <option1>selectprofile</option1>
+    <variable>handles.model.delft3dflow.domain(ad).openBoundaries(handles.model.delft3dflow.domain(ad).activeOpenBoundary).profile</variable>
+    <type>string</type>
+    <listtext>
+      <variable>handles.model.delft3dflow.domain(ad).profileTexts</variable>
+    </listtext>
+    <listvalue>
+      <variable>handles.model.delft3dflow.domain(ad).profileOptions</variable>
+    </listvalue>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrOpenBoundaries</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>200 20 120 20</position>
+    <text>Flow Conditions</text>
+    <tooltipstring>Edit hydrodynamic boundary conditions</tooltipstring>
+    <callback>ddb_Delft3DFLOW_openBoundaries</callback>
+    <option1>flowconditions</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrOpenBoundaries</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>330 20 120 20</position>
+    <text>Transport Conditions</text>
+    <tooltipstring>Edit transport boundary conditions</tooltipstring>
+    <callback>ddb_Delft3DFLOW_openBoundaries</callback>
+    <option1>transportconditions</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).constituents</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrOpenBoundaries</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>togglebutton</style>
+    <position>490 130 70 20</position>
+    <text>Add</text>
+    <tooltipstring>Add open boundary</tooltipstring>
+    <onchange>ddb_Delft3DFLOW_openBoundaries</onchange>
+    <option1>add</option1>
+    <variable>handles.model.delft3dflow.domain(ad).addOpenBoundary</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>490 105 70 20</position>
+    <text>Delete</text>
+    <tooltipstring>Delete open boundary</tooltipstring>
+    <callback>ddb_Delft3DFLOW_openBoundaries</callback>
+    <option1>delete</option1>
+  </element>
+  <element>
+    <style>togglebutton</style>
+    <position>490 80 70 20</position>
+    <text>Select</text>
+    <tooltipstring>Select open boundary</tooltipstring>
+    <onchange>ddb_Delft3DFLOW_openBoundaries</onchange>
+    <option1>select</option1>
+    <variable>handles.model.delft3dflow.domain(ad).selectOpenBoundary</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <style>togglebutton</style>
+    <position>490 55 70 20</position>
+    <text>Change</text>
+    <tooltipstring>Change open boundary</tooltipstring>
+    <onchange>ddb_Delft3DFLOW_openBoundaries</onchange>
+    <option1>change</option1>
+    <variable>handles.model.delft3dflow.domain(ad).changeOpenBoundary</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>570 10 450 155</position>
+  </element>
+  <element>
+    <style>text</style>
+    <position>695 140</position>
+    <horal>right</horal>
+    <text>Boundary Definitions</text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>695 115</position>
+    <horal>right</horal>
+    <text>Astronomic Conditions</text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>695 90</position>
+    <horal>right</horal>
+    <text>Astronomic Corrections</text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>695 65</position>
+    <horal>right</horal>
+    <text>Harmonic Conditions</text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>695 40</position>
+    <horal>right</horal>
+    <text>Time Series Conditions</text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>695 15</position>
+    <horal>right</horal>
+    <text>Transport Conditions</text>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>700 138 40 20</position>
+    <text>Open</text>
+    <callback>ddb_Delft3DFLOW_openBoundaries</callback>
+    <option1>open</option1>
+    <option2>bnd</option2>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>700 113 40 20</position>
+    <text>Open</text>
+    <callback>ddb_Delft3DFLOW_openBoundaries</callback>
+    <option1>open</option1>
+    <option2>bca</option2>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrAstro</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>700 88 40 20</position>
+    <text>Open</text>
+    <callback>ddb_Delft3DFLOW_openBoundaries</callback>
+    <option1>open</option1>
+    <option2>cor</option2>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrCor</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>700 63 40 20</position>
+    <text>Open</text>
+    <callback>ddb_Delft3DFLOW_openBoundaries</callback>
+    <option1>open</option1>
+    <option2>bch</option2>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrHarmo</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>700 38 40 20</position>
+    <text>Open</text>
+    <callback>ddb_Delft3DFLOW_openBoundaries</callback>
+    <option1>open</option1>
+    <option2>bct</option2>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrTime</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>700 13 40 20</position>
+    <text>Open</text>
+    <callback>ddb_Delft3DFLOW_openBoundaries</callback>
+    <option1>open</option1>
+    <option2>bcc</option2>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).constituents</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrOpenBoundaries</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>745 138 40 20</position>
+    <text>Save</text>
+    <callback>ddb_Delft3DFLOW_openBoundaries</callback>
+    <option1>save</option1>
+    <option2>bnd</option2>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrOpenBoundaries</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>745 113 40 20</position>
+    <text>Save</text>
+    <callback>ddb_Delft3DFLOW_openBoundaries</callback>
+    <option1>save</option1>
+    <option2>bca</option2>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrAstro</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>745 88 40 20</position>
+    <text>Save</text>
+    <callback>ddb_Delft3DFLOW_openBoundaries</callback>
+    <option1>save</option1>
+    <option2>cor</option2>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrCor</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>745 63 40 20</position>
+    <text>Save</text>
+    <callback>ddb_Delft3DFLOW_openBoundaries</callback>
+    <option1>save</option1>
+    <option2>bch</option2>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrHarmo</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>745 38 40 20</position>
+    <text>Save</text>
+    <callback>ddb_Delft3DFLOW_openBoundaries</callback>
+    <option1>save</option1>
+    <option2>bct</option2>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrTime</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>745 13 40 20</position>
+    <text>Save</text>
+    <callback>ddb_Delft3DFLOW_openBoundaries</callback>
+    <option1>save</option1>
+    <option2>bcc</option2>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).constituents</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrOpenBoundaries</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>790 140</position>
+    <prefix>File : </prefix>
+    <variable>handles.model.delft3dflow.domain(ad).bndFile</variable>
+    <type>string</type>
+  </element>
+  <element>
+    <style>text</style>
+    <position>790 115</position>
+    <prefix>File : </prefix>
+    <variable>handles.model.delft3dflow.domain(ad).bcaFile</variable>
+    <type>string</type>
+  </element>
+  <element>
+    <style>text</style>
+    <position>790 90</position>
+    <prefix>File : </prefix>
+    <variable>handles.model.delft3dflow.domain(ad).corFile</variable>
+    <type>string</type>
+  </element>
+  <element>
+    <style>text</style>
+    <position>790 65</position>
+    <prefix>File : </prefix>
+    <variable>handles.model.delft3dflow.domain(ad).bchFile</variable>
+    <type>string</type>
+  </element>
+  <element>
+    <style>text</style>
+    <position>790 40</position>
+    <prefix>File : </prefix>
+    <variable>handles.model.delft3dflow.domain(ad).bctFile</variable>
+    <type>string</type>
+  </element>
+  <element>
+    <style>text</style>
+    <position>790 15</position>
+    <prefix>File : </prefix>
+    <variable>handles.model.delft3dflow.domain(ad).bccFile</variable>
+    <type>string</type>
+  </element>
+</root>

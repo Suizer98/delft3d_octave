@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<root>
+  <plotoption>
+    <name>imagegroup</name>
+    <element>
+      <style>panel</style>
+      <text>Image Properties</text>
+      <position>0 0 350 80</position>
+    </element>
+    <element>
+      <keyword>WhiteValue</keyword>
+      <default>0.9</default>
+      <style>edit</style>
+      <type>real</type>
+      <variable>whitevalue</variable>
+      <text>White Value</text>
+      <position>80 40 50 20</position>
+      <tooltipstring>Edit image white value (pixels with brightness that exceed this value will be made transparent)</tooltipstring>
+    </element>
+    <element>
+      <keyword>Opacity</keyword>
+      <default>1</default>
+      <style>edit</style>
+      <type>real</type>
+      <variable>opacity</variable>
+      <text>Opacity</text>
+      <position>190 40 50 20</position>
+      <tooltipstring>Edit image opacity (setting to 0 make image fully transparent)</tooltipstring>
+    </element>
+    <element>
+      <keyword>VerticalLevel</keyword>
+      <default>1000</default>
+      <style>edit</style>
+      <type>real</type>
+      <variable>verticallevel</variable>
+      <text>Vertical Level</text>
+      <position>80 10 50 20</position>
+      <tooltipstring>Edit vertical level</tooltipstring>
+    </element>
+  </plotoption>
+</root>

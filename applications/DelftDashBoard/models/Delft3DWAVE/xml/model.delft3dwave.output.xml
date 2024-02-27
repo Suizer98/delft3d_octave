@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <position>45 10 900 140</position>
+    <style>tabpanel</style>
+    <tab>
+      <tabstring>General</tabstring>
+      <callback>ddb_dummyTabCallback</callback>
+      <element>model.delft3dwave.output.general.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Grids</tabstring>
+      <callback>ddb_dummyTabCallback</callback>
+      <element>model.delft3dwave.output.grids.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Locations</tabstring>
+      <callback>ddb_Delft3DWAVE_output_locations</callback>
+      <element>model.delft3dwave.output.locations.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Curves</tabstring>
+      <callback>ddb_dummyTabCallback</callback>
+      <element>model.delft3dwave.output.curves.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Debug</tabstring>
+      <callback>ddb_dummyTabCallback</callback>
+      <element>model.delft3dwave.output.debug.xml</element>
+    </tab>
+  </element>
+</root>

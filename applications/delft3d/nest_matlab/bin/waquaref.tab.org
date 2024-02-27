@@ -1,0 +1,3770 @@
+# =============================================================================
+#
+#    REFERENCE TABLE WAQUA
+#
+#    URL: https://repos.deltares.nl/repos/simona/bo_omgeving/simona/src/waqua/waqpre/reftab/waquaref.tab
+#    Revision: 4860 , Date: 2013-01-03 15:02:09 +0100 (Thu, 03 Jan 2013)
+#
+#
+# =============================================================================
+#
+TABLE WAQUA
+#
+# In this version there are 19 mainkeywords:
+# (where 7 and 10 are not actually used anymore)
+#
+NKEY = 19
+#
+# *******  FIRST MAINKEYWORD ********************************************
+#
+1         IDENTIFICATION      NCHAR = 5                     MAND
+#
+ IREP = 1  NAME = WAQUA        NCHAR = 5  JREP = 1   TYPE = 4   XOR1
+ IREP = 1  NAME = EXPERIMENT   NCHAR =10  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = OVERWRITE    NCHAR = 9  JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = MODID        NCHAR = 5  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = TITLE        NCHAR = 5  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = TRIWAQ       NCHAR = 5  JREP = 1   TYPE = 4   XOR1
+#
+#  NEXT MAINKEYWORD *****************************************************
+#
+2          MESH                NCHAR = 4                        MAND
+#
+NKEY = 9  #  9 SUBKEYWORDS RELATED TO MESH :
+#
+2,1        GRID                NCHAR = 4                        MAND
+#
+NKEY = 8  #  8 SUBSUBKEYWORDS RELATED TO MESH,GRID :
+#
+2,1,1      AREA                NCHAR = 4                        MAND
+#
+# THERE ARE 8 KEYS FOR THE DESCRIPTION OF THE GRID :
+# this part remains for the compatibility reasons:
+# xorigin, yorigin & stepsize are "moved"
+# (i.e. duplicated) to the block MESH/RECTILINEAR. Stepsize is made
+# optional!
+#
+ IREP = 1  NAME = XORIGIN      NCHAR = 2  JREP = 1   TYPE = 2   DEF = 0.    #1
+ IREP = 1  NAME = YORIGIN      NCHAR = 2  JREP = 1   TYPE = 2   DEF = 0.    #2
+ IREP = 1  NAME = STEPSIZE     NCHAR = 4  JREP = 1   TYPE = 2   OPT         #3
+ IREP = 1  NAME = ANGLEGRID    NCHAR = 3  JREP = 1   TYPE = 2   DEF = 0.    #4
+ IREP = 1  NAME = MMAX         NCHAR = 4  JREP = 1   TYPE = 1   MAND        #5
+ IREP = 1  NAME = NMAX         NCHAR = 4  JREP = 1   TYPE = 1   MAND        #6
+ IREP = 1  NAME = LATITUDE     NCHAR = 4  JREP = 1   TYPE = 2   DEF = 51.5  #7
+ IREP = 1  NAME = KMAX         NCHAR = 4  JREP = 1   TYPE = 1   DEF = 1     #8
+ IREP = 1  NAME = LONGITUDE    NCHAR = 4  JREP = 1   TYPE = 2   DEF = 0.    #9
+ IREP = 1  NAME = COOR_ID      NCHAR = 4  JREP = 1   TYPE = 3   OPT         #10
+ IREP = 1  NAME = ARRSIZM      NCHAR = 7  JREP = 1   TYPE = 1   OPT         #11
+ IREP = 1  NAME = ARRSIZN      NCHAR = 7  JREP = 1   TYPE = 1   OPT         #12
+#
+# IN CASE OF CURVILINEAR COORDINATES HAVE TO BE SPECIFIED :
+#
+2,1,2      CURVILINEAR         NCHAR = 4                        OPT
+#
+ IREP = 1  NAME = REMOVED      NCHAR = 3  JREP = 1   TYPE = 3   XOR1
+ IREP = 1  NAME = RGFFILE      NCHAR = 3  JREP = 1   TYPE = 3   XOR1
+#
+2,1,3      WINDGRID            NCHAR = 5                        OPT
+#          --- not used in current version ---
+ IREP = 1  NAME = WMDELTA      NCHAR = 3  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = WNDELTA      NCHAR = 3  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = WMMAX        NCHAR = 5  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = WNMAX        NCHAR = 5  JREP = 1   TYPE = 1   MAND
+#
+2,1,4      PRESGRID            NCHAR = 5                        OPT
+#          --- not used in current version ---
+ IREP = 1  NAME = PMDELTA      NCHAR = 3  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = PNDELTA      NCHAR = 3  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = PMMAX        NCHAR = 5  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = PNMAX        NCHAR = 5  JREP = 1   TYPE = 1   MAND
+#
+2,1,5      COARSEGRID          NCHAR = 5                        OPT
+#          --- not used in current version ---
+ IREP = 1  NAME = CMORIGIN     NCHAR = 8  JREP = 1   TYPE = 1   DEF = 0
+ IREP = 1  NAME = CNORIGIN     NCHAR = 8  JREP = 1   TYPE = 1   DEF = 0
+ IREP = 1  NAME = CMDELTA      NCHAR = 3  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = CNDELTA      NCHAR = 3  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = CMMAX        NCHAR = 5  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = CNMAX        NCHAR = 5  JREP = 1   TYPE = 1   MAND
+#
+2,1,6      RECTILINEAR         NCHAR = 4                        OPT
+#
+ IREP = 1  NAME = XORIGIN      NCHAR = 2  JREP = 1   TYPE = 2   DEF = 0.
+ IREP = 1  NAME = YORIGIN      NCHAR = 2  JREP = 1   TYPE = 2   DEF = 0.
+ IREP = 1  NAME = STEPSIZE     NCHAR = 4  JREP = 1   TYPE = 2   MAND
+#
+2,1,7      SPHERICAL           NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = STEPLAMBDA   NCHAR = 6  JREP = 1   TYPE = 2   DEF = 0.125
+ IREP = 1  NAME = STEPFI       NCHAR = 6  JREP = 1   TYPE = 2   DEF = 0.083333
+ IREP = 1  NAME = RADIUS_EARTH NCHAR = 6  JREP = 1   TYPE = 2   DEF = 6.371E6
+#
+# IN CASE OF GENERALIZED_SPHERICAL COORDINATES HAVE TO BE SPECIFIED :
+#
+2,1,8      GENERALIZED_SPHERICAL NCHAR = 4                        OPT
+#
+ IREP = 1  NAME = REMOVED      NCHAR = 3  JREP = 1   TYPE = 3   XOR1
+ IREP = 1  NAME = RGFFILE      NCHAR = 3  JREP = 1   TYPE = 3   XOR1
+ IREP = 1  NAME = RADIUS_EARTH NCHAR = 6  JREP = 1   TYPE = 2   DEF = 6.371E6
+#
+2,2        POINTS              NCHAR = 6                        MAND
+#
+NKEY = 1
+#
+2,2,1      P                   NCHAR =-1                        SEQ_KEY
+#
+NKEY = 1
+#
+# USE DUMMY KEYWORD SINCE MORE THAN ONE IREP-CARD FOLLOWS :
+#
+2,2,1,1    POINT               NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = M            NCHAR =-1  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = N            NCHAR =-1  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = NAME         NCHAR = 4  JREP = 1   TYPE = 3   OPT
+#
+2,3        CURVES              NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+2,3,1      C                   NCHAR =-1                        SEQ_KEY
+#
+NKEY = 1
+#
+2,3,1,1    LINE                NCHAR = 4                        MAND
+#
+ IREP = 2  NAME = P            NCHAR =-1  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = NAME         NCHAR = 1  JREP = 1   TYPE = 3   OPT
+#
+2,4        BOUNDARIES          NCHAR = 4                        OPT
+#
+NKEY = 4
+#
+2,4,1      ENCLOSURES          NCHAR = 4                        OPT
+#
+NKEY = 1
+#
+2,4,1,1    E                   NCHAR =-1                        REP
+#
+# USE DUMMY SEQUENCE NAME SINCE LENGTH OF ARRAY WITH COORDINATES IS
+# NOT KNOWN A PRIORI :
+#
+NKEY = 1
+#
+2,4,1,1,1  DUM                 NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = COORDINATES  NCHAR = 4  JREP = 0   TYPE = 1   MAND
+#
+2,4,2      OPENINGS            NCHAR = 4                        OPT
+#
+NKEY = 1
+#
+2,4,2,1    OPEN                NCHAR =-4                        SEQ_KEY
+#
+NKEY = 1
+#
+2,4,2,1,1  LINE                NCHAR = 4                        MAND
+#
+ IREP = 2  NAME = P            NCHAR =-1  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = NAME         NCHAR = 1  JREP = 1   TYPE = 3   OPT
+#
+2,4,3      BARRIERS            NCHAR = 3                        OPT
+#
+NKEY = 1
+#
+2,4,3,1    B                   NCHAR =-1                        SEQ_KEY
+#
+# USE DUMMY NAME SINCE MORE THAN ONE IREP CARD FOLLOWS :
+#
+NKEY = 1
+#
+2,4,3,1,1  BAR                 NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = P            NCHAR =-1  JREP = 1   TYPE = 1   XOR 1
+ IREP = 1  NAME = TYPE         NCHAR = 4  JREP = 1   TYPE = 3   AND 1
+ IREP = 1  NAME = DIAG         NCHAR = 4  JREP = 1   TYPE = 1   DEF=0
+ IREP = 1  NAME = C            NCHAR =-1  JREP = 1   TYPE = 1   XOR 1
+#
+2,4,4    STRUCTURES            NCHAR =5                         OPT
+#
+NKEY = 2
+#
+2,4,4,1  CULVERT_AND_WEIR      NCHAR = 7                        OPT
+#
+ IREP = 0  NAME = B            NCHAR =-1  JREP = 2   TYPE = 1   MAND
+#
+2,4,4,2  INTAKE                NCHAR = 6                        OPT
+ IREP = 0  NAME = B            NCHAR =-1  JREP = 2   TYPE = 1   MAND
+#
+2,5        BATHYMETRY          NCHAR = 6                        MAND
+#
+NKEY = 2
+#
+2,5,1      GLOBAL              NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+ IREP = 1  NAME = DEPMULTIPL   NCHAR = 4  JREP = 1   TYPE = 2   DEF = 1.0
+ IREP = 1  NAME = THRESHOLD    NCHAR = 4  JREP = 1   TYPE = 2   DEF = 0.0
+ IREP = 1  NAME = DEPTAG       NCHAR = 6  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = TAGREPL      NCHAR = 7  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = DEPDEF       NCHAR = 6  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = DPD_GIVEN    NCHAR = 9  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = DPS_GIVEN    NCHAR = 9  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = METH_DPS     NCHAR = 8  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = METH_DPUV    NCHAR = 8  JREP = 1   TYPE = 3   OPT
+#
+2,5,2      LOCAL               NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+2,5,2,1    BOX                 NCHAR = 3                        REP
+#
+NKEY = 1
+#
+2,5,2,1,1  DUM                 NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+#
+2,6        DRYPOINTS           NCHAR = 4                        OPT
+#
+NKEY = 3
+#
+2,6,1      DAMPOINTS           NCHAR = 4                        OPT
+#
+NKEY = 1
+#
+2,6,1,1    COORDINATES         NCHAR = 4                        REP
+#
+NKEY = 1
+#
+2,6,1,1,1  DUM                 NCHAR = 0                        MAND
+#
+ IREP = 1  NAME = DAMCOOR      NCHAR = 4  JREP=0     TYPE = 1   MAND
+#
+2,6,2      CLOSEU              NCHAR = 6                        OPT
+#
+NKEY = 1
+#
+2,6,2,1    MNN                 NCHAR = 3                        REP
+#
+NKEY = 1
+#
+2,6,2,1,1  DUM                 NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNNLINE      NCHAR = 4  JREP=3     TYPE = 1   MAND
+#
+2,6,3      CLOSEV              NCHAR = 6                        OPT
+#
+NKEY = 1
+#
+2,6,3,1    NMM                 NCHAR = 3                        REP
+#
+NKEY = 1
+#
+2,6,3,1,1  DUM                 NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = NMMLINE      NCHAR = 4  JREP=3     TYPE = 1   MAND
+#
+2,7        WEIRS               NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+2,7,1      W                   NCHAR =-1                        REP
+#
+NKEY = 1
+#
+2,7,1,1    DUM                 NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = M            NCHAR = 1  JREP=1     TYPE = 1   MAND
+ IREP = 1  NAME = N            NCHAR = 1  JREP=1     TYPE = 1   OPT
+ IREP = 1  NAME = U_OVERFLOW_H NCHAR = 6  JREP=1     TYPE = 2   OPT
+ IREP = 1  NAME = U_SILL_UP    NCHAR = 8  JREP=1     TYPE = 2   OPT
+ IREP = 1  NAME = U_SILL_DOWN  NCHAR = 8  JREP=1     TYPE = 2   OPT
+ IREP = 1  NAME = V_OVERFLOW_H NCHAR = 6  JREP=1     TYPE = 2   OPT
+ IREP = 1  NAME = V_SILL_UP    NCHAR = 8  JREP=1     TYPE = 2   OPT
+ IREP = 1  NAME = V_SILL_DOWN  NCHAR = 8  JREP=1     TYPE = 2   OPT
+ IREP = 1  NAME = U_GROYNE     NCHAR = 5  JREP=1     TYPE = 3   OPT
+ IREP = 1  NAME = V_GROYNE     NCHAR = 5  JREP=1     TYPE = 3   OPT
+ IREP = 1  NAME = U_TYPE       NCHAR = 6  JREP=1     TYPE = 1   DEF = 0
+ IREP = 1  NAME = V_TYPE       NCHAR = 6  JREP=1     TYPE = 1   DEF = 0
+ IREP = 1  NAME = U_CREST_LENGTH  NCHAR = 9  JREP=1  TYPE = 2   DEF = 3.0
+ IREP = 1  NAME = U_TALUD_UP   NCHAR = 9  JREP=1     TYPE = 2   DEF = 4.0
+ IREP = 1  NAME = U_TALUD_DOWN NCHAR = 9  JREP=1     TYPE = 2   DEF = 4.0
+ IREP = 1  NAME = V_CREST_LENGTH  NCHAR = 9  JREP=1  TYPE = 2   DEF = 3.0
+ IREP = 1  NAME = V_TALUD_UP   NCHAR = 9  JREP=1     TYPE = 2   DEF = 4.0
+ IREP = 1  NAME = V_TALUD_DOWN NCHAR = 9  JREP=1     TYPE = 2   DEF = 4.0
+ IREP = 1  NAME = VEGETATION_CODE NCHAR = 3 JREP=1   TYPE = 1   DEF = 0
+ IREP = 1  NAME = CD_ONE       NCHAR = 6  JREP=1     TYPE = 2   DEF = 1.0
+ IREP = 1  NAME = CD_TWO       NCHAR = 6  JREP=1     TYPE = 2   DEF = 10.0
+#
+2,8        VERTICAL            NCHAR = 8                        OPT
+#
+NKEY = 1
+#
+2,8,1      LAYER               NCHAR = 5                        SEQ_KEY
+#
+NKEY = 1
+#
+2,8,1,1    DUM                 NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = THICKNESS    NCHAR = 6  JREP=1     TYPE = 2   MAND
+ IREP = 1  NAME = PERC         NCHAR = 4  JREP=1     TYPE = 4   DEF = 0
+ IREP = 1  NAME = M            NCHAR = 1  JREP=1     TYPE = 4   DEF = 0
+#
+2,9        POWERSTATIONS       NCHAR = 9                        OPT
+#
+NKEY = 1
+#
+2,9,1      POWER               NCHAR = 3                        SEQ_KEY
+#
+NKEY = 3
+#
+2,9,1,1    INTAKE              NCHAR = 2                        MAND
+ IREP = 1  NAME = P            NCHAR =-1  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = LAYER        NCHAR = 3  JREP = 1   TYPE = 1   DEF=0
+#
+2,9,1,2    OUTLET              NCHAR = 3                        MAND
+ IREP = 1  NAME = P            NCHAR =-1  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = LAYER        NCHAR = 3  JREP = 1   TYPE = 1   DEF=0
+#
+2,9,1,3    NAME                NCHAR = 3                        OPT
+ IREP = 1  NAME = NAME         NCHAR = 1  JREP = 1   TYPE = 3   OPT
+#
+#  NEXT MAINKEYWORD *****************************************************
+#
+3          GENERAL             NCHAR = 7                        OPT
+#
+NKEY = 10
+#
+3,1        PHYSICALPARAM       NCHAR = 4                        OPT
+#
+ IREP = 1  NAME = GRAVITYACC   NCHAR = 4  JREP = 1   TYPE = 2   DEF = 9.813
+ IREP = 1  NAME = WATDENSITY   NCHAR = 6  JREP = 1   TYPE = 2   DEF =1023.0
+ IREP = 1  NAME = AIRDENSITY   NCHAR = 6  JREP = 1   TYPE = 2   DEF = 1.205
+ IREP = 1  NAME = DYNVISCOSI   NCHAR = 8  JREP = 1   TYPE = 2   DEF = 0.001
+#
+3,2        WIND                NCHAR = 4                        OPT
+#
+ IREP = 1  NAME = WSPEED       NCHAR = 6  JREP = 1   TYPE = 2   DEF = 0.    #1
+ IREP = 1  NAME = WANGLE       NCHAR = 6  JREP = 1   TYPE = 2   DEF = 0.    #2
+ IREP = 1  NAME = WCONVERSIONF NCHAR = 5  JREP = 1   TYPE = 2   DEF = 1.0   #3
+ IREP = 1  NAME = WSTRESSFACT  NCHAR = 6  JREP = 1   TYPE = 2   DEF =.0026  #4
+ IREP = 1  NAME = WUNIT        NCHAR = 5  JREP = 1   TYPE = 3   OPT         #5
+ IREP = 1  NAME = SERIES       NCHAR = 3  JREP = 1   TYPE = 3   OPT         #6
+ IREP = 1  NAME = FRAME        NCHAR = 5  JREP = 3   TYPE = 2   OPT         #7
+ IREP = 1  NAME = VALUES       NCHAR = 5  JREP = 0   TYPE = 2   OPT         #8
+ IREP = 0  NAME = TIME_AND_VAL NCHAR = 4  JREP = 5   TYPE = 2   OPT         #9
+ IREP = 1  NAME = CONST_CD     NCHAR = 8  JREP = 1   TYPE = 4   OPT         #10
+ IREP = 1  NAME = VARIABLE_CD  NCHAR = 11 JREP = 1   TYPE = 4   OPT         #11
+ IREP = 1  NAME = CDA          NCHAR = 3  JREP = 1   TYPE = 2   AND 11      #12
+ IREP = 1  NAME = CDB          NCHAR = 3  JREP = 1   TYPE = 2   AND 11      #13
+ IREP = 1  NAME = WIND_CDA     NCHAR = 8  JREP = 1   TYPE = 2   AND 11      #14
+ IREP = 1  NAME = WIND_CDB     NCHAR = 8  JREP = 1   TYPE = 2   AND 11      #15
+ IREP = 1  NAME = CHARNOCK     NCHAR = 5  JREP = 1   TYPE = 4   OPT         #16
+ IREP = 1  NAME = BETA         NCHAR = 4  JREP = 1   TYPE = 2   DEF = 0.032 #17
+ IREP = 1  NAME = HEIGHT       NCHAR = 6  JREP = 1   TYPE = 2   DEF = 10.0  #18
+#
+3,3        DIFFUSION           NCHAR = 4                        OPT
+#
+NKEY = 2
+#
+3,3,1      GLOBAL              NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   DEF = 10.0
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+3,3,2      LOCAL               NCHAR = 5                        OPT
+NKEY=1
+3,3,2,1    BOX                 NCHAR = 3                        REP
+#
+NKEY = 1
+#
+3,3,2,1,1  DUM                 NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+#
+3,4        SPACE_VAR_WIND      NCHAR = 9                        OPT
+#
+ IREP = 1  NAME = WCONVERSIONF NCHAR = 5  JREP = 1   TYPE = 2   DEF = 1.0   #1
+ IREP = 1  NAME = WSTRESSFACT  NCHAR = 6  JREP = 1   TYPE = 2   DEF =.0026  #2
+ IREP = 1  NAME = WUNIT        NCHAR = 5  JREP = 1   TYPE = 3   OPT         #3
+ IREP = 1  NAME = SDS_SVWP     NCHAR = 8  JREP = 1   TYPE = 3   MAND        #4
+ IREP = 1  NAME = EXP_SVWP     NCHAR = 8  JREP = 1   TYPE = 3   OPT         #5
+ IREP = 1  NAME = CORRECT_BOUN NCHAR = 7  JREP = 1   TYPE = 4   DEF = 0     #6
+ IREP = 1  NAME = CONST_CD     NCHAR = 8  JREP = 1   TYPE = 4   OPT         #7
+ IREP = 1  NAME = VARIABLE_CD  NCHAR = 11 JREP = 1   TYPE = 4   OPT         #8
+ IREP = 1  NAME = CDA          NCHAR = 3  JREP = 1   TYPE = 2   AND 8       #9
+ IREP = 1  NAME = CDB          NCHAR = 3  JREP = 1   TYPE = 2   AND 8       #10
+ IREP = 1  NAME = WIND_CDA     NCHAR = 8  JREP = 1   TYPE = 2   AND 8       #11
+ IREP = 1  NAME = WIND_CDB     NCHAR = 8  JREP = 1   TYPE = 2   AND 8       #12
+ IREP = 1  NAME = STRESS       NCHAR = 6  JREP = 1   TYPE = 4   OPT         #13
+ IREP = 1  NAME = CHARNOCK     NCHAR = 5  JREP = 1   TYPE = 4   OPT         #14
+ IREP = 1  NAME = BETA         NCHAR = 4  JREP = 1   TYPE = 2   DEF = 0.032 #15
+ IREP = 1  NAME = HEIGHT       NCHAR = 6  JREP = 1   TYPE = 2   DEF = 10.0  #16
+ IREP = 1  NAME = SKIP_PART    NCHAR = 6  JREP = 1   TYPE = 4   DEF = 0     #17
+ IREP = 1  NAME = LSMASK       NCHAR = 6  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = LANDFRACTION NCHAR = 8  JREP = 1   TYPE = 2   DEF = 0.50
+#
+3,5        KALMAN              NCHAR = 4                        OPT
+#
+NKEY = 3
+#
+#-----------------------------------------------------------------------------
+#
+3,5,1      STEADY_STATE        NCHAR = 4                        XOR = 1
+#
+ IREP = 1  NAME = SDS_KALMAN   NCHAR = 8  JREP = 1   TYPE = 3   MAND       #1
+ IREP = 1  NAME = EXP_KALMAN   NCHAR = 8  JREP = 1   TYPE = 3   OPT        #2
+ IREP = 1  NAME = GAIN_TIME    NCHAR = 8  JREP = 1   TYPE = 2   OPT        #3
+ IREP = 1  NAME = FORECAST_START NCHAR = 4 JREP = 1  TYPE = 2   OPT        #4
+#
+#-----------------------------------------------------------------------------
+#
+3,5,2      RRSQRT              NCHAR = 4                        XOR = 1
+#
+NKEY = 9
+#
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+3,5,2,1    GENERAL             NCHAR = 3                        MAND
+#
+IREP = 1   NAME = NMODE        NCHAR = 4  JREP = 1   TYPE = 1   MAND       #1
+IREP = 1   NAME = CHAR_DIST    NCHAR = 4  JREP = 1   TYPE = 2   OPT        #2
+IREP = 1   NAME = FORGET_PAST  NCHAR = 6  JREP = 1   TYPE = 2   OPT        #3
+IREP = 1   NAME = TIKAL        NCHAR = 5  JREP = 1   TYPE = 2   DEF = 0    #4
+IREP = 1   NAME = USE_ZEROS    NCHAR = 7  JREP = 1   TYPE = 4   DEF = 0    #5
+IREP = 1   NAME = FORECAST_START NCHAR = 4 JREP = 1  TYPE = 2   OPT        #6
+IREP = 1   NAME = DEGREE       NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = RAD          NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = METER        NCHAR = 5  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = KILOMETER    NCHAR = 9  JREP = 1   TYPE = 4   DEF = 0
+#
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+3,5,2,2    WATERLEVEL_STATIONS NCHAR = 3                        OPT
+#
+NKEY = 1
+#
+3,5,2,2,1  S                   NCHAR = -1                       REP
+#
+NKEY = 1
+#
+3,5,2,2,1,1 DUM                NCHAR = 0                        OPT
+#
+IREP = 1   NAME = P            NCHAR =-1  JREP = 1   TYPE = 1   XOR=1      #1
+IREP = 1   NAME = STANDARD_DEV NCHAR = 5  JREP = 1   TYPE = 2   DEF = 0.05 #2
+IREP = 1   NAME = STATION      NCHAR = 4  JREP = 1   TYPE = 3   XOR=1      #3
+#
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+3,5,2,3    WIND_NOISE          NCHAR = 4                        OPT
+#
+NKEY = 2
+#
+3,5,2,3,1  STATISTICS          NCHAR = 4                        MAND
+#
+IREP = 1   NAME = STANDARD_DEV NCHAR = 4  JREP = 1   TYPE = 2   DEF = 0.003 #1
+IREP = 1   NAME = TIME_CORRELATION NCHAR=4 JREP= 1   TYPE = 2   DEF = 0.9  #2
+IREP = 1   NAME = CHAR_HOR     NCHAR = 6  JREP = 1   TYPE = 2   OPT        #3
+IREP = 1   NAME = CHAR_PSI     NCHAR = 6  JREP = 1   TYPE = 2   OPT        #3
+IREP = 1   NAME = CHAR_CHI     NCHAR = 6  JREP = 1   TYPE = 2   OPT        #4
+IREP = 1   NAME = CORR_DIV     NCHAR = 6  JREP = 1   TYPE = 2   DEF = 0.5  #5
+IREP = 1   NAME = STRESS       NCHAR = 6  JREP = 1   TYPE = 4   DEF = 0    #6
+IREP = 1   NAME = CHAR_TIME    NCHAR = 6  JREP = 1   TYPE = 2   OPT
+IREP = 1   NAME = DEGREE       NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = RAD          NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = METER        NCHAR = 5  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = KILOMETER    NCHAR = 9  JREP = 1   TYPE = 4   DEF = 0
+#
+3,5,2,3,2  GRID                NCHAR = 4                        MAND
+#
+IREP = 1   NAME = M_INCREMENT  NCHAR = 3  JREP = 1   TYPE = 1   XOR 1      #1
+IREP = 1   NAME = N_INCREMENT  NCHAR = 3  JREP = 1   TYPE = 1   XOR 2      #2
+IREP = 1   NAME = M_START      NCHAR = 3  JREP = 1   TYPE = 1   DEF = 1    #3
+IREP = 1   NAME = N_START      NCHAR = 3  JREP = 1   TYPE = 1   DEF = 1    #4
+IREP = 1   NAME = NORTH_INCREMENT NCHAR = 9 JREP = 1   TYPE = 2   XOR 1
+IREP = 1   NAME = EAST_INCREMENT  NCHAR = 8 JREP = 1   TYPE = 2   XOR 2
+IREP = 1   NAME = NORTH_START  NCHAR = 11 JREP = 1   TYPE = 2   DEF = 100
+IREP = 1   NAME = EAST_START   NCHAR = 10 JREP = 1   TYPE = 2   DEF = 0
+IREP = 1   NAME = DEGREE       NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = RAD          NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = METER        NCHAR = 5  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = KILOMETER    NCHAR = 9  JREP = 1   TYPE = 4   DEF = 0
+#
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+3,5,2,4    BOUNDARIES          NCHAR = 5                        OPT
+#
+NKEY = 6
+#
+3,5,2,4,1  STATISTICS          NCHAR = 4                        MAND
+#
+IREP = 1   NAME = STANDARD_DEV  NCHAR = 4 JREP = 1   TYPE = 2   DEF = 0.10 #1
+IREP = 1   NAME = TIME_CORRELATION NCHAR=4 JREP= 1   TYPE = 2   DEF = 0.9  #2
+IREP = 1   NAME = SMOOTH        NCHAR= 6  JREP = 1   TYPE = 2   DEF = 0    #3
+IREP = 1   NAME = POINTS_INTPOL NCHAR= 5  JREP = 1   TYPE = 1   DEF=2      #4
+IREP = 1   NAME = WEIGH_SMOOTH  NCHAR= 5  JREP = 1   TYPE = 2   OPT
+#
+3,5,2,4,2  LINE_SECTIONS       NCHAR = 4                        MAND
+#
+NKEY = 1
+#
+3,5,2,4,2,1 S                  NCHAR = -1                       REP
+#
+NKEY = 1
+#
+3,5,2,4,2,1,1 DUM              NCHAR = 0                        OPT
+#
+IREP = 1   NAME = SECTION      NCHAR = 3  JREP = 2   TYPE = 1   MAND       #1
+#
+3,5,2,4,3  WATER_LEVELS        NCHAR = 4                        OPT
+IREP = 1   NAME = STANDARD_DEV NCHAR = 4  JREP = 1   TYPE = 2   MAND       #1
+#
+3,5,2,4,4  DISCHARGES          NCHAR = 4                        OPT
+IREP = 1   NAME = STANDARD_DEV NCHAR = 4  JREP = 1   TYPE = 2   MAND       #1
+#
+3,5,2,4,5  VELOCITIES          NCHAR = 4                        OPT
+IREP = 1   NAME = STANDARD_DEV NCHAR = 4  JREP = 1   TYPE = 2   MAND       #1
+#
+3,5,2,4,6  RIEMANN_INVARIANTS  NCHAR = 4                        OPT
+IREP = 1   NAME = STANDARD_DEV NCHAR = 4  JREP = 1   TYPE = 2   MAND       #1
+#
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+3,5,2,5    CURRENT_STATIONS    NCHAR = 3                        OPT
+#
+NKEY = 1
+#
+3,5,2,5,1  S                   NCHAR = -1                       REP
+#
+NKEY = 1
+#
+3,5,2,5,1,1 DUM                NCHAR = 0                        OPT
+#
+IREP = 1   NAME = STATION      NCHAR = 4  JREP = 1   TYPE = 3   MAND       #1
+IREP = 1   NAME = STANDARD_DEV NCHAR = 5  JREP = 1   TYPE = 2   DEF = 0.05 #2
+#
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+3,5,2,6    TRACKS              NCHAR = 3                        OPT
+#
+NKEY = 1
+#
+3,5,2,6,1  S                   NCHAR = -1                       REP
+#
+NKEY = 1
+#
+3,5,2,6,1,1 DUM                NCHAR = 0                        OPT
+#
+IREP = 1   NAME = CURRENT      NCHAR = 3  JREP = 1   TYPE = 3   XOR=1      #1
+IREP = 1   NAME = WATERLEVEL   NCHAR = 3  JREP = 1   TYPE = 3   XOR=1      #2
+IREP = 1   NAME = STANDARD_DEV NCHAR = 5  JREP = 1   TYPE = 2   DEF = 0.05 #3
+#
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+3,5,2,7    VISCOSITY_NOISE     NCHAR = 4                        OPT
+#
+NKEY = 2
+#
+3,5,2,7,1  STATISTICS          NCHAR = 4                        MAND
+#
+IREP = 1   NAME = STANDARD_DEV NCHAR = 4  JREP = 1   TYPE = 2   DEF = 0.003 #1
+IREP = 1   NAME = TIME_CORRELATION NCHAR=4 JREP= 1   TYPE = 2   DEF = 0.9  #2
+IREP = 1   NAME = CHAR_HOR     NCHAR = 6  JREP = 1   TYPE = 2   OPT        #3
+IREP = 1   NAME = CHAR_VERT    NCHAR = 6  JREP = 1   TYPE = 2   OPT        #4
+IREP = 1   NAME = CHAR_TIME    NCHAR = 6  JREP = 1   TYPE = 2   OPT
+IREP = 1   NAME = DEGREE       NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = RAD          NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = METER        NCHAR = 5  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = KILOMETER    NCHAR = 9  JREP = 1   TYPE = 4   DEF = 0
+#
+3,5,2,7,2  GRID                NCHAR = 4                        MAND
+#
+IREP = 1   NAME = M_INCREMENT  NCHAR = 3  JREP = 1   TYPE = 1   XOR 1       #1
+IREP = 1   NAME = N_INCREMENT  NCHAR = 3  JREP = 1   TYPE = 1   XOR 2      #2
+IREP = 1   NAME = M_START      NCHAR = 3  JREP = 1   TYPE = 1   DEF = 1    #3
+IREP = 1   NAME = N_START      NCHAR = 3  JREP = 1   TYPE = 1   DEF = 1    #4
+IREP = 1   NAME = K_INCREMENT  NCHAR = 3  JREP = 1   TYPE = 1   MAND       #5
+IREP = 1   NAME = NORTH_INCREMENT NCHAR = 9 JREP = 1   TYPE = 2   XOR 1
+IREP = 1   NAME = EAST_INCREMENT  NCHAR = 8 JREP = 1   TYPE = 2   XOR 2
+IREP = 1   NAME = NORTH_START  NCHAR = 11 JREP = 1   TYPE = 2   DEF = 0
+IREP = 1   NAME = EAST_START   NCHAR = 10 JREP = 1   TYPE = 2   DEF = 0
+IREP = 1   NAME = DEGREE       NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = RAD          NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = METER        NCHAR = 5  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = KILOMETER    NCHAR = 9  JREP = 1   TYPE = 4   DEF = 0
+#
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+3,5,2,8    COMPUTE_STEADY_STATE  NCHAR = 4                      OPT
+#
+ IREP = 1  NAME = TFKALMAN     NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = TIKALMAN     NCHAR = 5  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = TLKALMAN     NCHAR = 5  JREP = 1   TYPE = 2   OPT
+#
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+3,5,2,9    SALINITY_STATIONS     NCHAR = 3                      OPT
+#
+NKEY = 1
+#
+3,5,2,9,1  S                   NCHAR = -1                       REP
+#
+NKEY = 1
+#
+3,5,2,9,1,1 DUM                NCHAR = 0                        OPT
+#
+IREP = 1   NAME = STATION      NCHAR = 4  JREP = 1   TYPE = 3   MAND       #1
+IREP = 1   NAME = STANDARD_DEV NCHAR = 5  JREP = 1   TYPE = 2   DEF = 0.05 #2
+#
+#-----------------------------------------------------------------------------
+#
+3,5,3      OPENDA              NCHAR = 6                        XOR = 1
+#
+NKEY = 9
+#
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+3,5,3,1    GENERAL             NCHAR = 3                        MAND
+#
+## NMODE wordt niet gebruikt in OPENDA
+IREP = 1   NAME = NMODE        NCHAR = 4  JREP = 1   TYPE = 1   DEF = 0    #1
+IREP = 1   NAME = CHAR_DIST    NCHAR = 4  JREP = 1   TYPE = 2   OPT        #2
+## FORGET_PAST wordt niet gebruikt in OPENDA
+IREP = 1   NAME = FORGET_PAST  NCHAR = 6  JREP = 1   TYPE = 2   OPT        #3
+## TIKAL wordt niet gebruikt in OPENDA
+IREP = 1   NAME = TIKAL        NCHAR = 5  JREP = 1   TYPE = 2   DEF = 0    #4
+IREP = 1   NAME = USE_ZEROS    NCHAR = 7  JREP = 1   TYPE = 4   DEF = 0    #5
+## FORECAST_START wordt niet gebruikt in OPENDA
+IREP = 1   NAME = FORECAST_START NCHAR = 4 JREP = 1  TYPE = 2   OPT        #6
+IREP = 1   NAME = DEGREE       NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = RAD          NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = METER        NCHAR = 5  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = KILOMETER    NCHAR = 9  JREP = 1   TYPE = 4   DEF = 0
+#
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+3,5,3,2    WATERLEVEL_STATIONS NCHAR = 3                        OPT
+#
+NKEY = 1
+#
+3,5,3,2,1  S                   NCHAR = -1                       REP
+#
+NKEY = 1
+#
+3,5,3,2,1,1 DUM                NCHAR = 0                        OPT
+#
+IREP = 1   NAME = P            NCHAR =-1  JREP = 1   TYPE = 1   XOR=1      #1
+IREP = 1   NAME = STANDARD_DEV NCHAR = 5  JREP = 1   TYPE = 2   DEF = 0.05 #2
+IREP = 1   NAME = STATION      NCHAR = 4  JREP = 1   TYPE = 3   XOR=1      #3
+#
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+3,5,3,3    WIND_NOISE          NCHAR = 4                        OPT
+#
+NKEY = 2
+#
+3,5,3,3,1  STATISTICS          NCHAR = 4                        MAND
+#
+IREP = 1   NAME = STANDARD_DEV NCHAR = 4  JREP = 1   TYPE = 2   DEF = 0.003 #1
+IREP = 1   NAME = TIME_CORRELATION NCHAR=4 JREP= 1   TYPE = 2   DEF = 0.9  #2
+IREP = 1   NAME = CHAR_HOR     NCHAR = 6  JREP = 1   TYPE = 2   OPT        #3
+IREP = 1   NAME = CHAR_PSI     NCHAR = 6  JREP = 1   TYPE = 2   OPT        #3
+IREP = 1   NAME = STRESS       NCHAR = 6  JREP = 1   TYPE = 4   DEF = 0    #4
+IREP = 1   NAME = CHAR_TIME    NCHAR = 6  JREP = 1   TYPE = 2   OPT
+IREP = 1   NAME = DEGREE       NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = RAD          NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = METER        NCHAR = 5  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = KILOMETER    NCHAR = 9  JREP = 1   TYPE = 4   DEF = 0
+#
+3,5,3,3,2  GRID                NCHAR = 4                        MAND
+#
+IREP = 1   NAME = M_INCREMENT  NCHAR = 3  JREP = 1   TYPE = 1   XOR 1      #1
+IREP = 1   NAME = N_INCREMENT  NCHAR = 3  JREP = 1   TYPE = 1   XOR 2      #2
+IREP = 1   NAME = M_START      NCHAR = 3  JREP = 1   TYPE = 1   DEF = 1    #3
+IREP = 1   NAME = N_START      NCHAR = 3  JREP = 1   TYPE = 1   DEF = 1    #4
+IREP = 1   NAME = NORTH_INCREMENT NCHAR = 9 JREP = 1   TYPE = 2   XOR 1
+IREP = 1   NAME = EAST_INCREMENT  NCHAR = 8 JREP = 1   TYPE = 2   XOR 2
+IREP = 1   NAME = NORTH_START  NCHAR = 11 JREP = 1   TYPE = 2   DEF = 100
+IREP = 1   NAME = EAST_START   NCHAR = 10 JREP = 1   TYPE = 2   DEF = 0
+IREP = 1   NAME = DEGREE       NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = RAD          NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = METER        NCHAR = 5  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = KILOMETER    NCHAR = 9  JREP = 1   TYPE = 4   DEF = 0
+#
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+3,5,3,4    BOUNDARIES          NCHAR = 5                        OPT
+#
+NKEY = 6
+#
+3,5,3,4,1  STATISTICS          NCHAR = 4                        MAND
+#
+IREP = 1   NAME = STANDARD_DEV  NCHAR = 4 JREP = 1   TYPE = 2   DEF = 0.10 #1
+IREP = 1   NAME = TIME_CORRELATION NCHAR=4 JREP= 1   TYPE = 2   DEF = 0.9  #2
+IREP = 1   NAME = SMOOTH        NCHAR= 6  JREP = 1   TYPE = 2   DEF = 0    #3
+IREP = 1   NAME = POINTS_INTPOL NCHAR= 5  JREP = 1   TYPE = 1   DEF=2      #4
+IREP = 1   NAME = WEIGH_SMOOTH  NCHAR= 5  JREP = 1   TYPE = 2   OPT
+#
+3,5,3,4,2  LINE_SECTIONS       NCHAR = 4                        MAND
+#
+NKEY = 1
+#
+3,5,3,4,2,1 S                  NCHAR = -1                       REP
+#
+NKEY = 1
+#
+3,5,3,4,2,1,1 DUM              NCHAR = 0                        OPT
+#
+IREP = 1   NAME = SECTION      NCHAR = 3  JREP = 2   TYPE = 1   MAND       #1
+#
+3,5,3,4,3  WATER_LEVELS        NCHAR = 4                        OPT
+IREP = 1   NAME = STANDARD_DEV NCHAR = 4  JREP = 1   TYPE = 2   MAND       #1
+#
+3,5,3,4,4  DISCHARGES          NCHAR = 4                        OPT
+IREP = 1   NAME = STANDARD_DEV NCHAR = 4  JREP = 1   TYPE = 2   MAND       #1
+#
+3,5,3,4,5  VELOCITIES          NCHAR = 4                        OPT
+IREP = 1   NAME = STANDARD_DEV NCHAR = 4  JREP = 1   TYPE = 2   MAND       #1
+#
+3,5,3,4,6  RIEMANN_INVARIANTS  NCHAR = 4                        OPT
+IREP = 1   NAME = STANDARD_DEV NCHAR = 4  JREP = 1   TYPE = 2   MAND       #1
+#
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+3,5,3,5    CURRENT_STATIONS    NCHAR = 3                        OPT
+#
+NKEY = 1
+#
+3,5,3,5,1  S                   NCHAR = -1                       REP
+#
+NKEY = 1
+#
+3,5,3,5,1,1 DUM                NCHAR = 0                        OPT
+#
+IREP = 1   NAME = STATION      NCHAR = 4  JREP = 1   TYPE = 3   MAND       #1
+IREP = 1   NAME = STANDARD_DEV NCHAR = 5  JREP = 1   TYPE = 2   DEF = 0.05 #2
+#
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+## TRACKS wordt niet gebruikt in OPENDA
+3,5,3,6    TRACKS              NCHAR = 3                        OPT
+#
+NKEY = 1
+#
+3,5,3,6,1  S                   NCHAR = -1                       REP
+#
+NKEY = 1
+#
+3,5,3,6,1,1 DUM                NCHAR = 0                        OPT
+#
+IREP = 1   NAME = CURRENT      NCHAR = 3  JREP = 1   TYPE = 3   XOR=1      #1
+IREP = 1   NAME = WATERLEVEL   NCHAR = 3  JREP = 1   TYPE = 3   XOR=1      #2
+IREP = 1   NAME = STANDARD_DEV NCHAR = 5  JREP = 1   TYPE = 2   DEF = 0.05 #3
+#
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+3,5,3,7    VISCOSITY_NOISE     NCHAR = 4                        OPT
+#
+NKEY = 2
+#
+3,5,3,7,1  STATISTICS          NCHAR = 4                        MAND
+#
+IREP = 1   NAME = STANDARD_DEV NCHAR = 4  JREP = 1   TYPE = 2   DEF = 0.003 #1
+IREP = 1   NAME = TIME_CORRELATION NCHAR=4 JREP= 1   TYPE = 2   DEF = 0.9  #2
+IREP = 1   NAME = CHAR_HOR     NCHAR = 6  JREP = 1   TYPE = 2   OPT        #3
+IREP = 1   NAME = CHAR_VERT    NCHAR = 6  JREP = 1   TYPE = 2   OPT        #4
+IREP = 1   NAME = CHAR_TIME    NCHAR = 6  JREP = 1   TYPE = 2   OPT
+IREP = 1   NAME = DEGREE       NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = RAD          NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = METER        NCHAR = 5  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = KILOMETER    NCHAR = 9  JREP = 1   TYPE = 4   DEF = 0
+#
+3,5,3,7,2  GRID                NCHAR = 4                        MAND
+#
+IREP = 1   NAME = M_INCREMENT  NCHAR = 3  JREP = 1   TYPE = 1   XOR 1       #1
+IREP = 1   NAME = N_INCREMENT  NCHAR = 3  JREP = 1   TYPE = 1   XOR 2      #2
+IREP = 1   NAME = M_START      NCHAR = 3  JREP = 1   TYPE = 1   DEF = 1    #3
+IREP = 1   NAME = N_START      NCHAR = 3  JREP = 1   TYPE = 1   DEF = 1    #4
+IREP = 1   NAME = K_INCREMENT  NCHAR = 3  JREP = 1   TYPE = 1   MAND       #5
+IREP = 1   NAME = NORTH_INCREMENT NCHAR = 9 JREP = 1   TYPE = 2   XOR 1
+IREP = 1   NAME = EAST_INCREMENT  NCHAR = 8 JREP = 1   TYPE = 2   XOR 2
+IREP = 1   NAME = NORTH_START  NCHAR = 11 JREP = 1   TYPE = 2   DEF = 0
+IREP = 1   NAME = EAST_START   NCHAR = 10 JREP = 1   TYPE = 2   DEF = 0
+IREP = 1   NAME = DEGREE       NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = RAD          NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = METER        NCHAR = 5  JREP = 1   TYPE = 4   DEF = 0
+IREP = 1   NAME = KILOMETER    NCHAR = 9  JREP = 1   TYPE = 4   DEF = 0
+#
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+## COMPUTE_STEADY_STATE wordt niet gebruikt in OPENDA
+3,5,3,8    COMPUTE_STEADY_STATE  NCHAR = 4                      OPT
+#
+ IREP = 1  NAME = TFKALMAN     NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = TIKALMAN     NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = TLKALMAN     NCHAR = 5  JREP = 1   TYPE = 2   OPT
+#
+#- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#
+3,5,3,9    SALINITY_STATIONS     NCHAR = 3                      OPT
+#
+NKEY = 1
+#
+3,5,3,9,1  S                   NCHAR = -1                       REP
+#
+NKEY = 1
+#
+3,5,3,9,1,1 DUM                NCHAR = 0                        OPT
+#
+IREP = 1   NAME = STATION      NCHAR = 4  JREP = 1   TYPE = 3   MAND       #1
+IREP = 1   NAME = STANDARD_DEV NCHAR = 5  JREP = 1   TYPE = 2   DEF = 0.05 #2
+#
+##############################################################################
+#
+3,6        CORIOLIS            NCHAR = 4                        OPT
+#
+NKEY = 2
+#
+3,6,1      GLOBAL              NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+3,6,2      LOCAL               NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+3,6,2,1    BOX                 NCHAR = 3                        REP
+#
+NKEY = 1
+#
+3,6,2,1,1  DUM                 NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+#
+3,7        SPACE_DEP_CD        NCHAR = 12                       OPT
+#
+NKEY = 2
+#
+3,7,1      WSPEED_INDEPENDENT  NCHAR = 12                       XOR1
+#
+NKEY = 2
+#
+3,7,1,1    GLOBAL              NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   DEF =.0026
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+3,7,1,2    LOCAL               NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+3,7,1,2,1     BOX              NCHAR = 3                        REP
+#
+NKEY = 1
+#
+3,7,1,2,1,1   DUM              NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+#
+3,7,2      WSPEED_PIECE_LINEAR NCHAR = 12                       XOR1
+#
+NKEY = 2
+#
+3,7,2,1    CD_LOW              NCHAR = 4                        OPT
+#
+NKEY = 2
+#
+3,7,2,1,1  GLOBAL              NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+ IREP = 1  NAME = WSPEED_LOW   NCHAR = 8  JREP = 1   TYPE = 2   MAND
+#
+3,7,2,1,2  LOCAL               NCHAR = 5                        OPT
+#
+NKEY=1
+#
+3,7,2,1,2,1    BOX             NCHAR = 3                        REP
+#
+NKEY = 1
+#
+3,7,2,1,2,1,1  DUM             NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+#
+3,7,2,2    CD_HIGH             NCHAR = 4                        OPT
+#
+NKEY = 2
+#
+3,7,2,2,1  GLOBAL              NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+ IREP = 1  NAME = WSPEED_HIGH  NCHAR = 8  JREP = 1   TYPE = 2   MAND
+#
+3,7,2,2,2  LOCAL               NCHAR = 5                        OPT
+#
+NKEY=1
+#
+3,7,2,2,2,1    BOX             NCHAR = 3                        REP
+#
+NKEY = 1
+#
+3,7,2,2,2,1,1  DUM             NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+#
+3,8        SVWP_LS_MASK        NCHAR = 12                       OPT
+#
+NKEY = 2
+#
+3,8,1      GLOBAL              NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   DEF = 1
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+ IREP = 1  NAME = MMAX_WND     NCHAR = 8  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = NMAX_WND     NCHAR = 8  JREP = 1   TYPE = 1   MAND
+#
+3,8,2      LOCAL               NCHAR = 5                        OPT
+#
+NKEY=1
+#
+3,8,2,1    BOX                 NCHAR = 3                        REP
+#
+NKEY = 1
+#
+3,8,2,1,1  DUM                 NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+#
+3,9        METEO_DATA          NCHAR = 10                       OPT
+#
+NKEY = 5
+#
+3,9,1      DESCRIPTION         NCHAR = 3                        OPT
+#
+ IREP = 1  NAME = SDS_METEO    NCHAR = 5  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = EXP_METEO    NCHAR = 5  JREP = 1   TYPE = 3   OPT
+#
+3,9,2      AIR_TEMP            NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = TUNIT        NCHAR = 5  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = T_AIR        NCHAR = 4  JREP = 1   TYPE = 2   DEF=20.0
+ IREP = 1  NAME = SERIES       NCHAR = 3  JREP = 1   TYPE = 3   XOR 1
+ IREP = 1  NAME = FRAME        NCHAR = 5  JREP = 3   TYPE = 2   OPT
+ IREP = 1  NAME = VALUES       NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 0  NAME = TIME_AND_VAL NCHAR = 5  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = USE_METEO_SD NCHAR = 5  JREP = 1   TYPE = 4   XOR 1
+ IREP = 1  NAME = SDS_AIR_TEMP NCHAR = 5  JREP = 1   TYPE = 3   XOR 1
+ IREP = 1  NAME = EXP_AIR_TEMP NCHAR = 5  JREP = 1   TYPE = 3   OPT
+#
+3,9,3      HUMIDITY            NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = HUNIT        NCHAR = 5  JREP = 1   TYPE = 3   OPT         #1
+ IREP = 1  NAME = R_HUMIDITY   NCHAR = 5  JREP = 1   TYPE = 2   DEF=0.734   #2
+ IREP = 1  NAME = SERIES       NCHAR = 3  JREP = 1   TYPE = 3   XOR 1       #3
+ IREP = 1  NAME = FRAME        NCHAR = 5  JREP = 3   TYPE = 2   OPT         #4
+ IREP = 1  NAME = VALUES       NCHAR = 5  JREP = 0   TYPE = 2   OPT         #5
+ IREP = 0  NAME = TIME_AND_VAL NCHAR = 4  JREP = 4   TYPE = 2   OPT         #6
+ IREP = 1  NAME = USE_METEO_SD NCHAR = 5  JREP = 1   TYPE = 4   XOR 1       #7
+ IREP = 1  NAME = SDS_HUMIDITY NCHAR = 5  JREP = 1   TYPE = 3   XOR 1       #8
+ IREP = 1  NAME = EXP_HUMIDITY NCHAR = 5  JREP = 1   TYPE = 3   OPT         #9
+#
+3,9,4      CLOUD_COVER         NCHAR = 11                       OPT
+#
+ IREP = 1  NAME = CUNIT         NCHAR = 5  JREP = 1   TYPE = 3   OPT         #1
+ IREP = 1  NAME = T_CLOUD_COVER NCHAR = 5  JREP = 1   TYPE = 2   DEF=0.34    #2
+ IREP = 1  NAME = SERIES        NCHAR = 3  JREP = 1   TYPE = 3   XOR 1       #3
+ IREP = 1  NAME = FRAME         NCHAR = 5  JREP = 3   TYPE = 2   OPT         #4
+ IREP = 1  NAME = VALUES        NCHAR = 5  JREP = 0   TYPE = 2   OPT         #5
+ IREP = 0  NAME = TIME_AND_VAL  NCHAR = 4  JREP = 4   TYPE = 2   OPT         #6
+ IREP = 1  NAME = USE_METEO_SDS NCHAR = 5  JREP = 1   TYPE = 4   XOR 1       #7
+ IREP = 1  NAME = SDS_CLOUDCOV  NCHAR = 5  JREP = 1   TYPE = 3   XOR 1       #8
+ IREP = 1  NAME = EXP_CLOUDCOV  NCHAR = 5  JREP = 1   TYPE = 3   OPT         #9
+#
+3,9,5      SOLAR_IRRADIATION   NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = SUNIT        NCHAR = 5  JREP = 1   TYPE = 3   OPT         #1
+ IREP = 1  NAME = S_SOLAR      NCHAR = 5  JREP = 1   TYPE = 2   DEF=50.0    #2
+ IREP = 1  NAME = SERIES       NCHAR = 3  JREP = 1   TYPE = 3   XOR 1       #3
+ IREP = 1  NAME = FRAME        NCHAR = 5  JREP = 3   TYPE = 2   OPT         #4
+ IREP = 1  NAME = VALUES       NCHAR = 5  JREP = 0   TYPE = 2   OPT         #5
+ IREP = 0  NAME = TIME_AND_VAL NCHAR = 4  JREP = 4   TYPE = 2   OPT         #6
+ IREP = 1  NAME = USE_METEO_SDS NCHAR = 5  JREP = 1  TYPE = 4   XOR 1       #7
+ IREP = 1  NAME = SDS_SOLAR_IRRAD NCHAR = 5  JREP = 1   TYPE = 3   XOR 1       #8
+ IREP = 1  NAME = EXP_SOLAR_IRRAD NCHAR = 5  JREP = 1   TYPE = 3   OPT         #9
+#
+3,10       TIDAL_FORCES        NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = SCHRAMA      NCHAR = 6  JREP = 1   TYPE = 4   MAND             #1
+ IREP = 1  NAME = DOODSON_START NCHAR = 11 JREP = 1  TYPE = 2   DEF = 55.565d0   #2
+ IREP = 1  NAME = DOODSON_STOP  NCHAR = 11 JREP = 1  TYPE = 2   DEF = 375.575d0  #3
+ IREP = 1  NAME = EPS          NCHAR = 3  JREP = 1   TYPE = 2   DEF = 0.0        #4
+#
+#  NEXT MAINKEYWORD *****************************************************
+#
+4          DISPLAYS            NCHAR = 4                        OPT
+#
+NKEY = 9
+#
+4,1        DEVICE              NCHAR = 4                        OPT
+#          ---- not used ----
+ IREP = 1  NAME = PLOTDEV      NCHAR = 6  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = SIZEOFP      NCHAR = 4  JREP = 1   TYPE = 3   OPT
+#
+4,2        GRIDDISP            NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = XLEFTMARGIN  NCHAR = 5  JREP = 1   TYPE = 2   DEF = 8.0
+ IREP = 1  NAME = XRIGHTMARGIN NCHAR = 5  JREP = 1   TYPE = 2   DEF = 8.0
+ IREP = 1  NAME = YBOTMARGIN   NCHAR = 4  JREP = 1   TYPE = 2   DEF = 8.0
+ IREP = 1  NAME = YTOPMARGIN   NCHAR = 4  JREP = 1   TYPE = 2   DEF = 8.0
+ IREP = 1  NAME = RATIODXDY    NCHAR = 4  JREP = 1   TYPE = 2   DEF = 1.0
+#
+4,3        OUTLINES            NCHAR = 8                        OPT
+#
+NKEY = 2
+#
+4,3,1      GENERAL             NCHAR = 6                        OPT
+#
+ IREP = 1  NAME = XSHIFT       NCHAR = 6  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = YSHIFT       NCHAR = 6  JREP = 1   TYPE = 2   OPT
+#
+4,3,2      LINES               NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+4,3,2,1    L                   NCHAR =-1                        REP
+#
+NKEY = 1
+#
+4,3,2,1,1  DUM                 NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = LINETYPE     NCHAR = 8  JREP = 3   TYPE = 2   OPT
+ IREP = 1  NAME = COOR         NCHAR = 4  JREP = 0   TYPE = 2   OPT
+#
+4,4        TITLE               NCHAR = 4                        OPT
+#
+ IREP = 1  NAME = FX           NCHAR = 2  JREP = 1   TYPE = 2   DEF = 1.
+ IREP = 1  NAME = FY           NCHAR = 2  JREP = 1   TYPE = 2   DEF = 1.
+ IREP = 1  NAME = CHARSIZE     NCHAR = 5  JREP = 1   TYPE = 2   DEF = 1.5
+ IREP = 1  NAME = TEXT         NCHAR = 4  JREP = 1   TYPE = 3   OPT
+#
+4,5        LEGEND              NCHAR = 3                        OPT
+#
+ IREP = 1  NAME = FX           NCHAR = 2  JREP = 1   TYPE = 2   DEF = 1.
+ IREP = 1  NAME = FY           NCHAR = 2  JREP = 1   TYPE = 2   DEF = 1.
+ IREP = 1  NAME = CHARSIZE     NCHAR = 5  JREP = 1   TYPE = 2   DEF = 1.
+ IREP = 1  NAME = ISOFORMAT    NCHAR = 4  JREP = 1   TYPE = 2   DEF = 1.
+ IREP = 1  NAME = ISOCOL       NCHAR = 4  JREP = 1   TYPE = 1   DEF = 2.
+#
+4,6        POSCLOCK            NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = FX           NCHAR = 2  JREP = 1   TYPE = 2   DEF = 1.
+ IREP = 1  NAME = FY           NCHAR = 2  JREP = 1   TYPE = 2   DEF = 1.
+ IREP = 1  NAME = CHARSIZE     NCHAR = 5  JREP = 1   TYPE = 2   DEF = 0.75
+ IREP = 1  NAME = CLOCKRAD     NCHAR = 6  JREP = 1   TYPE = 2   DEF = 1.
+#
+4,7        WINDARROW           NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = FX           NCHAR = 2  JREP = 1   TYPE = 2   DEF = 1.
+ IREP = 1  NAME = FY           NCHAR = 2  JREP = 1   TYPE = 2   DEF = 1.
+ IREP = 1  NAME = CHARSIZE     NCHAR = 5  JREP = 1   TYPE = 2   DEF = 0.75
+ IREP = 1  NAME = LENGTH       NCHAR = 6  JREP = 1   TYPE = 2   DEF = 1.
+ IREP = 1  NAME = VECTWIDTH    NCHAR = 5  JREP = 1   TYPE = 2   DEF = 10.
+#
+4,8        PERMTITLES          NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+4,8,1      T                   NCHAR =-1                        REP
+#
+# Use dummy key since more than one IREP card follows :
+#
+NKEY = 1
+#
+4,8,1,1    DUM                 NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = XPOS         NCHAR = 1  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = YPOS         NCHAR = 1  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = SIZE         NCHAR = 4  JREP = 1   TYPE = 2   DEF = 1.
+ IREP = 1  NAME = WIDTH        NCHAR = 5  JREP = 1   TYPE = 2   DEF = 1.
+ IREP = 1  NAME = ANGLE        NCHAR = 5  JREP = 1   TYPE = 2   DEF = 0.
+ IREP = 1  NAME = TITLE        NCHAR = 5  JREP = 1   TYPE = 3   MAND
+#
+4,9        ISOLINES            NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = SIZEISONUM   NCHAR = 5  JREP = 1   TYPE = 2   DEF = 1.
+ IREP = 1  NAME = ISONUMGRID   NCHAR = 5  JREP = 1   TYPE = 1   DEF = 2
+#
+#  NEXT MAINKEYWORD : *********************************************
+#
+5          FLOW                NCHAR = 4                        OPT
+#
+NKEY = 3
+#
+5,1        PROBLEM             NCHAR = 4                        MAND
+#
+NKEY = 12
+#
+5,1,1      TIMEFRAME           NCHAR = 6                        MAND
+#
+#    REAL DATE OF SIMULATION RUN :
+#
+ IREP = 1  NAME = DATE         NCHAR = 4  JREP = 1   TYPE = 3   MAND
+ IREP = 1  NAME = TSTART       NCHAR = 6  JREP = 1   TYPE = 2   DEF = 0.0
+ IREP = 1  NAME = TSTOP        NCHAR = 5  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = TIMEZONE     NCHAR = 5  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = SUMMERTIME   NCHAR = 6  JREP = 1   TYPE = 4   DEF = 0
+#
+5,1,2      METHODVARIABLES     NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = TSTEP        NCHAR = 5  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = ITERCON      NCHAR = 6  JREP = 1   TYPE = 1   DEF = 8
+ IREP = 1  NAME = ITERMOM      NCHAR = 6  JREP = 1   TYPE = 1   DEF = 8
+ IREP = 1  NAME = ITERACCURACY NCHAR = 10 JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = THETA        NCHAR = 5  JREP = 1   TYPE = 2   DEF = 0.5
+ IREP = 1  NAME = ITERACCURVEL NCHAR = 10 JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = ITERACCURWL  NCHAR = 10 JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = CHECKCONT    NCHAR = 6  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = QUANTF_RANDOM NCHAR = 6 JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = CONSERVATIVE NCHAR = 6  JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = RELAX_BAR    NCHAR = 7  JREP = 1   TYPE = 2   DEF = 0
+#
+5,1,3      SMOOTHING           NCHAR = 6                        OPT
+#
+ IREP = 1  NAME = TLSMOOTH     NCHAR = 3  JREP = 1   TYPE = 2   DEF = 0.
+ IREP = 1  NAME = OLD_SMOOTHING NCHAR =3  JREP = 1   TYPE = 4   DEF = 0
+#
+5,1,4      DRYING              NCHAR = 6                        OPT
+#
+ IREP = 1  NAME = IDRYFLAG           NCHAR = 4  JREP = 1   TYPE = 1   OPT
+ IREP = 1  NAME = DEPCRIT            NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = DUPWND             NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = UPWIND_ZETA        NCHAR = 6  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = THRES_UV_FLOODING  NCHAR = 8  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = THRES_WL_FLOODING  NCHAR = 8  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = CHECK_WL           NCHAR = 8  JREP = 1   TYPE = 3   OPT
+#
+5,1,5      FRICTION            NCHAR = 5                        MAND
+#
+NKEY = 6
+#
+5,1,5,1    GLOBAL              NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = TICVAL       NCHAR = 4  JREP = 1   TYPE = 2   DEF = 1.0
+ IREP = 1  NAME = FORMULA      NCHAR = 4  JREP = 1   TYPE = 3   OPT
+#
+5,1,5,2    UDIREC              NCHAR = 4                        MAND
+#
+NKEY = 2
+#
+5,1,5,2,1  GLOBAL              NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+5,1,5,2,2  LOCAL               NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+5,1,5,2,2,1   BOX              NCHAR = 3                        REP
+#
+NKEY = 1
+#
+5,1,5,2,2,1,1 DUM              NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+#
+5,1,5,3    VDIREC              NCHAR = 4                        MAND
+#
+NKEY = 2
+#
+5,1,5,3,1  GLOBAL              NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+5,1,5,3,2  LOCAL               NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+5,1,5,3,2,1   BOX              NCHAR = 3                        REP
+#
+NKEY = 1
+#
+5,1,5,3,2,1,1 DUM              NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+#
+5,1,5,4    NIKURADSE           NCHAR = 6                        OPT
+#
+NKEY = 3
+#
+5,1,5,4,1  GLOBAL              NCHAR = 6                        MAND
+#
+NKEY = 2
+#
+5,1,5,4,1,1   TIMES            NCHAR = 5                        MAND
+#
+ IREP = 1  NAME = TFNIKU       NCHAR = 6  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = TINIKU       NCHAR = 6  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = TLNIKU       NCHAR = 6  JREP = 1   TYPE = 2   OPT
+#
+5,1,5,4,1,2     ROUGH_CHAR     NCHAR = 10                       OPT
+#
+NKEY = 1
+#
+5,1,5,4,1,2,1     R_CODE       NCHAR =-6                        REP
+#
+NKEY = 1
+#
+5,1,5,4,1,2,1,1     DUM        NCHAR = 0                        OPT
+#
+#
+ IREP = 1  NAME = IC           NCHAR = 2  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = A            NCHAR = 1  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = B            NCHAR = 1  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = C            NCHAR = 1  JREP = 1   TYPE = 2   DEF = 1.
+ IREP = 1  NAME = D            NCHAR = 1  JREP = 1   TYPE = 2   DEF = 1.
+#
+5,1,5,4,2  UDIREC              NCHAR = 4                        MAND
+#
+ IREP = 1  NAME = AREAU        NCHAR = 5  JREP = 1   TYPE = 3   MAND
+#
+5,1,5,4,3  VDIREC              NCHAR = 4                        MAND
+#
+ IREP = 1  NAME = AREAV        NCHAR = 5  JREP = 1   TYPE = 3   MAND
+#
+5,1,5,5    FRICOMBINATION      NCHAR = 6                        OPT
+#
+NKEY = 4
+#
+5,1,5,5,1  GLOBAL              NCHAR = 6                        OPT
+#
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+5,1,5,5,2  MANNING             NCHAR = 6                        OPT
+#
+NKEY = 4
+#
+5,1,5,5,2,1  UFLOOD            NCHAR = 4                        OPT
+#
+NKEY = 1
+#
+5,1,5,5,2,1,1   BOX            NCHAR = 3                        REP
+#
+NKEY = 1
+#
+5,1,5,5,2,1,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+5,1,5,5,2,2  UEBB              NCHAR = 4                        OPT
+#
+NKEY = 1
+#
+5,1,5,5,2,2,1   BOX            NCHAR = 3                        REP
+#
+NKEY = 1
+#
+5,1,5,5,2,2,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+5,1,5,5,2,3  VFLOOD            NCHAR = 4                        OPT
+#
+NKEY = 1
+#
+5,1,5,5,2,3,1   BOX            NCHAR = 3                        REP
+#
+NKEY = 1
+#
+5,1,5,5,2,3,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+5,1,5,5,2,4  VEBB              NCHAR = 4                        OPT
+#
+NKEY = 1
+#
+5,1,5,5,2,4,1   BOX            NCHAR = 3                        REP
+#
+NKEY = 1
+#
+5,1,5,5,2,4,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+5,1,5,5,3  WHITE_COLEBROOK     NCHAR = 5                        OPT
+#
+NKEY = 4
+#
+5,1,5,5,3,1  UFLOOD            NCHAR = 4                        OPT
+#
+NKEY = 1
+#
+5,1,5,5,3,1,1   BOX            NCHAR = 3                        REP
+#
+NKEY = 1
+#
+5,1,5,5,3,1,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+5,1,5,5,3,2  UEBB              NCHAR = 4                        OPT
+#
+NKEY = 1
+#
+5,1,5,5,3,2,1   BOX            NCHAR = 3                        REP
+#
+NKEY = 1
+#
+5,1,5,5,3,2,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+5,1,5,5,3,3  VFLOOD            NCHAR = 4                        OPT
+#
+NKEY = 1
+#
+5,1,5,5,3,3,1   BOX            NCHAR = 3                        REP
+#
+NKEY = 1
+#
+5,1,5,5,3,3,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+5,1,5,5,3,4  VEBB              NCHAR = 4                        OPT
+#
+NKEY = 1
+#
+5,1,5,5,3,4,1   BOX            NCHAR = 3                        REP
+#
+NKEY = 1
+#
+5,1,5,5,3,4,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+5,1,5,5,4  CHEZY               NCHAR = 5                        OPT
+#
+NKEY = 4
+#
+5,1,5,5,4,1  UFLOOD            NCHAR = 4                        OPT
+#
+NKEY = 1
+#
+5,1,5,5,4,1,1   BOX            NCHAR = 3                        REP
+#
+NKEY = 1
+#
+5,1,5,5,4,1,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+5,1,5,5,4,2  UEBB              NCHAR = 4                        OPT
+#
+NKEY = 1
+#
+5,1,5,5,4,2,1   BOX            NCHAR = 3                        REP
+#
+NKEY = 1
+#
+5,1,5,5,4,2,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+5,1,5,5,4,3  VFLOOD            NCHAR = 4                        OPT
+#
+NKEY = 1
+#
+5,1,5,5,4,3,1   BOX            NCHAR = 3                        REP
+#
+NKEY = 1
+#
+5,1,5,5,4,3,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+5,1,5,5,4,4  VEBB              NCHAR = 4                        OPT
+#
+NKEY = 1
+#
+5,1,5,5,4,4,1   BOX            NCHAR = 3                        REP
+#
+NKEY = 1
+#
+5,1,5,5,4,4,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+5,1,5,6    ROUGHCOMBINATION    NCHAR = 6                        OPT
+#
+NKEY = 3
+#
+5,1,5,6,1  GLOBAL              NCHAR = 6                        MAND
+#
+NKEY = 3
+#
+5,1,5,6,1,1   TIMES            NCHAR = 5                        MAND
+#
+ IREP = 1  NAME = TFROUC       NCHAR = 6  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = TIROUC       NCHAR = 6  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = TLROUC       NCHAR = 6  JREP = 1   TYPE = 2   OPT
+#
+5,1,5,6,1,2     ROUGH_CHAR     NCHAR = 10                       OPT
+#
+NKEY = 1
+#
+5,1,5,6,1,2,1     R_CODE       NCHAR =-6                        REP
+#
+NKEY = 1
+#
+5,1,5,6,1,2,1,1     DUM        NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = IC           NCHAR = 2  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = A            NCHAR = 1  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = B            NCHAR = 1  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = C            NCHAR = 1  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = D            NCHAR = 1  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = PARAMETER    NCHAR = 5  JREP = 1   TYPE = 2   OPT
+#
+5,1,5,6,1,3    ROUGH_PARAMETER NCHAR = 11                       OPT
+#
+NKEY = 1
+#
+5,1,5,6,1,3,1     R_CODE       NCHAR =-6                        REP
+#
+NKEY = 1
+#
+5,1,5,6,1,3,1,1     DUM        NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = IC           NCHAR = 2  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = WATERLEVEL   NCHAR = 10 JREP = 1   TYPE = 4   XOR1
+ IREP = 1  NAME = P            NCHAR = -1 JREP = 1   TYPE = 1   XOR2
+ IREP = 1  NAME = DISCHARGE    NCHAR = 9  JREP = 1   TYPE = 4   XOR1
+ IREP = 1  NAME = C            NCHAR = -1 JREP = 1   TYPE = 1   XOR2
+#
+5,1,5,6,2  UDIREC              NCHAR = 4                        OPT
+#
+ IREP = 1  NAME = AREAU        NCHAR = 5  JREP = 1   TYPE = 3   MAND
+#
+5,1,5,6,3  VDIREC              NCHAR = 4                        OPT
+#
+ IREP = 1  NAME = AREAV        NCHAR = 5  JREP = 1   TYPE = 3   MAND
+#
+5,1,6      VISCOSITY           NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = EDDYVISCOSIT NCHAR = 4  JREP = 1   TYPE = 2   DEF = 10.0
+ IREP = 1  NAME = CROSS_DERIV  NCHAR = 5  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = FULL_REYNOLDS NCHAR = 8 JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = OLD_BND_TREATM NCHAR = 7 JREP = 1  TYPE = 4   DEF = 0
+#
+5,1,7      BARRIERCOEFFICIENTS NCHAR = 7                        OPT
+#
+NKEY = 1
+#
+5,1,7,1    B                   NCHAR =-1                        SEQ_KEY
+#
+NKEY = 1
+#
+5,1,7,1,1  DUM                 NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = CONTRSUBCRIT NCHAR = 8  JREP = 2   TYPE = 2   MAND
+ IREP = 1  NAME = CONTRSUPERCR NCHAR = 8  JREP = 2   TYPE = 2   MAND
+ IREP = 1  NAME = RESTRICTING  NCHAR = 3  JREP = 2   TYPE = 2   MAND
+#
+5,1,8      WEIRS               NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = THETAC       NCHAR = 6  JREP = 1   TYPE = 2   DEF=0.6
+ IREP = 1  NAME = GROYNES_REDU NCHAR = 6  JREP = 1   TYPE = 2   DEF=1.0
+ IREP = 1  NAME = OTHERS_REDUC NCHAR = 6  JREP = 1   TYPE = 2   DEF=1.0
+ IREP = 1  NAME = AUTO_SILL_HEIGHT NCHAR = 10 JREP = 1 TYPE = 4 DEF = 0
+ IREP = 1  NAME = VILLEMONTE   NCHAR = 10 JREP = 1   TYPE = 4   DEF = 0
+#
+5,1,9      VELOCITY_PROFILE    NCHAR = 8                        OPT
+#
+ IREP = 1  NAME = ZZERO        NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = LOG_BOUNDARI NCHAR = 8  JREP = 1   TYPE = 4   DEF=0
+ IREP = 1  NAME = BOUXDIM      NCHAR = 7  JREP = 1   TYPE = 4   DEF=0
+#
+5,1,10     DISCHARGECOEFF      NCHAR = 9                        OPT
+#
+NKEY = 2
+#
+5,1,10,1   SCALE_MODEL         NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = SMALL        NCHAR = 5  JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = LARGE        NCHAR = 5  JREP = 1   TYPE = 4   DEF = 0
+#
+5,1,10,2   COEF                NCHAR = 4                        OPT
+#
+NKEY = 1
+#
+5,1,10,2,1 T                   NCHAR = -1                       REP
+#
+# Use dummy key since more than one IREP card follows :
+#
+NKEY = 1
+#
+5,1,10,2,1,1 DUM               NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = B            NCHAR = 1  JREP=1     TYPE = 1   MAND
+ IREP = 1  NAME = ORIFICE_HEIG NCHAR = 4  JREP=1     TYPE = 2   XOR = 1
+ IREP = 1  NAME = FRAME        NCHAR = 5  JREP=2     TYPE = 2   XOR = 1
+ IREP = 1  NAME = DISCO        NCHAR = 5  JREP=2     TYPE = 2   MAND
+#
+5,1,11     HOR_VISCOSITY       NCHAR = 7                        OPT
+#
+NKEY = 2
+#
+5,1,11,1   GLOBAL              NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+ IREP = 1  NAME = FULL_REYNOLDS NCHAR = 8 JREP = 1   TYPE = 4   DEF = 0
+#
+5,1,11,2   LOCAL               NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+5,1,11,2,1 BOX                 NCHAR = 3                        REP
+#
+NKEY = 1
+#
+5,1,11,2,1,1 DUM               NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+#
+5,1,12     VERT_CHEZY          NCHAR = 7                        OPT
+#
+ IREP = 1  NAME = COMPATIBLE   NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = VELOCITY     NCHAR = 5  JREP = 1   TYPE = 4   OPT
+#
+#  NEXT SUBKEYWORD
+#
+5,2        FORCINGS            NCHAR = 4                        MAND
+#
+NKEY = 18
+#
+5,2,1      INITIAL             NCHAR = 4                        OPT
+#
+NKEY = 5
+#
+5,2,1,1    WATLEVEL            NCHAR = 6                        OPT
+#
+NKEY = 2
+#
+5,2,1,1,1  GLOBAL              NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+5,2,1,1,2  LOCAL               NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+5,2,1,1,2,1   BOX              NCHAR = 3                        REP
+#
+NKEY = 1
+#
+5,2,1,1,2,1,1 DUM              NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+#
+5,2,1,2    UVELOCITY           NCHAR = 6                        OPT
+#
+NKEY = 2
+#
+5,2,1,2,1  GLOBAL              NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+5,2,1,2,2  LOCAL               NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+5,2,1,2,2,1   BOX              NCHAR = 3                        REP
+#
+NKEY = 1
+#
+5,2,1,2,2,1,1 DUM              NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+#
+5,2,1,3    VVELOCITY           NCHAR = 6                        OPT
+#
+NKEY = 2
+#
+5,2,1,3,1  GLOBAL              NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+5,2,1,3,2  LOCAL               NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+5,2,1,3,2,1   BOX              NCHAR = 3                        REP
+#
+NKEY = 1
+#
+5,2,1,3,2,1,1 DUM              NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+#
+5,2,1,4    READ_FROM           NCHAR = 4                        OPT
+#
+ IREP = 1  NAME = EXP_INITIAL  NCHAR = 8  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = SDS_INITIAL  NCHAR = 8  JREP = 1   TYPE = 3   MAND
+ IREP = 1  NAME = TIME_INITIAL NCHAR = 9  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = REDEFINE_LAYER_THICKNESS  NCHAR = 8  JREP=1  TYPE=4  DEF = 0
+#
+#
+5,2,1,5    COMPUTE             NCHAR = 7                        OPT
+#
+ IREP = 1  NAME = VELOCITIES   NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+#
+5,2,2      FORCDUM             NCHAR = 6                        OPT
+#
+ IREP = 1  NAME = FDUMMY       NCHAR = 6  JREP = 1   TYPE = 2   OPT
+#
+5,2,3      BOUNDARIES          NCHAR = 6                        OPT
+#
+NKEY = 1
+#
+5,2,3,1    B                   NCHAR =-1                        REP
+#
+# Use dummy keyword :
+#
+NKEY = 1
+#
+5,2,3,1,1  DUM                 NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = OPEN         NCHAR = 4  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = BTYPE        NCHAR = 4  JREP = 1   TYPE = 3   MAND
+ IREP = 1  NAME = BDEF         NCHAR = 4  JREP = 1   TYPE = 3   MAND
+ IREP = 1  NAME = REFL         NCHAR = 4  JREP = 1   TYPE = 2   DEF = 0.
+ IREP = 1  NAME = SAME         NCHAR = 4  JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = WGHTHALFTIME NCHAR = 5  JREP = 1   TYPE = 2   DEF = 0.5
+#
+5,2,4      FOURIER             NCHAR = 4                        OPT
+#
+NKEY = 2
+#
+5,2,4,1    GENERAL             NCHAR = 2                        MAND
+#
+ IREP = 1  NAME = OMEGA        NCHAR = 5  JREP = 0   TYPE = 2   MAND
+#
+5,2,4,2    SERIES              NCHAR = 6                        MAND
+#
+NKEY = 1
+#
+5,2,4,2,1  S                   NCHAR =-1                        REP
+#
+# Use dummy keyword since more IREP cards follow :
+#
+NKEY = 1
+#
+5,2,4,2,1,1 DUM                NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = P            NCHAR =-1  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = TID          NCHAR = 3  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = AZERO        NCHAR = 3  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = AMPL         NCHAR = 4  JREP = 0   TYPE = 2   MAND
+ IREP = 1  NAME = PHASE        NCHAR = 5  JREP = 0   TYPE = 2   MAND
+#
+5,2,5      TIMESERIES          NCHAR = 8                        OPT
+#
+NKEY = 1
+#
+5,2,5,1    S                   NCHAR =-1                        REP
+#
+# Use dummy key since more than one IREP card follows :
+#
+NKEY = 1
+#
+5,2,5,1,1  DUM                 NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = P            NCHAR =-1  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = TID          NCHAR = 3  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = SERIES       NCHAR = 3  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = FRAME        NCHAR = 5  JREP = 3   TYPE = 2   OPT
+ IREP = 1  NAME = VALUES       NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 0  NAME = TIME_AND_VAL NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   OPT
+#
+5,2,6      DISCHARGES          NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+5,2,6,1    SOURCE              NCHAR = 5                        REP
+#
+# Use dummy key since more than one IREP card follows :
+#
+NKEY = 1
+#
+5,2,6,1,1  DUM                 NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = P            NCHAR =-1  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = SERIES       NCHAR = 3  JREP = 1   TYPE = 3   MAND
+ IREP = 1  NAME = FRAME        NCHAR = 5  JREP = 3   TYPE = 2   OPT
+ IREP = 1  NAME = VALUES       NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 0  NAME = TIME_AND_VAL NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF=0
+ IREP = 1  NAME = TYPE         NCHAR = 4  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = POSITION     NCHAR = 3  JREP = 1   TYPE = 2   OPT
+#
+5,2,7      PRESSURE            NCHAR = 5                        OPT
+#   dummy keyword to reserve the space for pressure definition
+ IREP = 1  NAME = O            NCHAR = 1  JREP = 1   TYPE = 2   OPT
+#
+5,2,8      BARRIERS            NCHAR = 4                        OPT
+#
+NKEY = 1
+#
+5,2,8,1    B                   NCHAR =-1                        SEQ_KEY
+#
+NKEY = 6
+#
+5,2,8,1,1  SILL_DEPTH          NCHAR = 4                        MAND
+#
+ IREP = 1  NAME = INITIAL      NCHAR = 4  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = SERIES       NCHAR = 6  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = FRAME        NCHAR = 5  JREP = 3   TYPE = 2   OPT
+ IREP = 1  NAME = VALUES       NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 0  NAME = TIME_AND_VAL NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = VELOCITY     NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = RELATIVE     NCHAR = 5  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = MINIMAL      NCHAR = 5  JREP = 1   TYPE = 2   AND 7
+#
+5,2,8,1,2  GATE_HEIGHT         NCHAR = 4                        MAND
+#
+ IREP = 1  NAME = INITIAL      NCHAR = 4  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = SERIES       NCHAR = 6  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = FRAME        NCHAR = 5  JREP = 3   TYPE = 2   OPT
+ IREP = 1  NAME = VALUES       NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 0  NAME = TIME_AND_VAL NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = VELOCITY     NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = RELATIVE     NCHAR = 5  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = MINIMAL      NCHAR = 5  JREP = 1   TYPE = 2   AND 7
+#
+5,2,8,1,3  BARRIER_WIDTH       NCHAR = 9                        MAND
+#
+ IREP = 1  NAME = INITIAL      NCHAR = 4  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = SERIES       NCHAR = 6  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = FRAME        NCHAR = 5  JREP = 3   TYPE = 2   OPT
+ IREP = 1  NAME = VALUES       NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 0  NAME = TIME_AND_VAL NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = VELOCITY     NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = RELATIVE     NCHAR = 5  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = MINIMAL      NCHAR = 5  JREP = 1   TYPE = 2   AND 7
+#
+###############################################################################
+# N.B.: PROFILE_ENERGYLOSS: invalid keyword since DDVERT01/phase 2 !!!!
+###############################################################################
+#
+5,2,8,1,4  PROFILE_ENERGYLOSS  NCHAR = 9                        OPT
+#
+ IREP = 1  NAME = UNIFORM      NCHAR = 7  JREP = 1   TYPE = 4   DEF = 0
+#
+###############################################################################
+#
+5,2,8,1,5  GLOBAL              NCHAR = 6                        OPT
+#
+ IREP = 1  NAME = TB           NCHAR = 2  JREP = 1   TYPE = 1   OPT     #  1
+ IREP = 1  NAME = TS           NCHAR = 2  JREP = 1   TYPE = 1   OPT     #  2
+ IREP = 0  NAME = P            NCHAR =-1  JREP = 1   TYPE = 1   OPT     #  3
+ IREP = 1  NAME = C            NCHAR =-1  JREP = 1   TYPE = 1   OPT     #  4
+ IREP = 1  NAME = DISCHARGE    NCHAR = 5  JREP = 1   TYPE = 4   DEF = 0 #  5
+ IREP = 1  NAME = LEVEL        NCHAR = 5  JREP = 1   TYPE = 4   DEF = 0 #  6
+ IREP = 1  NAME = CONSTITUENT  NCHAR = 7  JREP = 1   TYPE = 1   OPT     #  7
+ IREP = 1  NAME = PRESSURE     NCHAR = 5  JREP = 1   TYPE = 4   DEF = 0 #  8
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   OPT     #  9
+ IREP = 1  NAME = OBS          NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0 # 10
+ IREP = 1  NAME = REMOTE       NCHAR = 3  JREP = 1   TYPE = 3   OPT     # 11
+ IREP = 1  NAME = MINUS        NCHAR = 3  JREP = 1   TYPE = 3   OPT     # 12
+ IREP = 1  NAME = FIXED_STATE  NCHAR = 11 JREP = 1   TYPE = 4   OPT     # 13
+#
+5,2,8,1,6  CONDITION           NCHAR = 9                        COND
+#
+ IREP = 1  NAME = IF           NCHAR =-2  JREP = 1   TYPE = 5   MAND
+ IREP = 0  NAME = THEN         NCHAR =-4  JREP = 1   TYPE = 5   MAND
+ IREP = 1  NAME = ELSE         NCHAR =-4  JREP = 1   TYPE = 5   OPT
+ IREP = 0  NAME = ELSEIF       NCHAR =-6  JREP = 1   TYPE = 5   OPT
+ IREP = 0  NAME = AND          NCHAR =-3  JREP = 1   TYPE = 5   OPT
+ IREP = 0  NAME = OR           NCHAR =-2  JREP = 1   TYPE = 5   OPT
+ IREP = 1  NAME = ENDIF        NCHAR =-5  JREP = 1   TYPE = 6   MAND
+#
+5,2,9      HARMONIC            NCHAR = 4                        OPT
+#
+NKEY = 2
+#
+5,2,9,1    GENERAL             NCHAR = 2                        MAND
+#
+ IREP = 1  NAME = OMEGA        NCHAR = 5  JREP = 0   TYPE = 3   MAND
+ IREP = 1  NAME = TIMESHIFT    NCHAR = 5  JREP = 1   TYPE = 1   DEF=0.0
+ IREP = 1  NAME = TIHARM       NCHAR = 6  JREP = 1   TYPE = 2   OPT
+#
+5,2,9,2    CONSTANTS           NCHAR = 6                        MAND
+#
+NKEY = 1
+#
+5,2,9,2,1  S                   NCHAR =-1                        REP
+#
+# Use dummy keyword since more IREP cards follow :
+#
+NKEY = 1
+#
+5,2,9,2,1,1 DUM                NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = P            NCHAR =-1  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = TID          NCHAR = 3  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = AZERO        NCHAR = 3  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = AMPL         NCHAR = 4  JREP = 0   TYPE = 2   MAND
+ IREP = 1  NAME = PHASE        NCHAR = 5  JREP = 0   TYPE = 2   MAND
+#
+5,2,10     QHTABLES            NCHAR = 6                        OPT
+#
+NKEY = 1
+#
+5,2,10,1   T                   NCHAR =-1                        REP
+#
+# Use dummy key since more than one IREP card follows :
+#
+NKEY = 1
+#
+5,2,10,1,1 DUM                 NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = OPEN         NCHAR = 4  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = TID          NCHAR = 3  JREP = 1   TYPE = 2   MAND
+ IREP = 0  NAME = QH           NCHAR = 2  JREP = 2   TYPE = 2   MAND
+#
+###############################################################################
+# N.B.: ENERGYLOSS: invalid keyword since DDVERT01/phase 2 !!!!
+###############################################################################
+#
+5,2,11     ENERGYLOSS          NCHAR = 9                        OPT
+#
+NKEY = 1
+#
+5,2,11,1   COEF                NCHAR = 4                        REP
+#
+NKEY = 1
+#
+5,2,11,1,1  DUM                NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = BARPT        NCHAR = 5  JREP=1     TYPE = 1   MAND
+ IREP = 1  NAME = GATE_HEIGHT  NCHAR = 4  JREP=1     TYPE = 2   MAND
+ IREP = 1  NAME = ENERCO       NCHAR = 6  JREP=1     TYPE = 2   MAND
+#
+###############################################################################
+#
+5,2,12     BAR_TIMES           NCHAR = 8                        OPT
+#
+ IREP = 1  NAME = TFBAR        NCHAR = 5  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = TIBAR        NCHAR = 5  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = TLBAR        NCHAR = 5  JREP = 1   TYPE = 2   MAND
+
+5,2,13     BAR_SERIES          NCHAR = 8                        OPT
+#
+NKEY = 1
+#
+5,2,13,1   TS                  NCHAR =-2                        SEQ_KEY
+#
+NKEY = 1
+#
+5,2,13,1,1 DUM                 NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = SERIES       NCHAR = 6  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = FRAME        NCHAR = 5  JREP = 3   TYPE = 2   OPT
+ IREP = 1  NAME = VALUES       NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 0  NAME = TIME_AND_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = SILL         NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = GATE         NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = WIDTH        NCHAR = 4  JREP = 1   TYPE = 4   OPT
+#
+5,2,14     BAR_TABLES          NCHAR = 8                        OPT
+#
+NKEY = 1
+#
+5,2,14,1   TB                  NCHAR =-2                        SEQ_KEY
+#
+NKEY = 1
+#
+5,2,14,1,1 DUM                 NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = VALUES       NCHAR = 4  JREP = 0   TYPE = 2   OPT
+#
+5,2,15       OBSERVATIONS      NCHAR = 3                        OPT
+#
+NKEY = 4
+#
+5,2,15,1     WATERLEVELS       NCHAR = 10                       OPT
+#
+NKEY = 1
+#
+5,2,15,1,1   STATION           NCHAR = 6                        REP
+#
+NKEY = 1
+#
+5,2,15,1,1,1 DUM               NCHAR = 0                        OPT
+ IREP = 1  NAME = NAME         NCHAR =-4  JREP = 1   TYPE = 3   MAND  # 1
+ IREP = 1  NAME = M            NCHAR =-1  JREP = 1   TYPE = 1   MAND  # 2
+ IREP = 1  NAME = N            NCHAR =-1  JREP = 1   TYPE = 1   MAND  # 3
+ IREP = 1  NAME = SERIES       NCHAR = 6  JREP = 1   TYPE = 3   MAND  # 4
+ IREP = 1  NAME = FRAME        NCHAR = 5  JREP = 3   TYPE = 2    OPT  # 5
+ IREP = 1  NAME = VALUES       NCHAR = 5  JREP = 0   TYPE = 2    OPT  # 6
+ IREP = 0  NAME = TIME_AND_VAL NCHAR = 4  JREP = 4   TYPE = 2    OPT  # 7
+#
+5,2,15,2     DISCHARGES        NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+5,2,15,2,1   STATION           NCHAR = 6                        REP
+#
+NKEY = 1
+5,2,15,2,1,1 DUM               NCHAR = 0                        OPT
+ IREP = 1  NAME = NAME         NCHAR =-4  JREP = 1   TYPE = 3   MAND
+ IREP = 1  NAME = MNN          NCHAR =-3  JREP = 3   TYPE = 1   XOR 1
+ IREP = 1  NAME = MMN          NCHAR =-3  JREP = 3   TYPE = 1   XOR 1
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1    OPT
+ IREP = 1  NAME = SERIES       NCHAR = 6  JREP = 1   TYPE = 3   MAND
+ IREP = 1  NAME = FRAME        NCHAR = 5  JREP = 3   TYPE = 2    OPT
+ IREP = 1  NAME = VALUES       NCHAR = 5  JREP = 0   TYPE = 2    OPT
+ IREP = 0  NAME = TIME_AND_VAL NCHAR = 4  JREP = 4   TYPE = 2    OPT
+#
+5,2,15,3     PRESSURES         NCHAR = 5                         OPT
+#
+NKEY = 1
+#
+5,2,15,3,1   STATION           NCHAR = 6                         REP
+#
+NKEY = 1
+5,2,15,3,1,1 DUM               NCHAR = 0                         OPT
+ IREP = 1  NAME = NAME         NCHAR =-4  JREP = 1   TYPE = 3   MAND
+ IREP = 1  NAME = M            NCHAR =-1  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = N            NCHAR =-1  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = SERIES       NCHAR = 6  JREP = 1   TYPE = 3   MAND
+ IREP = 1  NAME = FRAME        NCHAR = 5  JREP = 3   TYPE = 2    OPT
+ IREP = 1  NAME = VALUES       NCHAR = 5  JREP = 0   TYPE = 2    OPT
+ IREP = 0  NAME = TIME_AND_VAL NCHAR = 4  JREP = 4   TYPE = 2    OPT
+#
+5,2,15,4     CONCENTRATIONS     NCHAR = 5                       OPT
+#
+NKEY = 1
+#
+5,2,15,4,1   STATION           NCHAR = 7                        REP
+#
+NKEY = 1
+5,2,15,4,1,1 DUM               NCHAR = 0                         OPT
+ IREP = 1  NAME = NAME         NCHAR =-4  JREP = 1   TYPE = 3   MAND
+ IREP = 1  NAME = M            NCHAR =-1  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = N            NCHAR =-1  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1    OPT
+ IREP = 1  NAME = CONSTITUENT  NCHAR = 5  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = SERIES       NCHAR = 6  JREP = 1   TYPE = 3   MAND
+ IREP = 1  NAME = FRAME        NCHAR = 5  JREP = 3   TYPE = 2    OPT
+ IREP = 1  NAME = VALUES       NCHAR = 5  JREP = 0   TYPE = 2    OPT
+ IREP = 0  NAME = TIME_AND_VAL NCHAR = 4  JREP = 4   TYPE = 2    OPT
+#
+5,2,16     WAVES               NCHAR = 4                        OPT
+#
+NKEY=4
+#
+5,2,16,1   FORCE               NCHAR = 3                        OPT
+#
+NKEY = 3
+#
+5,2,16,1,1  GLOBAL             NCHAR = 3                        OPT
+#
+ IREP = 1  NAME = NORTHEAST    NCHAR = 4  JREP = 1   TYPE = 4   XOR = 1
+ IREP = 1  NAME = UV           NCHAR = 2  JREP = 1   TYPE = 4   XOR = 1
+
+5,2,16,1,2  UDIREC             NCHAR = 4                        MAND
+#
+NKEY = 2
+#
+5,2,16,1,2,1    GLOBAL         NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+5,2,16,1,2,2    LOCAL          NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+5,2,16,1,2,2,1  BOX            NCHAR = 3                        REP
+#
+NKEY = 1
+#
+5,2,16,1,2,2,1,1  DUM          NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+#
+5,2,16,1,3  VDIREC             NCHAR = 4                        MAND
+#
+NKEY = 2
+#
+5,2,16,1,3,1    GLOBAL         NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+5,2,16,1,3,2    LOCAL          NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+5,2,16,1,3,2,1    BOX          NCHAR = 3                        REP
+#
+NKEY = 1
+#
+5,2,16,1,3,2,1,1  DUM          NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+#
+5,2,16,2   HEIGHT              NCHAR = 3                        OPT
+#
+NKEY = 2
+#
+5,2,16,2,1    GLOBAL           NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+5,2,16,2,2    LOCAL            NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+5,2,16,2,2,1  BOX              NCHAR = 3                        REP
+#
+NKEY = 1
+#
+5,2,16,2,2,1,1  DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+#
+5,2,16,3   PERIOD              NCHAR = 3                        OPT
+#
+NKEY = 2
+#
+5,2,16,3,1    GLOBAL           NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+5,2,16,3,2    LOCAL            NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+5,2,16,3,2,1  BOX              NCHAR = 3                        REP
+#
+NKEY = 1
+#
+5,2,16,3,2,1,1  DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+#
+5,2,16,4   DIRECTION           NCHAR = 3                        OPT
+#
+NKEY = 3
+#
+5,2,16,4,1  GLOBAL             NCHAR = 3                        OPT
+#
+ IREP = 1  NAME = NORTHEAST    NCHAR = 4  JREP = 1   TYPE = 4   XOR = 1
+ IREP = 1  NAME = UV           NCHAR = 2  JREP = 1   TYPE = 4   XOR = 1
+
+5,2,16,4,2  UDIREC             NCHAR = 4                        MAND
+#
+NKEY = 2
+#
+5,2,16,4,2,1    GLOBAL         NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+5,2,16,4,2,2    LOCAL          NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+5,2,16,4,2,2,1  BOX            NCHAR = 3                        REP
+#
+NKEY = 1
+#
+5,2,16,4,2,2,1,1  DUM          NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+#
+5,2,16,4,3  VDIREC             NCHAR = 4                        MAND
+#
+NKEY = 2
+#
+5,2,16,4,3,1    GLOBAL         NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+5,2,16,4,3,2    LOCAL          NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+5,2,16,4,3,2,1    BOX          NCHAR = 3                        REP
+#
+NKEY = 1
+#
+5,2,16,4,3,2,1,1  DUM          NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+#
+5,2,17     DIS_OPTIONS         NCHAR = 7                        OPT
+#
+ IREP = 1  NAME = ORIENTATION  NCHAR = 4  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = DISTRIBUTE   NCHAR = 5  JREP = 1   TYPE = 3   OPT
+#
+5,2,18     BOUND_OPTIONS       NCHAR = 9                        OPT
+#
+ IREP = 1  NAME = OLD_REFL  NCHAR = 8  JREP = 1   TYPE = 4      XOR1
+ IREP = 1  NAME = NEW_REFL  NCHAR = 8  JREP = 1   TYPE = 4      XOR1
+#
+#############################################################################
+#
+5,3        CHECKPOINTS         NCHAR = 6                        OPT
+#
+NKEY = 5
+#
+5,3,1      LEVELSTATIONS       NCHAR = 6                        OPT
+#
+ IREP = 0  NAME = P            NCHAR =-1  JREP = 1   TYPE = 1   MAND
+#
+5,3,2      CURRENTSTATIONS     NCHAR = 6                        OPT
+#
+ IREP = 0  NAME = P            NCHAR =-1  JREP = 1   TYPE = 1   MAND
+#
+5,3,3      USECTIONS           NCHAR = 5                        OPT
+#
+ IREP = 0  NAME = C            NCHAR =-1  JREP = 1   TYPE = 1   MAND
+#
+5,3,4      VSECTIONS           NCHAR = 5                        OPT
+#
+ IREP = 0  NAME = C            NCHAR =-1  JREP = 1   TYPE = 1   MAND
+#
+5,3,5      WEIRS               NCHAR = 4                        OPT
+#
+ IREP = 0  NAME = MNMNBOX      NCHAR = 4  JREP = 1   TYPE = 1   MAND
+#
+#
+# NEXT MAINKEYWORD ******************************************************
+#
+# REFERENCE TABLE WAQUA TRANSPORT
+#
+#  NEXT MAINKEYWORD *****************************************************
+#
+6          TRANSPORT           NCHAR = 6                        OPT
+#
+NKEY = 5  #  5 SUBKEYWORDS RELATED TO TRANSPORT
+#
+6,1        PROBLEM             NCHAR = 4                        MAND
+#
+NKEY = 9  #  8 SUBSUBKEYWORDS RELATED TO PROBLEM
+#
+6,1,1      CONSTITUENTS        NCHAR = 7                        OPT
+#
+NKEY = 1
+6,1,1,1    CO                  NCHAR =-2                        SEQ_KEY
+#
+NKEY = 1
+#
+6,1,1,1,1  DUM                 NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = POLUTANT     NCHAR = 5  JREP = 1   TYPE = 3   MAND
+ IREP = 1  NAME = PUNIT        NCHAR = 5  JREP = 1   TYPE = 3   MAND
+#
+6,1,2      SALINITY            NCHAR = 3                        OPT
+#
+ IREP = 1  NAME = CO           NCHAR =-2  JREP = 1   TYPE = 1   MAND
+#
+6,1,3      TEMPERATURE         NCHAR = 4                        OPT
+#
+ IREP = 1  NAME = CO           NCHAR =-2  JREP = 1   TYPE = 1   MAND
+#
+#          --- not used in current version ---
+6,1,4      REMOVED             NCHAR = 4                        OPT
+ IREP = 1  NAME = CO           NCHAR =-2  JREP = 1   TYPE = 1   MAND
+#
+6,1,5      METHODVARIABLES     NCHAR = 9                        OPT
+#
+ IREP = 1  NAME = THETA        NCHAR = 5  JREP = 1   TYPE = 2   DEF = 0.5
+ IREP = 1  NAME = ANTICREEP    NCHAR = 5  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = ITERACCURCON NCHAR = 12 JREP = 1   TYPE = 2   DEF = 0.5E-6
+ IREP = 1  NAME = ITERTRSP     NCHAR = 6  JREP = 1   TYPE = 1   DEF = 50
+ IREP = 1  NAME = ADVEC_SCHEME NCHAR = 5  JREP = 1   TYPE = 1   DEF = -1
+ IREP = 1  NAME = PARAM_A      NCHAR = 7  JREP = 1   TYPE = 2   DEF = 0.0
+ IREP = 1  NAME = PARAM_B      NCHAR = 7  JREP = 1   TYPE = 2   DEF = 0.0
+ IREP = 1  NAME = PARAM_C      NCHAR = 7  JREP = 1   TYPE = 2   DEF = 0.0
+#
+#          --- not used in current version ---
+6,1,6      ENERGY              NCHAR = 6                        OPT
+ IREP = 1  NAME = CO           NCHAR =-2  JREP = 1   TYPE = 1   MAND
+6,1,7      DISSIPATION         NCHAR = 6                        OPT
+ IREP = 1  NAME = CO           NCHAR =-2  JREP = 1   TYPE = 1   MAND
+#
+6,1,8      FALL_VELOCITIES     NCHAR = 4                        OPT
+#
+NKEY = 1
+#
+6,1,8,1    CO                  NCHAR =-2                        SEQ_DAT
+#
+ IREP = 1  NAME = VALUE        NCHAR = 3  JREP = 1   TYPE = 2   MAND
+#
+6,1,9      TURBULENCE_TRANS    NCHAR = 12                       OPT
+#
+ IREP = 1  NAME = ENERGY       NCHAR = 6  JREP = 1   TYPE = 4   DEF=0
+ IREP = 1  NAME = DISSIPATION  NCHAR = 6  JREP = 1   TYPE = 4   DEF=0
+ IREP = 1  NAME = HOR_ENERGY   NCHAR = 6  JREP = 1   TYPE = 4   DEF=0
+ IREP = 1  NAME = HOR_DISSIP   NCHAR = 8  JREP = 1   TYPE = 4   DEF=0
+#
+6,2        FORCINGS            NCHAR = 4                        MAND
+#
+NKEY = 5  #  5 SUBSUBKEYWORDS RELATED TO FORCINGS
+#
+6,2,1      INITIAL             NCHAR = 4                        OPT
+#
+NKEY = 3
+#
+6,2,1,1    CONSTITUENT         NCHAR = 4                        OPT
+#
+NKEY = 1
+#
+6,2,1,1,1  CO                  NCHAR =-2                        SEKESE
+#
+NKEY = 2
+#
+6,2,1,1,1,1 GLOBAL             NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+6,2,1,1,1,2 LOCAL              NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+6,2,1,1,1,2,1 BOX              NCHAR = 3                        REP
+#
+NKEY = 1
+#
+6,2,1,1,1,2,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+#
+6,2,1,2    READ_FROM           NCHAR = 4                        OPT
+#
+ IREP = 1  NAME = EXP_INITIAL  NCHAR = 8  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = SDS_INITIAL  NCHAR = 8  JREP = 1   TYPE = 3   MAND
+ IREP = 1  NAME = TIME_INITIAL NCHAR = 9  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = REDEFINE_LAYER_THICKNESS  NCHAR = 8  JREP=1  TYPE=4  DEF = 0
+#
+6,2,1,3    TURBULENCE_TRANS    NCHAR = 12                       OPT
+#
+NKEY = 4
+#
+6,2,1,3,1  ENERGY              NCHAR = 6                        OPT
+#
+NKEY = 2
+#
+6,2,1,3,1,1 GLOBAL             NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+6,2,1,3,1,2 LOCAL              NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+6,2,1,3,1,2,1 BOX              NCHAR = 3                        REP
+#
+NKEY = 1
+#
+6,2,1,3,1,2,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = -1
+
+6,2,1,3,2  DISSIPATION         NCHAR = 6                        OPT
+#
+NKEY = 2
+#
+6,2,1,3,2,1 GLOBAL             NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+6,2,1,3,2,2 LOCAL              NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+6,2,1,3,2,2,1 BOX              NCHAR = 3                        REP
+#
+NKEY = 1
+#
+6,2,1,3,2,2,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = -1
+#
+6,2,1,3,3  HOR_ENERGY          NCHAR = 6                        OPT
+#
+NKEY = 2
+#
+6,2,1,3,3,1 GLOBAL             NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   DEF = 0.01
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+6,2,1,3,3,2 LOCAL              NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+6,2,1,3,3,2,1 BOX              NCHAR = 3                        REP
+#
+NKEY = 1
+#
+6,2,1,3,3,2,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+6,2,1,3,4  HOR_DISSIPATION     NCHAR = 10                       OPT
+#
+NKEY = 2
+#
+6,2,1,3,4,1 GLOBAL             NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   DEF = 0.1
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+6,2,1,3,4,2 LOCAL              NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+6,2,1,3,4,2,1 BOX              NCHAR = 3                        REP
+#
+NKEY = 1
+#
+6,2,1,3,4,2,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+6,2,2      BOUNDARIES          NCHAR = 5                        OPT
+#
+NKEY = 2
+#
+6,2,2,1    RETURNTIME          NCHAR = 6                        MAND
+#
+NKEY = 1
+#
+6,2,2,1,1  CRET                NCHAR = 4                        REP
+#
+NKEY = 1
+#
+6,2,2,1,1,1 DUM                NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = P            NCHAR =-1  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = TCRETA       NCHAR = 6  JREP = 1   TYPE = 2   MAND
+#
+6,2,2,2    TIMESERIES          NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+6,2,2,2,1  TS                  NCHAR =-2                        REP
+#
+NKEY = 1
+#
+6,2,2,2,1,1 DUM                NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = CO           NCHAR =-2  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = P            NCHAR =-1  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = CINIT        NCHAR = 5  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = SERIES       NCHAR = 3  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = FRAME        NCHAR = 5  JREP = 3   TYPE = 2   OPT
+ IREP = 1  NAME = VALUES       NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 0  NAME = TIME_AND_VAL NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   OPT
+#
+6,2,3      DISCHARGES          NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+6,2,3,1    SOURCE              NCHAR = 4                        REP
+#
+NKEY = 1
+#
+6,2,3,1,1  DUM                 NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = P            NCHAR =-1  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = CO           NCHAR =-2  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = SERIES       NCHAR = 3  JREP = 1   TYPE = 3   MAND
+ IREP = 1  NAME = FRAME        NCHAR = 5  JREP = 3   TYPE = 2   OPT
+ IREP = 1  NAME = VALUES       NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 0  NAME = TIME_AND_VAL NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF=0
+#
+#          --- not used in current version ---
+6,2,4      TEMPERATURE         NCHAR = 4                        OPT
+ IREP = 1  NAME = CO           NCHAR =-2  JREP = 1   TYPE = 1   MAND
+#
+6,2,5      POWERSTATIONS       NCHAR = 9                        OPT
+#
+NKEY = 1
+#
+6,2,5,1    SOURCE              NCHAR = 4                        REP
+#
+NKEY = 1
+#
+6,2,5,1,1  DUM                 NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = POWER        NCHAR = 3  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = CO           NCHAR =-2  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = SERIES       NCHAR = 3  JREP = 1   TYPE = 3   MAND
+ IREP = 1  NAME = FRAME        NCHAR = 5  JREP = 3   TYPE = 2   OPT
+ IREP = 1  NAME = VALUES       NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 0  NAME = TIME_AND_VAL NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+6,3        CHECKPOINTS         NCHAR = 6                        OPT
+#
+NKEY = 2
+#
+6,3,1      CONSTITUENT         NCHAR = 7                        MAND
+#
+ IREP = 0  NAME = P            NCHAR =-1  JREP = 1   TYPE = 1   MAND
+#
+6,3,2      DUMMY               NCHAR = 5                        OPT
+#
+ IREP = 0  NAME = DUMMY        NCHAR = 5  JREP = 1   TYPE = 1   OPT
+#
+6,4        DUMMY               NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = SDUMMY       NCHAR = 6  JREP = 1   TYPE = 2   OPT
+#
+# Transportinvoer voor gebruikersroutines toegevoegd.
+#
+6,5        USERDATA_TRANSPORT  NCHAR = 5                        OPT
+#
+NKEY = 7
+#
+6,5,1      CONTROL             NCHAR = 5                        MAND
+#
+ IREP = 1  NAME = TYPE         NCHAR = 4  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = LENWRK       NCHAR = 4  JREP = 1   TYPE = 1   MAND
+#
+6,5,2      REALS               NCHAR = -5                       OPT
+#
+NKEY = 1
+#
+6,5,2,1    USER                NCHAR= -4                        SEQ_DAT
+#
+ IREP = 1  NAME = DUM          NCHAR = 0  JREP = 1   TYPE = 2   MAND
+#
+6,5,3      INTEGERS            NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+6,5,3,1    IUSER               NCHAR= -5                        SEQ_DAT
+#
+ IREP = 1  NAME = DUM          NCHAR = 0  JREP = 1   TYPE = 1   MAND
+#
+6,5,4      TIMEFUNCTIONS       NCHAR = 7                        OPT
+#
+NKEY = 2
+#
+6,5,4,1    TIMESERIES          NCHAR = 7                        OPT
+#
+NKEY = 1
+#
+6,5,4,1,1  TS                  NCHAR = -2                       REP
+#
+NKEY = 1
+#
+# Use dummy keyword since more IREP cards follow :
+#
+6,5,4,1,1,1 DUM                NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = ISEQ         NCHAR = 4  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = SERIES       NCHAR = 3  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = FRAME        NCHAR = 5  JREP = 3   TYPE = 2   OPT
+ IREP = 1  NAME = VALUES       NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 0  NAME = TIME_AND_VAL NCHAR = 7  JREP = 4   TYPE = 2   OPT
+#
+6,5,4,2    FOURIER             NCHAR = 7                        OPT
+#
+NKEY = 2
+#
+6,5,4,2,1  GENERAL             NCHAR = 2                        MAND
+#
+ IREP = 1  NAME = OMEGA        NCHAR = 5  JREP = 0   TYPE = 2   MAND
+#
+6,5,4,2,2  SERIES              NCHAR = 6                        MAND
+#
+NKEY = 1
+#
+6,5,4,2,2,1 F                  NCHAR = -1                       REP
+#
+# Use dummy keyword since more IREP cards follow :
+#
+NKEY = 1
+#
+6,5,4,2,2,1,1 DUM              NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = ISEQ         NCHAR = -4 JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = AZERO        NCHAR = 3  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = AMPL         NCHAR = 4  JREP = 0   TYPE = 2   MAND
+ IREP = 1  NAME = PHASE        NCHAR = 5  JREP = 0   TYPE = 2   MAND
+#
+6,5,5      INPUT_SPATIAL_DATA  NCHAR = 8                        OPT
+#
+NKEY = 1
+#
+6,5,5,1    IS                  NCHAR = -2                       SEKESE
+#
+NKEY = 2
+#
+6,5,5,1,1  GLOBAL              NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUE  NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+6,5,5,1,2  LOCAL               NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+6,5,5,1,2,1 BOX                NCHAR = 3                        REP
+#
+# Use dummy keyword since more IREP cards follow :
+#
+NKEY = 1
+#
+6,5,5,1,2,1,1 DUM              NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUE  NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+#
+6,5,6      TIME_DEPENDENT_DATA NCHAR = 8                        OPT
+#
+NKEY = 1
+#
+6,5,6,1    TDS                 NCHAR = -3                       SEKESE
+#
+NKEY = 2
+#
+6,5,6,1,1  GLOBAL              NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUE  NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+ IREP = 1  NAME = ISEQ         NCHAR = 4  JREP = 1   TYPE = 1   MAND
+ IREP = 1  NAME = TIME         NCHAR = 4  JREP = 3   TYPE = 2   MAND
+#
+6,5,6,1,2  LOCAL               NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+6,5,6,1,2,1 BOX                NCHAR = 3                        REP
+#
+# Use dummy keyword since more IREP cards follow :
+#
+NKEY = 1
+#
+6,5,6,1,2,1,1 DUM              NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUE  NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+6,5,7      OUTPUT_SPATIAL_DATA NCHAR = 9                        OPT
+#
+NKEY = 1
+#
+6,5,7,1    OS                  NCHAR = -2                       SEKESE
+#
+NKEY = 3
+#
+6,5,7,1,1 GLOBAL               NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUE  NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+6,5,7,1,2 LOCAL                NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+6,5,7,1,2,1 BOX                NCHAR = 3                        REP
+#
+# Use dummy keyword since more IREP cards follow :
+#
+NKEY = 1
+#
+6,5,7,1,2,1,1 DUM              NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUE  NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+6,5,7,1,3  NAMES               NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = NAME         NCHAR = 4  JREP = 1   TYPE = 3   MAND
+ IREP = 1  NAME = UNIT         NCHAR = 4  JREP = 1   TYPE = 3   MAND
+#
+#
+#  NEXT MAINKEYWORD *****************************************************
+#
+7          PARTICLES           NCHAR = 6                        OPT
+#
+ IREP = 1  NAME = O            NCHAR = 1  JREP = 1   TYPE = 1   OPT
+#
+#  NEXT MAINKEYWORD******************************************************
+#
+8          SDSOUTPUT           NCHAR = 6                        OPT
+#
+NKEY = 11
+#
+8,1        MAPS                NCHAR = 4                        OPT
+#
+ IREP = 1  NAME = TFMAPS       NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = TIMAPS       NCHAR = 5  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = TLMAPS       NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = TURBULENCE   NCHAR = 5  JREP = 1   TYPE = 4   DEF=0
+ IREP = 1  NAME = WEIRS        NCHAR = 5  JREP = 1   TYPE = 4   DEF=0
+ IREP = 1  NAME = HYDRO        NCHAR = 5  JREP = 1   TYPE = 4   DEF=0
+ IREP = 1  NAME = TMAPS        NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = NO_SCREENS   NCHAR = 5  JREP = 1   TYPE = 4   DEF=0
+ IREP = 1  NAME = NO_VELOCITIES NCHAR = 5 JREP = 1   TYPE = 4   DEF=0
+ IREP = 1  NAME = NO_CHEZY     NCHAR = 5  JREP = 1   TYPE = 4   DEF=0
+ IREP = 1  NAME = NO_TOTAL_WATER_DEPTH NCHAR = 5 JREP = 1 TYPE = 4 DEF=0
+ IREP = 1  NAME = NO_TRANSPORT NCHAR = 5  JREP = 1   TYPE = 4   DEF=0
+ IREP = 1  NAME = VISCOSITY    NCHAR = 6  JREP = 1   TYPE = 4   DEF=0
+ IREP = 1  NAME = WIND         NCHAR = 4  JREP = 1   TYPE = 4   DEF=0
+ IREP = 1  NAME = PRESSURE     NCHAR = 8  JREP = 1   TYPE = 4   DEF=0
+#
+8,2        HISTORIES           NCHAR = 4                        OPT
+#
+ IREP = 1  NAME = TFHISTORIES  NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = TIHISTORIES  NCHAR = 5  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = TLHISTORIES  NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = NO_BACKTRANS NCHAR = 10 JREP = 1   TYPE = 4   DEF = 0
+#
+8,3        INTEGRATION         NCHAR = 6                        OPT
+#
+ IREP = 1  NAME = TFINTEGR     NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = TIINTEGR     NCHAR = 5  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = TLINTEGR     NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = TYPE         NCHAR = 4  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = ACCURACY     NCHAR = 4  JREP = 1   TYPE = 2   DEF = 1e-8
+ IREP = 1  NAME = INITIALIZE   NCHAR = 4  JREP = 1   TYPE = 4   DEF = 0
+#
+8,4        RESTART             NCHAR = 4                        OPT
+#
+ IREP = 1  NAME = TFRESTART    NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = TIRESTART    NCHAR = 5  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = TLRESTART    NCHAR = 5  JREP = 1   TYPE = 2   OPT
+#
+#
+8,5        HARMONIC_TIDE       NCHAR = 4                        OPT
+#
+NKEY = 2
+#
+8,5,1      GENERAL             NCHAR = 2                        MAND
+#
+ IREP = 1  NAME = OMEGA        NCHAR = 5  JREP = 0   TYPE = 3   MAND
+ IREP = 1  NAME = DATA         NCHAR = 4  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = TFRAMEHARMON NCHAR = 8  JREP = 2   TYPE = 2   OPT
+#
+8,5,2      SPLITTING_RULE      NCHAR = 5                        OPT
+#
+NKEY = 4
+#
+8,5,2,1    SPKONE              NCHAR = 4                        OPT
+#
+NKEY = 2
+#
+8,5,2,1,1  AMPLITUDE           NCHAR = 4                        OPT
+#
+NKEY = 2
+#
+8,5,2,1,1,1 GLOBAL             NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   DEF =.33082
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+8,5,2,1,1,2 LOCAL              NCHAR = 5                        OPT
+#
+NKEY=1
+#
+8,5,2,1,1,2,1  BOX             NCHAR = 3                        REP
+#
+NKEY = 1
+#
+8,5,2,1,1,2,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+8,5,2,1,2  PHASE               NCHAR = 4                        OPT
+#
+NKEY = 2
+#
+8,5,2,1,2,1 GLOBAL             NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   DEF =0.0
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+8,5,2,1,2,2 LOCAL              NCHAR = 5                        OPT
+#
+NKEY=1
+#
+8,5,2,1,2,2,1  BOX             NCHAR = 3                        REP
+#
+NKEY = 1
+#
+8,5,2,1,2,2,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+8,5,2,2    SPNTWO              NCHAR = 4                        OPT
+#
+NKEY = 2
+#
+8,5,2,2,1  AMPLITUDE           NCHAR = 4                        OPT
+#
+NKEY = 2
+#
+8,5,2,2,1,1 GLOBAL             NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   DEF =.19386
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+8,5,2,2,1,2 LOCAL              NCHAR = 5                        OPT
+#
+NKEY=1
+#
+8,5,2,2,1,2,1  BOX             NCHAR = 3                        REP
+#
+NKEY = 1
+#
+8,5,2,2,1,2,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+8,5,2,2,2  PHASE               NCHAR = 4                        OPT
+#
+NKEY = 2
+#
+8,5,2,2,2,1 GLOBAL             NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   DEF =0.0
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+8,5,2,2,2,2 LOCAL              NCHAR = 5                        OPT
+#
+NKEY=1
+#
+8,5,2,2,2,2,1  BOX             NCHAR = 3                        REP
+#
+NKEY = 1
+#
+8,5,2,2,2,2,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+8,5,2,3    SPSTWO              NCHAR = 4                        OPT
+#
+NKEY = 2
+#
+8,5,2,3,1  AMPLITUDE           NCHAR = 4                        OPT
+#
+NKEY = 2
+#
+8,5,2,3,1,1 GLOBAL             NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   DEF =.27230
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+8,5,2,3,1,2 LOCAL              NCHAR = 5                        OPT
+#
+NKEY=1
+#
+8,5,2,3,1,2,1  BOX             NCHAR = 3                        REP
+#
+NKEY = 1
+#
+8,5,2,3,1,2,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+8,5,2,3,2  PHASE               NCHAR = 4                        OPT
+#
+NKEY = 2
+#
+8,5,2,3,2,1 GLOBAL             NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   DEF =0.0
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+8,5,2,3,2,2 LOCAL              NCHAR = 5                        OPT
+#
+NKEY=1
+#
+8,5,2,3,2,2,1  BOX             NCHAR = 3                        REP
+#
+NKEY = 1
+#
+8,5,2,3,2,2,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+8,5,2,4    SPTWOM              NCHAR = 4                        OPT
+#
+NKEY = 2
+#
+8,5,2,4,1  AMPLITUDE           NCHAR = 4                        OPT
+#
+NKEY = 2
+#
+8,5,2,4,1,1 GLOBAL             NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   DEF =.26295
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+8,5,2,4,1,2 LOCAL              NCHAR = 5                        OPT
+#
+NKEY=1
+#
+8,5,2,4,1,2,1  BOX             NCHAR = 3                        REP
+#
+NKEY = 1
+#
+8,5,2,4,1,2,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+8,5,2,4,2  PHASE               NCHAR = 4                        OPT
+#
+NKEY = 2
+#
+8,5,2,4,2,1 GLOBAL             NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   DEF =0.0
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+8,5,2,4,2,2 LOCAL              NCHAR = 5                        OPT
+#
+NKEY=1
+#
+8,5,2,4,2,2,1  BOX             NCHAR = 3                        REP
+#
+NKEY = 1
+#
+8,5,2,4,2,2,1,1 DUM            NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+8,6        KALMAN_HISTORIES    NCHAR = 4                        OPT
+#
+ IREP = 1  NAME = TFKHISTORIES NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = TIKHISTORIES NCHAR = 5  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = TLKHISTORIES NCHAR = 5  JREP = 1   TYPE = 2   OPT
+#
+8,7        CALCMAXVALUES       NCHAR = 7                        OPT
+#
+NKEY = 8
+#
+8,7,1        TIMES               NCHAR = 5                      MAND
+#
+ IREP = 1  NAME = TFMAXVAL     NCHAR = 5  JREP = 1   TYPE = 2   DEF=0.0
+ IREP = 1  NAME = TIMAXVAL     NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = TLMAXVAL     NCHAR = 5  JREP = 1   TYPE = 2   OPT
+#
+8,7,2        MAX_WATLEVEL      NCHAR = 7                        OPT
+#
+NKEY = 2
+#
+8,7,2,1      EXTRA_FIELDS      NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = TIME         NCHAR = 5  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = WATLEVEL     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = XVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = YVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = FLOWMAGN     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = SALINITY     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = TEMPERATURE  NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = CONCENTR     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+#
+8,7,2,2      DUM               NCHAR = 3                        OPT
+#
+ IREP = 1  NAME = UNUSED       NCHAR = 3  JREP = 1   TYPE = 4   OPT
+#
+8,7,3        MAX_UVELOC        NCHAR = 7                        OPT
+#
+NKEY = 2
+#
+8,7,3,1      EXTRA_FIELDS      NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = TIME         NCHAR = 5  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = WATLEVEL     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = XVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = YVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = FLOWMAGN     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = SALINITY     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = TEMPERATURE  NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = CONCENTR     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+#
+8,7,3,2      DUM               NCHAR = 3                        OPT
+#
+ IREP = 1  NAME = UNUSED       NCHAR = 3  JREP = 1   TYPE = 4   OPT
+#
+8,7,4        MAX_VVELOC        NCHAR = 7                        OPT
+#
+NKEY = 2
+#
+8,7,4,1      EXTRA_FIELDS      NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = TIME         NCHAR = 5  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = WATLEVEL     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = XVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = YVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = FLOWMAGN     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = SALINITY     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = TEMPERATURE  NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = CONCENTR     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+#
+8,7,4,2      DUM               NCHAR = 3                        OPT
+#
+ IREP = 1  NAME = UNUSED       NCHAR = 3  JREP = 1   TYPE = 4   OPT
+#
+8,7,5        MAX_FLOWMAGN      NCHAR = 7                        OPT
+#
+NKEY = 2
+#
+8,7,5,1      EXTRA_FIELDS      NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = TIME         NCHAR = 5  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = WATLEVEL     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = XVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = YVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = FLOWMAGN     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = SALINITY     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = TEMPERATURE  NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = CONCENTR     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+#
+8,7,5,2      DUM               NCHAR = 3                        OPT
+#
+ IREP = 1  NAME = UNUSED       NCHAR = 3  JREP = 1   TYPE = 4   OPT
+#
+8,7,6        MAX_SALINITY      NCHAR = 7                        OPT
+#
+NKEY = 2
+#
+8,7,6,1      EXTRA_FIELDS      NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = TIME         NCHAR = 5  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = WATLEVEL     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = XVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = YVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = FLOWMAGN     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = SALINITY     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = TEMPERATURE  NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = CONCENTR     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+#
+8,7,6,2      DUM               NCHAR = 3                        OPT
+#
+ IREP = 1  NAME = UNUSED       NCHAR = 3  JREP = 1   TYPE = 4   OPT
+#
+8,7,7        MAX_TEMPERAT      NCHAR = 7                        OPT
+#
+NKEY = 2
+#
+8,7,7,1      EXTRA_FIELDS      NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = TIME         NCHAR = 5  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = WATLEVEL     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = XVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = YVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = FLOWMAGN     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = SALINITY     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = TEMPERATURE  NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = CONCENTR     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+#
+8,7,7,2      DUM               NCHAR = 3                        OPT
+#
+ IREP = 1  NAME = UNUSED       NCHAR = 3  JREP = 1   TYPE = 4   OPT
+#
+#
+8,7,8        MAX_CONCENTR      NCHAR = 7                        OPT
+#
+NKEY = 2
+#
+8,7,8,1      EXTRA_FIELDS      NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = TIME         NCHAR = 5  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = WATLEVEL     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = XVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = YVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = FLOWMAGN     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = SALINITY     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = TEMPERATURE  NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = CONCENTR     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+#
+8,7,8,2      DUM               NCHAR = 3                        OPT
+#
+ IREP = 1  NAME = UNUSED       NCHAR = 3  JREP = 1   TYPE = 4   OPT
+#
+8,8        CALCMINVALUES       NCHAR = 7                        OPT
+#
+NKEY = 8
+#
+8,8,1        TIMES             NCHAR = 5                        MAND
+#
+ IREP = 1  NAME = TFMINVAL     NCHAR = 5  JREP = 1   TYPE = 2   DEF=0.0
+ IREP = 1  NAME = TIMINVAL     NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = TLMINVAL     NCHAR = 5  JREP = 1   TYPE = 2   OPT
+#
+8,8,2        MIN_WATLEVEL      NCHAR = 7                        OPT
+#
+NKEY = 2
+#
+8,8,2,1      EXTRA_FIELDS      NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = TIME         NCHAR = 5  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = WATLEVEL     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = XVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = YVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = FLOWMAGN     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = SALINITY     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = TEMPERATURE  NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = CONCENTR     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+#
+8,8,2,2      DUM               NCHAR = 3                        OPT
+#
+ IREP = 1  NAME = UNUSED       NCHAR = 3  JREP = 1   TYPE = 4   OPT
+#
+8,8,3        MIN_UVELOC        NCHAR = 7                        OPT
+#
+NKEY = 2
+#
+8,8,3,1      EXTRA_FIELDS      NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = TIME         NCHAR = 5  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = WATLEVEL     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = XVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = YVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = FLOWMAGN     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = SALINITY     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = TEMPERATURE  NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = CONCENTR     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+#
+8,8,3,2      DUM               NCHAR = 3                        OPT
+#
+ IREP = 1  NAME = UNUSED       NCHAR = 3  JREP = 1   TYPE = 4   OPT
+#
+8,8,4        MIN_VVELOC        NCHAR = 7                        OPT
+#
+NKEY = 2
+#
+8,8,4,1      EXTRA_FIELDS      NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = TIME         NCHAR = 5  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = WATLEVEL     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = XVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = YVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = FLOWMAGN     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = SALINITY     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = TEMPERATURE  NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = CONCENTR     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+#
+8,8,4,2      DUM               NCHAR = 3                        OPT
+#
+ IREP = 1  NAME = UNUSED       NCHAR = 3  JREP = 1   TYPE = 4   OPT
+#
+8,8,5        MIN_FLOWMAGN      NCHAR = 7                        OPT
+#
+NKEY = 2
+#
+8,8,5,1      EXTRA_FIELDS      NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = TIME         NCHAR = 5  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = WATLEVEL     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = XVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = YVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = FLOWMAGN     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = SALINITY     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = TEMPERATURE  NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = CONCENTR     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+#
+8,8,5,2      DUM               NCHAR = 3                        OPT
+#
+ IREP = 1  NAME = UNUSED       NCHAR = 3  JREP = 1   TYPE = 4   OPT
+#
+8,8,6        MIN_SALINITY      NCHAR = 7                        OPT
+#
+NKEY = 2
+#
+8,8,6,1      EXTRA_FIELDS      NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = TIME         NCHAR = 5  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = WATLEVEL     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = XVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = YVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = FLOWMAGN     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = SALINITY     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = TEMPERATURE  NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = CONCENTR     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+#
+8,8,6,2      DUM               NCHAR = 3                        OPT
+#
+ IREP = 1  NAME = UNUSED       NCHAR = 3  JREP = 1   TYPE = 4   OPT
+#
+8,8,7        MIN_TEMPERAT      NCHAR = 7                        OPT
+#
+NKEY = 2
+#
+8,8,7,1      EXTRA_FIELDS      NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = TIME         NCHAR = 5  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = WATLEVEL     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = XVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = YVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = FLOWMAGN     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = SALINITY     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = TEMPERATURE  NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = CONCENTR     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+#
+8,8,7,2      DUM               NCHAR = 3                        OPT
+#
+ IREP = 1  NAME = UNUSED       NCHAR = 3  JREP = 1   TYPE = 4   OPT
+#
+#
+8,8,8        MIN_CONCENTR      NCHAR = 7                        OPT
+#
+NKEY = 2
+#
+8,8,8,1      EXTRA_FIELDS      NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = TIME         NCHAR = 5  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = WATLEVEL     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = XVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = YVELOC       NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = FLOWMAGN     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = SALINITY     NCHAR = 3  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = TEMPERATURE  NCHAR = 4  JREP = 1   TYPE = 4   OPT
+ IREP = 1  NAME = CONCENTR     NCHAR = 4  JREP = 1   TYPE = 4   OPT
+#
+8,8,8,2      DUM               NCHAR = 3                        OPT
+#
+ IREP = 1  NAME = UNUSED       NCHAR = 3  JREP = 1   TYPE = 4   OPT
+#
+8,9        CLASS_LIMITS        NCHAR = 9                        OPT
+#
+ IREP = 1  NAME = WATLEVEL     NCHAR = 4  JREP = 0   TYPE = 2   MAND
+#
+8,10       WEIR_HISTORIES      NCHAR = 8                        OPT
+#
+ IREP = 1  NAME = TFWEIRS      NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = TIWEIRS      NCHAR = 5  JREP = 1   TYPE = 2   MAND
+ IREP = 1  NAME = TLWEIRS      NCHAR = 5  JREP = 1   TYPE = 2   OPT
+#
+8,11      INCREMENTAL         NCHAR = 6                         OPT
+   IREP = 1 NAME = H          NCHAR = 1   JREP = 0   TYPE = 2   OPT
+   IREP = 1 NAME = ZETA       NCHAR = 4   JREP = 0   TYPE = 2   OPT
+   IREP = 1 NAME = UPHYS      NCHAR = 5   JREP = 0   TYPE = 2   OPT
+   IREP = 1 NAME = VPHYS      NCHAR = 5   JREP = 0   TYPE = 2   OPT
+   IREP = 1 NAME = VELMAG     NCHAR = 6   JREP = 0   TYPE = 2   OPT
+   IREP = 1 NAME = VELANG     NCHAR = 6   JREP = 0   TYPE = 2   OPT
+   IREP = 1 NAME = TFINCR     NCHAR = 5   JREP = 1   TYPE = 2   OPT
+   IREP = 1 NAME = TIINCR     NCHAR = 5   JREP = 1   TYPE = 2   OPT
+   IREP = 1 NAME = TLINCR     NCHAR = 5   JREP = 1   TYPE = 2   OPT
+#
+#
+9          PRINTOUTPUT         NCHAR = 5                        OPT
+#
+NKEY = 4
+#
+9,1        FLOW                NCHAR = 4                        OPT
+#
+ IREP = 1  NAME = WATLEVEL     NCHAR = 6  JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = UVELOCITY    NCHAR = 4  JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = VVELOCITY    NCHAR = 4  JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = VELMAGWL     NCHAR = 8  JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = VELMAGU      NCHAR = 7  JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = VELMAGV      NCHAR = 7  JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = CHEZY        NCHAR = 5  JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = WVELOCITY    NCHAR = 4  JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = ROUGHNESS    NCHAR = 4  JREP = 1   TYPE = 4   DEF = 0
+#
+9,2        TRANSPORT           NCHAR = 5                        OPT
+#
+ IREP = 0  NAME = CO           NCHAR =-2  JREP = 1   TYPE = 1   OPT
+#
+9,3        PARTICLES           NCHAR = 6                        OPT
+#
+ IREP = 1  NAME = PDUMMY       NCHAR = 5  JREP = 1   TYPE = 1   OPT
+#
+9,4        CONTROL             NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = TPRINT       NCHAR = 6  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = TFRAMEHISTOR NCHAR = 7  JREP = 3   TYPE = 2   OPT
+ IREP = 1  NAME = TFRAMESTATUS NCHAR = 7  JREP = 3   TYPE = 2   OPT
+ IREP = 1  NAME = TFRAMEITEROUTPUT NCHAR = 8 JREP = 3 TYPE = 2  OPT
+#
+10         PLOT                NCHAR = 4                        OPT
+#
+ IREP = 1  NAME = PDUMMY       NCHAR = 5  JREP = 1   TYPE = 1   OPT
+#
+11         NETCDFOUTPUT        NCHAR = 6                        OPT
+NKEY = 3
+11,1       MAPS                NCHAR = 4                        OPT
+ IREP = 1  NAME = OUTPUTNAME   NCHAR = 10 JREP = 1   TYPE = 3   MAND
+11,2       HISTORIES           NCHAR = 9                        OPT
+ IREP = 1  NAME = OUTPUTNAME   NCHAR = 10 JREP = 1   TYPE = 3   MAND
+11,3       OPTIONS             NCHAR = 7                        OPT
+ IREP = 1  NAME = INIFILE      NCHAR = 7  JREP = 1   TYPE = 3   MAND
+#
+12         IGNORE              NCHAR = 6                        OPT
+#
+ IREP = 1  NAME = TRANSPORT    NCHAR = 6  JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = PARTICLES    NCHAR = 6  JREP = 1   TYPE = 4   DEF = 0
+#
+13         DENSITIES           NCHAR = 7                        OPT
+#
+ IREP = 1  NAME = CEQSTT       NCHAR = 4  JREP = 1   TYPE = 2   DEF = 0.698
+ IREP = 1  NAME = TEMPWATER    NCHAR = 4  JREP = 1   TYPE = 2   DEF = 14.0
+ IREP = 1  NAME = RHOREF       NCHAR = 4  JREP = 1   TYPE = 2   DEF = 1.0
+ IREP = 1  NAME = SALINITY     NCHAR = 5  JREP = 1   TYPE = 2   DEF = 0.0
+ IREP = 1  NAME = ALFA_CHEZY   NCHAR = 4  JREP = 1   TYPE = 2   DEF = 0.0
+#
+14         RESTART             NCHAR = 7                        OPT
+#
+ IREP = 1  NAME = EXP_RESTART  NCHAR = 3  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = SDS_RESTART  NCHAR = 3  JREP = 1   TYPE = 3   MAND
+#
+15         TURBULENCE_MODEL    NCHAR = 10                       OPT
+#
+NKEY = 8
+#
+15,1       WALL_DEFINITION     NCHAR = 8                        OPT
+#
+ IREP = 1  NAME = SMOOTH       NCHAR = 6  JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = ROUGH        NCHAR = 6  JREP = 1   TYPE = 4   DEF = 0
+#
+15,2       VERTVISCOSITY       NCHAR = 8                        OPT
+#
+NKEY = 3
+#
+15,2,1     CONSTANT            NCHAR = 5                        XOR1
+#
+ IREP = 1  NAME = VVISCOSITY   NCHAR = 5  JREP = 1   TYPE = 2   DEF=0.0
+#
+15,2,2     PARABOLIC           NCHAR = 5                        XOR1
+#
+ IREP = 1  NAME = VFACTOR      NCHAR = 5  JREP = 1   TYPE = 2   DEF=0.58
+ IREP = 1  NAME = VINITIAL     NCHAR = 5  JREP = 1   TYPE = 2   DEF=0.0
+ IREP = 1  NAME = LRICH        NCHAR = 4  JREP = 1   TYPE = 4   DEF = 0
+#
+15,2,3     CORR_MATRIX         NCHAR = 5                        OPT
+#
+NKEY = 2
+#
+15,2,3,1   GLOBAL              NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   DEF = 1.
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+15,2,3,2   LOCAL               NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+15,2,3,2,1 BOX                 NCHAR = 3                        REP
+#
+NKEY = 1
+#
+15,2,3,2,1,1  DUM              NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = -1
+#
+15,3       VERTDIFFUSION       NCHAR = 8                        OPT
+#
+NKEY = 2
+#
+15,3,1     CONSTANT            NCHAR = 5                        XOR1
+#
+ IREP = 1  NAME = VDIFFUSION   NCHAR = 5  JREP = 1   TYPE = 2   DEF=0.0
+#
+15,3,2     PARABOLIC           NCHAR = 5                        XOR1
+#
+NKEY = 2
+#
+15,3,2,1   MUNK_ANDERSON       NCHAR = 12                       OPT
+#
+ IREP = 1  NAME = ALFAA        NCHAR = 5  JREP = 1   TYPE = 2   DEF=0.5
+ IREP = 1  NAME = ALFAB        NCHAR = 5  JREP = 1   TYPE = 2   DEF=1.5
+ IREP = 1  NAME = BETAA        NCHAR = 5  JREP = 1   TYPE = 2   DEF=10.0
+ IREP = 1  NAME = BETAB        NCHAR = 5  JREP = 1   TYPE = 2   DEF=3.33
+#
+15,3,2,2   PRANDTL_SCHMIDT     NCHAR = 7                        OPT
+#
+ IREP = 1  NAME = DEFPSN       NCHAR = 6  JREP = 1   TYPE = 2   DEF=0.7
+#
+15,4       EMPIRICAL_CONSTANTS NCHAR = 11                       OPT
+#
+ IREP = 1  NAME = KAPPA          NCHAR = 3  JREP = 1  TYPE = 2  DEF=0.41
+ IREP = 1  NAME = E_SMOOTH       NCHAR = 5  JREP = 1  TYPE = 2  DEF=8.43
+ IREP = 1  NAME = C_MU           NCHAR = 4  JREP = 1  TYPE = 2  DEF=0.09
+ IREP = 1  NAME = SIGMA_K        NCHAR = 7  JREP = 1  TYPE = 2  DEF=1.0
+ IREP = 1  NAME = SIGMA_EPS      NCHAR = 7  JREP = 1  TYPE = 2  DEF=1.3
+ IREP = 1  NAME = CEPS_ONE       NCHAR = 7  JREP = 1  TYPE = 2  DEF=1.44
+ IREP = 1  NAME = CEPS_TWO       NCHAR = 7  JREP = 1  TYPE = 2  DEF=1.92
+ IREP = 1  NAME = ETA_ZERO       NCHAR = 5  JREP = 1  TYPE = 2  DEF=4.38
+ IREP = 1  NAME = GAMMA          NCHAR = 3  JREP = 1  TYPE = 2  DEF=0.012
+ IREP = 1  NAME = CEPS_THREE     NCHAR = 7  JREP = 1  TYPE = 2  DEF=0.05
+ IREP = 1  NAME = BREAKING_WAVES NCHAR = 5  JREP = 1  TYPE = 4  DEF=0
+ IREP = 1  NAME = FV             NCHAR = 2  JREP = 1  TYPE = 2  OPT
+ IREP = 1  NAME = HOR_C_MU       NCHAR = 8  JREP = 1  TYPE = 2  DEF=0.09
+ IREP = 1  NAME = HOR_SIGMA_K    NCHAR =11  JREP = 1  TYPE = 2  DEF=1.0
+ IREP = 1  NAME = HOR_SIGMA_EPS  NCHAR =11  JREP = 1  TYPE = 2  DEF=1.3
+ IREP = 1  NAME = HOR_CEPS_ONE   NCHAR =11  JREP = 1  TYPE = 2  DEF=1.44
+ IREP = 1  NAME = HOR_CEPS_TWO   NCHAR =11  JREP = 1  TYPE = 2  DEF=1.92
+#
+15,5       VERT_VARIANT        NCHAR = 9                        OPT
+#
+ IREP = 1  NAME = STANDARD     NCHAR = 5  JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = RNG          NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = EXTENDED     NCHAR = 5  JREP = 1   TYPE = 4   DEF = 0
+#
+15,6       HOR_VARIANT         NCHAR = 8                        OPT
+#
+ IREP = 1  NAME = STANDARD     NCHAR = 5  JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = RNG          NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = EXTENDED     NCHAR = 5  JREP = 1   TYPE = 4   DEF = 0
+#
+15,7       VARIANT             NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = STANDARD     NCHAR = 5  JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = RNG          NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = EXTENDED     NCHAR = 5  JREP = 1   TYPE = 4   DEF = 0
+#
+15,8       HLES                NCHAR = 4                        OPT
+#
+ IREP = 1  NAME = TFHLES       NCHAR = 6  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = TLHLES       NCHAR = 6  JREP = 1   TYPE = 2   OPT
+
+ IREP = 1  NAME = SLOPE        NCHAR = 5  JREP = 1   TYPE = 2   DEF = 1.666666
+ IREP = 1  NAME = DIMENSION    NCHAR = 6  JREP = 1   TYPE = 1   DEF = 2
+ IREP = 1  NAME = PRANDTL_SCHMIDT NCHAR = 7 JREP = 1 TYPE = 2   DEF = 0.7
+ IREP = 1  NAME = LOWPASS      NCHAR = 7  JREP = 1   TYPE = 2   DEF = 0.333333
+ IREP = 1  NAME = RELAXATION   NCHAR = 5  JREP = 1   TYPE = 2   DEF = -1.0
+ IREP = 1  NAME = MOL_DIFFUSIVITY NCHAR = 8 JREP = 1  TYPE = 2  DEF = 0.0
+ IREP = 1  NAME = NO_ELDER     NCHAR = 8  JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = LIMIT_VISC   NCHAR = 5  JREP = 1   TYPE = 2   DEF = 99.0
+#
+16         DEPTH_CONTROL       NCHAR = 8                        OPT
+#
+ IREP = 1  NAME = ORIENTATION  NCHAR = 4  JREP = 1   TYPE = 3   MAND
+ IREP = 1  NAME = SILL_DEPTH   NCHAR = 4  JREP = 1   TYPE = 3   OPT
+#
+# ------------------------------------------------------------------------
+#
+17         HYDRODYNAMIC        NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = THETA        NCHAR = 5  JREP = 1   TYPE = 2   DEF = 1.0
+ IREP = 1  NAME = MAXITER      NCHAR = 5  JREP = 1   TYPE = 1   DEF = 40
+ IREP = 1  NAME = RELACCURINIT NCHAR = 11 JREP = 1   TYPE = 2   DEF = 0.0
+ IREP = 1  NAME = RELACCURRHS  NCHAR = 11 JREP = 1   TYPE = 2   DEF = 0.01
+ IREP = 1  NAME = RELAXATION   NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = PREC_FREQUEN NCHAR = 6  JREP = 1   TYPE = 1   DEF = 10
+ IREP = 1  NAME = BOX_SCHEME   NCHAR = 3  JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = IGNORECREEP  NCHAR = 5  JREP = 1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = TSTART       NCHAR = 5  JREP = 1   TYPE = 2   DEF = 0.0
+#
+#  NEXT MAINKEYWORD *****************************************************
+#
+#
+18         HEATMODEL           NCHAR = 9                        OPT
+#
+NKEY = 5
+#
+18,1     HEATEXCHANGE          NCHAR = 6                        XOR 1
+#
+NKEY = 2
+#
+18,1,1     SWEERS              NCHAR =-6                        XOR 3
+#
+ IREP = 1  NAME = DUM          NCHAR=3  JREP=1   TYPE = 4   DEF = 0
+#
+18,1,2     EMPTY               NCHAR = 5                        XOR 3
+#
+ IREP = 1  NAME = DUM          NCHAR=3  JREP=1   TYPE = 4   DEF = 0
+#
+18,2     HEATBALANCE           NCHAR = 7                        XOR 1
+#
+NKEY = 2
+#
+18,2,1   LUDIKHUIZEN           NCHAR = 5                        XOR 2
+#
+ IREP = 1  NAME = BOWEN_RATIO      NCHAR=5  JREP=1   TYPE = 2   DEF = 0.65
+ IREP = 1  NAME = GIVEN_RADIATION  NCHAR=8  JREP=1   TYPE = 4   DEF = 0
+ IREP = 1  NAME = SOLAR_REFLECTION NCHAR=8  JREP=1   TYPE = 2   DEF = 0.06
+#
+18,2,2   DEGOEDE               NCHAR = 7                        XOR 2
+#
+ IREP = 1  NAME = THERMAL_EMISSIV  NCHAR=11 JREP=1   TYPE = 2   DEF = 0.985
+ IREP = 1  NAME = STANTON      NCHAR = 7    JREP=1   TYPE = 2   DEF = 1.45e-3
+ IREP = 1  NAME = DALTON       NCHAR = 6    JREP=1   TYPE = 2   DEF = 1.5e-3
+#
+18,3     SWEERS_WIND           NCHAR = 6                        OPT
+ IREP = 1  NAME = A_FIT        NCHAR = 5  JREP = 1   TYPE = 2   DEF = 3.5
+ IREP = 1  NAME = B_FIT        NCHAR = 5  JREP = 1   TYPE = 2   DEF = 2.05
+ IREP = 1  NAME = POWER        NCHAR = 5  JREP = 1   TYPE = 2   DEF = 0.05
+ IREP = 1  NAME = AREAWATER    NCHAR = 4  JREP = 1   TYPE = 2   DEF = 100e6
+#
+18,4     BACK_TEMPERATURE      NCHAR = 9                        OPT
+ IREP = 1  NAME = TUNIT        NCHAR = 5  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = TEMPERATURE  NCHAR = 4  JREP = 1   TYPE = 2   DEF=20.0
+ IREP = 1  NAME = SERIES       NCHAR = 3  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = FRAME        NCHAR = 5  JREP = 3   TYPE = 2   OPT
+ IREP = 1  NAME = VALUES       NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 0  NAME = TIME_AND_VAL NCHAR = 4  JREP = 4   TYPE = 2   OPT
+#
+18,5     HEAT_WIND             NCHAR = 9                        OPT
+ IREP = 1  NAME = WUNIT        NCHAR = 5  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = WSPEED       NCHAR = 6  JREP = 1   TYPE = 2   DEF = 0.
+ IREP = 1  NAME = SERIES       NCHAR = 3  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = FRAME        NCHAR = 5  JREP = 3   TYPE = 2   OPT
+ IREP = 1  NAME = VALUES       NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 0  NAME = TIME_AND_VAL NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = SDS_WIND     NCHAR = 5  JREP = 1   TYPE = 3   OPT
+ IREP = 1  NAME = EXP_WIND     NCHAR = 5  JREP = 1   TYPE = 3   OPT
+#
+19         DENSITY             NCHAR = 7                        OPT
+#
+NKEY = 4
+#
+19,1       PARAMETERS          NCHAR = 5                        OPT
+#
+ IREP = 1  NAME = TEMPWATER    NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = SALINITY     NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = CEQSTT       NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = RHOREF       NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = ALFA_CHEZY   NCHAR = 4  JREP = 1   TYPE = 2   OPT
+#
+19,2       SPACE_VAR_TEMPWATER NCHAR = 11                       OPT
+#
+NKEY = 2
+#
+19,2,1 GLOBAL                  NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   DEF =14.0
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+19,2,2 LOCAL                   NCHAR = 5                        OPT
+#
+NKEY=1
+#
+19,2,2,1  BOX                  NCHAR = 3                        REP
+#
+NKEY = 1
+#
+19,2,2,1,1 DUM                 NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+#
+19,3       SPACE_VAR_SALINITY  NCHAR = 11                       OPT
+#
+NKEY = 2
+#
+19,3,1 GLOBAL                  NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   DEF =0.0
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+19,3,2 LOCAL                   NCHAR = 5                        OPT
+#
+NKEY=1
+#
+19,3,2,1  BOX                  NCHAR = 3                        REP
+#
+NKEY = 1
+#
+19,3,2,1,1 DUM                 NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+#
+19,4       PRESGRAD            NCHAR = 8                        OPT
+#
+NKEY = 2
+#
+19,4,1     UDIREC              NCHAR = 4                        MAND
+#
+NKEY = 2
+#
+19,4,1,1   GLOBAL              NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+19,4,1,2   LOCAL               NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+19,4,1,2,1   BOX              NCHAR = 3                        REP
+#
+NKEY = 1
+#
+19,4,1,2,1,1 DUM              NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+#
+19,4,2     VDIREC              NCHAR = 4                        MAND
+#
+NKEY = 2
+#
+19,4,2,1  GLOBAL              NCHAR = 6                        MAND
+#
+ IREP = 1  NAME = CONST_VALUES NCHAR = 5  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 5  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = LAYOUT       NCHAR = 5  JREP = 1   TYPE = 1   DEF = 1
+#
+19,4,2,2  LOCAL               NCHAR = 5                        OPT
+#
+NKEY = 1
+#
+19,4,2,2,1   BOX              NCHAR = 3                        REP
+#
+NKEY = 1
+#
+19,4,2,2,1,1 DUM              NCHAR = 0                        OPT
+#
+ IREP = 1  NAME = MNMN         NCHAR = 4  JREP = 4   TYPE = 1   MAND
+ IREP = 1  NAME = CONST_VALUES NCHAR = 4  JREP = 1   TYPE = 2   OPT
+ IREP = 1  NAME = VARIABLE_VAL NCHAR = 4  JREP = 0   TYPE = 2   OPT
+ IREP = 1  NAME = CORNER_VALUE NCHAR = 4  JREP = 4   TYPE = 2   OPT
+ IREP = 1  NAME = LAYER        NCHAR = 5  JREP = 1   TYPE = 1   DEF = 0
+
+#
+# ------------------------------------------------------------------------
+#
+#  space reserved for future extensions
+#
+#
+#  END OF WAQUA REFERENCE TABLE, KEYWORDS PART **************************
+#

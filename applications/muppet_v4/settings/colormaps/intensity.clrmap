@@ -1,0 +1,7 @@
+COLORMAP
+NAME=intensity
+SPACE=RGB
+255 255 255
+255 255   0
+255   0   0
+128   0 255

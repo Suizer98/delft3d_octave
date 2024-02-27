@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+  <name>image</name>
+  <longname>Image</longname>
+  <plot>
+    <type>image</type>
+    <plotroutine>
+      <name>plotimage</name>
+      <plotoption>
+        <name>plotroutine</name>
+      </plotoption>
+      <plotoption>
+        <name>imagegroup</name>
+      </plotoption>
+    </plotroutine>
+  </plot>
+</root>

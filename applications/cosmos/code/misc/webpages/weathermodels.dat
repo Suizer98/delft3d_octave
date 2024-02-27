@@ -1,0 +1,34 @@
+WebPage "Weather Models"
+
+    PageDir      "models"
+    FileName     "weathermodels.html"
+    PageType     "models"
+    ActiveHeader "models"
+
+    LeftColumn1
+        Button "Hydrodynamic models"
+            ButtonURL "models/hydromodels.html"
+        EndButton
+        Button "Wave models"
+            ButtonURL "models/wavemodels.html"
+        EndButton
+        Button "Weather Models"
+            ButtonURL "models/weathermodels.html"
+        EndButton
+        Button "Modelling techniques"
+            ButtonURL "notavailable.html"
+        EndButton
+    EndLeftColumn1
+    
+    Main
+
+        Entry
+            Title "Global Forecasting System"
+            Image "models/300px-GFS_850_MB.png"
+            Paragraph  "The Global Forecast System (GFS) is a global numerical weather prediction computer model run by NOAA. This mathematical model is run four times a day and produces forecasts up 16 days in advance, but with decreasing spatial and temporal resolution over time (it is widely accepted that beyond 7 days the forecast is little better than guesswork)."
+            Paragraph  "The model is run in two parts: the first part has a higher resolution and goes out to 180 hours (7 days) in the future, the second part runs from 180 to 384 hours (16 days) at a lower resolution. The resolution of the model varies in each part of the model: horizontally, it divides the surface of the earth into 35 or 70 kilometre grid squares; vertically, it divides the atmosphere into 64 layers and temporally, it produces a forecast for every 3rd hour for the first 180 hours, after that they are produced for every 12th hour.<a href=""http://www.emc.ncep.noaa.gov/modelinfo"">Read more.</a>"
+        EndEntry
+
+    EndMain
+
+EndPage

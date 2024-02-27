@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>listbox</style>
+    <text>Available Databases</text>
+    <textposition>above-center</textposition>
+    <variable>handles.toolbox.bathymetry.activeDataset</variable>
+    <type>integer</type>
+    <position>10 10 150 105</position>
+    <tooltipstring>Select bathymetry databases to add</tooltipstring>
+    <onchange>ddb_BathymetryToolbox_merge</onchange>
+    <option1>selectdatasettoadd</option1>
+    <listtext>
+      <variable>handles.bathymetry.datasets</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>180 95 110 20</position>
+    <text>Add to List</text>
+    <tooltipstring>Add highlighted bathy data to the merge list.</tooltipstring>
+    <callback>ddb_BathymetryToolbox_merge</callback>
+    <option1>addbathytolist</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>180 70 110 20</position>
+    <text>Delete from List</text>
+    <tooltipstring>Remove highlighted bathy data from the merge list.</tooltipstring>
+    <callback>ddb_BathymetryToolbox_merge</callback>
+    <option1>deletefromlist</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.bathymetry.num_merge</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>180 40 110 20</position>
+    <text>Move Data up a Layer</text>
+    <callback>ddb_BathymetryToolbox_merge</callback>
+    <option1>moveselection</option1>
+    <tooltipstring>Move the selected data up one layer.</tooltipstring>
+  </element>
+  <element>
+    <style>listbox</style>
+    <text>Data to Merge</text>
+    <textposition>above-center</textposition>
+    <variable>handles.toolbox.bathymetry.bathy_to_cut</variable>
+    <mx>2</mx>
+    <type>integer</type>
+    <position>310 10 150 105</position>
+    <tooltipstring>Highlight to remove or reorder data.</tooltipstring>
+    <onchange>ddb_BathymetryToolbox_merge</onchange>
+    <option1>listbathymetry</option1>
+    <listtext>
+      <variable>handles.toolbox.bathymetry.add_list</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>480 15 120 20</position>
+    <text>Merge Data</text>
+    <variable>handles.toolbox.bathymetry.datasets</variable>
+    <callback>ddb_BathymetryToolbox_merge</callback>
+    <option1>mergedata</option1>
+    <showfilename>no</showfilename>
+    <extension>*.nc</extension>
+    <selectiontext>Save bathy file</selectiontext>
+    <tooltipstring>Merge selected bathymetry data</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.bathymetry.num_merge</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

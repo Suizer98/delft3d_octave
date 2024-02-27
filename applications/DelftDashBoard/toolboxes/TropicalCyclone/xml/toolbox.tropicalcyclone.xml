@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<root>
+  <toolbox>TropicalCyclone</toolbox>
+  <longname>Tropical Cyclone</longname>
+  <enable>1</enable>
+  <element>
+    <position>40 10 1000 140</position>
+    <style>tabpanel</style>
+    <tab>
+      <tabstring>Parameters</tabstring>
+      <callback>ddb_TropicalCyclone_set_parameters</callback>
+      <formodel>delft3dflow</formodel>
+      <element>toolbox.tropicalcyclone.parameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Track Table</tabstring>
+      <callback>ddb_TropicalCyclone_edit_track_table</callback>
+      <formodel>delft3dflow</formodel>
+      <element>toolbox.tropicalcyclone.tracktable.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Parameters</tabstring>
+      <callback>ddb_TropicalCyclone_set_parameters</callback>
+      <formodel>ww3</formodel>
+      <element>toolbox.tropicalcyclone.parameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Track Table</tabstring>
+      <callback>ddb_TropicalCyclone_edit_track_table</callback>
+      <formodel>ww3</formodel>
+      <element>toolbox.tropicalcyclone.tracktable.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Tropical Cyclone</tabstring>
+      <callback>ddb_dummyTabCallback</callback>
+      <formodel>delft3dwave</formodel>
+      <element>toolbox.tropicalcyclone.delft3dwave.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Tropical Cyclone</tabstring>
+      <callback>ddb_dummyTabCallback</callback>
+      <formodel>dflowfm</formodel>
+      <element>toolbox.tropicalcyclone.dflowfm.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Tropical Cyclone</tabstring>
+      <callback>ddb_dummyTabCallback</callback>
+      <formodel>xbeach</formodel>
+      <element>toolbox.tropicalcyclone.xbeach.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Tropical Cyclone</tabstring>
+      <callback>ddb_dummyTabCallback</callback>
+      <formodel>fast</formodel>
+      <element>toolbox.tropicalcyclone.fast.xml</element>
+    </tab>    
+    <tab>
+      <tabstring>Tropical Cyclone</tabstring>
+      <callback>ddb_dummyTabCallback</callback>
+      <formodel>qflood</formodel>
+      <element>toolbox.tropicalcyclone.qflood.xml</element>
+    </tab>    
+  </element>
+</root>

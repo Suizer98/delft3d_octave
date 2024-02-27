@@ -1,0 +1,30 @@
+# Muppet v3.18 - File created by Maarten van Ormondt - 2007-11-15 22:44:08 
+ 
+Figure "1" 
+ 
+   Orientation l 
+   PaperSize   29.7 21 
+   Frame       DeltaresA4
+   FrameText1 ""                                                                     "Helvetica"     "normal"   "normal"   10  "black" 
+   FrameText2 ""                                                                     "Helvetica"     "normal"   "normal"   10  "black" 
+   FrameText3 ""                                                                     "Helvetica"     "normal"   "normal"   10  "black" 
+   FrameText4 ""                                                                     "Helvetica"     "normal"   "normal"   10  "black" 
+   FrameText5 ""                                                                     "Helvetica"     "normal"   "normal"   10  "black" 
+   FrameText6 ""                                                                     "Helvetica"     "normal"   "normal"   10  "black" 
+   FrameText7 ""                                                                     "Helvetica"     "normal"   "normal"   10  "black" 
+   FrameText8 ""                                                                     "Helvetica"     "normal"   "normal"   10  "black" 
+   FrameText9 "WL|Delft Hydraulics"                                                  "Helvetica"     "normal"   "normal"   13  "black"  
+   
+   Subplot   "Subplot 1" 
+ 
+      Position   5.5          3.5           21         13.4 
+ 
+   EndSubplot 
+ 
+   OutputFile "figure1.png" 
+   Format     "png" 
+   Resolution 300 
+   Renderer   "zbuffer" 
+ 
+EndFigure 
+ 

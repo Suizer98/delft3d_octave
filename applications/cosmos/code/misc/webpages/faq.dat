@@ -1,0 +1,16 @@
+WebPage "FAQs"
+
+    PageDir      "faq"
+    FileName     "faq.html"
+    PageType     "faq"
+    ActiveHeader "faq"
+
+    Main
+
+        Question "Can I use any of the model results on this website?"
+            Answer  "No."
+        EndLink
+
+    EndMain
+
+EndPage

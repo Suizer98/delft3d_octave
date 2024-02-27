@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <position>10 110 60 20</position>
+    <text>Background Concentration (g/l)</text>
+    <textposition>right</textposition>
+    <variable>handles.toolbox.nourishments.equilibriumConcentration</variable>
+    <type>real</type>
+    <tooltipstring>Edit background equilibrium concentration (will be used outside polygons)</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>250 110 80 20</position>
+    <text>Add Polygon</text>
+    <callback>ddb_NourishmentsToolbox_equilibriumConcentration</callback>
+    <option1>drawpolygon</option1>
+    <tooltipstring>Draw polygon to indicate area with different equilibrium concentration (optional!)</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>250 85 80 20</position>
+    <text>Delete Polygon</text>
+    <callback>ddb_NourishmentsToolbox_equilibriumConcentration</callback>
+    <option1>deletepolygon</option1>
+    <tooltipstring>Delete selected concentration polygon</tooltipstring>
+  </element>
+  <element>
+    <style>listbox</style>
+    <position>340 10 90 120</position>
+    <tooltipstring>Select concentration polygon</tooltipstring>
+    <textposition>above-center</textposition>
+    <variable>handles.toolbox.nourishments.activeConcentrationPolygon</variable>
+    <type>integer</type>
+    <onchange>ddb_NourishmentsToolbox_equilibriumConcentration</onchange>
+    <option1>selectpolygon</option1>
+    <listtext>
+      <variable>handles.toolbox.nourishments.concentrationNames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>440 110 60 20</position>
+    <text>Concentration (g/l)</text>
+    <textposition>right</textposition>
+    <variable>handles.toolbox.nourishments.concentrationPolygons(handles.toolbox.nourishments.activeConcentrationPolygon).concentration</variable>
+    <type>real</type>
+    <tooltipstring>Edit equilibrium concentration with polygon</tooltipstring>
+    <onchange>ddb_NourishmentsToolbox_equilibriumConcentration</onchange>
+    <option1>editconcentration</option1>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>840 10 40 20</position>
+    <text>Run Time (years)</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.nourishments.nrYears</variable>
+    <type>real</type>
+    <tooltipstring>Edit run time (years)</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>890 10 100 20</position>
+    <text>Compute</text>
+    <callback>ddb_NourishmentsToolbox_equilibriumConcentration</callback>
+    <option1>computenourishment</option1>
+    <tooltipstring>Start computation</tooltipstring>
+  </element>
+</root>

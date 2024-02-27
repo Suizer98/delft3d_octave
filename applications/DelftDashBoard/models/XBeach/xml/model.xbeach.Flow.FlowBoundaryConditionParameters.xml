@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>popupmenu</style>
+    <text>front</text>
+    <position>70.000,107.500, 80.000, 20.000</position>
+    <tooltipstring>Switch for seaward flow boundary: 0 = radiating boundary(Ad), 1 = Van Dongeren, 1997 [-]</tooltipstring>
+    <variable>handles.model.xbeach.domain.front</variable>
+    <type>string</type>
+    <listtext>abs_1d</listtext>
+    <listtext>abs_2d</listtext>
+    <listtext>wall</listtext>
+    <listtext>wlevel</listtext>
+    <listtext>nonh_1d</listtext>
+    <listtext>waveflume</listtext>
+  </element>
+  <element>
+    <tooltipstring>Switch for lateral boundary at ny+1, 'neumann' = vv computed from NSWE, 'wall' = reflective wall; vv=0 [-]</tooltipstring>
+    <style>popupmenu</style>
+    <text>left</text>
+    <position>70.000,80.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.left</variable>
+    <type>string</type>
+    <listtext>neumann</listtext>
+    <listtext>wall</listtext>
+    <listtext>no_advec</listtext>
+    <listtext>neumann_v</listtext>
+  </element>
+  <element>
+    <tooltipstring>Switch for lateral boundary at right, 0 = vv computed from NSWE, 1 = reflective wall; vv=0 [-]</tooltipstring>
+    <style>popupmenu</style>
+    <text>right</text>
+    <position>70.000,52.500,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.right</variable>
+    <type>string</type>
+    <listtext>neumann</listtext>
+    <listtext>wall</listtext>
+    <listtext>no_advec</listtext>
+    <listtext>neumann_v</listtext>
+  </element>
+  <element>
+    <tooltipstring>Switch for boundary at bay side, 0 = radiating boundary (Ad), 1 = reflective boundary; uu=0 [-]</tooltipstring>
+    <style>popupmenu</style>
+    <text>back</text>
+    <position>70.000,25.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.back</variable>
+    <type>string</type>
+    <listtext>wall</listtext>
+    <listtext>abs_1d</listtext>
+    <listtext>abs_2d</listtext>
+    <listtext>wlevel</listtext>
+  </element>
+</root>

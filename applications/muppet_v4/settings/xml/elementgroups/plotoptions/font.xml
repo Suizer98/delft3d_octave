@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <variable>font</variable>
+    <style>selectfont</style>
+    <position>50 0 50 20</position>
+    <text>Font</text>
+  </element>
+</root>

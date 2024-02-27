@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <position>50 110 50 20</position>
+    <tooltipstring>Edit x coordinate or longitude of grid origin</tooltipstring>
+    <text>X Origin</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_Delft3DWAVE_quickMode</onchange>
+    <option1>editgridoutline</option1>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.xOri</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>50 85 50 20</position>
+    <tooltipstring>Edit number of grid cells in M direction</tooltipstring>
+    <text>M Max</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_Delft3DWAVE_quickMode</onchange>
+    <option1>editgridoutline</option1>
+    <type>integer</type>
+    <variable>handles.toolbox.modelmaker.nX</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>50 60 50 20</position>
+    <tooltipstring>Edit grid size in m direction</tooltipstring>
+    <text>Delta X</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_Delft3DWAVE_quickMode</onchange>
+    <option1>editresolution</option1>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.dX</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>50 35 50 20</position>
+    <tooltipstring>Edit grid rotation in degrees</tooltipstring>
+    <text>Rotation</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_Delft3DWAVE_quickMode</onchange>
+    <option1>editgridoutline</option1>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.rotation</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>150 110 50 20</position>
+    <tooltipstring>Edit y coordinate or longitude of grid origin</tooltipstring>
+    <text>Y Origin</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_Delft3DWAVE_quickMode</onchange>
+    <option1>editgridoutline</option1>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.yOri</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>150 85 50 20</position>
+    <tooltipstring>Edit number of grid cells in N direction</tooltipstring>
+    <text>N Max</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_Delft3DWAVE_quickMode</onchange>
+    <option1>editgridoutline</option1>
+    <type>integer</type>
+    <variable>handles.toolbox.modelmaker.nY</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>150 60 50 20</position>
+    <tooltipstring>Edit grid size in n direction</tooltipstring>
+    <text>Delta Y</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_Delft3DWAVE_quickMode</onchange>
+    <option1>editresolution</option1>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.dY</variable>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>210 110 100 20</position>
+    <tooltipstring>Push to draw grid outline</tooltipstring>
+    <text>Draw Grid Outline</text>
+    <callback>ddb_ModelMakerToolbox_Delft3DWAVE_quickMode</callback>
+    <option1>drawgridoutline</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>320 110 140 20</position>
+    <tooltipstring>Push to generate new model grid</tooltipstring>
+    <text>Make Rectangular Grid</text>
+    <callback>ddb_ModelMakerToolbox_Delft3DWAVE_quickMode</callback>
+    <option1>generatenewgrid</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>320 85 140 20</position>
+    <tooltipstring>Push to create model grid. This grid will replace the existing active model grid!</tooltipstring>
+    <text>Change Grid</text>
+    <callback>ddb_ModelMakerToolbox_Delft3DWAVE_quickMode</callback>
+    <option1>generateexistinggrid</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrgrids</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>320 60 140 20</position>
+    <tooltipstring>Push to generate model bathymetry for active grid</tooltipstring>
+    <text>Make Bathymetry</text>
+    <callback>ddb_ModelMakerToolbox_Delft3DWAVE_quickMode</callback>
+    <option1>generatebathymetry</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>320 35 140 20</position>
+    <tooltipstring>Push to copy grid and bathymetry from Delft3D-FLOW</tooltipstring>
+    <text>Copy from FLOW</text>
+    <callback>ddb_ModelMakerToolbox_Delft3DWAVE_quickMode</callback>
+    <option1>copyfromflow</option1>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>470 110 30 20</position>
+    <tooltipstring>Edit maximum elevation for grid generation. Land areas at elevations above this value will not be included in the grid.</tooltipstring>
+    <text>Z Max (m)</text>
+    <textposition>right</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.zMax</variable>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>810 10 180 120</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>910 70 70 20</position>
+    <tooltipstring>Edit run ID</tooltipstring>
+    <text>Run ID</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain(ad).runid</variable>
+    <type>string</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>910 45 70 20</position>
+    <tooltipstring>Edit name of attribute files</tooltipstring>
+    <text>Attr Name</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain(ad).attName</variable>
+    <type>string</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>910 100 70 20</position>
+    <tooltipstring>Edit reference time</tooltipstring>
+    <text>Reference Date</text>
+    <textposition>left</textposition>
+    <type>date</type>
+    <variable>handles.model.delft3dwave.domain(ad).referencedate</variable>
+  </element>
+</root>

@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<root>
+  <plotoption>
+    <name>climwithcolorbargroup</name>
+    <element>
+      <variable>cmin cstep cmax</variable>
+      <keyword>Contours</keyword>
+      <type>real</type>
+    </element>
+    <element>
+      <style>panel</style>
+      <variable>adddatestring</variable>
+      <text>Contours</text>
+      <position>0 0 350 110</position>
+    </element>
+    <element>
+      <style>edit</style>
+      <variable>cmin</variable>
+      <type>real</type>
+      <text>C Min</text>
+      <position>40 70 40 20</position>
+      <check>
+        <variable>usecustomcontours</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+      <dependency>
+        <action>enable</action>
+        <checkfor>all</checkfor>
+        <check>
+          <variable>usecustomcontours</variable>
+          <value>0</value>
+          <operator>eq</operator>
+        </check>
+      </dependency>
+    </element>
+    <element>
+      <style>edit</style>
+      <variable>cstep</variable>
+      <type>real</type>
+      <text>C Step</text>
+      <position>125 70 40 20</position>
+      <check>
+        <variable>usecustomcontours</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+      <dependency>
+        <action>enable</action>
+        <checkfor>all</checkfor>
+        <check>
+          <variable>usecustomcontours</variable>
+          <value>0</value>
+          <operator>eq</operator>
+        </check>
+      </dependency>
+    </element>
+    <element>
+      <style>edit</style>
+      <variable>cmax</variable>
+      <type>real</type>
+      <text>C Max</text>
+      <position>210 70 40 20</position>
+      <check>
+        <variable>usecustomcontours</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+      <dependency>
+        <action>enable</action>
+        <checkfor>all</checkfor>
+        <check>
+          <variable>usecustomcontours</variable>
+          <value>0</value>
+          <operator>eq</operator>
+        </check>
+      </dependency>
+    </element>
+    <element>
+      <style>checkbox</style>
+      <variable>usecustomcontours</variable>
+      <type>boolean</type>
+      <text>Custom Contours</text>
+      <position>40 40 60 20</position>
+    </element>
+    <element>
+      <style>pushbutton</style>
+      <callback>muppet_editCustomContours</callback>
+      <text>Edit ...</text>
+      <position>150 40 70 20</position>
+      <dependency>
+        <action>enable</action>
+        <checkfor>all</checkfor>
+        <check>
+          <variable>usecustomcontours</variable>
+          <value>1</value>
+          <operator>eq</operator>
+        </check>
+      </dependency>
+    </element>
+    <element>
+      <keyword>ColorMap</keyword>
+      <style>popupmenu</style>
+      <variable>colormap</variable>
+      <default>jet</default>
+      <listtext>
+        <variable>mainhandles.colormapnames</variable>
+      </listtext>
+      <text>Color Map</text>
+      <tooltipstring>Select color map</tooltipstring>
+      <position>60 10 70 20</position>
+    </element>
+    <element>
+      <keyword>ColorBar</keyword>
+      <style>checkbox</style>
+      <variable>plotcolorbar</variable>
+      <type>boolean</type>
+      <default>0</default>
+      <text>Color Bar</text>
+      <tooltipstring>Separate color bar for this dataset</tooltipstring>
+      <position>160 10 70 20</position>
+    </element>
+    <element>
+      <keyword>ColorBarPosition</keyword>
+      <variable>colorbar.position</variable>
+      <type>real</type>
+      <check>
+        <variable>plotcolorbar</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </element>
+    <element>
+      <style>pushbutton</style>
+      <callback>muppet_editColorBar</callback>
+      <option1>dataset</option1>
+      <text>Edit ...</text>
+      <position>230 10 70 20</position>
+      <dependency>
+        <action>enable</action>
+        <checkfor>all</checkfor>
+        <check>
+          <variable>plotcolorbar</variable>
+          <value>1</value>
+          <operator>eq</operator>
+        </check>
+      </dependency>
+    </element>
+    <element>
+      <variable>customcontours</variable>
+      <type>real</type>
+      <keyword>CustomContours</keyword>
+      <check>
+        <variable>usecustomcontours</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </element>
+  </plotoption>
+</root>

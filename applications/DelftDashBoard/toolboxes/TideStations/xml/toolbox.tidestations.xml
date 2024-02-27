@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<root>
+  <toolbox>TideStations</toolbox>
+  <longname>Tide Stations</longname>
+  <enable>1</enable>
+  <element>
+    <style>panel</style>
+    <position>40 10 980 160</position>
+    <text>Tide Stations</text>
+  </element>
+  <element>
+    <position>50 115 70 20</position>
+    <style>popupmenu</style>
+    <type>integer</type>
+    <variable>handles.toolbox.tidestations.activeDatabase</variable>
+    <onchange>ddb_TideStationsToolbox</onchange>
+    <option1>selecttidedatabase</option1>
+    <tooltipstring>Select a tide station database</tooltipstring>
+    <text>Database</text>
+    <textposition>above-left</textposition>
+    <listtext>
+      <variable>handles.toolbox.tidestations.databases</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>text</style>
+    <position>50 55 90</position>
+    <text>Show station :</text>
+  </element>
+  <element>
+    <position>130 30 180 120</position>
+    <style>listbox</style>
+    <type>integer</type>
+    <variable>handles.toolbox.tidestations.activeTideStation</variable>
+    <onchange>ddb_TideStationsToolbox</onchange>
+    <option1>selecttidestation</option1>
+    <tooltipstring>Select tide station</tooltipstring>
+    <listtext>
+      <variable>handles.toolbox.tidestations.stationlist</variable>
+    </listtext>
+  </element>
+  <element>
+    <position>130 13 400 15</position>
+    <style>text</style>
+    <type>string</type>
+    <variable>handles.toolbox.tidestations.textstation</variable>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>50 35 90</position>
+    <variable>handles.toolbox.tidestations.showstationnames</variable>
+    <value>1</value>
+    <text>Name</text>
+    <type>integer</type>
+    <onchange>ddb_TideStationsToolbox</onchange>
+    <option1>selectstationlistoption</option1>
+    <tooltipstring>Show stations in list by name</tooltipstring>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>50 15 90</position>
+    <variable>handles.toolbox.tidestations.showstationnames</variable>
+    <value>0</value>
+    <text>ID</text>
+    <type>integer</type>
+    <onchange>ddb_TideStationsToolbox</onchange>
+    <option1>selectstationlistoption</option1>
+    <tooltipstring>Show stations in list by ID</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>320 130 130 20</position>
+    <text>Make Observation Points</text>
+    <callback>ddb_TideStationsToolbox</callback>
+    <option1>makeobservationpoints</option1>
+    <tooltipstring>Make observation points in model</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>320 105 130 20</position>
+    <text>View Tide Signal</text>
+    <callback>ddb_TideStationsToolbox</callback>
+    <option1>viewtidesignal</option1>
+    <tooltipstring>View tide signal for active tide station</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>320 80 130 20</position>
+    <text>Export Tide Signal</text>
+    <callback>ddb_TideStationsToolbox</callback>
+    <option1>exporttidesignal</option1>
+    <tooltipstring>Export tide signal  (for active tide station or for all stations inside polygon)</tooltipstring>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>500 80 60 20</position>
+    <text>Format</text>
+    <tooltipstring>Select file format for exporting tide signal</tooltipstring>
+    <variable>handles.toolbox.tidestations.tidesignalformat</variable>
+    <type>string</type>
+    <listtext>*.tek</listtext>
+    <listtext>*.mat</listtext>
+    <listvalue>tek</listvalue>
+    <listvalue>mat</listvalue>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>320 55 130 20</position>
+    <text>Export Components</text>
+    <callback>ddb_TideStationsToolbox</callback>
+    <option1>exportcomponentset</option1>
+    <tooltipstring>Export components to file file (for active tide station or for all stations inside polygon)</tooltipstring>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>500 55 60 20</position>
+    <text>Format</text>
+    <tooltipstring>Select file format for exporting tidal components</tooltipstring>
+    <variable>handles.toolbox.tidestations.tidalcomponentsformat</variable>
+    <type>string</type>
+    <listtext>*.tek</listtext>
+    <listtext>*.mat</listtext>
+    <listvalue>tek</listvalue>
+    <listvalue>mat</listvalue>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>460 130 100 20</position>
+    <text>Draw Polygon</text>
+    <callback>ddb_TideStationsToolbox</callback>
+    <option1>drawpolygon</option1>
+    <tooltipstring>Draw polygon (for exporting from all stations inside polygon)</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>460 105 100 20</position>
+    <text>Delete Polygon</text>
+    <callback>ddb_TideStationsToolbox</callback>
+    <option1>deletepolygon</option1>
+    <tooltipstring>Delete polygon</tooltipstring>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>320 30 130 20</position>
+    <text>Main Components</text>
+    <variable>handles.toolbox.tidestations.usemaincomponents</variable>
+    <tooltipstring>Check to only use the 13 main components (M2,S2,K2,N2,K1,O1,P1,Q1,MF,MM,M4,MS4,MN4) from this station</tooltipstring>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>440 30 130 20</position>
+    <text>SA SEqx</text>
+    <variable>handles.toolbox.tidestations.saseqx</variable>
+    <tooltipstring>Phase reference annual SA component defined around spring equinox</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>650 130 110 20</position>
+    <variable>handles.toolbox.tidestations.startTime</variable>
+    <type>datetime</type>
+    <text>Start Time</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit start time for tide signal to be viewed or exported</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>650 105 110 20</position>
+    <variable>handles.toolbox.tidestations.stopTime</variable>
+    <type>datetime</type>
+    <text>Stop Time</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit stop time for tide signal to be viewed or exported</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>650 80 110 20</position>
+    <variable>handles.toolbox.tidestations.timeStep</variable>
+    <type>real</type>
+    <text>Time Step (min)</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit time step for tide signal to be viewed or exported</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>650 55 110 20</position>
+    <variable>handles.toolbox.tidestations.timeZone</variable>
+    <type>real</type>
+    <text>Time Zone (h)</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit time zone (time series will be shifted to local time zone)</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>650 30 110 20</position>
+    <variable>handles.toolbox.tidestations.verticalOffset</variable>
+    <type>real</type>
+    <text>Vertical Offset (m)</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit vertical offset (value will be added to predicted time series)</tooltipstring>
+  </element>
+  <element>
+    <style>table</style>
+    <position>760 20</position>
+    <nrrows>6</nrrows>
+    <includenumbers>no</includenumbers>
+    <includebuttons>no</includebuttons>
+    <column>
+      <style>text</style>
+      <width>60</width>
+      <variable>handles.toolbox.tidestations.components</variable>
+      <text> </text>
+    </column>
+    <column>
+      <style>editreal</style>
+      <width>80</width>
+      <text>Amplitude (m)</text>
+      <enable>0</enable>
+      <variable>handles.toolbox.tidestations.amplitudes</variable>
+    </column>
+    <column>
+      <style>editreal</style>
+      <width>80</width>
+      <text>Phase (deg)</text>
+      <enable>0</enable>
+      <variable>handles.toolbox.tidestations.phases</variable>
+    </column>
+  </element>
+</root>

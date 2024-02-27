@@ -1,0 +1,56 @@
+<html>
+   <header>
+      
+      <title>set_taxis</title>
+      <meta name="generator" content="MATLAB 7.7">
+      <meta name="date" content="2011Dec06">
+      <meta name="m-file" content="emptydia">
+      <link type="text/css" rel="stylesheet" href="./toolbox.css">
+      
+   </header>
+   <body>
+      
+      <hr>
+      <div>
+         <h2>Function emptydia</h2><pre>  Create an empty dia.
+  
+  </pre><h2>CALL:</h2><pre>   S = emptydia(n)
+  
+  </pre><h2>INPUT:</h2><pre>   n: Number of blocks filled with default values, default value: 0.
+  
+  </pre><h2>OUTPUT:</h2><pre>   S: Dia Structure, with fields:
+      +----IDT                  
+      |    +----sFiltyp (char)  
+      |    +----sSyscod (char)  
+      |    +----lCredat (double)
+      |    +----sCmtrgl (char)  
+      +----blok                 
+           +----W3H (struct): see emptyW3H
+           +----MUX (struct): empty, see emptyMUX
+           +----TYP (struct): empty  
+           +----RGH (struct): empty, see emptyRGH
+           +----RKS (struct): see emptyRKS    
+           +----TPS (struct): empty, see emptyTPS    
+           +----WRD (struct): see emptyWRD  
+    
+  </pre><h2>APPROACH:</h2><pre>   This function inializes the structure with the correct fields. Besides
+   correct fields there are several other conditions a Dia structure must 
+   satisfy.
+  
+  </pre><h2>EXAMPLE:</h2><pre></pre><pre class="codeinput">   S = emptydia(1)
+   S.blok</pre><pre>S = 
+     IDT: [1x1 struct]
+    blok: [1x1 struct]
+ans = 
+    W3H: [1x1 struct]
+    MUX: []
+    TYP: []
+    RGH: []
+    RKS: [1x1 struct]
+    TPS: []
+    WRD: [1x1 struct]
+</pre><h2>See also:</h2><pre></pre><a href="readdia_R14.html">readdia_R14</a><br><a href="writedia_R14.html">writedia_R14</a><br><a href="emptyblok.html">emptyblok</a><br><a href="emptyW3H.html">emptyW3H</a><br><a href="emptyWRD.html">emptyWRD</a><br><a href="emptyMUX.html">emptyMUX</a><br><a href="emptyTPS.html">emptyTPS</a><br></div>
+      <hr>
+      
+   </body>
+</html>

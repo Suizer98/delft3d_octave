@@ -1,0 +1,8 @@
+WebPage "Not available"
+
+    PageDir      ""
+    FileName     "notavailable.html"
+    PageType     "notavailable"
+    ActiveHeader ""
+
+EndPage

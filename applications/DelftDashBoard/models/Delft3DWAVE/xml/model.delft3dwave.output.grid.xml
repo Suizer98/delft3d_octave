@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>text</style>
+    <position>260 130</position>
+    <text>Computational mode :</text>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>260 105 110 20</position>
+    <variable>handles.model.delft3dwave.domain.simmode</variable>
+    <type>string</type>
+    <listtext>
+      <variable>handles.model.delft3dwave.domain.simmodes</variable>
+    </listtext>
+    <listvalue>
+      <variable>handles.model.delft3dwave.domain.simmodes</variable>
+    </listvalue>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>310 80 50 20</position>
+    <text>Coupling : </text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.comwriteinterval</variable>
+    <type>real</type>
+    <tooltipstring>Enter coupling interval</tooltipstring>
+  </element>
+  <element>
+    <style>text</style>
+    <position>380 80</position>
+    <text>[min]</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>310 55 50 20</position>
+    <text>Time step : </text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.mapwriteinterval</variable>
+    <type>real</type>
+    <tooltipstring>Enter output time step</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.simmode</variable>
+        <value>non-stationary</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>380 55</position>
+    <text>[-]</text>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>440 130</position>
+    <text>Write and use hot start file</text>
+    <variable>handles.model.delft3dwave.domain.usehotfile</variable>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>440 105</position>
+    <text>Only verify input files</text>
+    <variable>handles.model.delft3dwave.domain.verify</variable>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>440 80</position>
+    <text>Output for FLOW grid</text>
+    <variable>handles.model.delft3dwave.domain.writecom</variable>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>440 55 150 20</position>
+    <tooltipstring>Select flow grid file</tooltipstring>
+    <text>Select grid file</text>
+    <variable>handles.model.delft3dwave.domain.outputflowgridfile</variable>
+    <extension>*.grd</extension>
+    <selectiontext>Select FLOW grid file</selectiontext>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.writecom</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>690 130</position>
+    <text>Output for computational grids : </text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>740 105 50 20</position>
+    <text>Interval : </text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.comwriteinterval</variable>
+    <type>real</type>
+    <tooltipstring>Enter output interval</tooltipstring>
+  </element>
+  <element>
+    <style>text</style>
+    <position>800 105</position>
+    <text>[min]</text>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>690 80</position>
+    <text>
+      <variable>handles.model.delft3dwave.domain.domains(1).gridname</variable>
+    </text>
+    <variable>handles.model.delft3dwave.domain.domains(1).output</variable>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrgrids</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>810 80</position>
+    <text>
+      <variable>handles.model.delft3dwave.domain.domains(2).gridname</variable>
+    </text>
+    <variable>handles.model.delft3dwave.domain.domains(2).output</variable>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrgrids</variable>
+        <value>1</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>930 80</position>
+    <text>Comp grid 3</text>
+    <variable>handles.model.delft3dwave.domain.domains(3).output</variable>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrgrids</variable>
+        <value>2</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>1050 80</position>
+    <text>Comp grid 4</text>
+    <variable>handles.model.delft3dwave.domain.domains(4).output</variable>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrgrids</variable>
+        <value>3</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>1170 80</position>
+    <text>Comp grid 5</text>
+    <variable>handles.model.delft3dwave.domain.domains(5).output</variable>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrgrids</variable>
+        <value>4</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

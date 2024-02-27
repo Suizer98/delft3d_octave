@@ -1,0 +1,490 @@
+<?xml version="1.0"?>
+<root>
+  <title>SuperTrans 2</title>
+  <width>760</width>
+  <height>550</height>
+  <element>
+    <style>panel</style>
+    <position>20 215 355 325</position>
+    <text>Coordinate System A</text>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>30 500 120 20</position>
+    <variable>projected(1)</variable>
+    <value>1</value>
+    <type>integer</type>
+    <text>Eastings / Northings</text>
+    <callback>SuperTrans2</callback>
+    <option1>selectprojected</option1>
+    <option2>a</option2>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>160 500 120 20</position>
+    <variable>geographic(1)</variable>
+    <value>1</value>
+    <type>integer</type>
+    <text>Latitude / Longitude</text>
+    <callback>SuperTrans2</callback>
+    <option1>selectgeographic</option1>
+    <option2>a</option2>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>30 470 245 20</position>
+    <variable>OPT.CS1.code</variable>
+    <type>integer</type>
+    <tooltipstring>Select coordinate system A</tooltipstring>
+    <listtext>
+      <variable>coordinatesystemnames{1}</variable>
+    </listtext>
+    <listvalue>
+      <variable>coordinatesystemcodes{1}</variable>
+    </listvalue>
+    <callback>SuperTrans2</callback>
+    <option1>selectcoordinatereferencesystem</option1>
+    <option2>a</option2>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>275 470 14 20</position>
+    <text>?</text>
+    <callback>SuperTrans2</callback>
+    <option1>findcs</option1>
+    <option2>a</option2>
+  </element>
+  <element>
+    <style>text</style>
+    <position>295 470</position>
+    <variable>OPT.CS1.code</variable>
+    <type>integer</type>
+    <prefix>Code : </prefix>
+  </element>
+  <element>
+    <style>text</style>
+    <position>30 440</position>
+    <variable>OPT.CS1.datum.name</variable>
+    <prefix>Datum : </prefix>
+  </element>
+  <element>
+    <style>text</style>
+    <position>30 420</position>
+    <variable>OPT.CS1.ellips.name</variable>
+    <prefix>Ellipse : </prefix>
+  </element>
+  <element>
+    <style>text</style>
+    <position>30 400</position>
+    <variable>OPT.proj_conv1.method.name</variable>
+    <prefix>Operation : </prefix>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>OPT.proj_conv1.method.name</variable>
+        <type>string</type>
+        <value>isempty</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>30 375</position>
+    <variable>conversionparametertext{1,1}</variable>
+    <type>string</type>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>nrconversionparameters(1)</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>30 350</position>
+    <variable>conversionparametertext{1,2}</variable>
+    <type>string</type>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>nrconversionparameters(1)</variable>
+        <type>integer</type>
+        <value>1</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>30 325</position>
+    <variable>conversionparametertext{1,3}</variable>
+    <type>string</type>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>nrconversionparameters(1)</variable>
+        <type>integer</type>
+        <value>2</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>30 300</position>
+    <variable>conversionparametertext{1,4}</variable>
+    <type>string</type>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>nrconversionparameters(1)</variable>
+        <type>integer</type>
+        <value>3</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>30 275</position>
+    <variable>conversionparametertext{1,5}</variable>
+    <type>string</type>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>nrconversionparameters(1)</variable>
+        <type>integer</type>
+        <value>4</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>30 250</position>
+    <variable>conversionparametertext{1,6}</variable>
+    <type>string</type>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>nrconversionparameters(1)</variable>
+        <type>integer</type>
+        <value>5</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>30 225</position>
+    <variable>conversionparametertext{1,7}</variable>
+    <type>string</type>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>nrconversionparameters(1)</variable>
+        <type>integer</type>
+        <value>6</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 375 100 20</position>
+    <variable>conversionparameterstring{1,1}</variable>
+    <type>string</type>
+    <enable>0</enable>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>nrconversionparameters(1)</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 350 100 20</position>
+    <variable>conversionparameterstring{1,2}</variable>
+    <type>string</type>
+    <enable>0</enable>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>nrconversionparameters(1)</variable>
+        <type>integer</type>
+        <value>1</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 325 100 20</position>
+    <variable>conversionparameterstring{1,3}</variable>
+    <type>string</type>
+    <enable>0</enable>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>nrconversionparameters(1)</variable>
+        <type>integer</type>
+        <value>2</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 300 100 20</position>
+    <variable>conversionparameterstring{1,4}</variable>
+    <type>string</type>
+    <enable>0</enable>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>nrconversionparameters(1)</variable>
+        <type>integer</type>
+        <value>3</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 275 100 20</position>
+    <variable>conversionparameterstring{1,5}</variable>
+    <type>string</type>
+    <enable>0</enable>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>nrconversionparameters(1)</variable>
+        <type>integer</type>
+        <value>4</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 250 100 20</position>
+    <variable>conversionparameterstring{1,6}</variable>
+    <type>string</type>
+    <enable>0</enable>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>nrconversionparameters(1)</variable>
+        <type>integer</type>
+        <value>5</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 225 100 20</position>
+    <variable>conversionparameterstring{1,7}</variable>
+    <type>string</type>
+    <enable>0</enable>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>nrconversionparameters(1)</variable>
+        <type>integer</type>
+        <value>6</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>305 375</position>
+    <variable>conversionparameterunit{1,1}</variable>
+    <type>string</type>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>nrconversionparameters(1)</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>305 350</position>
+    <variable>conversionparameterunit{1,2}</variable>
+    <type>string</type>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>nrconversionparameters(1)</variable>
+        <type>integer</type>
+        <value>1</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>305 325</position>
+    <variable>conversionparameterunit{1,3}</variable>
+    <type>string</type>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>nrconversionparameters(1)</variable>
+        <type>integer</type>
+        <value>2</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>305 300</position>
+    <variable>conversionparameterunit{1,4}</variable>
+    <type>string</type>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>nrconversionparameters(1)</variable>
+        <type>integer</type>
+        <value>3</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>305 275</position>
+    <variable>conversionparameterunit{1,5}</variable>
+    <type>string</type>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>nrconversionparameters(1)</variable>
+        <type>integer</type>
+        <value>4</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>305 250</position>
+    <variable>conversionparameterunit{1,6}</variable>
+    <type>string</type>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>nrconversionparameters(1)</variable>
+        <type>integer</type>
+        <value>5</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>305 225</position>
+    <variable>conversionparameterunit{1,7}</variable>
+    <type>string</type>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>nrconversionparameters(1)</variable>
+        <type>integer</type>
+        <value>6</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+
+
+  <element>
+    <style>panel</style>
+    <position>385 215 355 325</position>
+    <text>Coordinate System B</text>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>395 500 120 20</position>
+    <variable>projected(2)</variable>
+    <text>Eastings / Northings</text>
+    <callback>SuperTrans2</callback>
+    <option1>selectprojectedb</option1>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>525 500 120 20</position>
+    <variable>geographic(2)</variable>
+    <text>Latitude / Longitude</text>
+    <callback>SuperTrans2</callback>
+    <option1>selectgeographicb</option1>
+  </element>
+
+
+
+
+  <element>
+    <style>panel</style>
+    <position>20 60 720 150</position>
+    <text>Datum Transformation</text>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>30 170 230 20</position>
+    <variable>OPT.datum_trans(1).code</variable>
+    <type>integer</type>
+    <tooltipstring>Select datum transformation method</tooltipstring>
+    <listtext>
+      <variable>OPT.datum_trans(1).alt_name</variable>
+    </listtext>
+    <listvalue>
+      <variable>OPT.datum_trans(1).alt_code</variable>
+    </listvalue>
+    <callback>SuperTrans2</callback>
+    <option1>selectdatumtransformation</option1>
+  </element>
+  <element>
+    <style>text</style>
+    <position>265 166</position>
+    <variable>OPT.datum_trans(1).code</variable>
+    <type>integer</type>
+    <prefix>Code : </prefix>
+  </element>
+
+</root>

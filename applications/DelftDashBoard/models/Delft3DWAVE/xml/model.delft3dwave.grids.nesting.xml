@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <text>Grids</text>
+    <position>5 5 890 130</position>
+  </element>
+  <element>
+    <style>listbox</style>
+    <position>10 30 200 80</position>
+    <tooltipstring>Computational grids</tooltipstring>
+    <text>Computational grids</text>
+    <textposition>above-center</textposition>
+    <variable>handles.activeWaveGrid</variable>
+    <type>integer</type>
+    <callback>ddb_Delft3DWAVE_grid</callback>
+    <option1>selectgrid</option1>
+    <listtext>
+      <variable>handles.model.delft3dwave.domain.gridnames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>text</style>
+    <position>10 10</position>
+    <prefix>Co-ordinate System : </prefix>
+    <type>text</type>
+    <variable>handles.model.delft3dwave.domain.domains(awg).coordsyst</variable>
+  </element>
+  <element>
+    <style>panel</style>
+    <text>Grid data</text>
+    <position>440 10 450 120</position>
+  </element>
+  <element>
+    <style>text</style>
+    <position>450 75</position>
+    <prefix>Grid filename : </prefix>
+    <type>text</type>
+    <variable>handles.model.delft3dwave.domain.domains(awg).grid</variable>
+  </element>
+  <element>
+    <style>text</style>
+    <position>450 50</position>
+    <prefix>Associated bathymetry grid : </prefix>
+    <type>text</type>
+    <variable>handles.model.delft3dwave.domain.domains(awg).bedlevelgrid</variable>
+  </element>
+  <element>
+    <style>text</style>
+    <position>450 25</position>
+    <prefix>Associated bathymetry data : </prefix>
+    <type>text</type>
+    <variable>handles.model.delft3dwave.domain.domains(awg).bedlevel</variable>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>510 100 110 15</position>
+    <text>Nested in : </text>
+    <type>string</type>
+    <variable>handles.model.delft3dwave.domain.domains(awg).nestgrid</variable>
+    <listtext>
+      <variable>handles.model.delft3dwave.domain.nestgrids</variable>
+    </listtext>
+    <listvalue>
+      <variable>handles.model.delft3dwave.domain.nestgrids</variable>
+    </listvalue>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.activeWaveGrid</variable>
+        <value>1</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

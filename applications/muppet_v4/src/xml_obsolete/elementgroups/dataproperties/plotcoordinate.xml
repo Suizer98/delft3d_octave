@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <variable>plotcoordinate</variable>
+    <type>string</type>
+    <style>popupmenu</style>
+    <position>60 0 270 20</position>
+    <listtext>path distance</listtext>
+    <listtext>reverse path distance</listtext>
+    <listtext>x coordinate</listtext>
+    <listtext>y coordinate</listtext>
+    <listvalue>pathdistance</listvalue>
+    <listvalue>reversepathdistance</listvalue>
+    <listvalue>xcoordinate</listvalue>
+    <listvalue>ycoordinate</listvalue>
+    <callback>muppet_datasetGUI</callback>
+    <option1>selectplotcoordinate</option1>
+    <text>X Axis</text>
+    <tooltipstring>Select x axis</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>plotcoordinate</variable>
+        <value>isempty</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

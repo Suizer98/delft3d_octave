@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<root>
+  <title>Advanced Axis Properties ...</title>
+  <width>300</width>
+  <height>180</height>
+  <tag>legend</tag>
+  <element>
+    <style>text</style>
+    <position>90 150 100 20</position>
+    <text>X</text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>150 150 100 20</position>
+    <text>Y</text>
+  </element>
+
+
+  <element>
+    <style>popupmenu</style>
+    <position>90 120 100 20</position>
+    <variable>xscale</variable>
+    <type>string</type>
+    <tooltipstring>Select scaling of X axis</tooltipstring>
+    <text>Scale</text>
+    <listtext>linear</listtext>
+    <listtext>logarithmic</listtext>
+    <listtext>normprob</listtext>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>type</variable>
+        <value>xy</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+
+  <element>
+    <style>popupmenu</style>
+    <position>150 120 100 20</position>
+    <variable>yscale</variable>
+    <type>string</type>
+    <tooltipstring>Select scaling of Y axis</tooltipstring>
+    <text>Scale</text>
+    <listtext>linear</listtext>
+    <listtext>logarithmic</listtext>
+    <listtext>normprob</listtext>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>type</variable>
+        <value>xy</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+
+
+  <element>
+    <style>edit</style>
+    <position>70 125 50 20</position>
+    <variable>xtickmultiply</variable>
+    <type>real</type>
+    <text>Multiply</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>130 125 50 20</position>
+    <variable>ytickmultiply</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>70 100 50 20</position>
+    <variable>xtickadd</variable>
+    <type>real</type>
+    <text>Add</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>130 100 50 20</position>
+    <variable>ytickadd</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>selectfont</style>
+    <position>130 70 50 20</position>
+    <variable>font</variable>
+  </element>
+  <element>
+    <tag>cancel</tag>
+    <style>pushcancel</style>
+    <position>40 20 60 20</position>
+  </element>
+  <element>
+    <tag>ok</tag>
+    <style>pushok</style>
+    <position>110 20 70 20</position>
+  </element>
+</root>

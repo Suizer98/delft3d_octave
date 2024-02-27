@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>10 10 200 125</position>
+    <text>Semi-diurnal modes</text>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>20 95</position>
+    <text>M2 - Principal lunar</text>
+    <variable>handles.model.delft3dflow.domain(ad).tidalForce.M2</variable>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>20 70</position>
+    <text>S2 - Principal solar</text>
+    <variable>handles.model.delft3dflow.domain(ad).tidalForce.S2</variable>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>20 45</position>
+    <text>N2 - Elliptical lunar</text>
+    <variable>handles.model.delft3dflow.domain(ad).tidalForce.N2</variable>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>20 20</position>
+    <text>K2 - Declination lunar solar</text>
+    <variable>handles.model.delft3dflow.domain(ad).tidalForce.K2</variable>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>220 10 200 125</position>
+    <text>Diurnal modes</text>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>230 95</position>
+    <text>K1 - Declination lunar solar</text>
+    <variable>handles.model.delft3dflow.domain(ad).tidalForce.K1</variable>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>230 70</position>
+    <text>O1 - Principal lunar</text>
+    <variable>handles.model.delft3dflow.domain(ad).tidalForce.O1</variable>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>230 45</position>
+    <text>P1 - Principal solar</text>
+    <variable>handles.model.delft3dflow.domain(ad).tidalForce.P1</variable>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>230 20</position>
+    <text>Q1 - Elliptical lunar</text>
+    <variable>handles.model.delft3dflow.domain(ad).tidalForce.Q1</variable>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>430 10 200 125</position>
+    <text>Long-period modes</text>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>440 95</position>
+    <text>MF - Fortnightly lunar</text>
+    <variable>handles.model.delft3dflow.domain(ad).tidalForce.MF</variable>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>440 70</position>
+    <text>MM - Monthly lunar</text>
+    <variable>handles.model.delft3dflow.domain(ad).tidalForce.MM</variable>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>440 45</position>
+    <text>SSA - Semi-annual solar</text>
+    <variable>handles.model.delft3dflow.domain(ad).tidalForce.SSA</variable>
+  </element>
+</root>

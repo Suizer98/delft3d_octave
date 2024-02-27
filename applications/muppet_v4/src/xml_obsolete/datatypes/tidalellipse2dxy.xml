@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+  <longname>Tidal Ellipse</longname>
+  <plottype>
+    <name>map</name>
+    <plotroutine>
+      <name>Tidal Ellipse</name>
+      <plotoption>
+        <name>plotroutine</name>
+      </plotoption>
+      <plotoption>
+        <name>linecolor</name>
+      </plotoption>
+      <plotoption>
+        <name>linewidth</name>
+      </plotoption>
+      <plotoption>
+        <name>linestyle</name>
+      </plotoption>
+      <elementgroup>line</elementgroup>
+    </plotroutine>
+  </plottype>
+</root>

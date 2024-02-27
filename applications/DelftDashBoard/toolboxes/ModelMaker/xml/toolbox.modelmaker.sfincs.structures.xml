@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>10 10 250 130</position>
+    <text>Splines</text>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>20 100 130 20</position>
+    <text>Draw Coastline Spline</text>
+    <callback>ddb_ModelMakerToolbox_sfincs_structures</callback>
+    <option1>drawstructurespline</option1>
+    <tooltipstring>Draw structure spline</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>20 75 130 20</position>
+    <text>Delete Coastline Spline</text>
+    <callback>ddb_ModelMakerToolbox_sfincs_coastline</callback>
+    <option1>deletecoastspline</option1>
+    <tooltipstring>Delete coastline spline</tooltipstring>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 50 130 20</position>
+    <text>Load Coastline Spline</text>
+    <variable>handles.model.sfincs.coastspline.filename</variable>
+    <onchange>ddb_ModelMakerToolbox_sfincs_coastline</onchange>
+    <option1>loadcoastspline</option1>
+    <showfilename>no</showfilename>
+    <extension>*.pol</extension>
+    <selectiontext>Select coastline spline file</selectiontext>
+    <tooltipstring>Select coastline spline file</tooltipstring>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>20 25 130 20</position>
+    <text>Save Coastline Spline</text>
+    <variable>handles.model.sfincs.coastspline.filename</variable>
+    <onchange>ddb_ModelMakerToolbox_sfincs_coastline</onchange>
+    <option1>savecoastspline</option1>
+    <showfilename>no</showfilename>
+    <extension>*.pol</extension>
+    <selectiontext>Select coastline spline file</selectiontext>
+    <tooltipstring>Select coastline spline file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.coastspline.length</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>270 10 270 130</position>
+    <text>Points</text>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>280 100 100 20</position>
+    <text>Create points</text>
+    <callback>ddb_ModelMakerToolbox_sfincs_coastline</callback>
+    <option1>createcoastlinepoints</option1>
+    <tooltipstring>Create coastline points</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.coastspline.length</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>280 75 100 20</position>
+    <text>Delete points</text>
+    <callback>ddb_ModelMakerToolbox_sfincs_coastline</callback>
+    <option1>removecoastlinepoints</option1>
+    <tooltipstring>Delete coastline points</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).coastline.length</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>330 50 50 20</position>
+    <text>Distance</text>
+    <variable>handles.model.sfincs.coastspline.flowdx</variable>
+    <type>real</type>
+    <tooltipstring>Edit distance between coastline points</tooltipstring>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>400 100 130 20</position>
+    <text>Load Coastline Points</text>
+    <variable>handles.model.sfincs.domain(ad).input.cstfile</variable>
+    <onchange>ddb_ModelMakerToolbox_sfincs_coastline</onchange>
+    <option1>loadcoastlinepoints</option1>
+    <showfilename>no</showfilename>
+    <extension>*.bnd</extension>
+    <selectiontext>Select coastline points file</selectiontext>
+    <tooltipstring>Select coastline points file</tooltipstring>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>400 75 130 20</position>
+    <text>Save Coastline Points</text>
+    <variable>handles.model.sfincs.domain(ad).input.cstfile</variable>
+    <onchange>ddb_ModelMakerToolbox_sfincs_coastline</onchange>
+    <option1>savecoastlinepoints</option1>
+    <showfilename>no</showfilename>
+    <extension>*.cst</extension>
+    <selectiontext>Select boundary points file</selectiontext>
+    <tooltipstring>Select boundary points file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).coastline.length</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

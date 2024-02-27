@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 110 130 20</position>
+    <tooltipstring>Select thin dam file</tooltipstring>
+    <text>Thin Dam File</text>
+    <variable>handles.model.dflowfm.domain.thindamfile</variable>
+    <extension>*_thd.pli</extension>
+    <selectiontext>Select thin dam file</selectiontext>
+    <callback>ddb_DFlowFM_structures</callback>
+    <option1>selectthindamfile</option1>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 85 130 20</position>
+    <tooltipstring>Select thin dyke file</tooltipstring>
+    <text>Thin Dyke File</text>
+    <variable>handles.model.dflowfm.domain.thindykefile</variable>
+    <extension>*_tdk.pli</extension>
+    <selectiontext>Select thin dyke file</selectiontext>
+    <callback>ddb_DFlowFM_structures</callback>
+    <option1>selectthindykefile</option1>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 60 130 20</position>
+    <tooltipstring>Select man hole file</tooltipstring>
+    <text>Man Hole File</text>
+    <variable>handles.model.dflowfm.domain.manholefile</variable>
+    <extension>*.*</extension>
+    <selectiontext>Select man hole file</selectiontext>
+    <callback>ddb_DFlowFM_structures</callback>
+    <option1>selectmanholefile</option1>
+  </element>
+</root>

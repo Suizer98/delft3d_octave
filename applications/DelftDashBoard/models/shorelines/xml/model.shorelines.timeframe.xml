@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <text>Time Frame</text>
+    <position>40 10 900 160</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>130 130 110 20</position>
+    <text>Reference Date</text>
+    <variable>handles.model.shorelines.domain.tref</variable>
+    <callback>ddb_shorelines_timeframe</callback>
+    <option1>edittime</option1>
+    <type>date</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>130 105 110 20</position>
+    <text>Start Date</text>
+    <variable>handles.model.shorelines.domain.timenum0</variable>
+    <callback>ddb_shorelines_timeframe</callback>
+    <option1>edittime</option1>
+    <type>date</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>130 80 110 20</position>
+    <text>Stop Date</text>
+    <variable>handles.model.shorelines.domain.tend</variable>
+    <callback>ddb_shorelines_timeframe</callback>
+    <option1>edittime</option1>
+    <type>date</type>
+  </element>
+</root>

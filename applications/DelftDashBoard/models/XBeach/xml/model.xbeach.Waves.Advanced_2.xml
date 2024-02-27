@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <text>beta</text>
+    <position>70.000,107.500, 80.000, 20.000</position>
+    <tooltipstring>Breaker slope coefficient in roller model [-]</tooltipstring>
+    <variable>handles.model.xbeach.domain.beta</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>If rfb = 1 then maximum wave surface slope is feeded back in roller energy balance; else rfb = par%Beta [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>rfb</text>
+    <position>70.000,80.000</position>
+    <variable>handles.model.xbeach.domain.rfb</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Minimum depth until which wave-current interaction is used [m]</tooltipstring>
+    <style>edit</style>
+    <text>hwci</text>
+    <position>70.000,52.500,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.hwci</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Current averaging time scale for wci, in terms of mean wave periods [Trep]</tooltipstring>
+    <style>edit</style>
+    <text>cats</text>
+    <position>70.000,25.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.cats</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Use first-order upwind (upwind_1), second order upwind (upwind_2) or Lax-Wendroff (lax_wendroff) [-]</tooltipstring>
+    <style>popupmenu</style>
+    <text>scheme</text>
+    <position>230.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.scheme</variable>
+    <type>string</type>
+    <listtext>upwind_1</listtext>
+    <listtext>lax_wendroff</listtext>
+    <listtext>upwind_2</listtext>
+  </element>
+  <element>
+    <tooltipstring>Maximum wave height error in wave stationary iteration [m]</tooltipstring>
+    <style>edit</style>
+    <text>maxerror</text>
+    <position>230.000, 80.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.maxerror</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Maximum number of iterations in wave stationary [-]</tooltipstring>
+    <style>edit</style>
+    <text>maxiter</text>
+    <position>230.000, 52.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.maxiter</variable>
+    <type>integer</type>
+  </element>
+</root>

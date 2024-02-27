@@ -1,0 +1,29 @@
+Scripts
+
+Netcdf2mon.m
+
+This script makes a .mat file from de data from waterbase netcdf files. The whole timeserie per substance per location
+is put into this file: no selection regarding date is made!!! The matfile is used as input for the script 'plot_MWTL_d3d.m'.
+Moreover, also textfiles are made that contain stationname, substance, value date etc. These are usefull for input to WOS2ACC.txt 
+(i.e. the database of Hans with a lot of measurement data, including depth measurements)...here a date selection is possible.
+
+Plot_MWTL_d3d.m
+
+This script uses the mat file from the 'Netcdf2mon.m' file and reads in a hisfile with modeldata. It then plots per substance and per
+location MWTL and model data. 
+
+Modeldata2gof.m and netcdf2gof.m
+
+Those scripts put the data from the model (hisfile) and the MWTL measurements in the right format and place for the script
+'GoFStats_v3.m'. VH: One issue that needs to be resolved is whether MWTL measurements of one year are sufficient or that multiple years are
+required for realistic GoF plots (GoF = Goodness of Fit).
+
+deprecated/GoFStats_v3
+
+This script does all kind of statistical calculations on the model and measurement data (coming from the scripts 'Modeldata2gof.m' and
+'netcdf2gof.m') and put the results of the two types of data together per location and per substance.
+
+deprecated/plotGoF_v2
+
+This script plots the statistics of the 'GoFStats_v3.m' in GoF diagrams for all the locations per substance.
+

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<root>
+  <name>location2dxy</name>
+  <longname>2D Grid</longname>
+  <plot>
+    <type>map</type>
+    <plotroutine>
+      <name>plotgrid</name>
+      <plotoption>
+        <name>plotroutine</name>
+      </plotoption>
+      <plotoption>
+        <name>linegroup</name>
+      </plotoption>
+      <plotoption>
+        <name>legendtext</name>
+      </plotoption>
+    </plotroutine>
+  </plot>
+  <plot>
+    <type>xy</type>
+    <plotroutine>
+      <name>plotgrid</name>
+      <plotoption>
+        <name>plotroutine</name>
+      </plotoption>
+      <plotoption>
+        <name>linegroup</name>
+      </plotoption>
+      <plotoption>
+        <name>legendtext</name>
+      </plotoption>
+    </plotroutine>
+  </plot>
+</root>

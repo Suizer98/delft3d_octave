@@ -1,0 +1,40 @@
+<html>
+   <header>
+      
+      <title>set_taxis</title>
+      <meta name="generator" content="MATLAB 7.7">
+      <meta name="date" content="2011Dec06">
+      <meta name="m-file" content="bepaal_tijdstap">
+      <link type="text/css" rel="stylesheet" href="./toolbox.css">
+      
+   </header>
+   <body>
+      
+      <hr>
+      <div>
+         <h2>Function bepaal_tijdstap</h2><pre>  Determine timestep of given time axis.
+  
+  </pre><h2>CALL:</h2><pre>   [tijdstapeenheid, tijdstap] = bepaal_tijdstap(taxis, mode)
+  
+  </pre><h2>INPUT:</h2><pre>   taxis: Vector of Matlab datenum.
+   mode: (Optional) string with possible values:
+         'TE' (default) - Assume an equidistant timeseries, tijdstap is the
+                          smallest found timestep, this is useful when the 
+                          timeseries has missing values.
+         otherwise      - If timestep is always equal --&gt; TE timeseries.
+                          Otherwise                   --&gt; TN timeseries.
+  
+  </pre><h2>OUTPUT:</h2><pre>   tijdstapeenheid:  String with possible values, empty if TN timeseries:
+                     - 'd' days
+                     - 'min' minute
+                     - 's' seconds
+                     - 'cs' centiseconds
+  
+   tijdstap: Integer with timestep in tijdstapeenheid units, empty for 'TN'
+   timeseries.
+  
+  </pre><h2>See also:</h2><pre></pre><a href="cmp_taxis.html">cmp_taxis</a><br><a href="set_taxis.html">set_taxis</a><br></div>
+      <hr>
+      
+   </body>
+</html>

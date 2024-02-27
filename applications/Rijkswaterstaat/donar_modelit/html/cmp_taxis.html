@@ -1,0 +1,48 @@
+<html>
+   <header>
+      
+      <title>set_taxis</title>
+      <meta name="generator" content="MATLAB 7.7">
+      <meta name="date" content="2011Dec06">
+      <meta name="m-file" content="cmp_taxis">
+      <link type="text/css" rel="stylesheet" href="./toolbox.css">
+      
+   </header>
+   <body>
+      
+      <hr>
+      <div>
+         <h2>Function cmp_taxis</h2><pre>  Compute time axis for Donar timeseries.
+  
+  </pre><h2>CALL:</h2><pre>   taxis = cmp_taxis(s, N, SIGNIFIKANTIE)
+  
+  </pre><h2>INPUT:</h2><pre>   s: structure with the following relevant fields (Donar RKS block).
+       lBegdat: e.g. 19980101
+       iBegtyd: e.g. 1430
+       sTydehd: 'min'
+       iTydstp: 10
+       lEnddat: 19980228
+       iEndtyd: 2350
+   N: (Optional) total number of datapoints for checking.
+   SIGNIFIKANTIE: (Optional) timeaxis precision, 
+                  default value: 1440(minutes),
+                  if necessary specify second argument N as [].
+  
+  OUTPUT
+   taxis: vector of Matlab datenum with the equidistant times.
+  
+  </pre><h2>APPROACH:</h2><pre>   Converteer opgegeven begin- en eindtijdstip naar matlab datenum.
+   Bereken de stapgrootte.
+   Let op! bij coderen was complete lijst met mogelijkheden niet voorhanden!
+   alleen de eenheid 'min' is geverifieerd.
+   bouw het taxis array.
+  
+   Wanneer ook een tweede argument beschikbaar is wordt het aantal tijdstappen
+   gecontroleerd.
+   In geval van een inconsitentie volgt een melding.
+   Het aantal opgegeven datapunten in N is dan maatgevend.
+</pre></div>
+      <hr>
+      
+   </body>
+</html>

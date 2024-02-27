@@ -1,0 +1,15 @@
+% FILE WITH ZONE : RESIDENTIAL GROUNDWATER
+% Containing the following columns with information:
+%    - X        Centre location of the centre of the zone [m wrt Hoek van Holland]
+%    - B        Width of considered zone [m]
+7000      1000
+16000     2000
+18750     2500
+31500     2000
+36750     2500
+53000     4000
+67000     1000
+81000     2000
+85500     1000
+106000    2000
+113250    1500

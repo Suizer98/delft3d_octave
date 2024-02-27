@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+  <toolbox>Tiling</toolbox>
+  <longname>Tiling</longname>
+  <enable>0</enable>
+  <element>
+    <position>50 10 950 140</position>
+    <style>tabpanel</style>
+    <tab>
+      <tabstring>Bathymetry</tabstring>
+      <callback>ddb_TilingToolbox_bathymetry</callback>
+      <element>toolbox.tiling.bathymetry.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Shoreline</tabstring>
+      <callback>ddb_TilingToolbox_shoreline</callback>
+      <enable>0</enable>
+      <element>toolbox.tiling.shoreline.xml</element>
+    </tab>
+  </element>
+</root>

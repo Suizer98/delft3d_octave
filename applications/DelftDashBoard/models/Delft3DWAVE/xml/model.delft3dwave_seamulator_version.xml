@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<root>
+  <model>Delft3DWAVE</model>
+  <longname>Delft3D-WAVE</longname>
+  <enable>1</enable>
+  <menu>
+    <menuopenfile>
+      <menuitem>
+        <string>Open MDW File</string>
+        <callback>ddb_openDelft3DWAVE</callback>
+        <option>open</option>
+      </menuitem>
+    </menuopenfile>
+    <menusavefile>
+      <menuitem>
+        <string>Save MDW File</string>
+        <callback>ddb_saveDelft3DWAVE</callback>
+        <option>save</option>
+      </menuitem>
+      <menuitem>
+        <string>Save MDW File As ...</string>
+        <callback>ddb_saveDelft3DWAVE</callback>
+        <option>saveas</option>
+      </menuitem>
+      <menuitem>
+        <string>Save All Delft3D-WAVE Files</string>
+        <callback>ddb_saveDelft3DWAVE</callback>
+        <option>saveall</option>
+      </menuitem>
+      <menuitem>
+        <string>Delft3D-WAVE version ...</string>
+        <callback>ddb_setModelSettings</callback>
+        <option>selectversion</option>
+      </menuitem>
+    </menusavefile>
+    <menuview/>
+  </menu>
+  <element>
+    <style>tabpanel</style>
+    <position>10 10 900 700</position>
+    <tab>
+      <tabstring>Toolbox</tabstring>
+      <callback>ddb_selectToolbox</callback>
+    </tab>
+</root>

@@ -1,0 +1,118 @@
+NetCDF-3 Classic ncwritetutorial_grid_lat_lon_orthogonal.nc {
+dimensions:
+	lon = 3 ;
+	lat = 5 ;
+	time = 1 ;
+	bounds = 2 ;
+
+variables:
+	// Preference 'PRESERVE_FVD':  false,
+	// dimensions consistent with ncBrowse, not with native MATLAB netcdf package.
+	double time(time), shape = [1]
+		time:standard_name = "time" ;
+		time:long_name = "time" ;
+		time:units = "days since 1970-01-01 00:00:00+08:00" ;
+		time:axis = "T" ;
+	double lon(lon), shape = [3]
+		lon:standard_name = "longitude" ;
+		lon:long_name = "Longitude" ;
+		lon:units = "degrees_east" ;
+		lon:axis = "X" ;
+		lon:_FillValue = NaN ;
+		lon:grid_mapping = "projection" ;
+		lon:actual_range = 2 6 ;
+		lon:bounds = "lon_bnds" ;
+	double lat(lat), shape = [5]
+		lat:standard_name = "latitude" ;
+		lat:long_name = "Latitude" ;
+		lat:units = "degrees_north" ;
+		lat:axis = "Y" ;
+		lat:_FillValue = NaN ;
+		lat:grid_mapping = "projection" ;
+		lat:actual_range = 50 54 ;
+		lat:bounds = "lat_bnds" ;
+	int32 projection([]), shape = [1]
+		projection:name = "WGS 84" ;
+		projection:epsg = 4326 ;
+		projection:grid_mapping_name = "latitude_longitude" ;
+		projection:semi_major_axis = 6.37814e+06 ;
+		projection:semi_minor_axis = 6.35675e+06 ;
+		projection:inverse_flattening = 298.257 ;
+		projection:comment = "value is equal to EPSG code" ;
+		projection:proj4_params = "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs" ;
+		projection:projection_name = "Latitude Longitude" ;
+		projection:EPSG_code = "EPSG:4326" ;
+	double lon_bnds(lon,bounds), shape = [3 2]
+		lon_bnds:standard_name = "longitude" ;
+		lon_bnds:long_name = "Longitude bounds" ;
+		lon_bnds:units = "degrees_east" ;
+		lon_bnds:_FillValue = NaN ;
+		lon_bnds:actual_range = 1 7 ;
+	double lat_bnds(lat,bounds), shape = [5 2]
+		lat_bnds:standard_name = "latitude" ;
+		lat_bnds:long_name = "Latitude bounds" ;
+		lat_bnds:units = "degrees_north" ;
+		lat_bnds:_FillValue = NaN ;
+		lat_bnds:actual_range = 49.5 54.5 ;
+	double depth(time,lat,lon), shape = [1 5 3]
+		depth:standard_name = "sea_floor_depth_below_geoid" ;
+		depth:long_name = "bottom depth" ;
+		depth:units = "m" ;
+		depth:positive = "up" ;
+		depth:_FillValue = NaN ;
+		depth:actual_range = 1 114 ;
+		depth:grid_mapping = "projection" ;
+
+//global attributes:
+		:title = "ncwritetutorial_grid_lat_lon_orthogonal" ;
+		:institution = "Deltares" ;
+		:source = "" ;
+		:history = "$HeadURL: https://svn.oss.deltares.nl/repos/openearthtools/trunk/matlab/io/netcdf/nctools/ncwritetutorial_grid_lat_lon_orthogonal.m $ $Id: ncwritetutorial_grid_lat_lon_orthogonal.m 8864 2013-06-28 08:05:56Z boer_g $" ;
+		:references = "http://svn.oss.deltares.nl" ;
+		:email = "" ;
+		:featureType = "grid" ;
+		:comment = "" ;
+		:version = "" ;
+		:Conventions = "CF-1.6" ;
+		:terms_for_use = "These data can be used freely for research purposes provided that the following source is acknowledged: Deltares" ;
+		:disclaimer = "This data is made available in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE." ;
+		:time_coverage_start = "2000-01-01T00:00" ;
+		:time_coverage_end = "2000-01-01T00:00" ;
+
+
+data:
+
+time = 10957;
+
+lon =
+ 2,
+ 4, 6 ;
+
+lat =
+ 50,
+ 51,
+ 52,
+ 53, 54 ;
+
+projection = 4326;
+
+lon_bnds =
+ 1, 3,
+ 3, 5,
+ 5, 7 ;
+
+lat_bnds =
+ 49.5, 50.5,
+ 50.5, 51.5,
+ 51.5, 52.5,
+ 52.5, 53.5,
+ 53.5, 54.5 ;
+
+depth =
+ 1, 106, 11,
+ 102, 7, 112,
+ 3, 108, NaN,
+ 104, 9, 114,
+ 5, 110, 15 ;
+
+}

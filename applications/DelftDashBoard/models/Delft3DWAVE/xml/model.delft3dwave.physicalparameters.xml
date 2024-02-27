@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <position>45 10 900 140</position>
+    <style>tabpanel</style>
+    <tab>
+      <tabstring>Constants</tabstring>
+      <callback>ddb_Delft3DWAVE_physicalParameters</callback>
+      <element>model.delft3dwave.physicalparameters.constants.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Wind</tabstring>
+      <callback>ddb_Delft3DWAVE_physicalParameters</callback>
+      <element>model.delft3dwave.physicalparameters.wind.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Processes</tabstring>
+      <callback>ddb_Delft3DWAVE_physicalParameters</callback>
+      <element>model.delft3dwave.physicalparameters.processes.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Various</tabstring>
+      <callback>ddb_Delft3DWAVE_physicalParameters</callback>
+      <element>model.delft3dwave.physicalparameters.various.xml</element>
+    </tab>
+  </element>
+</root>

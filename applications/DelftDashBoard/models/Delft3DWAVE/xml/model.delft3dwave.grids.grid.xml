@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>listbox</style>
+    <position>10 30 200 80</position>
+    <tooltipstring>Computational grids</tooltipstring>
+    <text>Computational grids :</text>
+    <textposition>above-center</textposition>
+    <variable>handles.activeWaveGrid</variable>
+    <type>integer</type>
+    <callback>ddb_Delft3DWAVE_grid</callback>
+    <option1>selectgrid</option1>
+    <listtext>
+      <variable>handles.model.delft3dwave.domain.gridnames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>220 90 70 20</position>
+    <tooltipstring>Add grid file</tooltipstring>
+    <text>Add</text>
+    <variable>handles.model.delft3dwave.domain.newgrid</variable>
+    <extension>*.grd</extension>
+    <selectiontext>Select grid File</selectiontext>
+    <showfilename>0</showfilename>
+    <onchange>ddb_Delft3DWAVE_grid</onchange>
+    <option1>add</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>220 60 70 20</position>
+    <tooltipstring>Delete grid file</tooltipstring>
+    <text>Delete</text>
+    <callback>ddb_Delft3DWAVE_grid</callback>
+    <option1>delete</option1>
+  </element>
+  <element>
+    <style>text</style>
+    <position>10 10</position>
+    <prefix>Co-ordinate System : </prefix>
+    <type>text</type>
+    <variable>handles.model.delft3dwave.domain.domains(awg).coordsyst</variable>
+  </element>
+  <element>
+    <style>text</style>
+    <position>360 50</position>
+    <prefix>Associated bathymetry grid : </prefix>
+    <type>text</type>
+    <variable>handles.model.delft3dwave.domain.domains(awg).grid</variable>
+  </element>
+  <element>
+    <style>text</style>
+    <position>360 30</position>
+    <prefix>Associated bathymetry data : </prefix>
+    <type>text</type>
+    <variable>handles.model.delft3dwave.domain.domains(awg).bedlevel</variable>
+  </element>
+  <element>
+    <style>text</style>
+    <position>360 10</position>
+    <prefix>Nested in : </prefix>
+    <type>text</type>
+    <variable>handles.model.delft3dwave.domain.domains(awg).nestgrid</variable>
+  </element>
+  <element>
+    <style>text</style>
+    <position>680 50</position>
+    <prefix>Grid points in M direction : </prefix>
+    <type>text</type>
+    <variable>handles.model.delft3dwave.domain.domains(awg).mmax</variable>
+  </element>
+  <element>
+    <style>text</style>
+    <position>680 30</position>
+    <prefix>Grid points in N direction : </prefix>
+    <type>text</type>
+    <variable>handles.model.delft3dwave.domain.domains(awg).nmax</variable>
+  </element>
+</root>

@@ -1,0 +1,43 @@
+<html>
+   <header>
+      
+      <title>set_taxis</title>
+      <meta name="generator" content="MATLAB 7.7">
+      <meta name="date" content="2011Dec06">
+      <meta name="m-file" content="emptyRGH">
+      <link type="text/css" rel="stylesheet" href="./toolbox.css">
+      
+   </header>
+   <body>
+      
+      <hr>
+      <div>
+         <h2>Function emptyRGH</h2><pre>  Make default RGH (Raaigeldigheid administratie) block.
+  
+  </pre><h2>CALL:</h2><pre>   RGH = emptyRGH(blok)
+  
+  </pre><h2>INPUT:</h2><pre>   blok: (Optional) structure with DIA block, 
+         if specified create RGH blok based on known RGH blocks. 
+  
+  </pre><h2>OUTPUT:</h2><pre>   </pre><h2>RGH:</h2><pre>    Structure with fields:
+      +----lBegdat: begin datum
+      +----lEnddat: einddatum (0: oneindig)
+      +----Raaitype (sRaityp):
+      |    H: hulpstrandhoofdraai
+      |    S: strandhoofdraai
+      |    N: normale raai
+      +----Raaiklasse (sRaikls):
+      |    L: landelijke raai
+      |    V: vaklodingsraai
+      |    P: ? 
+  
+  </pre><h2>EXAMPLE:</h2><pre></pre><pre class="codeinput">   RGH = emptyRGH</pre><pre>RGH = 
+    lBegdat: 10000101
+    lEnddat: 0
+    sRaityp: 'N'
+    sRaikls: 'L'
+</pre><h2>See also:</h2><pre></pre><a href="emptyblok.html">emptyblok</a><br></div>
+      <hr>
+      
+   </body>
+</html>

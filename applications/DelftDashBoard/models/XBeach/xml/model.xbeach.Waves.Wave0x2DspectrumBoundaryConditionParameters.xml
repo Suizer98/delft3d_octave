@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>pushselectfile</style>
+    <text>bcfile</text>
+    <position>70.000,107.500, 80.000, 20.000</position>
+    <tooltipstring>Name of spectrum file [-]</tooltipstring>
+    <variable>handles.model.xbeach.domain.bcfile</variable>
+    <type>character</type>
+    <extension>*.*</extension>
+    <selectiontext>Select file</selectiontext>
+  </element>
+  <element>
+    <tooltipstring>Duration of wave spectrum at offshore boundary, in morphological time [s]</tooltipstring>
+    <style>edit</style>
+    <text>rt</text>
+    <position>70.000,80.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.rt</variable>
+    <type>real</type>
+  </element>
+</root>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <text>Output</text>
+    <position>40 10 900 160</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>150 130 80 20</position>
+    <tooltipstring>Edit plot interval</tooltipstring>
+    <text>Plot interval</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.model.shorelines.domain.plotinterval</variable>
+    <callback>ddb_shorelines_output</callback>
+  </element>  
+  <element>
+    <style>edit</style>
+    <position>150 105 80 20</position>
+    <tooltipstring>Edit storage interval</tooltipstring>
+    <text>Storage interval</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.model.shorelines.domain.storageinterval</variable>
+    <callback>ddb_shorelines_output</callback>
+  </element>  
+</root>

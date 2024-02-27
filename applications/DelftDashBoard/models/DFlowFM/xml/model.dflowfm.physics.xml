@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <text>Physics</text>
+    <position>40 10 900 160</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>190 125 50 20</position>
+    <variable>handles.model.dflowfm.domain.uniffrictcoef</variable>
+    <type>real</type>
+    <tooltipstring>Edit uniform friction coefficient</tooltipstring>
+    <text>Uniform Friction Coefficient</text>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Friction Type</text>
+    <position>190 100 120 20</position>
+    <tooltipstring>Select friction type</tooltipstring>
+    <variable>handles.model.dflowfm.domain.uniffricttype</variable>
+    <type>integer</type>
+    <listtext>Chezy</listtext>
+    <listtext>Manning</listtext>
+    <listtext>White-Colebrook</listtext>
+    <listtext>z0</listtext>
+    <listvalue>0</listvalue>
+    <listvalue>1</listvalue>
+    <listvalue>2</listvalue>
+    <listvalue>3</listvalue>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>190 75 50 20</position>
+    <variable>handles.model.dflowfm.domain.vicouv</variable>
+    <type>real</type>
+    <tooltipstring>Edit uniform horizontal eddy viscosity</tooltipstring>
+    <text>Horizontal Eddy Viscosity</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>190 50 50 20</position>
+    <variable>handles.model.dflowfm.domain.smagorinsky</variable>
+    <type>real</type>
+    <tooltipstring>Edit Smagorinsky horizontal turbulence : vicu = vicu + ( (Smagorinsky*dx)**2)*S, e.g. 0.1</tooltipstring>
+    <text>Smagorinsky</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>190 25 50 20</position>
+    <variable>handles.model.dflowfm.domain.elder</variable>
+    <type>real</type>
+    <tooltipstring>Edit Elder contribution : vicu = vicu + Elder*kappa*ustar*H/6),   e.g. 1.0</tooltipstring>
+    <text>Elder</text>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Slip Condition</text>
+    <position>460 125 120 20</position>
+    <tooltipstring>Select slip condition</tooltipstring>
+    <variable>handles.model.dflowfm.domain.irov</variable>
+    <type>integer</type>
+    <listtext>Free slip</listtext>
+    <listtext>Partial slip, using wall_ks</listtext>
+    <listvalue>0</listvalue>
+    <listvalue>1</listvalue>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>460 100 50 20</position>
+    <variable>handles.model.dflowfm.domain.wall_ks</variable>
+    <type>real</type>
+    <tooltipstring>Edit Nikuradse roughness for side walls, wall_z0=wall_ks/30</tooltipstring>
+    <text>Wall Roughness</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain.irov</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>460 75 50 20</position>
+    <variable>handles.model.dflowfm.domain.vicoww</variable>
+    <type>real</type>
+    <tooltipstring>Edit uniform vertical eddy viscosity</tooltipstring>
+    <text>Vertical Eddy Viscosity</text>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>600 125 50 20</position>
+    <variable>handles.model.dflowfm.domain.tidalforcing</variable>
+    <tooltipstring>Toggle to include tidal forcing (pull from moon and sun)</tooltipstring>
+    <text>Tidal Forcing</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.screenParameters.coordinateSystem.type</variable>
+        <type>string</type>
+        <value>cartesian</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>600 100 50 20</position>
+    <variable>handles.model.dflowfm.domain.salinity</variable>
+    <tooltipstring>Toggle to include salinity</tooltipstring>
+    <text>Salinity</text>
+  </element>
+</root>

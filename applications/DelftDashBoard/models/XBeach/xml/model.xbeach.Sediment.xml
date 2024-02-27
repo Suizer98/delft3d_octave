@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+  <longname>Sediment input</longname>
+  <element>
+    <style>tabpanel</style>
+    <position>10.000,  10.000,1200.000, 140.000</position>
+    <tab>
+      <tabstring>Sediment transport p...</tabstring>
+      <tooltipstring>Sediment transport parameters</tooltipstring>
+      <element>model.xbeach.Sediment.SedimentTransportParameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Sediment transport n...</tabstring>
+      <tooltipstring>Sediment transport numerics parameters</tooltipstring>
+      <element>model.xbeach.Sediment.SedimentTransportNumericsParameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Sediment advanced op...</tabstring>
+      <tooltipstring>Sediment advanced options</tooltipstring>
+      <element>model.xbeach.Sediment.Advanced_1.xml</element>
+    </tab>
+  </element>
+</root>

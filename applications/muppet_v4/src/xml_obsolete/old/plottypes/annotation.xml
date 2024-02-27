@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<root>
+  <plottype>
+    <name>annotation</name>  
+    <option>
+      <name>type</name>
+    </option>
+  </plottype>
+</root>

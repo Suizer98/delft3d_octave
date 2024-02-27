@@ -1,0 +1,180 @@
+# Muppet v4.01 - File created by plieger - 2015-03-04 16:35:56
+
+Dataset "nullijn"
+   FileType      "tekal"
+   File          "p:\1230069-haringvliet\modellen\SIMONA\ldb\naplijn.tek"
+   Parameter     "nullijn"
+   Block         "nullijn"
+EndDataset
+
+Dataset "2015-12-15-01p"
+   File          "p:\1230069-haringvliet\modellen\SIMONA\ldb\2015-12-15-01p.ldb"
+   FileType      "tekalpolyline"
+EndDataset
+
+
+Dataset "Water level Computed"
+   FileType      "tekal"
+   File          "**station**_**runid**_**Tper**.tek"
+   Parameter     "Water level Computed"
+   Block         "WaterLevel"
+EndDataset
+
+Dataset "Water level Measured"
+   FileType      "tekal"
+   File          "**station**_**runid**_**Tper**.tek"
+   Parameter     "Water level Measured"
+   Block         "WaterLevel"
+EndDataset
+
+Dataset "Water level Difference"
+   FileType      "tekal"
+   File          "**station**_**runid**_**Tper**.tek"
+   Parameter     "Difference (Computed - Measured)"
+   Block         "WaterLevel"
+EndDataset
+
+Dataset "position"
+   File          "p:\1230069-haringvliet\modellen\SIMONA\ldb\**station**.ann"
+   FileType      "annotation"
+EndDataset
+
+Figure "4x1_portrait_wl1"
+
+   PaperSize  18  14
+
+   Subplot "Subplot 1"
+
+      Position             2          5.7           15          3.5
+      PlotType             "timeseries"
+      TMin                 **Tstart**
+      TMax                 **Tstop**
+      TTick                0  0  1  0  0  0
+      DateFormat           "dd/mm/yyyy"
+      YAxis                -3.0  9.0
+      YTick                1.0
+      YDecimals            1
+      XGrid                no
+      YGrid                yes
+      Title                "Waterstand : **station_fullname**"
+      YLabel               "waterstand (m)"
+      Legend               yes
+      LegendPosition       "Custom"
+      LegendCustomPosition 1         12.5            1            1
+      LegendBox            no
+
+      Dataset "nullijn"
+         PlotRoutine          "Line"
+         LineColor            "Black"
+         LineWidth            1
+         Marker               "none"
+      EndDataset
+
+      Dataset "Water level Computed"
+         PlotRoutine          "Line"
+         LineColor            "Black"
+         Marker               "none"
+         LegendText           "Simulatie, runid = **runid_name**"
+      EndDataset
+
+      Dataset "Water level Measured"
+         PlotRoutine          "Line"
+         LineColor            "Red"
+         Marker               "none"
+         LegendText           "Meting"
+      EndDataset
+
+   EndSubplot
+
+   Subplot "Subplot 2"
+
+      Position             2            1           15          3.5
+      PlotType             "timeseries"
+      TMin                 **Tstart**
+      TMax                 **Tstop**
+      TTick                0  0  1  0  0  0
+      DateFormat           "dd/mm/yyyy"
+      YAxis                -0.7         0.7
+      YTick                0.1
+      YDecimals            1
+      XGrid                no
+      YGrid                yes
+      Title                "Verschil : **station_fullname** (berekening minus meting)"
+      YLabel               "waterstand (m)"
+
+      Dataset "nullijn"
+         PlotRoutine          "Line"
+         LineColor            "Black"
+         LineWidth            1
+         Marker               "none"
+         LegendText           "nullijn"
+      EndDataset
+
+      Dataset "Water level Difference"
+         PlotRoutine          "Line"
+         LineColor            "red"
+         Marker               "none"
+         LegendText           "Water level - 2"
+      EndDataset
+
+   EndSubplot
+
+   Subplot "Subplot 3"
+
+      Position             12          9.9            5            4
+      PlotType             "map"
+      XAxis                3584.547939      293509.4779 
+      YAxis                320522.0355      552461.9795 
+      XTick                50000000
+      YTick                5000000
+      XDecimals            -999
+      YDecimals            -999
+      XGrid                no
+      YGrid                no
+      ColorMap             "jet"
+      ColorBar             no
+      Contours             0         0.1           1
+
+      Dataset "2015-12-15-01p"
+         PlotRoutine          "Polyline"
+         LineColor            "black"
+         Marker               "none"
+         ClosePolygons        no
+         FillPolygons         no
+         LegendText           "2015-12-15-01p"
+      EndDataset
+
+      Dataset "position"
+         PlotRoutine          "Annotation"
+         AddText              yes
+         AddTextShade         no
+         TextPosition         "east"
+         FontSize             9
+         FontColor            "Red"
+         Marker               "o"
+         MarkerSize           15
+         MarkerEdgeColor      "Red"
+         MarkerFaceColor      "Red"
+      EndDataset
+
+   EndSubplot
+
+   Annotations
+
+      Annotation "Text Box 1"
+         PlotRoutine          "Text Box"
+         Text                 "**biasrmse**"
+         BackgroundColor      "white"
+         Box                  no
+         LineColor            "black"
+         Position             2         0.1         6.5        0.45
+      EndAnnotation
+
+   EndAnnotations
+
+   OutputFile "**station_nr**_**station**_**runid**_**Tstart2**-**Tstop2**"
+   Format     "png"
+   Resolution 300
+   Renderer   "zbuffer"
+
+EndFigure

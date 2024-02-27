@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 140</position>
+    <text>Vector Legend</text>
+  </element>
+  <element>
+    <variable>unitvector</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>90 100 50 20</position>
+    <text>Unit Vector</text>
+    <tooltipstring>Edit unit vector</tooltipstring>
+  </element>
+  <element>
+    <variable>vectorcolor</variable>
+    <style>selectcolor</style>
+    <position>90 70 100 20</position>
+    <text>Color</text>
+    <tooltipstring>Select vector color vector</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>plotroutine</variable>
+        <value>plotcoloredvectors</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>verticalvectorscaling</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>90 40 50 20</position>
+    <text>Vertical Scaling</text>
+    <tooltipstring>Edit vertical vector scaling factor</tooltipstring>
+  </element>
+  <element>
+    <variable>fieldthinningtype</variable>
+    <style>popupmenu</style>
+    <position>270 100 70 20</position>
+    <listtext>none</listtext>
+    <listtext>uniform</listtext>
+    <listtext>distance</listtext>
+    <text>Field Thinning</text>
+    <tooltipstring>Select thinning method</tooltipstring>
+  </element>
+  <element>
+    <variable>fieldthinningfactor1</variable>
+    <type>integer</type>
+    <style>edit</style>
+    <position>270 70 70 20</position>
+    <text>M Dir</text>
+    <tooltipstring>Edit thinning factor in M direction</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>fieldthinningtype</variable>
+        <value>uniform</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>fieldthinningfactor2</variable>
+    <type>integer</type>
+    <style>edit</style>
+    <position>270 40 70 20</position>
+    <text>N Dir</text>
+    <tooltipstring>Edit thinning factor in N direction</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>fieldthinningtype</variable>
+        <value>uniform</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>fieldthinningdistance</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>270 10 70 20</position>
+    <text>Distance</text>
+    <tooltipstring>Edit thinning distance</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>fieldthinningtype</variable>
+        <value>distance</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 50</position>
+    <text>Text Properties</text>
+  </element>
+  <element>
+    <variable>addtext</variable>
+    <type>boolean</type>
+    <style>checkbox</style>
+    <position>10 10 50 20</position>
+    <text>Add Text</text>
+  </element>
+  <element>
+    <variable>addtextshade</variable>
+    <type>boolean</type>
+    <style>checkbox</style>
+    <position>80 10 50 20</position>
+    <text>Shade</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>addtext</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>textposition</variable>
+    <type>string</type>
+    <style>popupmenu</style>
+    <position>190 10 90 20</position>
+    <listtext>North West</listtext>
+    <listtext>North</listtext>
+    <listtext>North East</listtext>
+    <listtext>West</listtext>
+    <listtext>Middle</listtext>
+    <listtext>East</listtext>
+    <listtext>South West</listtext>
+    <listtext>South</listtext>
+    <listtext>South East</listtext>
+    <listvalue>northwest</listvalue>
+    <listvalue>north</listvalue>
+    <listvalue>northeast</listvalue>
+    <listvalue>west</listvalue>
+    <listvalue>middle</listvalue>
+    <listvalue>east</listvalue>
+    <listvalue>southwest</listvalue>
+    <listvalue>south</listvalue>
+    <listvalue>southeast</listvalue>
+    <text>Position</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>addtext</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>font</variable>
+    <style>selectfont</style>
+    <position>290 10 50 20</position>
+    <text>Font</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>addtext</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

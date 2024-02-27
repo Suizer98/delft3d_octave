@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>popupmenu</style>
+    <text>mpiboundary</text>
+    <position>70.000,107.500, 80.000, 20.000</position>
+    <tooltipstring>Fix mpi boundaries along y-lines ('y'), x-lines ('x'), use manual defined domains ('man') or find shortest boundary ('auto') [-]</tooltipstring>
+    <variable>handles.model.xbeach.domain.mpiboundary</variable>
+    <type>string</type>
+    <listtext>auto</listtext>
+    <listtext>x</listtext>
+    <listtext>y</listtext>
+    <listtext>man</listtext>
+  </element>
+  <element>
+    <tooltipstring>Number of domains in m direction (cross-shore) when manually specifying mpi domains [-]</tooltipstring>
+    <style>edit</style>
+    <text>mmpi</text>
+    <position>70.000,80.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.mmpi</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Number of domains in n direction (alongshore) when manually specifying mpi domains [-]</tooltipstring>
+    <style>edit</style>
+    <text>nmpi</text>
+    <position>70.000,52.500,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.nmpi</variable>
+    <type>integer</type>
+  </element>
+</root>

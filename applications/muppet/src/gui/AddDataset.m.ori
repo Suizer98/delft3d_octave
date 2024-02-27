@@ -1,0 +1,220 @@
+function [handles,NewDataset]=AddDataset(handles)
+
+cd(handles.FilePath);
+filterindex=handles.FilterIndex;
+
+filterspec0=       {'trim-*.dat;trih-*.dat;com-*.dat;wavm-*.dat;hwgxy*.dat;*.dat', 'Delft3D Output File'; ...
+        '*.ldb;*.pol',                       'TEKAL Landboundary File (*.ldb,*.pol)'; ...
+        '*.map;*.tek',                       'TEKAL Vector File (*.map)'; ...
+        '*.map;*.tek',                       'TEKAL Map File (*.map)'; ...
+        '*.tek',                             'TEKAL Time Series File (*.tek)'; ...
+        '*.tek',                             'TEKAL XY File (*.tek)'; ...
+        '*.tek',                             'TEKAL Time Stack File (*.tek)'; ...
+        '*.ann',                             'Annotation File (*.ann)'; ...
+        '*.kub',                             'KUBINT File (*.kub)'; ...
+        '*.int',                             'LINT File (*.int)'; ...
+        '*.xyz',                             'Samples file (*.xyz)'; ...
+        '*.ros',                             'Wind Rose (*.ros)'; ...
+        '*.map;*.his;*.hda;*.ada',           'Delwaq file (*.map,*.his,*.hda,*.ada)'; ...
+        '*.bar',                             'Bar File (*.bar)'; ...
+        '*.tab;*.tba',                       'Triana Table A (*.tab,*.tba)'; ...
+        '*.tab;*.tbb',                       'Triana Table B (*.tab,*.tbb)'; ...
+        '*.dat',                             'X-Beach (*.dat)'; ...
+        '*.mat',                             'UCIT xyz file (*.mat)'; ...
+        'trih-*.dat;*.dat',                  'Delft3D Monitoring Points'; ...
+        '*.daf',                             'Unibest/Durosta file (*.daf)'; ...
+        '*.prn',                             'UnibestCL file (*.prn)'; ...
+        '*.bct;*.bcc',                       'Delft3D Boundary Conditions (*.bct,*.bcc)'; ...
+        '*.grd',                             'Delft3D Grid (*.grd)'; ...
+        '*.dep',                             'Delft3D Depth (*.dep)'; ...
+        '*.*',                               'HIRLAM File'; ...
+        '*.amu;*.amv;*.amp',                 'D3D Meteo File'; ...
+        '*.*',                               'Simona SDS File (sds*)'; ...
+        '*.jpg;*.png;*.bmp;*.tif',           'Image File (*.jpg,*.png,*.bmp,*.tif,*.gif)'};
+    
+if filterindex==1
+    for i=1:size(filterspec0,1)
+        filterspec{i,1}=filterspec0{i,1};
+        filterspec{i,2}=filterspec0{i,2};
+    end
+    [filename, pathname, filterindex] = uigetfile(filterspec);
+else
+    filterspec{1,1}=filterspec0{filterindex,1};
+    filterspec{1,2}=filterspec0{filterindex,2};
+    for i=1:size(filterspec0,1)
+        filterspec{i+1,1}=filterspec0{i,1};
+        filterspec{i+1,2}=filterspec0{i,2};
+    end
+    [filename, pathname, filterindex] = uigetfile(filterspec);
+    if filterindex==1
+        filterindex=handles.FilterIndex;
+    else
+        filterindex=filterindex-1;
+    end
+end
+
+if pathname~=0
+   handles.FilePath=pathname;
+end
+
+if filterindex>0
+    handles.FilterIndex=filterindex;
+end
+
+cd(handles.CurrentPath);
+
+NewDataset=0;
+
+nr0=handles.NrAvailableDatasets;
+
+switch filterindex,
+    case 1
+        % Delft3D output
+%        fil=vs_use([pathname filename],'quiet');
+%        tp=fil.SubType;
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetD3D('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+        
+    case 2
+        % Polyline
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetPolyline('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+        
+    case 3
+        % TEKAL Vector
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetTekalVector('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+        
+    case 4
+        % TEKAL Map
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetTekalMap('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+
+    case 5
+        % TEKAL Time Series
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetTekalTime('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+
+    case 6
+        % TEKAL XY Series
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetTekalXY('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+
+    case 7
+        % TEKAL Time Stack
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetTekalTimeStack('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+
+    case 8
+        % Annotation file
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetAnnotation('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+
+    case 9
+        % Kubint File
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetKubint('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+
+    case 10
+        % LintFile
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetLint('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+        
+    case 11
+        % Samples file
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetSamples('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+
+    case 12
+        % Wind rose
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetWindrose('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+
+    case 13
+        % Delft3D
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetD3D('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+
+    case 14
+        % Bar file
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetBar('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+        
+    case 15
+        % Triana A file
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetTrianaA('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+        
+    case 16
+        % Triana B file
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetTrianaB('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+
+    case 17
+        % X Beach file
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetXBeach('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+    
+    case 18
+        % UCIT xyz file
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetUCITxyz('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+    
+    case 19
+        % Delft3D Monitoring Points
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetD3DMonitoring('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+    
+    case 20
+        % Unibest/Durosta
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetUnibest('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+    
+    case 21
+        % Unibest-CL
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetUnibestCL('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+    
+    case 22
+        % D3D Boundary Conditions
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetD3DBoundaryConditions('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+    
+    case 23
+        % D3D Grid
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetD3DGrid('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+
+    case 24
+        % D3D Depth
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetD3DDepth('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+
+    case 25
+        % HIRLAM File
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetHIRLAM('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+                
+    case 26
+        % HIRLAM File
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetD3DMeteo('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+
+    case 27
+        % Simona SDS File
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetSimonaSDS('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;                
+        
+    case 28
+        % Image
+        [handles.DataProperties,handles.NrAvailableDatasets]=AddDatasetImage('DataProperties',handles.DataProperties,'PathName',pathname,'FileName',filename,'Nr',handles.NrAvailableDatasets);
+        NewDataset=1;
+        
+end
+
+if handles.NrAvailableDatasets>nr0
+%    if strcmpi(handles.DataProperties(handles.NrAvailableDatasets).Type,'timeseries')
+        handles.DataProperties(handles.NrAvailableDatasets).TimeZone=0;
+%    end
+end
+

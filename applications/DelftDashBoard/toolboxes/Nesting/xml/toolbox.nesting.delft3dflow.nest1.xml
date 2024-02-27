@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>10 10 760 130</position>
+    <text>Detailed Model</text>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Model Type</text>
+    <position>80 100 100 20</position>
+    <tooltipstring>Select type of detailed model</tooltipstring>
+    <variable>handles.toolbox.nesting.delft3dflow.detailmodeltype</variable>
+    <type>string</type>
+    <listtext>Delft3D-FLOW</listtext>
+    <listtext>DFlow-FM</listtext>
+    <listtext>XBeach</listtext>
+    <listtext>SFINCS</listtext>
+    <listvalue>delft3dflow</listvalue>
+    <listvalue>dflowfm</listvalue>
+    <listvalue>xbeach</listvalue>
+    <listvalue>sfincs</listvalue>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>190 100 80 20</position>
+    <text>Select CS</text>
+    <callback>ddb_NestingToolbox_Delft3DFLOW_nest1</callback>
+    <option1>selectcs</option1>
+    <tooltipstring>Select horizontal coordinate system of detailed model (when not selected, it is assumed that the model is in the same coordinate system as the overall model)</tooltipstring>
+  </element>
+  <element>
+    <style>text</style>
+    <position>275 100</position>
+    <text>Projected :</text>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.nesting.delft3dflow.detailmodelcstype</variable>
+        <value>projected</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>275 100</position>
+    <text>Geographic :</text>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.nesting.delft3dflow.detailmodelcstype</variable>
+        <value>geographic</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>340 100</position>
+    <variable>handles.toolbox.nesting.delft3dflow.detailmodelcsname</variable>
+    <type>string</type>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.nesting.delft3dflow.detailmodelcsname</variable>
+        <value>unspecified</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 70 120 20</position>
+    <text>Select Grid File</text>
+    <variable>handles.toolbox.nesting.delft3dflow.grdFile</variable>
+    <onchange>ddb_NestingToolbox_Delft3DFLOW_nest1</onchange>
+    <option1>selectgridfile</option1>
+    <showfilename>yes</showfilename>
+    <extension>*.grd</extension>
+    <selectiontext>Select grid file of detailed model</selectiontext>
+    <tooltipstring>Select grid file (*.grd) of detailed model</tooltipstring>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.nesting.delft3dflow.detailmodeltype</variable>
+        <value>delft3dflow</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 45 120 20</position>
+    <text>Select Enc File</text>
+    <variable>handles.toolbox.nesting.delft3dflow.encFile</variable>
+    <onchange>ddb_NestingToolbox_Delft3DFLOW_nest1</onchange>
+    <option1>selectencfile</option1>
+    <showfilename>yes</showfilename>
+    <extension>*.enc</extension>
+    <selectiontext>Select enclosure file of detailed model</selectiontext>
+    <tooltipstring>Select enclosure (*.enc) file of detailed model</tooltipstring>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.nesting.delft3dflow.detailmodeltype</variable>
+        <value>delft3dflow</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 20 120 20</position>
+    <text>Select Bnd File</text>
+    <variable>handles.toolbox.nesting.delft3dflow.bndFile</variable>
+    <onchange>ddb_NestingToolbox_Delft3DFLOW_nest1</onchange>
+    <option1>selectbndfile</option1>
+    <showfilename>yes</showfilename>
+    <extension>*.bnd</extension>
+    <selectiontext>Select boundary file (*.bnd) of detailed model</selectiontext>
+    <tooltipstring>Select boundary file (*.bnd) of detailed model</tooltipstring>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.nesting.delft3dflow.detailmodeltype</variable>
+        <value>delft3dflow</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 70 120 20</position>
+    <text>Select Ext File</text>
+    <variable>handles.toolbox.nesting.delft3dflow.extfile</variable>
+    <onchange>ddb_NestingToolbox_Delft3DFLOW_nest1</onchange>
+    <option1>selectextfile</option1>
+    <showfilename>yes</showfilename>
+    <extension>*.ext</extension>
+    <selectiontext>Select external forcing file of detailed model</selectiontext>
+    <tooltipstring>Select external forcing file (*.ext) of detailed model</tooltipstring>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.nesting.delft3dflow.detailmodeltype</variable>
+        <value>dflowfm</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 70 120 20</position>
+    <text>Select Grid File</text>
+    <variable>handles.toolbox.nesting.delft3dflow.grdFile</variable>
+    <onchange>ddb_NestingToolbox_Delft3DFLOW_nest1</onchange>
+    <option1>selectgridfile</option1>
+    <showfilename>yes</showfilename>
+    <extension>*.grd</extension>
+    <selectiontext>Select grid file of detailed model</selectiontext>
+    <tooltipstring>Select grid file (*.grd) of detailed model</tooltipstring>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.nesting.delft3dflow.detailmodeltype</variable>
+        <value>xbeach</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 70 120 20</position>
+    <text>Select Boundary File</text>
+    <variable>handles.toolbox.nesting.delft3dflow.sfincs_flow_bnd_file</variable>
+    <onchange>ddb_NestingToolbox_Delft3DFLOW_nest1</onchange>
+    <option1>selectbndfile</option1>
+    <showfilename>yes</showfilename>
+    <extension>*.bnd</extension>
+    <selectiontext>Select boundary file of detailed model</selectiontext>
+    <tooltipstring>Select boundary file (*.bnd) of detailed model</tooltipstring>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.nesting.delft3dflow.detailmodeltype</variable>
+        <value>sfincs</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>840 40 150 20</position>
+    <text>Admin File</text>
+    <variable>handles.toolbox.nesting.delft3dflow.admFile</variable>
+    <type>string</type>
+    <tooltipstring>Edit nesting administration file (*.adm)</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>840 15 150 20</position>
+    <text>Make Observation Points</text>
+    <callback>ddb_NestingToolbox_Delft3DFLOW_nest1</callback>
+    <option1>nesthd1</option1>
+    <tooltipstring>Make observation points for overall model</tooltipstring>
+  </element>
+</root>

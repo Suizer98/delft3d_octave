@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <position>110 110 50 20</position>
+    <text>Level of test output</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.testoutputlevel</variable>
+    <type>integer</type>
+    <tooltipstring>Enter level of test output</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>110 85 50 20</position>
+    <text>Debug level</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.tracecalls</variable>
+    <type>integer</type>
+    <tooltipstring>Enter debug level</tooltipstring>
+  </element>
+</root>

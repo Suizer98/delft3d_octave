@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<variables>
+   <setpoint_vel_discharge>
+      <PAcode>BOT18</PAcode>
+      <unit>m/s</unit>
+      <method>linear</method>
+      <remarks>m/s linear NOT IN BRU LIST maximum flow reclaim</remarks>
+   </setpoint_vel_discharge>
+   <discharge_pump_1_rpm>
+      <PAcode>BOT317</PAcode>
+      <unit>rmp</unit>
+      <method>linear</method>
+      <remarks>rmp linear</remarks>
+   </discharge_pump_1_rpm>
+   <discharge_pump_2_rpm>
+      <PAcode>BOT318</PAcode>
+      <unit>rmp</unit>
+      <method>linear</method>
+      <remarks>rmp linear</remarks>
+   </discharge_pump_2_rpm>
+   <jet_valve_sequence_ps>
+      <PAcode>COT212</PAcode>
+      <unit>0 0 0 0 0 1 2 3 4 5 6 7 8 0 0 0</unit>
+      <method>zoh</method>
+      <remarks>(hopper jet valve open) zoh HOPPER DILUTING VALVE PS</remarks>
+   </jet_valve_sequence_ps>
+   <jet_valve_sequence_sb>
+      <PAcode>COT213 ; COT214</PAcode>
+      <unit>6 7 8 0 0 0 0 0 0 0 0 0 0 0 0 0 ; 0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5</unit>
+      <method>zoh</method>
+      <remarks>(hopper jet valve open) zoh HOPPER DILUTING VALVE SB</remarks>
+   </jet_valve_sequence_sb>
+   <self_emptying_valve_sequence_ps>
+      <PAcode>COT215;COT216;COT217;COT218;COT219;COT220;COT221;COT222</PAcode>
+      <unit>1;2;3;4;5;6;7;8</unit>
+      <method>zoh</method>
+      <remarks>self emptying valves ps open (neg = inverse) ** ps and sb on same signal</remarks>
+   </self_emptying_valve_sequence_ps>
+   <self_emptying_valve_sequence_sb>
+      <PAcode>COT215;COT216;COT217;COT218;COT219;COT220;COT221;COT222</PAcode>
+      <unit>1;2;3;4;5;6;7;8</unit>
+      <method>zoh</method>
+      <remarks>self emptying valves sb open (neg = inverse)</remarks>
+   </self_emptying_valve_sequence_sb>
+</variables>

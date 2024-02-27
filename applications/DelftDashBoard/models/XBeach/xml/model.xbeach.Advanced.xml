@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <longname>Advanced input</longname>
+    <style>tabpanel</style>
+    <position>10.000,  10.000,1200.000, 140.000</position>
+    <tab>
+      <tabstring>Groundwater parameters</tabstring>
+      <tooltipstring>Groundwater parameters</tooltipstring>
+      <element>model.xbeach.Advanced.GroundwaterParameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Q3D sediment transpo...</tabstring>
+      <tooltipstring>Q3D sediment transport parameters</tooltipstring>
+      <element>model.xbeach.Advanced.Q3DSedimentTransportParameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Non-hydrostatic corr...</tabstring>
+      <tooltipstring>Non-hydrostatic correction parameters</tooltipstring>
+      <element>model.xbeach.Advanced.Non0x2DhydrostaticCorrectionParameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Ship parameters</tabstring>
+      <tooltipstring>Ship parameters</tooltipstring>
+      <element>model.xbeach.Advanced.ShipParameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Vegetation parameters</tabstring>
+      <tooltipstring>Vegetation parameters</tooltipstring>
+      <element>model.xbeach.Advanced.VegetationParameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>MPI parameters</tabstring>
+      <tooltipstring>MPI parameters</tooltipstring>
+      <element>model.xbeach.Advanced.MPIParameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Variables, not read ...</tabstring>
+      <tooltipstring>Variables, not read in params.txt</tooltipstring>
+      <element>model.xbeach.Advanced.Variables0x2CNotReadInParams0x2Etxt.xml</element>
+    </tab>
+  </element>
+</root>

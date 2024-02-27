@@ -1,0 +1,2599 @@
+<?xml version="1.0"?>
+<root>
+  <title>Muppet</title>
+  <width>920</width>
+  <height>660</height>
+  <tag>muppetgui</tag>
+  <menuitem>
+    <label>File</label>
+    <menuitem>
+      <label>New Session</label>
+      <callback>muppet_gui</callback>
+      <option>newsession</option>
+    </menuitem>
+    <menuitem>
+      <label>Open Session ...</label>
+      <callback>muppet_gui</callback>
+      <option>opensession</option>
+    </menuitem>
+    <menuitem>
+      <label>Save Session</label>
+      <callback>muppet_gui</callback>
+      <option>savesession</option>
+    </menuitem>
+    <menuitem>
+      <label>Save Session As ...</label>
+      <callback>muppet_gui</callback>
+      <option>savesessionas</option>
+    </menuitem>
+    <menuitem>
+      <label>Add dataset from URL ...</label>
+      <separator>on</separator>
+      <callback>muppet_gui</callback>
+      <option>adddatasetfromurl</option>
+    </menuitem>
+    <menuitem>
+      <label>Exit</label>
+      <separator>on</separator>
+      <callback>muppet_gui</callback>
+      <option>exit</option>
+    </menuitem>
+  </menuitem>
+  <menuitem>
+    <label>Layout</label>
+    <menuitem>
+      <label>Import Layout</label>
+      <callback>muppet_gui</callback>
+      <option>importlayout</option>
+    </menuitem>
+    <menuitem>
+      <label>Save Layout</label>
+      <callback>muppet_gui</callback>
+      <option>savelayout</option>
+    </menuitem>
+    <menuitem>
+      <label>Generate Layout</label>
+      <callback>muppet_gui</callback>
+      <option>generatelayout</option>
+    </menuitem>
+  </menuitem>
+  <menuitem>
+    <label>Colors</label>
+    <menuitem>
+      <label>Show Colors</label>
+      <callback>muppet_gui</callback>
+      <option>showcolors</option>
+    </menuitem>
+    <menuitem>
+      <label>Edit Color Maps</label>
+      <callback>muppet_gui</callback>
+      <option>editcolormaps</option>
+    </menuitem>
+  </menuitem>
+  <menuitem>
+    <label>Options</label>
+    <menuitem>
+      <label>Save Interactive Text</label>
+      <callback>muppet_gui</callback>
+      <option>saveinteractivetext</option>
+      <enable>0</enable>
+    </menuitem>
+    <menuitem>
+      <label>Save Interactive Polylines</label>
+      <callback>muppet_gui</callback>
+      <option>saveinteractivepolylines</option>
+      <enable>0</enable>
+    </menuitem>
+    <menuitem>
+      <label>Coordinate Conversion</label>
+      <callback>muppet_gui</callback>
+      <option>coordinateconversion</option>
+      <enable>0</enable>
+    </menuitem>
+  </menuitem>
+  <menuitem>
+    <label>Help</label>
+    <menuitem>
+      <label>Deltares Online</label>
+      <callback>muppet_gui</callback>
+      <option>deltaresonline</option>
+    </menuitem>
+    <menuitem>
+      <label>Muppet Help</label>
+      <callback>muppet_gui</callback>
+      <option>muppethelp</option>
+    </menuitem>
+    <menuitem>
+      <label>About Muppet</label>
+      <callback>muppet_gui</callback>
+      <option>aboutmuppet</option>
+    </menuitem>
+  </menuitem>
+  <menuitem>
+    <label>Debug</label>
+    <type>debug</type>
+    <menuitem>
+      <label>Reload XML</label>
+      <callback>muppet_gui</callback>
+      <option>reloadxml</option>
+    </menuitem>
+  </menuitem>
+  <element>
+    <tag>selectdataset</tag>
+    <style>listbox</style>
+    <position>20 495 170 145</position>
+    <variable>activedataset</variable>
+    <type>integer</type>
+    <text>Available Datasets</text>
+    <textposition>above-center</textposition>
+    <callback>muppet_gui</callback>
+    <option1>selectdataset</option1>
+    <listtext>
+      <variable>datasetnames</variable>
+    </listtext>
+  </element>
+  <element>
+    <tag>pushadddataset</tag>
+    <style>pushbutton</style>
+    <position>200 620 100 20</position>
+    <text>Add Dataset</text>
+    <callback>muppet_gui</callback>
+    <option1>adddataset</option1>
+  </element>
+  <element>
+    <tag>pushdeletedataset</tag>
+    <style>pushbutton</style>
+    <position>200 595 100 20</position>
+    <text>Delete Dataset</text>
+    <callback>muppet_gui</callback>
+    <option1>deletedataset</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>nrdatasets</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>pushadddatasettosubplot</tag>
+    <style>pushbutton</style>
+    <position>200 570 100 20</position>
+    <text>Add to Subplot</text>
+    <callback>muppet_gui</callback>
+    <option1>adddatasettosubplot</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>nrdatasets</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.nrdatasets</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>pushcombinedataset</tag>
+    <style>pushbutton</style>
+    <position>200 545 100 20</position>
+    <text>Combine Datasets</text>
+    <callback>muppet_gui</callback>
+    <option1>combinedatasets</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>nrdatasets</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>pushexportdataset</tag>
+    <style>pushbutton</style>
+    <position>200 520 100 20</position>
+    <text>Export Dataset</text>
+    <enable>0</enable>
+    <callback>muppet_gui</callback>
+    <option1>exportdataset</option1>
+  </element>
+  <element>
+    <tag>pushprocessdataset</tag>
+    <style>pushbutton</style>
+    <position>200 495 100 20</position>
+    <text>Process Dataset</text>
+    <enable>0</enable>
+    <callback>muppet_gui</callback>
+    <option1>processdataset</option1>
+  </element>
+  <element>
+    <tag>selectsubplot</tag>
+    <style>listbox</style>
+    <enable>1</enable>
+    <position>320 495 170 145</position>
+    <variable>activesubplot</variable>
+    <type>integer</type>
+    <text>Subplots</text>
+    <textposition>above-center</textposition>
+    <callback>muppet_gui</callback>
+    <option1>selectsubplot</option1>
+    <listtext>
+      <variable>subplotnames</variable>
+    </listtext>
+  </element>
+  <element>
+    <tag>pushaddsubplot</tag>
+    <style>pushbutton</style>
+    <position>500 620 100 20</position>
+    <text>Add Subplot</text>
+    <callback>muppet_gui</callback>
+    <option1>addsubplot</option1>
+  </element>
+  <element>
+    <tag>pushdeletesubplot</tag>
+    <style>pushbutton</style>
+    <position>500 595 100 20</position>
+    <text>Delete Subplot</text>
+    <callback>muppet_gui</callback>
+    <option1>deletesubplot</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>pushmoveupsubplot</tag>
+    <style>pushbutton</style>
+    <position>500 570 100 20</position>
+    <text>Move Up</text>
+    <callback>muppet_gui</callback>
+    <option1>moveupsubplot</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>pushmovedownsubplot</tag>
+    <style>pushbutton</style>
+    <position>500 545 100 20</position>
+    <text>Move Down</text>
+    <callback>muppet_gui</callback>
+    <option1>movedownsubplot</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>selectdatasetinsubplot</tag>
+    <style>listbox</style>
+    <enable>1</enable>
+    <position>620 495 170 145</position>
+    <variable>activedatasetinsubplot</variable>
+    <type>integer</type>
+    <text>Datasets in Subplot</text>
+    <textposition>above-center</textposition>
+    <callback>muppet_gui</callback>
+    <option1>selectdatasetinsubplot</option1>
+    <listtext>
+      <variable>datasetinsubplotnames</variable>
+    </listtext>
+  </element>
+  <element>
+    <tag>pusheditplotoptions</tag>
+    <style>pushbutton</style>
+    <position>800 620 100 20</position>
+    <text>Edit Plot Options</text>
+    <callback>muppet_gui</callback>
+    <option1>editplotoptions</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.nrdatasets</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>pushremovedatasetfromsubplot</tag>
+    <style>pushbutton</style>
+    <position>800 595 100 20</position>
+    <text>Remove Dataset</text>
+    <callback>muppet_gui</callback>
+    <option1>removedatasetinsubplot</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.nrdatasets</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>pushmoveupdatasetinsubplot</tag>
+    <style>pushbutton</style>
+    <position>800 570 100 20</position>
+    <text>Move Up</text>
+    <callback>muppet_gui</callback>
+    <option1>moveupdatasetinsubplot</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.nrdatasets</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>pushmovedowndatasetinsubplot</tag>
+    <style>pushbutton</style>
+    <position>800 545 100 20</position>
+    <text>Move Down</text>
+    <callback>muppet_gui</callback>
+    <option1>movedowndatasetinsubplot</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.nrdatasets</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>datasettextpanel</tag>
+    <style>panel</style>
+    <position>20 395 280 95</position>
+    <text>Data Properties</text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>25 460 273 15</position>
+    <variable>datasettext1</variable>
+  </element>
+  <element>
+    <style>text</style>
+    <position>25 445 273 15</position>
+    <variable>datasettext2</variable>
+  </element>
+  <element>
+    <style>text</style>
+    <position>25 430 273 15</position>
+    <variable>datasettext3</variable>
+  </element>
+  <element>
+    <style>text</style>
+    <position>25 415 273 15</position>
+    <variable>datasettext4</variable>
+  </element>
+  <element>
+    <style>text</style>
+    <position>25 400 273 15</position>
+    <variable>datasettext5</variable>
+  </element>
+  <element>
+    <tag>subplotpropertiespanel</tag>
+    <style>panel</style>
+    <position>310 395 590 95</position>
+    <text>Subplot Properties</text>
+  </element>
+  <element>
+    <tag>subplotpositiontext</tag>
+    <style>text</style>
+    <position>330 460 40 20</position>
+    <text>Position</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>subplotsizetext</tag>
+    <style>text</style>
+    <position>385 460 40 20</position>
+    <text>Size</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editsubplotposition1</tag>
+    <style>edit</style>
+    <position>330 440 40 20</position>
+    <text>X</text>
+    <textposition>left</textposition>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.position(1)</variable>
+    <type>real</type>
+    <tooltipstring>Edit x coordinate of lower-left position of subplot</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editsubplotposition2</tag>
+    <style>edit</style>
+    <position>330 415 40 20</position>
+    <text>Y</text>
+    <textposition>left</textposition>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.position(2)</variable>
+    <type>real</type>
+    <tooltipstring>Edit y coordinate of lower-left position of subplot</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editsubplotposition3</tag>
+    <style>edit</style>
+    <position>380 440 40 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.position(3)</variable>
+    <type>real</type>
+    <tooltipstring>Edit x size of subplot</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>editxylim</option1>
+    <option2>editwidth</option2>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editsubplotposition4</tag>
+    <style>edit</style>
+    <position>380 415 40 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.position(4)</variable>
+    <type>real</type>
+    <tooltipstring>Edit y size of subplot</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>editxylim</option1>
+    <option2>editheight</option2>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>radiomap</tag>
+    <style>radiobutton</style>
+    <position>440 455 40 20</position>
+    <text>Map</text>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+    <type>string</type>
+    <value>map</value>
+    <tooltipstring>2D plot (map view)</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>selectmap</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>map</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>3d</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>radio3d</tag>
+    <style>radiobutton</style>
+    <position>520 455 40 20</position>
+    <text>3D</text>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+    <type>string</type>
+    <value>3d</value>
+    <tooltipstring>3D plot</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>select3d</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>map</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>3d</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>radiotimeseries</tag>
+    <style>radiobutton</style>
+    <position>440 435 40 20</position>
+    <text>Time Series</text>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+    <type>string</type>
+    <value>timeseries</value>
+    <tooltipstring>Time Series</tooltipstring>
+    <enable>0</enable>
+  </element>
+  <element>
+    <tag>radiotimestack</tag>
+    <style>radiobutton</style>
+    <position>440 415 40 20</position>
+    <text>Time Stack</text>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+    <type>string</type>
+    <value>timestack</value>
+    <tooltipstring>Time Stack</tooltipstring>
+    <enable>0</enable>
+  </element>
+  <element>
+    <tag>radioxy</tag>
+    <style>radiobutton</style>
+    <position>520 435 40 20</position>
+    <text>XY</text>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+    <type>string</type>
+    <value>xy</value>
+    <tooltipstring>XY</tooltipstring>
+    <enable>0</enable>
+  </element>
+  <element>
+    <tag>radioother</tag>
+    <style>radiobutton</style>
+    <position>520 415 40 20</position>
+    <text>Image</text>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+    <type>string</type>
+    <value>image</value>
+    <tooltipstring>Image</tooltipstring>
+    <enable>0</enable>
+  </element>
+  <element>
+    <tag>edittitle</tag>
+    <style>edit</style>
+    <position>620 455 100 20</position>
+    <text>Title</text>
+    <textposition>left</textposition>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.title.text</variable>
+    <type>string</type>
+    <tooltipstring>Edit title text</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>selecttitlefont</tag>
+    <style>selectfont</style>
+    <position>730 455 50 20</position>
+    <text>Font</text>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.title.font</variable>
+    <tooltipstring>Select title font</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editxlabel</tag>
+    <style>edit</style>
+    <position>620 430 100 20</position>
+    <text>X Label</text>
+    <textposition>left</textposition>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.xlabel.text</variable>
+    <type>string</type>
+    <tooltipstring>Edit X label text</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>selectxlabelfont</tag>
+    <style>selectfont</style>
+    <position>730 430 50 20</position>
+    <text>Font</text>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.xlabel.font</variable>
+    <tooltipstring>Select X label font</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editylabel</tag>
+    <style>edit</style>
+    <position>620 405 100 20</position>
+    <text>Y Label</text>
+    <textposition>left</textposition>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.ylabel.text</variable>
+    <type>string</type>
+    <tooltipstring>Edit Y label text</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>selectylabelfont</tag>
+    <style>selectfont</style>
+    <position>730 405 50 20</position>
+    <text>Font</text>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.ylabel.font</variable>
+    <tooltipstring>Select Y label font</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>selectsubplotcolor</tag>
+    <style>selectcolor</style>
+    <position>800 440 90 20</position>
+    <text>Background Color</text>
+    <textposition>above-center</textposition>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.backgroundcolor</variable>
+    <tooltipstring>Select subplot background color</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>axespanel</tag>
+    <style>panel</style>
+    <position>20 220 880 175</position>
+    <text>Axis Limits</text>
+  </element>
+  <element>
+    <tag>yeartext</tag>
+    <style>text</style>
+    <position>80 360 35 15</position>
+    <text>year</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>monthtext</tag>
+    <style>text</style>
+    <position>115 360 35 15</position>
+    <text>mnth</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>daytext</tag>
+    <style>text</style>
+    <position>150 360 35 15</position>
+    <text>day</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>hourtext</tag>
+    <style>text</style>
+    <position>185 360 35 15</position>
+    <text>hr</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>minutetext</tag>
+    <style>text</style>
+    <position>220 360 35 15</position>
+    <text>min</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>secondtext</tag>
+    <style>text</style>
+    <position>255 360 35 15</position>
+    <text>sec</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>edityearmin</tag>
+    <style>edit</style>
+    <position>85 340 30 20</position>
+    <text>Time Min</text>
+    <textposition>left</textposition>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.yearmin</variable>
+    <type>integer</type>
+    <tooltipstring>Edit start year on time axis</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editmonthmin</tag>
+    <style>edit</style>
+    <position>120 340 30 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.monthmin</variable>
+    <type>integer</type>
+    <tooltipstring>Edit start month on time axis</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editdaymin</tag>
+    <style>edit</style>
+    <position>155 340 30 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.daymin</variable>
+    <type>integer</type>
+    <tooltipstring>Edit start day on time axis</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>edithourmin</tag>
+    <style>edit</style>
+    <position>190 340 30 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.hourmin</variable>
+    <type>integer</type>
+    <tooltipstring>Edit start hour on time axis</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editminutemin</tag>
+    <style>edit</style>
+    <position>225 340 30 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.minutemin</variable>
+    <type>integer</type>
+    <tooltipstring>Edit start minute on time axis</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editsecondmin</tag>
+    <style>edit</style>
+    <position>260 340 30 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.secondmin</variable>
+    <type>integer</type>
+    <tooltipstring>Edit start second on time axis</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>edityearmax</tag>
+    <style>edit</style>
+    <position>85 315 30 20</position>
+    <text>Time Max</text>
+    <textposition>left</textposition>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.yearmax</variable>
+    <type>integer</type>
+    <tooltipstring>Edit end year on time axis</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editmonthmax</tag>
+    <style>edit</style>
+    <position>120 315 30 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.monthmax</variable>
+    <type>integer</type>
+    <tooltipstring>Edit end month on time axis</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editdaymax</tag>
+    <style>edit</style>
+    <position>155 315 30 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.daymax</variable>
+    <type>integer</type>
+    <tooltipstring>Edit end day on time axis</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>edithourmax</tag>
+    <style>edit</style>
+    <position>190 315 30 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.hourmax</variable>
+    <type>integer</type>
+    <tooltipstring>Edit end hour on time axis</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editminutemax</tag>
+    <style>edit</style>
+    <position>225 315 30 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.minutemax</variable>
+    <type>integer</type>
+    <tooltipstring>Edit end minute on time axis</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editsecondmax</tag>
+    <style>edit</style>
+    <position>260 315 30 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.secondmax</variable>
+    <type>integer</type>
+    <tooltipstring>Edit end second on time axis</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>edityeartick</tag>
+    <style>edit</style>
+    <position>85 290 30 20</position>
+    <text>Time Tick</text>
+    <textposition>left</textposition>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.yeartick</variable>
+    <type>integer</type>
+    <tooltipstring>Edit year tick on time axis</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editmonthtick</tag>
+    <style>edit</style>
+    <position>120 290 30 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.monthtick</variable>
+    <type>integer</type>
+    <tooltipstring>Edit month tick on time axis</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editdaytick</tag>
+    <style>edit</style>
+    <position>155 290 30 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.daytick</variable>
+    <type>integer</type>
+    <tooltipstring>Edit day tick on time axis</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>edithourtick</tag>
+    <style>edit</style>
+    <position>190 290 30 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.hourtick</variable>
+    <type>integer</type>
+    <tooltipstring>Edit hour tick on time axis</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editminutetick</tag>
+    <style>edit</style>
+    <position>225 290 30 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.minutetick</variable>
+    <type>integer</type>
+    <tooltipstring>Edit minute tick on time axis</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editsecondtick</tag>
+    <style>edit</style>
+    <position>260 290 30 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.secondtick</variable>
+    <type>integer</type>
+    <tooltipstring>Edit second tick on time axis</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>selectdatetickformat</tag>
+    <style>popupmenu</style>
+    <position>85 265 130 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.datetickformat</variable>
+    <type>string</type>
+    <tooltipstring>Select tick format</tooltipstring>
+    <text>Format</text>
+    <listtext>
+      <variable>handles.dateformattexts</variable>
+    </listtext>
+    <listvalue>
+      <variable>handles.dateformats</variable>
+    </listvalue>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>toggleadddate</tag>
+    <style>checkbox</style>
+    <position>220 265 50 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.adddate</variable>
+    <type>integer</type>
+    <tooltipstring>Add date to ticks below times</tooltipstring>
+    <text>Add Date</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>toggletimegrid</tag>
+    <style>checkbox</style>
+    <position>85 240 50 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.timegrid</variable>
+    <type>integer</type>
+    <tooltipstring>Add time grid</tooltipstring>
+    <text>Time Grid</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editxmin</tag>
+    <style>edit</style>
+    <position>340 340 70 20</position>
+    <text>X Min</text>
+    <textposition>left</textposition>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.xmin</variable>
+    <type>real</type>
+    <tooltipstring>Edit X min</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>editxylim</option1>
+    <option2>editxmin</option2>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>map</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>3d</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>xy</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editxmax</tag>
+    <style>edit</style>
+    <position>340 315 70 20</position>
+    <text>X Max</text>
+    <textposition>left</textposition>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.xmax</variable>
+    <type>real</type>
+    <tooltipstring>Edit X max</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>editxylim</option1>
+    <option2>editxmax</option2>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>map</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>3d</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>xy</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editxtick</tag>
+    <style>edit</style>
+    <position>340 290 70 20</position>
+    <text>X Tick</text>
+    <textposition>left</textposition>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.xtick</variable>
+    <type>real</type>
+    <tooltipstring>Edit X tick</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>map</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>3d</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>xy</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>selectxdecimals</tag>
+    <style>popupmenu</style>
+    <position>340 265 70 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.xdecimals</variable>
+    <type>integer</type>
+    <tooltipstring>Select number of decimals in X ticks</tooltipstring>
+    <text>Decimals</text>
+    <listtext>auto</listtext>
+    <listtext>0</listtext>
+    <listtext>1</listtext>
+    <listtext>2</listtext>
+    <listtext>3</listtext>
+    <listtext>4</listtext>
+    <listtext>5</listtext>
+    <listtext>6</listtext>
+    <listtext>no labels</listtext>
+    <listvalue>-1</listvalue>
+    <listvalue>0</listvalue>
+    <listvalue>1</listvalue>
+    <listvalue>2</listvalue>
+    <listvalue>3</listvalue>
+    <listvalue>4</listvalue>
+    <listvalue>5</listvalue>
+    <listvalue>6</listvalue>
+    <listvalue>-999</listvalue>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>map</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>3d</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>xy</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>togglexgrid</tag>
+    <style>checkbox</style>
+    <position>340 240 50 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.xgrid</variable>
+    <type>integer</type>
+    <tooltipstring>Add X grid</tooltipstring>
+    <text>X Grid</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>map</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>3d</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>xy</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editymin</tag>
+    <style>edit</style>
+    <position>465 340 70 20</position>
+    <text>Y Min</text>
+    <textposition>left</textposition>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.ymin</variable>
+    <type>real</type>
+    <tooltipstring>Edit Y min</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>editxylim</option1>
+    <option2>editymin</option2>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>map</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>3d</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>xy</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editymax</tag>
+    <style>edit</style>
+    <position>465 315 70 20</position>
+    <text>Y Max</text>
+    <textposition>left</textposition>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.ymax</variable>
+    <type>real</type>
+    <tooltipstring>Edit Y max</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>editxylim</option1>
+    <option2>editymax</option2>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>map</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>3d</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>xy</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editytick</tag>
+    <style>edit</style>
+    <position>465 290 70 20</position>
+    <text>Y Tick</text>
+    <textposition>left</textposition>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.ytick</variable>
+    <type>real</type>
+    <tooltipstring>Edit Y tick</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>map</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>3d</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>xy</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>selectydecimals</tag>
+    <style>popupmenu</style>
+    <position>465 265 70 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.ydecimals</variable>
+    <type>integer</type>
+    <tooltipstring>Select number of decimals in Y ticks</tooltipstring>
+    <text>Decimals</text>
+    <listtext>auto</listtext>
+    <listtext>0</listtext>
+    <listtext>1</listtext>
+    <listtext>2</listtext>
+    <listtext>3</listtext>
+    <listtext>4</listtext>
+    <listtext>5</listtext>
+    <listtext>6</listtext>
+    <listtext>no labels</listtext>
+    <listvalue>-1</listvalue>
+    <listvalue>0</listvalue>
+    <listvalue>1</listvalue>
+    <listvalue>2</listvalue>
+    <listvalue>3</listvalue>
+    <listvalue>4</listvalue>
+    <listvalue>5</listvalue>
+    <listvalue>6</listvalue>
+    <listvalue>-999</listvalue>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>map</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>3d</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>xy</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>toggleygrid</tag>
+    <style>checkbox</style>
+    <position>465 240 50 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.ygrid</variable>
+    <type>integer</type>
+    <tooltipstring>Add Y grid</tooltipstring>
+    <text>Y Grid</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>map</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>3d</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>xy</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editscale</tag>
+    <style>edit</style>
+    <position>580 350 50 20</position>
+    <text>Scale</text>
+    <textposition>left</textposition>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.scale</variable>
+    <type>real</type>
+    <tooltipstring>Edit scale</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>editxylim</option1>
+    <option2>editscale</option2>
+    <format>%10.2f</format>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>map</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>580 330 70 20</position>
+    <text>Right Axis</text>
+    <textposition>left</textposition>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.rightaxis</variable>
+    <type>integer</type>
+    <tooltipstring>Toggle right axis</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>xy</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editrightaxis</tag>
+    <style>pushbutton</style>
+    <position>650 330 35 20</position>
+    <text>Edit</text>
+    <tooltipstring>Push to edit right axis</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>pushrightaxis</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>xy</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.rightaxis</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>toggledrawbox</tag>
+    <style>checkbox</style>
+    <position>580 310 70 20</position>
+    <text>Draw Box</text>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.drawbox</variable>
+    <type>integer</type>
+    <tooltipstring>Toggle draw box around subplot</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>pushselectcoordinatesystem</tag>
+    <style>selectcoordinatesystem</style>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.coordinatesystem</variable>
+    <position>580 260 100 20</position>
+    <text>Coordinate System</text>
+    <tooltipstring>Push to select coordinate system</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>selectcoordinatesystem</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>map</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>700 350 80 20</position>
+    <text>Advanced ...</text>
+    <tooltipstring>Push to edit advanced axis options</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>pushadvancedaxisoptions</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>map</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>xy</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>3d</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>push3doptions</tag>
+    <style>pushbutton</style>
+    <position>700 325 80 20</position>
+    <text>3D Options ...</text>
+    <tooltipstring>Push to edit 3D options</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>push3doptions</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>3d</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>toggleadjustaxes</tag>
+    <style>checkbox</style>
+    <position>800 350 70 20</position>
+    <text>Adjust Axes</text>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.adjustaxes</variable>
+    <type>integer</type>
+    <tooltipstring>Toggle to automatically adjust axes when adding new dataset</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>pushapplytopall</tag>
+    <style>pushbutton</style>
+    <position>800 325 80 20</position>
+    <text>Apply to All</text>
+    <tooltipstring>Push to apply current axis settings to all subplots</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>applytoallaxes</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>optionspanel</tag>
+    <style>panel</style>
+    <position>20 20 160 200</position>
+    <text>Options</text>
+  </element>
+  <element>
+    <tag>togglelegend</tag>
+    <style>checkbox</style>
+    <position>30 180</position>
+    <text>Legend</text>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.plotlegend</variable>
+    <type>integer</type>
+    <tooltipstring>Plot legend</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>map</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>xy</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editlegend</tag>
+    <style>pushbutton</style>
+    <position>130 180 35 20</position>
+    <text>Edit</text>
+    <tooltipstring>Push to edit legend settings</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>editlegend</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.plotlegend</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>togglevectorlegend</tag>
+    <style>checkbox</style>
+    <position>30 155</position>
+    <text>Vector Legend</text>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.plotvectorlegend</variable>
+    <type>integer</type>
+    <tooltipstring>Plot vector legend</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>togglevectorlegend</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>map</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>xy</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editvectorlegend</tag>
+    <style>pushbutton</style>
+    <position>130 155 35 20</position>
+    <text>Edit</text>
+    <tooltipstring>Push to edit vector legend settings</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>editvectorlegend</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.plotvectorlegend</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>togglecolorbar</tag>
+    <style>checkbox</style>
+    <position>30 130</position>
+    <text>Color Bar</text>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.plotcolorbar</variable>
+    <type>integer</type>
+    <tooltipstring>Plot color bar</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>togglecolorbar</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>map</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>xy</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editcolorbar</tag>
+    <style>pushbutton</style>
+    <position>130 130 35 20</position>
+    <text>Edit</text>
+    <tooltipstring>Push to edit color bar settings</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>editcolorbar</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.plotcolorbar</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>togglescalebar</tag>
+    <style>checkbox</style>
+    <position>30 105</position>
+    <text>Scale Bar</text>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.plotscalebar</variable>
+    <type>integer</type>
+    <tooltipstring>Plot scale bar</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>togglescalebar</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>map</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editscalebar</tag>
+    <style>pushbutton</style>
+    <position>130 105 35 20</position>
+    <text>Edit</text>
+    <tooltipstring>Push to edit scale bar settings</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>editscalebar</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.plotscalebar</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>togglenortharrow</tag>
+    <style>checkbox</style>
+    <position>30 80</position>
+    <text>North Arrow</text>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.plotnortharrow</variable>
+    <type>integer</type>
+    <tooltipstring>Plot north arrow</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>togglenortharrow</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.type</variable>
+        <value>map</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editnortharrow</tag>
+    <style>pushbutton</style>
+    <position>130 80 35 20</position>
+    <text>Edit</text>
+    <tooltipstring>Push to edit north arrow settings</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>editnortharrow</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.plotnortharrow</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>colormappanel</tag>
+    <style>panel</style>
+    <position>190 20 150 200</position>
+    <text>Color Map</text>
+  </element>
+  <element>
+    <tag>colormapaxis</tag>
+    <style>axis</style>
+    <position>200 180 130 20</position>
+  </element>
+  <element>
+    <tag>selectcolormap</tag>
+    <style>popupmenu</style>
+    <position>200 150 130 20</position>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.colormap</variable>
+    <type>string</type>
+    <tooltipstring>Select color map</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>editclim</option1>
+    <listtext>
+      <variable>colormapnames</variable>
+    </listtext>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editcmin</tag>
+    <style>edit</style>
+    <position>200 105 40 20</position>
+    <text>C Min</text>
+    <textposition>above-center</textposition>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.cmin</variable>
+    <type>real</type>
+    <tooltipstring>Edit C min</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>editclim</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.usecustomcontours</variable>
+        <value>1</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editcstep</tag>
+    <style>edit</style>
+    <position>245 105 40 20</position>
+    <text>C Step</text>
+    <textposition>above-center</textposition>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.cstep</variable>
+    <type>real</type>
+    <tooltipstring>Edit C step</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>editclim</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.usecustomcontours</variable>
+        <value>1</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editcmax</tag>
+    <style>edit</style>
+    <position>290 105 40 20</position>
+    <text>C Max</text>
+    <textposition>above-center</textposition>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.cmax</variable>
+    <type>real</type>
+    <tooltipstring>Edit C max</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>editclim</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.usecustomcontours</variable>
+        <value>1</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>togglecustomcontours</tag>
+    <style>checkbox</style>
+    <position>200 75</position>
+    <text>Custom</text>
+    <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.usecustomcontours</variable>
+    <type>integer</type>
+    <tooltipstring>Use custom contours</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editcustomcontours</tag>
+    <style>pushbutton</style>
+    <position>260 75 35 20</position>
+    <text>Edit</text>
+    <tooltipstring>Push to edit custom contour settings</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>editcustomcontours</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.nrsubplots</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.subplots(handles.activesubplot).subplot.usecustomcontours</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>figurepanel</tag>
+    <style>panel</style>
+    <position>350 90 250 130</position>
+    <text>Figure</text>
+  </element>
+  <element>
+    <tag>selectfigure</tag>
+    <style>popupmenu</style>
+    <position>400 180 130 20</position>
+    <variable>handles.activefigure</variable>
+    <type>integer</type>
+    <text>Figure</text>
+    <tooltipstring>Select color map</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>selectfigure</option1>
+    <listtext>
+      <variable>handles.figurenames</variable>
+    </listtext>
+  </element>
+  <element>
+    <tag>editfigures</tag>
+    <style>pushbutton</style>
+    <position>540 180 50 20</position>
+    <text>Edit</text>
+    <tooltipstring>Push to edit figures</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>editfigures</option1>
+  </element>
+  <element>
+    <tag>editfigurewidth</tag>
+    <style>edit</style>
+    <position>400 150 40 20</position>
+    <text>Width</text>
+    <textposition>left</textposition>
+    <variable>handles.figures(handles.activefigure).figure.width</variable>
+    <type>real</type>
+    <tooltipstring>Edit figure width</tooltipstring>
+  </element>
+  <element>
+    <tag>editfigureheight</tag>
+    <style>edit</style>
+    <position>490 150 40 20</position>
+    <text>Height</text>
+    <textposition>left</textposition>
+    <variable>handles.figures(handles.activefigure).figure.height</variable>
+    <type>real</type>
+    <tooltipstring>Edit figure height</tooltipstring>
+  </element>
+  <element>
+    <tag>selectfigurecolor</tag>
+    <style>selectcolor</style>
+    <position>400 120 100 20</position>
+    <text>Color</text>
+    <textposition>left</textposition>
+    <variable>handles.figures(handles.activefigure).figure.backgroundcolor</variable>
+    <tooltipstring>Select figure background color</tooltipstring>
+  </element>
+  <element>
+    <tag>framepanel</tag>
+    <style>panel</style>
+    <position>350 20 250 70</position>
+    <text>Frame</text>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>360 50</position>
+    <text>Frame</text>
+    <variable>handles.figures(handles.activefigure).figure.useframe</variable>
+    <tooltipstring>Include frame</tooltipstring>
+  </element>
+  <element>
+    <tag>selectframe</tag>
+    <style>popupmenu</style>
+    <position>415 50 90 20</position>
+    <variable>handles.figures(handles.activefigure).figure.frame</variable>
+    <type>string</type>
+    <tooltipstring>Select figure frame</tooltipstring>
+    <listtext>
+      <variable>handles.frames.longnames</variable>
+    </listtext>
+    <listvalue>
+      <variable>handles.frames.names</variable>
+    </listvalue>
+    <callback>muppet_gui</callback>
+    <option1>selectframe</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.useframe</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>editframetext</tag>
+    <style>pushbutton</style>
+    <position>510 50 80 20</position>
+    <text>Frame Text</text>
+    <tooltipstring>Push to edit frame text</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>editframetext</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.useframe</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>radioportrait</tag>
+    <style>radiobutton</style>
+    <position>360 25</position>
+    <text>Portrait</text>
+    <variable>handles.figures(handles.activefigure).figure.orientation</variable>
+    <value>portrait</value>
+    <type>string</type>
+    <tooltipstring>Set to portrait</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>selectportrait</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.useframe</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>radiolandscape</tag>
+    <style>radiobutton</style>
+    <position>420 25</position>
+    <text>Landscape</text>
+    <variable>handles.figures(handles.activefigure).figure.orientation</variable>
+    <value>landscape</value>
+    <type>string</type>
+    <tooltipstring>Set to landscape</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>selectlandscape</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.figures(handles.activefigure).figure.useframe</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>outputpanel</tag>
+    <style>panel</style>
+    <position>610 20 160 200</position>
+    <text>Output</text>
+  </element>
+  <element>
+    <tag>editoutputfile</tag>
+    <style>edit</style>
+    <position>680 180 80 20</position>
+    <text>Output File</text>
+    <textposition>left</textposition>
+    <variable>handles.figures(handles.activefigure).figure.outputfile</variable>
+    <type>string</type>
+    <tooltipstring>Edit output file name</tooltipstring>
+  </element>
+  <element>
+    <tag>selectformat</tag>
+    <style>popupmenu</style>
+    <position>680 155 80 20</position>
+    <variable>handles.figures(handles.activefigure).figure.format</variable>
+    <type>string</type>
+    <tooltipstring>Select output format</tooltipstring>
+    <text>Format</text>
+    <callback>muppet_gui</callback>
+    <option1>selectformat</option1>
+    <listtext>
+      <variable>handles.outputformats</variable>
+    </listtext>
+  </element>
+  <element>
+    <tag>selectresolution</tag>
+    <style>popupmenu</style>
+    <position>680 130 80 20</position>
+    <variable>handles.figures(handles.activefigure).figure.resolution</variable>
+    <type>integer</type>
+    <tooltipstring>Select output resolution (in dpi)</tooltipstring>
+    <text>Resolution</text>
+    <listtext>
+      <variable>handles.outputresolutiontexts</variable>
+    </listtext>
+    <listvalue>
+      <variable>handles.outputresolutions</variable>
+    </listvalue>
+  </element>
+  <element>
+    <tag>selectrenderer</tag>
+    <style>popupmenu</style>
+    <position>680 105 80 20</position>
+    <variable>handles.figures(handles.activefigure).figure.renderer</variable>
+    <type>string</type>
+    <tooltipstring>Select renderer</tooltipstring>
+    <text>Renderer</text>
+    <listtext>
+      <variable>handles.renderers</variable>
+    </listtext>
+  </element>
+  <element>
+    <tag>exportfigure</tag>
+    <style>pushbutton</style>
+    <position>630 30 120 30</position>
+    <text>Export</text>
+    <fontweight>bold</fontweight>
+    <fontsize>10</fontsize>
+    <tooltipstring>Push to export figure</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>exportfigure</option1>
+  </element>
+  <element>
+    <tag>pusheditanimationsettings</tag>
+    <style>pushbutton</style>
+    <position>780 100 120 30</position>
+    <text>Animation Settings</text>
+    <tooltipstring>Edit animation settings</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>editanimationsettings</option1>
+  </element>
+  <element>
+    <tag>pushanimate</tag>
+    <style>pushbutton</style>
+    <position>780 60 120 30</position>
+    <text>Animate !</text>
+    <fontweight>bold</fontweight>
+    <fontsize>10</fontsize>
+    <tooltipstring>Make animation</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>makeanimation</option1>
+  </element>
+  <element>
+    <tag>plotfigure</tag>
+    <style>pushbutton</style>
+    <position>780 20 120 30</position>
+    <text>Plot</text>
+    <fontweight>bold</fontweight>
+    <fontsize>10</fontsize>
+    <tooltipstring>Push to plot figure</tooltipstring>
+    <callback>muppet_gui</callback>
+    <option1>plotfigure</option1>
+  </element>
+</root>

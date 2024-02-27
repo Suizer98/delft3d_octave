@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>radiobutton</style>
+    <position>20 100</position>
+    <text>File</text>
+    <variable>handles.model.delft3dflow.domain(ad).depthSource</variable>
+    <type>string</type>
+    <value>file</value>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).depthSource</variable>
+        <value>file</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>20 75</position>
+    <text>Uniform</text>
+    <variable>handles.model.delft3dflow.domain(ad).depthSource</variable>
+    <type>string</type>
+    <value>uniform</value>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).depthSource</variable>
+        <value>uniform</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>90 100 130 20</position>
+    <text>Open Depth File</text>
+    <variable>handles.model.delft3dflow.domain(ad).depFile</variable>
+    <type>string</type>
+    <extension>*.dep</extension>
+    <selectiontext>Select depth File</selectiontext>
+    <onchange>ddb_Delft3DFLOW_bathymetry</onchange>
+    <option1>selectdepthfile</option1>
+    <tooltipstring>Select Delft3D depth file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).depthSource</variable>
+        <value>file</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>90 75 50 20</position>
+    <text>m below reference level</text>
+    <textposition>right</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).uniformDepth</variable>
+    <type>real</type>
+    <tooltipstring>Enter uniform depth value</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).depthSource</variable>
+        <value>uniform</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

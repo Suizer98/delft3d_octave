@@ -1,0 +1,43 @@
+<html>
+   <header>
+      
+      <title>set_taxis</title>
+      <meta name="generator" content="MATLAB 7.7">
+      <meta name="date" content="2011Dec06">
+      <meta name="m-file" content="datenum2long">
+      <link type="text/css" rel="stylesheet" href="./toolbox.css">
+      
+   </header>
+   <body>
+      
+      <hr>
+      <div>
+         <h2>Function datenum2long</h2><pre>  Convert Matlab datenum to date with format yyyymmdd, 
+  time with format HHmm and time with format HHMMSS.
+ 
+  </pre><h2>CALL:</h2><pre>   [Date, Time, LongTime] = datenum2long(D, timeunit)
+ 
+  </pre><h2>INPUT:</h2><pre>   D: Scalar, vector or matrix with datenum data.
+   timeunit: Optional argument with possible values:
+             - 'mnd': Donar uses different format for months.
+             - otherwise: Use standard Donar date format.
+  
+  </pre><h2>OUTPUT:</h2><pre>   Date:     Corresponding date(s) in yyyymmdd.
+   Time:     Corresponding time(s) in HHMM.
+   LongTime: Corresponding time(s) in HHMMSS.
+ 
+  </pre><h2>EXAMPLE:</h2><pre></pre><pre class="codeinput">   [Date, Time] = datenum2long(now)</pre><pre>Date =
+    20111206
+Time =
+   345
+</pre><h2>APPROACH:</h2><pre>   Round D to whole minutes:
+   - Add 30 seconds to D and call datevec.
+   - Ignore 'second' output argument.
+  
+  </pre><h2>NOTE:</h2><pre>   .m source of this function is used in mwritedia.c.
+  
+  </pre><h2>See also:</h2><pre></pre><a href="long2datenum.html">long2datenum</a><br></div>
+      <hr>
+      
+   </body>
+</html>

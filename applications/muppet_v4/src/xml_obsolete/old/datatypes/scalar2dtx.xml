@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<root>
+  <name>scalar2dtx</name>
+  <longname>Time Stack (horizontal)</longname>
+  <plot>
+    <type>timestack</type>
+    <plotroutine>
+      <name>plotcontourmap</name>
+      <longname>Contour Map</longname>
+      <plotoption>
+        <name>plotroutine</name>
+      </plotoption>
+      <plotoption>
+        <name>contourlabelgroup</name>
+      </plotoption>
+    </plotroutine>
+    <plotroutine>
+      <name>plotcontourlines</name>
+      <longname>Contour Lines</longname>
+      <plotoption>
+        <name>plotroutine</name>
+      </plotoption>
+      <plotoption>
+        <name>linegroup</name>
+      </plotoption>
+      <plotoption>
+        <name>climgroup</name>
+      </plotoption>
+      <plotoption>
+        <name>contourlabelgroup</name>
+      </plotoption>
+    </plotroutine>
+    <plotroutine>
+      <name>plotcontourmaplines</name>
+      <longname>Contour Map and Lines</longname>
+      <plotoption>
+        <name>plotroutine</name>
+      </plotoption>
+      <plotoption>
+        <name>linegroup</name>
+      </plotoption>
+      <plotoption>
+        <name>climgroup</name>
+      </plotoption>
+      <plotoption>
+        <name>contourlabelgroup</name>
+      </plotoption>
+    </plotroutine>
+    <plotroutine>
+      <name>plotshadesmap</name>
+      <longname>Shades Map</longname>
+      <plotoption>
+        <name>plotroutine</name>
+      </plotoption>
+    </plotroutine>
+    <plotroutine>
+      <name>plotpatches</name>
+      <longname>Patches</longname>
+      <plotoption>
+        <name>plotroutine</name>
+      </plotoption>
+    </plotroutine>
+  </plot>
+</root>

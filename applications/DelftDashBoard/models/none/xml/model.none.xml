@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+  <model>none</model>
+  <longname>-</longname>
+  <multipledomains>no</multipledomains>
+  <enable>1</enable>
+  <menu>
+    <dummy>0</dummy>
+  </menu>
+  <element>
+    <style>tabpanel</style>
+    <position>10 10 900 400</position>
+    <tab>
+      <tabstring>Toolbox</tabstring>
+    </tab>
+  </element>
+</root>

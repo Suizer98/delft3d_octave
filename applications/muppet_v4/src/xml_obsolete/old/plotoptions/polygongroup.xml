@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<root>
+  <plotoption>
+    <name>polygongroup</name>
+    <element>
+      <style>panel</style>
+      <text>Fill Properties</text>
+      <position>0 0 350 50</position>
+    </element>
+    <element>
+      <variable>fillclosedpolygons</variable>
+      <keyword>FillPolygons</keyword>
+      <default>0</default>
+      <type>boolean</type>
+      <style>checkbox</style>
+      <text>Fill Closed Polygons</text>
+      <position>10 10 100 20</position>
+    </element>
+    <element>
+      <keyword>FillColor</keyword>
+      <default>lightgreen</default>
+      <check>
+        <variable>fillclosedpolygons</variable>
+        <operator>eq</operator>
+        <value>1</value>
+      </check>
+      <style>selectcolor</style>
+      <variable>fillcolor</variable>
+      <includenone>no</includenone>
+      <type>string</type>
+      <text>Color</text>
+      <tooltipstring>Select fill color</tooltipstring>
+      <position>170 10 100 20</position>
+      <dependency>
+        <action>enable</action>
+        <checkfor>all</checkfor>
+        <check>
+          <variable>fillclosedpolygons</variable>
+          <value>1</value>
+          <operator>eq</operator>
+        </check>
+      </dependency>
+    </element>
+  </plotoption>
+</root>

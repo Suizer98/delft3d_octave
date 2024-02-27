@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>pushselectfile</style>
+    <text>depfile</text>
+    <position>70.000,107.500, 80.000, 20.000</position>
+    <tooltipstring>Name of the input bathymetry file [-]</tooltipstring>
+    <variable>handles.model.xbeach.domain.depfile</variable>
+    <type>character</type>
+    <extension>*.*</extension>
+    <selectiontext>Select file</selectiontext>
+  </element>
+  <element>
+    <tooltipstring>Bathymetry is specified positive down (1) or positive up (-1) [-]</tooltipstring>
+    <style>edit</style>
+    <text>posdwn</text>
+    <position>70.000,80.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.posdwn</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Number of computiation cell corners in x-direction [-]</tooltipstring>
+    <style>edit</style>
+    <text>nx</text>
+    <position>70.000,52.500,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.nx</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Number of computiation cell corners in y-direction [-]</tooltipstring>
+    <style>edit</style>
+    <text>ny</text>
+    <position>70.000,25.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.ny</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Angle of x-axis from East [deg]</tooltipstring>
+    <style>edit</style>
+    <text>alfa</text>
+    <position>230.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.alfa</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Switch for variable grid spacing: 1 = irregular spacing, 0 = regular grid spacing [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>vardx</text>
+    <position>230.000, 80.000</position>
+    <variable>handles.model.xbeach.domain.vardx</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Regular grid spacing in x-direction [m]</tooltipstring>
+    <style>edit</style>
+    <text>dx</text>
+    <position>230.000, 52.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.dx</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Regular grid spacing in y-direction [m]</tooltipstring>
+    <style>edit</style>
+    <text>dy</text>
+    <position>230.000, 25.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.dy</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Name of the file containing x-coordinates of the calculation grid [name]</tooltipstring>
+    <style>pushselectfile</style>
+    <text>xfile</text>
+    <position>390.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.xfile</variable>
+    <type>character</type>
+    <extension>*.*</extension>
+    <selectiontext>Select file</selectiontext>
+  </element>
+  <element>
+    <tooltipstring>Name of the file containing y-coordinates of the calculation grid [name]</tooltipstring>
+    <style>pushselectfile</style>
+    <text>yfile</text>
+    <position>390.000, 80.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.yfile</variable>
+    <type>character</type>
+    <extension>*.*</extension>
+    <selectiontext>Select file</selectiontext>
+  </element>
+  <element>
+    <tooltipstring>X-coordinate of origin of axis [m]</tooltipstring>
+    <style>edit</style>
+    <text>xori</text>
+    <position>390.000, 52.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.xori</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Y-coordinate of origin of axis [m]</tooltipstring>
+    <style>edit</style>
+    <text>yori</text>
+    <position>390.000, 25.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.yori</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Lower directional limit (angle w.r.t computational x-axis) [deg]</tooltipstring>
+    <style>edit</style>
+    <text>thetamin</text>
+    <position>550.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.thetamin</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Higher directional limit (angle w.r.t computational x-axis) [deg]</tooltipstring>
+    <style>edit</style>
+    <text>thetamax</text>
+    <position>550.000, 80.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.thetamax</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Directional resolution [deg]</tooltipstring>
+    <style>edit</style>
+    <text>dtheta</text>
+    <position>550.000, 52.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.dtheta</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Thetamin,thetamax in cartesian (0) or nautical convention (1) [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>thetanaut</text>
+    <position>550.000, 25.000</position>
+    <variable>handles.model.xbeach.domain.thetanaut</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Swicth to read in grid bathy files with 'XBeach' or 'Delft3D' format respectively [name]</tooltipstring>
+    <style>popupmenu</style>
+    <text>gridform</text>
+    <position>710.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.gridform</variable>
+    <type>string</type>
+    <listtext>xbeach</listtext>
+    <listtext>delft3d</listtext>
+  </element>
+  <element>
+    <tooltipstring>Name of the file containing (Delft3D) xy-coordinates of the calculation grid [name]</tooltipstring>
+    <style>pushselectfile</style>
+    <text>xyfile</text>
+    <position>710.000, 80.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.xyfile</variable>
+    <type>character</type>
+    <extension>*.*</extension>
+    <selectiontext>Select file</selectiontext>
+  </element>
+</root>

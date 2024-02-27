@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 110</position>
+    <text>Text Properties</text>
+  </element>
+  <element>
+    <variable>text</variable>
+    <type>string</type>
+    <style>edit</style>
+    <position>40 70 300 20</position>
+    <text>Text</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <variable>x</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>40 40 60 20</position>
+    <text>X</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <variable>y</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>140 40 60 20</position>
+    <text>Y</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <variable>addtextshade</variable>
+    <type>boolean</type>
+    <style>checkbox</style>
+    <position>20 10 50 20</position>
+    <text>Shade</text>
+  </element>
+  <element>
+    <variable>textposition</variable>
+    <type>string</type>
+    <style>popupmenu</style>
+    <position>130 10 90 20</position>
+    <listtext>North West</listtext>
+    <listtext>North</listtext>
+    <listtext>North East</listtext>
+    <listtext>West</listtext>
+    <listtext>Middle</listtext>
+    <listtext>East</listtext>
+    <listtext>South West</listtext>
+    <listtext>South</listtext>
+    <listtext>South East</listtext>
+    <listvalue>northwest</listvalue>
+    <listvalue>north</listvalue>
+    <listvalue>northeast</listvalue>
+    <listvalue>west</listvalue>
+    <listvalue>middle</listvalue>
+    <listvalue>east</listvalue>
+    <listvalue>southwest</listvalue>
+    <listvalue>south</listvalue>
+    <listvalue>southeast</listvalue>
+    <text>Position</text>
+  </element>
+  <element>
+    <variable>font</variable>
+    <style>selectfont</style>
+    <position>230 10 50 20</position>
+    <text>Font</text>
+  </element>
+</root>

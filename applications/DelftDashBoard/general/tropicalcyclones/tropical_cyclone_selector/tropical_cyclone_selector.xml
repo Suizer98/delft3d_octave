@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<root>
+  <title>Tropical Cyclone Selector</title>
+  <width>800</width>
+  <height>600</height>
+  <element>
+    <style>axis</style>
+    <tag>cyclonemap</tag>
+    <position>30 30 570 550</position>
+  </element>  
+  <element>
+    <style>listbox</style>
+    <variable>active_storm</variable>
+    <type>integer</type>
+    <position>610 300 170 280</position>
+    <callback>tropical_cyclone_selector</callback>
+    <option1>select_storm_from_list</option1>
+    <listtext>
+      <variable>storm_names</variable>
+    </listtext>
+  </element>  
+  <element>
+    <style>edit</style>
+    <position>670 270 40 20</position>
+    <variable>year_range(1)</variable>
+    <type>integer</type>
+    <text>Year</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit earliest year</tooltipstring>
+    <callback>tropical_cyclone_selector</callback>
+    <option1>change_search_window</option1>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>720 270 40 20</position>
+    <variable>year_range(2)</variable>
+    <type>integer</type>
+    <tooltipstring>Edit latest year</tooltipstring>
+    <callback>tropical_cyclone_selector</callback>
+    <option1>change_search_window</option1>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>670 240 40 20</position>
+    <variable>vmax_range(1)</variable>
+    <type>integer</type>
+    <text>Vmax (kts)</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit minimum windspeed</tooltipstring>
+    <callback>tropical_cyclone_selector</callback>
+    <option1>change_search_window</option1>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>720 240 40 20</position>
+    <variable>vmax_range(2)</variable>
+    <type>integer</type>
+    <tooltipstring>Edit maximum windspeed</tooltipstring>
+    <callback>tropical_cyclone_selector</callback>
+    <option1>change_search_window</option1>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>720 210 40 20</position>
+    <variable>distance</variable>
+    <type>real</type>
+    <text>Search Radius (km)</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit search range</tooltipstring>
+    <callback>tropical_cyclone_selector</callback>
+    <option1>change_search_window</option1>
+  </element>
+  <element>
+    <style>pushok</style>
+    <position>730 10 50 20</position>
+  </element>
+  <element>
+    <style>pushcancel</style>
+    <position>670 10 50 20</position>
+  </element>
+</root>

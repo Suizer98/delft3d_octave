@@ -1,0 +1,13 @@
+table-name           'Boundary Section : 2'
+contents             'Uniform             '
+location             'rivier              '
+time-function        'non-equidistant'
+reference-time       20021218
+time-unit            'minutes'
+interpolation        'linear'
+parameter            'time                '                     unit '[min]'
+parameter            'total discharge (t)  end A'               unit '[m3/s]'
+parameter            'total discharge (t)  end B'               unit '[m3/s]'
+records-in-table     2
+ 0.0000000e+000 -1.5000000e+002 -1.5000000e+002
+ 1.0080000e+004 -1.5000000e+002 -1.5000000e+002

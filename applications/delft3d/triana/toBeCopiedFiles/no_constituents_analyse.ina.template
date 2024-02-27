@@ -1,0 +1,19 @@
++ Mirfa
++  %STARTYEAR% - %ENDYEAR%
++ dummy
+* ==================================================
+%NOBS%
+%STARTYEAR%
+%ENDYEAR%
+m water
+1    0    1    0    0
+%NUMCONST%
+%CONSTITUENTS%
+0
+1
+1   %NOBS%
+%STARTYEAR%
+%ENDYEAR%
+%NOSS%   
+%TIMESSUBPERIODS%
+0.2   2   2

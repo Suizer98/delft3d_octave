@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<root>
+  <title>Nesting options</title>
+  <width>400</width>
+  <height>200</height>
+  <element>
+    <style>popupmenu</style>
+    <position>125 100 100 20</position>
+    <variable>xb_nesting_type</variable>
+    <type>string</type>
+    <text>XB-LISFLOOD nesting</text>
+    <listtext>normal</listtext>
+    <listtext>berm</listtext>
+    <listvalue>normal</listvalue>
+    <listvalue>berm</listvalue>
+    <tooltipstring>XBeach - LISFLOODD: normal means at the end of the transect. Berm means at berm location</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>125 75 200 20</position>
+    <variable>loc_lisflood</variable>
+    <type>string</type>
+    <text>Location Lisflood</text>
+    <tooltipstring>Full path of lisflood.exe</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>125 150 100 20</position>
+    <variable>nesting_time</variable>
+    <type>string</type>
+    <text>Time step for nesting</text>
+    <tooltipstring>Fill here your time step in seconds. This is needed for Delft3D-FLOW & XBeach nesting. </tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>125 125 100 20</position>
+    <variable>nesting_distance</variable>
+    <type>string</type>
+    <text>Distance for nesting</text>
+    <tooltipstring>Fill here your distance in meters. This is needed for Delft3D-WAVE nesting.</tooltipstring>
+  </element>
+  <element>
+    <style>pushok</style>
+    <position>180 10 50 20</position>
+  </element>
+  <element>
+    <style>pushcancel</style>
+    <position>120 10 50 20</position>
+  </element>
+</root>

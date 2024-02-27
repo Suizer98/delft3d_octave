@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 50</position>
+    <text>Transparency</text>
+  </element>
+  <element>
+    <variable>edgealpha</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>80 10 50 20</position>
+    <text>Edge Alpha</text>
+    <tooltipstring>Transparency for edges in range 0-1 (only works with OpenGL renderer)</text>
+  </element>
+  <element>
+    <variable>facealpha</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>200 10 50 20</position>
+    <text>Face Alpha</text>
+    <tooltipstring>Transparency for faces in range 0-1 (only works with OpenGL renderer)</text>
+  </element>
+</root>

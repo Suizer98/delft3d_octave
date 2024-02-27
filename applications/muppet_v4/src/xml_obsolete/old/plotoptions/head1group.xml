@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<root>
+  <plotoption>
+    <name>head1group</name>
+    <element>
+      <style>panel</style>
+      <text>Head 1</text>
+      <position>0 0 350 50</position>
+    </element>
+    <element>
+      <name>head1style</name>
+      <keyword>Head1Style</keyword>
+      <style>selectheadstyle</style>
+      <type>string</type>
+      <text>Style</text>
+      <variable>head1style</variable>
+      <position>40 10 80 20</position>
+    </element>
+    <element>
+      <name>head1width</name>
+      <keyword>Head1Width</keyword>
+      <style>edit</style>
+      <type>real</type>
+      <text>Width</text>
+      <variable>head1width</variable>
+      <position>170 10 50 20</position>
+    </element>
+    <element>
+      <name>head1length</name>
+      <keyword>Head1Length</keyword>
+      <style>edit</style>
+      <type>real</type>
+      <text>Length</text>
+      <variable>head1length</variable>
+      <position>270 10 50 20</position>
+    </element>
+  </plotoption>
+</root>

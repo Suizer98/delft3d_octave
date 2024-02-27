@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<root>
+  <dataproperty>
+    <name>ycoordinate</name>
+    <keyword>YCoordinate</keyword>
+    <element>
+      <style>popupmenu</style>
+      <type>string</type>
+      <text>Y</text>
+      <variable>ycoordinate</variable>
+      <tooltipstring>Select Y coordinate</tooltipstring>
+      <callback>muppet_datasetGUI</callback>
+      <option1>selectycoordinate</option1>
+      <position>60 0 270 20</position>
+      <listtext>
+        <variable>parameternames</variable>
+      </listtext>
+      <dependency>
+        <action>visible</action>
+        <checkfor>any</checkfor>
+        <check>
+          <variable>selectcoordinates</variable>
+          <value>1</value>
+          <operator>eq</operator>
+        </check>
+      </dependency>
+    </element>
+  </dataproperty>
+</root>

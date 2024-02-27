@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <text>Domain</text>
+    <position>40 10 900 160</position>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>50 130 130 20</position>
+    <text>Load Coastline File</text>
+    <variable>handles.model.shorelines.domain.shoreline.filename</variable>
+    <callback>ddb_shorelines_domain</callback>
+    <option1>loadshorelinefile</option1>
+    <showfilename>yes</showfilename>
+    <extension>*.txt</extension>
+    <selectiontext>Select shoreline file</selectiontext>
+    <tooltipstring>Select shoreline file</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>150 105 50 20</position>
+    <text>Grid size (m)</text>
+    <variable>handles.model.shorelines.domain.ds0</variable>
+    <type>real</type>
+    <tooltipstring>Edit initial size of shoreline cells</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>150 80 50 20</position>
+    <text>Profile height (m)</text>
+    <variable>handles.model.shorelines.domain.d</variable>
+    <type>real</type>
+    <tooltipstring>Edit profile height d</tooltipstring>
+  </element>
+</root>

@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <text>kx</text>
+    <position>70.000,107.500, 80.000, 20.000</position>
+    <tooltipstring>Darcy-flow permeability coefficient in x-direction [m/s] [ms^-1]</tooltipstring>
+    <variable>handles.model.xbeach.domain.kx</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Darcy-flow permeability coefficient in y-direction [m/s] [ms^-1]</tooltipstring>
+    <style>edit</style>
+    <text>ky</text>
+    <position>70.000,80.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.ky</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Darcy-flow permeability coefficient in z-direction [m/s] [ms^-1]</tooltipstring>
+    <style>edit</style>
+    <text>kz</text>
+    <position>70.000,52.500,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.kz</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Thickness of the top soil layer interacting more freely with the surface water [m]</tooltipstring>
+    <style>edit</style>
+    <text>dwetlayer</text>
+    <position>70.000,25.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.dwetlayer</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Level of uniform aquifer bottom [m]</tooltipstring>
+    <style>edit</style>
+    <text>aquiferbot</text>
+    <position>230.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.aquiferbot</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Name of the aquifer bottom file [-]</tooltipstring>
+    <style>pushselectfile</style>
+    <text>aquiferbotfile</text>
+    <position>230.000, 80.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.aquiferbotfile</variable>
+    <type>character</type>
+    <extension>*.*</extension>
+    <selectiontext>Select file</selectiontext>
+  </element>
+  <element>
+    <tooltipstring>Level initial groundwater level [m]</tooltipstring>
+    <style>edit</style>
+    <text>gw0</text>
+    <position>230.000, 52.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.gw0</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Name of initial groundwater level file [-]</tooltipstring>
+    <style>pushselectfile</style>
+    <text>gw0file</text>
+    <position>230.000, 25.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.gw0file</variable>
+    <type>character</type>
+    <extension>*.*</extension>
+    <selectiontext>Select file</selectiontext>
+  </element>
+  <element>
+    <tooltipstring>Switch to turn on or off non-hydrostatic pressure for groundwater [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>gwnonh</text>
+    <position>390.000,107.500</position>
+    <variable>handles.model.xbeach.domain.gwnonh</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Reduce full 2D non-hydrostatic solution to quasi-explicit in longshore direction [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>gwfastsolve</text>
+    <position>390.000, 80.000</position>
+    <variable>handles.model.xbeach.domain.gwfastsolve</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Scheme for momentum equation (laminar, turbulent) [-]</tooltipstring>
+    <style>popupmenu</style>
+    <text>gwscheme</text>
+    <position>390.000, 52.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.gwscheme</variable>
+    <type>string</type>
+    <listtext>laminar</listtext>
+    <listtext>turbulent</listtext>
+  </element>
+  <element>
+    <tooltipstring>Reynolds number for start of turbulent flow in case of gwscheme = turbulent [-]</tooltipstring>
+    <style>edit</style>
+    <text>gwReturb</text>
+    <position>390.000, 25.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.gwReturb</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Model to use for vertical groundwater head: 'parabolic' (default), or 'exponential' [-]</tooltipstring>
+    <style>popupmenu</style>
+    <text>gwheadmodel</text>
+    <position>550.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.gwheadmodel</variable>
+    <type>string</type>
+    <listtext>parabolic</listtext>
+    <listtext>exponential</listtext>
+  </element>
+  <element>
+    <tooltipstring>switch to include horizontal infiltration from surface water to groundwater (default = 0) [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>gwhorinfil</text>
+    <position>550.000, 80.000</position>
+    <variable>handles.model.xbeach.domain.gwhorinfil</variable>
+    <type>integer</type>
+  </element>
+</root>

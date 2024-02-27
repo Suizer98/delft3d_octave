@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>text</style>
+    <position>0 -4 50 20</position>
+    <text>M</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>size(3)</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>selectallm</variable>
+    <style>checkbox</style>
+    <position>70 0 35 20</position>
+    <callback>muppet_datasetGUI</callback>
+    <option1>editm</option1>
+    <option2>selectall</option2>
+    <text>All</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>size(3)</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>mtext</variable>
+    <type>string</type>
+    <style>edit</style>
+    <position>110 0 190 20</position>
+    <callback>muppet_datasetGUI</callback>
+    <option1>editm</option1>
+    <option2>edit</option2>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>size(3)</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>selectallm</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>mmaxtext</variable>
+    <style>text</style>
+    <position>305 0 30 20</position>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>size(3)</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

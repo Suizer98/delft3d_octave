@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<root>
+  <longname>Histogram</longname>
+  <plottype>
+    <name>xy</name>
+    <plotroutine>
+      <name>Histogram</name>
+      <plotoption>
+        <name>plotroutine</name>
+      </plotoption>
+      <plotoption>
+        <name>fillclosedpolygons</name>
+      </plotoption>
+      <plotoption>
+        <name>facecolor</name>
+      </plotoption>
+      <plotoption>
+        <name>edgecolor</name>
+      </plotoption>
+      <plotoption>
+        <name>linewidth</name>
+      </plotoption>
+      <plotoption>
+        <name>linestyle</name>
+      </plotoption>
+      <plotoption>
+        <name>rightaxis</name>
+      </plotoption>
+      <plotoption>
+        <name>legendtext</name>
+      </plotoption>
+      <elementgroup>facecolor</elementgroup>
+      <elementgroup>line</elementgroup>
+      <elementgroup>legendtext</elementgroup>
+    </plotroutine>
+  </plottype>
+</root>

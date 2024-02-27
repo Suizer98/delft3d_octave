@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <position>125 105 50 20</position>
+    <text>Gravity (m/s2)</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).g</variable>
+    <type>real</type>
+    <tooltipstring>Edit gravity</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>125 80 50 20</position>
+    <text>Water Density (kg/m3)</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).rhoW</variable>
+    <type>real</type>
+    <tooltipstring>Edit water density</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>125 55 50 20</position>
+    <text>Air Density (kg/m3)</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).rhoAir</variable>
+    <type>real</type>
+    <tooltipstring>Edit air density</tooltipstring>
+  </element>
+</root>

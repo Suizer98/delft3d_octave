@@ -1,0 +1,313 @@
+<?xml version="1.0"?>
+<root>
+  <title>3D Options</title>
+  <width>400</width>
+  <height>370</height>
+  <element>
+    <style>popupmenu</style>
+    <position>30 320 200 20</position>
+    <variable>viewmode3d</variable>
+    <type>integer</type>
+    <text>View mode</text>
+    <textposition>above-left</textposition>
+    <listtext>Camera target and camera position</listtext>
+    <listtext>Camera target and camera angle</listtext>
+    <listtext>Camera position and camera angle</listtext>
+  </element>
+
+  <element>
+    <style>panel</style>
+    <position>20 260 360 50</position>
+    <text>Camera target</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>70 270 60 20</position>
+    <variable>cameratarget(1)</variable>
+    <type>real</type>
+    <text>X</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>viewmode3d</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>viewmode3d</variable>
+        <value>2</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>190 270 60 20</position>
+    <variable>cameratarget(2)</variable>
+    <type>real</type>
+    <text>Y</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>viewmode3d</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>viewmode3d</variable>
+        <value>2</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>310 270 60 20</position>
+    <variable>cameratarget(3)</variable>
+    <type>real</type>
+    <text>Z</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>viewmode3d</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>viewmode3d</variable>
+        <value>2</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+
+
+
+  <element>
+    <style>panel</style>
+    <position>20 210 360 50</position>
+    <text>Camera position</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>70 220 60 20</position>
+    <variable>cameraposition(1)</variable>
+    <type>real</type>
+    <text>X</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>viewmode3d</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>viewmode3d</variable>
+        <value>3</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>190 220 60 20</position>
+    <variable>cameraposition(2)</variable>
+    <type>real</type>
+    <text>Y</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>viewmode3d</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>viewmode3d</variable>
+        <value>3</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>310 220 60 20</position>
+    <variable>cameraposition(3)</variable>
+    <type>real</type>
+    <text>Z</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>viewmode3d</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>viewmode3d</variable>
+        <value>3</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+
+
+  <element>
+    <style>panel</style>
+    <position>20 160 360 50</position>
+    <text>Camera angle</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>70 170 60 20</position>
+    <variable>cameraangle(1)</variable>
+    <type>real</type>
+    <text>Azimuth</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>viewmode3d</variable>
+        <value>2</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>viewmode3d</variable>
+        <value>3</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>190 170 60 20</position>
+    <variable>cameraangle(2)</variable>
+    <type>real</type>
+    <text>Elevation</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>viewmode3d</variable>
+        <value>2</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>viewmode3d</variable>
+        <value>3</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>310 170 60 20</position>
+    <variable>cameradistance</variable>
+    <type>real</type>
+    <text>Distance</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>viewmode3d</variable>
+        <value>2</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>viewmode3d</variable>
+        <value>3</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+
+
+
+  <element>
+    <style>panel</style>
+    <position>20 110 360 50</position>
+    <text>Data aspect ratio</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>70 120 60 20</position>
+    <variable>dataaspectratio(1)</variable>
+    <type>real</type>
+    <text>X</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>190 120 60 20</position>
+    <variable>dataaspectratio(2)</variable>
+    <type>real</type>
+    <text>Y</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>310 120 60 20</position>
+    <variable>dataaspectratio(3)</variable>
+    <type>real</type>
+    <text>Z</text>
+  </element>
+
+  <element>
+    <style>panel</style>
+    <position>20 60 360 50</position>
+    <text>Light</text>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>70 70 40 20</position>
+    <variable>light</variable>
+    <type>boolean</type>
+    <text>Light On</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>190 70 60 20</position>
+    <variable>lightangle(1)</variable>
+    <type>real</type>
+    <text>Azimuth</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>light</variable>
+        <value>1</value>
+        <operator>eq</operator>
+        <type>integer</type>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>310 70 60 20</position>
+    <variable>lightangle(2)</variable>
+    <type>real</type>
+    <text>Elevation</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>light</variable>
+        <value>1</value>
+        <operator>eq</operator>
+        <type>integer</type>
+      </check>
+    </dependency>
+  </element>
+
+  <element>
+    <style>pushcancel</style>
+    <position>150 20 70 20</position>
+  </element>
+  <element>
+    <tag>ok</tag>
+    <style>pushok</style>
+    <position>230 20 70 20</position>
+  </element>
+</root>

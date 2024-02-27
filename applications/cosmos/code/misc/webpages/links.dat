@@ -1,0 +1,20 @@
+WebPage "Links"
+
+    PageDir      "links"
+    FileName     "links.html"
+    PageType     "links"
+    ActiveHeader "links"
+
+    Main
+
+        Link "USGS - Southern California Coastal Hazards"
+            LinkURL  "http://walrus.wr.usgs.gov/coastal_processes/socalhazards/"
+        EndLink
+
+        Link "Deltares"
+            LinkURL  "http://www.deltares.nl/"
+        EndLink
+
+    EndMain
+
+EndPage

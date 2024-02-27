@@ -1,0 +1,2 @@
+function killAll
+delete(timerfind);

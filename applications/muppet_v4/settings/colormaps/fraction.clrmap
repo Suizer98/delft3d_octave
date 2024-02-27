@@ -1,0 +1,6 @@
+COLORMAP
+NAME=fraction
+SPACE=RGB
+  0 255 255
+255   0 255
+255 255   0

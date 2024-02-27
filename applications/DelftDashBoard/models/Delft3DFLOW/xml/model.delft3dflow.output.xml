@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <position>45 10 900 140</position>
+    <style>tabpanel</style>
+    <tab>
+      <tabstring>Storage</tabstring>
+      <callback>ddb_Delft3DFLOW_storage</callback>
+      <element>model.delft3dflow.output.storage.xml</element>
+    </tab>
+    <tab>
+      <tabstring>WAQ Input</tabstring>
+      <element>model.delft3dflow.output.waqinput.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Print</tabstring>
+      <callback>ddb_Delft3DFLOW_print</callback>
+      <enable>0</enable>
+      <element>model.delft3dflow.output.print.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Details</tabstring>
+      <callback>ddb_Delft3DFLOW_details</callback>
+      <enable>0</enable>
+      <element>model.delft3dflow.output.details.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Fourier Analysis</tabstring>
+      <callback>ddb_Delft3DFLOW_fourier</callback>
+      <element>model.delft3dflow.output.fourier.xml</element>
+    </tab>
+  </element>
+</root>

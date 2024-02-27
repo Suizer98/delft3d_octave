@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 110 130 20</position>
+    <tooltipstring>Select profile locations file</tooltipstring>
+    <text>Profile Loc File</text>
+    <variable>handles.model.dflowfm.domain.proflocfile</variable>
+    <extension>*_proflocation.xyz</extension>
+    <selectiontext>Select profile locations file</selectiontext>
+    <callback>ddb_DFlowFM_misc</callback>
+    <option1>selectprofilelocationsfile</option1>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 85 130 20</position>
+    <tooltipstring>Select profile definitions file</tooltipstring>
+    <text>Profile Def File</text>
+    <variable>handles.model.dflowfm.domain.profdeffile</variable>
+    <extension>*_profdefinition.def</extension>
+    <selectiontext>Select profile definitions file</selectiontext>
+    <callback>ddb_DFlowFM_misc</callback>
+    <option1>selectprofiledefinitionsfile</option1>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>110 60 40 20</position>
+    <tooltipstring>Edit latitude</tooltipstring>
+    <text>Latitude</text>
+    <variable>handles.model.dflowfm.domain.anglat</variable>
+    <type>real</type>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.screenParameters.coordinateSystem.type</variable>
+        <type>string</type>
+        <value>cartesian</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Conveyance 2D</text>
+    <position>110 35 120 20</position>
+    <tooltipstring>Select conveyance</tooltipstring>
+    <variable>handles.model.dflowfm.domain.conveyance2d</variable>
+    <type>integer</type>
+    <listtext>R=HU</listtext>
+    <listtext>R=H</listtext>
+    <listtext>R=A/P</listtext>
+    <listtext>K=analytic-1D conv</listtext>
+    <listtext>K=analytic-2D conv</listtext>
+    <listvalue>-1</listvalue>
+    <listvalue>0</listvalue>
+    <listvalue>1</listvalue>
+    <listvalue>2</listvalue>
+    <listvalue>3</listvalue>
+  </element>
+</root>

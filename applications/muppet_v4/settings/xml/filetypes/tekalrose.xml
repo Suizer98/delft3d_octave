@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+  <longname>Tekal Wind/Wave Rose (*.tek,*.ros)</longname>
+  <title>Tekal Wind/Wave Rose File</title>
+  <filterspec>*.tek;*.ros</filterspec>
+  <callback>muppet_addDatasetTekalRose</callback>
+  <dataproperty>
+    <name>filename</name>
+  </dataproperty>
+  <dataproperty>
+    <name>filetype</name>
+  </dataproperty>
+</root>

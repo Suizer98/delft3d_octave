@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 100</position>
+    <text>Arrow Properties</text>
+  </element>
+  <element>
+    <variable>lintscale</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>80 60 50 20</position>
+    <text>Relative Scale</text>
+    <tooltipstring>Edit relative scale</tooltipstring>
+  </element>
+  <element>
+    <variable>unitarrow</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>200 60 50 20</position>
+    <text>Unit Arrow</text>
+    <tooltipstring>Edit unit arrow</tooltipstring>
+  </element>
+  <element>
+    <variable>addtext</variable>
+    <type>boolean</type>
+    <style>checkbox</style>
+    <position>80 35 50 20</position>
+    <text>Add Numbers</text>
+  </element>
+  <element>
+    <variable>multiply</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>80 10 50 20</position>
+    <text>Multiply</text>
+    <tooltipstring>Edit multiplication factor</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>addtext</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>decimals</variable>
+    <type>integer</type>
+    <style>edit</style>
+    <position>200 10 50 20</position>
+    <text>Decimals</text>
+    <tooltipstring>Edit number of decimals</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>addtext</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>font</variable>
+    <style>selectfont</style>
+    <position>200 35 50 20</position>
+    <text>Font</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>addtext</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

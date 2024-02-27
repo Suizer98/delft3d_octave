@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<root>
+  <title>Proxy Settings</title>
+  <width>350</width>
+  <height>140</height>
+  <tag>proxysettings</tag>
+  <element>
+    <style>checkbox</style>
+    <position>80 100 100 20</position>
+    <text>Use a proxy server to connect to the internet</text>
+    <variable>use</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>80 75 250 20</position>
+    <text>Proxy Host</text>
+    <textposition>left</textposition>
+    <variable>host</variable>
+    <type>string</type>
+    <tooltipstring>Edit proxy host</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>use</variable>
+        <type>integer</type>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>80 50 250 20</position>
+    <text>Proxy Port</text>
+    <textposition>left</textposition>
+    <variable>port</variable>
+    <type>string</type>
+    <tooltipstring>Edit proxy port</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>use</variable>
+        <type>integer</type>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <tag>pushok</tag>
+    <style>pushok</style>
+    <position>280 10 50 20</position>
+  </element>
+  <element>
+    <tag>pushcancel</tag>
+    <style>pushcancel</style>
+    <position>220 10 50 20</position>
+  </element>
+</root>

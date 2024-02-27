@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>listbox</style>
+    <position>10 10 150 105</position>
+    <tooltipstring>Select cross section</tooltipstring>
+    <text>Cross Sections</text>
+    <textposition>above-center</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).activeCrossSection</variable>
+    <type>integer</type>
+    <onchange>ddb_Delft3DFLOW_crossSections</onchange>
+    <option1>selectfromlist</option1>
+    <listtext>
+      <variable>handles.model.delft3dflow.domain(ad).crossSectionNames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>170 10 170 100</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 80 50 20</position>
+    <text>M1</text>
+    <onchange>ddb_Delft3DFLOW_crossSections</onchange>
+    <option1>edit</option1>
+    <tooltipstring>Edit cross section index M1</tooltipstring>
+    <variable>handles.model.delft3dflow.domain(ad).crossSections(handles.model.delft3dflow.domain(ad).activeCrossSection).M1</variable>
+    <type>integer</type>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrCrossSections</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>280 80 50 20</position>
+    <text>N1</text>
+    <onchange>ddb_Delft3DFLOW_crossSections</onchange>
+    <option1>edit</option1>
+    <variable>handles.model.delft3dflow.domain(ad).crossSections(handles.model.delft3dflow.domain(ad).activeCrossSection).N1</variable>
+    <type>integer</type>
+    <tooltipstring>Edit cross section index N1</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrCrossSections</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 50 50 20</position>
+    <text>M2</text>
+    <onchange>ddb_Delft3DFLOW_crossSections</onchange>
+    <option1>edit</option1>
+    <variable>handles.model.delft3dflow.domain(ad).crossSections(handles.model.delft3dflow.domain(ad).activeCrossSection).M2</variable>
+    <type>integer</type>
+    <tooltipstring>Edit cross section index M2</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrCrossSections</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>280 50 50 20</position>
+    <text>N2</text>
+    <onchange>ddb_Delft3DFLOW_crossSections</onchange>
+    <option1>edit</option1>
+    <variable>handles.model.delft3dflow.domain(ad).crossSections(handles.model.delft3dflow.domain(ad).activeCrossSection).N2</variable>
+    <type>integer</type>
+    <tooltipstring>Edit cross section index N2</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrCrossSections</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>210 20 120 20</position>
+    <text>Name</text>
+    <onchange>ddb_Delft3DFLOW_crossSections</onchange>
+    <option1>edit</option1>
+    <tooltipstring>Edit cross section name</tooltipstring>
+    <variable>handles.model.delft3dflow.domain(ad).crossSections(handles.model.delft3dflow.domain(ad).activeCrossSection).name</variable>
+    <type>string</type>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrCrossSections</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>togglebutton</style>
+    <position>360 85 70 20</position>
+    <text>Add</text>
+    <tooltipstring>Add cross section</tooltipstring>
+    <onchange>ddb_Delft3DFLOW_crossSections</onchange>
+    <option1>add</option1>
+    <variable>handles.model.delft3dflow.domain(ad).addCrossSection</variable>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>360 60 70 20</position>
+    <text>Delete</text>
+    <tooltipstring>Delete cross section</tooltipstring>
+    <callback>ddb_Delft3DFLOW_crossSections</callback>
+    <option1>delete</option1>
+  </element>
+  <element>
+    <style>togglebutton</style>
+    <position>360 35 70 20</position>
+    <text>Select</text>
+    <tooltipstring>Select cross section</tooltipstring>
+    <onchange>ddb_Delft3DFLOW_crossSections</onchange>
+    <option1>select</option1>
+    <variable>handles.model.delft3dflow.domain(ad).selectCrossSection</variable>
+  </element>
+  <element>
+    <style>togglebutton</style>
+    <position>360 10 70 20</position>
+    <text>Change</text>
+    <tooltipstring>Change cross section</tooltipstring>
+    <onchange>ddb_Delft3DFLOW_crossSections</onchange>
+    <option1>change</option1>
+    <variable>handles.model.delft3dflow.domain(ad).changeCrossSection</variable>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>450 60 70 20</position>
+    <tooltipstring>Open cross sections file</tooltipstring>
+    <text>Open</text>
+    <variable>handles.model.delft3dflow.domain(ad).crsFile</variable>
+    <extension>*.crs</extension>
+    <selectiontext>Select cross sections file</selectiontext>
+    <onchange>ddb_Delft3DFLOW_crossSections</onchange>
+    <option1>openfile</option1>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>450 35 70 20</position>
+    <tooltipstring>Save cross sections file</tooltipstring>
+    <text>Save</text>
+    <variable>handles.model.delft3dflow.domain(ad).crsFile</variable>
+    <showfilename>no</showfilename>
+    <extension>*.crs</extension>
+    <selectiontext>Select cross sections file</selectiontext>
+    <onchange>ddb_Delft3DFLOW_crossSections</onchange>
+    <option1>savefile</option1>
+  </element>
+</root>

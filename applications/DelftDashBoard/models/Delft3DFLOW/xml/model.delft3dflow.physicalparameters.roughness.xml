@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>10 10 305 128</position>
+    <text>Bottom Roughness</text>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Roughness Formula</text>
+    <position>125 100 130 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).roughnessType</variable>
+    <type>string</type>
+    <listtext>Chezy</listtext>
+    <listtext>Manning</listtext>
+    <listtext>White-Colebrook</listtext>
+    <listtext>Z0</listtext>
+    <listvalue>C</listvalue>
+    <listvalue>M</listvalue>
+    <listvalue>W</listvalue>
+    <listvalue>Z</listvalue>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>20 70</position>
+    <text>Uniform</text>
+    <variable>handles.model.delft3dflow.domain(ad).uniformRoughness</variable>
+    <type>integer</type>
+    <value>1</value>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).uniformRoughness</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>20 45</position>
+    <text>File</text>
+    <variable>handles.model.delft3dflow.domain(ad).uniformRoughness</variable>
+    <type>integer</type>
+    <value>0</value>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).uniformRoughness</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>60 45 50 20</position>
+    <text>File</text>
+    <variable>handles.model.delft3dflow.domain(ad).rghFile</variable>
+    <type>string</type>
+    <extension>*.rgh</extension>
+    <selectiontext>Select roughness file</selectiontext>
+    <tooltipstring>Select Delft3D roughness file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).uniformRoughness</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>125 70 50 20</position>
+    <text>U</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).uRoughness</variable>
+    <type>real</type>
+    <tooltipstring>Enter uniform roughness in U direction</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).uniformRoughness</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>195 70 30 20</position>
+    <text>V</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).vRoughness</variable>
+    <type>real</type>
+    <tooltipstring>Enter uniform roughness in V direction</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).uniformRoughness</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Wave Stress Formula</text>
+    <position>125 20 130 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).rouWav</variable>
+    <type>string</type>
+    <listtext>Fredsoe</listtext>
+    <listtext>Myrhaug et al.</listtext>
+    <listtext>Grant et al.</listtext>
+    <listtext>Huynh-Thanh et al.</listtext>
+    <listtext>Davis et al.</listtext>
+    <listtext>Bijker</listtext>
+    <listtext>Christoffersen and Jonsson</listtext>
+    <listtext>O'Connor and Yoo</listtext>
+    <listtext>Van Rijn 2004</listtext>
+    <listvalue>FR84</listvalue>
+    <listvalue>MS90</listvalue>
+    <listvalue>GM79</listvalue>
+    <listvalue>HT91</listvalue>
+    <listvalue>DS88</listvalue>
+    <listvalue>BK67</listvalue>
+    <listvalue>CJ85</listvalue>
+    <listvalue>OY88</listvalue>
+    <listvalue>VR04</listvalue>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>325 10 195 128</position>
+    <text>Wall Roughness</text>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Slip Condition</text>
+    <position>450 100 60 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).irov</variable>
+    <tooltipstring>Select slip condition</tooltipstring>
+    <type>integer</type>
+    <listtext>Free</listtext>
+    <listtext>Partial</listtext>
+    <listtext>No</listtext>
+    <listvalue>0</listvalue>
+    <listvalue>1</listvalue>
+    <listvalue>2</listvalue>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>450 75 55 20</position>
+    <text>Roughness Length (m)</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).z0v</variable>
+    <type>real</type>
+    <tooltipstring>Edit roughness length (m)</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).irov</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

@@ -1,0 +1,9 @@
+Changes in .m files since last version:
+
+* Modified makexbeachinput.m to write out wetz, which will tell us when a grid cell is wet and dry.
+  This helps with post-processing codes.
+
+* Modified xbeach2nc.m to read in wetz data and reshape and fixed data.u and v (it was saving data.utemp
+  and data.vtemp).  Modified ncwrite_xbeach.m and nccreate_xbeach.m to include wetz data in the netcdf
+  file.
+

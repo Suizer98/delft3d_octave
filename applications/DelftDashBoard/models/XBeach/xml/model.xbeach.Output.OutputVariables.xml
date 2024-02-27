@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <text>tstart</text>
+    <position>70.000,107.500, 80.000, 20.000</position>
+    <tooltipstring>Start time of output, in morphological time [s]</tooltipstring>
+    <variable>handles.model.xbeach.domain.tstart</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Interval time of global output [s]</tooltipstring>
+    <style>edit</style>
+    <text>tintg</text>
+    <position>70.000,80.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.tintg</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Interval time of point and runup gauge output [s]</tooltipstring>
+    <style>edit</style>
+    <text>tintp</text>
+    <position>70.000,52.500,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.tintp</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Interval time of mean,var,max,min output [s]</tooltipstring>
+    <style>edit</style>
+    <text>tintm</text>
+    <position>70.000,25.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.tintm</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Number of global output variables (as specified by user) [-]</tooltipstring>
+    <style>edit</style>
+    <text>nglobalvar</text>
+    <position>230.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.nglobalvar</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Number of mean,min,max,var output variables [-]</tooltipstring>
+    <style>edit</style>
+    <text>nmeanvar</text>
+    <position>230.000, 80.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.nmeanvar</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Number of point output variables [-]</tooltipstring>
+    <style>edit</style>
+    <text>npointvar</text>
+    <position>230.000, 52.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.npointvar</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Number of output point locations [-]</tooltipstring>
+    <style>edit</style>
+    <text>npoints</text>
+    <position>230.000, 25.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.npoints</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Number of output runup gauge locations [-]</tooltipstring>
+    <style>edit</style>
+    <text>nrugauge</text>
+    <position>390.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.nrugauge</variable>
+    <type>integer</type>
+  </element>
+</root>

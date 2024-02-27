@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 50</position>
+    <text>Background Color</text>
+  </element>
+  <element>
+    <style>selectcolor</style>
+    <position>10 10 150 20</position>
+    <text></text>
+    <textposition>left</textposition>
+    <variable>backgroundcolor</variable>
+    <tooltipstring>Select background color</tooltipstring>
+    <includenone>yes</includenone>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>box</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

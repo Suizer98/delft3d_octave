@@ -1,0 +1,11 @@
+% FILE WITH ZONE 2 : BUITENDIJKS
+% Containing the following columns with information:
+%    - X        Centre location of the centre of the zone [m wrt Hoek van Holland]
+%    - B        Width of considered zone [m]
+100000    1818 
+86000    1061  
+81000    1231  
+66000    1749  
+54000    4609  
+13000    1304  
+2000    2338   

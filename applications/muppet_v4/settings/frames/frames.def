@@ -1,0 +1,130 @@
+8
+
+deltaresa4
+8
+Frame01Position  1.0  1.0 19.0 27.7
+Frame02Position  1.0  1.0 13.6  1.0
+Frame03Position  1.0  2.0 13.6  2.0
+Frame04Position 14.6  3.0  2.7  1.0
+Frame05Position 17.3  3.0  2.7  1.0
+Frame06Position 14.6  2.0  5.4  1.0
+Frame07Position 14.6  1.0  2.7  1.0
+Frame08Position 17.3  1.0  2.7  1.0
+8
+Text01Position  1.30 3.30 left 
+Text02Position  1.30 2.80 left
+Text03Position  1.30 2.30 left
+Text04Position 14.80 3.30 left
+Text05Position 17.50 3.30 left
+Text06Position 14.80 2.30 left
+Text07Position 14.80 1.30 left
+Text08Position 17.50 1.30 left
+1
+Logo "deltaresWL2.jpg" 6.3 1.075 3
+
+deltaresa3
+8
+Frame01Position  1.0  1.0 27.7 40.0
+Frame02Position  1.0  1.0 22.3  1.0
+Frame03Position  1.0  2.0 22.3  2.0
+Frame04Position 23.3  3.0  2.7  1.0
+Frame05Position 26.0  3.0  2.7  1.0
+Frame06Position 23.3  2.0  5.4  1.0
+Frame07Position 23.3  1.0  2.7  1.0
+Frame08Position 26.0  1.0  2.7  1.0
+8
+Text01Position  1.30 3.40 left 
+Text02Position  1.30 2.90 left
+Text03Position  1.30 2.40 left
+Text04Position 23.60 3.30 left
+Text05Position 26.30 3.30 left
+Text06Position 23.60 2.30 left
+Text07Position 23.60 1.30 left
+Text08Position 26.30 1.30 left
+1
+Logo "deltaresWL2.jpg" 9.65 1.075 3
+
+wl1
+8
+Frame01Position  1.0  1.0 19.0 27.7
+Frame02Position  1.0  1.0 13.6  1.0
+Frame03Position  1.0  2.0 13.6  2.0
+Frame04Position 14.6  3.0  2.7  1.0
+Frame05Position 17.3  3.0  2.7  1.0
+Frame06Position 14.6  2.0  5.4  1.0
+Frame07Position 14.6  1.0  2.7  1.0
+Frame08Position 17.3  1.0  2.7  1.0
+9
+Text01Position  1.30 3.30 left 
+Text02Position  1.30 2.80 left
+Text03Position  1.30 2.30 left
+Text04Position 14.80 3.30 left
+Text05Position 17.50 3.30 left
+Text06Position 14.80 2.30 left
+Text07Position 14.80 1.30 left
+Text08Position 17.50 1.30 left
+Text09Position  7.80 1.30 center
+0
+
+wl1_a3
+8
+Frame01Position  1.0  1.0 27.7 40.0
+Frame02Position  1.0  1.0 22.3  1.0
+Frame03Position  1.0  2.0 22.3  2.0
+Frame04Position 23.3  3.0  2.7  1.0
+Frame05Position 26.0  3.0  2.7  1.0
+Frame06Position 23.3  2.0  5.4  1.0
+Frame07Position 23.3  1.0  2.7  1.0
+Frame08Position 26.0  1.0  2.7  1.0
+9
+Text01Position  1.30 3.40 left 
+Text02Position  1.30 2.90 left
+Text03Position  1.30 2.40 left
+Text04Position 23.60 3.30 left
+Text05Position 26.30 3.30 left
+Text06Position 23.60 2.30 left
+Text07Position 23.60 1.30 left
+Text08Position 26.30 1.30 left
+Text09Position 11.20 1.30 center
+0
+
+wl_logo
+2
+Frame01Position  1.0  1.0 19.0 27.7
+Frame02Position  1.0  1.0 19.0 2.0
+6
+Text01Position  1.30 1.50  left
+Text02Position  1.30 1.20  left
+Text03Position 19.70 2.50  right
+Text04Position 19.70 2.10  right
+Text05Position 19.70 1.70  right
+Text06Position 19.70 1.30  right
+1
+Logo "wlbanner.jpg" 1.1 1.9 4
+
+empty
+1
+Frame01Position  1.0  1.0 19.0 27.7
+0
+0
+
+clt
+2
+Frame01Position  1.0  1.0 19.0 27.7
+Frame02Position  1.0  1.0 19.0 2.0
+6
+Text01Position  1.30 1.50  left
+Text02Position  1.30 1.20  left
+Text03Position 19.70 2.50  right
+Text04Position 19.70 2.10  right
+Text05Position 19.70 1.70  right
+Text06Position 19.70 1.30  right
+1
+Logo "cardno.jpg" 1.2 2.0 4.5
+
+
+
+none
+0
+0
+0

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+  <name>scalar2duxy</name>
+  <longname>Scalar 2D (unstructured)</longname>
+  <plot>
+    <type>map</type>
+    <plotroutine>
+      <name>plotunstructuredpatches</name>
+      <longname>Patches</longname>
+      <plotoption>
+        <name>plotroutine</name>
+      </plotoption>
+      <plotoption>
+        <name>plotgridgroup</name>
+      </plotoption>
+      <plotoption>
+        <name>adddategroup</name>
+      </plotoption>
+    </plotroutine>
+  </plot>
+</root>

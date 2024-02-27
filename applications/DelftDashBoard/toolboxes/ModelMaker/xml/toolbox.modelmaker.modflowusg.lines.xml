@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>pushbutton</style>
+    <position>50 110 80 20</position>
+    <text>Add Polygon</text>
+    <callback>ddb_ModelMakerToolbox_modflowusg_lines</callback>
+    <option1>addpolygon</option1>
+    <tooltipstring>Draw polygon for refinement</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>50 85 80 20</position>
+    <text>Add Polyline</text>
+    <callback>ddb_ModelMakerToolbox_modflowusg_lines</callback>
+    <option1>addpolyline</option1>
+    <tooltipstring>Draw polyline for refinement</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>50 60 80 20</position>
+    <text>Add Point</text>
+    <callback>ddb_ModelMakerToolbox_modflowusg_lines</callback>
+    <option1>addpoint</option1>
+    <tooltipstring>Draw point for refinement</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>50 35 80 20</position>
+    <text>Delete</text>
+    <callback>ddb_ModelMakerToolbox_modflowusg_lines</callback>
+    <option1>delete</option1>
+    <tooltipstring>Delete refinement</tooltipstring>
+  </element>
+  <element>
+    <style>listbox</style>
+    <position>140 10 90 120</position>
+    <tooltipstring>Select nourishment polygon</tooltipstring>
+    <textposition>above-center</textposition>
+    <variable>handles.toolbox.modelmaker.gridgen.activeline</variable>
+    <type>integer</type>
+    <onchange>ddb_ModelMakerToolbox_modflowusg_lines</onchange>
+    <option1>selectpolyline</option1>
+    <listtext>
+      <variable>handles.toolbox.modelmaker.gridgen.linenames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>260 110 50 20</position>
+    <text>Refinement</text>
+    <textposition>right</textposition>
+    <type>integer</type>
+    <variable>handles.toolbox.modelmaker.gridgen.lines(handles.toolbox.modelmaker.gridgen.activeline).refinement_level</variable>
+    <tooltipstring>Edit refinement level for this line.</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.toolbox.modelmaker.gridgen.nrlines</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>850 10 140 20</position>
+    <tooltipstring>Push to generate model grid</tooltipstring>
+    <text>Make Unstructured Grid</text>
+    <callback>ddb_ModelMakerToolbox_modflowusg_grid</callback>
+    <option1>generategrid</option1>
+  </element>
+</root>

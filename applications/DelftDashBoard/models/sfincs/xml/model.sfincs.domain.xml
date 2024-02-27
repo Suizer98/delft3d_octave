@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <text>Domain</text>
+    <position>40 10 900 160</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>90 130 60 20</position>
+    <text>X0</text>
+    <variable>handles.model.sfincs.domain(ad).input.x0</variable>
+    <type>real</type>
+    <enable>0</enable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>180 130 60 20</position>
+    <text>Y0</text>
+    <variable>handles.model.sfincs.domain(ad).input.y0</variable>
+    <type>real</type>
+    <enable>0</enable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>90 105 60 20</position>
+    <text>MMax</text>
+    <variable>handles.model.sfincs.domain(ad).input.mmax</variable>
+    <type>integer</type>
+    <enable>0</enable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>180 105 60 20</position>
+    <text>NMax</text>
+    <variable>handles.model.sfincs.domain(ad).input.nmax</variable>
+    <type>integer</type>
+    <enable>0</enable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>90 80 60 20</position>
+    <text>dX</text>
+    <variable>handles.model.sfincs.domain(ad).input.dx</variable>
+    <type>real</type>
+    <enable>0</enable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>180 80 60 20</position>
+    <text>dY</text>
+    <variable>handles.model.sfincs.domain(ad).input.dy</variable>
+    <type>real</type>
+    <enable>0</enable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>90 55 60 20</position>
+    <text>Rotation</text>
+    <variable>handles.model.sfincs.domain(ad).input.rotation</variable>
+    <type>real</type>
+    <enable>0</enable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>90 30 60 20</position>
+    <text>Latitude</text>
+    <variable>handles.model.sfincs.domain(ad).input.latitude</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>260 130 130 20</position>
+    <tooltipstring>Select depth file</tooltipstring>
+    <text>Depth File</text>
+    <variable>handles.model.sfincs.domain(ad).input.depfile</variable>
+    <extension>*.dep</extension>
+    <selectiontext>Select depth file</selectiontext>
+    <callback>ddb_sfincs_domain</callback>
+    <option1>selectdepthfile</option1>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>260 105 130 20</position>
+    <tooltipstring>Select index file</tooltipstring>
+    <text>Index File</text>
+    <variable>handles.model.sfincs.domain(ad).input.indexfile</variable>
+    <extension>*.ind</extension>
+    <selectiontext>Select index file</selectiontext>
+    <callback>ddb_sfincs_domain</callback>
+    <option1>selectindexfile</option1>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>260 80 130 20</position>
+    <tooltipstring>Select mask file</tooltipstring>
+    <text>Mask File</text>
+    <variable>handles.model.sfincs.domain(ad).input.mskfile</variable>
+    <extension>*.msk</extension>
+    <selectiontext>Select mask file</selectiontext>
+    <callback>ddb_sfincs_domain</callback>
+    <option1>selectmaskfile</option1>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>260 55 130 20</position>
+    <tooltipstring>Select sub-grid file</tooltipstring>
+    <text>Sub-grid File</text>
+    <variable>handles.model.sfincs.domain(ad).input.sbgfile</variable>
+    <extension>*.sbg</extension>
+    <selectiontext>Select subgrid file</selectiontext>
+    <callback>ddb_sfincs_domain</callback>
+    <option1>selectsubgridfile</option1>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>260 30 70 20</position>
+    <text>Input Format</text>
+    <variable>handles.model.sfincs.domain(ad).input.inputformat</variable>
+    <type>string</type>
+    <listtext>Binary</listtext>
+    <listtext>ASCII</listtext>
+    <listvalue>bin</listvalue>
+    <listvalue>asc</listvalue>
+  </element>
+</root>

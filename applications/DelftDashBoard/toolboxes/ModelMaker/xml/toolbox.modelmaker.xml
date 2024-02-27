@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<root>
+  <toolbox>ModelMaker</toolbox>
+  <longname>Model Maker</longname>
+  <enable>1</enable>
+  <element>
+    <position>10 10 1900 140</position>
+    <style>tabpanel</style>
+    <tab>
+      <formodel>delft3dflow</formodel>
+      <tabstring>Quick Mode</tabstring>
+      <callback>ddb_ModelMakerToolbox_Delft3DFLOW_quickMode</callback>
+      <element>toolbox.modelmaker.delft3dflow.quickmode.xml</element>
+    </tab>
+    <tab>
+      <formodel>dflowfm</formodel>
+      <tabstring>Quick Mode</tabstring>
+      <callback>ddb_ModelMakerToolbox_DFlowFM_quickMode</callback>
+      <element>toolbox.modelmaker.dflowfm.quickmode.xml</element>
+    </tab>
+    <tab>
+      <formodel>delft3dwave</formodel>
+      <tabstring>Quick Mode</tabstring>
+      <callback>ddb_ModelMakerToolbox_Delft3DWAVE_quickMode</callback>
+      <element>toolbox.modelmaker.delft3dwave.quickmode.xml</element>
+    </tab>
+    <tab>
+      <formodel>xbeach</formodel>
+      <tabstring>Quick Mode</tabstring>
+      <callback>ddb_ModelMakerToolbox_XBeach_quickMode</callback>
+      <element>toolbox.modelmaker.xbeach.quickmode.xml</element>
+    </tab>
+    <tab>
+      <formodel>fast</formodel>
+      <tabstring>Quick Mode</tabstring>
+      <callback>ddb_ModelMakerToolbox_FAST_quickMode</callback>
+      <element>toolbox.modelmaker.fast.quickmode.xml</element>
+    </tab>
+    <tab>
+      <formodel>ww3</formodel>
+      <tabstring>Quick Mode</tabstring>
+      <callback>ddb_ModelMakerToolbox_ww3_quickMode</callback>
+      <element>toolbox.modelmaker.ww3.quickmode.xml</element>
+    </tab>
+    <tab>
+      <formodel>sfincs</formodel>
+      <tabstring>Quick Mode</tabstring>
+      <callback>ddb_ModelMakerToolbox_sfincs_quickMode</callback>
+      <element>toolbox.modelmaker.sfincs.quickmode.xml</element>
+    </tab>
+    <tab>
+      <formodel>hurrywave</formodel>
+      <tabstring>Quick Mode</tabstring>
+      <callback>ddb_ModelMakerToolbox_hurrywave_quickMode</callback>
+      <element>toolbox.modelmaker.hurrywave.quickmode.xml</element>
+    </tab>
+    <tab>
+      <formodel>sfincs</formodel>
+      <tabstring>Quadtree</tabstring>
+      <callback>ddb_ModelMakerToolbox_sfincs_buq</callback>
+      <element>toolbox.modelmaker.sfincs.buq.xml</element>
+    </tab>    
+    <tab>
+      <formodel>modflowusg</formodel>
+      <tabstring>Grid</tabstring>
+      <callback>ddb_ModelMakerToolbox_modflowusg_grid</callback>
+      <element>toolbox.modelmaker.modflowusg.grid.xml</element>
+    </tab>
+    <tab>
+      <formodel>delft3dflow</formodel>
+      <formodel>dflowfm</formodel>
+      <formodel>delft3dwave</formodel>
+      <formodel>ww3</formodel>
+      <formodel>xbeach</formodel>
+      <formodel>sfincs</formodel>
+      <formodel>hurrywave</formodel>
+      <tabstring>Bathymetry</tabstring>
+      <callback>ddb_ModelMakerToolbox_bathymetry</callback>
+      <enable>1</enable>
+      <element>toolbox.modelmaker.bathymetry.xml</element>
+    </tab>
+    <tab>
+      <formodel>delft3dflow</formodel>
+      <tabstring>Initial Conditions</tabstring>
+      <callback>ddb_ModelMakerToolbox_Delft3DFLOW_initialConditions</callback>
+      <enable>1</enable>
+      <element>toolbox.modelmaker.delft3dflow.initialconditions.xml</element>
+    </tab>
+    <tab>
+      <formodel>delft3dflow</formodel>
+      <tabstring>Boundary Conditions</tabstring>
+      <callback>ddb_ModelMakerToolbox_Delft3DFLOW_boundaryConditions</callback>
+      <enable>0</enable>
+      <element>toolbox.modelmaker.delft3dflow.boundaryconditions.xml</element>
+    </tab>
+    <tab>
+      <formodel>delft3dflow</formodel>
+      <tabstring>Roughness</tabstring>
+      <callback>ddb_ModelMakerToolbox_Delft3DFLOW_roughness</callback>
+      <element>toolbox.modelmaker.delft3dflow.roughness.xml</element>
+    </tab>
+    <tab>
+      <formodel>xbeach</formodel>
+      <tabstring>Transects</tabstring>
+      <callback>ddb_ModelMakerToolbox_XBeach_quickMode</callback>
+      <element>toolbox.modelmaker.xbeach.transects.xml</element>
+    </tab>
+    <tab>
+      <formodel>modflowusg</formodel>
+      <tabstring>Refinement</tabstring>
+      <callback>ddb_ModelMakerToolbox_modflowusg_lines</callback>
+      <element>toolbox.modelmaker.modflowusg.lines.xml</element>
+    </tab>
+    <tab>
+      <formodel>esm</formodel>
+      <tabstring>Quick Mode</tabstring>
+      <callback>ddb_ModelMakerToolbox_esm_quickMode</callback>
+      <element>toolbox.modelmaker.esm.quickmode.xml</element>
+    </tab>
+    <tab>
+      <formodel>dflowfm</formodel>
+      <tabstring>Refine & Clip</tabstring>
+      <callback>ddb_ModelMakerToolbox_DFlowFM_refine</callback>
+      <element>toolbox.modelmaker.dflowfm.refine.xml</element>
+    </tab>
+    <tab>
+      <formodel>sfincs</formodel>
+      <tabstring>Mask active grid</tabstring>
+      <callback>ddb_ModelMakerToolbox_sfincs_mask</callback>
+      <element>toolbox.modelmaker.sfincs.maskactivegrid.xml</element>
+    </tab>    
+    <tab>
+      <formodel>sfincs</formodel>
+      <tabstring>Mask boundary cells</tabstring>
+      <callback>ddb_ModelMakerToolbox_sfincs_mask</callback>
+      <element>toolbox.modelmaker.sfincs.maskboundarycells.xml</element>
+    </tab>      
+    <tab>
+      <formodel>sfincs</formodel>
+      <tabstring>Coastline</tabstring>
+      <callback>ddb_ModelMakerToolbox_sfincs_coastline</callback>
+      <element>toolbox.modelmaker.sfincs.coastline.xml</element>
+    </tab>    
+    <tab>
+      <formodel>sfincs</formodel>
+      <tabstring>Structures</tabstring>
+      <callback>ddb_ModelMakerToolbox_sfincs_structures</callback>
+      <element>toolbox.modelmaker.sfincs.structures.xml</element>
+    </tab>    
+    <tab>
+      <formodel>shorelines</formodel>
+      <tabstring>ShorelineS</tabstring>
+      <callback>ddb_ModelMakerToolbox_shorelines</callback>
+      <element>toolbox.modelmaker.shorelines.xml</element>
+    </tab>    
+    <tab>
+      <formodel>hurrywave</formodel>
+      <tabstring>Mask active grid</tabstring>
+      <callback>ddb_ModelMakerToolbox_hurrywave_mask</callback>
+      <element>toolbox.modelmaker.hurrywave.maskactivegrid.xml</element>
+    </tab>    
+    <tab>
+      <formodel>hurrywave</formodel>
+      <tabstring>Mask boundary cells</tabstring>
+      <callback>ddb_ModelMakerToolbox_hurrywave_mask</callback>
+      <element>toolbox.modelmaker.hurrywave.maskboundarycells.xml</element>
+    </tab>      
+  </element>
+</root>

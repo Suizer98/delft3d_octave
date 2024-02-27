@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <text>Time Frame</text>
+    <position>40 10 900 160</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>130 130 110 20</position>
+    <text>Reference Time</text>
+    <variable>handles.model.sfincs.domain(ad).input.tref</variable>
+    <callback>ddb_sfincs_timeframe</callback>
+    <option1>edittime</option1>
+    <type>datetime</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>130 105 110 20</position>
+    <text>Start Time</text>
+    <variable>handles.model.sfincs.domain(ad).input.tstart</variable>
+    <callback>ddb_sfincs_timeframe</callback>
+    <option1>edittime</option1>
+    <type>datetime</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>130 80 110 20</position>
+    <text>Stop Time</text>
+    <variable>handles.model.sfincs.domain(ad).input.tstop</variable>
+    <callback>ddb_sfincs_timeframe</callback>
+    <option1>edittime</option1>
+    <type>datetime</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>130 50 110 20</position>
+    <text>Spin-up Time</text>
+    <variable>handles.model.sfincs.domain(ad).input.tspinup</variable>
+    <type>real</type>
+  </element>
+</root>

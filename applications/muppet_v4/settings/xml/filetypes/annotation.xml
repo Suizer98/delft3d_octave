@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+  <longname>Annotation file (*.ann)</longname>
+  <title>Annotation File</title>
+  <filterspec>*.ann</filterspec>
+  <callback>muppet_addDatasetAnnotation</callback>
+  <dataproperty>
+    <name>filename</name>
+  </dataproperty>
+  <dataproperty>
+    <name>filetype</name>
+  </dataproperty>
+  <dataproperty>
+    <name>annotationtext</name>
+  </dataproperty>
+  <elementgroup>annotationtext</elementgroup>
+</root>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<root>
+  <longname>Wind/Wave Rose</longname>
+  <plottype>
+    <name>Rose</name>
+    <plotroutine>
+      <name>rose</name>
+      <plotoption>
+        <name>plotroutine</name>
+      </plotoption>
+      <plotoption>
+        <name>radiusstep</name>
+      </plotoption>
+      <plotoption>
+        <name>maxradius</name>
+      </plotoption>
+      <plotoption>
+        <name>firstcolumncalm</name>
+      </plotoption>
+      <plotoption>
+        <name>addrosetotals</name>
+      </plotoption>
+      <plotoption>
+        <name>addroselegend</name>
+      </plotoption>
+      <plotoption>
+        <name>coloredrose</name>
+      </plotoption>
+      <elementgroup>rose</elementgroup>
+    </plotroutine>
+  </plottype>
+</root>

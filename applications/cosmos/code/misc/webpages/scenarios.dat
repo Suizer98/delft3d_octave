@@ -1,0 +1,24 @@
+WebPage "Scenarios"
+
+    PageDir      "scenarios"
+    FileName     "scenarios.html"
+    PageType     "scenarios"
+    ActiveHeader "scenarios"
+
+    Main
+
+        Scenario "El Nino 1982"
+            ScenarioAbbr  "elnino1982"
+        EndScenario
+
+        Scenario "Winter 2003"
+            ScenarioAbbr  "winter2003"
+        EndScenario
+
+        Scenario "500 year storm"
+            ScenarioAbbr  "storm500y"
+        EndScenario
+
+    EndMain
+
+EndPage

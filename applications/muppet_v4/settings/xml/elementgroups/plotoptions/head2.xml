@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 50</position>
+    <text>Head 2</text>
+  </element>
+  <element>
+    <variable>head2style</variable>
+    <type>string</type>
+    <style>selectheadstyle</style>
+    <position>40 10 80 20</position>
+    <text>Style</text>
+  </element>
+  <element>
+    <variable>head2width</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>170 10 50 20</position>
+    <text>Width</text>
+  </element>
+  <element>
+    <variable>head2length</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>270 10 50 20</position>
+    <text>Length</text>
+  </element>
+</root>

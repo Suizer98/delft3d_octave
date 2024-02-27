@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>pushselectfile</style>
+    <position>50 130 80 20</position>
+    <text>Select File</text>
+    <variable>handles.toolbox.tiling.shoreline.dataFile</variable>
+    <onchange>ddb_TilingToolbox_bathymetry</onchange>
+    <option1>loadpolygon</option1>
+    <showfilename>yes</showfilename>
+    <extension>*.asc</extension>
+    <selectiontext>Select data file (ArcInfo format)</selectiontext>
+    <tooltipstring>Select data file (ArcInfo format)</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>50 100 60 20</position>
+    <text>X0</text>
+    <textposition>left</textposition>
+    <enable>1</enable>
+    <variable>handles.toolbox.tiling.shoreline.x0</variable>
+    <type>real</type>
+    <tooltipstring>Edit x origin of tiling system (lower left corner of lower left tile)</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 100 60 20</position>
+    <text>Y0</text>
+    <textposition>left</textposition>
+    <enable>1</enable>
+    <variable>handles.toolbox.tiling.shoreline.y0</variable>
+    <type>real</type>
+    <tooltipstring>Edit y origin of tiling system (lower left corner of lower left tile)</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>50 75 60 20</position>
+    <text>Nr Cells X</text>
+    <textposition>left</textposition>
+    <enable>1</enable>
+    <variable>handles.toolbox.tiling.shoreline.nrCellsX</variable>
+    <type>integer</type>
+    <tooltipstring>Edit number of cells in x direction</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 75 60 20</position>
+    <text>Nr Cells Y</text>
+    <textposition>left</textposition>
+    <enable>1</enable>
+    <variable>handles.toolbox.tiling.shoreline.nrCellsY</variable>
+    <type>integer</type>
+    <tooltipstring>Edit number of cells in y direction</tooltipstring>
+  </element>
+</root>

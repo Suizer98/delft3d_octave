@@ -1,0 +1,237 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <text>Wave Conditions</text>
+    <position>40 10 1200 160</position>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Wave Conditions Options</text>
+    <position>200 135 120 20</position>
+    <type>string</type>
+    <variable>handles.model.shorelines.wave_opt</variable>
+    <callback>ddb_shorelines_wave_conditions</callback>
+    <option1>selectwaveoption</option1>
+    <listtext>
+      <variable>handles.model.shorelines.wave_opts_long</variable>
+    </listtext>
+    <listvalue>
+      <variable>handles.model.shorelines.wave_opts_short</variable>
+    </listvalue>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 105 60 20</position>
+    <text>Hs (m)</text>
+    <variable>handles.model.shorelines.domain.Hso</variable>
+    <type>real</type>
+    <tooltipstring>Edit value for Hs offshore</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.wave_opt</variable>
+        <value>mean_and_spreading</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 80 60 20</position>
+    <text>Tp (s)</text>
+    <variable>handles.model.shorelines.domain.tper</variable>
+    <type>real</type>
+    <tooltipstring>Edit value for Tp offshore</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.wave_opt</variable>
+        <value>mean_and_spreading</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 55 60 20</position>
+    <text>Mean wave direction (°N)</text>
+    <variable>handles.model.shorelines.domain.phiw0</variable>
+    <type>real</type>
+    <tooltipstring>Edit value for wave direction offshore</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.wave_opt</variable>
+        <value>mean_and_spreading</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 30 60 20</position>
+    <text>Spreading (°)</text>
+    <variable>handles.model.shorelines.domain.spread</variable>
+    <type>real</type>
+    <tooltipstring>Edit value for spreading in wave direction</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.wave_opt</variable>
+        <value>mean_and_spreading</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>350 135 150 20</position>
+    <text>Load Wave Climate File</text>
+    <variable>handles.model.shorelines.domain.Waveclimfile</variable>
+    <callback>ddb_shorelines_wave_conditions</callback>
+    <option1>loadwaveclimfile</option1>
+    <showfilename>yes</showfilename>
+    <extension>*.txt</extension>
+    <selectiontext>Select wave climate file</selectiontext>
+    <tooltipstring>Select wave climate file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.wave_opt</variable>
+        <value>wave_climate</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>350 110 150 20</position>
+    <text>Load Wave Timeseries File</text>
+    <variable>handles.model.shorelines.domain.WVCfile</variable>
+    <callback>ddb_shorelines_wave_conditions</callback>
+    <option1>loadwvcfile</option1>
+    <showfilename>yes</showfilename>
+    <extension>*.txt</extension>
+    <selectiontext>Select wave timeseries file</selectiontext>
+    <tooltipstring>Select wave timeseries file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.wave_opt</variable>
+        <value>wave_time_series</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Wave Transformation Options</text>
+    <position>800 135 120 20</position>
+    <type>string</type>
+    <variable>handles.model.shorelines.wavetrans_opt</variable>
+    <callback>ddb_shorelines_wave_conditions</callback>
+    <option1>selectwavetransoption</option1>
+    <listtext>
+      <variable>handles.model.shorelines.wavetrans_opts_long</variable>
+    </listtext>
+    <listvalue>
+      <variable>handles.model.shorelines.wavetrans_opts_short</variable>
+    </listvalue>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>800 80 60 20</position>
+    <text>Offshore depth (m)</text>
+    <variable>handles.model.shorelines.domain.ddeep</variable>
+    <type>real</type>
+    <tooltipstring>Edit value for offshore depth</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.wavetrans_opt</variable>
+        <value>dynamic_profile</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>800 55 60 20</position>
+    <text>Nearshore depth (m)</text>
+    <variable>handles.model.shorelines.domain.dnearshore</variable>
+    <type>real</type>
+    <tooltipstring>Edit value for depth at toe of dynamic profile</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.wavetrans_opt</variable>
+        <value>dynamic_profile</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>800 30 60 20</position>
+    <text>Shoreface orientation(deg. N)</text>
+    <variable>handles.model.shorelines.domain.phif</variable>
+    <type>real</type>
+    <tooltipstring>Edit value for orientation of nearshore contour</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.wavetrans_opt</variable>
+        <value>dynamic_profile</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>1000 80 150 20</position>
+    <text>Load Wave Lookup table</text>
+    <variable>handles.model.shorelines.domain.wavefile</variable>
+    <callback>ddb_shorelines_wave_conditions</callback>
+    <option1>loadwavefile</option1>
+    <showfilename>yes</showfilename>
+    <extension>*.mat</extension>
+    <selectiontext>Select wave lookup table file</selectiontext>
+    <tooltipstring>Select wave lookup table file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.wavetrans_opt</variable>
+        <value>lookup_table</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>1000 55 60 20</position>
+    <text>Surfzone width (m)</text>
+    <variable>handles.model.shorelines.domain.surf_width_w</variable>
+    <type>real</type>
+    <tooltipstring>Edit value for surf zone width</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.wavetrans_opt</variable>
+        <value>lookup_table</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

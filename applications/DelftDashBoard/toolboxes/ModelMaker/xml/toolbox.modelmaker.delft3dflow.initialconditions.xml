@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>popupmenu</style>
+    <position>40 100 100 20</position>
+    <variable>handles.toolbox.modelmaker.initialConditions.activeParameter</variable>
+    <tooltipstring>Select parameter</tooltipstring>
+    <type>integer</type>
+    <text/>
+    <listtext>
+      <variable>handles.toolbox.modelmaker.initialConditions.parameterList</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>170 100 100 20</position>
+    <variable>handles.toolbox.modelmaker.initialConditions.activeDataSource</variable>
+    <tooltipstring>Select data source</tooltipstring>
+    <type>integer</type>
+    <text/>
+    <listtext>
+      <variable>handles.toolbox.modelmaker.initialConditions.dataSourceList</variable>
+    </listtext>
+  </element>
+</root>

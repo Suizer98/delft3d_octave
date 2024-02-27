@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<root>
+  <title>Model version</title>
+  <width>600</width>
+  <height>120</height>
+  <element>
+    <style>popupmenu</style>
+    <text>Model Version</text>
+    <position>130 80 120 20</position>
+    <type>string</type>
+    <variable>version</variable>
+    <listtext>
+      <variable>versionlist</variable>
+    </listtext>
+    <listvalue>
+      <variable>versionlist</variable>
+    </listvalue>
+  </element>
+  <element>
+    <style>edit</style>
+    <text>Folder</text>
+    <position>130 50 450 20</position>
+    <type>string</type>
+    <variable>exedir</variable>
+  </element>
+  <element>
+    <style>pushok</style>
+    <position>200 10 50 20</position>
+  </element>
+  <element>
+    <style>pushcancel</style>
+    <position>140 10 50 20</position>
+  </element>
+</root>

@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <text>nmax</text>
+    <position>70.000,107.500, 80.000, 20.000</position>
+    <tooltipstring>maximum ratio of cg/c fro computing long wave boundary conditions [-]</tooltipstring>
+    <variable>handles.model.xbeach.domain.nmax</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Random seed on (1) or off (0) for instat = 4,5,6 boundary conditions [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>random</text>
+    <position>70.000,80.000</position>
+    <variable>handles.model.xbeach.domain.random</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Low-freq cutoff frequency for instat = 4,5,6 boundary conditions [Hz]</tooltipstring>
+    <style>edit</style>
+    <text>fcutoff</text>
+    <position>70.000,52.500,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.fcutoff</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>nspr = 1 long wave direction forced into centres of short wave bins, nspr = 0 regular long wave spreadin [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>nspr</text>
+    <position>70.000,25.000</position>
+    <variable>handles.model.xbeach.domain.nspr</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Compute mean wave period over energy band: par%trepfac*maxval(Sf) for instat 4,5,6; converges to Tm01 for trepfac = 0.0 and [-]</tooltipstring>
+    <style>edit</style>
+    <text>trepfac</text>
+    <position>230.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.trepfac</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Threshold ratio to maxval of S above which spec dens are read in (default 0.08*maxval) [-]</tooltipstring>
+    <style>edit</style>
+    <text>sprdthr</text>
+    <position>230.000, 80.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.sprdthr</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Turn off or on Hm0 correction [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>correctHm0</text>
+    <position>230.000, 52.500</position>
+    <variable>handles.model.xbeach.domain.correctHm0</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Turn off or on old nyquist switch [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>oldnyq</text>
+    <position>230.000, 25.000</position>
+    <variable>handles.model.xbeach.domain.oldnyq</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Turn off or on Tm01 or Tm-10 switch [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>Tm01switch</text>
+    <position>390.000,107.500</position>
+    <variable>handles.model.xbeach.domain.Tm01switch</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Timestep used to describe time series of wave energy and long wave flux at offshore boundary (not affected by morfac) [s]</tooltipstring>
+    <style>edit</style>
+    <text>dtbc</text>
+    <position>390.000, 80.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.dtbc</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>The (counter-clockwise) angle in the degrees needed to rotate from the x-axis in SWAN to the x-axis pointing East [deg]</tooltipstring>
+    <style>edit</style>
+    <text>dthetaS_XB</text>
+    <position>390.000, 52.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.dthetaS_XB</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Number of input spectrum locations [-]</tooltipstring>
+    <style>edit</style>
+    <text>nspectrumloc</text>
+    <position>390.000, 25.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.nspectrumloc</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Version of wave boundary conditions [-]</tooltipstring>
+    <style>edit</style>
+    <text>wbcversion</text>
+    <position>550.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.wbcversion</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Switch between spectrum format for wave action balance of nonhydrostatic waves [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>nonhspectrum</text>
+    <position>550.000, 80.000</position>
+    <variable>handles.model.xbeach.domain.nonhspectrum</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Wave dissipation coefficient in Roelvink formulation [-]</tooltipstring>
+    <style>edit</style>
+    <text>alpha</text>
+    <position>550.000, 52.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.alpha</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Power in Roelvink dissipation model [-]</tooltipstring>
+    <style>edit</style>
+    <text>n</text>
+    <position>550.000, 25.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.n</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Maximum ratio wave height to water depth [-]</tooltipstring>
+    <style>edit</style>
+    <text>gammax</text>
+    <position>710.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.gammax</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Fraction of wave height to add to water depth [-]</tooltipstring>
+    <style>edit</style>
+    <text>delta</text>
+    <position>710.000, 80.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.delta</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Bed friction factor [-]</tooltipstring>
+    <style>edit</style>
+    <text>fw</text>
+    <position>710.000, 52.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.fw</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Turn on (1) or off (0) breaker delay model [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>breakerdelay</text>
+    <position>710.000, 25.000</position>
+    <variable>handles.model.xbeach.domain.breakerdelay</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Turn on (1) or off (0) shoaling delay [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>shoaldelay</text>
+    <position>870.000,107.500</position>
+    <variable>handles.model.xbeach.domain.shoaldelay</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>fraction of the local wave length to use for shoaling delay depth [-]</tooltipstring>
+    <style>edit</style>
+    <text>facsd</text>
+    <position>870.000, 80.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.facsd</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>calibration coefficient for short wave runup [-]</tooltipstring>
+    <style>edit</style>
+    <text>facrun</text>
+    <position>870.000, 52.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.facrun</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Turn on (1) or off(0) roller model [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>roller</text>
+    <position>870.000, 25.000</position>
+    <variable>handles.model.xbeach.domain.roller</variable>
+    <type>integer</type>
+  </element>
+</root>

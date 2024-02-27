@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>pushselectfile</style>
+    <text>zs0file</text>
+    <position>70.000,107.500, 80.000, 20.000</position>
+    <tooltipstring>Name of tide boundary condition series [-]</tooltipstring>
+    <variable>handles.model.xbeach.domain.zs0file</variable>
+    <type>character</type>
+    <extension>*.*</extension>
+    <selectiontext>Select file</selectiontext>
+  </element>
+  <element>
+    <tooltipstring>Number of corner points on which a tide time series is specified [-]</tooltipstring>
+    <style>edit</style>
+    <text>tideloc</text>
+    <position>70.000,80.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.tideloc</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Specifies tide on sea and land ('land') or two sea points ('sea') if tideloc = 2 [-]</tooltipstring>
+    <style>popupmenu</style>
+    <text>paulrevere</text>
+    <position>70.000,52.500,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.paulrevere</variable>
+    <type>string</type>
+    <listtext>land</listtext>
+    <listtext>sea</listtext>
+  </element>
+</root>

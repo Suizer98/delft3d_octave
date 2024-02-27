@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <text>Communication File</text>
+    <position>10 10 210 125</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>100 90 110 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).WAQcomStartTime</variable>
+    <type>datetime</type>
+    <tooltipstring>Edit com start time</tooltipstring>
+    <text>Start Time</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>100 60 110 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).WAQcomStopTime</variable>
+    <type>datetime</type>
+    <tooltipstring>Edit com stop time</tooltipstring>
+    <text>Stop Time</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>100 30 110 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).WAQcomInterval</variable>
+    <type>real</type>
+    <tooltipstring>Edit com time step</tooltipstring>
+    <text>Time Step (min)</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <style>panel</style>
+    <text>Settings</text>
+    <position>230 10 210 125</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>340 90 90 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).ilAggr</variable>
+    <type>string</type>
+    <tooltipstring>Edit aggregation of Delft3D layers to WAQ layers (space separated)</tooltipstring>
+    <text>ilAggr (space sep) :</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <style>text</style>
+    <position>285 60</position>
+    <prefix>WaqAgg : </prefix>
+    <type>text</type>
+    <variable>handles.model.delft3dflow.domain(ad).WaqAgg</variable>
+  </element>
+</root>

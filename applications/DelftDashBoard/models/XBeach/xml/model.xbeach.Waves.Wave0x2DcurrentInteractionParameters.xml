@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>checkbox</style>
+    <text>wci</text>
+    <position>70.000,107.500</position>
+    <tooltipstring>Turns on (1) or off (0) wave-current interaction [-]</tooltipstring>
+    <variable>handles.model.xbeach.domain.wci</variable>
+    <type>integer</type>
+  </element>
+</root>

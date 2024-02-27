@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<root>
+  <longname>Wave input</longname>
+  <element>
+    <style>tabpanel</style>
+    <position>10.000,  10.000,1200.000, 140.000</position>
+    <tab>
+      <tabstring>Wave boundary condit...</tabstring>
+      <tooltipstring>Wave boundary condition parameters</tooltipstring>
+      <element>model.xbeach.Waves.WaveBoundaryConditionParameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Wave-spectrum bounda...</tabstring>
+      <tooltipstring>Wave-spectrum boundary condition parameters</tooltipstring>
+      <element>model.xbeach.Waves.Wave0x2DspectrumBoundaryConditionParameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Wave breaking parame...</tabstring>
+      <tooltipstring>Wave breaking parameters</tooltipstring>
+      <element>model.xbeach.Waves.WaveBreakingParameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Roller parameters</tabstring>
+      <tooltipstring>Roller parameters</tooltipstring>
+      <element>model.xbeach.Waves.RollerParameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Wave-current interac...</tabstring>
+      <tooltipstring>Wave-current interaction parameters</tooltipstring>
+      <element>model.xbeach.Waves.Wave0x2DcurrentInteractionParameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Wave numerics parame...</tabstring>
+      <tooltipstring>Wave numerics parameters</tooltipstring>
+      <element>model.xbeach.Waves.WaveNumericsParameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Waves advanced options</tabstring>
+      <tooltipstring>Waves advanced options</tooltipstring>
+      <element>model.xbeach.Waves.Advanced_1.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Waves advanced options</tabstring>
+      <tooltipstring>Waves advanced options</tooltipstring>
+      <element>model.xbeach.Waves.Advanced_2.xml</element>
+    </tab>
+  </element>
+</root>

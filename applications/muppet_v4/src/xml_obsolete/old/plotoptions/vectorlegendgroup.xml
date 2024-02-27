@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<root>
+  <plotoption>
+    <name>vectorlegendgroup</name>
+    <element>
+      <style>panel</style>
+      <text>Vector Legend</text>
+      <position>0 0 350 50</position>
+    </element>
+    <element>
+      <keyword>VectorLegendLength</keyword>
+      <default>1</default>
+      <style>edit</style>
+      <variable>vectorlegendlength</variable>
+      <type>real</type>
+      <text>Arrow Length</text>
+      <tooltipstring>Edit length of vector in legend</tooltipstring>
+      <position>90 10 50 20</position>
+    </element>
+    <element>
+      <keyword>VectorLegendText</keyword>
+      <default>1 m/s</default>
+      <style>edit</style>
+      <variable>vectorlegendtext</variable>
+      <type>string</type>
+      <text>Text</text>
+      <tooltipstring>Edit text of vector in legend</tooltipstring>
+      <position>180 10 160 20</position>
+    </element>
+  </plotoption>
+</root>

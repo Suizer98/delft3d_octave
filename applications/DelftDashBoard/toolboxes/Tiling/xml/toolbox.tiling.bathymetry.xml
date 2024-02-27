@@ -1,0 +1,264 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>popupmenu</style>
+    <position>60 110 130 20</position>
+    <text>Format</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.tiling.import.rawDataFormat</variable>
+    <type>string</type>
+    <tooltipstring>Select file format of raw data</tooltipstring>
+    <callback>ddb_TilingToolbox_bathymetry</callback>
+    <option1>selectrawdataformat</option1>
+    <listtext>
+      <variable>handles.toolbox.tiling.import.rawDataFormatsText</variable>
+    </listtext>
+    <listvalue>
+      <variable>handles.toolbox.tiling.import.rawDataFormats</variable>
+    </listvalue>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>200 110 80 20</position>
+    <text>Select File</text>
+    <variable>handles.toolbox.tiling.import.dataFile</variable>
+    <onchange>ddb_TilingToolbox_bathymetry</onchange>
+    <option1>selectdataset</option1>
+    <showfilename>yes</showfilename>
+    <extension>
+      <variable>import.rawDataFormatExtension</variable>
+    </extension>
+    <selectiontext>
+      <variable>import.rawDataFormatSelectionText</variable>
+    </selectiontext>
+    <tooltipstring>Select data file</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>60 80 60 20</position>
+    <text>X0</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.tiling.import.x0</variable>
+    <type>real</type>
+    <tooltipstring>Edit x origin of tiling system (lower left corner of lower left tile)</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.tiling.import.rawDataType</variable>
+        <type>string</type>
+        <value>regulargrid</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>180 80 60 20</position>
+    <text>Y0</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.tiling.import.y0</variable>
+    <type>real</type>
+    <tooltipstring>Edit y origin of tiling system (lower left corner of lower left tile)</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.tiling.import.rawDataType</variable>
+        <type>string</type>
+        <value>regulargrid</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>60 55 60 20</position>
+    <text>dX</text>
+    <textposition>left</textposition>
+    <enable>1</enable>
+    <variable>handles.toolbox.tiling.import.dx</variable>
+    <type>real</type>
+    <tooltipstring>Edit grid size X of the highest resolution tiles</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.tiling.import.rawDataType</variable>
+        <type>string</type>
+        <value>regulargrid</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>180 55 60 20</position>
+    <text>dY</text>
+    <textposition>left</textposition>
+    <enable>1</enable>
+    <variable>handles.toolbox.tiling.import.dy</variable>
+    <type>real</type>
+    <tooltipstring>Edit grid size Y of the highest resolution tiles</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.tiling.import.rawDataType</variable>
+        <type>string</type>
+        <value>regulargrid</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>60 30 60 20</position>
+    <text>Nr X</text>
+    <textposition>left</textposition>
+    <enable>1</enable>
+    <variable>handles.toolbox.tiling.import.nx</variable>
+    <type>integer</type>
+    <tooltipstring>Edit number of grid cells per tile in x direction</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>180 30 60 20</position>
+    <text>Nr Y</text>
+    <textposition>left</textposition>
+    <enable>1</enable>
+    <variable>handles.toolbox.tiling.import.ny</variable>
+    <type>integer</type>
+    <tooltipstring>Edit number of grid cells per tile in y direction</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>270 80 100 20</position>
+    <text>Select CS</text>
+    <callback>ddb_TilingToolbox_bathymetry</callback>
+    <option1>selectcs</option1>
+    <tooltipstring>Select horizontal coordinate system of data source</tooltipstring>
+  </element>
+  <element>
+    <style>text</style>
+    <position>375 80</position>
+    <variable>handles.toolbox.tiling.import.EPSGname</variable>
+    <type>string</type>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>270 60</position>
+    <variable>handles.toolbox.tiling.import.radioGeo</variable>
+    <text>Geographic</text>
+    <type>integer</type>
+    <value>1</value>
+    <enable>0</enable>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>360 60</position>
+    <variable>handles.toolbox.tiling.import.radioProj</variable>
+    <text>Projected</text>
+    <type>integer</type>
+    <value>1</value>
+    <enable>0</enable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>270 35 60 20</position>
+    <text>Vertical Coord Sys</text>
+    <textposition>right</textposition>
+    <enable>1</enable>
+    <variable>handles.toolbox.tiling.import.vertCoordName</variable>
+    <type>string</type>
+    <tooltipstring>Edit vertical coordinate system (e.g. MSL, NAP or NAVD88)</tooltipstring>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>500 35 60 20</position>
+    <text>Unit</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.tiling.import.vertUnits</variable>
+    <type>string</type>
+    <tooltipstring>Select units of vertical data</tooltipstring>
+    <listtext>metres</listtext>
+    <listtext>centimetres</listtext>
+    <listtext>feet</listtext>
+    <listvalue>m</listvalue>
+    <listvalue>cm</listvalue>
+    <listvalue>ft</listvalue>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>270 10 60 20</position>
+    <text>Vertical Level</text>
+    <textposition>right</textposition>
+    <enable>1</enable>
+    <variable>handles.toolbox.tiling.import.vertCoordLevel</variable>
+    <type>real</type>
+    <tooltipstring>Edit vertical level w.r.t. Mean Sea Level</tooltipstring>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>500 10 60 20</position>
+    <text>Positive</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.tiling.import.positiveUp</variable>
+    <type>integer</type>
+    <tooltipstring>Select positive direction in data file</tooltipstring>
+    <listtext>up</listtext>
+    <listtext>down</listtext>
+    <listvalue>1</listvalue>
+    <listvalue>0</listvalue>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>830 110 100 20</position>
+    <text>Precision</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.tiling.import.type</variable>
+    <type>string</type>
+    <tooltipstring>Select precision of data stored in netCDF tiles.</tooltipstring>
+    <listtext>int</listtext>
+    <listtext>single</listtext>
+    <listtext>double</listtext>
+    <listvalue>int</listvalue>
+    <listvalue>float</listvalue>
+    <listvalue>double</listvalue>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>830 85 100 20</position>
+    <text>Data Name</text>
+    <textposition>left</textposition>
+    <enable>1</enable>
+    <variable>handles.toolbox.tiling.import.dataName</variable>
+    <type>string</type>
+    <tooltipstring>Edit short name of data files (no spaces)</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>830 60 100 20</position>
+    <text>Data Source</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.tiling.import.datasource</variable>
+    <type>string</type>
+    <tooltipstring>Edit data source (as it will appear in the bathymetry menu)</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>830 35 100 20</position>
+    <text>Edit Attributes</text>
+    <callback>ddb_TilingToolbox_bathymetry</callback>
+    <option1>editattributes</option1>
+    <tooltipstring>Edit attributes for netCDF files</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>830 10 100 20</position>
+    <text>Generate Tiles</text>
+    <callback>ddb_TilingToolbox_bathymetry</callback>
+    <option1>generatetiles</option1>
+    <tooltipstring>Generate tile system from source data</tooltipstring>
+  </element>
+</root>

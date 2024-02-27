@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <text>Wind</text>
+    <position>10 10 300 160</position>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>80 130 150 20</position>
+    <text>File Type</text>
+    <variable>handles.model.sfincs.domain(ad).wind_type</variable>
+    <type>string</type>
+    <listtext>Uniform</listtext>
+    <listtext>Spider web</listtext>
+    <listtext>Rectangular</listtext>
+    <listvalue>uniform</listvalue>
+    <listvalue>spiderweb</listvalue>
+    <listvalue>rectangular</listvalue>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 100 130 20</position>
+    <text>Wind File</text>
+    <variable>handles.model.sfincs.domain(ad).input.wndfile</variable>
+    <showfilename>yes</showfilename>
+    <extension>*.wnd</extension>
+    <selectiontext>Select wind file</selectiontext>
+    <tooltipstring>Select wind file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).wind_type</variable>
+        <value>uniform</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 75 130 20</position>
+    <text>Spiderweb File</text>
+    <variable>handles.model.sfincs.domain(ad).input.spwfile</variable>
+    <showfilename>yes</showfilename>
+    <extension>*.spw</extension>
+    <selectiontext>Select spiderweb file</selectiontext>
+    <tooltipstring>Select spiderweb file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).wind_type</variable>
+        <value>spiderweb</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 50 130 20</position>
+    <text>AMU File</text>
+    <variable>handles.model.sfincs.domain(ad).input.amufile</variable>
+    <showfilename>yes</showfilename>
+    <extension>*.amu</extension>
+    <selectiontext>Select AMU file</selectiontext>
+    <tooltipstring>Select AMU file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).wind_type</variable>
+        <value>rectangular</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 25 130 20</position>
+    <text>AMV File</text>
+    <variable>handles.model.sfincs.domain(ad).input.amvfile</variable>
+    <showfilename>yes</showfilename>
+    <extension>*.amv</extension>
+    <selectiontext>Select AMV file</selectiontext>
+    <tooltipstring>Select AMV file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).wind_type</variable>
+        <value>rectangular</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>panel</style>
+    <text>Precipitation</text>
+    <position>320 10 300 160</position>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>390 130 150 20</position>
+    <text>File Type</text>
+    <variable>handles.model.sfincs.domain(ad).rain_type</variable>
+    <type>string</type>
+    <listtext>Uniform</listtext>
+    <listtext>Spider web</listtext>
+    <listtext>Rectangular</listtext>
+    <listvalue>uniform</listvalue>
+    <listvalue>spiderweb</listvalue>
+    <listvalue>rectangular</listvalue>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>330 100 130 20</position>
+    <text>Precip File</text>
+    <variable>handles.model.sfincs.domain(ad).input.precipfile</variable>
+    <showfilename>yes</showfilename>
+    <extension>*.prc</extension>
+    <selectiontext>Select precipitation file</selectiontext>
+    <tooltipstring>Select precipitation file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).rain_type</variable>
+        <value>uniform</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>330 75 130 20</position>
+    <text>Spiderweb File</text>
+    <variable>handles.model.sfincs.domain(ad).input.spwfile</variable>
+    <showfilename>yes</showfilename>
+    <extension>*.spw</extension>
+    <selectiontext>Select spiderweb file</selectiontext>
+    <tooltipstring>Select spiderweb file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).rain_type</variable>
+        <value>spiderweb</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>330 50 130 20</position>
+    <text>AMPR File</text>
+    <variable>handles.model.sfincs.domain(ad).input.amprfile</variable>
+    <showfilename>yes</showfilename>
+    <extension>*.ampr</extension>
+    <selectiontext>Select AMPR file</selectiontext>
+    <tooltipstring>Select AMPR file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.sfincs.domain(ad).rain_type</variable>
+        <value>rectangular</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

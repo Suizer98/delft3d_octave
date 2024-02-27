@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <dataproperty>
+    <name>filetype</name>
+    <keyword>FileType</keyword>
+    <type>string</type>
+  </dataproperty>
+</root>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <variable>georeferencefile</variable>
+    <type>string</type>
+    <style>pushselectfile</style>
+    <position>40 0 120 20</position>
+    <text>Geo Reference File</text>
+    <tooltipstring>Select geo-reference file</tooltipstring>
+    <extension>*.jgw</extension>
+  </element>
+</root>

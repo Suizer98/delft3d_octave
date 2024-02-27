@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <dataproperty>
+    <name>y</name>
+    <keyword>Y</keyword>
+    <type>real</type>
+  </dataproperty>
+</root>

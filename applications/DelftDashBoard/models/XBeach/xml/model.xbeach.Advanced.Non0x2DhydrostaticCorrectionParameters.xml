@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>popupmenu</style>
+    <text>solver</text>
+    <position>70.000,107.500, 80.000, 20.000</position>
+    <tooltipstring>Solver used to solve the linear system, sip, or tridiag (only for 1d) [-]</tooltipstring>
+    <variable>handles.model.xbeach.domain.solver</variable>
+    <type>string</type>
+    <listtext>sip</listtext>
+    <listtext>tridiag</listtext>
+  </element>
+  <element>
+    <tooltipstring>Maximum number of iterations in the linear sip solver [-]</tooltipstring>
+    <style>edit</style>
+    <text>solver_maxit</text>
+    <position>70.000,80.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.solver_maxit</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>accuracy with respect to the right-hand side used [-]</tooltipstring>
+    <style>edit</style>
+    <text>solver_acc</text>
+    <position>70.000,52.500,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.solver_acc</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Underrelaxation parameter [-]</tooltipstring>
+    <style>edit</style>
+    <text>solver_urelax</text>
+    <position>70.000,25.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.solver_urelax</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Minimum value of kd ( pi/dx GT minkd ) [-]</tooltipstring>
+    <style>edit</style>
+    <text>kdmin</text>
+    <position>230.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.kdmin</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Coefficient in front of the vertical pressure gradient, Default = 1. [?]</tooltipstring>
+    <style>edit</style>
+    <text>dispc</text>
+    <position>230.000, 80.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.dispc</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Absolute period to optimize coefficient [s]</tooltipstring>
+    <style>edit</style>
+    <text>Topt</text>
+    <position>230.000, 52.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.Topt</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Turn on or off nonhydrostatic breaker model [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>nhbreaker</text>
+    <position>230.000, 25.000</position>
+    <variable>handles.model.xbeach.domain.nhbreaker</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Factor to increase viscosity during breaking [-]</tooltipstring>
+    <style>edit</style>
+    <text>breakviscfac</text>
+    <position>390.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.breakviscfac</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Maximum wave steepness criterium [-]</tooltipstring>
+    <style>edit</style>
+    <text>maxbrsteep</text>
+    <position>390.000, 80.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.maxbrsteep</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Secondary maximum wave steepness criterium [-]</tooltipstring>
+    <style>edit</style>
+    <text>secbrsteep</text>
+    <position>390.000, 52.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.secbrsteep</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Wave steepness criterium to reform after breaking [-]</tooltipstring>
+    <style>edit</style>
+    <text>reformsteep</text>
+    <position>390.000, 25.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.reformsteep</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Ratio between local depth and length scale in extra breaking viscosity [-]</tooltipstring>
+    <style>edit</style>
+    <text>breakvisclen</text>
+    <position>550.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.breakvisclen</variable>
+    <type>real</type>
+  </element>
+</root>

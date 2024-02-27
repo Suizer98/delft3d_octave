@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+  <toolbox>TideDatabase</toolbox>
+  <longname>Tide Database</longname>
+  <enable>1</enable>
+  <element>
+    <position>10 10 1000 140</position>
+    <style>tabpanel</style>
+    <tab>
+      <tabstring>Export</tabstring>
+      <callback>ddb_TideDatabaseToolbox_export</callback>
+      <element>toolbox.tidedatabase.export.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Calibrate</tabstring>
+      <callback>ddb_TideDatabaseToolbox_calibrate</callback>
+      <enable>off</enable>
+      <formodel>delft3dflow</formodel>
+      <element>toolbox.tidedatabase.calibrate.xml</element>
+    </tab>
+  </element>
+</root>

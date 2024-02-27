@@ -1,0 +1,12 @@
+nx      = 191 
+ny      = 257 
+dx      =    2.0 
+dy      =    2.0 
+xori    =   71082.63 
+yori    =  451014.74 
+alfa    =     -41.31 
+depfile = bathy.dep 
+vardx   = 1 
+xfile = x.dep 
+yfile = y.dep 
+posdwn  = -1 

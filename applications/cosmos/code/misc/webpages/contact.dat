@@ -1,0 +1,20 @@
+WebPage "Contact"
+
+    PageDir      "contact"
+    FileName     "contact.html"
+    PageType     "contact"
+    ActiveHeader "contact"
+
+    Main
+
+        ContactName "Maarten van Ormondt"
+            ContactDetails  "Maarten van Ormondt (Deltares) <a href=""mailto:Maarten.vanOrmondt@deltares.nl"">e-mail</a>"
+        EndContact
+
+        ContactName "Edwin Elias"
+            ContactDetails  "Edwin Elias (USGS/Deltares) <a href=""mailto:eelias@usgs.gov"">e-mail</a>"
+        EndContact
+
+    EndMain
+
+EndPage

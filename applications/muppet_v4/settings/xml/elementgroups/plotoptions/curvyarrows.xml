@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 140</position>
+    <text>Curvy Arrows</text>
+  </element>
+  <element>
+    <variable>curvecspacing</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>110 100 50 20</position>
+    <text>Spacing</text>
+    <tooltipstring>Edit horizontal spacing of curved arrows</tooltipstring>
+  </element>
+  <element>
+    <variable>curveclength</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>280 100 50 20</position>
+    <text>Length (s)</text>
+    <tooltipstring>Edit length (in seconds!) of curved arrows</tooltipstring>
+  </element>
+  <element>
+    <variable>edgecolor</variable>
+    <style>selectcolor</style>
+    <position>70 70 90 20</position>
+    <includenone>yes</includenone>
+    <text>Edge Color</text>
+    <tooltipstring>Select edge color of curvy arrows</tooltipstring>
+  </element>
+  <element>
+    <variable>facecolor</variable>
+    <style>selectcolor</style>
+    <position>240 70 90 20</position>
+    <includenone>yes</includenone>
+    <text>Face Color</text>
+    <tooltipstring>Select face color of curvy arrows</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>plotroutine</variable>
+        <value>plotcoloredcurvyarrows</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>arrowthickness</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>110 40 50 20</position>
+    <text>Arrow Thickness</text>
+    <tooltipstring>Edit relative thickness of arrows (relative to length)</tooltipstring>
+  </element>
+  <element>
+    <variable>headthickness</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>280 40 50 20</position>
+    <text>Head Thickness</text>
+    <tooltipstring>Edit relative thickness of arrow heads (relative to length)</tooltipstring>
+  </element>
+  <element>
+    <variable>fadecurvyarrows</variable>
+    <type>boolean</type>
+    <style>checkbox</style>
+    <position>10 10 50 20</position>
+    <text>Fade Arrows</text>
+    <tooltipstring>Fade arrow trails (only works when OpenGL renderer is used)</tooltipstring>
+  </element>
+</root>

@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<root>
+  <title>Right Axis</title>
+  <width>240</width>
+  <height>220</height>
+  <tag>legend</tag>
+  <element>
+    <style>edit</style>
+    <position>70 175 70 20</position>
+    <variable>yminright</variable>
+    <type>real</type>
+    <tooltipstring>Edit lower limit of right-hand axis</tooltipstring>
+    <text>Y Min</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>70 150 70 20</position>
+    <variable>ymaxright</variable>
+    <type>real</type>
+    <tooltipstring>Edit upper limit of right-hand axis</tooltipstring>
+    <text>Y Max</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>70 125 70 20</position>
+    <variable>ytickright</variable>
+    <type>real</type>
+    <tooltipstring>Edit tick interval of right-hand axis</tooltipstring>
+    <text>Y Tick</text>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>70 100 70 20</position>
+    <variable>ydecimalsright</variable>
+    <type>integer</type>
+    <tooltipstring>Select number of decimals in Y ticks on right-hand axis</tooltipstring>
+    <text>Decimals</text>
+    <listtext>auto</listtext>
+    <listtext>0</listtext>
+    <listtext>1</listtext>
+    <listtext>2</listtext>
+    <listtext>3</listtext>
+    <listtext>4</listtext>
+    <listtext>5</listtext>
+    <listtext>6</listtext>
+    <listtext>no labels</listtext>
+    <listvalue>-1</listvalue>
+    <listvalue>0</listvalue>
+    <listvalue>1</listvalue>
+    <listvalue>2</listvalue>
+    <listvalue>3</listvalue>
+    <listvalue>4</listvalue>
+    <listvalue>5</listvalue>
+    <listvalue>6</listvalue>
+    <listvalue>-999</listvalue>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>70 75 70 20</position>
+    <variable>ylabelright.text</variable>
+    <type>string</type>
+    <tooltipstring>Edit label of right-hand axis</tooltipstring>
+    <text>Label</text>
+  </element>
+  <element>
+    <style>selectfont</style>
+    <position>150 75 70 20</position>
+    <variable>ylabelright.font</variable>
+    <tooltipstring>Edit label font of right-hand axis</tooltipstring>
+  </element>
+  <element>
+    <tag>cancel</tag>
+    <style>pushcancel</style>
+    <position>80 20 60 20</position>
+  </element>
+  <element>
+    <tag>ok</tag>
+    <style>pushok</style>
+    <position>150 20 70 20</position>
+  </element>
+</root>

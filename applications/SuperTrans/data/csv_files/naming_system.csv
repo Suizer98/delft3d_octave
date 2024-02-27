@@ -1,0 +1,37 @@
+NAMING_SYSTEM_CODE,NAMING_SYSTEM_NAME,REMARKS,INFORMATION_SOURCE,DATA_SOURCE,REVISION_DATE,CHANGE_ID,DEPRECATED
+1024,Iraq alternative identifier,An alternative name used in Iraq.,"Survey Department, Ministry of Water Resources (MoWR).",OGP,30-03-2010,2009.003 2009.102,FALSE
+1025,Germany Brandenburg alternative identifier,An alternative name used by the state of Brandenburg.,OGP,OGP,22-03-2009,2009.014,FALSE
+1026,Guam alias or abbreviation,Name or abbreviation used in Guam.,OGP,OGP,24-06-2009,2009.044,FALSE
+1027,Germany Schleswig-Holstein alternative identifier,An alternative name used in the state of Schleswig-Holstein.,OGP,OGP,17-11-2009,2009.071,FALSE
+1028,Mexico alternative identifier,,,OGP,24-11-2009,2009.087,FALSE
+1029,EU INSPIRE identifier,"Identifiers defined in EU INSPIRE specification for CRS, 2009-06-29",OGP,OGP,19-02-2010,2010.003,FALSE
+1030,Finland alternative identifier,"An alternative name used in Finland, following the style of the EU INSPIRE identifier.",OGP,OGP,20-03-2010,2008.112,FALSE
+1031,Petrobras alternative identifier,Identifier used in Brazil by Petrobras,OGP,OGP,25-03-2010,2010.039,FALSE
+1032,Spain Catalonia ICC alternative identifier,An alternative identifier used by ICC in Catalonia.,OGP,OGP,07-06-2010,2010.053,FALSE
+1033,Argentina alternative identifier,An alternative name used in Argentina.,OGP,OGP,24-03-2011,2009.028,FALSE
+1034,Uruguay alternate identifier,,,OGP,04-03-2011,2011.018,FALSE
+1035,Brazil alternative identifier,An alternative name used in Brazil.,OGP,OGP,23-07-2011,2011.053,FALSE
+1036,Algeria alternative identifier,An alternative name used by INCT.,OGP,OGP,20-03-2012,2011.111,FALSE
+1037,Cyprus alternative identifier,,IOGP,IOGP,02-04-2015,2014.091,FALSE
+1038,Albania alternative identifier,An alternative name used by ASIG.,OGP,OGP,21-11-2014,2014.008 2014.078,FALSE
+1039,US DMA/NIMA/NGA code,Code used by the US National Geospatial Intelligence Agency.,OGP,OGP,03-08-2014,2014.037,FALSE
+1040,Energistics name,A name assigned by Energistics in its Unit of Measure standard.,Energistics,IOGP,21-11-2015,2015.062,FALSE
+1041,EPSG/Energistics abbreviation,A symbol assigned by Energistics in its Unit of Measure standard and used in the EPSG Dataset as an abbreviation.,IOGP,IOGP,22-11-2015,2015.062,FALSE
+7300,EPSG alternative spelling,An alternative spelling of the EPSG name; assigned by EPSG.,OGP,OGP,07-05-2000,,FALSE
+7301,EPSG alias,An alternative name assigned by EPSG.,OGP,OGP,07-05-2000,,FALSE
+7302,EPSG abbreviation,An abbreviation assigned by EPSG.,OGP,OGP,07-05-2000,,FALSE
+7303,User name,An alternative name assigned by user; not populated by EPSG.,(User to insert),OGP,07-05-2000,,FALSE
+7304,User alias,A secondary alternative name assigned by user; not populated by EPSG.,(User to insert),OGP,07-05-2000,,FALSE
+7305,User abbreviation,An abbreviation assigned by user; not populated by EPSG.,(User to insert),OGP,07-05-2000,,FALSE
+7306,Energistics symbol,A symbol assigned by Energistics in its Unit of Measure standard but not used in the EPSG Dataset as an abbreviation.,Energistics,IOGP,25-11-2015,2015.062,FALSE
+7307,EuroGeographics Identifier,A unique identifier used in the compilation of European national mapping agency data by EuroGeographics.,EuroGeographics; http://crs.ifag.de/,OGP,05-06-2001,,FALSE
+7308,Croatia alternative identifier,An alternative name used in Croatia.,OGP,OGP,05-06-2001,,FALSE
+7309,Slovenia alternative identifier,An alternative name used in Slovenia.,OGP,OGP,05-06-2001,,FALSE
+7310,Germany alternative identifier,An alternative name used by the BfK.,OGP,OGP,05-06-2001,,FALSE
+7311,Indonesia alternative identifier,An alternative name used by Bakosurtanal.,OGP,OGP,30-03-2010,2009.102,FALSE
+7312,Austria alternative identifier,An alternative name used by the BEV.,OGP,OGP,19-09-2002,,FALSE
+7313,US DMA/NIMA/NGA alternative identifier,An alternative name used by the US National Geospatial Intelligence Agency.,OGP,OGP,21-05-2005,,FALSE
+7314,Poland alternative identifier,An alternative name used in Poland.,OGP,OGP,02-11-2005,,FALSE
+7315,Netherlands alternative identifier,An alternative name used in The Netherlands.,OGP,OGP,03-02-2006,,FALSE
+7316,Romania alternative identifier,An alternative name used in Romania.,OGP,OGP,24-09-2008,,FALSE
+7317,EPSG alias and abbreviation,An alternative name assigned by EPSG also used as an abbreviation.,OGP,OGP,17-10-2008,,FALSE

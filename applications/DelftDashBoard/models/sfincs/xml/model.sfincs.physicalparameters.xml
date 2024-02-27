@@ -1,0 +1,308 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>popupmenu</style>
+    <text>Wind Type</text>
+    <textposition>above-left</textposition>
+    <position>10 90 130 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).windType</variable>
+    <type>string</type>
+    <listtext>Uniform</listtext>
+    <listtext>Equidistant Grid</listtext>
+    <listtext>Curvilinear Grid</listtext>
+    <listtext>Spiderweb Grid</listtext>
+    <listvalue>uniform</listvalue>
+    <listvalue>equidistant</listvalue>
+    <listvalue>curvilinear</listvalue>
+    <listvalue>spiderweb</listvalue>
+  </element>
+  <element>
+    <style>text</style>
+    <position>160 91</position>
+    <text>Interpolation</text>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>230 90</position>
+    <text>Linear</text>
+    <variable>handles.model.delft3dflow.domain(ad).wndInt</variable>
+    <type>string</type>
+    <value>Y</value>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).wndInt</variable>
+        <value>Y</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>285 90</position>
+    <text>Block</text>
+    <variable>handles.model.delft3dflow.domain(ad).wndInt</variable>
+    <type>string</type>
+    <value>N</value>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).wndInt</variable>
+        <value>N</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>10 60 50 20</position>
+    <text>Open</text>
+    <variable>handles.model.delft3dflow.domain(ad).wndFile</variable>
+    <type>string</type>
+    <onchange>ddb_Delft3DFLOW_wind</onchange>
+    <option1>openwndfile</option1>
+    <showfilename>no</showfilename>
+    <extension>*.wnd</extension>
+    <selectiontext>Select wind file</selectiontext>
+    <tooltipstring>Select Delft3D wind file</tooltipstring>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).windType</variable>
+        <value>uniform</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>65 60 50 20</position>
+    <text>Save</text>
+    <variable>handles.model.delft3dflow.domain(ad).wndFile</variable>
+    <type>string</type>
+    <onchange>ddb_Delft3DFLOW_wind</onchange>
+    <option1>savewndfile</option1>
+    <extension>*.wnd</extension>
+    <selectiontext>Select wind file</selectiontext>
+    <tooltipstring>Select Delft3D wind file</tooltipstring>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).windType</variable>
+        <value>uniform</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>10 60 100 20</position>
+    <text>Select Wind File</text>
+    <variable>handles.model.delft3dflow.domain(ad).wndFile</variable>
+    <type>string</type>
+    <showfilename>yes</showfilename>
+    <extension>*.wnd</extension>
+    <selectiontext>Select wind file</selectiontext>
+    <tooltipstring>Select wind file</tooltipstring>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).windType</variable>
+        <value>curvilinear</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>10 60 100 20</position>
+    <text>Select spw file</text>
+    <variable>handles.model.delft3dflow.domain(ad).spwFile</variable>
+    <type>string</type>
+    <showfilename>yes</showfilename>
+    <extension>*.spw</extension>
+    <selectiontext>Select spiderweb file</selectiontext>
+    <tooltipstring>Select spiderweb file</tooltipstring>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).windType</variable>
+        <value>spiderweb</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>10 60 100 20</position>
+    <text>Select amu file</text>
+    <variable>handles.model.delft3dflow.domain(ad).amuFile</variable>
+    <type>string</type>
+    <showfilename>yes</showfilename>
+    <extension>*.amu</extension>
+    <selectiontext>Select *.amu file</selectiontext>
+    <tooltipstring>Select *.amu file</tooltipstring>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).windType</variable>
+        <value>equidistant</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>10 35 100 20</position>
+    <text>Select amv file</text>
+    <variable>handles.model.delft3dflow.domain(ad).amvFile</variable>
+    <type>string</type>
+    <showfilename>yes</showfilename>
+    <extension>*.amv</extension>
+    <selectiontext>Select *.amv file</selectiontext>
+    <tooltipstring>Select *.amv file</tooltipstring>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).windType</variable>
+        <value>equidistant</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>10 10 100 20</position>
+    <text>Select amp file</text>
+    <variable>handles.model.delft3dflow.domain(ad).ampFile</variable>
+    <type>string</type>
+    <showfilename>yes</showfilename>
+    <extension>*.amp</extension>
+    <selectiontext>Select *.amp file</selectiontext>
+    <tooltipstring>Select *.amp file</tooltipstring>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).windType</variable>
+        <value>equidistant</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>table</style>
+    <position>380 15</position>
+    <nrrows>5</nrrows>
+    <includenumbers>no</includenumbers>
+    <includebuttons>yes</includebuttons>
+    <onchange>ddb_Delft3DFLOW_wind</onchange>
+    <option1>changewinddrag</option1>
+    <column>
+      <style>edittime</style>
+      <variable>handles.model.delft3dflow.domain(ad).windTimeSeriesT</variable>
+      <width>110</width>
+      <text>Time</text>
+    </column>
+    <column>
+      <style>editreal</style>
+      <variable>handles.model.delft3dflow.domain(ad).windTimeSeriesSpeed</variable>
+      <width>60</width>
+      <text>Speed (m/s)</text>
+    </column>
+    <column>
+      <style>editreal</style>
+      <variable>handles.model.delft3dflow.domain(ad).windTimeSeriesDirection</variable>
+      <width>60</width>
+      <text>Dir (deg)</text>
+    </column>
+    <dependency>
+      <action>update</action>
+    </dependency>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).windType</variable>
+        <value>uniform</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>730 10 210 128</position>
+    <text>Wind Drag Coefficients</text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>740 86</position>
+    <text>Breakpoint 1</text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>740 66</position>
+    <text>Breakpoint 2</text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>740 46</position>
+    <text>Breakpoint 3</text>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrWindStressBreakpoints</variable>
+        <value>3</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>table</style>
+    <position>810 45</position>
+    <nrrows>3</nrrows>
+    <includenumbers>no</includenumbers>
+    <onchange>ddb_Delft3DFLOW_wind</onchange>
+    <option1>changewinddrag</option1>
+    <column>
+      <style>editreal</style>
+      <variable>handles.model.delft3dflow.domain(ad).windStressCoefficients</variable>
+      <width>60</width>
+      <text>Coef (-)</text>
+    </column>
+    <column>
+      <style>editreal</style>
+      <variable>handles.model.delft3dflow.domain(ad).windStressSpeeds</variable>
+      <width>60</width>
+      <text>Speed (m/s)</text>
+    </column>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Number of breakpoints</text>
+    <position>900 20 30 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).nrWindStressBreakpoints</variable>
+    <type>integer</type>
+    <onchange>ddb_Delft3DFLOW_wind</onchange>
+    <option1>changenrbreakpoints</option1>
+    <listtext>2</listtext>
+    <listtext>3</listtext>
+    <listvalue>2</listvalue>
+    <listvalue>3</listvalue>
+  </element>
+</root>

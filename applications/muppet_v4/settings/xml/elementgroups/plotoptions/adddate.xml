@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 110</position>
+    <text>Date String</text>
+  </element>
+  <element>
+    <variable>adddatestring</variable>
+    <type>boolean</type>
+    <style>checkbox</style>
+    <position>50 70 50 20</position>
+    <text>Add Date</text>
+  </element>
+  <element>
+    <variable>adddate.position</variable>
+    <type>string</type>
+    <style>popupmenu</style>
+    <position>180 70 130 20</position>
+    <listtext>upper-left</listtext>
+    <listtext>upper-right</listtext>
+    <listtext>lower-left</listtext>
+    <listtext>lower-right</listtext>
+    <text>Position</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>adddatestring</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>adddate.format</variable>
+    <type>string</type>
+    <style>popupmenu</style>
+    <position>50 40 130 20</position>
+    <listtext>
+      <variable>mainhandles.dateformattexts</variable>
+    </listtext>
+    <listvalue>
+      <variable>mainhandles.dateformats</variable>
+    </listvalue>
+    <text>Format</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>adddatestring</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>adddate.font</variable>
+    <type>real</type>
+    <style>selectfont</style>
+    <position>200 40 50 20</position>
+    <text>Font</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>adddatestring</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>adddate.prefix</variable>
+    <type>string</type>
+    <style>edit</style>
+    <position>50 10 120 20</position>
+    <text>Prefix</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>adddatestring</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>adddate.suffix</variable>
+    <type>string</type>
+    <style>edit</style>
+    <position>220 10 120 20</position>
+    <text>Suffix</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>adddatestring</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

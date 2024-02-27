@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<root>
+  <plotoption>
+    <name>linegroup</name>
+    <element>
+      <style>panel</style>
+      <text>Line Properties</text>
+      <position>0 0 350 50</position>
+    </element>
+    <element>
+      <keyword>LineColor</keyword>
+      <default>black</default>
+      <default>red</default>
+      <default>blue</default>
+      <default>green</default>
+      <style>selectcolor</style>
+      <variable>linecolor</variable>
+      <includenone>no</includenone>
+      <type>string</type>
+      <text>Color</text>
+      <tooltipstring>Select line color</tooltipstring>
+      <position>40 10 100 20</position>
+    </element>
+    <element>
+      <keyword>LineWidth</keyword>
+      <default>0.5</default>
+      <check>
+        <operator>ne</operator>
+      </check>
+      <style>edit</style>
+      <type>real</type>
+      <variable>linewidth</variable>
+      <text>Width</text>
+      <position>190 10 50 20</position>
+    </element>
+    <element>
+      <keyword>LineStyle</keyword>
+      <default>-</default>
+      <check>
+        <operator>ne</operator>
+      </check>
+      <style>selectlinestyle</style>
+      <type>string</type>
+      <variable>linestyle</variable>
+      <text>Style</text>
+      <position>280 10 60 20</position>
+    </element>
+  </plotoption>
+</root>

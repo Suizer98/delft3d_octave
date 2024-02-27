@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<root>
+  <plotoption>
+    <name>lintgroup</name>
+    <element>
+      <style>panel</style>
+      <text>Arrow Properties</text>
+      <position>0 0 350 100</position>
+    </element>
+    <element>
+      <keyword>RelativeScale</keyword>
+      <style>edit</style>
+      <variable>lintscale</variable>
+      <default>0</default>
+      <type>real</type>
+      <text>Relative Scale</text>
+      <tooltipstring>Edit relative scale</tooltipstring>
+      <position>80 60 50 20</position>
+    </element>
+    <element>
+      <keyword>UnitArrow</keyword>
+      <style>edit</style>
+      <variable>unitarrow</variable>
+      <default>0</default>
+      <type>real</type>
+      <text>Unit Arrow</text>
+      <tooltipstring>Edit unit arrow</tooltipstring>
+      <position>200 60 50 20</position>
+    </element>
+    <element>
+      <keyword>AddText</keyword>
+      <default>1</default>
+      <style>checkbox</style>
+      <type>boolean</type>
+      <variable>addtext</variable>
+      <text>Add Numbers</text>
+      <position>80 35 50 20</position>
+    </element>
+    <element>
+      <keyword>MultiplyNumbers</keyword>
+      <style>edit</style>
+      <variable>multiply</variable>
+      <default>1</default>
+      <type>real</type>
+      <text>Multiply</text>
+      <tooltipstring>Edit multiplication factor</tooltipstring>
+      <position>80 10 50 20</position>
+      <dependency>
+        <action>enable</action>
+        <checkfor>all</checkfor>
+        <check>
+          <variable>addtext</variable>
+          <value>1</value>
+          <operator>eq</operator>
+        </check>
+      </dependency>
+    </element>
+    <element>
+      <keyword>Decimals</keyword>
+      <style>edit</style>
+      <variable>decimals</variable>
+      <default>0</default>
+      <type>integer</type>
+      <text>Decimals</text>
+      <tooltipstring>Edit number of decimals</tooltipstring>
+      <position>200 10 50 20</position>
+      <dependency>
+        <action>enable</action>
+        <checkfor>all</checkfor>
+        <check>
+          <variable>addtext</variable>
+          <value>1</value>
+          <operator>eq</operator>
+        </check>
+      </dependency>
+    </element>
+    <element>
+      <style>selectfont</style>
+      <horizontalalignment>1</horizontalalignment>
+      <verticalalignment>1</verticalalignment>
+      <text>Font</text>
+      <position>200 35 50 20</position>
+      <variable>font</variable>
+      <dependency>
+        <action>enable</action>
+        <checkfor>all</checkfor>
+        <check>
+          <variable>addtext</variable>
+          <value>1</value>
+          <operator>eq</operator>
+        </check>
+      </dependency>
+    </element>
+    <element>
+      <name>fontname</name>
+      <variable>font.name</variable>
+      <keyword>FontName</keyword>
+      <default>Helvetica</default>
+    </element>
+    <element>
+      <name>fontsize</name>
+      <variable>font.size</variable>
+      <keyword>FontSize</keyword>
+      <type>real</type>
+      <default>8</default>
+    </element>
+      <element>
+      <name>fontangle</name>
+      <variable>font.angle</variable>
+      <default>normal</default>
+    <keyword>FontAngle</keyword>
+    </element>
+      <element>
+      <name>fontweight</name>
+      <variable>font.weight</variable>
+      <keyword>FontWeight</keyword>
+      <default>normal</default>
+    </element>
+    <element>
+      <name>fonthorizontalalignment</name>
+      <variable>font.horizontalalignment</variable>
+      <keyword>FontHorizontalAlignment</keyword>
+      <default>left</default>
+    </element>
+    <element>
+      <name>fontverticalalignment</name>
+      <variable>font.verticalalignment</variable>
+      <keyword>FontVerticalAlignment</keyword>
+      <default>top</default>
+    </element>
+  </plotoption>
+</root>

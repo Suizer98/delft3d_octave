@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>checkbox</style>
+    <text>timings</text>
+    <position>70.000,107.500</position>
+    <tooltipstring>Switch to turn on (1) or off (0) progress output to screen [-]</tooltipstring>
+    <variable>handles.model.xbeach.domain.timings</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Interval time of cross section output [s]</tooltipstring>
+    <style>edit</style>
+    <text>tintc</text>
+    <position>70.000,80.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.tintc</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Name of file containing timings of global output [-]</tooltipstring>
+    <style>pushselectfile</style>
+    <text>tsglobal</text>
+    <position>70.000,52.500,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.tsglobal</variable>
+    <type>character</type>
+    <extension>*.*</extension>
+    <selectiontext>Select file</selectiontext>
+  </element>
+  <element>
+    <tooltipstring>Name of file containing timings of point output [-]</tooltipstring>
+    <style>pushselectfile</style>
+    <text>tspoints</text>
+    <position>70.000,25.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.tspoints</variable>
+    <type>character</type>
+    <extension>*.*</extension>
+    <selectiontext>Select file</selectiontext>
+  </element>
+  <element>
+    <tooltipstring>Name of file containing timings of cross section output [-]</tooltipstring>
+    <style>pushselectfile</style>
+    <text>tscross</text>
+    <position>230.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.tscross</variable>
+    <type>character</type>
+    <extension>*.*</extension>
+    <selectiontext>Select file</selectiontext>
+  </element>
+  <element>
+    <tooltipstring>Name of file containing timings of mean, max, min and var output [-]</tooltipstring>
+    <style>pushselectfile</style>
+    <text>tsmean</text>
+    <position>230.000, 80.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.tsmean</variable>
+    <type>character</type>
+    <extension>*.*</extension>
+    <selectiontext>Select file</selectiontext>
+  </element>
+  <element>
+    <tooltipstring>Minimum depth for determination of last wet point in runup gauge [m]</tooltipstring>
+    <style>edit</style>
+    <text>rugdepth</text>
+    <position>230.000, 52.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.rugdepth</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Number of output cross sections [-]</tooltipstring>
+    <style>edit</style>
+    <text>ncross</text>
+    <position>230.000, 25.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.ncross</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Choice of output file format: 'netcdf', 'fortran', or 'debug' [-]</tooltipstring>
+    <style>popupmenu</style>
+    <text>outputformat</text>
+    <position>390.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.outputformat</variable>
+    <type>string</type>
+    <listtext>fortran</listtext>
+    <listtext>netcdf</listtext>
+    <listtext>debug</listtext>
+  </element>
+  <element>
+    <tooltipstring>xbeach netcdf output file name [-]</tooltipstring>
+    <style>pushselectfile</style>
+    <text>ncfilename</text>
+    <position>390.000, 80.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.ncfilename</variable>
+    <type>character</type>
+    <extension>*.*</extension>
+    <selectiontext>Select file</selectiontext>
+  </element>
+</root>

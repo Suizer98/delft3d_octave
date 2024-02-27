@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>checkbox</style>
+    <position>10 110</position>
+    <text>Update bathymetry during Delft3D-FLOW simulation</text>
+    <variable>handles.model.delft3dflow.domain(ad).morphology.morUpd</variable>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>10 85</position>
+    <text>Equilibrium sand concentration profile at inflow boundaries</text>
+    <variable>handles.model.delft3dflow.domain(ad).morphology.eqmBc</variable>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>10 60</position>
+    <text>Include effect of sediment concentration on fluid density</text>
+    <variable>handles.model.delft3dflow.domain(ad).morphology.densIn</variable>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>10 10 50 20</position>
+    <text>Open</text>
+    <variable>handles.model.delft3dflow.domain(ad).morFile</variable>
+    <type>string</type>
+    <onchange>ddb_Delft3DFLOW_morphology</onchange>
+    <option1>openmorfile</option1>
+    <showfilename>no</showfilename>
+    <extension>*.mor</extension>
+    <selectiontext>Select morphology file</selectiontext>
+    <tooltipstring>Select Delft3D morphology file</tooltipstring>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>65 10 50 20</position>
+    <text>Save</text>
+    <variable>handles.model.delft3dflow.domain(ad).morFile</variable>
+    <type>string</type>
+    <onchange>ddb_Delft3DFLOW_morphology</onchange>
+    <option1>savemorfile</option1>
+    <extension>*.mor</extension>
+    <selectiontext>Select morphology file</selectiontext>
+    <tooltipstring>Select Delft3D morphology file</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>550 110 30 20</position>
+    <text>Morphological Scale Factor (MORFAC)</text>
+    <variable>handles.model.delft3dflow.domain(ad).morphology.morFac</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>550 85 30 20</position>
+    <text>Spin-up Interval</text>
+    <variable>handles.model.delft3dflow.domain(ad).morphology.morStt</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>550 60 30 20</position>
+    <text>Minimum Depth (m)</text>
+    <variable>handles.model.delft3dflow.domain(ad).morphology.sedThr</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>550 35 30 20</position>
+    <text>Threshold Sediment Thickness (m)</text>
+    <variable>handles.model.delft3dflow.domain(ad).morphology.thresh</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>550 10 30 20</position>
+    <text>Factor for erosion of adjacent dry cells</text>
+    <variable>handles.model.delft3dflow.domain(ad).morphology.thetSd</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>900 110 30 20</position>
+    <text>Calibration Factor Suspended Transport</text>
+    <variable>handles.model.delft3dflow.domain(ad).morphology.sus</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>900 85 30 20</position>
+    <text>Calibration Factor Bedload Transport</text>
+    <variable>handles.model.delft3dflow.domain(ad).morphology.bed</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>900 60 30 20</position>
+    <text>Calibration Factor Wave-related Suspended Transport</text>
+    <variable>handles.model.delft3dflow.domain(ad).morphology.susW</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>900 35 30 20</position>
+    <text>Calibration Factor Wave-related Bedload Transport</text>
+    <variable>handles.model.delft3dflow.domain(ad).morphology.bedW</variable>
+    <type>real</type>
+  </element>
+</root>

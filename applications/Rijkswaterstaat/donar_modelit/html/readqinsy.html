@@ -1,0 +1,48 @@
+<html>
+   <header>
+      
+      <title>set_taxis</title>
+      <meta name="generator" content="MATLAB 7.7">
+      <meta name="date" content="2011Dec06">
+      <meta name="m-file" content="readqinsy">
+      <link type="text/css" rel="stylesheet" href="./toolbox.css">
+      
+   </header>
+   <body>
+      
+      <hr>
+      <div>
+         <h2>Function readqinsy</h2><pre>  Read or scan Qinsy datafile using mex-file
+  
+  </pre><h2>CALL:</h2><pre>   locs = readqinsy(fname)          (scan file)
+   locs = readqinsy(fname, locs)    (read file)
+    
+  </pre><h2>INPUT:</h2><pre>   fname: String, name of quinsy file. If this is the only input argument, 
+          the output argument will only contain the header data.
+   locs:  Struct array, this value must be equal to or a subset of the 
+          output of an earlier call to readqinsy. It tells the function 
+          which data to retrieve from file. 
+    
+  </pre><h2>OUTPUT:</h2><pre>   locs:  Struct array with 1 record per location:
+          +----sLoccod (char array)
+          +----marker (double)
+          +----aantal (double)
+          +----lBegdat (double)
+          +----iBegtyd (double)
+          +----lEnddat (double)
+          +----iEndtyd (double)
+          +----xy (double)
+          +----z (double)
+          
+          If "readqinsy" was called with 1 argument only the header data
+          will be nonempty (sLoccod, marker and aantal). 
+  
+          If called with 2 input arguments also the remaining (data) fields
+          are returned nonempty.  
+  
+  </pre><h2>EXAMPLE:</h2><pre></pre><pre class="codeinput">   locs = readqinsy(fname);
+   data = readqinsy(fname,locs(2:2:end));</pre><pre></pre><h2>See also:</h2><pre></pre><a href="readrwslod.html">readrwslod</a><br></div>
+      <hr>
+      
+   </body>
+</html>

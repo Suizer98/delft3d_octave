@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<root>
+  <plottype>
+    <name>unknown</name>  
+    <option>
+      <name>type</name>
+    </option>
+    <option>
+      <name>position</name>
+    </option>
+  </plottype>
+</root>

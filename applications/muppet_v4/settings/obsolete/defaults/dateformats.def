@@ -1,0 +1,74 @@
+# Date formats
+#
+# Number           String                   Example
+# ===========================================================================
+#    0             'dd-mmm-yyyy HH:MM:SS'   01-Mar-2000 15:45:17 
+#    1             'dd-mmm-yyyy'            01-Mar-2000  
+#    2             'mm/dd/yy'               03/01/00     
+#    3             'mmm'                    Mar          
+#    4             'm'                      M            
+#    5             'mm'                     03            
+#    6             'mm/dd'                  03/01        
+#    7             'dd'                     01            
+#    8             'ddd'                    Wed          
+#    9             'd'                      W            
+#   10             'yyyy'                   2000         
+#   11             'yy'                     00           
+#   12             'mmmyy'                  Mar00        
+#   13             'HH:MM:SS'               15:45:17     
+#   14             'HH:MM:SS PM'             3:45:17 PM  
+#   15             'HH:MM'                  15:45        
+#   16             'HH:MM PM'                3:45 PM     
+#   17             'QQ-YY'                  Q1-96        
+#   18             'QQ'                     Q1           
+#   19             'dd/mm'                  01/03        
+#   20             'dd/mm/yy'               01/03/00     
+#   21             'mmm.dd,yyyy HH:MM:SS'   Mar.01,2000 15:45:17 
+#   22             'mmm.dd,yyyy'            Mar.01,2000  
+#   23             'mm/dd/yyyy'             03/01/2000 
+#   24             'dd/mm/yyyy'             01/03/2000 
+#   25             'yy/mm/dd'               00/03/01 
+#   26             'yyyy/mm/dd'             2000/03/01 
+#   27             'QQ-YYYY'                Q1-1996        
+#   28             'mmmyyyy'                Mar2000        
+#   29 (ISO 8601)  'yyyy-mm-dd'             2000-03-01
+#   30 (ISO 8601)  'yyyymmddTHHMMSS'        20000301T154517 
+#   31             'yyyy-mm-dd HH:MM:SS'    2000-03-01 15:45:17 
+
+"dd-mmm-yyyy HH:MM:SS"
+"dd-mmm-yyyy"         
+"mm/dd/yy"            
+"mmm"                 
+"m"                   
+"mm"                  
+"mm/dd"               
+"dd"                  
+"ddd"                 
+"d"                   
+"yyyy"                
+"yy"                  
+"mmmyy"               
+"HH:MM:SS"            
+"HH:MM:SS PM"         
+"HH:MM"               
+"HH:MM PM"            
+"QQ-YY"               
+"QQ"                  
+"dd/mm"               
+"dd/mm/yy"            
+"mmm.dd,yyyy HH:MM:SS"
+"mmm.dd,yyyy"         
+"mm/dd/yyyy"          
+"dd/mm/yyyy"          
+"yy/mm/dd"            
+"yyyy/mm/dd"          
+"QQ-YYYY"             
+"mmmyyyy"             
+"yyyy-mm-dd"          
+"yyyymmddTHHMMSS"     
+"yyyy-mm-dd HH:MM:SS" 
+"HH"
+"HH PM"
+"MM"
+"SS"
+"none"

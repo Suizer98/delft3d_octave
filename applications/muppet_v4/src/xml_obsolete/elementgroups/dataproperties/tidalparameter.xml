@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <variable>tidalparameter</variable>
+    <type>string</type>
+    <style>popupmenu</style>
+    <position>60 0 270 20</position>
+    <listtext>amplitude</listtext>
+    <listtext>phase</listtext>
+    <text>Parameter</text>
+    <tooltipstring>Select tidal parameter</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>parameter</variable>
+        <value>component set</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>parameter</variable>
+        <value>samples</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

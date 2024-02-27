@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<root>
+  <title>Boundary Conditions</title>
+  <width>250</width>
+  <height>155</height>
+  <element>
+    <style>edit</style>
+    <position>170 125 50 20</position>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).waveheight</variable>
+    <type>real</type>
+    <text>Wave Height Hs (m)</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit significant wave height (m)</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>170 100 50 20</position>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).period</variable>
+    <type>real</type>
+    <text>
+      <variable>handles.model.delft3dwave.domain.periodtext</variable>
+    </text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit peak wave period (m)</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>170 75 50 20</position>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).direction</variable>
+    <type>real</type>
+    <text>Wave Direction (deg)</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit wave direction (degrees)</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>170 50 50 20</position>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).dirspreading</variable>
+    <type>real</type>
+    <text>
+      <variable>handles.model.delft3dwave.domain.dirspreadtext</variable>
+    </text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit directional spreading (degrees)</tooltipstring>
+  </element>
+  <element>
+    <style>pushok</style>
+    <position>170 10 50 20</position>
+  </element>
+  <element>
+    <style>pushcancel</style>
+    <position>110 10 50 20</position>
+  </element>
+</root>

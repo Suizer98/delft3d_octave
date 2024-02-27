@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <text>Grids</text>
+    <position>5 5 890 130</position>
+  </element>
+  <element>
+    <style>listbox</style>
+    <position>10 30 200 80</position>
+    <tooltipstring>Computational grids</tooltipstring>
+    <text>Computational Grids</text>
+    <textposition>above-center</textposition>
+    <variable>handles.activeWaveGrid</variable>
+    <type>integer</type>
+    <callback>ddb_Delft3DWAVE_grid</callback>
+    <option1>selectgrid</option1>
+    <listtext>
+      <variable>handles.model.delft3dwave.domain.gridnames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>text</style>
+    <position>10 10</position>
+    <prefix>Co-ordinate System : </prefix>
+    <type>text</type>
+    <variable>handles.model.delft3dwave.domain.domains(awg).coordsyst</variable>
+  </element>
+  <element>
+    <style>panel</style>
+    <text>Bathymetry data</text>
+    <position>300 10 590 120</position>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>305 95 120 20</position>
+    <tooltipstring>Select bathymetry file</tooltipstring>
+    <text>Select bathymetry data</text>
+    <variable>handles.model.delft3dwave.domain.domains(awg).bedlevel</variable>
+    <extension>*.dep</extension>
+    <selectiontext>Select dep File</selectiontext>
+    <callback>ddb_Delft3DWAVE_bathymetry</callback>
+    <option1>select</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrgrids</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<root>
+  <name>vector2d1dtv</name>
+  <longname>Time Series Vector 2D</longname>
+  <plot>
+    <type>timeseries</type>
+    <plotroutine>
+      <name>plotfeather</name>
+      <longname>Feather</longname>
+      <plotoption>
+        <name>plotroutine</name>
+      </plotoption>
+      <plotoption>
+        <name>linegroup</name>
+      </plotoption> 
+      <plotoption>
+        <name>vectortimeseriesthinninggroup</name>
+      </plotoption>
+      <plotoption>
+        <name>legendtext</name>
+      </plotoption>
+    </plotroutine>
+    <plotroutine>
+      <name>plottimeseriesarrows</name>
+      <longname>Arrows</longname>
+      <plotoption>
+        <name>plotroutine</name>
+      </plotoption>
+      <plotoption>
+        <name>vectortimeseriesthinninggroup</name>
+      </plotoption>
+      <plotoption>
+        <name>legendtext</name>
+      </plotoption>
+    </plotroutine>
+  </plot>
+</root>

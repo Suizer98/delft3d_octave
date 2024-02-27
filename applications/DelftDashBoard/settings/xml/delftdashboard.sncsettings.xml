@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<root>
+  <title>SNC Settings</title>
+  <width>350</width>
+  <height>110</height>
+  <tag>proxysettings</tag>
+  <element>
+    <style>checkbox</style>
+    <position>80 80 100 20</position>
+    <text>Use Java</text>
+    <variable>use_java</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>80 50 100 20</position>
+    <text>Use netCDF Java</text>
+    <variable>use_netcdf_java</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tag>pushok</tag>
+    <style>pushok</style>
+    <position>280 10 50 20</position>
+  </element>
+  <element>
+    <tag>pushcancel</tag>
+    <style>pushcancel</style>
+    <position>220 10 50 20</position>
+  </element>
+</root>

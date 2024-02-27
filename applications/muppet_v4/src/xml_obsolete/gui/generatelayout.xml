@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<root>
+  <title>Generate Layout</title>
+  <width>240</width>
+  <height>220</height>
+  <tag>generatelayout</tag>
+  <element>
+    <style>text</style>
+    <position>90 180 50 20</position>
+    <text>Horizontal</variable>
+  </element>
+  <element>
+    <style>text</style>
+    <position>160 180 50 20</position>
+    <text>Vertical</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>90 160 50 20</position>
+    <variable>numberhorizontal</variable>
+    <type>integer</type>
+    <text>Number</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>90 130 50 20</position>
+    <variable>sizehorizontal</variable>
+    <type>real</type>
+    <text>Size (cm)</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>90 100 50 20</position>
+    <variable>spacinghorizontal</variable>
+    <type>real</type>
+    <text>Spacing (cm)</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>90 70 50 20</position>
+    <variable>originhorizontal</variable>
+    <type>real</type>
+    <text>Origin (cm)</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>160 160 50 20</position>
+    <variable>numbervertical</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>160 130 50 20</position>
+    <variable>sizevertical</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>160 100 50 20</position>
+    <variable>spacingvertical</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>160 70 50 20</position>
+    <variable>originvertical</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tag>cancel</tag>
+    <style>pushcancel</style>
+    <position>70 30 60 20</position>
+  </element>
+  <element>
+    <tag>ok</tag>
+    <style>pushok</style>
+    <position>140 30 70 20</position>
+  </element>
+</root>

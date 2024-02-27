@@ -1,0 +1,6 @@
+# pm3d21.cpt
+# extrqcted from http://gnuplot.sourceforge.net/demo/pm3dcolors.21.gnu
+# COLOR_MODEL = RGB
+0 0   0   0    1 255   0  64 
+1 0 128  64    2   0 128 128
+2 0   0 128    4   0   0 255

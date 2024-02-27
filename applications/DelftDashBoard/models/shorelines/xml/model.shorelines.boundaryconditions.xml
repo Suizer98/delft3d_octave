@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>40 10 900 160</position>
+    <text>Boundary Conditions</text>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>50 130 130 20</position>
+    <text>Load Boundary File</text>
+    <variable>handles.model.shorelines.domain.boundary.file</variable>
+    <callback>ddb_shorelines_boundary_conditions</callback>
+    <option1>loadboundaryfile</option1>
+    <showfilename>yes</showfilename>
+    <extension>*.*</extension>
+    <selectiontext>Select boundary file</selectiontext>
+    <tooltipstring>Select boundary file</tooltipstring>
+  </element>
+</root>

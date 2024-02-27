@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 230</position>
+    <text>Lighting</text>
+  </element>
+  <element>
+    <variable>onecolor</variable>
+    <type>boolean</type>
+    <style>checkbox</style>
+    <position>10 190 40 20</position>
+    <text>One Color</text>
+  </element>
+  <element>
+    <variable>color</variable>
+    <type>string</type>
+    <style>selectcolor</style>
+    <position>130 190 100 20</position>
+    <includenone>no</includenone>
+    <text>Color</text>
+    <tooltipstring>Select line color</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>onecolor</variable>
+        <operator>ne</operator>
+        <value>0</value>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>facelighting</variable>
+    <type>string</type>
+    <style>popupmenu</style>
+    <position>110 160 80 20</position>
+    <listtext>none</listtext>
+    <listtext>flat</listtext>
+    <listtext>gouraud</listtext>
+    <listtext>phong</listtext>
+    <text>Face Lighting</text>
+  </element>
+  <element>
+    <variable>backfacelighting</variable>
+    <type>string</type>
+    <style>popupmenu</style>
+    <position>110 130 80 20</position>
+    <listtext>unlit</listtext>
+    <listtext>lit</listtext>
+    <listtext>reverselit</listtext>
+    <text>Back Face Lighting</text>
+  </element>
+  <element>
+    <variable>edgelighting</variable>
+    <type>string</type>
+    <style>popupmenu</style>
+    <position>110 100 80 20</position>
+    <listtext>none</listtext>
+    <listtext>flat</listtext>
+    <listtext>gouraud</listtext>
+    <listtext>phong</listtext>
+    <text>Edge Lighting</text>
+  </element>
+  <element>
+    <variable>ambientstrength</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>110 70 40 20</position>
+    <text>Ambient Strength</text>
+  </element>
+  <element>
+    <variable>diffusestrength</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>300 70 40 20</position>
+    <text>Diffuse Strength</text>
+  </element>
+  <element>
+    <variable>specularstrength</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>110 40 40 20</position>
+    <text>Specular Strength</text>
+  </element>
+  <element>
+    <variable>specularexponent</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>110 10 40 20</position>
+    <text>Specular Exponent</text>
+  </element>
+  <element>
+    <variable>specularcolorreflectance</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>300 10 40 20</position>
+    <text>Specular Color Reflectance</text>
+  </element>
+</root>

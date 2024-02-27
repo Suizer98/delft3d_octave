@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <runid>nyc</runid>
+  <inputdir>d:\temp\sandy\nyc\run08\</inputdir>
+  <admfile>d:\temp\sandy\run12\nesting.adm</admfile>
+  <opt>hydro</opt>
+  <hisfile>d:\temp\sandy\run12\trih-usn.dat</hisfile>
+</root>

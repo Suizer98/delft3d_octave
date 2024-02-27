@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<root>
+  <title>Custom Contours</title>
+  <width>310</width>
+  <height>310</height>
+  <tag>customcontours</tag>
+  <element>
+    <style>listbox</style>
+    <position>20 90 150 200</position>
+    <variable>selectedcontournumber</variable>
+    <type>integer</type>
+    <tooltipstring>Select contour</tooltipstring>
+    <listtext>
+      <variable>contourstrings</variable>
+    </listtext>
+    <callback>muppet_editCustomContours</callback>
+    <option1>selectcontour</option1>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>20 60 150 20</position>
+    <variable>selectedcontour</variable>
+    <type>real</type>
+    <tooltipstring>Edit contour</tooltipstring>
+    <callback>muppet_editCustomContours</callback>
+    <option1>editcontour</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>180 270 80 20</position>
+    <text>Insert Above</text>
+    <tooltipstring>Insert contour above selected contour</tooltipstring>
+    <callback>muppet_editCustomContours</callback>
+    <option1>insertabove</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>180 245 80 20</position>
+    <text>Insert Below</text>
+    <tooltipstring>Insert contour below selected contour</tooltipstring>
+    <callback>muppet_editCustomContours</callback>
+    <option1>insertbelow</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>180 220 80 20</position>
+    <text>Delete</text>
+    <tooltipstring>Delete selected contour</tooltipstring>
+    <callback>muppet_editCustomContours</callback>
+    <option1>delete</option1>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>180 190 80 20</position>
+    <variable>cmin</variable>
+    <type>real</type>
+    <tooltipstring>Edit minimum contour</tooltipstring>
+    <text>C Min</text>
+    <textposition>right</textposition>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>180 165 80 20</position>
+    <variable>cmax</variable>
+    <type>real</type>
+    <tooltipstring>Edit maximum contour</tooltipstring>
+    <text>C Max</text>
+    <textposition>right</textposition>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>180 140 80 20</position>
+    <variable>nrcontours</variable>
+    <type>integer</type>
+    <tooltipstring>Edit number of contours</tooltipstring>
+    <text>Number</text>
+    <textposition>right</textposition>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>180 110 80 20</position>
+    <text>Linear</text>
+    <tooltipstring>Generate linearly increasing contours</tooltipstring>
+    <callback>muppet_editCustomContours</callback>
+    <option1>linear</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>180 85 80 20</position>
+    <text>Logarithmic</text>
+    <tooltipstring>Generate logarithmically increasing contours</tooltipstring>
+    <callback>muppet_editCustomContours</callback>
+    <option1>logarithmic</option1>
+  </element>
+  <element>
+    <tag>cancel</tag>
+    <style>pushcancel</style>
+    <position>150 20 60 20</position>
+  </element>
+  <element>
+    <tag>ok</tag>
+    <style>pushok</style>
+    <position>220 20 70 20</position>
+  </element>
+</root>

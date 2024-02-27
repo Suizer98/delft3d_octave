@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+  <dataproperty>
+    <name>multiplya</name>
+    <keyword>MultiplyA</keyword>
+    <type>real</type>
+    <default>1</default>
+    <check>
+      <operator>ne</operator>
+      <value>1</value>
+    </check>
+  </dataproperty>
+</root>

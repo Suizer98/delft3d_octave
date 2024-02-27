@@ -1,0 +1,35 @@
+# MACHINE-READABLE DESCRIPTION OF THE COLUMNS IN KNMI UURGEM FILES
+# datafiles  Dec 2012
+# This file should be cheched against the udunits package
+# This file can be loaded into Matlab with xls2struct
+# TO DO: add standard_names
+# --+----------+-----+-----------+--------------+--------------------+------------+------------------------------------------------+->
+# nr; knmi_name;slope;_FillValue ;         units;standard_name       ;cell_methods;name (as to appear as netCDF varibale name)     ;long_name;comment
+# --+----------+-----+-----------+--------------+--------------------+------------+------------------------------------------------+->
+nr;knmi_name ;slope;nodatavalue;         units;       standard_name;cell_methods;                                            name;long_name;comment
+# ;char      ;    1;          1;          char;                char;        char;                                            char;     char;char
+ 1;STN       ;    0;        NaN;             1;                    ;            ;WMO_number                                      ;WMO-number
+ 2;YYYYMMDD  ;    0;        NaN;      YYYYMMDD;                    ;            ;YYYYMMDD                                        ;date
+ 3;HH        ;    1;        NaN;          hour;                    ;            ;hour                                            ;hour;tijd (HH=uur, UT.12 UT=13 MET, 14 MEZT. Uurvak 05 loopt van 04.00 UT tot 5.00 UT / time (HH uur/hour, UT. 12 UT=13 MET, 14 MEZT. Hourly division 05 runs from 04.00 UT to 5.00 UT
+ 4;DD        ;    1;        990;   degree_true;wind_from_direction ;mean   :hour;wind_from_direction_mean                        ;Mean wind direction during the 10-minute period preceding the time of observation; (360=north, 90=east, 180=south, 270=west, 0=calm 990=variable)
+ 5;FH        ;  0.1;        NaN;           m/s;wind_speed          ;mean   :hour;wind_speed_vector_mean                          ;Hourly mean wind speed
+ 6;FF        ;  0.1;        NaN;           m/s;wind_speed          ;            ;wind_speed_vector_mean_10min                    ;Mean wind speed during the 10-minute period preceding the time of observation 
+ 7;FX        ;  0.1;        NaN;           m/s;wind_speed          ;            ;wind_speed_minimum_gust_hour                    ;Maximum wind gust during the hourly division
+ 8;T         ;  0.1;        NaN;degree_Celsius;air_temperature     ;            ;air_temperature_mean                            ;Temperature at 1.50 m at the time of observation
+ 9;T10N      ;  0.1;        NaN;degree_Celsius;air_temperature     ;minimum:hour;air_temperature_minimum                         ;Minimum temperature at 0.1 m in the preceding 6-hour period
+10;TD        ;  0.1;        NaN;degree_Celsius;                    ;            ;dew_point_temperature                           ;Dew point temperature at 1.50 m at the time of observation
+11;SQ        ;  0.1;        NaN;          hour;duration_of_sunshine;            ;duration_of_sunshine                            ;Sunshine duration during the hourly division, calculated from global radiation; (-1 for <0.05 hour)
+12;Q         ;    1;        NaN;        J/cm^2;                    ;            ;global_radiation                                ;Global radiation during the hourly division
+13;DR        ;  0.1;        NaN;          hour;                    ;            ;precipitation_duration                          ;Precipitation duration during the hourly division
+14;RH        ;  0.1;        NaN;            mm;                    ;sum   : hour;precipitation_amount_sum                        ;Hourly precipitation amount; (-1 for <0.05 mm)
+15;P         ;  0.1;        NaN;           hPa;surface_air_pressure;            ;surface_air_pressure                            ;Air pressure reduced to mean sea level, at the time of observation
+16;VV        ;    1;        NaN;         class;                    ;            ;visibility_in_air                               ;Horizontal visibility at the time of observation; (0=less than 100m, 1=100-200m, 2=200-300m,..., 49=4900-5000m, 50=5-6km, 56=6-7km, 57=7-8km, ..., 79=29-30km, 80=30-35km, 81=35-40km,..., 89=more than 70km)
+17;N         ;    1;        NaN;        octant;                    ;            ;cloud_cover                                     ;Cloud cover (in octants), at the time of observation; (9=sky invisible)
+18;U         ;    1;        NaN;             %;                    ;            ;relative_humidity                               ;Relative atmospheric humidity (in percents) at 1.50 m at the time of observation
+19;WW        ;    1;        NaN;         class;                    ;            ;weather_code                                    ;Present weather code (00-99), description for the hourly division; See http://www.knmi.nl/klimatologie/achtergrondinformatie/ww_lijst_engels.pdf
+20;IX        ;    1;        NaN;         class;                    ;            ;weather_registration_method                     ;Indicator present weather code; 1=manned and recorded (using code from visual observations), 2,3=manned and omitted (no significant weather phenomenon to report, not available), 4=automatically recorded (using code from visual observations), 5,6=automatically omitted (no significant weather phenomenon to report, not available), 7=automatically set (using code from automated observations)
+21;M         ;    1;        NaN;         class;                    ;            ;fog                                             ;Fog; 0=no occurrence, 1=occurred during the preceding hour and/or at the time of observation
+22;R         ;    1;        NaN;         class;                    ;            ;rain                                            ;Rainfall; 0=no occurrence, 1=occurred during the preceding hour and/or at the time of observation
+23;S         ;    1;        NaN;         class;                    ;            ;snow                                            ;Snow; 0=no occurrence, 1=occurred during the preceding hour and/or at the time of observation
+24;O         ;    1;        NaN;         class;                    ;            ;thunder                                         ;Thunder; 0=no occurrence, 1=occurred during the preceding hour and/or at the time of observation
+25;Y         ;    1;        NaN;         class;                    ;            ;ice                                             ;Ice formation; 0=no occurrence, 1=occurred during the preceding hour and/or at the time of observation

@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <variable>adddatestring</variable>
+    <style>panel</style>
+    <position>0 0 350 110</position>
+    <text>Contours</text>
+  </element>
+  <element>
+    <variable>cmin</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>40 70 40 20</position>
+    <text>C Min</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>usecustomcontours</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>cstep</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>125 70 40 20</position>
+    <text>C Step</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>usecustomcontours</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>cmax</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>210 70 40 20</position>
+    <text>C Max</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>usecustomcontours</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>usecustomcontours</variable>
+    <type>boolean</type>
+    <style>checkbox</style>
+    <position>40 40 60 20</position>
+    <text>Custom Contours</text>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>150 40 70 20</position>
+    <callback>muppet_editCustomContours</callback>
+    <text>Edit ...</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>usecustomcontours</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>colormap</variable>
+    <style>popupmenu</style>
+    <position>60 10 70 20</position>
+    <listtext>
+      <variable>mainhandles.colormapnames</variable>
+    </listtext>
+    <text>Color Map</text>
+    <tooltipstring>Select color map</tooltipstring>
+  </element>
+  <element>
+    <variable>plotcolorbar</variable>
+    <type>boolean</type>
+    <style>checkbox</style>
+    <position>160 10 70 20</position>
+    <text>Color Bar</text>
+    <tooltipstring>Separate color bar for this dataset</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>230 10 70 20</position>
+    <callback>muppet_editColorBar</callback>
+    <option1>dataset</option1>
+    <text>Edit ...</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>plotcolorbar</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

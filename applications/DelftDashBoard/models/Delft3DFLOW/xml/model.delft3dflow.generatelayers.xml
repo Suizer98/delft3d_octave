@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<root>
+  <title>Layer thickness</title>
+  <width>260</width>
+  <height>330</height>
+  <element>
+    <style>popupmenu</style>
+    <position>50 295 200 20</position>
+    <variable>layerOption</variable>
+    <type>integer</type>
+    <text>Option</text>
+    <textposition>left</textposition>
+    <tooltipstring>Select option for layer thickness</tooltipstring>
+    <listtext>Increasing from surface</listtext>
+    <listtext>Increasing from bottom</listtext>
+    <listtext>Increasing from surface and bottom</listtext>
+    <listtext>Equidistant</listtext>
+    <listvalue>1</listvalue>
+    <listvalue>2</listvalue>
+    <listvalue>3</listvalue>
+    <listvalue>4</listvalue>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>layerType</variable>
+        <value>Sigma</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>50 295 200 20</position>
+    <variable>layerOption</variable>
+    <type>integer</type>
+    <text>Option</text>
+    <textposition>left</textposition>
+    <tooltipstring>Select option for layer thickness</tooltipstring>
+    <listtext>Increasing from surface</listtext>
+    <listtext>Equidistant</listtext>
+    <listvalue>1</listvalue>
+    <listvalue>4</listvalue>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>layerType</variable>
+        <value>Z</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 270 50 20</position>
+    <variable>thickTop</variable>
+    <type>real</type>
+    <text>Thickness Top (%)</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit surface thickness (%)</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>layerOption</variable>
+        <type>integer</type>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>layerOption</variable>
+        <type>integer</type>
+        <value>3</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>layerType</variable>
+        <value>Sigma</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 270 50 20</position>
+    <variable>thickTop</variable>
+    <type>real</type>
+    <text>Thickness Top (m)</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit surface thickness (m)</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>layerOption</variable>
+        <type>integer</type>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>layerType</variable>
+        <value>Z</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 245 50 20</position>
+    <variable>thickBot</variable>
+    <type>real</type>
+    <text>Thickness Bottom (%)</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit bottom thickness (%)</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>layerOption</variable>
+        <type>integer</type>
+        <value>2</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>layerOption</variable>
+        <type>integer</type>
+        <value>3</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>layerType</variable>
+        <value>Sigma</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>listbox</style>
+    <position>10 10 80 200</position>
+    <type>string</type>
+    <listtext>
+      <variable>layerStrings</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>200 210 50 20</position>
+    <text>Generate</text>
+    <callback>ddb_Delft3DFLOW_generateLayers</callback>
+    <option1>generatelayers</option1>
+  </element>
+  <element>
+    <style>pushok</style>
+    <position>200 10 50 20</position>
+  </element>
+  <element>
+    <style>pushcancel</style>
+    <position>140 10 50 20</position>
+  </element>
+</root>

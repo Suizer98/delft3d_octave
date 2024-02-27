@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+<root>
+  <plotoption>
+    <name>name</name>
+    <keyword>Dataset</keyword>
+    <type>string</type>
+    <write>0</write>
+  </plotoption>
+  <plotoption>
+    <name>plotroutine</name>
+    <keyword>PlotRoutine</keyword>
+    <type>string</type>
+  </plotoption>
+  <plotoption>
+    <name>backgroundcolor</name>
+    <keyword>BackgroundColor</keyword>
+    <element>
+      <style>selectcolor</style>
+      <text>Color</text>
+      <includenone>1</includenone>
+      <position>50 0 100 20</position>
+      <type>string</type>
+    </element>
+  </plotoption>
+  <plotoption>
+    <name>string</name>
+    <keyword>Text</keyword>
+    <element>
+      <type>multilinetext</type>
+      <style>edit</style>
+      <nrlines>5</nrlines>
+      <text>Text</text>
+      <position>50 0 300 150</position>
+    </element>
+  </plotoption>
+  <plotoption>
+    <name>box</name>
+    <keyword>Box</keyword>
+    <element>
+      <type>boolean</type>
+      <style>checkbox</style>
+      <text>Box</text>
+      <position>50 0 50 20</position>
+    </element>
+  </plotoption>
+  <plotoption>
+    <name>legendtext</name>
+    <keyword>LegendText</keyword>
+    <element>
+      <style>edit</style>
+      <type>string</type>
+      <text>Legend Text</text>
+      <position>80 0 270 20</position>
+    </element>
+  </plotoption>
+  <plotoption>
+    <name>polylinetype</name>
+    <keyword>PolylineType</keyword>
+    <type>string</type>
+    <default>polyline</default>
+    <check>
+      <operator>ne</operator>
+    </check>
+    <element>
+      <variable>polylinetype</variable>
+      <style>popupmenu</style>
+      <position>30 0 100 20</position>
+      <type>string</type>
+      <text>Type</text>
+      <listtext>Polyline</listtext>
+      <listtext>Spline</listtext>
+      <listtext>Curved Arrow</listtext>
+      <listvalue>polyline</listvalue>
+      <listvalue>spline</listvalue>
+      <listvalue>curvedarrow</listvalue>
+    </element>
+  </plotoption>
+  <plotoption>
+    <name>rightaxis</name>
+    <keyword>RightAxis</keyword>
+    <type>boolean</type>
+    <default>0</default>
+    <check>
+      <operator>ne</operator>
+    </check>
+    <element>
+      <type>boolean</type>
+      <style>checkbox</style>
+      <text>Right Axis</text>
+      <position>10 0 50 20</position>
+    </element>
+  </plotoption>
+</root>

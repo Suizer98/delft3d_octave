@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<root>
+    <plotoption>
+      <name>linecolor</name>
+      <style>selectcolor</style>
+      <includenone>no</includenone>
+      <type>string</type>
+      <text>Line Color</text>
+      <tooltipstring>Select line color</tooltipstring>
+    </plotoption>
+    <plotoption>
+      <name>linewidth</name>
+      <style>edit</style>
+      <type>real</type>
+      <text>Line Width</text>
+    </plotoption>
+    <plotoption>
+      <name>linestyle</name>
+      <style>selectlinestyle</style>
+      <type>string</type>
+      <text>Line Style</text>
+    </plotoption>
+    <plotoption>
+      <name>marker</name>
+      <style>selectmarker</style>
+      <type>string</type>
+      <text>Marker</text>
+    </plotoption>
+    <plotoption>
+      <name>markersize</name>
+      <style>selectmarkersize</style>
+      <type>integer</type>
+      <text>Marker Size</text>
+        <dependency>
+          <action>enable</action>
+          <checkfor>all</checkfor>
+            <check>
+              <variable>marker</variable>
+              <value>none</value>
+              <operator>ne</operator>
+            </check>
+        </dependency>
+    </plotoption>
+    <plotoption>
+      <name>markeredgecolor</name>
+      <style>selectcolor</style>
+      <includenone>yes</includenone>
+      <type>string</type>
+      <text>Marker Edge Color</text>
+        <dependency>
+          <action>enable</action>
+          <checkfor>all</checkfor>
+            <check>
+              <variable>marker</variable>
+              <value>none</value>
+              <operator>ne</operator>
+            </check>
+        </dependency>
+    </plotoption>
+    <plotoption>
+      <name>markerfacecolor</name>
+      <style>selectcolor</style>
+      <includenone>yes</includenone>
+      <type>string</type>
+      <text>Marker Face Color</text>      
+        <dependency>
+          <action>enable</action>
+          <checkfor>all</checkfor>
+            <check>
+              <variable>marker</variable>
+              <value>none</value>
+              <operator>ne</operator>
+            </check>
+        </dependency>
+    </plotoption>
+    <plotoption>
+      <name>head1style</name>
+      <style>selectheadstyle</style>
+      <type>string</type>
+      <text>Head Style 1</text>
+    </plotoption>
+    <plotoption>
+      <name>head2style</name>
+      <style>selectheadstyle</style>
+      <type>string</type>
+      <text>Head Style 2</text>
+    </plotoption>
+    <plotoption>
+      <name>head1width</name>
+      <style>edit</style>
+      <type>real</type>
+      <text>Head Width 1</text>
+    </plotoption>
+    <plotoption>
+      <name>head2width</name>
+      <style>edit</style>
+      <type>real</type>
+      <text>Head Width 2</text>
+    </plotoption>
+    <plotoption>
+      <name>head1length</name>
+      <style>edit</style>
+      <type>real</type>
+      <text>Head Length 1</text>
+    </plotoption>
+    <plotoption>
+      <name>head2length</name>
+      <style>edit</style>
+      <type>real</type>
+      <text>Head Length 2</text>
+    </plotoption>
+    <plotoption>
+      <name>position(1)</name>
+      <style>edit</style>
+      <type>real</type>
+      <text>Position X</text>
+    </plotoption>
+    <plotoption>
+      <name>position(2)</name>
+      <style>edit</style>
+      <type>real</type>
+      <text>Position Y</text>
+    </plotoption>
+    <plotoption>
+      <name>position(3)</name>
+      <style>edit</style>
+      <type>real</type>
+      <text>Width</text>
+    </plotoption>
+    <plotoption>
+      <name>position(4)</name>
+      <style>edit</style>
+      <type>real</type>
+      <text>Height</text>
+    </plotoption>
+    <plotoption>
+      <name>backgroundcolor</name>
+      <style>selectcolor</style>
+      <text>Color</text>
+      <includenone>1</includenone>
+    </plotoption>
+    <plotoption>
+      <name>string</name>
+      <style>edit</style>
+      <nrlines>5</nrlines>
+      <height>100</height>
+      <width>200</width>
+      <text>Text</text>
+    </plotoption>
+    <plotoption>
+      <name>font</name>
+      <style>selectfont</style>
+      <horizontalalignment>1</horizontalalignment>
+      <verticalalignment>1</verticalalignment>
+      <text>Font</text>
+    </plotoption>
+    <plotoption>
+      <name>box</name>
+      <style>checkbox</style>
+      <text>Box</text>
+    </plotoption>
+</root>

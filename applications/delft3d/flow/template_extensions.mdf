@@ -1,0 +1,217 @@
+Commnt = template with all known keywords (incl. mutually exclusive ones)
+Ident  = #Delft3D-FLOW  .03.02 3.40.04#
+Runtxt = #012345678901234567890123456789#
+         #012345678901234567890123456789#
+         #012345678901234567890123456789#
+         #012345678901234567890123456789#
+         #012345678901234567890123456789#
+         #012345678901234567890123456789#
+         #012345678901234567890123456789#
+         #012345678901234567890123456789#
+         #012345678901234567890123456789#
+Filcco = #*.grd#
+Fmtcco = #FR#
+Anglat =  0.0000000e+000
+Grdang =  0.0000000e+000
+Filgrd = #*.enc#
+Fmtgrd = #FR#
+MNKmax = 0 0 1
+Thick  = 100
+Fildep = #*.dep#
+Fmtdep = #FR#
+Depuni =  1.0000000e+001
+Commnt =                 no. dry points: 0
+MNdry  = [.]
+Fildry = #*.dry#
+Fmtdry = #FR#
+Commnt =                 no. thin dams: 0
+MNtd   = [.]
+Filtd  = #*.thd#
+Fmttd  = #FR#
+Nambar = [.]
+MNbar  = [.]
+MNwlos = [.]
+Itdate = #1970-01-01#
+Tunit  = #M#
+Tstart =  0.0000000e+000
+Tstop  =  2.8800000e+003
+Dt     = 10.0
+Tzone  = 0
+Commnt =                  
+Sub1   = #STWI#
+Sub2   = # CW#
+Namc1  = #Sediment01          #
+Namc2  = #Sedimentaa          #
+Namc3  = #Sediment____        #
+Namc4  = #Sediment02          #
+Namc5  = #Sediment03          #
+Wnsvwp = #N#
+Filwnd = #*.wnd#
+Fmtwnd = #FR#
+Wndint = #Y#
+Filic  = ##
+Zeta0  =  0.0000000e+000
+U0     = [.]
+V0     = [.]
+S0     =  3.1000000e+001
+          3.1000000e+001
+          3.1000000e+001
+          3.1000000e+001
+          3.1000000e+001
+T0     =  1.5000000e+001
+          1.5000000e+001
+          1.5000000e+001
+          1.5000000e+001
+          1.5000000e+001
+C01    =  9.0000000e+001
+          9.0000000e+001
+          9.0000000e+001
+          9.0000000e+001
+          9.0000000e+001
+C02    =  7.0000000e+000
+          7.0000000e+000
+          7.0000000e+000
+          7.0000000e+000
+          7.0000000e+000
+I0     =  0.0000000e+000
+Commnt =                  
+Restid = #RUNID.yyyymmdd.HHMMSS#
+Commnt =                 no. open boundaries: 0
+Filbnd = #*.bnd#
+Fmtbnd = #FR#
+FilbcH = #*.bch#
+FmtbcH = #FR#
+FilbcT = #*.bct#
+FmtbcT = #FR#
+FilbcQ = ##
+FmtbcQ = #FR#
+FilbcC = #*.bcc#
+FmtbcC = #FR#
+Filana = #*.bca#
+Fmtana = #FR#
+Filcor = #*.cor#
+Fmtcor = #FR#
+Commnt =                  
+Rettis = 100
+Rettib = 100
+Ag     =  9.8100000e+000
+Rhow   =  1.0000000e+003
+Alph0  = [.]
+Tempw  =  1.5000000e+001
+Salw   =  3.1000000e+001
+Rouwav = #FR84#
+Wstres =  6.3000000e-004  0.0000000e+000  7.2300000e-003  1.0000000e+002
+Rhoa   =  1.0000000e+000
+Betac  =  5.0000000e-001
+Equili = #N#
+Tkemod = #K-epsilon   #
+Ktemp  = 5
+Fclou  =  0.0000000e+000
+Sarea  =  0.0000000e+000
+Secchi =  1.3385827e+001
+Stantn =  1.4500000e-003
+Dalton =  1.2000000e-003
+Filtmp =#*.tem#
+Fmttmp = #FR#
+Ivapop  = 0
+Temint = #Y#
+Commnt =                  
+Roumet = #C#
+Filrgh = #*.rgh#
+Fmtrgh = #FR#
+Ccofu  =  6.5000000e+001
+Ccofv  =  6.5000000e+001
+Xlo    =  0.0000000e+000
+Filedy = #*.edy#
+Fmtedy = #FR#
+Vicouv =  1.0000000e+000
+Dicouv =  1.0000000e+001
+Htur2d = #N#
+Vicoww = 1.00000e-006
+Dicoww = 1.00000e-006
+Irov   = 0
+Z0v    = [.]
+Filsed = #*.sed#
+Fmtsed = #FR#
+Filmor = #*.mor#
+Fmtmor = #FR#
+Cmu    = [.]
+Cpran  = [.]
+Commnt =                  
+Iter   =      2
+Dryflp = #YES#
+Dpsopt = #MAX#
+Dpuopt = #MOR#
+Dryflc =  1.0000000e-001
+Dco    = -9.9900000e+002
+Tlfsmo =  6.0000000e+001
+ThetQH =  0.0000000e+000
+Forfuv = #Y#
+Forfww = #N#
+Sigcor = #N#
+Trasol = #Cyclic-method#
+Momsol = #Cyclic#
+Commnt =                 no. discharges: 0
+Filsrc = #*.src#
+Fmtsrc = #FR#
+Fildis = #*.dis#
+Fmtdis = #FR#
+Commnt =                 no. observation points: 0
+Filsta = #*.obs#
+Fmtsta = #FR#
+Tpar   = [.]
+XYpar  = [.]
+Filpar = #*.par#
+Fmtpar = #FR#
+Eps    = [.]
+Commnt =                 no. cross sections: 0
+Filcrs = #*.crs#
+Fmtcrs = #FR#
+SMhydr = #YYYYY#     
+SMderv = #YYYYYY#    
+SMproc = #YYYYYYYYYY#
+PMhydr = #YYYYYY#    
+PMderv = #YYY#       
+PMproc = #YYYYYYYYYY#
+SHhydr = #YYYY#      
+SHderv = #YYYYY#     
+SHproc = #YYYYYYYYYY#
+SHflux = #YYYY#      
+PHhydr = #NNNNNN#    
+PHderv = #NNN#       
+PHproc = #NNNNNNNNNN#
+PHflux = #NNNN#      
+Filfou = #*.fou#
+Fmtfou = #FR#
+Online = #N#
+Prmap  = [.]
+Prhis  = 750.000 0.000000 60.0000
+Flmap  =  0.0000000e+000 120.0  2.8800000e+003
+Flhis  =  0.0000000e+000 10.0  2.8800000e+003
+Flpp   =  0.0000000e+000 0.0  0.0000000e+000
+Flrst  = 1440.0
+BarocP = #Y#
+Zmodel = #Y#
+Zbot   = -20
+Ztop   =  1
+Keva   = 1
+Fileva = #*.eva#
+Evaint = #N#
+Maseva = #N#
+Flwq   = 0 0 0
+ilAggr = 0
+WaqAgg = #active only#
+Corbnd = #*.bcr#
+Fwndgu = #*.amu#
+Fwndgv = #*.amv#
+Fwndgp = #*.amp#
+Fwndgr = #*.amr#
+Fwndgt = #*.amt#
+Fwndgc = #*.amc#
+Airout = #yes#
+Heaout = #yes#
+Commnt = BarocP=NO(Y) switches off(on) the baroclinic pressure term at the open boundary
+BarocP = #Y#
+Commnt = Cstbnd=yes sets cross-boundary gradient of along-boundary velocities to zero, instead of along-boundary velocities themselves to 0
+Cstbnd = #Y#
+DenFrm = #UNESCO#

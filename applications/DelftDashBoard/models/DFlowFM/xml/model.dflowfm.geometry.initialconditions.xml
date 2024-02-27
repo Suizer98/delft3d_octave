@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 110 130 20</position>
+    <tooltipstring>Select initial water level file</tooltipstring>
+    <text>Water Level Ini File</text>
+    <variable>handles.model.dflowfm.domain.waterlevinifile</variable>
+    <extension>*.xyz</extension>
+    <selectiontext>Select water level ini file</selectiontext>
+    <callback>ddb_DFlowFM_initialconditions</callback>
+    <option1>selectwaterlevelinifile</option1>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>110 85 40 20</position>
+    <tooltipstring>Edit initial water level</tooltipstring>
+    <text>Initial Water Level</text>
+    <variable>handles.model.dflowfm.domain.waterlevini</variable>
+    <type>real</type>
+  </element>
+</root>

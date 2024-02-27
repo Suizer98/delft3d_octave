@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>popupmenu</style>
+    <text>bedfriction</text>
+    <position>70.000,107.500, 80.000, 20.000</position>
+    <tooltipstring>Bed friction formulation: 'chezy','white-colebrook' [-]</tooltipstring>
+    <variable>handles.model.xbeach.domain.bedfriction</variable>
+    <type>string</type>
+    <listtext>chezy</listtext>
+    <listtext>white-colebrook</listtext>
+  </element>
+  <element>
+    <tooltipstring>Bed friction file (only valid with values of C) [-]</tooltipstring>
+    <style>pushselectfile</style>
+    <text>bedfricfile</text>
+    <position>70.000,80.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.bedfricfile</variable>
+    <type>character</type>
+    <extension>*.*</extension>
+    <selectiontext>Select file</selectiontext>
+  </element>
+  <element>
+    <tooltipstring>Chezy coefficient [m^0.5s^-1]</tooltipstring>
+    <style>edit</style>
+    <text>C</text>
+    <position>70.000,52.500,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.C</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Horizontal background viscosity [m^2s^-1]</tooltipstring>
+    <style>edit</style>
+    <text>nuh</text>
+    <position>70.000,25.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.nuh</variable>
+    <type>real</type>
+  </element>
+</root>

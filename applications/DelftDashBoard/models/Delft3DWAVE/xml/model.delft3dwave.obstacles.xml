@@ -1,0 +1,462 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>45 10 675 160</position>
+    <text>Obstacles</text>
+  </element>
+  <element>
+    <style>listbox</style>
+    <position>55 20 160 130</position>
+    <tooltipstring>Select one or more obstacles</tooltipstring>
+    <variable>handles.model.delft3dwave.domain.activeobstacle</variable>
+    <multivariable>handles.model.delft3dwave.domain.activeobstacles</multivariable>
+    <max>1000</max>
+    <type>integer</type>
+    <callback>ddb_Delft3DWAVE_obstacles</callback>
+    <option1>selectobstacle</option1>
+    <listtext>
+      <variable>handles.model.delft3dwave.domain.obstaclenames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>220 130 100 20</position>
+    <tooltipstring>Add obstacle</tooltipstring>
+    <text>Add</text>
+    <callback>ddb_Delft3DWAVE_obstacles</callback>
+    <option1>addobstacle</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>220 105 100 20</position>
+    <tooltipstring>Delete obstacle</tooltipstring>
+    <text>Delete</text>
+    <callback>ddb_Delft3DWAVE_obstacles</callback>
+    <option1>deleteobstacle</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrobstacles</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>220 80 100 20</position>
+    <tooltipstring>Import obstacles</tooltipstring>
+    <text>Copy from FLOW</text>
+    <callback>ddb_Delft3DWAVE_obstacles</callback>
+    <option1>copyfromflow</option1>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>220 55 100 20</position>
+    <tooltipstring>Import obstacle polylines file</tooltipstring>
+    <showfilename>no</showfilename>
+    <text>Import</text>
+    <variable>handles.model.delft3dwave.domain.obstaclepolylinesfile</variable>
+    <extension>*.pli</extension>
+    <selectiontext>Select obstacle polylines file</selectiontext>
+    <callback>ddb_Delft3DWAVE_obstacles</callback>
+    <option1>loadpolylinesfile</option1>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>220 15 50 20</position>
+    <tooltipstring>Load obstacle file</tooltipstring>
+    <text>Open</text>
+    <showfilename>no</showfilename>
+    <variable>handles.model.delft3dwave.domain.obstaclefile</variable>
+    <extension>*.obs</extension>
+    <selectiontext>Select obstacle file</selectiontext>
+    <callback>ddb_Delft3DWAVE_obstacles</callback>
+    <option1>loadobsfile</option1>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>280 15 50 20</position>
+    <tooltipstring>Save obstacle file</tooltipstring>
+    <text>Save</text>
+    <variable>handles.model.delft3dwave.domain.obstaclefile</variable>
+    <extension>*.obs</extension>
+    <selectiontext>Select obstacle file</selectiontext>
+    <callback>ddb_Delft3DWAVE_obstacles</callback>
+    <option1>saveobsfile</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrobstacles</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>530 140</position>
+    <text>Obstacle type</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrobstacles</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>610 140</position>
+    <text>Sheet</text>
+    <type>string</type>
+    <variable>handles.model.delft3dwave.domain.obstacles(handles.model.delft3dwave.domain.activeobstacle).type</variable>
+    <value>sheet</value>
+    <callback>ddb_Delft3DWAVE_obstacles</callback>
+    <option1>selecttype</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrobstacles</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>670 140</position>
+    <text>Dam</text>
+    <type>string</type>
+    <variable>handles.model.delft3dwave.domain.obstacles(handles.model.delft3dwave.domain.activeobstacle).type</variable>
+    <value>dam</value>
+    <callback>ddb_Delft3DWAVE_obstacles</callback>
+    <option1>selecttype</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrobstacles</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>610 115 90 20</position>
+    <text>Reflections</text>
+    <type>string</type>
+    <variable>handles.model.delft3dwave.domain.obstacles(handles.model.delft3dwave.domain.activeobstacle).reflections</variable>
+    <callback>ddb_Delft3DWAVE_obstacles</callback>
+    <option1>selectreflections</option1>
+    <listtext>
+      <variable>handles.model.delft3dwave.domain.obstaclereflectiontypestext</variable>
+    </listtext>
+    <listvalue>
+      <variable>handles.model.delft3dwave.domain.obstaclereflectiontypes</variable>
+    </listvalue>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrobstacles</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>610 90 50 20</position>
+    <text>Reflection coefficient</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.obstacles(handles.model.delft3dwave.domain.activeobstacle).refleccoef</variable>
+    <type>real</type>
+    <tooltipstring>Enter reflection coefficient</tooltipstring>
+    <callback>ddb_Delft3DWAVE_obstacles</callback>
+    <option1>selectreflectioncoefficient</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrobstacles</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.model.delft3dwave.domain.obstacles(handles.model.delft3dwave.domain.activeobstacle).reflections</variable>
+        <value>no</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>665 90</position>
+    <text>[-]</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrobstacles</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.model.delft3dwave.domain.obstacles(handles.model.delft3dwave.domain.activeobstacle).reflections</variable>
+        <value>no</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>610 65 50 20</position>
+    <text>Transmission coefficient</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.obstacles(handles.model.delft3dwave.domain.activeobstacle).transmcoef</variable>
+    <type>real</type>
+    <tooltipstring>Enter transmission coefficient</tooltipstring>
+    <callback>ddb_Delft3DWAVE_obstacles</callback>
+    <option1>selecttransmissioncoefficient</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrobstacles</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.obstacles(handles.model.delft3dwave.domain.activeobstacle).type</variable>
+        <value>sheet</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>665 65</position>
+    <text>[-]</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrobstacles</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.obstacles(handles.model.delft3dwave.domain.activeobstacle).type</variable>
+        <value>sheet</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>610 65 50 20</position>
+    <text>Height</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.obstacles(handles.model.delft3dwave.domain.activeobstacle).height</variable>
+    <type>real</type>
+    <tooltipstring>Enter height</tooltipstring>
+    <callback>ddb_Delft3DWAVE_obstacles</callback>
+    <option1>selectheight</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrobstacles</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.obstacles(handles.model.delft3dwave.domain.activeobstacle).type</variable>
+        <value>dam</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>665 65</position>
+    <text>[m]</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrobstacles</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.obstacles(handles.model.delft3dwave.domain.activeobstacle).type</variable>
+        <value>dam</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>610 40 50 20</position>
+    <text>Alpha</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.obstacles(handles.model.delft3dwave.domain.activeobstacle).alpha</variable>
+    <type>real</type>
+    <tooltipstring>Enter alpha</tooltipstring>
+    <callback>ddb_Delft3DWAVE_obstacles</callback>
+    <option1>selectalpha</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrobstacles</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.obstacles(handles.model.delft3dwave.domain.activeobstacle).type</variable>
+        <value>dam</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>665 40</position>
+    <text>[-]</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrobstacles</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.obstacles(handles.model.delft3dwave.domain.activeobstacle).type</variable>
+        <value>dam</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>610 15 50 20</position>
+    <text>Beta</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.obstacles(handles.model.delft3dwave.domain.activeobstacle).beta</variable>
+    <type>real</type>
+    <tooltipstring>Enter beta</tooltipstring>
+    <callback>ddb_Delft3DWAVE_obstacles</callback>
+    <option1>selectbeta</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrobstacles</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.obstacles(handles.model.delft3dwave.domain.activeobstacle).type</variable>
+        <value>dam</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>665 15</position>
+    <text>[-]</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrobstacles</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.obstacles(handles.model.delft3dwave.domain.activeobstacle).type</variable>
+        <value>dam</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>730 10 260 160</position>
+    <text>Coordinates</text>
+  </element>
+  <element>
+    <style>table</style>
+    <position>750 15</position>
+    <nrrows>6</nrrows>
+    <includenumbers>yes</includenumbers>
+    <includebuttons>yes</includebuttons>
+    <onchange>ddb_Delft3DWAVE_obstacles</onchange>
+    <option1>editobstacletable</option1>
+    <column>
+      <style>editreal</style>
+      <variable>handles.model.delft3dwave.domain.obstacles(handles.model.delft3dwave.domain.activeobstacle).x</variable>
+      <width>60</width>
+      <text>X</text>
+    </column>
+    <column>
+      <style>editreal</style>
+      <variable>handles.model.delft3dwave.domain.obstacles(handles.model.delft3dwave.domain.activeobstacle).y</variable>
+      <width>60</width>
+      <text>Y</text>
+    </column>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrobstacles</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

@@ -1,0 +1,371 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>listbox</style>
+    <position>45 10 150 145</position>
+    <tooltipstring>Select discharge</tooltipstring>
+    <text>Discharge Points</text>
+    <textposition>above-center</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).activeDischarge</variable>
+    <type>integer</type>
+    <onchange>ddb_Delft3DFLOW_discharges</onchange>
+    <option1>selectfromlist</option1>
+    <listtext>
+      <variable>handles.model.delft3dflow.domain(ad).dischargeNames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>205 10 210 145</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>245 125 160 20</position>
+    <text>Name</text>
+    <onchange>ddb_Delft3DFLOW_discharges</onchange>
+    <option1>edit</option1>
+    <tooltipstring>Edit discharge name</tooltipstring>
+    <variable>handles.model.delft3dflow.domain(ad).discharges(handles.model.delft3dflow.domain(ad).activeDischarge).name</variable>
+    <type>string</type>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrDischarges</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>245 100 40 20</position>
+    <text>M</text>
+    <onchange>ddb_Delft3DFLOW_discharges</onchange>
+    <option1>edit</option1>
+    <tooltipstring>Edit discharge index M</tooltipstring>
+    <variable>handles.model.delft3dflow.domain(ad).discharges(handles.model.delft3dflow.domain(ad).activeDischarge).M</variable>
+    <type>integer</type>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrDischarges</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>305 100 40 20</position>
+    <text>N</text>
+    <onchange>ddb_Delft3DFLOW_discharges</onchange>
+    <option1>edit</option1>
+    <variable>handles.model.delft3dflow.domain(ad).discharges(handles.model.delft3dflow.domain(ad).activeDischarge).N</variable>
+    <type>integer</type>
+    <tooltipstring>Edit discharge index N</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrDischarges</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>365 100 40 20</position>
+    <text>K</text>
+    <onchange>ddb_Delft3DFLOW_discharges</onchange>
+    <option1>edit</option1>
+    <variable>handles.model.delft3dflow.domain(ad).discharges(handles.model.delft3dflow.domain(ad).activeDischarge).K</variable>
+    <type>integer</type>
+    <tooltipstring>Edit discharge layer (enter 0 for uniform distribution over water column)</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrDischarges</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>280 75</position>
+    <text>Linear</text>
+    <variable>handles.model.delft3dflow.domain(ad).discharges(handles.model.delft3dflow.domain(ad).activeDischarge).interpolation</variable>
+    <value>linear</value>
+    <type>string</type>
+    <tooltipstring>Edit discharge index N2</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrDischarges</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>340 75</position>
+    <text>Block</text>
+    <variable>handles.model.delft3dflow.domain(ad).discharges(handles.model.delft3dflow.domain(ad).activeDischarge).interpolation</variable>
+    <value>block</value>
+    <type>string</type>
+    <tooltipstring>Edit discharge index N2</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrDischarges</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>210 77</position>
+    <text>Interpolation</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrDischarges</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Type</text>
+    <position>245 50 120 20</position>
+    <type>string</type>
+    <variable>handles.model.delft3dflow.domain(ad).discharges(handles.model.delft3dflow.domain(ad).activeDischarge).type</variable>
+    <listtext>Normal</listtext>
+    <listtext>Momentum</listtext>
+    <listtext>Walking</listtext>
+    <listtext>Intake / Outfall</listtext>
+    <listvalue>normal</listvalue>
+    <listvalue>momentum</listvalue>
+    <listvalue>walking</listvalue>
+    <listvalue>inout</listvalue>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrDischarges</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>245 20 40 20</position>
+    <text>M</text>
+    <onchange>ddb_Delft3DFLOW_discharges</onchange>
+    <option1>edit</option1>
+    <tooltipstring>Edit outfall index M</tooltipstring>
+    <variable>handles.model.delft3dflow.domain(ad).discharges(handles.model.delft3dflow.domain(ad).activeDischarge).outM</variable>
+    <type>integer</type>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrDischarges</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).discharges(handles.model.delft3dflow.domain(ad).activeDischarge).type</variable>
+        <value>inout</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>305 20 40 20</position>
+    <text>N</text>
+    <onchange>ddb_Delft3DFLOW_discharges</onchange>
+    <option1>edit</option1>
+    <variable>handles.model.delft3dflow.domain(ad).discharges(handles.model.delft3dflow.domain(ad).activeDischarge).outN</variable>
+    <type>integer</type>
+    <tooltipstring>Edit outfall index N</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrDischarges</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).discharges(handles.model.delft3dflow.domain(ad).activeDischarge).type</variable>
+        <value>inout</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>365 20 40 20</position>
+    <text>K</text>
+    <onchange>ddb_Delft3DFLOW_discharges</onchange>
+    <option1>edit</option1>
+    <variable>handles.model.delft3dflow.domain(ad).discharges(handles.model.delft3dflow.domain(ad).activeDischarge).outK</variable>
+    <type>integer</type>
+    <tooltipstring>Edit outfall layer (enter 0 for uniform distribution over water column)</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrDischarges</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).discharges(handles.model.delft3dflow.domain(ad).activeDischarge).type</variable>
+        <value>inout</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>togglebutton</style>
+    <position>425 135 70 20</position>
+    <text>Add</text>
+    <tooltipstring>Add discharge</tooltipstring>
+    <onchange>ddb_Delft3DFLOW_discharges</onchange>
+    <option1>add</option1>
+    <variable>handles.model.delft3dflow.domain(ad).addDischarge</variable>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>425 110 70 20</position>
+    <text>Delete</text>
+    <tooltipstring>Delete discharge</tooltipstring>
+    <callback>ddb_Delft3DFLOW_discharges</callback>
+    <option1>delete</option1>
+  </element>
+  <element>
+    <style>togglebutton</style>
+    <position>425 85 70 20</position>
+    <text>Select</text>
+    <tooltipstring>Select discharge</tooltipstring>
+    <onchange>ddb_Delft3DFLOW_discharges</onchange>
+    <option1>select</option1>
+    <variable>handles.model.delft3dflow.domain(ad).selectDischarge</variable>
+  </element>
+  <element>
+    <style>togglebutton</style>
+    <position>425 60 70 20</position>
+    <text>Change</text>
+    <tooltipstring>Change discharge</tooltipstring>
+    <onchange>ddb_Delft3DFLOW_discharges</onchange>
+    <option1>change</option1>
+    <variable>handles.model.delft3dflow.domain(ad).changeDischarge</variable>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>425 10 70 20</position>
+    <text>Edit Data</text>
+    <tooltipstring>Edit discharge data</tooltipstring>
+    <callback>ddb_Delft3DFLOW_discharges</callback>
+    <option1>editdischargedata</option1>
+  </element>
+  <element>
+    <style>text</style>
+    <position>570 137</position>
+    <text>Sources</text>
+    <horal>right</horal>
+  </element>
+  <element>
+    <style>text</style>
+    <position>570 112</position>
+    <text>Discharges</text>
+    <horal>right</horal>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>575 135 70 20</position>
+    <tooltipstring>Open discharges file</tooltipstring>
+    <text>Open</text>
+    <variable>handles.model.delft3dflow.domain(ad).srcFile</variable>
+    <showfilename>no</showfilename>
+    <extension>*.src</extension>
+    <selectiontext>Select discharges File</selectiontext>
+    <onchange>ddb_Delft3DFLOW_discharges</onchange>
+    <option1>opensrcfile</option1>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>655 135 70 20</position>
+    <tooltipstring>Save discharges file</tooltipstring>
+    <text>Save</text>
+    <variable>handles.model.delft3dflow.domain(ad).srcFile</variable>
+    <extension>*.src</extension>
+    <selectiontext>Select discharges File</selectiontext>
+    <onchange>ddb_Delft3DFLOW_discharges</onchange>
+    <option1>savesrcfile</option1>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>575 110 70 20</position>
+    <tooltipstring>Open discharges file</tooltipstring>
+    <text>Open</text>
+    <variable>handles.model.delft3dflow.domain(ad).disFile</variable>
+    <showfilename>no</showfilename>
+    <extension>*.dis</extension>
+    <selectiontext>Select discharges File</selectiontext>
+    <onchange>ddb_Delft3DFLOW_discharges</onchange>
+    <option1>opendisfile</option1>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>655 110 70 20</position>
+    <tooltipstring>Save discharges file</tooltipstring>
+    <text>Save</text>
+    <variable>handles.model.delft3dflow.domain(ad).disFile</variable>
+    <extension>*.dis</extension>
+    <selectiontext>Select discharges File</selectiontext>
+    <onchange>ddb_Delft3DFLOW_discharges</onchange>
+    <option1>savedisfile</option1>
+  </element>
+</root>

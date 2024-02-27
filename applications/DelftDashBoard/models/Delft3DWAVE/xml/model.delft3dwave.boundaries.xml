@@ -1,0 +1,569 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>45 10 950 160</position>
+    <text>Boundaries</text>
+  </element>
+  <element>
+    <style>listbox</style>
+    <position>55 20 200 130</position>
+    <tooltipstring>Edit boundaries</tooltipstring>
+    <variable>handles.model.delft3dwave.domain.activeboundary</variable>
+    <type>int</type>
+    <callback>ddb_Delft3DWAVE_boundaries</callback>
+    <option1>selectboundary</option1>
+    <listtext>
+      <variable>handles.model.delft3dwave.domain.boundarynames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>260 130 70 20</position>
+    <tooltipstring>Add boundary</tooltipstring>
+    <text>Add</text>
+    <callback>ddb_Delft3DWAVE_boundaries</callback>
+    <option1>add</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>260 105 70 20</position>
+    <tooltipstring>Delete boundary</tooltipstring>
+    <text>Delete</text>
+    <callback>ddb_Delft3DWAVE_boundaries</callback>
+    <option1>delete</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>340 20 645 140</position>
+    <text>Data for selected boundary</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>470 120 150 20</position>
+    <text>Boundary Name</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).name</variable>
+    <type>string</type>
+    <tooltipstring>Enter boundary name</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>470 95 150 20</position>
+    <text>Boundary Definition</text>
+    <type>string</type>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).definition</variable>
+    <callback>ddb_Delft3DWAVE_boundaries</callback>
+    <option1>selectdefinition</option1>
+    <listtext>
+      <variable>handles.model.delft3dwave.domain.boundarydefinitionstext</variable>
+    </listtext>
+    <listvalue>
+      <variable>handles.model.delft3dwave.domain.boundarydefinitions</variable>
+    </listvalue>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>470 70 70 20</position>
+    <tooltipstring>Select SP2 file</tooltipstring>
+    <text>SP2 File</text>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).overallspecfile</variable>
+    <extension>*.sp2</extension>
+    <selectiontext>Select SP2 File</selectiontext>
+    <showfilename>1</showfilename>
+    <onchange>ddb_Delft3DWAVE_boundaries</onchange>
+    <option1>selectsp2file</option1>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).definition</variable>
+        <value>fromsp2file</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>470 70 150 20</position>
+    <text>Boundary Orientation</text>
+    <type>string</type>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).orientation</variable>
+    <callback>ddb_Delft3DWAVE_boundaries</callback>
+    <option1>bndorient</option1>
+    <listtext>
+      <variable>handles.model.delft3dwave.domain.boundaryorientationstext</variable>
+    </listtext>
+    <listvalue>
+      <variable>handles.model.delft3dwave.domain.boundaryorientations</variable>
+    </listvalue>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).definition</variable>
+        <value>orientation</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>470 70 40 20</position>
+    <text>Boundary Start</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).startcoordm</variable>
+    <type>int</type>
+    <tooltipstring>Enter start M index</tooltipstring>
+    <callback>ddb_Delft3DWAVE_boundaries</callback>
+    <option1>editmncoordinates</option1>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).definition</variable>
+        <value>grid-coordinates</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>520 70 40 20</position>
+    <textposition>right</textposition>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).startcoordn</variable>
+    <type>int</type>
+    <tooltipstring>Enter start N index</tooltipstring>
+    <callback>ddb_Delft3DWAVE_boundaries</callback>
+    <option1>editmncoordinates</option1>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).definition</variable>
+        <value>grid-coordinates</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>470 45 40 20</position>
+    <text>Boundary End</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).endcoordm</variable>
+    <type>int</type>
+    <tooltipstring>Enter end M index</tooltipstring>
+    <callback>ddb_Delft3DWAVE_boundaries</callback>
+    <option1>editmncoordinates</option1>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).definition</variable>
+        <value>grid-coordinates</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>520 45 40 20</position>
+    <textposition>right</textposition>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).endcoordn</variable>
+    <type>int</type>
+    <tooltipstring>Enter end N index</tooltipstring>
+    <callback>ddb_Delft3DWAVE_boundaries</callback>
+    <option1>editmncoordinates</option1>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).definition</variable>
+        <value>grid-coordinates</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>570 70 50 20</position>
+    <tooltipstring>Draw</tooltipstring>
+    <text>Draw</text>
+    <callback>ddb_Delft3DWAVE_boundaries</callback>
+    <option1>drawxyboundary</option1>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).definition</variable>
+        <value>grid-coordinates</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>470 70 40 20</position>
+    <text>Boundary Start</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).startcoordx</variable>
+    <type>int</type>
+    <tooltipstring>Enter start X coordinate</tooltipstring>
+    <callback>ddb_Delft3DWAVE_boundaries</callback>
+    <option1>editxycoordinates</option1>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).definition</variable>
+        <value>xy-coordinates</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>520 70 40 20</position>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).startcoordy</variable>
+    <type>int</type>
+    <tooltipstring>Enter start Y coordinate</tooltipstring>
+    <callback>ddb_Delft3DWAVE_boundaries</callback>
+    <option1>editxycoordinates</option1>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).definition</variable>
+        <value>xy-coordinates</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>470 45 40 20</position>
+    <text>Boundary End</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).endcoordx</variable>
+    <type>int</type>
+    <tooltipstring>Enter end X coordinate</tooltipstring>
+    <callback>ddb_Delft3DWAVE_boundaries</callback>
+    <option1>editxycoordinates</option1>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).definition</variable>
+        <value>xy-coordinates</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>520 45 40 20</position>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).endcoordy</variable>
+    <type>int</type>
+    <tooltipstring>Enter end Y coordinate</tooltipstring>
+    <callback>ddb_Delft3DWAVE_boundaries</callback>
+    <option1>editxycoordinates</option1>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).definition</variable>
+        <value>xy-coordinates</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>570 70 50 20</position>
+    <tooltipstring>Draw</tooltipstring>
+    <text>Draw</text>
+    <callback>ddb_Delft3DWAVE_boundaries</callback>
+    <option1>drawxyboundary</option1>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).definition</variable>
+        <value>xy-coordinates</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>705 130</position>
+    <text>Conditions along boundary</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>705 110</position>
+    <text>Uniform</text>
+    <type>string</type>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).alongboundary</variable>
+    <value>uniform</value>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>780 110</position>
+    <text>Space-varying</text>
+    <type>string</type>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).alongboundary</variable>
+    <value>varying</value>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>705 90</position>
+    <text>Specification of spectra</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>705 70</position>
+    <text>Parametric</text>
+    <type>string</type>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).spectrumspec</variable>
+    <value>parametric</value>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>780 70</position>
+    <text>From file</text>
+    <type>string</type>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).spectrumspec</variable>
+    <value>from file</value>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>705 30 130 20</position>
+    <tooltipstring>Edit conditions</tooltipstring>
+    <text>Edit conditions</text>
+    <callback>ddb_Delft3DWAVE_boundaries</callback>
+    <option1>editboundaryconditions</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>840 30 130 20</position>
+    <tooltipstring>Edit spectral space</tooltipstring>
+    <text>Edit spectral space</text>
+    <callback>ddb_Delft3DWAVE_boundaries</callback>
+    <option1>editspectralspace</option1>
+    <enable>0</enable>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+      <check>
+        <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).spectrumspec</variable>
+        <value>parametric</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

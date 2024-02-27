@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<root>
+
+
+  <element>
+    <style>panel</style>
+    <text>DEM</text>
+    <position>10 10 210 130</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>60 100 50 20</position>
+    <tooltipstring>Edit x coordinate or longitude of grid origin</tooltipstring>
+    <text>X Start</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_FAST_quickMode</onchange>
+    <option1>editdemoutline</option1>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.dem.xlim(1)</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>60 75 50 20</position>
+    <tooltipstring>Edit number of grid cells in M direction</tooltipstring>
+    <text>Y Start</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_FAST_quickMode</onchange>
+    <option1>editdemoutline</option1>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.dem.ylim(1)</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>60 50 50 20</position>
+    <tooltipstring>Edit DEM grid size (in seconds)</tooltipstring>
+    <text>dX (sec)</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.dem.dx</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>160 100 50 20</position>
+    <tooltipstring>Edit y coordinate or longitude of grid origin</tooltipstring>
+    <text>X End</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_FAST_quickMode</onchange>
+    <option1>editdemoutline</option1>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.dem.xlim(2)</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>160 75 50 20</position>
+    <tooltipstring>Edit number of grid cells in N direction</tooltipstring>
+    <text>Y End</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_FAST_quickMode</onchange>
+    <option1>editdemoutline</option1>
+    <type>integer</type>
+    <variable>handles.toolbox.modelmaker.dem.ylim(2)</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>160 50 50 20</position>
+    <tooltipstring>Edit DEM grid size (in seconds!)</tooltipstring>
+    <text>dY (sec)</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.dem.dy</variable>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>20 20 80 20</position>
+    <tooltipstring>Push to draw DEM outline</tooltipstring>
+    <text>Draw Outline</text>
+    <callback>ddb_ModelMakerToolbox_FAST_quickMode</callback>
+    <option1>drawdemoutline</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>120 20 35 20</position>
+    <tooltipstring>Load to create DEM</tooltipstring>
+    <text>LOAD</text>
+    <callback>ddb_ModelMakerToolbox_FAST_quickMode</callback>
+    <option1>loaddem</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>160 20 50 20</position>
+    <tooltipstring>Push to create DEM</tooltipstring>
+    <text>CREATE</text>
+    <callback>ddb_ModelMakerToolbox_FAST_quickMode</callback>
+    <option1>makedem</option1>
+  </element>
+  <element>
+    <style>panel</style>
+    <text>Points</text>
+    <position>230 10 230 130</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>290 100 50 20</position>
+    <tooltipstring>Value of depth contour (in metres)</tooltipstring>
+    <text>Contour</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.depthcontour</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>290 75 50 20</position>
+    <tooltipstring>Distance between points (in metres)</tooltipstring>
+    <text>Distance</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.distance</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>290 50 50 20</position>
+    <tooltipstring>Maximum radius (in metres)</tooltipstring>
+    <text>Max Rad</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.maxrad</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>400 100 50 20</position>
+    <tooltipstring>Size of directional bins (in degrees)</tooltipstring>
+    <text>Dir Bin</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.dirbin</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>400 75 50 20</position>
+    <tooltipstring>Size of radial bins (in metres)</tooltipstring>
+    <text>Rad Bin</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.radbin</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>400 50 50 20</position>
+    <tooltipstring>Maximum elevation (in metres)</tooltipstring>
+    <text>Max Elev</text>
+    <textposition>left</textposition>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.maxelevation</variable>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>240 20 100 20</position>
+    <tooltipstring>Push to draw polygon in which depth contours will be scanned</tooltipstring>
+    <text>Draw Polygon</text>
+    <callback>ddb_ModelMakerToolbox_FAST_quickMode</callback>
+    <option1>drawpolygon</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>355 20 35 20</position>
+    <tooltipstring>Load to create DEM</tooltipstring>
+    <text>LOAD</text>
+    <callback>ddb_ModelMakerToolbox_FAST_quickMode</callback>
+    <option1>loadpoints</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>400 20 50 20</position>
+    <tooltipstring>Push to create points along depth contours</tooltipstring>
+    <text>CREATE</text>
+    <callback>ddb_ModelMakerToolbox_FAST_quickMode</callback>
+    <option1>createpoints</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>600 20 60 20</position>
+    <tooltipstring>Push to create points along depth contours</tooltipstring>
+    <text>RUN</text>
+    <callback>ddb_ModelMakerToolbox_FAST_quickMode</callback>
+    <option1>runfast</option1>
+  </element>
+</root>

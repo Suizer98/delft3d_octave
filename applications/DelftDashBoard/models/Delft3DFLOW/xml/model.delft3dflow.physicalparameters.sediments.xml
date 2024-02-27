@@ -1,0 +1,563 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>listbox</style>
+    <position>10 70 150 65</position>
+    <tooltipstring>Select sediment</tooltipstring>
+    <variable>handles.model.delft3dflow.domain(ad).sediments.activeSediment</variable>
+    <type>integer</type>
+    <onchange>ddb_Delft3DFLOW_sediments</onchange>
+    <option1>selectfromlist</option1>
+    <listtext>
+      <variable>handles.model.delft3dflow.domain(ad).sediments.sedimentNames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>110 40 50 20</position>
+    <text>Reference Density</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).sediments.cRef</variable>
+    <type>real</type>
+    <tooltipstring>Reference density for hindered settling calculations (kg/m^3)</tooltipstring>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>10 10 50 20</position>
+    <text>Open</text>
+    <variable>handles.model.delft3dflow.domain(ad).sedFile</variable>
+    <type>string</type>
+    <onchange>ddb_Delft3DFLOW_sediments</onchange>
+    <option1>opensedfile</option1>
+    <showfilename>no</showfilename>
+    <extension>*.sed</extension>
+    <selectiontext>Select sediments file</selectiontext>
+    <tooltipstring>Select Delft3D sediments file</tooltipstring>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>65 10 50 20</position>
+    <text>Save</text>
+    <variable>handles.model.delft3dflow.domain(ad).sedFile</variable>
+    <type>string</type>
+    <onchange>ddb_Delft3DFLOW_sediments</onchange>
+    <option1>savesedfile</option1>
+    <extension>*.sed</extension>
+    <selectiontext>Select sediment file</selectiontext>
+    <tooltipstring>Select Delft3D sediment file</tooltipstring>
+  </element>
+  <element>
+    <style>panel</style>
+    <tag>sandpanel</tag>
+    <bordertype>none</bordertype>
+    <position>170 25 770 110</position>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).type</variable>
+        <value>non-cohesive</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>140 90 50 20</position>
+    <text>Specific Density (kg/m^3)</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).rhoSol</variable>
+    <type>real</type>
+    <tooltipstring>Edit specific density (kg/m^3)</tooltipstring>
+    <parent>sandpanel</parent>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>140 65 50 20</position>
+    <text>Dry Bed Density (kg/m^3)</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).cDryB</variable>
+    <type>real</type>
+    <tooltipstring>Edit dry bed density (kg/m^3)</tooltipstring>
+    <parent>sandpanel</parent>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>380 90 50 20</position>
+    <text>Median Sediment Diameter D50 (mm)</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).sedDia</variable>
+    <type>real</type>
+    <tooltipstring>Edit median sediment diameter D50 (mm)</tooltipstring>
+    <parent>sandpanel</parent>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>380 65 50 20</position>
+    <text>Sediment Diameter D90 (mm)</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).sedD90</variable>
+    <type>real</type>
+    <tooltipstring>Edit median sediment diameter D90 (mm)</tooltipstring>
+    <parent>sandpanel</parent>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>380 40 50 20</position>
+    <text>Sediment Diameter D10 (mm)</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).sedD10</variable>
+    <type>real</type>
+    <tooltipstring>Edit sediment diameter D10 (mm)</tooltipstring>
+    <parent>sandpanel</parent>
+  </element>
+  <element>
+    <style>text</style>
+    <position>440 90</position>
+    <text>Initial Sediment Layer Thick at Bed (m)</text>
+    <parent>sandpanel</parent>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>630 88 50 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).iniSedThick</variable>
+    <type>real</type>
+    <tooltipstring>Edit initial sediment thickness (m)</tooltipstring>
+    <parent>sandpanel</parent>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformThickness</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>440 65</position>
+    <text>Uniform</text>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformThickness</variable>
+    <type>integer</type>
+    <value>1</value>
+    <parent>sandpanel</parent>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformThickness</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>500 65</position>
+    <text>File</text>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformThickness</variable>
+    <type>integer</type>
+    <value>0</value>
+    <parent>sandpanel</parent>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformThickness</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>540 65 60 20</position>
+    <text>Select</text>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).sdbFile</variable>
+    <type>string</type>
+    <showfilename>yes</showfilename>
+    <extension>*.sdb</extension>
+    <selectiontext>Select initial sediment thickness file</selectiontext>
+    <tooltipstring>Select initial sediment thickness file</tooltipstring>
+    <parent>sandpanel</parent>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformThickness</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>panel</style>
+    <tag>mudpanel</tag>
+    <bordertype>none</bordertype>
+    <position>170 25 770 110</position>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).type</variable>
+        <value>cohesive</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>140 90 50 20</position>
+    <text>Specific Density (kg/m^3)</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).rhoSol</variable>
+    <type>real</type>
+    <tooltipstring>Edit specific density (kg/m^3)</tooltipstring>
+    <parent>mudpanel</parent>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>140 65 50 20</position>
+    <text>Dry Bed Density (kg/m^3)</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).cDryB</variable>
+    <type>real</type>
+    <tooltipstring>Edit dry bed density (kg/m^3)</tooltipstring>
+    <parent>mudpanel</parent>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>140 40 50 20</position>
+    <text>Settling Velocity (mm/s)</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).wS0</variable>
+    <type>real</type>
+    <tooltipstring>Edit settling velocity (mm/s)</tooltipstring>
+    <parent>mudpanel</parent>
+  </element>
+  <element>
+    <style>text</style>
+    <position>410 92</position>
+    <text>Critical Shear Stress for Erosion (Pa)</text>
+    <parent>mudpanel</parent>
+    <horal>right</horal>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>420 90</position>
+    <text>Uniform</text>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformTCrEro</variable>
+    <type>integer</type>
+    <value>1</value>
+    <parent>mudpanel</parent>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformTCrEro</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>538 90</position>
+    <text>File</text>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformTCrEro</variable>
+    <type>integer</type>
+    <value>0</value>
+    <parent>mudpanel</parent>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformTCrEro</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>480 90 50 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).tCrEro</variable>
+    <type>real</type>
+    <tooltipstring>Edit critical shear stress for erosion (Pa)</tooltipstring>
+    <parent>mudpanel</parent>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformTCrEro</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>580 90 50 20</position>
+    <text>Select</text>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).tceFile</variable>
+    <type>string</type>
+    <showfilename>yes</showfilename>
+    <extension>*.tce</extension>
+    <selectiontext>Select tce file</selectiontext>
+    <tooltipstring>Select critical shear stress for erosion file</tooltipstring>
+    <parent>mudpanel</parent>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformTCrEro</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>410 67</position>
+    <text>Critical Shear Stress for Sedimentation (Pa)</text>
+    <parent>mudpanel</parent>
+    <horal>right</horal>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>420 65</position>
+    <text>Uniform</text>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformTCrSed</variable>
+    <type>integer</type>
+    <value>1</value>
+    <parent>mudpanel</parent>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformTCrSed</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>538 65</position>
+    <text>File</text>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformTCrSed</variable>
+    <type>integer</type>
+    <value>0</value>
+    <parent>mudpanel</parent>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformTCrSed</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>480 65 50 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).tCrSed</variable>
+    <type>real</type>
+    <tooltipstring>Edit critical shear stress for sedimentation (Pa)</tooltipstring>
+    <parent>mudpanel</parent>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformTCrSed</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>580 65 50 20</position>
+    <text>Select</text>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).tcdFile</variable>
+    <type>string</type>
+    <showfilename>yes</showfilename>
+    <extension>*.tcd</extension>
+    <selectiontext>Select tce file</selectiontext>
+    <tooltipstring>Select critical shear stress for sedimentation file</tooltipstring>
+    <parent>mudpanel</parent>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformTCrSed</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>410 42</position>
+    <text>Erosion Parameter (kg/m2/s)</text>
+    <parent>mudpanel</parent>
+    <horal>right</horal>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>420 40</position>
+    <text>Uniform</text>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformEroPar</variable>
+    <type>integer</type>
+    <value>1</value>
+    <parent>mudpanel</parent>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformEroPar</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>538 40</position>
+    <text>File</text>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformEroPar</variable>
+    <type>integer</type>
+    <value>0</value>
+    <parent>mudpanel</parent>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformEroPar</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>480 40 50 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).eroPar</variable>
+    <type>real</type>
+    <tooltipstring>Edit erosion parameter (kg/m2/s)</tooltipstring>
+    <parent>mudpanel</parent>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformEroPar</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>580 40 50 20</position>
+    <text>Select</text>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).eroFile</variable>
+    <type>string</type>
+    <showfilename>yes</showfilename>
+    <extension>*.ero</extension>
+    <selectiontext>Select erosion parameter file</selectiontext>
+    <tooltipstring>Select erosion parameter file</tooltipstring>
+    <parent>mudpanel</parent>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformEroPar</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>410 17</position>
+    <text>Initial Sediment Layer Thickness at Bed (m)</text>
+    <parent>mudpanel</parent>
+    <horal>right</horal>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>420 15</position>
+    <text>Uniform</text>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformThickness</variable>
+    <type>integer</type>
+    <value>1</value>
+    <parent>mudpanel</parent>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformThickness</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>538 15</position>
+    <text>File</text>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformThickness</variable>
+    <type>integer</type>
+    <value>0</value>
+    <parent>mudpanel</parent>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformThickness</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>480 15 50 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).iniSedThick</variable>
+    <type>real</type>
+    <tooltipstring>Edit initial sediment thickness (m)</tooltipstring>
+    <parent>mudpanel</parent>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformThickness</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>580 15 50 20</position>
+    <text>Select</text>
+    <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).sdbFile</variable>
+    <type>string</type>
+    <showfilename>yes</showfilename>
+    <extension>*.sdb</extension>
+    <selectiontext>Select initial sediment thickness file</selectiontext>
+    <tooltipstring>Select initial sediment thickness file</tooltipstring>
+    <parent>mudpanel</parent>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).sediment(handles.model.delft3dflow.domain(ad).sediments.activeSediment).uniformThickness</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

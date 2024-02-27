@@ -1,0 +1,74 @@
+NetCDF-3 Classic d:\checkouts\OpenEarthTools\matlab\io\netcdf\nctools\ncwrite_timeseries_tutorial.nc {
+dimensions:
+	time = 12 ;
+	location = 4 ;
+	string_len = 3 ;
+
+variables:
+	// Preference 'PRESERVE_FVD':  false,
+	// dimensions consistent with ncBrowse, not with native MATLAB netcdf package.
+	double time(time), shape = [12]
+		time:standard_name = "time" ;
+		time:long_name = "time" ;
+		time:units = "days since 1970-01-01 00:00:00+00:00" ;
+		time:axis = "T" ;
+	double lon(location), shape = [4]
+		lon:standard_name = "longitude" ;
+		lon:long_name = "Longitude of platform" ;
+		lon:units = "degrees_east" ;
+		lon:axis = "X" ;
+		lon:_FillValue = 9.96921e+36 ;
+		lon:actual_range = 103.2 103.8 ;
+	double lat(location), shape = [4]
+		lat:standard_name = "latitude" ;
+		lat:long_name = "Latitude of platform" ;
+		lat:units = "degrees_north" ;
+		lat:axis = "Y" ;
+		lat:_FillValue = 9.96921e+36 ;
+		lat:actual_range = 1.2 1.5 ;
+	char platform_name(location,string_len), shape = [4 3]
+		platform_name:standard_name = "platform_name" ;
+		platform_name:long_name = "platform name" ;
+	char platform_id(location,string_len), shape = [4 3]
+		platform_id:standard_name = "platform_id" ;
+		platform_id:long_name = "platform id" ;
+		platform_id:cf_role = "timeseries_id" ;
+	double TSS(time,location), shape = [12 4]
+		TSS:standard_name = "mass_concentration_of_suspended_matter_in_sea_water" ;
+		TSS:long_name = "TSS" ;
+		TSS:units = "kg m-3" ;
+		TSS:coordinates = "lat lon platform_name" ;
+		TSS:_FillValue = 9.96921e+36 ;
+		TSS:actual_range = 5.30476 37.5312 ;
+
+//global attributes:
+		:institution = "DeltaresNUS" ;
+		:history = "$HeadURL: https://svn.oss.deltares.nl/repos/openearthtools/trunk/matlab/io/netcdf/nctools/ncwrite_timeseries.m $ $Id: ncwrite_timeseries.m 8921 2013-07-19 06:13:40Z boer_g $" ;
+		:featureType = "TimeSeries" ;
+		:Conventions = "CF-1.6, OceanSITES 1.1" ;
+		:terms_for_use = "These data can be used freely for research purposes provided that the following source is acknowledged: DeltaresNUS" ;
+		:disclaimer = "This data is made available in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE." ;
+		:data_type = "OceanSITES time-series data" ;
+		:format_version = "1.1" ;
+		:platform_code = "" ;
+		:date_update = "$Date$" ;
+		:site_code = "" ;
+		:data_mode = "D" ;
+		:area = "North Sea" ;
+		:title = "" ;
+		:references = "" ;
+		:email = "" ;
+		:source = "" ;
+		:comment = "" ;
+		:version = "" ;
+		:time_coverage_start = "20090101T000000" ;
+		:time_coverage_end = "20091201T000000" ;
+		:geospatial_lat_min = 103.2 ;
+		:geospatial_lat_max = 103.8 ;
+		:geospatial_lon_min = 1.2 ;
+		:geospatial_lon_max = 1.5 ;
+		:geospatial_vertical_min = 32 ;
+		:geospatial_vertical_max = 117 ;
+
+
+}

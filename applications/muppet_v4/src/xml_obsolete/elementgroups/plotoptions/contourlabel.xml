@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 40</position>
+  </element>
+  <element>
+    <variable>contourlabels</variable>
+    <type>boolean</type>
+    <style>checkbox</style>
+    <position>10 10 50 20</position>
+    <text>Contour Labels</text>
+  </element>
+  <element>
+    <variable>labels.font</variable>
+    <style>selectfont</style>
+    <position>120 10 50 20</position>
+    <text>Font</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>contourlabels</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>labels.spacing</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>230 10 50 20</position>
+    <text>Spacing</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>contourlabels</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

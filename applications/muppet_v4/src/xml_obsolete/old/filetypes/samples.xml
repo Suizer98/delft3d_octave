@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+  <name>samples</name>
+  <longname>Samples (*.xyz)</longname>
+  <title>Samples File</title>
+  <filterspec>*.xyz</filterspec>
+  <callback>muppet_addDatasetSamples</callback>
+  <option>
+    <name>filename</name>
+  </option>
+  <option>
+    <name>filetype</name>
+  </option>
+</root>

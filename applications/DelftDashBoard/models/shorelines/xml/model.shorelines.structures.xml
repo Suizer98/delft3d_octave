@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>40 10 900 160</position>
+    <text>Structures</text>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>50 125 100 20</position>
+    <text>Draw structure</text>
+    <callback>ddb_shorelines_structures</callback>
+    <option1>drawstructure</option1>
+    <tooltipstring>Draw structure</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.status</variable>
+        <type>string</type>
+        <value>waiting</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>50 100 100 20</position>
+    <text>Delete structure</text>
+    <callback>ddb_shorelines_structures</callback>
+    <option1>deletestructure</option1>
+    <tooltipstring>Delete structure</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.nrstructures</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.model.shorelines.status</variable>
+        <type>string</type>
+        <value>waiting</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>50 75 100 20</position>
+    <text>Load structures</text>
+    <variable>handles.model.shorelines.domain.LDBstructures</variable>
+    <callback>ddb_shorelines_structures</callback>
+    <option1>loadstructures</option1>
+    <showfilename>no</showfilename>
+    <extension>*.txt</extension>
+    <selectiontext>Select structures file</selectiontext>
+    <tooltipstring>Select structures file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.status</variable>
+        <type>string</type>
+        <value>waiting</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>50 50 100 20</position>
+    <text>Save structures</text>
+    <variable>handles.model.shorelines.domain.LDBstructures</variable>
+    <callback>ddb_shorelines_structures</callback>
+    <option1>savestructures</option1>
+    <showfilename>no</showfilename>
+    <extension>*.txt</extension>
+    <selectiontext>Select structure file</selectiontext>
+    <tooltipstring>Save structure file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.nrstructures</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.model.shorelines.status</variable>
+        <type>string</type>
+        <value>waiting</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>listbox</style>
+    <position>300 40 150 105</position>
+    <tooltipstring>Select structure</tooltipstring>
+    <text>Structures</text>
+    <textposition>above-center</textposition>
+    <variable>handles.model.shorelines.activestructure</variable>
+    <type>integer</type>
+    <onchange>ddb_shorelines_structures</onchange>
+    <option1>selectfromlist</option1>
+    <listtext>
+      <variable>handles.model.shorelines.structurenames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>500 80 200 70</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>550 125 120 20</position>
+    <text>Name</text>
+    <onchange>ddb_shorelines_structures</onchange>
+    <option1>editname</option1>
+    <tooltipstring>Edit structure name</tooltipstring>
+    <variable>handles.model.shorelines.structures(handles.model.shorelines.activestructure).name</variable>
+    <type>string</type>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.nrstructures</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>620 100 50 20</position>
+    <text>Transmission</text>
+    <onchange>ddb_shorelines_structures</onchange>
+    <option1>edit</option1>
+    <tooltipstring>Edit wave transmission factor (0-1)</tooltipstring>
+    <variable>handles.model.shorelines.structures(handles.model.shorelines.activestructure).transmission</variable>
+    <type>real</type>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.nrstructures</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+</root>

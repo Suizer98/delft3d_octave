@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<root>
+  <toolbox>Nourishments</toolbox>
+  <longname>Nourishments</longname>
+  <enable>1</enable>
+  <element>
+    <position>10 10 1000 140</position>
+    <style>tabpanel</style>
+    <tab>
+      <tabstring>Domain</tabstring>
+      <callback>ddb_NourishmentsToolbox_domain</callback>
+      <element>toolbox.nourishments.domain.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Equilibrium Concentration</tabstring>
+      <callback>ddb_NourishmentsToolbox_equilibriumConcentration</callback>
+      <element>toolbox.nourishments.equilibriumconcentration.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Output</tabstring>
+      <callback>ddb_NourishmentsToolbox_output</callback>
+      <element>toolbox.nourishments.output.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Advanced</tabstring>
+      <callback>ddb_NourishmentsToolbox_advanced</callback>
+      <element>toolbox.nourishments.advanced.xml</element>
+    </tab>
+  </element>
+</root>

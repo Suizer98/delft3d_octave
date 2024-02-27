@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>45 10 900 160</position>
+    <title>Description</title>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>50 140 200 20</position>
+    <variable>handles.model.delft3dwave.domain.projectname</variable>
+    <tooltipstring>Project name (optional)</tooltipstring>
+    <text>Project Name</text>
+    <textposition>right</textposition>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>50 110 100 20</position>
+    <variable>handles.model.delft3dwave.domain.projectnr</variable>
+    <tooltipstring>Project number (optional)</tooltipstring>
+    <text>Project Number</text>
+    <textposition>right</textposition>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>50 30 500 50</position>
+    <variable>handles.model.delft3dwave.domain.description</variable>
+    <tooltipstring>Project description (optional)</tooltipstring>
+    <nrlines>3</nrlines>
+    <text>Description (max. 3 lines)</text>
+    <textposition>above-left</textposition>
+  </element>
+</root>

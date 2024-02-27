@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 50</position>
+    <text>Animation Settings for Curvy Arrows</text>
+  </element>
+  <element>
+    <variable>curvecrelativespeed</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>100 10 50 20</position>
+    <text>Relative Speed (-)</text>
+    <tooltipstring>Edit relative speed of curvy arrows (setting this parameter higher than 1 will make curvy arrows move faster than the velocity in the dataset)</tooltipstring>
+  </element>
+  <element>
+    <variable>curveclifespan</variable>
+    <type>int</type>
+    <style>edit</style>
+    <position>290 10 50 20</position>
+    <text>Life Span (nr of frames)</text>
+    <tooltipstring>Edit life span of curvy arrows (number of frames in animation)</tooltipstring>
+  </element>
+</root>

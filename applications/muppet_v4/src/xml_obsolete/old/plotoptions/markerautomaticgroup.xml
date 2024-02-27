@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<root>
+  <plotoption>
+    <name>markerautomaticgroup</name>
+    <element>
+      <style>panel</style>
+      <text>Marker Properties</text>
+      <position>0 0 350 80</position>
+    </element>
+    <element>
+      <name>marker</name>
+      <keyword>Marker</keyword>
+      <default>none</default>
+      <style>selectmarker</style>
+      <type>string</type>
+      <variable>marker</variable>
+      <text>Type</text>
+      <position>70 40 100 20</position>
+    </element>
+    <element>
+      <name>markersize</name>
+      <keyword>MarkerSize</keyword>
+      <default>10</default>
+      <check>
+        <variable>marker</variable>
+        <operator>ne</operator>
+        <value>none</value>
+      </check>
+      <style>selectmarkersize</style>
+      <variable>markersize</variable>
+      <type>int</type>
+      <text>Size</text>
+      <position>240 40 100 20</position>
+      <dependency>
+        <action>enable</action>
+        <checkfor>all</checkfor>
+        <check>
+          <variable>marker</variable>
+          <value>none</value>
+          <operator>ne</operator>
+        </check>
+      </dependency>
+    </element>
+    <element>
+      <name>markeredgecolor</name>
+      <keyword>MarkerEdgeColor</keyword>
+      <default>black</default>
+      <check>
+        <variable>marker</variable>
+        <operator>ne</operator>
+        <value>none</value>
+      </check>
+      <style>selectcolor</style>
+      <variable>markeredgecolor</variable>
+      <includenone>yes</includenone>
+      <includeauto>yes</includeauto>
+      <type>string</type>
+      <text>Edge Color</text>
+      <position>70 10 100 20</position>
+      <dependency>
+        <action>enable</action>
+        <checkfor>all</checkfor>
+        <check>
+          <variable>marker</variable>
+          <value>none</value>
+          <operator>ne</operator>
+        </check>
+      </dependency>
+    </element>
+    <element>
+      <name>markerfacecolor</name>
+      <keyword>MarkerFaceColor</keyword>
+      <default>black</default>
+      <check>
+        <variable>marker</variable>
+        <operator>ne</operator>
+        <value>none</value>
+      </check>
+      <style>selectcolor</style>
+      <variable>markerfacecolor</variable>
+      <includenone>yes</includenone>
+      <includeauto>yes</includeauto>
+      <type>string</type>
+      <text>Face Color</text>
+      <position>240 10 100 20</position>
+      <dependency>
+        <action>enable</action>
+        <checkfor>all</checkfor>
+        <check>
+          <variable>marker</variable>
+          <value>none</value>
+          <operator>ne</operator>
+        </check>
+      </dependency>
+    </element>
+  </plotoption>
+</root>

@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <text>Time Frame</text>
+    <position>40 10 210 160</position>
+  </element>
+  <element>
+    <style>panel</style>
+    <text>Physical</text>
+    <position>260 10 300 160</position>
+  </element>
+  <element>
+    <style>panel</style>
+    <text>Anthropogenic</text>
+    <position>570 10 210 160</position>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <text>Salinity</text>
+    <position>50 130</position>
+    <variable>handles.model.delft3dflow.domain(ad).salinity.include</variable>
+    <onchange>ddb_Delft3DFLOW_processes</onchange>
+    <option1>checktemperature</option1>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <text>Temperature</text>
+    <position>50 105</position>
+    <onchange>ddb_Delft3DFLOW_processes</onchange>
+    <option1>checktemperature</option1>
+    <variable>handles.model.delft3dflow.domain(ad).temperature.include</variable>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <text>Pollutants and Tracers</text>
+    <position>50 80</position>
+    <onchange>ddb_Delft3DFLOW_processes</onchange>
+    <option1>checkconstituents</option1>
+    <variable>handles.model.delft3dflow.domain(ad).tracers</variable>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <text>Sediment</text>
+    <position>50 55</position>
+    <onchange>ddb_Delft3DFLOW_processes</onchange>
+    <option1>checksediments</option1>
+    <variable>handles.model.delft3dflow.domain(ad).sediments.include</variable>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <text>Edit</text>
+    <position>190 80 50 20</position>
+    <tooltipstring>Edit pollutants and tracers</tooltipstring>
+    <callback>ddb_Delft3DFLOW_processes</callback>
+    <option1>edittracers</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).tracers</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <text>Edit</text>
+    <position>190 55 50 20</position>
+    <tooltipstring>Edit sediments</tooltipstring>
+    <callback>ddb_Delft3DFLOW_processes</callback>
+    <option1>editsediments</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).sediments.include</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <text>Wind</text>
+    <position>270 130</position>
+    <variable>handles.model.delft3dflow.domain(ad).wind</variable>
+    <onchange>ddb_Delft3DFLOW_processes</onchange>
+    <option1>checkwind</option1>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <text>Waves</text>
+    <position>270 105</position>
+    <variable>handles.model.delft3dflow.domain(ad).waves</variable>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <text>Online Wave</text>
+    <position>270 80</position>
+    <variable>handles.model.delft3dflow.domain(ad).onlineWave</variable>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).waves</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <text>Roller Model</text>
+    <position>270 55</position>
+    <variable>handles.model.delft3dflow.domain(ad).roller.include</variable>
+    <onchange>ddb_Delft3DFLOW_processes</onchange>
+    <option1>checkroller</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).waves</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <text>Secondary Flow</text>
+    <position>400 130</position>
+    <variable>handles.model.delft3dflow.domain(ad).secondaryFlow</variable>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <text>Tidal Forces</text>
+    <position>400 105</position>
+    <variable>handles.model.delft3dflow.domain(ad).tidalForces</variable>
+    <onchange>ddb_Delft3DFLOW_processes</onchange>
+    <option1>checktidalforces</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).coordinateSystemType</variable>
+        <value>geographic</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <text>Dredging and Dumping</text>
+    <position>580 130</position>
+    <variable>handles.model.delft3dflow.domain(ad).dredging</variable>
+    <onchange>ddb_Delft3DFLOW_processes</onchange>
+    <option1>checkdredging</option1>
+  </element>
+</root>

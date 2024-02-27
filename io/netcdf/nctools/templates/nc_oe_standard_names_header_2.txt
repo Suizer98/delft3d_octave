@@ -1,0 +1,96 @@
+%
+%   See also nc_oe_standard_names_generate
+
+%% Copyright notice
+%   --------------------------------------------------------------------
+%   Copyright (C) 2009 Van Oord
+%       Mark van Koningsveld
+%
+%       mrv@vanoord.com
+%
+%       Watermanweg 64
+%       POBox 8574
+%       3009 AN Rotterdam
+%       Netherlands
+%
+%   This library is free software: you can redistribute it and/or
+%   modify it under the terms of the GNU Lesser General Public
+%   License as published by the Free Software Foundation, either
+%   version 2.1 of the License, or (at your option) any later version.
+%
+%   This library is distributed in the hope that it will be useful,
+%   but WITHOUT ANY WARRANTY; without even the implied warranty of
+%   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+%   Lesser General Public License for more details.
+%
+%   You should have received a copy of the GNU Lesser General Public
+%   License along with this library. If not, see <http://www.gnu.org/licenses/>.
+%   --------------------------------------------------------------------
+
+% This tools is part of VOTools which is the internal clone of <a href="http://OpenEarth.Deltares.nl">OpenEarthTools</a>.
+% OpenEarthTools is an online collaboration to share and manage data and
+% programming tools in an open source, version controlled environment.
+% Sign up to recieve regular updates of this function, and to contribute
+% your own tools.
+
+%% Version <http://svnbook.red-bean.com/en/1.5/svn.advanced.props.special.keywords.html>
+% Created: 13 Nov 2009
+% Created with Matlab version: 7.7.0.471 (R2008b)
+
+% $Id: votemplate.m 20 2009-10-29 15:22:40Z mrv@vanoord.com $
+% $Date: 2009-10-29 16:22:40 +0100 (Thu, 29 Oct 2009) $
+% $Author: mrv@vanoord.com $
+% $Revision: 20 $
+% $HeadURL: svn://10.12.184.200/votools/trunk/matlab/general/vo_template/votemplate.m $
+% $Keywords: $
+
+%% settings
+
+% defaults
+fillValues.double =  typecast(uint8([0    0    0    0    0    0  158   71]),'DOUBLE');            
+fillValues.float  =  typecast(uint8([                    0    0  240  124]),'SINGLE');
+fillValues.int    =  typecast(uint8([                    1    0    0  128]),'INT32' );
+fillValues.short  =  typecast(uint8([                              1  128]),'INT16' );
+fillValues.byte   =  typecast(uint8(                                  129 ),'INT8'  );
+fillValues.char   =  char(0);
+
+OPT = struct(...
+    'nc_library',       'snc', ...                           % snc or matlab 
+    'ncid',             '', ...                              % nectdf id (only for matlab library)
+    'outputfile',       {[]}, ...                            % name of the nc file. 
+    'varname',          {{{'test1'};{'test2'}}}, ...         % variable name
+    'oe_standard_name', {{{'test1'};{'test2'}}}, ...         % cf (climate forecasting) standard name
+    'dimension',        {{{'test1'};{'test2'}}}, ...	     % dimension names					
+    'dimid',            [], ...                              % dimension id's for use with matlab nc library only
+    ...                                                      %   It is (a little) faster to indicate dimid's than dimension names
+    'timezone',         '+01:00' , ...                       % timezone
+    'deflate',          false , ...                          % only for netcdf4 files, internally deflates (compresses) variables in NC file
+    'additionalAtts',   {[]}, ...                            % append these attributes to the default attributes. Must be in form
+    ...                                                      %    {'name1','name2','name3';'value1','value2','value3'}
+    'fillValues',       fillValues ...                       % fill values for different variable classes     
+    ); 
+
+% overrule default settings by property pairs, given in varargin
+OPT = setproperty(OPT, varargin{:});
+
+%% check some basic input properties
+if size(OPT.oe_standard_name,1) ~= size(OPT.dimension,1)
+    error('nc_oe_standard_names:argChk', 'Input arguments not of equal length')
+end
+
+switch OPT.nc_library
+    case 'snc'
+        if isempty(OPT.outputfile)
+            error('nc_oe_standard_names:outputChk',  'No outputfilename indicated')
+        end
+    case 'matlab'
+        if isempty(OPT.ncid)
+            error('nc_oe_standard_names:outputChk',  'No ncid indicated')
+        end
+    otherwise
+        error('nc_oe_standard_names:outputChk',  'unknown nc_library, only snc and matlab are supported')
+end
+
+%% one by one add each variable
+for i = 1:size(OPT.oe_standard_name,1)
+    switch OPT.oe_standard_name{i}

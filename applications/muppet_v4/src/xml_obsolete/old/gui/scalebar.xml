@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<root>
+  <title>Scale Bar</title>
+  <width>180</width>
+  <height>300</height>
+  <tag>legend</tag>
+  <element>
+    <tag>selecttype</tag>
+    <style>popupmenu</style>
+    <position>20 250 140 20</position>
+    <variable>type</variable>
+    <type>string</type>
+    <text>Type</text>
+    <textposition>above-left</textposition>
+    <listtext>Regular</listtext>
+    <listtext> </listtext>
+    <listvalue>regular</listvalue>
+    <listvalue> </listvalue>
+  </element>
+  <element>
+    <tag>editpositionx</tag>
+    <style>edit</style>
+    <position>100 220 60 20</position>
+    <variable>position(1)</variable>
+    <type>real</type>
+    <text>Position X (cm)</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <tag>editpositionx</tag>
+    <style>edit</style>
+    <position>100 190 60 20</position>
+    <variable>position(2)</variable>
+    <type>real</type>
+    <text>Position Y (cm)</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <tag>editlength</tag>
+    <style>edit</style>
+    <position>100 160 60 20</position>
+    <variable>length</variable>
+    <type>real</type>
+    <text>Length (m)</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <tag>edittext</tag>
+    <style>edit</style>
+    <position>100 130 60 20</position>
+    <variable>text</variable>
+    <type>string</type>
+    <text>Text</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <tag>selectfont</tag>
+    <style>selectfont</style>
+    <position>100 80 60 20</position>
+    <text>Font</text>
+    <variable>font</variable>
+    <tooltipstring>Select legend font</tooltipstring>
+  </element>
+  <element>
+    <tag>cancel</tag>
+    <style>pushcancel</style>
+    <position>20 20 60 20</position>
+  </element>
+  <element>
+    <tag>ok</tag>
+    <style>pushok</style>
+    <position>90 20 70 20</position>
+  </element>
+</root>

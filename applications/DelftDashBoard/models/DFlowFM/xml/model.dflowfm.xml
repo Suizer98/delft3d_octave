@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<root>
+  <model>DFlowFM</model>
+  <longname>Delft3D-FM</longname>
+  <multipledomains>no</multipledomains>
+  <enable>1</enable>
+  <menu>
+    <menuopenfile>
+      <menuitem>
+        <string>Open MDU File</string>
+        <callback>ddb_openDFlowFM</callback>
+        <option>openpresent</option>
+      </menuitem>
+    </menuopenfile>
+    <menusavefile>
+      <menuitem>
+        <string>Save MDU File</string>
+        <callback>ddb_saveDFlowFM</callback>
+        <option>save</option>
+      </menuitem>
+      <menuitem>
+        <string>Save MDU File As ...</string>
+        <callback>ddb_saveDFlowFM</callback>
+        <option>saveas</option>
+      </menuitem>
+      <menuitem>
+        <string>Save All</string>
+        <callback>ddb_saveDFlowFM</callback>
+        <option>saveall</option>
+      </menuitem>
+      <menuitem>
+        <string>DFlow-FM version ...</string>
+        <callback>ddb_setModelSettings</callback>
+        <option>selectversion</option>
+      </menuitem>
+    </menusavefile>
+    <menuview>
+      <attribute>
+        <string>Grid</string>
+        <callback>ddb_menuViewDFlowFM</callback>
+        <option>grid</option>
+      </attribute>
+      <attribute>
+        <string>Bathymetry</string>
+        <callback>ddb_menuViewDFlowFM</callback>
+        <option>bathymetry</option>
+      </attribute>
+    </menuview>
+  </menu>
+  <element>
+    <style>tabpanel</style>
+    <position>10 10 900 700</position>
+    <tab>
+      <tabstring>Toolbox</tabstring>
+    </tab>
+    <tab>
+      <tabstring>Geometry</tabstring>
+      <element>model.dflowfm.geometry.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Time Frame</tabstring>
+      <callback>ddb_DFlowFM_timeFrame</callback>
+      <element>model.dflowfm.timeframe.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Numerics</tabstring>
+      <callback>ddb_DFlowFM_numerics</callback>
+      <element>model.dflowfm.numerics.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Physics</tabstring>
+      <callback>ddb_DFlowFM_physics</callback>
+      <element>model.dflowfm.physics.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Wind</tabstring>
+      <callback>ddb_DFlowFM_wind</callback>
+      <element>model.dflowfm.wind.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Boundaries</tabstring>
+      <element>model.dflowfm.boundaries.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Meteo</tabstring>
+      <element>model.dflowfm.meteo.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Output</tabstring>
+      <callback>ddb_DFlowFM_output</callback>
+      <element>model.dflowfm.output.xml</element>
+    </tab>
+  </element>
+</root>

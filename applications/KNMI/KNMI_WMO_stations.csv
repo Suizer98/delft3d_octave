@@ -1,0 +1,60 @@
+# http://www.knmi.nl/klimatologie/metadata/stationslijst.html
+# http://www.knmi.nl/datacentrum/catalogus/catalogus/content/nl-obs-surf-stationslijst.htm
+# http://www.weathergraphics.com/identifiers/
+# --------------------------------
+# The WMO station identification system is very simple. Identifiers are in the 
+# form of "&&###" where "&&" represents a WMO oceanic or continental region 
+# and ### denotes a specific location (e.g., 46042, 41003). 
+# The first number specifies the region: 0 to 1 for Europe, 
+# 2 to 3 for Russia, 4 for Asia, 5 for the Far East, 
+# 6 for Africa, 7 for North America, 
+# 8 for South America and Antarctica, and 9 for the Pacific. 
+# WMO codes Netherlands 06200 - 06399
+# --------------------------------
+# http://www.wmo.int/pages/prog/www/ois/volume-a/vola-home.htm > ftp://ftp.wmo.int/wmo-ddbs/Pub9volA130513.flatfile
+# http://www.knmi.nl/klimatologie/metadata/stationslijst.html
+# http://www.knmi.nl/klimatologie/metadata/index.html
+# http://www.ncdc.noaa.gov/oa/climate/rcsg/cdrom/ismcs/alphanum.html
+# http://weather.gladstonefamily.net/site
+# http://www.ndbc.noaa.gov/staid.shtml
+# http://weather.noaa.gov/cgi-bin/nsd_lookup.pl?station=EHAM
+# http://weather.noaa.gov/tg/site.shtml
+# --------------------------------
+wmo_code;code;long_name     ;long_name_alt;position;METAR;operational;comment;url
+#integer;string;string;string;string;boolean;string;
+06210;210;Valkenburg        ;-         ;52ø 11' N.B. 04ø 25' O.L.;EHVB;0;-;http://www.knmi.nl/klimatologie/metadata/valkenburg.html
+06225;225;IJmuiden          ;-         ;52ø 28' N.B. 04ø 35' O.L.;EH02;0;-;http://weather.noaa.gov/cgi-bin/nsd_lookup.pl?station=06225
+06235;235;De Kooy           ;Den Helder;52ø 56' N.B. 04ø 47' O.L.;EHKD;1;-;http://www.knmi.nl/klimatologie/metadata/dekooy.html
+06240;240;Schiphol          ;Amsterdam ;52ø 19' N.B. 04ø 47' O.L.;EHAM;1;-;http://www.knmi.nl/klimatologie/metadata/schiphol.html
+06242;242;Vlieland          ;-         ;53ø 15' N.B. 04ø 55' O.L.;EHVL;0;-;http://www.knmi.nl/klimatologie/metadata/vlieland.html
+06249;249;Berkhout          ;-         ;52ø 39' N.B. 05ø 59' O.L.;-   ;0;-;http://www.knmi.nl/klimatologie/metadata/berkhout.html
+06251;251;Hoorn Terschelling;-         ;53ø 23' N.B. 05ø 21' O.L.;-   ;0;-;http://www.knmi.nl/klimatologie/metadata/hoornterschelling.html
+06257;257;Wijk aan Zee      ;-         ;52ø 30' N.B. 04ø 36' O.L.;-   ;0;-;http://www.knmi.nl/klimatologie/metadata/wijkaanzee.html
+06260;260;De Bilt           ;-         ;52ø 06' N.B. 05ø 11' O.L.;EHDB;1;-;http://www.knmi.nl/klimatologie/metadata/debilt.html
+06265;265;Soesterberg       ;-         ;52ø 08' N.B. 05ø 17' O.L.;-   ;0;-;http://www.knmi.nl/klimatologie/metadata/soesterberg.html
+06267;267;Stavoren          ;-         ;52ø 54' N.B. 05ø 23' O.L.;-   ;0;-;http://www.knmi.nl/klimatologie/metadata/stavoren.html
+06269;269;Lelystad          ;-         ;52ø 27' N.B. 05ø 31' O.L.;EHLE;0;-;http://www.knmi.nl/klimatologie/metadata/lelystad.html
+06270;270;Leeuwarden        ;-         ;53ø 13' N.B. 05ø 45' O.L.;EHLW;1;-;http://www.knmi.nl/klimatologie/metadata/leeuwarden.html
+06273;273;Marknesse         ;-         ;52ø 42' N.B. 05ø 53' O.L.;-   ;0;-;http://www.knmi.nl/klimatologie/metadata/marknesse.html
+06275;275;Deelen            ;-         ;52ø 03' N.B. 05ø 52' O.L.;EHDL;0;-;http://www.knmi.nl/klimatologie/metadata/deelen.html
+06277;277;Lauwersoog        ;-         ;53ø 25' N.B. 06ø 12' O.L.;-   ;0;-;http://www.knmi.nl/klimatologie/metadata/lauwersoog.html
+06278;278;Heino             ;-         ;52ø 26' N.B. 06ø 16' O.L.;-   ;0;-;http://www.knmi.nl/klimatologie/metadata/heino.html
+06279;279;Hoogeveen         ;-         ;52ø 45' N.B. 06ø 34' O.L.;-   ;0;-;http://www.knmi.nl/klimatologie/metadata/hoogeveen.html
+06280;280;Eelde             ;Groningen ;53ø 07' N.B. 06ø 35' O.L.;EHGG;1;-;http://www.knmi.nl/klimatologie/metadata/eelde.html
+06283;283;Hupsel            ;-         ;52ø 04' N.B. 06ø 39' O.L.;-   ;0;-;http://www.knmi.nl/klimatologie/metadata/hupsel.html
+06286;286;Nieuw Beerta      ;-         ;53ø 12' N.B. 07ø 09' O.L.;-   ;0;-;http://www.knmi.nl/klimatologie/metadata/nieuwbeerta.html
+06290;290;Twenthe           ;-         ;52ø 16' N.B. 06ø 53' O.L.;EHTW;1;-;http://www.knmi.nl/klimatologie/metadata/twenthe.html
+06310;310;Vlissingen        ;-         ;51ø 27' N.B. 03ø 36' O.L.;-   ;1;-;http://www.knmi.nl/klimatologie/metadata/vlissingen.html
+06319;319;Westdorpe         ;-         ;51ø 13' N.B. 03ø 52' O.L.;-   ;0;-;http://www.knmi.nl/klimatologie/metadata/westdorpe.html
+06323;323;Wilhelminadorp    ;-         ;51ø 32' N.B. 03ø 53' O.L.;-   ;0;-;http://www.knmi.nl/klimatologie/metadata/wilhelminadorp.html
+06330;330;Hoek van Holland  ;-         ;51ø 59' N.B. 04ø 07' O.L.;-   ;0;-;http://www.knmi.nl/klimatologie/metadata/hoekvanholland.html
+06340;340;Woensdrecht       ;-         ;51ø 27' N.B. 04ø 21' O.L.;EHWO;0;-;http://www.knmi.nl/klimatologie/metadata/woensdrecht.html
+06344;344;Rotterdam         ;-         ;51ø 58' N.B. 04ø 27' O.L.;EHRD;1;-;http://www.knmi.nl/klimatologie/metadata/rotterdam.html
+06348;348;Cabauw            ;-         ;51ø 58' N.B. 04ø 55' O.L.;-   ;0;-;http://www.knmi.nl/klimatologie/metadata/cabauw.html
+06350;350;Gilze-Rijen       ;-         ;51ø 34' N.B. 04ø 56' O.L.;EHGR;0;-;http://www.knmi.nl/klimatologie/metadata/gilzerijen.html
+06356;356;Herwijnen         ;-         ;51ø 51' N.B. 05ø 09' O.L.;-   ;0;-;http://www.knmi.nl/klimatologie/metadata/herwijnen.html
+06370;370;Eindhoven         ;-         ;51ø 27' N.B. 05ø 23' O.L.;EHEH;1;-;http://www.knmi.nl/klimatologie/metadata/eindhoven.html
+06375;375;Volkel            ;-         ;51ø 39' N.B. 05ø 42' O.L.;EHVK;0;-;http://www.knmi.nl/klimatologie/metadata/volkel.html
+06377;377;Ell               ;-         ;51ø 12' N.B. 05ø 46' O.L.;-   ;0;-;http://www.knmi.nl/klimatologie/metadata/ell.html
+06380;380;Maastricht        ;Beek      ;50ø 54' N.B. 05ø 46' O.L.;EHBK;1;-;http://www.knmi.nl/klimatologie/metadata/maastricht.html
+06391;391;Arcen             ;-         ;51ø 30' N.B. 06ø 12' O.L.;-   ;0;-;http://www.knmi.nl/klimatologie/metadata/arcen.html

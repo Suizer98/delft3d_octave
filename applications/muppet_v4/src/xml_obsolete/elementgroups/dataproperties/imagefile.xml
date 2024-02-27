@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <variable>imagefile</variable>
+    <type>string</type>
+    <style>pushselectfile</style>
+    <position>40 0 120 20</position>
+    <text>Image File</text>
+    <tooltipstring>Select image file</tooltipstring>
+  </element>
+</root>

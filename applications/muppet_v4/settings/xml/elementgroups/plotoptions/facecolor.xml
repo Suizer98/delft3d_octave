@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 50</position>
+    <text>Fill Properties</text>
+  </element>
+  <element>
+    <variable>facecolor</variable>
+    <type>string</type>
+    <style>selectcolor</style>
+    <position>40 10 100 20</position>
+    <includenone>yes</includenone>
+    <text>Color</text>
+    <tooltipstring>Select fill color</tooltipstring>
+  </element>
+</root>

@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>40 10 900 160</position>
+    <text>Shorelines</text>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>50 125 100 20</position>
+    <text>Draw shoreline</text>
+    <callback>ddb_shorelines_shorelines</callback>
+    <option1>drawshoreline</option1>
+    <tooltipstring>Draw shoreline</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.status</variable>
+        <type>string</type>
+        <value>waiting</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>50 100 100 20</position>
+    <text>Delete shoreline</text>
+    <callback>ddb_shorelines_shorelines</callback>
+    <option1>deleteshoreline</option1>
+    <tooltipstring>Delete shoreline</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.nrshorelines</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.model.shorelines.status</variable>
+        <type>string</type>
+        <value>waiting</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>50 75 100 20</position>
+    <text>Load shorelines</text>
+    <variable>handles.model.shorelines.domain.LDBcoastline</variable>
+    <callback>ddb_shorelines_shorelines</callback>
+    <option1>loadshorelines</option1>
+    <showfilename>no</showfilename>
+    <extension>*.txt</extension>
+    <selectiontext>Select shorelines file</selectiontext>
+    <tooltipstring>Select shorelines file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.status</variable>
+        <type>string</type>
+        <value>waiting</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>50 50 100 20</position>
+    <text>Save shorelines</text>
+    <variable>handles.model.shorelines.domain.LDBcoastline</variable>
+    <callback>ddb_shorelines_shorelines</callback>
+    <option1>saveshorelines</option1>
+    <showfilename>no</showfilename>
+    <extension>*.txt</extension>
+    <selectiontext>Select shoreline file</selectiontext>
+    <tooltipstring>Save shoreline file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.nrshorelines</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.model.shorelines.status</variable>
+        <type>string</type>
+        <value>waiting</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>listbox</style>
+    <position>300 40 150 105</position>
+    <tooltipstring>Select shoreline</tooltipstring>
+    <text>Shorelines</text>
+    <textposition>above-center</textposition>
+    <variable>handles.model.shorelines.activeshoreline</variable>
+    <type>integer</type>
+    <onchange>ddb_shorelines_shorelines</onchange>
+    <option1>selectfromlist</option1>
+    <listtext>
+      <variable>handles.model.shorelines.shorelinenames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>500 70 250 80</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>600 125 120 20</position>
+    <text>Name</text>
+    <onchange>ddb_shorelines_shorelines</onchange>
+    <option1>editname</option1>
+    <tooltipstring>Edit shoreline name</tooltipstring>
+    <variable>handles.model.shorelines.shorelines(handles.model.shorelines.activeshoreline).name</variable>
+    <type>string</type>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.nrshorelines</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>670 100 50 20</position>
+    <text>Grid size (m)</text>
+    <variable>handles.model.shorelines.domain.ds0</variable>
+    <type>real</type>
+    <tooltipstring>Edit initial size of shoreline cells</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>670 75 50 20</position>
+    <text>Profile height (m)</text>
+    <variable>handles.model.shorelines.domain.d</variable>
+    <type>real</type>
+    <tooltipstring>Edit profile height d</tooltipstring>
+  </element>
+</root>

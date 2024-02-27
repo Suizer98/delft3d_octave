@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+  <longname>NetCDF catalogue</longname>
+  <title>NetCDF Catalogue</title>
+  <callback>muppet_addDatasetNCCatalog</callback>
+  <fromurl>yes</fromurl>
+  <dataproperty>
+    <name>filetype</name>
+  </dataproperty>
+  <dataproperty>
+    <name>filename</name>
+  </dataproperty>
+  <dataproperty>
+    <name>polygonfile</name>
+  </dataproperty>
+  <elementgroup>polygonfile</elementgroup>
+</root>

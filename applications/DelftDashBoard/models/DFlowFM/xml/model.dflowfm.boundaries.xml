@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <text>Boundary Conditions</text>
+    <position>40 5 980 165</position>
+  </element>
+  <element>
+    <style>listbox</style>
+    <position>50 65 200 80</position>
+    <tooltipstring>Edit boundaries</tooltipstring>
+    <variable>handles.model.dflowfm.domain.activeboundary</variable>
+    <type>int</type>
+    <callback>ddb_DFlowFM_boundaries</callback>
+    <option1>selectboundary</option1>
+    <listtext>
+      <variable>handles.model.dflowfm.domain.boundarynames</variable>
+    </listtext>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>50 40 200 20</position>
+    <tooltipstring>Edit boundary name</tooltipstring>
+    <variable>handles.model.dflowfm.domain.boundary(handles.model.dflowfm.domain.activeboundary).boundary.name</variable>
+    <type>string</type>
+    <callback>ddb_DFlowFM_boundaries</callback>
+    <option1>editname</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>50 15 200 20</position>
+    <tooltipstring>Select boundary type</tooltipstring>
+    <variable>handles.model.dflowfm.domain.boundary(handles.model.dflowfm.domain.activeboundary).boundary.type</variable>
+    <type>string</type>
+    <listtext>water level</listtext>
+    <listtext>water level + normal velocity</listtext>
+    <listtext>water level + normal + tangential velocity</listtext>
+    <listtext>riemann</listtext>
+    <listtext>discharge</listtext>
+    <listvalue>water_level</listvalue>
+    <listvalue>water_level_plus_normal_velocity</listvalue>
+    <listvalue>water_level_plus_normal_velocity_plus_tangential_velocity</listvalue>
+    <listvalue>riemann</listvalue>
+    <listvalue>discharge</listvalue>
+    <callback>ddb_DFlowFM_boundaries</callback>
+    <option1>selecttype</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>255 125 70 20</position>
+    <tooltipstring>Add boundary</tooltipstring>
+    <text>Add</text>
+    <callback>ddb_DFlowFM_boundaries</callback>
+    <option1>add</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>255 100 70 20</position>
+    <tooltipstring>Delete boundary</tooltipstring>
+    <text>Delete</text>
+    <callback>ddb_DFlowFM_boundaries</callback>
+    <option1>delete</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>255 75 70 20</position>
+    <tooltipstring>Load boundary</tooltipstring>
+    <text>Load</text>
+    <callback>ddb_DFlowFM_boundaries</callback>
+    <option1>load</option1>
+    <enable>0</enable>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>255 50 70 20</position>
+    <tooltipstring>Save boundary</tooltipstring>
+    <text>Save</text>
+    <callback>ddb_DFlowFM_boundaries</callback>
+    <option1>save</option1>
+    <enable>0</enable>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>lt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>255 25 70 20</position>
+    <tooltipstring>Save all boundaries</tooltipstring>
+    <text>Save All</text>
+    <callback>ddb_DFlowFM_boundaries</callback>
+    <option1>saveall</option1>
+    <enable>0</enable>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>lt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>listbox</style>
+    <position>440 10 100 110</position>
+    <tooltipstring>Edit boundary node data</tooltipstring>
+    <variable>handles.model.dflowfm.domain.boundary(handles.model.dflowfm.domain.activeboundary).boundary.activenode</variable>
+    <type>int</type>
+    <text>Nodes</text>
+    <textposition>above</textposition>
+    <enable>0</enable>
+    <listtext>
+      <variable>handles.model.dflowfm.domain.boundary(handles.model.dflowfm.domain.activeboundary).boundary.nodenames</variable>
+    </listtext>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain.nrboundaries</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>570 50 120 20</position>
+    <tooltipstring>Insert boundary node</tooltipstring>
+    <callback>ddb_DFlowFM_boundaries</callback>
+    <option1>insertpoint</option1>
+    <text>Insert Point</text>
+    <enable>0</enable>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain.nrboundaries</variable>
+        <value>10000000</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+
+  <element>
+    <style>pushbutton</style>
+    <position>570 25 120 20</position>
+    <tooltipstring>Delete boundary node</tooltipstring>
+    <callback>ddb_DFlowFM_boundaries</callback>
+    <option1>deletepoint</option1>
+    <text>Delete Point</text>
+    <enable>0</enable>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain.nrboundaries</variable>
+        <value>10000000</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>740 35 150 20</position>
+    <tooltipstring>Open external forcing file</tooltipstring>
+    <text>Open External Forcing</text>
+    <callback>ddb_DFlowFM_boundaries</callback>
+    <option1>openexternalforcing</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>740 10 150 20</position>
+    <tooltipstring>Save external forcing file</tooltipstring>
+    <text>Save External Forcing</text>
+    <callback>ddb_DFlowFM_boundaries</callback>
+    <option1>saveexternalforcing</option1>
+  </element>
+</root>

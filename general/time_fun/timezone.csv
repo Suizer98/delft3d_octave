@@ -1,0 +1,37 @@
+# http://wwp.greenwichmeantime.com/info/timezone.htm;;;;
+# http://en.wikipedia.org/wiki/List_of_time_zones;;;;
+# http://www.timeanddate.com/library/abbreviations/timezones/;;;;
+offset;letter_zone;military_code;civilian_code;civilian_long_name
+hour;letter;string;string;string
+1;A;Alpha;CET;Central European
+1;A;Alpha;MET;-
+2;B;Bravo;EET;Eastern European
+3;C;Charlie;BT;Baghdad
+4;D;Delta;-;-
+5;E;Echo;-;-
+6;F;Foxtrot;-;-
+7;G;Golf;-;-
+8;H;Hotel;CCT;China Coast
+9;I;India;JST;Japan Standard
+10;K;Kilo;-;Guam Standard
+11;L;Lima;-;-
+12;M;Mike;IDLE;International Date Line East
+12;M;Mike;NZST;New Zealand Standard
+-1;N;November;WAT;West Africa
+-2;O;Oscar;AT;Azores
+-3;P;Papa;-;-
+-4;Q;Quebec;AST;Atlantic Standard
+-5;R;Romeo;EST;Eastern Standard
+-6;S;Sierra;CST;Central Standard
+-7;T;Tango;MST;Mountain Standard
+-8;U;Uniform;PST;Pacific Standard
+-9;V;Victor;YST;Yukon Standard
+-10;W;Whiskey;AHST;Alaska-Hawaii Standard
+-10;W;Whiskey;CAT;Central Alaska Time
+-10;W;Whiskey;HST;Hawaii Standard Time
+-11;X;X-ray;NT;-
+-12;Y;Yankeee;IDLW;International Date Line West
+0;Z;Zulu;GMT;Greenwich Mean Time
+0;Z;Zulu;UT;Universal Time
+0;Z;Zulu;UTC;Universal Co-ordinated Time
+0;Z;Zulu;WET;Western European Time

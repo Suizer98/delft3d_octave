@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>pushselectfile</style>
+    <position>20 140 130 20</position>
+    <text>Thin Dam File</text>
+    <variable>handles.model.sfincs.domain(ad).input.thdfile</variable>
+    <showfilename>yes</showfilename>
+    <extension>*.thd</extension>
+    <selectiontext>Select thin dam file</selectiontext>
+    <tooltipstring>Select thin dam file</tooltipstring>
+  </element>
+</root>

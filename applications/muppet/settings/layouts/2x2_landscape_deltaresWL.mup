@@ -1,0 +1,48 @@
+# Muppet v3.18 - File created by Maarten van Ormondt - 2007-11-15 23:03:29 
+ 
+Figure "2x2_landscape_wl1" 
+ 
+   Orientation l 
+   PaperSize   29.7 21 
+   Frame       DeltaresA4
+   FrameText1 ""                                                                     "Helvetica"     "normal"   "normal"   10  "black" 
+   FrameText2 ""                                                                     "Helvetica"     "normal"   "normal"   10  "black" 
+   FrameText3 ""                                                                     "Helvetica"     "normal"   "normal"   10  "black" 
+   FrameText4 ""                                                                     "Helvetica"     "normal"   "normal"   10  "black" 
+   FrameText5 ""                                                                     "Helvetica"     "normal"   "normal"   10  "black" 
+   FrameText6 ""                                                                     "Helvetica"     "normal"   "normal"   10  "black" 
+   FrameText7 ""                                                                     "Helvetica"     "normal"   "normal"   10  "black" 
+   FrameText8 ""                                                                     "Helvetica"     "normal"   "normal"   10  "black" 
+   FrameText9 "WL|Delft Hydraulics"                                                  "Helvetica"     "normal"   "normal"   13  "black" 
+ 
+   Subplot   "Upper-left" 
+ 
+      Position   5.5           11           10          7.5 
+ 
+   EndSubplot 
+ 
+   Subplot   "Upper-right" 
+ 
+      Position   17           11           10          7.5 
+ 
+   EndSubplot 
+ 
+   Subplot   "Lower-left" 
+ 
+      Position   5.5            2           10          7.5 
+ 
+   EndSubplot 
+ 
+   Subplot   "Lower-right" 
+ 
+      Position   17            2           10          7.5 
+ 
+   EndSubplot 
+ 
+   OutputFile "figure1.png" 
+   Format     "png" 
+   Resolution 300 
+   Renderer   "zbuffer" 
+ 
+EndFigure 
+ 

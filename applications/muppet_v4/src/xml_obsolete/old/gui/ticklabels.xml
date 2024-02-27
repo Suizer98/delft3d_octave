@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<root>
+  <title>Tick Labels</title>
+  <width>300</width>
+  <height>210</height>
+  <tag>legend</tag>
+  <element>
+    <style>text</style>
+    <position>115 175 100 20</position>
+    <text>X</text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>225 175 100 20</position>
+    <text>Y</text>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>70 150 100 20</position>
+    <variable>xscale</variable>
+    <type>string</type>
+    <tooltipstring>Select scaling of X axis</tooltipstring>
+    <text>Scaling</text>
+    <listtext>linear</listtext>
+    <listtext>logarithmic</listtext>
+    <listtext>normprob</listtext>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>type</variable>
+        <value>xy</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>180 150 100 20</position>
+    <variable>yscale</variable>
+    <type>string</type>
+    <tooltipstring>Select scaling of Y axis</tooltipstring>
+    <listtext>linear</listtext>
+    <listtext>logarithmic</listtext>
+    <listtext>normprob</listtext>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>type</variable>
+        <value>xy</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>type</variable>
+        <value>timeseries</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>type</variable>
+        <value>timestack</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>70 125 100 20</position>
+    <variable>xtickmultiply</variable>
+    <type>real</type>
+    <text>Multiply</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>180 125 100 20</position>
+    <variable>ytickmultiply</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>70 100 100 20</position>
+    <variable>xtickadd</variable>
+    <type>real</type>
+    <text>Add</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>180 100 100 20</position>
+    <variable>ytickadd</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>selectfont</style>
+    <position>70 70 50 20</position>
+    <variable>font</variable>
+  </element>
+  <element>
+    <tag>cancel</tag>
+    <style>pushcancel</style>
+    <position>140 20 60 20</position>
+  </element>
+  <element>
+    <tag>ok</tag>
+    <style>pushok</style>
+    <position>210 20 70 20</position>
+  </element>
+</root>

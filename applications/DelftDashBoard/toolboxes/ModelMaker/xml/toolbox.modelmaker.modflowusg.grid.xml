@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <position>50 110 50 20</position>
+    <tooltipstring>Edit x coordinate or longitude of grid origin</tooltipstring>
+    <text>X Origin</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_modflowusg_grid</onchange>
+    <option1>editgridoutline</option1>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.xOri</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>50 85 50 20</position>
+    <tooltipstring>Edit number of grid cells in M direction</tooltipstring>
+    <text>M Max</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_modflowusg_grid</onchange>
+    <option1>editgridoutline</option1>
+    <type>integer</type>
+    <variable>handles.toolbox.modelmaker.nX</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>50 60 50 20</position>
+    <tooltipstring>Edit grid size in m direction</tooltipstring>
+    <text>Delta X</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_modflowusg_grid</onchange>
+    <option1>editresolution</option1>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.dX</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>50 35 50 20</position>
+    <tooltipstring>Edit grid rotation in degrees</tooltipstring>
+    <text>Rotation</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_modflowusg_grid</onchange>
+    <option1>editgridoutline</option1>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.rotation</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>150 110 50 20</position>
+    <tooltipstring>Edit y coordinate or longitude of grid origin</tooltipstring>
+    <text>Y Origin</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_modflowusg_grid</onchange>
+    <option1>editgridoutline</option1>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.yOri</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>150 85 50 20</position>
+    <tooltipstring>Edit number of grid cells in N direction</tooltipstring>
+    <text>N Max</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_modflowusg_grid</onchange>
+    <option1>editgridoutline</option1>
+    <type>integer</type>
+    <variable>handles.toolbox.modelmaker.nY</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>150 60 50 20</position>
+    <tooltipstring>Edit grid size in n direction</tooltipstring>
+    <text>Delta Y</text>
+    <textposition>left</textposition>
+    <onchange>ddb_ModelMakerToolbox_modflowusg_grid</onchange>
+    <option1>editresolution</option1>
+    <type>real</type>
+    <variable>handles.toolbox.modelmaker.dY</variable>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>210 110 100 20</position>
+    <tooltipstring>Push to draw grid outline</tooltipstring>
+    <text>Draw Grid Outline</text>
+    <callback>ddb_ModelMakerToolbox_modflowusg_grid</callback>
+    <option1>drawgridoutline</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>850 100 140 20</position>
+    <tooltipstring>Push to load grid set-up</tooltipstring>
+    <text>Load set-up</text>
+    <callback>ddb_ModelMakerToolbox_modflowusg_grid</callback>
+    <option1>loadsetup</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>850 75 140 20</position>
+    <tooltipstring>Push to save grid set-up</tooltipstring>
+    <text>Save set-up</text>
+    <callback>ddb_ModelMakerToolbox_modflowusg_grid</callback>
+    <option1>savesetup</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>850 10 140 20</position>
+    <tooltipstring>Push to generate model grid</tooltipstring>
+    <text>Make Unstructured Grid</text>
+    <callback>ddb_ModelMakerToolbox_modflowusg_grid</callback>
+    <option1>generategrid</option1>
+  </element>
+</root>

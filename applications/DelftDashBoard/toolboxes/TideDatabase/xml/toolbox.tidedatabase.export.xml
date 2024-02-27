@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>listbox</style>
+    <text>Available Tide Models</text>
+    <textposition>above-center</textposition>
+    <variable>handles.toolbox.tidedatabase.activeModel</variable>
+    <type>integer</type>
+    <position>10 10 200 105</position>
+    <tooltipstring>Select tide model</tooltipstring>
+    <onchange>ddb_TideDatabaseToolbox_export</onchange>
+    <option1>selectmodel</option1>
+    <listtext>
+      <variable>handles.tideModels.longNames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>250 95 50 20</position>
+    <text>X Min</text>
+    <textposition>left</textposition>
+    <onchange>ddb_TideDatabaseToolbox_export</onchange>
+    <option1>editoutline</option1>
+    <variable>handles.toolbox.tidedatabase.xLim(1)</variable>
+    <type>real</type>
+    <tooltipstring>Edit minimum x coordinate</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>250 70 50 20</position>
+    <text>X Max</text>
+    <textposition>left</textposition>
+    <onchange>ddb_TideDatabaseToolbox_export</onchange>
+    <option1>editoutline</option1>
+    <variable>handles.toolbox.tidedatabase.xLim(2)</variable>
+    <type>real</type>
+    <tooltipstring>Edit maximum x coordinate</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>250 45 50 20</position>
+    <text>Y Min</text>
+    <textposition>left</textposition>
+    <onchange>ddb_TideDatabaseToolbox_export</onchange>
+    <option1>editoutline</option1>
+    <variable>handles.toolbox.tidedatabase.yLim(1)</variable>
+    <type>real</type>
+    <tooltipstring>Edit minimum y coordinate</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>250 20 50 20</position>
+    <text>Y Max</text>
+    <textposition>left</textposition>
+    <onchange>ddb_TideDatabaseToolbox_export</onchange>
+    <option1>editoutline</option1>
+    <variable>handles.toolbox.tidedatabase.yLim(2)</variable>
+    <type>real</type>
+    <tooltipstring>Edit maximum y coordinate</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>310 95 80 20</position>
+    <text>Draw Box</text>
+    <callback>ddb_TideDatabaseToolbox_export</callback>
+    <option1>drawrectangle</option1>
+  </element>
+
+  <element>
+    <style>pushbutton</style>
+    <position>430 110 80 20</position>
+    <text>Click Point</text>
+    <callback>ddb_TideDatabaseToolbox_export</callback>
+    <option1>clickpoint</option1>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>430 85 50 20</position>
+    <text>X</text>
+    <textposition>left</textposition>
+    <onchange>ddb_TideDatabaseToolbox_export</onchange>
+    <option1>editpoint</option1>
+    <variable>handles.toolbox.tidedatabase.point_x</variable>
+    <type>real</type>
+    <tooltipstring>Edit x coordinate</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>430 60 50 20</position>
+    <text>Y</text>
+    <textposition>left</textposition>
+    <onchange>ddb_TideDatabaseToolbox_export</onchange>
+    <option1>editpoint</option1>
+    <variable>handles.toolbox.tidedatabase.point_y</variable>
+    <type>real</type>
+    <tooltipstring>Edit y coordinate</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>430 35 100 20</position>
+    <text>View Time Series</text>
+    <callback>ddb_TideDatabaseToolbox_export</callback>
+    <option1>viewtimeseries</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>430 10 100 20</position>
+    <text>Export Time Series</text>
+    <callback>ddb_TideDatabaseToolbox_export</callback>
+    <option1>exporttimeseries</option1>
+  </element>
+
+  <element>
+    <style>edit</style>
+    <position>640 110 110 20</position>
+    <variable>handles.toolbox.tidestations.startTime</variable>
+    <type>datetime</type>
+    <text>Start Time</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit start time for tide signal to be viewed or exported</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>640 85 110 20</position>
+    <variable>handles.toolbox.tidestations.stopTime</variable>
+    <type>datetime</type>
+    <text>Stop Time</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit stop time for tide signal to be viewed or exported</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>640 60 110 20</position>
+    <variable>handles.toolbox.tidestations.timeStep</variable>
+    <type>real</type>
+    <text>Time Step (min)</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit time step for tide signal to be viewed or exported</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>640 35 110 20</position>
+    <variable>handles.toolbox.tidestations.timeZone</variable>
+    <type>real</type>
+    <text>Time Zone (h)</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit time zone (time series will be shifted to local time zone)</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>640 10 110 20</position>
+    <variable>handles.toolbox.tidestations.verticalOffset</variable>
+    <type>real</type>
+    <text>Vertical Offset (m)</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit vertical offset (value will be added to predicted time series)</tooltipstring>
+  </element>
+
+
+  <element>
+    <style>pushbutton</style>
+    <position>800 100 150 20</position>
+    <text>Download selected database</text>
+    <callback>ddb_TideDatabaseToolbox_export</callback>
+    <option1>download</option1>
+    <tooltipstring>Download co-tidal chart</tooltipstring>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text></text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.tidedatabase.activeConstituent</variable>
+    <position>920 40 70 20</position>
+    <tooltipstring>Select constituent for visualization</tooltipstring>
+    <type>integer</type>
+    <callback>ddb_TideDatabaseToolbox_export</callback>
+    <option1>selectconstituent</option1>
+    <listtext>
+      <variable>handles.toolbox.tidedatabase.constituentList</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>920 15 70 20</position>
+    <text>View</text>
+    <callback>ddb_TideDatabaseToolbox_export</callback>
+    <option1>view</option1>
+    <tooltipstring>View co-tidal chart</tooltipstring>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Export Format</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.tidedatabase.activeExportFormatIndex</variable>
+    <position>840 40 70 20</position>
+    <tooltipstring>Select output format</tooltipstring>
+    <type>integer</type>
+    <callback>ddb_TideDatabaseToolbox_export</callback>
+    <option1>selectexportformat</option1>
+    <listtext>
+      <variable>handles.toolbox.tidedatabase.exportFormatNames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>840 15 70 20</position>
+    <text>Export</text>
+    <variable>handles.toolbox.tidedatabase.exportFile</variable>
+    <onchange>ddb_TideDatabaseToolbox_export</onchange>
+    <option1>export</option1>
+    <showfilename>no</showfilename>
+    <filter>
+      <extension>
+        <variable>handles.toolbox.tidedatabase.activeExportFormatExtension</variable>
+      </extension>
+    </filter>
+    <extension>*.tek</extension>
+    <selectiontext>Select data file</selectiontext>
+    <tooltipstring>Export tide data</tooltipstring>
+  </element>
+</root>

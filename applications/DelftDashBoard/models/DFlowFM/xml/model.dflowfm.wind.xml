@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <text>Wind</text>
+    <position>40 10 900 160</position>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Wind Friction Type</text>
+    <position>140 125 120 20</position>
+    <tooltipstring>Select wind friction type</tooltipstring>
+    <variable>handles.model.dflowfm.domain.icdtyp</variable>
+    <type>integer</type>
+    <listtext>Constant</listtext>
+    <listtext>Two breakpoints</listtext>
+    <listtext>Three breakpoints</listtext>
+    <listtext>Charnock</listtext>
+    <listvalue>1</listvalue>
+    <listvalue>2</listvalue>
+    <listvalue>3</listvalue>
+    <listvalue>4</listvalue>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>190 95 50 20</position>
+    <variable>handles.model.dflowfm.domain.cdbreakpoints(1)</variable>
+    <type>real</type>
+    <tooltipstring>Edit constant wind friction coefficient</tooltipstring>
+    <text>Wind friction coefficient</text>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain.icdtyp</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>190 95 50 20</position>
+    <variable>handles.model.dflowfm.domain.cdbreakpoints(1)</variable>
+    <type>real</type>
+    <tooltipstring>Edit wind friction coefficient 1</tooltipstring>
+    <text>Wind friction coefficient (1)</text>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain.icdtyp</variable>
+        <value>2</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.model.dflowfm.domain.icdtyp</variable>
+        <value>3</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>190 70 50 20</position>
+    <variable>handles.model.dflowfm.domain.cdbreakpoints(2)</variable>
+    <type>real</type>
+    <tooltipstring>Edit wind friction coefficient 2</tooltipstring>
+    <text>Wind friction coefficient (2)</text>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain.icdtyp</variable>
+        <value>2</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.model.dflowfm.domain.icdtyp</variable>
+        <value>3</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>190 45 50 20</position>
+    <variable>handles.model.dflowfm.domain.cdbreakpoints(3)</variable>
+    <type>real</type>
+    <tooltipstring>Edit wind friction coefficient 3</tooltipstring>
+    <text>Wind friction coefficient (3)</text>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain.icdtyp</variable>
+        <value>3</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>390 95 50 20</position>
+    <variable>handles.model.dflowfm.domain.windspeedbreakpoints(1)</variable>
+    <type>real</type>
+    <tooltipstring>Edit wind speed breakpoint  1</tooltipstring>
+    <text>Wind speed breakpoint (1)</text>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain.icdtyp</variable>
+        <value>2</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.model.dflowfm.domain.icdtyp</variable>
+        <value>3</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>390 70 50 20</position>
+    <variable>handles.model.dflowfm.domain.windspeedbreakpoints(2)</variable>
+    <type>real</type>
+    <tooltipstring>Edit wind speed breakpoint 2</tooltipstring>
+    <text>Wind speed breakpoint (2)</text>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain.icdtyp</variable>
+        <value>2</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.model.dflowfm.domain.icdtyp</variable>
+        <value>3</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>390 45 50 20</position>
+    <variable>handles.model.dflowfm.domain.windspeedbreakpoints(3)</variable>
+    <type>real</type>
+    <tooltipstring>Edit wind speed breakpoint  3</tooltipstring>
+    <text>Wind speed breakpoint (3)</text>
+    <dependency>
+      <action>visible</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.model.dflowfm.domain.icdtyp</variable>
+        <value>3</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

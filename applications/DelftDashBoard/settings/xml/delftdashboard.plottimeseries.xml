@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+  <title>Time Series</title>
+  <width>800</width>
+  <height>600</height>
+  <tag>timeseries</tag>
+  <element>
+    <tag>plot</tag>
+    <style>axis</style>
+    <position>70 90 680 470</position>
+  </element>
+  <element>
+    <position>70 20 400 20</position>
+    <style>popupmenu</style>
+    <type>string</type>
+    <variable>activeparameter</variable>
+    <callback>ddb_plotTimeSeries2</callback>
+    <option1>selectparameter</option1>
+    <tooltipstring>Select parameter</tooltipstring>    
+    <listtext>
+      <variable>parameternames</variable>
+    </listtext>
+  </element>
+</root>

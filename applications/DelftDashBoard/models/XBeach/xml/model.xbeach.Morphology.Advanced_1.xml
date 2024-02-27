@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <text>nd</text>
+    <position>70.000,107.500, 80.000, 20.000</position>
+    <tooltipstring>Number of computational layers in the bed [-]</tooltipstring>
+    <variable>handles.model.xbeach.domain.nd</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Thickness of top sediment class layers [m]</tooltipstring>
+    <style>edit</style>
+    <text>dzg1</text>
+    <position>70.000,80.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.dzg1</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Nominal thickness of variable sediment class layer [m]</tooltipstring>
+    <style>edit</style>
+    <text>dzg2</text>
+    <position>70.000,52.500,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.dzg2</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Thickness of bottom sediment class layers [m]</tooltipstring>
+    <style>edit</style>
+    <text>dzg3</text>
+    <position>70.000,25.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.dzg3</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Sediment transport calibration coefficient per grain type [-]</tooltipstring>
+    <style>edit</style>
+    <text>sedcal</text>
+    <position>230.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.sedcal</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Critical velocity calibration coefficient per grain type [-]</tooltipstring>
+    <style>edit</style>
+    <text>ucrcal</text>
+    <position>230.000, 80.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.ucrcal</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Option indicating whether times should be adjusted (1) or not(0) for morfac [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>morfacopt</text>
+    <position>230.000, 52.500</position>
+    <variable>handles.model.xbeach.domain.morfacopt</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Water depth at which is switched from wetslp to dryslp [m]</tooltipstring>
+    <style>edit</style>
+    <text>hswitch</text>
+    <position>230.000, 25.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.hswitch</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Maximum bedlevel change due to avalanching [m/s/m]</tooltipstring>
+    <style>edit</style>
+    <text>dzmax</text>
+    <position>390.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.dzmax</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Relative thickness to split time step for bed updating [-]</tooltipstring>
+    <style>edit</style>
+    <text>frac_dz</text>
+    <position>390.000, 80.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.frac_dz</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Index of layer with variable thickness [-]</tooltipstring>
+    <style>edit</style>
+    <text>nd_var</text>
+    <position>390.000, 52.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.nd_var</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Split threshold for variable sediment layer (ratio to nominal thickness) [-]</tooltipstring>
+    <style>edit</style>
+    <text>split</text>
+    <position>390.000, 25.000, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.split</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Merge threshold for variable sediment layer (ratio to nominal thickness) [-]</tooltipstring>
+    <style>edit</style>
+    <text>merge</text>
+    <position>550.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.merge</variable>
+    <type>real</type>
+  </element>
+</root>

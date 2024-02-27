@@ -1,0 +1,39 @@
+# Muppet v3.19 - File created by Maarten van Ormondt - 2008-09-12 11:24:55 
+ 
+Figure "1" 
+ 
+   Orientation p 
+   PaperSize   16.01 12 
+   Frame       none 
+ 
+   Subplot   "Subplot 1" 
+ 
+      Position   0   0  16  12 
+ 
+   EndSubplot 
+ 
+   Subplot   "Subplot 2" 
+ 
+      Position   0.25         1.2           2        1.24 
+ 
+   EndSubplot 
+ 
+   Subplot   "Subplot 3" 
+ 
+      Position   3.2        0.25        3.29        2.03 
+ 
+   EndSubplot 
+ 
+   Subplot   "Subplot 4" 
+ 
+      Position   0.25        0.25           2         0.9 
+ 
+   EndSubplot 
+ 
+   OutputFile "shite.png" 
+   Format     "png" 
+   Resolution 150
+   Renderer   "ZBuffer" 
+ 
+EndFigure 
+ 

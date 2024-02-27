@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>pushbutton</style>
+    <position>70 65 120 20</position>
+    <text>START ShorelineS</text>
+    <callback>ddb_ModelMakerToolbox_shorelines</callback>
+    <option1>startshorelines</option1>
+    <tooltipstring>Start ShorelineS model</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.nrshorelines</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.model.shorelines.status</variable>
+        <type>string</type>
+        <value>waiting</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>70 40 120 20</position>
+    <text>PAUSE/CONTINUE</text>
+    <callback>ddb_ModelMakerToolbox_shorelines</callback>
+    <option1>pauseshorelines</option1>
+    <tooltipstring>Pause ShorelineS model</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.nrshorelines</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.model.shorelines.status</variable>
+        <type>string</type>
+        <value>waiting</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>70 15 120 20</position>
+    <text>STOP</text>
+    <callback>ddb_ModelMakerToolbox_shorelines</callback>
+    <option1>stopshorelines</option1>
+    <tooltipstring>Stop ShorelineS model</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.nrshorelines</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.model.shorelines.status</variable>
+        <type>string</type>
+        <value>waiting</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>70 110 120 20</position>
+    <variable>handles.model.shorelines.current_time_string</variable>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.nrshorelines</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.model.shorelines.status</variable>
+        <type>string</type>
+        <value>waiting</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>70 90 120 20</position>
+    <variable>handles.model.shorelines.time_remaining_string</variable>
+    <dependency>
+      <action>visible</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.shorelines.nrshorelines</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+      <check>
+        <variable>handles.model.shorelines.status</variable>
+        <type>string</type>
+        <value>waiting</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <text>vonkar</text>
+    <position>70.000,107.500, 80.000, 20.000</position>
+    <tooltipstring>von Karman constant [unknown]</tooltipstring>
+    <variable>handles.model.xbeach.domain.vonkar</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>molecular viscosity [unknown]</tooltipstring>
+    <style>edit</style>
+    <text>vicmol</text>
+    <position>70.000,80.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.vicmol</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Number of sigma layers in Quasi-3D model; kmax = 1 (default) is without vertical structure of flow and suspensions [-]</tooltipstring>
+    <style>edit</style>
+    <text>kmax</text>
+    <position>70.000,52.500,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.kmax</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>dsig scales with log(sigfac). Default = 1.3 [-]</tooltipstring>
+    <style>edit</style>
+    <text>sigfac</text>
+    <position>70.000,25.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.sigfac</variable>
+    <type>real</type>
+  </element>
+</root>

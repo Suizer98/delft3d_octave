@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>listbox</style>
+    <position>10 10 150 105</position>
+    <tooltipstring>Select dry point</tooltipstring>
+    <text>Dry Points</text>
+    <textposition>above-center</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).activeDryPoint</variable>
+    <type>integer</type>
+    <onchange>ddb_Delft3DFLOW_dryPoints</onchange>
+    <option1>selectfromlist</option1>
+    <listtext>
+      <variable>handles.model.delft3dflow.domain(ad).dryPointNames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>170 10 170 70</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 50 50 20</position>
+    <text>M1</text>
+    <onchange>ddb_Delft3DFLOW_dryPoints</onchange>
+    <option1>edit</option1>
+    <tooltipstring>Edit dry point index M1</tooltipstring>
+    <variable>handles.model.delft3dflow.domain(ad).dryPoints(handles.model.delft3dflow.domain(ad).activeDryPoint).M1</variable>
+    <type>integer</type>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrDryPoints</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>280 50 50 20</position>
+    <text>N1</text>
+    <onchange>ddb_Delft3DFLOW_dryPoints</onchange>
+    <option1>edit</option1>
+    <variable>handles.model.delft3dflow.domain(ad).dryPoints(handles.model.delft3dflow.domain(ad).activeDryPoint).N1</variable>
+    <type>integer</type>
+    <tooltipstring>Edit dry point index N1</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrDryPoints</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>200 20 50 20</position>
+    <text>M2</text>
+    <onchange>ddb_Delft3DFLOW_dryPoints</onchange>
+    <option1>edit</option1>
+    <variable>handles.model.delft3dflow.domain(ad).dryPoints(handles.model.delft3dflow.domain(ad).activeDryPoint).M2</variable>
+    <type>integer</type>
+    <tooltipstring>Edit dry point index M2</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrDryPoints</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>280 20 50 20</position>
+    <text>N2</text>
+    <onchange>ddb_Delft3DFLOW_dryPoints</onchange>
+    <option1>edit</option1>
+    <variable>handles.model.delft3dflow.domain(ad).dryPoints(handles.model.delft3dflow.domain(ad).activeDryPoint).N2</variable>
+    <type>integer</type>
+    <tooltipstring>Edit dry point index N2</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrDryPoints</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>togglebutton</style>
+    <position>360 85 70 20</position>
+    <text>Add</text>
+    <tooltipstring>Add dry point</tooltipstring>
+    <onchange>ddb_Delft3DFLOW_dryPoints</onchange>
+    <option1>add</option1>
+    <variable>handles.model.delft3dflow.domain(ad).addDryPoint</variable>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>360 60 70 20</position>
+    <text>Delete</text>
+    <tooltipstring>Delete dry point</tooltipstring>
+    <callback>ddb_Delft3DFLOW_dryPoints</callback>
+    <option1>delete</option1>
+  </element>
+  <element>
+    <style>togglebutton</style>
+    <position>360 35 70 20</position>
+    <text>Select</text>
+    <tooltipstring>Select dry point</tooltipstring>
+    <onchange>ddb_Delft3DFLOW_dryPoints</onchange>
+    <option1>select</option1>
+    <variable>handles.model.delft3dflow.domain(ad).selectDryPoint</variable>
+  </element>
+  <element>
+    <style>togglebutton</style>
+    <position>360 10 70 20</position>
+    <text>Change</text>
+    <tooltipstring>Change dry point</tooltipstring>
+    <onchange>ddb_Delft3DFLOW_dryPoints</onchange>
+    <option1>change</option1>
+    <variable>handles.model.delft3dflow.domain(ad).changeDryPoint</variable>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>450 60 70 20</position>
+    <tooltipstring>Open dry points file</tooltipstring>
+    <text>Open</text>
+    <variable>handles.model.delft3dflow.domain(ad).dryFile</variable>
+    <extension>*.dry</extension>
+    <selectiontext>Select dry points File</selectiontext>
+    <onchange>ddb_Delft3DFLOW_dryPoints</onchange>
+    <option1>openfile</option1>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>450 35 70 20</position>
+    <tooltipstring>Save dry points file</tooltipstring>
+    <text>Save</text>
+    <variable>handles.model.delft3dflow.domain(ad).dryFile</variable>
+    <showfilename>no</showfilename>
+    <extension>*.dry</extension>
+    <selectiontext>Select dry points File</selectiontext>
+    <onchange>ddb_Delft3DFLOW_dryPoints</onchange>
+    <option1>savefile</option1>
+  </element>
+</root>

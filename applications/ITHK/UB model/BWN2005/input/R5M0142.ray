@@ -1,0 +1,10 @@
+ LT run  :D:\Projects\1200893_BwN\Models\UNIBEST\0_LTcomputations_VRIJN04\IJM5R04                                                                                                                                                                                         
+ profile :D:\Projects\1200893_BwN\Models\UNIBEST\0_LTcomputations_VRIJN04\R5M0142.pro                                                                                                                                                                                     
+ waves   :D:\Projects\1200893_BwN\Models\UNIBEST\0_LTcomputations_VRIJN04\R5M0142.sco                                                                                                                                                                                     
+ coef.Qs :D:\Projects\1200893_BwN\Models\UNIBEST\0_LTcomputations_VRIJN04\DEF_R04.cfs                                                                                                                                                                                     
+ coef.Hs :D:\Projects\1200893_BwN\Models\UNIBEST\0_LTcomputations_VRIJN04\DEFAULT.cfe                                                                                                                                                                                     
+ ray     :D:\Projects\1200893_BwN\Models\UNIBEST\0_LTcomputations_VRIJN04\R5M0142.ray                                                                                                                                                                                     
+    equi      c1     c2   h0    angle   fshape
+   0.970646E+01  -0.357218E-01   0.161002E-01   0.100000E+02   0.310507E+03   0.402947E+00
+       Xb      2 %      20%      50%      80%     100%
+ -0.421895E+03 -0.302215E+03 -0.197349E+03 -0.134161E+03 -0.757583E+02 -0.226218E+01

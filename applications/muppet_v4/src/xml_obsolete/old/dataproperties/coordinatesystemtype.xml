@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<root>
+  <dataproperty>
+    <name>coordinatesystemtype</name>
+    <variable>coordinatesystem.type</variable>
+    <keyword>CoordinateSystemType</keyword>
+    <type>string</type>
+    <check>
+      <variable>coordinatesystem.name</variable>
+      <value>unspecified</value>
+      <operator>ne</operator>
+    </check>
+  </dataproperty>
+</root>

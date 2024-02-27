@@ -1,0 +1,297 @@
+function varargout = readArcInfo(fname, varargin)
+%READARCINFO  One line description goes here.
+%
+%   More detailed description goes here.
+%
+%   Syntax:
+%   varargout = readArcInfo(fname, varargin)
+%
+%   Input:
+%   fname     =
+%   varargin  =
+%
+%   Output:
+%   varargout =
+%
+%   Example
+%   readArcInfo
+%
+%   See also
+
+%% Copyright notice
+%   --------------------------------------------------------------------
+%   Copyright (C) 2011 Deltares
+%       Maarten van Ormondt
+%
+%       Maarten.vanOrmondt@deltares.nl
+%
+%       P.O. Box 177
+%       2600 MH Delft
+%       The Netherlands
+%
+%   This library is free software: you can redistribute it and/or modify
+%   it under the terms of the GNU General Public License as published by
+%   the Free Software Foundation, either version 3 of the License, or
+%   (at your option) any later version.
+%
+%   This library is distributed in the hope that it will be useful,
+%   but WITHOUT ANY WARRANTY; without even the implied warranty of
+%   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%   GNU General Public License for more details.
+%
+%   You should have received a copy of the GNU General Public License
+%   along with this library.  If not, see <http://www.gnu.org/licenses/>.
+%   --------------------------------------------------------------------
+
+% This tool is part of <a href="http://www.OpenEarth.eu">OpenEarthTools</a>.
+% OpenEarthTools is an online collaboration to share and manage data and
+% programming tools in an open source, version controlled environment.
+% Sign up to recieve regular updates of this function, and to contribute
+% your own tools.
+
+%% Version <http://svnbook.red-bean.com/en/1.5/svn.advanced.props.special.keywords.html>
+% Created: 27 Nov 2011
+% Created with Matlab version: 7.11.0.584 (R2010b)
+
+% $Id: readArcInfo.m 6611 2012-06-25 14:37:21Z ormondt $
+% $Date: 2012-06-25 16:37:21 +0200 (Mon, 25 Jun 2012) $
+% $Author: ormondt $
+% $Revision: 6611 $
+% $HeadURL: https://svn.oss.deltares.nl/repos/openearthtools/trunk/matlab/applications/DelftDashBoard/general/fileio/readArcInfo.m $
+% $Keywords: $
+
+%%
+
+iinfo=0;
+irows=[];
+icols=[];
+xx=[];
+yy=[];
+
+if ~isempty(varargin)
+    for i=1:length(varargin)
+        if ischar(varargin{i})
+            switch lower(varargin{i})
+                case{'info'}
+                    iinfo=1;
+                case{'rows'}
+                    irows=varargin{i+1};
+                case{'columns'}
+                    icols=varargin{i+1};
+                case{'x'}
+                    xx=varargin{i+1};
+                case{'y'}
+                    yy=varargin{i+1};
+            end
+        end
+    end
+end
+
+if iinfo
+    
+    fid=fopen(fname,'r');
+
+    cellvalue=1;
+    
+    for i=1:7
+        str=fgets(fid);
+        c=textscan(str,'%s %s');
+        a{1}=c{1}{1};
+        a{2}=c{2}{1};
+        switch lower(a{1})
+            case{'ncols'}
+                ncols=str2double(a{2});
+            case{'nrows'}
+                nrows=str2double(a{2});
+            case{'xllcorner'}
+                xll=str2double(a{2});
+            case{'yllcorner'}
+                yll=str2double(a{2});
+            case{'cellsize'}
+                cellsz=str2double(a{2});
+            case{'cellvalue'}
+                cellvalue=str2double(a{2});
+            case{'nodata_value'}
+                noval=str2double(a{2});
+        end
+    end
+
+%     ncols=str2double(str(6:end));
+%     str=fgets(fid);
+%     nrows=str2double(str(6:end));
+%     str=fgets(fid);
+%     xll=str2double(str(10:end));
+%     str=fgets(fid);
+%     yll=str2double(str(10:end));
+%     str=fgets(fid);
+%     cellsz=str2double(str(9:end));
+%     str=fgets(fid);
+%     cellvalue=str2double(str(10:end));
+%     str=fgets(fid);
+%     noval=str2double(str(13:end));
+    
+    fclose(fid);
+    
+    varargout{1}=ncols;
+    varargout{2}=nrows;
+    varargout{3}=xll;
+    varargout{4}=yll;
+    varargout{5}=cellsz;
+    
+else
+    
+    cellvalue=1;
+
+    fid=fopen(fname,'r');
+    
+    nheaderlines=0;
+    for i=1:7
+        str=fgets(fid);
+        c=textscan(str,'%s %s');
+        a{1}=c{1}{1};
+        a{2}=c{2}{1};
+        switch lower(a{1})
+            case{'ncols'}
+                ncols=str2double(a{2});
+                nheaderlines=nheaderlines+1;
+            case{'nrows'}
+                nrows=str2double(a{2});
+                nheaderlines=nheaderlines+1;
+            case{'xllcorner'}
+                xll=str2double(a{2});
+                nheaderlines=nheaderlines+1;
+            case{'yllcorner'}
+                yll=str2double(a{2});
+                nheaderlines=nheaderlines+1;
+            case{'cellsize'}
+                cellsz=str2double(a{2});
+                nheaderlines=nheaderlines+1;
+            case{'cellvalue'}
+                cellvalue=str2double(a{2});
+                nheaderlines=nheaderlines+1;
+            case{'nodata_value'}
+                noval=str2double(a{2});
+                nheaderlines=nheaderlines+1;
+        end
+    end
+    frewind(fid);
+    
+    if ~isempty(irows) || ~isempty(icols)
+
+        nr=irows(2)-irows(1)+1;
+        tic
+        ztmp = textscan(fid,'',nr,'HeaderLines',nheaderlines);
+        toc
+        ztmp=ztmp(:,icols(1):icols(2));
+        for i=1:icols(2)-icols(1)+1
+            z(:,i)=ztmp{i};
+        end
+        z=z';
+        z(z==noval)=NaN;
+        z=z*cellvalue;
+        z=flipud(z);
+        x=xll+cellsz*(icols(1)-1):cellsz:xll+cellsz*(icols(2)-1);
+        y=yll+cellsz*(irows(1)-1):cellsz:yll+cellsz*(irows(2)-1);
+
+    elseif ~isempty(xx) || ~isempty(yy)
+
+        x=xll:cellsz:(xll+(ncols-1)*cellsz);
+        y=(yll+(nrows-1)*cellsz):-cellsz:yll;
+        
+        i1=find(y>=yy(end),1,'last');
+        i2=find(y<=yy(1),1,'first');
+        j1=find(x>=xx(1),1,'first');
+        j2=find(x<=xx(end),1,'last');
+
+
+        
+%         for i=1:irows(1)-1
+%             fdum=fgetl(fid);
+%         end
+%         f=dlmread()
+        nr=i2-i1+1;
+        tic
+        ztmp = textscan(fid,'',nr,'HeaderLines',nheaderlines);
+        toc
+%         for i=1:irows(2)-irows(1)+1
+%             str  = fgetl(fid);
+%             ztmp(i,:) = str2num(str);
+%         end
+        ztmp=ztmp(:,j1:j2);
+        for j=1:j2-j1+1
+            z(:,j)=ztmp{j};
+        end
+%        z=z';
+        z(z==noval)=NaN;
+        z=z*cellvalue;
+        z=flipud(z);
+        x=x(j1:j2);
+        y=y(i1:i2);
+        y=fliplr(y);
+    else
+        
+       
+        blocksize=ncols*floor(nrows/50);
+        nblocks=floor(nrows*ncols/blocksize);
+        nremaining=nrows*ncols-nblocks*blocksize;
+        
+        %% Preallocate data
+        z=zeros(nrows*ncols,1); % Pre-allocate space for data
+%        z=sparse(nrows*ncols,1); % Pre-allocate space for data
+        
+        %% Get Headers
+        cellchunk=textscan(fid,'%s',nheaderlines,'delimiter','\n'); % Get first header lines
+        
+        %% Read in blocks
+        
+        formatstring='%f';
+        
+        for iblock=1:nblocks
+%            d=cell2mat(textscan(fid,formatstring,blocksize));
+%            d(d==noval)=0;
+            z( ((iblock-1)*blocksize+1): (iblock*blocksize) ) = cell2mat(textscan(fid,formatstring,blocksize));
+            disp(['block ' num2str(iblock) ' of ' num2str(nblocks)]); % Display current block to show progress
+        end
+        if nremaining>0
+%            d=cell2mat(textscan(fid,formatstring,nremaining));
+%            d(d==noval)=0;
+            z( nblocks*blocksize+1 : nrows*ncols ) = cell2mat(textscan(fid,formatstring,nremaining));
+                
+            disp('And the last block!'); % Display current block to show progress
+        end
+                
+ %       z0 = textscan(fid,'%f',ncols*nrows,'HeaderLines',nheaderlines);
+        z=reshape(z,ncols,nrows);
+
+        istep=5;
+
+        ncols=floor(ncols/istep);
+        nrows=floor(nrows/istep);
+        cellsz=cellsz*istep;
+        
+        z=z(1:istep:end,1:istep:end);
+        z(z==noval)=NaN;
+%         z(z==noval)=0;
+%         z=sparse(z);
+        
+
+        z=z';
+        z=flipud(z);
+        
+        z=z*cellvalue;
+        
+        x=xll:cellsz:(xll+(ncols-1)*cellsz);
+%        y=(yll+(nrows-1)*cellsz):-cellsz:yll;
+        y=yll:cellsz:(yll+(nrows-1)*cellsz);
+    end
+    
+    varargout{1}=x;
+    varargout{2}=y;
+    varargout{3}=z;
+    
+    fclose(fid);
+    
+end
+
+
+

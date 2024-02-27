@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<root>
+  <longname>Output options</longname>
+  <element>
+    <style>tabpanel</style>
+    <position>10.000,  10.000,1200.000, 140.000</position>
+    <tab>
+      <tabstring>Output variables</tabstring>
+      <tooltipstring>Output variables</tooltipstring>
+      <element>model.xbeach.Output.OutputVariables.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Output projection</tabstring>
+      <tooltipstring>Output projection</tooltipstring>
+      <element>model.xbeach.Output.OutputProjection.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Drifters parameters</tabstring>
+      <tooltipstring>Drifters parameters</tooltipstring>
+      <element>model.xbeach.Output.DriftersParameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Output advanced options</tabstring>
+      <tooltipstring>Output advanced options</tooltipstring>
+      <element>model.xbeach.Output.Advanced_1.xml</element>
+    </tab>
+  </element>
+</root>

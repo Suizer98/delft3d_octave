@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<root>
+  <plotoption>
+    <name>interactivetextgroup</name>
+    <element>
+      <style>panel</style>
+      <text>Text Properties</text>
+      <position>0 0 350 110</position>
+    </element>
+    <element>
+      <keyword>String</keyword>
+      <style>edit</style>
+      <position>40 70 300 20</position>
+      <variable>text</variable>
+      <type>string</type>
+      <text>Text</text>
+      <textposition>left</textposition>
+    </element>
+    <element>
+      <keyword>X</keyword>
+      <style>edit</style>
+      <position>40 40 60 20</position>
+      <variable>x</variable>
+      <type>real</type>
+      <text>X</text>
+      <textposition>left</textposition>
+    </element>
+    <element>
+      <keyword>Y</keyword>
+      <style>edit</style>
+      <position>140 40 60 20</position>
+      <variable>y</variable>
+      <type>real</type>
+      <text>Y</text>
+      <textposition>left</textposition>
+    </element>
+    <element>
+      <keyword>AddTextShade</keyword>
+      <default>0</default>
+      <style>checkbox</style>
+      <type>boolean</type>
+      <variable>addtextshade</variable>
+      <text>Shade</text>
+      <position>20 10 50 20</position>
+    </element>
+    <element>
+      <name>textposition</name>
+      <variable>textposition</variable>
+      <keyword>TextPosition</keyword>
+      <type>string</type>
+      <default>northeast</default>
+      <style>popupmenu</style>
+      <position>130 10 90 20</position>
+      <text>Position</text>
+      <listtext>North West</listtext>
+      <listtext>North</listtext>
+      <listtext>North East</listtext>
+      <listtext>West</listtext>
+      <listtext>Middle</listtext>
+      <listtext>East</listtext>
+      <listtext>South West</listtext>
+      <listtext>South</listtext>
+      <listtext>South East</listtext>
+      <listvalue>northwest</listvalue>
+      <listvalue>north</listvalue>
+      <listvalue>northeast</listvalue>
+      <listvalue>west</listvalue>
+      <listvalue>middle</listvalue>
+      <listvalue>east</listvalue>
+      <listvalue>southwest</listvalue>
+      <listvalue>south</listvalue>
+      <listvalue>southeast</listvalue>
+    </element>
+    <element>
+      <style>selectfont</style>
+      <horizontalalignment>1</horizontalalignment>
+      <verticalalignment>1</verticalalignment>
+      <text>Font</text>
+      <position>230 10 50 20</position>
+      <variable>font</variable>
+    </element>
+    <element>
+      <name>fontname</name>
+      <variable>font.name</variable>
+      <keyword>FontName</keyword>
+      <default>Helvetica</default>
+    </element>
+    <element>
+      <name>fontsize</name>
+      <variable>font.size</variable>
+      <keyword>FontSize</keyword>
+      <type>real</type>
+      <default>8</default>
+    </element>
+      <element>
+      <name>fontangle</name>
+      <variable>font.angle</variable>
+      <default>normal</default>
+    <keyword>FontAngle</keyword>
+    </element>
+    <element>
+      <name>fontweight</name>
+      <variable>font.weight</variable>
+      <keyword>FontWeight</keyword>
+      <default>normal</default>
+    </element>
+    <element>
+      <name>fontcolor</name>
+      <variable>font.color</variable>
+      <keyword>FontColor</keyword>
+      <default>Black</default>
+    </element>
+  </plotoption>
+</root>

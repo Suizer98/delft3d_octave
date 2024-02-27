@@ -1,0 +1,75 @@
+netCDF fname.nc { 
+
+dimensions:
+	x_cen = nx ;
+	y_cen = ny ;
+
+
+variables:
+	int32 x_cen(x_cen), shape = [nx]
+		x_cen:long_name = "x-coordinate in Cartesian system" 
+		x_cen:units = "m" 
+		x_cen:standard_name = "projection_x_coordinate" 
+		x_cen:actual_range = []
+		x_cen:epsg = 23031 
+	int32 y_cen(y_cen), shape = [ny]
+		y_cen:long_name = "y-coordinate in Cartesian system" 
+		y_cen:units = "m" 
+		y_cen:standard_name = "projection_y_coordinate" 
+		y_cen:actual_range = []
+		y_cen:epsg = 23031 
+	single longitude_cen(y_cen,x_cen), shape = [ny nx]
+		longitude_cen:long_name = "longitude" 
+		longitude_cen:units = "degrees_east" 
+		longitude_cen:standard_name = "longitude" 
+		longitude_cen:actual_range = []
+		longitude_cen:coordinates = "latitude_cen longitude_cen" 
+		longitude_cen:grid_mapping = "wgs84" 
+	single latitude_cen(y_cen,x_cen), shape = [ny nx]
+		latitude_cen:long_name = "latitude" 
+		latitude_cen:units = "degrees_north" 
+		latitude_cen:standard_name = "latitude" 
+		latitude_cen:actual_range = []
+		latitude_cen:coordinates = "latitude_cen longitude_cen" 
+		latitude_cen:grid_mapping = "wgs84" 
+	int32 epsg([]), shape = [1]
+		epsg:name = "ED50 / UTM zone 31N" 
+		epsg:grid_mapping_name = "Transverse Mercator" 
+		epsg:semi_major_axis = 6.37839e+006 
+		epsg:semi_minor_axis = 6.35691e+006 
+		epsg:inverse_flattening = 297 
+		epsg:latitude_of_projection_origin = 0 
+		epsg:longitude_of_projection_origin = 3 
+		epsg:false_easting = 500000 
+		epsg:false_northing = 0 
+		epsg:scale_factor_at_projection_origin = 0.9996 
+		epsg:comment = "value is equal to EPSG code" 
+	int32 wgs84([]), shape = [1]
+		wgs84:name = "WGS 84" 
+		wgs84:semi_major_axis = 6.37814e+006 
+		wgs84:semi_minor_axis = 6.35675e+006 
+		wgs84:inverse_flattening = 298.257 
+		wgs84:comment = "value is equal to EPSG code" 
+	single D10(y_cen,x_cen), shape = [ny nx]
+		D10:long_name = "" 
+		D10:units = "" 
+		D10:_FillValue = NaN f
+		D10:actual_range = []
+		D10:coordinates = "latitude_cen longitude_cen" 
+		D10:grid_mapping = "epsg" 
+
+
+//global attributes:
+		:title = "" 
+		:institution = "" 
+		:source = "" 
+		:history = "$HeadURL: https://repos.deltares.nl/repos/OpenEarthTools/trunk/matlab/io/nctools/nc_cf_grid_write.m $" 
+		:references = "" 
+		:email = "" 
+		:comment = "" 
+		:version = "" 
+		:Conventions = "CF-1.4" 
+		:CF:featureType = "Grid" 
+		:terms_for_use = "These data can be used freely for research purposes provided that the following source is acknowledged:" 
+		:disclaimer = "This data is made available in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE." 
+}

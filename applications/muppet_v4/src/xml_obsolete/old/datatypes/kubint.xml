@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+  <name>kubint</name>
+  <longname>Kubint</longname>
+  <plot>
+    <type>map</type>
+    <plotroutine>
+      <name>plotkubint</name>
+      <plotoption>
+        <name>plotroutine</name>
+      </plotoption>
+      <plotoption>
+        <name>kubintgroup</name>
+      </plotoption>
+      <plotoption>
+        <name>linegroup</name>
+      </plotoption>
+    </plotroutine>
+  </plot>
+</root>

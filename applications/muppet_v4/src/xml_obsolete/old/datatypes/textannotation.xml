@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+  <name>textannotation</name>
+  <longname>Annotation</longname>
+  <plot>
+    <type>map</type>
+    <plotroutine>
+      <name>plotannotation</name>
+      <plotoption>
+        <name>plotroutine</name>
+      </plotoption> 
+      <plotoption>
+        <name>textannotationgroup</name>
+      </plotoption>
+      <plotoption>
+        <name>markergroup</name>
+      </plotoption>
+    </plotroutine>
+  </plot>
+</root>

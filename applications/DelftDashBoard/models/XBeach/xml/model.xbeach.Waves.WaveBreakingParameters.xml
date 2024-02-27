@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>popupmenu</style>
+    <text>break</text>
+    <position>70.000,107.500, 80.000, 20.000</position>
+    <tooltipstring>Type of breaker formulation (1=roelvink, 2=baldock, 3=roelvink adapted, 4=roelvink on/off breaking) [-]</tooltipstring>
+    <variable>handles.model.xbeach.domain.break</variable>
+    <type>string</type>
+    <listtext>roelvink1</listtext>
+    <listtext>baldock</listtext>
+    <listtext>roelvink2</listtext>
+    <listtext>roelvink_daly</listtext>
+    <listtext>janssen</listtext>
+  </element>
+  <element>
+    <tooltipstring>Breaker parameter in Baldock or Roelvink formulation [-]</tooltipstring>
+    <style>edit</style>
+    <text>gamma</text>
+    <position>70.000,80.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.gamma</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>End of breaking parameter in break = 4 formulation [-]</tooltipstring>
+    <style>edit</style>
+    <text>gamma2</text>
+    <position>70.000,52.500,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.gamma2</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Depth greater than which the bed friction factor is NOT applied [-]</tooltipstring>
+    <style>edit</style>
+    <text>fwcutoff</text>
+    <position>70.000,25.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.fwcutoff</variable>
+    <type>real</type>
+  </element>
+</root>

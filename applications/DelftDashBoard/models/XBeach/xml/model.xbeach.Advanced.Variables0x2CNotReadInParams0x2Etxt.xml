@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>checkbox</style>
+    <text>bchwiz</text>
+    <position>70.000,107.500</position>
+    <tooltipstring>Use beachwizard, 0 = beachwizard off, 1 beachwizard on, bed update off, 2 beachwiz on, bed update on. (also requires morphology == 1) [-]</tooltipstring>
+    <variable>handles.model.xbeach.domain.bchwiz</variable>
+    <type>integer</type>
+  </element>
+</root>

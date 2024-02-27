@@ -1,0 +1,92 @@
+XAxis                 0 1
+YAxis                 0 1
+ZAxis                 0 1
+TMin                  20000101 000000
+TMax                  20000102 000000
+XTick                 -999
+YTick                 -999
+ZTick                 -999
+TTick                 0 0 0 24 0 0
+DecimalsX             -1
+DecimalsY             -1
+DecimalsZ             -1
+XTickMultiply         1
+YTickMultiply         1
+XTickAdd              0
+YTickAdd              0
+DateFormat            "HH:MM:SS"
+Scale                 1
+XGrid                 no
+YGrid                 no
+ZGrid                 no
+XScale                "linear"
+YScale                "linear"
+AxesFont              "Helvetica"
+AxesFontSize          8
+AxesFontAngle         "normal"
+AxesFontWeight        "normal"
+AxesFontColor         "black"
+AxesFont              "Helvetica"
+Title                 ""
+TitleFont             "Helvetica"
+TitleFontSize         10
+TitleFontAngle        "normal"
+TitleFontWeight       "normal"
+TitleFontColor        "black"
+TitleFont             "Helvetica"
+XLabel                ""
+XLabelFontSize        8
+XLabelFontAngle       "normal"
+XLabelFontWeight      "normal"
+XLabelFontColor       "black"
+YLabel                ""
+YLabelFont            "Helvetica"
+YLabelFontSize        8
+YLabelFontAngle       "normal"
+YLabelFontWeight      "normal"
+YLabelFontColor       "black"
+Colormap              "jet"
+Contours              0 0.1 1
+PlotColorBar          no
+ColorBarPosition      0 0 0 0
+PlotVectorLegend      no
+VectorLegendPosition  0 0
+ColorBarLabel         ""
+ColorBarTickIncrement 1
+BarType               1
+ColorBarFont          "Helvetica"
+ColorBarFontSize      8
+ColorBarFontAngle     "normal"
+ColorBarFontWeight    "normal"
+ColorBarFontColor     "black"
+BarDecim              -1
+#Scalebar              0 0 0
+ScalebarText          ""
+#PlotNorthArrow        no
+#NorthArrow            0 0 0 0
+CameraTarget          0 0 0
+CameraAngle           315 45
+CameraViewAngle       8
+CameraDistance        100
+DataAspectRatio       1 1 0.001
+LightStrength         0.5
+DrawBox               yes
+Legend                "NorthEast"
+LegendOrientation     "Vertical"
+LegendBox             yes
+LegendColor           "white"
+LegendFont            "Helvetica"
+LegendFontSize        8
+LegendFontAngle       "normal"
+LegendFontWeight      "normal"
+LegendFontColor       "black"
+AddDate               no
+RightAxis             no
+Text                  ""
+HorAlignment          "left"
+VerAlignment          "baseline"
+Font                  "Helvetica"
+FontSize              8
+FontAngle             "normal"
+FontWeight            "normal"
+FontColor             "black"

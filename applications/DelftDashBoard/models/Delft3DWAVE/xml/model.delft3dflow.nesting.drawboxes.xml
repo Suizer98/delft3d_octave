@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<root>
+  <title>Nesting draw boxes WAVE Options</title>
+  <width>300</width>
+  <height>175</height>
+   <element>
+     <style>edit</style>
+     <position>125 75 50 20</position>
+     <variable>windspeed</variable>
+     <type>real</type>
+     <text>Wind speed [m/s]</text>
+     <tooltipstring>Wind speed applied.</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>125 50 50 20</position>
+    <variable>winddirection</variable>
+    <type>real</type>
+    <text>Wind direction [degrees]</text>
+    <tooltipstring>Wind direction applied.</tooltipstring>
+  </element>
+  <element>
+    <style>pushok</style>
+    <position>180 10 50 20</position>
+  </element>
+  <element>
+    <style>pushcancel</style>
+    <position>120 10 50 20</position>
+  </element>
+</root>

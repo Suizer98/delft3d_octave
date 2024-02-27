@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<root>
+  <plotoption>
+    <name>opacitygroup</name>
+    <element>
+      <style>panel</style>
+      <text>Opacity</text>
+      <position>0 0 350 50</position>
+    </element>
+    <element>
+      <name>faceopacity</name>
+      <variable>faceopacity</variable>
+      <style>edit</style>
+      <keyword>FaceOpacity</keyword>
+      <type>real</type>
+      <default>1</default>
+      <position>80 10 40 20</position>
+      <text>Face Opacity</text>
+      <check>
+        <operator>ne</operator>
+      </check>
+    </element>
+    <element>
+      <name>edgeopacity</name>
+      <variable>edgeopacity</variable>
+      <style>edit</style>
+      <keyword>EdgeOpacity</keyword>
+      <type>real</type>
+      <default>1</default>
+      <position>200 10 40 20</position>
+      <text>Edge Opacity</text>
+      <check>
+        <operator>ne</operator>
+      </check>
+    </element>
+  </plotoption>
+</root>

@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<root>
+  <model>XBeach</model>
+  <longname>XBeach</longname>
+  <multipledomains>no</multipledomains>
+  <enable>1</enable>
+  <element>
+    <style>tabpanel</style>
+    <position>10.000,  10.000,1200.000, 700.000</position>
+    <tab>
+      <tabstring>Toolbox</tabstring>
+      <callback>ddb_selectToolbox</callback>
+    </tab>
+    <tab>
+      <tabstring>Model physics</tabstring>
+      <element>model.xbeach.Physics.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Model domain</tabstring>
+      <element>model.xbeach.Domain.xml</element>
+      <enable>0</enable>
+    </tab>
+    <tab>
+      <tabstring>Time input</tabstring>
+      <element>model.xbeach.Time.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Wave input</tabstring>
+      <element>model.xbeach.Waves.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Flow input</tabstring>
+      <element>model.xbeach.Flow.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Sediment input</tabstring>
+      <element>model.xbeach.Sediment.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Morphology input</tabstring>
+      <element>model.xbeach.Morphology.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Output options</tabstring>
+      <element>model.xbeach.Output.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Advanced input</tabstring>
+      <element>model.xbeach.Advanced.xml</element>
+    </tab>
+  </element>
+  <menu>
+    <menuopenfile>
+      <menuitem>
+        <string>Open Params File</string>
+        <callback>ddb_openXBeach</callback>
+        <option>open</option>
+      </menuitem>
+      <menuitem>
+        <string>Open transects</string>
+        <callback>ddb_openXBeachTransects</callback>
+        <option>open</option>
+      </menuitem>
+    </menuopenfile>
+    <menusavefile>
+      <menuitem>
+        <string>Save Params File</string>
+        <callback>ddb_saveXBeach</callback>
+        <option>save</option>
+      </menuitem>
+      <menuitem>
+        <string>Save Params File As ...</string>
+        <callback>ddb_saveXBeach</callback>
+        <option>saveas</option>
+      </menuitem>
+      <menuitem>
+        <string>Save transects</string>
+        <callback>ddb_saveXBeach</callback>
+        <option>savetrans</option>
+      </menuitem>
+      <menuitem>
+        <string>XBeach version ...</string>
+        <callback>ddb_setModelSettings</callback>
+        <option>selectversion</option>
+      </menuitem>
+    </menusavefile>
+  </menu>
+</root>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <text>wavint</text>
+    <position>70.000,107.500, 80.000, 20.000</position>
+    <tooltipstring>Interval between wave module calls (only in stationary wave mode) [s]</tooltipstring>
+    <variable>handles.model.xbeach.domain.wavint</variable>
+    <type>real</type>
+  </element>
+</root>

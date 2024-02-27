@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <variable>tidalcomponentset</variable>
+    <type>string</type>
+    <style>popupmenu</style>
+    <position>60 0 270 20</position>
+    <listtext>all</listtext>
+    <listtext>8 main components</listtext>
+    <listtext>13 main components</listtext>
+    <callback>muppet_datasetGUI</callback>
+    <option1>selectcomponentset</option1>
+    <text>Set</text>
+    <tooltipstring>Select component set</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>parameter</variable>
+        <value>component set</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

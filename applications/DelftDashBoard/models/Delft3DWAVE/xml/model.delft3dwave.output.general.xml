@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>checkbox</style>
+    <position>10 110</position>
+    <text>Write and use hot start file</text>
+    <variable>handles.model.delft3dwave.domain.usehotfile</variable>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>10 85</position>
+    <text>Only verify input files</text>
+    <variable>handles.model.delft3dwave.domain.verify</variable>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>10 60</position>
+    <text>Output for FLOW grid</text>
+    <variable>handles.model.delft3dwave.domain.writecom</variable>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>10 35 150 20</position>
+    <tooltipstring>Select flow grid file</tooltipstring>
+    <text>Select grid file</text>
+    <variable>handles.model.delft3dwave.domain.outputflowgridfile</variable>
+    <extension>*.grd</extension>
+    <selectiontext>Select FLOW grid file</selectiontext>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.writecom</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

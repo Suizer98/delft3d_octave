@@ -1,0 +1,233 @@
+// For discussion on this netCDF format please refer to:
+// http://public.deltares.nl/display/NETCDF/netCDF
+NetCDF-3 Classic OUT_map.nc {
+
+dimensions:
+	nNetNode = 24161 ;
+	nNetLink = 60957 ;
+	nNetLinkPts = 2 ;
+	nBndLink = 1351 ;
+	nNetElem = 36792 ;
+	nNetElemMaxNode = 4 ;
+	nFlowElem = 36792 ;
+	nFlowElemMaxNode = 4 ;
+	nFlowElemContourPts = 4 ;
+	nFlowLink = 59606 ;
+	nFlowLinkPts = 2 ;
+	time = UNLIMITED ; (13414 currently)
+
+variables:
+	// Preference 'PRESERVE_FVD':  false,
+	// dimensions consistent with ncBrowse, not with native MATLAB netcdf package.
+// cor.x
+	double NetNode_x(nNetNode), shape = [24161]
+		NetNode_x:units = "m" 
+		NetNode_x:standard_name = "projection_x_coordinate" 
+		NetNode_x:long_name = "x-coordinate of net nodes" 
+		NetNode_x:grid_mapping = "projected_coordinate_system" 
+// cor.y
+	double NetNode_y(nNetNode), shape = [24161]
+		NetNode_y:units = "m" 
+		NetNode_y:standard_name = "projection_y_coordinate" 
+		NetNode_y:long_name = "y-coordinate of net nodes" 
+		NetNode_y:grid_mapping = "projected_coordinate_system" 
+	int32 projected_coordinate_system([]), shape = [1]
+		projected_coordinate_system:name = "Unknown projected" 
+		projected_coordinate_system:epsg = 28992 d
+		projected_coordinate_system:grid_mapping_name = "Unknown projected" 
+		projected_coordinate_system:longitude_of_prime_meridian = 0 
+		projected_coordinate_system:semi_major_axis = 6.37814e+006 
+		projected_coordinate_system:semi_minor_axis = 6.35675e+006 
+		projected_coordinate_system:inverse_flattening = 298.257 
+		projected_coordinate_system:proj4_params = "" 
+		projected_coordinate_system:EPSG_code = "EPGS:28992" 
+		projected_coordinate_system:projection_name = "" 
+		projected_coordinate_system:wkt = "" 
+		projected_coordinate_system:comment = "" 
+		projected_coordinate_system:value = "value is equal to EPSG code" 
+// cor.lon
+	double NetNode_lon(nNetNode), shape = [24161]
+		NetNode_lon:units = "degrees_east" 
+		NetNode_lon:standard_name = "longitude" 
+		NetNode_lon:long_name = "longitude" 
+		NetNode_lon:grid_mapping = "wgs84" 
+// cor.lat
+	double NetNode_lat(nNetNode), shape = [24161]
+		NetNode_lat:units = "degrees_north" 
+		NetNode_lat:standard_name = "latitude" 
+		NetNode_lat:long_name = "latitude" 
+		NetNode_lat:grid_mapping = "wgs84" 
+	int32 wgs84([]), shape = [1]
+		wgs84:name = "WGS84" 
+		wgs84:epsg = 4326 d
+		wgs84:grid_mapping_name = "latitude_longitude" 
+		wgs84:longitude_of_prime_meridian = 0 
+		wgs84:semi_major_axis = 6.37814e+006 
+		wgs84:semi_minor_axis = 6.35675e+006 
+		wgs84:inverse_flattening = 298.257 
+		wgs84:proj4_params = "" 
+		wgs84:EPSG_code = "EPGS:4326" 
+		wgs84:projection_name = "" 
+		wgs84:wkt = "" 
+		wgs84:comment = "" 
+		wgs84:value = "value is equal to EPSG code" 
+// cor.z
+	double NetNode_z(nNetNode), shape = [24161]
+		NetNode_z:units = "m" 
+		NetNode_z:positive = "up" 
+		NetNode_z:standard_name = "sea_floor_depth" 
+		NetNode_z:long_name = "Bottom level at net nodes (flow element's corners)" 
+		NetNode_z:coordinates = "NetNode_x NetNode_y" 
+		NetNode_z:grid_mapping = "projected_coordinate_system" 
+// link
+	int32 NetLink(nNetLink,nNetLinkPts), shape = [60957 2]
+		NetLink:standard_name = "netlink" 
+		NetLink:long_name = "link between two netnodes" 
+// cor.LinkType
+	int32 NetLinkType(nNetLink), shape = [60957]
+		NetLinkType:long_name = "type of netlink" 
+		NetLinkType:valid_range = 0 2 d
+		NetLinkType:flag_values = 0 1 2 d
+		NetLinkType:flag_meanings = "closed_link_between_2D_nodes link_between_1D_nodes link_between_2D_nodes" 
+	int32 NetElemNode(nNetElem,nNetElemMaxNode), shape = [36792 4]
+		NetElemNode:long_name = "Mapping from net cell to net nodes." 
+	int32 BndLink(nBndLink), shape = [1351]
+		BndLink:long_name = "Netlinks that compose the net boundary." 
+// cen.x
+	double FlowElem_xcc(nFlowElem), shape = [36792]
+		FlowElem_xcc:units = "m" 
+		FlowElem_xcc:standard_name = "projection_x_coordinate" 
+		FlowElem_xcc:long_name = "Flow element circumcenter x" 
+		FlowElem_xcc:bounds = "FlowElemContour_x" 
+		FlowElem_xcc:grid_mapping = "projected_coordinate_system" 
+// cen.y
+	double FlowElem_ycc(nFlowElem), shape = [36792]
+		FlowElem_ycc:units = "m" 
+		FlowElem_ycc:standard_name = "projection_y_coordinate" 
+		FlowElem_ycc:long_name = "Flow element circumcenter y" 
+		FlowElem_ycc:bounds = "FlowElemContour_y" 
+		FlowElem_ycc:grid_mapping = "projected_coordinate_system" 
+// peri.x
+	double FlowElemContour_x(nFlowElem,nFlowElemContourPts), shape = [36792 4]
+		FlowElemContour_x:units = "m" 
+		FlowElemContour_x:standard_name = "projection_x_coordinate" 
+		FlowElemContour_x:long_name = "List of x-points forming flow element" 
+		FlowElemContour_x:grid_mapping = "projected_coordinate_system" 
+// peri.y
+	double FlowElemContour_y(nFlowElem,nFlowElemContourPts), shape = [36792 4]
+		FlowElemContour_y:units = "m" 
+		FlowElemContour_y:standard_name = "projection_y_coordinate" 
+		FlowElemContour_y:long_name = "List of y-points forming flow element" 
+		FlowElemContour_y:grid_mapping = "projected_coordinate_system" 
+// cen.z
+	double FlowElem_bl(nFlowElem), shape = [36792]
+		FlowElem_bl:units = "m" 
+		FlowElem_bl:positive = "up" 
+		FlowElem_bl:standard_name = "sea_floor_depth" 
+		FlowElem_bl:long_name = "Bottom level at flow element's circumcenter." 
+		FlowElem_bl:grid_mapping = "projected_coordinate_system" 
+// cen.Link
+	int32 FlowLink(nFlowLink,nFlowLinkPts), shape = [59606 2]
+		FlowLink:long_name = "link/interface between two flow elements" 
+// cen.LinkType
+	int32 FlowLinkType(nFlowLink), shape = [59606]
+		FlowLinkType:long_name = "type of flowlink" 
+		FlowLinkType:valid_range = 1 2 d
+		FlowLinkType:flag_values = 1 2 d
+		FlowLinkType:flag_meanings = "link_between_1D_flow_elements link_between_2D_flow_elements" 
+// face.y
+	double FlowLink_xu(nFlowLink), shape = [59606]
+		FlowLink_xu:units = "m" 
+		FlowLink_xu:standard_name = "projection_x_coordinate" 
+		FlowLink_xu:long_name = "Center coordinate of net link (velocity point)." 
+		FlowLink_xu:grid_mapping = "projected_coordinate_system" 
+// face.x
+	double FlowLink_yu(nFlowLink), shape = [59606]
+		FlowLink_yu:units = "m" 
+		FlowLink_yu:standard_name = "projection_y_coordinate" 
+		FlowLink_yu:long_name = "Center coordinate of net link (velocity point)." 
+		FlowLink_yu:grid_mapping = "projected_coordinate_system" 
+// cen.lon
+	double FlowElem_loncc(nFlowElem), shape = [36792]
+		FlowElem_loncc:units = "degrees_east" 
+		FlowElem_loncc:standard_name = "longitude" 
+		FlowElem_loncc:long_name = "longitude" 
+		FlowElem_loncc:grid_mapping = "wgs84" 
+// cen.lat
+	double FlowElem_latcc(nFlowElem), shape = [36792]
+		FlowElem_latcc:units = "degrees_north" 
+		FlowElem_latcc:standard_name = "latitude" 
+		FlowElem_latcc:long_name = "latitude" 
+		FlowElem_latcc:grid_mapping = "wgs84" 
+// peri.lon
+	double FlowElemContour_lon(nFlowElem,nFlowElemContourPts), shape = [36792 4]
+		FlowElemContour_lon:units = "degrees_east" 
+		FlowElemContour_lon:standard_name = "longitude" 
+		FlowElemContour_lon:long_name = "longitude" 
+		FlowElemContour_lon:grid_mapping = "wgs84" 
+// peri.lat
+	double FlowElemContour_lat(nFlowElem,nFlowElemContourPts), shape = [36792 4]
+		FlowElemContour_lat:units = "degrees_north" 
+		FlowElemContour_lat:standard_name = "latitude" 
+		FlowElemContour_lat:long_name = "latitude" 
+		FlowElemContour_lat:grid_mapping = "wgs84" 
+// face.lon
+	double FlowLink_lonu(nFlowLink), shape = [59606]
+		FlowLink_lonu:units = "degrees_east" 
+		FlowLink_lonu:standard_name = "longitude" 
+		FlowLink_lonu:long_name = "longitude" 
+		FlowLink_lonu:grid_mapping = "wgs84" 
+// face.lat
+	double FlowLink_latu(nFlowLink), shape = [59606]
+		FlowLink_latu:units = "degrees_north" 
+		FlowLink_latu:standard_name = "latitude" 
+		FlowLink_latu:long_name = "latitude" 
+		FlowLink_latu:grid_mapping = "wgs84" 
+// datenum
+	double time(time), shape = [13414]
+		time:units = "seconds since 2010-01-01 00:00:00" 
+		time:standard_name = "time" 
+// cen.eta
+	double s1(time,nFlowElem), shape = [13414 36792]
+		s1:coordinates = "FlowElem_xcc FlowElem_ycc" 
+		s1:standard_name = "sea_surface_height" 
+		s1:long_name = "waterlevel" 
+		s1:units = "m" 
+		s1:grid_mapping = "projected_coordinate_system" 
+// cen.sal
+	double sa1(time,nFlowElem), shape = [13414 36792]
+		sa1:coordinates = "FlowElem_xcc FlowElem_ycc" 
+		sa1:standard_name = "sea_water_salinity" 
+		sa1:long_name = "Salinity" 
+		sa1:units = "ppm" 
+		sa1:grid_mapping = "projected_coordinate_system" 
+// cen.u
+	double ucx(time,nFlowElem), shape = [13414 36792]
+		ucx:coordinates = "FlowElem_xcc FlowElem_ycc" 
+		ucx:standard_name = "sea_water_x_velocity" 
+		ucx:long_name = "eastward velocity on cell center" 
+		ucx:units = "m s-1" 
+		ucx:grid_mapping = "projected_coordinate_system" 
+// cen.v
+	double ucy(time,nFlowElem), shape = [13414 36792]
+		ucy:coordinates = "FlowElem_xcc FlowElem_ycc" 
+		ucy:standard_name = "sea_water_y_velocity" 
+		ucy:long_name = "northward velocity on cell center" 
+		ucy:units = "m s-1" 
+		ucy:grid_mapping = "projected_coordinate_system" 
+// cen.un
+	double unorm(time,nFlowLink), shape = [13414 59606]
+		unorm:standard_name = "sea_water_speed" 
+		unorm:units = "m s-1" 
+		unorm:interfaces = "FlowLink" 
+		unorm:coordinates = "FlowLink_xu FlowLink_yu" 
+		unorm:grid_mapping = "projected_coordinate_system" 
+
+//global Attributes:
+		:institution = "Deltares" 
+		:references = "http://www.deltares.nl" 
+		:source = "Deltares, D-Flow FM Version 1.1.29.18196M, Aug 26 2011, 17:03:57, model" 
+		:history = "Created on 2011-09-01T09:11:06+0200, D-Flow FM" 
+		:Conventions = "CF-1.5:Deltares-0.1" 
+
+}

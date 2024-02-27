@@ -1,0 +1,86 @@
+// For discussion on this netCDF format please refer to:
+// http://public.deltares.nl/display/NETCDF/netCDF
+netcdf runid_net {                                                       // (this column) name in D-Flow FM Matlab toolbox
+dimensions:
+	nNetNode = 9329 ;                                                 // cor.n
+	nNetLink = 20221 ;
+	nNetLinkPts = 2 ;
+	nBndLink = 940 ;
+	nNetElem = 10889 ;                                                // cen.n
+	nNetElemMaxNode = 6 ;
+variables:
+	double NetNode_x(nNetNode) ;
+		NetNode_x:units = "m" ;
+		NetNode_x:standard_name = "projection_x_coordinate" ;
+		NetNode_x:long_name = "x-coordinate of net nodes" ;
+		NetNode_x:grid_mapping = "projected_coordinate_system" ;
+	double NetNode_y(nNetNode) ;
+		NetNode_y:units = "m" ;
+		NetNode_y:standard_name = "projection_y_coordinate" ;
+		NetNode_y:long_name = "y-coordinate of net nodes" ;
+		NetNode_y:grid_mapping = "projected_coordinate_system" ;
+	int projected_coordinate_system ;
+		projected_coordinate_system:name = "Unknown projected" ;
+		projected_coordinate_system:epsg = 28992 ;
+		projected_coordinate_system:grid_mapping_name = "Unknown projected" ;
+		projected_coordinate_system:longitude_of_prime_meridian = 0. ;
+		projected_coordinate_system:semi_major_axis = 6378137. ;
+		projected_coordinate_system:semi_minor_axis = 6356752.314245 ;
+		projected_coordinate_system:inverse_flattening = 298.257223563 ;
+		projected_coordinate_system:proj4_params = "" ;
+		projected_coordinate_system:EPSG_code = "EPGS:28992" ;
+		projected_coordinate_system:projection_name = "" ;
+		projected_coordinate_system:wkt = "" ;
+		projected_coordinate_system:comment = "" ;
+		projected_coordinate_system:value = "value is equal to EPSG code" ;
+	double NetNode_lon(nNetNode) ;
+		NetNode_lon:units = "degrees_east" ;
+		NetNode_lon:standard_name = "longitude" ;
+		NetNode_lon:long_name = "longitude" ;
+		NetNode_lon:grid_mapping = "wgs84" ;
+	double NetNode_lat(nNetNode) ;
+		NetNode_lat:units = "degrees_north" ;
+		NetNode_lat:standard_name = "latitude" ;
+		NetNode_lat:long_name = "latitude" ;
+		NetNode_lat:grid_mapping = "wgs84" ;
+	int wgs84 ;
+		wgs84:name = "WGS84" ;
+		wgs84:epsg = 4326 ;
+		wgs84:grid_mapping_name = "latitude_longitude" ;
+		wgs84:longitude_of_prime_meridian = 0. ;
+		wgs84:semi_major_axis = 6378137. ;
+		wgs84:semi_minor_axis = 6356752.314245 ;
+		wgs84:inverse_flattening = 298.257223563 ;
+		wgs84:proj4_params = "" ;
+		wgs84:EPSG_code = "EPGS:4326" ;
+		wgs84:projection_name = "" ;
+		wgs84:wkt = "" ;
+		wgs84:comment = "" ;
+		wgs84:value = "value is equal to EPSG code" ;
+	double NetNode_z(nNetNode) ;
+		NetNode_z:units = "m" ;
+		NetNode_z:positive = "up" ;
+		NetNode_z:standard_name = "sea_floor_depth" ;
+		NetNode_z:long_name = "Bottom level at net nodes (flow element\'s corners)" ;
+		NetNode_z:coordinates = "NetNode_x NetNode_y" ;
+		NetNode_z:grid_mapping = "projected_coordinate_system" ;
+	int NetLink(nNetLink, nNetLinkPts) ;
+		NetLink:standard_name = "netlink" ;
+		NetLink:long_name = "link between two netnodes" ;
+	int NetLinkType(nNetLink) ;
+		NetLinkType:long_name = "type of netlink" ;
+		NetLinkType:valid_range = 0, 2 ;
+		NetLinkType:flag_values = 0, 1, 2 ;
+		NetLinkType:flag_meanings = "closed_link_between_2D_nodes link_between_1D_nodes link_between_2D_nodes" ;
+	int NetElemNode(nNetElem, nNetElemMaxNode) ;
+		NetElemNode:long_name = "Mapping from net cell to net nodes." ;
+	int BndLink(nBndLink) ;
+		BndLink:long_name = "Netlinks that compose the net boundary." ;
+
+// global attributes:
+		:institution = "Deltares" ;
+		:references = "http://www.deltares.nl" ;
+		:source = "Deltares, D-Flow FM Version 1.1.54.25030:25076M, Nov 25 2012, 16:40:01, model" ;
+		:history = "Created on 2012-11-27T21:06:03+0100, D-Flow FM" ;
+		:Conventions = "CF-1.5:Deltares-0.1" ;
+}

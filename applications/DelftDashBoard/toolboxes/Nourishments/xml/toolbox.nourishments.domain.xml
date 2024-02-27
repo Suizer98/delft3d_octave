@@ -1,0 +1,290 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <position>90 110 60 20</position>
+    <text>X Min</text>
+    <textposition>left</textposition>
+    <onchange>ddb_NourishmentsToolbox_domain</onchange>
+    <option1>editoutline</option1>
+    <variable>handles.toolbox.nourishments.xLim(1)</variable>
+    <type>real</type>
+    <tooltipstring>Edit minimum x coordinate</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>190 110 60 20</position>
+    <text>X Max</text>
+    <textposition>left</textposition>
+    <onchange>ddb_NourishmentsToolbox_domain</onchange>
+    <option1>editoutline</option1>
+    <variable>handles.toolbox.nourishments.xLim(2)</variable>
+    <type>real</type>
+    <tooltipstring>Edit maximum x coordinate</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>90 85 60 20</position>
+    <text>Y Min</text>
+    <textposition>left</textposition>
+    <onchange>ddb_NourishmentsToolbox_domain</onchange>
+    <option1>editoutline</option1>
+    <variable>handles.toolbox.nourishments.yLim(1)</variable>
+    <type>real</type>
+    <tooltipstring>Edit minimum y coordinate</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>190 85 60 20</position>
+    <text>Y Max</text>
+    <textposition>left</textposition>
+    <onchange>ddb_NourishmentsToolbox_domain</onchange>
+    <option1>editoutline</option1>
+    <variable>handles.toolbox.nourishments.yLim(2)</variable>
+    <type>real</type>
+    <tooltipstring>Edit maximum y coordinate</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>190 60 60 20</position>
+    <text>Spacing (m)</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.nourishments.dX</variable>
+    <type>real</type>
+    <tooltipstring>Edit grid spacing (in metres)</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>260 110 80 20</position>
+    <text>Draw Outline</text>
+    <callback>ddb_NourishmentsToolbox_domain</callback>
+    <option1>drawrectangle</option1>
+    <tooltipstring>Draw rectangle to indicate model size</tooltipstring>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>10 35</position>
+    <text>Currents uniform</text>
+    <variable>handles.toolbox.nourishments.currentSource</variable>
+    <type>string</type>
+    <value>uniform</value>
+    <tooltipstring>Uniform residual currents in U and V direction are defined by user</tooltipstring>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.nourishments.currentSource</variable>
+        <value>uniform</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>10 10</position>
+    <text>Currents from file</text>
+    <variable>handles.toolbox.nourishments.currentSource</variable>
+    <type>string</type>
+    <value>file</value>
+    <tooltipstring>Residual currents are read from user-specified file</tooltipstring>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.nourishments.currentSource</variable>
+        <value>file</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>140 35 40 20</position>
+    <text>U</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.nourishments.currentU</variable>
+    <type>real</type>
+    <tooltipstring>Edit U velocity (m/s)</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.nourishments.currentSource</variable>
+        <value>uniform</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>210 35 40 20</position>
+    <text>V</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.nourishments.currentV</variable>
+    <type>real</type>
+    <tooltipstring>Edit V velocity (m/s)</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.nourishments.currentSource</variable>
+        <value>uniform</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>140 10 110 20</position>
+    <text>Currents File</text>
+    <variable>handles.toolbox.nourishments.currentsFile</variable>
+    <type>string</type>
+    <extension>*.mat</extension>
+    <selectiontext>Select residual currents file</selectiontext>
+    <onchange>ddb_NourishmentsToolbox_domain</onchange>
+    <option1>loadcurrents</option1>
+    <tooltipstring>Select residual currents file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.nourishments.currentSource</variable>
+        <value>file</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>390 110 80 20</position>
+    <text>Add Polygon</text>
+    <callback>ddb_NourishmentsToolbox_domain</callback>
+    <option1>drawpolygon</option1>
+    <tooltipstring>Draw polygon to indicate nourishment location</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>390 85 80 20</position>
+    <text>Delete Polygon</text>
+    <callback>ddb_NourishmentsToolbox_domain</callback>
+    <option1>deletepolygon</option1>
+    <tooltipstring>Delete selected nourishment polygon</tooltipstring>
+  </element>
+  <element>
+    <style>listbox</style>
+    <position>480 10 90 120</position>
+    <tooltipstring>Select nourishment polygon</tooltipstring>
+    <textposition>above-center</textposition>
+    <variable>handles.toolbox.nourishments.activeNourishment</variable>
+    <type>integer</type>
+    <onchange>ddb_NourishmentsToolbox_domain</onchange>
+    <option1>selectnourishment</option1>
+    <listtext>
+      <variable>handles.toolbox.nourishments.nourishmentNames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Type</text>
+    <position>580 110 80 20</position>
+    <type>string</type>
+    <textposition>right</textposition>
+    <variable>handles.toolbox.nourishments.nourishments(handles.toolbox.nourishments.activeNourishment).type</variable>
+    <tooltipstring>Select nourishment type (total volume, thickness or height w.r.t. reference level)</tooltipstring>
+    <onchange>ddb_NourishmentsToolbox_domain</onchange>
+    <option1>selecttype</option1>
+    <listtext>Volume</listtext>
+    <listtext>Thickness</listtext>
+    <listtext>Height</listtext>
+    <listvalue>volume</listvalue>
+    <listvalue>thickness</listvalue>
+    <listvalue>height</listvalue>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>580 85 80 20</position>
+    <text>Volume (m3)</text>
+    <textposition>right</textposition>
+    <variable>handles.toolbox.nourishments.nourishments(handles.toolbox.nourishments.activeNourishment).volume</variable>
+    <type>real</type>
+    <tooltipstring>Edit total nourishment volume (volume will be equally distributed within polygon)</tooltipstring>
+    <onchange>ddb_NourishmentsToolbox_domain</onchange>
+    <option1>editvolume</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.nourishments.nourishments(handles.toolbox.nourishments.activeNourishment).type</variable>
+        <value>volume</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>580 60 80 20</position>
+    <text>Thickness (m)</text>
+    <textposition>right</textposition>
+    <variable>handles.toolbox.nourishments.nourishments(handles.toolbox.nourishments.activeNourishment).thickness</variable>
+    <type>real</type>
+    <tooltipstring>Edit nourishment thickness (thickness will be applied uniformly within polygon)</tooltipstring>
+    <onchange>ddb_NourishmentsToolbox_domain</onchange>
+    <option1>editthickness</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.nourishments.nourishments(handles.toolbox.nourishments.activeNourishment).type</variable>
+        <value>thickness</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>580 35 80 20</position>
+    <text>Height (m)</text>
+    <textposition>right</textposition>
+    <variable>handles.toolbox.nourishments.nourishments(handles.toolbox.nourishments.activeNourishment).height</variable>
+    <type>real</type>
+    <tooltipstring>Edit nourishment height w.r.t. reference level (bed level will be raised to this height within polygon)</tooltipstring>
+    <onchange>ddb_NourishmentsToolbox_domain</onchange>
+    <option1>editheight</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.nourishments.nourishments(handles.toolbox.nourishments.activeNourishment).type</variable>
+        <value>height</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <enable>0</enable>
+    <position>580 10 80 20</position>
+    <text>Area (m2)</text>
+    <textposition>right</textposition>
+    <variable>handles.toolbox.nourishments.nourishments(handles.toolbox.nourishments.activeNourishment).area</variable>
+    <type>real</type>
+    <tooltipstring>Total nourishment area (m2)</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>840 10 40 20</position>
+    <text>Run Time (years)</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.nourishments.nrYears</variable>
+    <type>real</type>
+    <tooltipstring>Edit run time (years)</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>890 10 100 20</position>
+    <text>Compute</text>
+    <callback>ddb_NourishmentsToolbox_domain</callback>
+    <option1>computenourishment</option1>
+    <tooltipstring>Start computation</tooltipstring>
+  </element>
+</root>

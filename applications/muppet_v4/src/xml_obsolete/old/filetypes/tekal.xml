@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<root>
+  <name>tekal</name>
+  <longname>Tekal Files</longname>
+  <title>Tekal File</title>
+  <filterspec>*.tek;*.map</filterspec>
+  <callback>muppet_addDatasetTekal</callback>
+  <option>
+    <name>filetype</name>
+  </option>
+  <option>
+    <name>filename</name>
+  </option>
+  <option>
+    <name>xcoordinate</name>
+  </option>
+  <option>
+    <name>ycoordinate</name>
+  </option>
+  <option>
+    <name>quantity</name>
+  </option>
+  <option>
+    <name>parameter</name>
+  </option>
+  <option>
+    <name>ucomponent</name>
+  </option>
+  <option>
+    <name>vcomponent</name>
+  </option>
+  <option>
+    <name>plotcoordinate</name>
+  </option>
+  <option>
+    <name>component</name>
+  </option>
+  <option>
+    <name>timestep</name>
+  </option>
+  <option>
+    <name>time</name>
+  </option>
+  <option>
+    <name>block</name>
+  </option>
+  <option>
+    <name>m</name>
+  </option>
+  <option>
+    <name>n</name>
+  </option>
+  <option>
+    <name>k</name>
+  </option>
+</root>

@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<root>
+  <title>Boundary Conditions</title>
+  <width>250</width>
+  <height>300</height>
+  <element>
+    <style>listbox</style>
+    <position>10 180 180 100</position>
+    <tooltipstring>Edit boundaries</tooltipstring>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).activesegment</variable>
+    <type>int</type>
+    <listtext>
+      <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).segmentnames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>200 260 40 20</position>
+    <tooltipstring>Add boundary</tooltipstring>
+    <text>Add</text>
+    <callback>ddb_Delft3DWAVE_editBoundaryConditions</callback>
+    <option1>addsegment</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>200 235 40 20</position>
+    <tooltipstring>Delete boundary</tooltipstring>
+    <text>Delete</text>
+    <callback>ddb_Delft3DWAVE_editBoundaryConditions</callback>
+    <option1>deletesegment</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).nrsegments</variable>
+        <value>0</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>170 150 50 20</position>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).segments(handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).activesegment).condspecatdist</variable>
+    <type>real</type>
+    <text>Distance from Corner Point (m)</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit distance from corner point (m)</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>170 125 50 20</position>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).segments(handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).activesegment).waveheight</variable>
+    <type>real</type>
+    <text>Wave Height Hs (m)</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit significant wave height (m)</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>170 100 50 20</position>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).segments(handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).activesegment).period</variable>
+    <type>real</type>
+    <text>
+      <variable>handles.model.delft3dwave.domain.periodtext</variable>
+    </text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit peak wave period (m)</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>170 75 50 20</position>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).segments(handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).activesegment).direction</variable>
+    <type>real</type>
+    <text>Wave Direction (deg)</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit wave direction (degrees)</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>170 50 50 20</position>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).segments(handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).activesegment).dirspreading</variable>
+    <type>real</type>
+    <text>
+      <variable>handles.model.delft3dwave.domain.dirspreadtext</variable>
+    </text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit directional spreading (degrees)</tooltipstring>
+  </element>
+  <element>
+    <style>pushok</style>
+    <position>170 10 50 20</position>
+  </element>
+  <element>
+    <style>pushcancel</style>
+    <position>110 10 50 20</position>
+  </element>
+</root>

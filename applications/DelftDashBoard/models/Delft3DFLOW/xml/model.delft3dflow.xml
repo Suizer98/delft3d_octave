@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<root>
+  <model>Delft3DFLOW</model>
+  <longname>Delft3D-FLOW</longname>
+  <multipledomains>yes</multipledomains>
+  <enable>1</enable>
+  <menu>
+    <menuopenfile>
+      <menuitem>
+        <string>Open MDF File (present domain)</string>
+        <callback>ddb_openDelft3DFLOW</callback>
+        <option>openpresent</option>
+      </menuitem>
+      <menuitem>
+        <string>Open MDF File (new domain)</string>
+        <callback>ddb_openDelft3DFLOW</callback>
+        <option>opennew</option>
+      </menuitem>
+      <menuitem>
+        <string>Open DD File</string>
+        <callback>ddb_openDelft3DFLOW</callback>
+        <option>opendomains</option>
+      </menuitem>
+    </menuopenfile>
+    <menusavefile>
+      <menuitem>
+        <string>Save MDF File</string>
+        <callback>ddb_saveDelft3DFLOW</callback>
+        <option>save</option>
+      </menuitem>
+      <menuitem>
+        <string>Save MDF File As ...</string>
+        <callback>ddb_saveDelft3DFLOW</callback>
+        <option>saveas</option>
+      </menuitem>
+      <menuitem>
+        <string>Save All Delft3D-FLOW Files</string>
+        <callback>ddb_saveDelft3DFLOW</callback>
+        <option>saveall</option>
+      </menuitem>
+      <menuitem>
+        <string>Save All Delft3D-FLOW Files As ...</string>
+        <callback>ddb_saveDelft3DFLOW</callback>
+        <option>saveallas</option>
+      </menuitem>
+      <menuitem>
+        <string>Delft3D-FLOW version ...</string>
+        <callback>ddb_setModelSettings</callback>
+        <option>selectversion</option>
+      </menuitem>
+    </menusavefile>
+    <menuview>
+      <attribute>
+        <string>Grid</string>
+        <callback>ddb_menuViewDelft3DFLOW</callback>
+        <option>grid</option>
+      </attribute>
+      <attribute>
+        <string>Bathymetry</string>
+        <callback>ddb_menuViewDelft3DFLOW</callback>
+        <option>bathymetry</option>
+      </attribute>
+    </menuview>
+  </menu>
+  <element>
+    <style>tabpanel</style>
+    <position>10 10 900 400</position>
+    <tab>
+      <tabstring>Toolbox</tabstring>
+    </tab>
+    <tab>
+      <tabstring>Description</tabstring>
+      <callback>ddb_Delft3DFLOW_description</callback>
+      <element>model.delft3dflow.description.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Domain</tabstring>
+      <element>model.delft3dflow.domain.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Time Frame</tabstring>
+      <callback>ddb_Delft3DFLOW_timeFrame</callback>
+      <element>model.delft3dflow.timeframe.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Processes</tabstring>
+      <callback>ddb_Delft3DFLOW_processes</callback>
+      <element>model.delft3dflow.processes.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Initial conditions</tabstring>
+      <callback>ddb_Delft3DFLOW_initialConditions</callback>
+      <element>model.delft3dflow.initialconditions.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Boundaries</tabstring>
+      <callback>ddb_Delft3DFLOW_openBoundaries</callback>
+      <element>model.delft3dflow.openboundaries.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Physical Parameters</tabstring>
+      <callback>ddb_Delft3DFLOW_physicalparameters</callback>
+      <element>model.delft3dflow.physicalparameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Numerical Parameters</tabstring>
+      <callback>ddb_Delft3DFLOW_numericalParameters</callback>
+      <element>model.delft3dflow.numericalparameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Discharges</tabstring>
+      <callback>ddb_Delft3DFLOW_discharges</callback>
+      <enable>1</enable>
+      <element>model.delft3dflow.discharges.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Monitoring</tabstring>
+      <element>model.delft3dflow.monitoring.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Additional</tabstring>
+      <callback>ddb_editD3DFlowAdditional</callback>
+      <enable>0</enable>
+    </tab>
+    <tab>
+      <tabstring>Output</tabstring>
+      <element>model.delft3dflow.output.xml</element>
+    </tab>
+  </element>
+</root>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+  <plotoption>
+    <name>vectortimeseriesthinninggroup</name>
+    <element>
+      <name>thinning</name>
+      <variable>thinning</variable>
+      <style>edit</style>
+      <keyword>ThinningFactor</keyword>
+      <type>int</type>
+      <default>1</default>
+      <position>60 10 40 20</position>
+      <check>
+        <operator>ne</operator>
+      </check>
+      <text>Thinning</text>
+    </element>
+  </plotoption>
+</root>

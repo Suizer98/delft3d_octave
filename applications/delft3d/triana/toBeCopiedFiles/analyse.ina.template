@@ -1,0 +1,30 @@
++ Mirfa
++  %STARTYEAR% - %ENDYEAR%
++ dummy
+* ==================================================
+%NOBS%
+%STARTYEAR%
+%ENDYEAR%
+m water
+1    0    1    0    0
+12
+Q1  
+O1  
+K1  
+P1  
+N2  
+NU2 
+M2  
+L2  
+S2  
+K2  
+2MK3
+MK3 
+0
+1
+1   %NOBS%
+%STARTYEAR%
+%ENDYEAR%
+%NOSS%   
+%TIMESSUBPERIODS%
+0.2   2   2

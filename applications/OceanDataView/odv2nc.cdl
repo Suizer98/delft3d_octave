@@ -1,0 +1,86 @@
+NetCDF odv2nc.nc {
+
+dimensions:
+	location = 252 ;
+	cruise_str = 3 ;
+	station_str = 5 ;
+	type_str = 1 ;
+	SDN_LOCAL_CDI_ID_str = 35 ;
+	SDN_LOCAL_CDI_ID = 1 ; // only if more CDI records reside inside one netCDF file
+
+variables:
+	char cruise_id(location,cruise_str)
+		cruise_id:long_name = "cruise identification number" 
+		cruise_id:sdn_standard_name = "cruise_id" 
+	char station_id(location,station_str)
+		station_id:long_name = "station identification number" 
+		station_id:standard_name = "station_id" 
+		station_id:sdn_standard_name = "station_id" 
+	char type(location,type_str)
+		type:long_name = "type of observation" 
+		type:comment = "B for bottle or C for CTD, XBT or stations with >250 samples" 
+		type:sdn_standard_name = "type" 
+	double time(location)
+		time:long_name = "time" 
+		time:units = "days since 1970-01-01 00:00:00 +00:00" 
+		time:standard_name = "time" 
+		time:_FillValue = NaN 
+	single lon(location)
+		lon:long_name = "station longitude" 
+		lon:units = "degrees_east" 
+		lon:standard_name = "longitude" 
+		lon:sdn_standard_name = "lon" 
+	single lat(location)
+		lat:long_name = "station latitude" 
+		lat:units = "degrees_north" 
+		lat:standard_name = "latitude" 
+		lat:sdn_standard_name = "lat" 
+	char LOCAL_CDI_ID(location,SDN_LOCAL_CDI_ID_str)
+		LOCAL_CDI_ID:sdn_standard_name = "SDN_LOCAL_CDI_ID" 
+		LOCAL_CDI_ID:comment = "" 
+	char SDN_CDI_record_id(location,SDN_LOCAL_CDI_ID_str)
+		LOCAL_CDI_ID:sdn_standard_name = "SDN_LOCAL_CDI_ID" 
+		LOCAL_CDI_ID:comment = "" 
+	int32 SDN_EDMO_code(location)
+		EDMO_code:sdn_standard_name = "SDN_EDMO_code" 
+		EDMO_code:comment = "" 
+	single bot_depth(location)
+		bot_depth:long_name = "bottom depth" 
+		bot_depth:units = "meter" 
+		bot_depth:standard_name = "" 
+		bot_depth:positive = "down" 
+		
+	single Air_pressure_p_(location)
+	// required
+		Air_pressure_p_:standard_name = mapping_function(sdn_standard_name)
+		Air_pressure_p_:units = mapping_function(sdn_units)
+		Air_pressure_p_:local_name = "Air_pressure(p)" 
+		Air_pressure_p_:sdn_standard_name = "SDN:P011::CAPASS01" 
+		Air_pressure_p_:sdn_units = "SDN:P061::UPBB" 
+	// optional
+		Air_pressure_p_:sdn_long_name = "AirPress_SL" 
+		Air_pressure_p_:sdn_description = "Pressure (measured variable) exerted by the atmosphere by barometer and correction to sea level" 
+		Air_pressure_p_:sdn_units_longname = "mBar" 
+		Air_pressure_p_:sdn_units_description = "Millibars" 
+	// 
+		Air_pressure_p_:_FillValue = NaN f
+		Air_pressure_p_:cell_bounds = "point" 
+		Air_pressure_p_:positive = "down" 
+		Air_pressure_p_:AXIS = "Z" 
+
+//global Attributes:
+		:title = "" 
+		:institution = mapping_function(EDMO_code)
+		:source = "" 
+		:history = "" 
+		:references = "" 
+		:email = " " 
+		:comment = "" 
+		:version = " " 
+		:Conventions = "CF-1.4/SeaDataNet-0.7" 
+		:terms_for_use = "" 
+		:disclaimer = "" 
+		:SDN_LOCAL_CDI_ID = "world_N50E0N40E10_20060101_20070101" // relocate to variable SDN_LOCAL_CDI_ID
+		:SDN_EDMO_code = 632  // relocate to variable SDN_EDMO_code
+
+}

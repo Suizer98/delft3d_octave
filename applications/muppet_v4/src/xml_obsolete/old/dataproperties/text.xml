@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<root>
+  <dataproperty>
+    <name>text</name>
+    <keyword>Text</keyword>
+    <type>string</type>
+  </dataproperty>
+</root>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<root>
+  <model>
+    <name>delft3dflow</name>
+    <version>6.00.xx</version>
+    <exedir>c:\Program Files\Deltares\Delft3D 4.04.01\x64\dflow2d3d\bin\</exedir>
+  </model>
+  <model>
+    <name>dflowfm</name>
+    <version>N/A</version>
+    <exedir>d:\programs\dflowfm\2.05.04_60632\x64\</exedir>
+  </model>
+  <model>
+    <name>delft3dwave</name>
+    <version>N/A</version>
+    <exedir>c:\Program Files\Deltares\Delft3D 4.03.01\</exedir>
+  </model>
+  <model>
+    <name>ww3</name>
+    <version>N/A</version>
+    <exedir>d:\programs\wavewatch3\</exedir>
+  </model>
+  <model>
+    <name>XBeach</name>
+    <version/>
+    <exedir/>
+  </model>
+  <proxysettings>
+    <use>no</use>
+    <host/>
+    <port/>
+  </proxysettings>
+  <sncsettings>
+    <use_java>no</use_java>
+    <use_netcdf_java>yes</use_netcdf_java>
+  </sncsettings>
+</root>

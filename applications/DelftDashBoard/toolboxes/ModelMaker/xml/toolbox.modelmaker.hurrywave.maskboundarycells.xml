@@ -1,0 +1,322 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>listbox</style>
+    <text>Boundaries</text>
+    <textposition>above-center</textposition>
+    <variable>handles.toolbox.modelmaker.hurrywave.mask.activeboundarypolygon</variable>
+    <type>integer</type>
+    <position>10 20 90 100</position>
+    <tooltipstring>Select boundary polygon</tooltipstring>
+    <onchange>ddb_ModelMakerToolbox_hurrywave_mask</onchange>
+    <option1>selectboundarypolygon</option1>
+    <listtext>
+      <variable>handles.toolbox.modelmaker.hurrywave.mask.boundarypolygonnames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>110 100 80 20</position>
+    <text>Draw Polygon</text>
+    <callback>ddb_ModelMakerToolbox_hurrywave_mask</callback>
+    <option1>drawboundarypolygon</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>110 75 80 20</position>
+    <text>Delete Polygon</text>
+    <callback>ddb_ModelMakerToolbox_hurrywave_mask</callback>
+    <option1>deleteboundarypolygon</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.modelmaker.hurrywave.mask.nrboundarypolygons</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>110 50 80 20</position>
+    <text>Load Polygon</text>
+    <variable>handles.toolbox.modelmaker.hurrywave.mask.boundarypolygonfile</variable>
+    <onchange>ddb_ModelMakerToolbox_hurrywave_mask</onchange>
+    <option1>loadboundarypolygon</option1>
+    <showfilename>no</showfilename>
+    <extension>*.pol</extension>
+    <selectiontext>Select polygon file</selectiontext>
+    <tooltipstring>Select polygon file</tooltipstring>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>110 25 80 20</position>
+    <text>Save Polygon</text>
+    <variable>handles.toolbox.modelmaker.hurrywave.mask.boundarypolygonfile</variable>
+    <onchange>ddb_ModelMakerToolbox_hurrywave_mask</onchange>
+    <option1>saveboundarypolygon</option1>
+    <showfilename>no</showfilename>
+    <extension>*.pol</extension>
+    <selectiontext>Save polygon file</selectiontext>
+    <tooltipstring>Save polygon file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.modelmaker.hurrywave.mask.nrboundarypolygons</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  
+  <element>
+    <style>listbox</style>
+    <text>Outflow Boundaries</text>
+    <textposition>above-center</textposition>
+    <variable>handles.toolbox.modelmaker.hurrywave.mask.activeoutflowboundarypolygon</variable>
+    <type>integer</type>
+    <position>210 20 90 100</position>
+    <tooltipstring>Select outflow boundary polygon</tooltipstring>
+    <onchange>ddb_ModelMakerToolbox_hurrywave_mask</onchange>
+    <option1>selectoutflowboundarypolygon</option1>
+    <listtext>
+      <variable>handles.toolbox.modelmaker.hurrywave.mask.outflowboundarypolygonnames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>310 100 80 20</position>
+    <text>Draw Polygon</text>
+    <callback>ddb_ModelMakerToolbox_hurrywave_mask</callback>
+    <option1>drawoutflowboundarypolygon</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>310 75 80 20</position>
+    <text>Delete Polygon</text>
+    <callback>ddb_ModelMakerToolbox_hurrywave_mask</callback>
+    <option1>deleteoutflowboundarypolygon</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.modelmaker.hurrywave.mask.nroutflowboundarypolygons</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>310 50 80 20</position>
+    <text>Load Polygon</text>
+    <variable>handles.toolbox.modelmaker.hurrywave.mask.outflowboundarypolygonfile</variable>
+    <onchange>ddb_ModelMakerToolbox_hurrywave_mask</onchange>
+    <option1>loadoutflowboundarypolygon</option1>
+    <showfilename>no</showfilename>
+    <extension>*.pol</extension>
+    <selectiontext>Select polygon file</selectiontext>
+    <tooltipstring>Select polygon file</tooltipstring>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>310 25 80 20</position>
+    <text>Save Polygon</text>
+    <variable>handles.toolbox.modelmaker.hurrywave.mask.outflowboundarypolygonfile</variable>
+    <onchange>ddb_ModelMakerToolbox_hurrywave_mask</onchange>
+    <option1>saveoutflowboundarypolygon</option1>
+    <showfilename>no</showfilename>
+    <extension>*.pol</extension>
+    <selectiontext>Save polygon file</selectiontext>
+    <tooltipstring>Save polygon file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.modelmaker.hurrywave.mask.nroutflowboundarypolygons</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  
+  <element>
+    <style>listbox</style>
+    <text>Closed Boundaries</text>
+    <textposition>above-center</textposition>
+    <variable>handles.toolbox.modelmaker.hurrywave.mask.activeclosedboundarypolygon</variable>
+    <type>integer</type>
+    <position>410 20 90 100</position>
+    <tooltipstring>Select closed boundary polygon</tooltipstring>
+    <onchange>ddb_ModelMakerToolbox_hurrywave_mask</onchange>
+    <option1>selectclosedboundarypolygon</option1>
+    <listtext>
+      <variable>handles.toolbox.modelmaker.hurrywave.mask.closedboundarypolygonnames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>510 100 80 20</position>
+    <text>Draw Polygon</text>
+    <callback>ddb_ModelMakerToolbox_hurrywave_mask</callback>
+    <option1>drawclosedboundarypolygon</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>510 75 80 20</position>
+    <text>Delete Polygon</text>
+    <callback>ddb_ModelMakerToolbox_hurrywave_mask</callback>
+    <option1>deleteclosedboundarypolygon</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.modelmaker.hurrywave.mask.nrclosedboundarypolygons</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>510 50 80 20</position>
+    <text>Load Polygon</text>
+    <variable>handles.toolbox.modelmaker.hurrywave.mask.closedboundarypolygonfile</variable>
+    <onchange>ddb_ModelMakerToolbox_hurrywave_mask</onchange>
+    <option1>loadclosedboundarypolygon</option1>
+    <showfilename>no</showfilename>
+    <extension>*.pol</extension>
+    <selectiontext>Select polygon file</selectiontext>
+    <tooltipstring>Select polygon file</tooltipstring>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>510 25 80 20</position>
+    <text>Save Polygon</text>
+    <variable>handles.toolbox.modelmaker.hurrywave.mask.closedboundarypolygonfile</variable>
+    <onchange>ddb_ModelMakerToolbox_hurrywave_mask</onchange>
+    <option1>saveclosedboundarypolygon</option1>
+    <showfilename>no</showfilename>
+    <extension>*.pol</extension>
+    <selectiontext>Save polygon file</selectiontext>
+    <tooltipstring>Save polygon file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.modelmaker.hurrywave.mask.nrclosedboundarypolygons</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  
+  <element>
+    <style>edit</style>
+    <position>610 100 50 20</position>
+    <tooltipstring>Edit maximum elevation SFINCS model</tooltipstring>
+    <text>Zmax</text>
+    <textposition>right</textposition>
+    <variable>handles.toolbox.modelmaker.hurrywave.zmax</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>610 80 50 20</position>
+    <tooltipstring>Edit minimum elevation SFINCS model</tooltipstring>
+    <text>Zmin</text>
+    <textposition>right</textposition>
+    <variable>handles.toolbox.modelmaker.hurrywave.zmin</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>610 35 50 20</position>
+    <text>Zlev water/land</text>
+    <textposition>right</textposition>
+    <variable>handles.toolbox.modelmaker.hurrywave.zlev_polygon</variable>
+    <tooltipstring>Edit max elevation to apply msk=2 to 'boundarypolygon' and minimum elevation to apply msk=3 for 'outflowboundarypolygon'
+</tooltipstring>    
+    <type>real</type>
+  </element>
+  
+  <element>
+    <style>listbox</style>
+    <text>Boundary cells options</text>
+    <textposition>above-center</textposition>    
+    <variable>handles.toolbox.modelmaker.hurrywave.mask.boundarycells_index</variable>
+    <type>integer</type>
+    <position>800 20 100 100</position>
+    <tooltipstring>Available options for determining boundary cells of mask</tooltipstring>
+    <onchange>ddb_ModelMakerToolbox_hurrywave_mask</onchange>
+    <option1>selectdataset</option1>
+    <listtext>
+      <variable>handles.toolbox.modelmaker.hurrywave.mask.boundarycells_options</variable>
+    </listtext>
+  </element>  
+  
+  <element>
+    <style>pushbutton</style>
+    <position>910 70 80 20</position>
+    <text>Use Option</text>
+    <callback>ddb_ModelMakerToolbox_hurrywave_mask</callback>
+    <option1>useoptionboundarycells</option1>
+    <tooltipstring>Use selected option (from list on the left)</tooltipstring>    
+  </element>
+  
+  <element>
+    <style>listbox</style>
+    <text>Selection</text>
+    <textposition>above-center</textposition>
+    <variable>handles.toolbox.modelmaker.hurrywave.mask.boundarycells_option</variable>
+    <type>integer</type>
+    <position>1000 20 100 100</position>
+    <tooltipstring>Selected options. Options should be ordered from first action to be done to the last.</tooltipstring>
+    <onchange>ddb_ModelMakerToolbox_hurrywave_mask</onchange>
+    <option1>pickselecteddataset</option1>
+    <listtext>
+      <variable>handles.toolbox.modelmaker.hurrywave.mask.boundarycells_action</variable>
+    </listtext>
+  </element>
+  
+  <element>
+    <style>pushbutton</style>
+    <position>1110 100 80 20</position>
+    <text>Remove Option</text>
+    <callback>ddb_ModelMakerToolbox_hurrywave_mask</callback>
+    <option1>removeoptionboundarycells</option1>   
+  </element>  
+  <element>
+    <style>pushbutton</style>
+    <position>1110 80 80 20</position>
+    <text>Move Up</text>
+    <callback>ddb_ModelMakerToolbox_hurrywave_mask</callback>
+    <option1>upoptionboundarycells</option1>    
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>1110 60 80 20</position>
+    <text>Move Down</text>
+    <callback>ddb_ModelMakerToolbox_hurrywave_mask</callback>
+    <option1>downoptionboundarycells</option1>
+  </element>
+  
+  <element>
+    <style>pushbutton</style>
+    <position>1210 100 100 20</position>
+    <tooltipstring>Push to generate model mask file</tooltipstring>
+    <text>Update Mask</text>
+    <callback>ddb_ModelMakerToolbox_hurrywave_mask</callback>
+    <option1>generatemask</option1>
+    <enable>1</enable>
+  </element>
+  
+</root>

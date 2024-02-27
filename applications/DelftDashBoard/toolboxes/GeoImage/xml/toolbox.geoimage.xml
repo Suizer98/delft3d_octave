@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<root>
+  <toolbox>GeoImage</toolbox>
+  <longname>Geo Image</longname>
+  <enable>1</enable>
+  <element>
+    <style>panel</style>
+    <position>40 10 900 160</position>
+    <text>Geo Image</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>90 130 50 20</position>
+    <text>X Min</text>
+    <textposition>left</textposition>
+    <onchange>ddb_GeoImageToolbox</onchange>
+    <option1>editoutline</option1>
+    <variable>handles.toolbox.geoimage.xLim(1)</variable>
+    <type>real</type>
+    <tooltipstring>Edit minimum x coordinate</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>90 105 50 20</position>
+    <text>X Max</text>
+    <textposition>left</textposition>
+    <onchange>ddb_GeoImageToolbox</onchange>
+    <option1>editoutline</option1>
+    <variable>handles.toolbox.geoimage.xLim(2)</variable>
+    <type>real</type>
+    <tooltipstring>Edit maximum x coordinate</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>90 80 50 20</position>
+    <text>Y Min</text>
+    <textposition>left</textposition>
+    <onchange>ddb_GeoImageToolbox</onchange>
+    <option1>editoutline</option1>
+    <variable>handles.toolbox.geoimage.yLim(1)</variable>
+    <type>real</type>
+    <tooltipstring>Edit minimum y coordinate</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>90 55 50 20</position>
+    <text>Y Max</text>
+    <textposition>left</textposition>
+    <onchange>ddb_GeoImageToolbox</onchange>
+    <option1>editoutline</option1>
+    <variable>handles.toolbox.geoimage.yLim(2)</variable>
+    <type>real</type>
+    <tooltipstring>Edit maximum y coordinate</tooltipstring>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>220 130 70 20</position>
+    <text>Zoom Level</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.geoimage.zoomLevel</variable>
+    <type>integer</type>
+    <tooltipstring>Select the zoom level. The higher the level, the higher the detail.</tooltipstring>
+    <listtext>
+      <variable>handles.toolbox.geoimage.zoomLevelStrings</variable>
+    </listtext>
+    <listvalue>0</listvalue>
+    <listvalue>4</listvalue>
+    <listvalue>5</listvalue>
+    <listvalue>6</listvalue>
+    <listvalue>7</listvalue>
+    <listvalue>8</listvalue>
+    <listvalue>9</listvalue>
+    <listvalue>10</listvalue>
+    <listvalue>11</listvalue>
+    <listvalue>12</listvalue>
+    <listvalue>13</listvalue>
+    <listvalue>14</listvalue>
+    <listvalue>15</listvalue>
+    <listvalue>16</listvalue>
+    <listvalue>17</listvalue>
+    <listvalue>18</listvalue>
+    <listvalue>19</listvalue>
+    <listvalue>20</listvalue>
+    <listvalue>21</listvalue>
+    <listvalue>22</listvalue>
+    <listvalue>23</listvalue>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>220 105 70 20</position>
+    <text>Nr Pix</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.geoimage.nPix</variable>
+    <type>integer</type>
+    <tooltipstring>Edit number of pixels in horizontal direction.</tooltipstring>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>220 80 70 20</position>
+    <text>Type</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.geoimage.whatKind</variable>
+    <type>string</type>
+    <tooltipstring>Select image type</tooltipstring>
+    <listtext>Aerial</listtext>
+    <listtext>Hybrid</listtext>
+    <listtext>Road</listtext>
+    <listvalue>aerial</listvalue>
+    <listvalue>hybrid</listvalue>
+    <listvalue>road</listvalue>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>300 130 100 20</position>
+    <text>Draw Outline</text>
+    <callback>ddb_GeoImageToolbox</callback>
+    <option1>drawrectangle</option1>
+    <tooltipstring>Draw image rectangle</tooltipstring>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>300 105 100 20</position>
+    <text>Generate Image</text>
+    <callback>ddb_GeoImageToolbox</callback>
+    <option1>generateimage</option1>
+    <tooltipstring>Download and process image</tooltipstring>
+  </element>
+</root>

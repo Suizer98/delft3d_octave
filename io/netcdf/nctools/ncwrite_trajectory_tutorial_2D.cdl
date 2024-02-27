@@ -1,0 +1,75 @@
+NetCDF-3 Classic d:\checkouts\OpenEarthTools\matlab\io\netcdf\nctools\ncwrite_trajectory_tutorial_2D.nc {
+dimensions:
+	TIME = 365 ;
+	z = 1 ;
+
+variables:
+	// Preference 'PRESERVE_FVD':  false,
+	// dimensions consistent with ncBrowse, not with native MATLAB netcdf package.
+	double TIME(TIME), shape = [365]
+		TIME:standard_name = "time" ;
+		TIME:long_name = "time" ;
+		TIME:units = "days since 1970-01-01 00:00:00+00:00" ;
+		TIME:axis = "T" ;
+	double lon(TIME), shape = [365]
+		lon:standard_name = "longitude" ;
+		lon:long_name = "Longitude" ;
+		lon:units = "degrees_east" ;
+		lon:axis = "X" ;
+		lon:_FillValue = 9.96921e+36 ;
+		lon:actual_range = 1.00007 5 ;
+	double lat(TIME), shape = [365]
+		lat:standard_name = "latitude" ;
+		lat:long_name = "Latitude" ;
+		lat:units = "degrees_north" ;
+		lat:axis = "Y" ;
+		lat:_FillValue = 9.96921e+36 ;
+		lat:actual_range = 51 53 ;
+	double z(z), shape = [1]
+		z:standard_name = "altitude" ;
+		z:long_name = "z" ;
+		z:units = "m" ;
+		z:positive = "down" ;
+		z:axis = "Z" ;
+		z:_FillValue = 9.96921e+36 ;
+		z:actual_range = 3 3 ;
+	double TSS(z,TIME), shape = [1 365]
+		TSS:standard_name = "mass_concentration_of_suspended_matter_in_sea_water" ;
+		TSS:long_name = "TSS" ;
+		TSS:units = "kg m-3" ;
+		TSS:coordinates = "lat lon z" ;
+		TSS:_FillValue = 9.96921e+36 ;
+		TSS:actual_range = 1 4.99993 ;
+		TSS:calibration = "3.141592" ;
+
+//global attributes:
+		:institution = "" ;
+		:history = "$HeadURL: https://svn.oss.deltares.nl/repos/openearthtools/trunk/matlab/io/netcdf/nctools/ncwrite_timeseries.m $ $Id: ncwrite_timeseries.m 8921 2013-07-19 06:13:40Z boer_g $" ;
+		:featureType = "trajectory" ;
+		:Conventions = "CF-1.6, OceanSITES 1.1" ;
+		:terms_for_use = "These data can be used freely for research purposes provided that the following source is acknowledged: " ;
+		:disclaimer = "This data is made available in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE." ;
+		:data_type = "OceanSITES trajectory data" ;
+		:format_version = "1.1" ;
+		:platform_code = "" ;
+		:date_update = "$Date$" ;
+		:site_code = "" ;
+		:data_mode = "D" ;
+		:area = "North Sea" ;
+		:title = "" ;
+		:references = "" ;
+		:email = "" ;
+		:source = "" ;
+		:comment = "" ;
+		:version = "" ;
+		:time_coverage_start = "20090101T000000" ;
+		:time_coverage_end = "20091231T000000" ;
+		:geospatial_lat_min = 1.00007 ;
+		:geospatial_lat_max = 5 ;
+		:geospatial_lon_min = 51 ;
+		:geospatial_lon_max = 53 ;
+		:geospatial_vertical_min = 3 ;
+		:geospatial_vertical_max = 3 ;
+
+
+}

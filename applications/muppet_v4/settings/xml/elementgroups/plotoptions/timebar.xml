@@ -1,0 +1,149 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 140</position>
+    <text>Time Bar</text>
+  </element>
+  <element>
+    <variable>timebar.type</variable>
+    <type>string</type>
+    <style>popupmenu</style>
+    <position>40 100 60 20</position>
+    <listtext>none</listtext>
+    <listtext>line</listtext>
+    <listtext>marker</listtext>
+  </element>
+  <element>
+    <variable>timebar.time</variable>
+    <type>datetime</type>
+    <style>edit</style>
+    <position>150 100 120 20</position>
+    <text>Time</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>timebar.type</variable>
+        <operator>ne</operator>
+        <value>none</value>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>timebar.linecolor</variable>
+    <type>string</type>
+    <style>selectcolor</style>
+    <position>40 70 100 20</position>
+    <includenone>no</includenone>
+    <text>Color</text>
+    <tooltipstring>Select line color</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>timebar.type</variable>
+        <value>line</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>timebar.linewidth</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>190 70 50 20</position>
+    <text>Width</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>timebar.type</variable>
+        <value>line</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>timebar.linestyle</variable>
+    <type>string</type>
+    <style>selectlinestyle</style>
+    <position>280 70 60 20</position>
+    <text>Style</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>timebar.type</variable>
+        <value>line</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>timebar.marker</variable>
+    <type>string</type>
+    <style>selectmarker</style>
+    <position>70 40 100 20</position>
+    <text>Type</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>timebar.type</variable>
+        <value>marker</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>timebar.markersize</variable>
+    <type>int</type>
+    <style>selectmarkersize</style>
+    <position>240 40 100 20</position>
+    <text>Size</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>timebar.type</variable>
+        <value>marker</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>timebar.markeredgecolor</variable>
+    <type>string</type>
+    <style>selectcolor</style>
+    <position>70 10 100 20</position>
+    <includenone>yes</includenone>
+    <text>Edge Color</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>timebar.type</variable>
+        <value>marker</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>timebar.markerfacecolor</variable>
+    <type>string</type>
+    <style>selectcolor</style>
+    <position>240 10 100 20</position>
+    <includenone>yes</includenone>
+    <text>Face Color</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>timebar.type</variable>
+        <value>marker</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

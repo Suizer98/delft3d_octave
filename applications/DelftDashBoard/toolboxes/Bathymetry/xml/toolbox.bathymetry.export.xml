@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>listbox</style>
+    <text>Available Databases</text>
+    <textposition>above-center</textposition>
+    <variable>handles.toolbox.bathymetry.activeDataset</variable>
+    <type>integer</type>
+    <position>10 10 250 105</position>
+    <tooltipstring>Select bathymetry database</tooltipstring>
+    <onchange>ddb_BathymetryToolbox_export</onchange>
+    <option1>selectdataset</option1>
+    <listtext>
+      <variable>handles.bathymetry.longNames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>270 95 80 20</position>
+    <text>Draw Polygon</text>
+    <callback>ddb_BathymetryToolbox_export</callback>
+    <option1>drawpolygon</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>270 70 80 20</position>
+    <text>Delete Polygon</text>
+    <callback>ddb_BathymetryToolbox_export</callback>
+    <option1>deletepolygon</option1>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>270 40 80 20</position>
+    <text>Load Polygon</text>
+    <variable>handles.toolbox.bathymetry.polygonFile</variable>
+    <onchange>ddb_BathymetryToolbox_export</onchange>
+    <option1>loadpolygon</option1>
+    <showfilename>no</showfilename>
+    <extension>*.pol</extension>
+    <selectiontext>Select polygon file</selectiontext>
+    <tooltipstring>Select polygon file</tooltipstring>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>270 15 80 20</position>
+    <text>Save Polygon</text>
+    <variable>handles.toolbox.bathymetry.polygonFile</variable>
+    <onchange>ddb_BathymetryToolbox_export</onchange>
+    <option1>savepolygon</option1>
+    <showfilename>no</showfilename>
+    <extension>*.pol</extension>
+    <selectiontext>Save polygon file</selectiontext>
+    <tooltipstring>Save polygon file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.bathymetry.polyLength</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Zoom Level</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.bathymetry.activeZoomLevel</variable>
+    <type>integer</type>
+    <position>450 95 60 20</position>
+    <tooltipstring>Select zoom level</tooltipstring>
+    <onchange>ddb_BathymetryToolbox_export</onchange>
+    <option1>selectzoomlevel</option1>
+    <listtext>
+      <variable>handles.toolbox.bathymetry.zoomLevelText</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>text</style>
+    <variable>handles.toolbox.bathymetry.resolutionText</variable>
+    <type>string</type>
+    <position>520 96</position>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Positive</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.bathymetry.activeDirection</variable>
+    <position>450 70 60 20</position>
+    <tooltipstring>Select positive up or down</tooltipstring>
+    <type>string</type>
+    <listtext>up</listtext>
+    <listtext>down</listtext>
+    <listvalue>up</listvalue>
+    <listvalue>down</listvalue>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>390 15 120 20</position>
+    <text>Export</text>
+    <variable>handles.toolbox.bathymetry.bathyFile</variable>
+    <onchange>ddb_BathymetryToolbox_export</onchange>
+    <option1>export</option1>
+    <showfilename>no</showfilename>
+    <extension>*.xyz</extension>
+    <extension>*.asc</extension>
+    <extension>*.mat</extension>
+    <selectiontext>Save bathymetry file</selectiontext>
+    <tooltipstring>Export bathymetry</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.bathymetry.polyLength</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

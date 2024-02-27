@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<root>
+  <longname>Geo-referenced image</longname>
+  <plottype>
+    <name>map</name>
+    <plotroutine>
+      <name>Image</name>
+      <plotoption>
+        <name>plotroutine</name>
+      </plotoption>
+      <plotoption>
+        <name>whitevalue</name>
+      </plotoption>
+      <plotoption>
+        <name>opacity</name>
+      </plotoption>
+      <elementgroup>image</elementgroup>
+    </plotroutine>
+  </plottype>
+</root>

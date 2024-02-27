@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<root>
+  <model>Delft3DWAVE</model>
+  <longname>Delft3D-WAVE</longname>
+  <enable>1</enable>
+  <menu>
+    <menuopenfile>
+      <menuitem>
+        <string>Open MDW File</string>
+        <callback>ddb_openDelft3DWAVE</callback>
+        <option>open</option>
+      </menuitem>
+    </menuopenfile>
+    <menusavefile>
+      <menuitem>
+        <string>Save MDW File</string>
+        <callback>ddb_saveDelft3DWAVE</callback>
+        <option>save</option>
+      </menuitem>
+      <menuitem>
+        <string>Save MDW File As ...</string>
+        <callback>ddb_saveDelft3DWAVE</callback>
+        <option>saveas</option>
+      </menuitem>
+      <menuitem>
+        <string>Save All Delft3D-WAVE Files</string>
+        <callback>ddb_saveDelft3DWAVE</callback>
+        <option>saveall</option>
+      </menuitem>
+      <menuitem>
+        <string>Delft3D-WAVE version ...</string>
+        <callback>ddb_setModelSettings</callback>
+        <option>selectversion</option>
+      </menuitem>
+    </menusavefile>
+    <menuview/>
+  </menu>
+  <element>
+    <style>tabpanel</style>
+    <position>10 10 900 700</position>
+    <tab>
+      <tabstring>Toolbox</tabstring>
+      <callback>ddb_selectToolbox</callback>
+    </tab>
+    <tab>
+      <tabstring>Description</tabstring>
+      <callback>ddb_Delft3DWAVE_description</callback>
+      <element>model.delft3dwave.description.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Hydrodynamics</tabstring>
+      <callback>ddb_Delft3DWAVE_hydrodynamics</callback>
+      <element>model.delft3dwave.hydrodynamics.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Grids</tabstring>
+      <element>model.delft3dwave.grids.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Time Frame</tabstring>
+      <callback>ddb_Delft3DWAVE_timeFrame</callback>
+      <element>model.delft3dwave.timeframe.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Boundaries</tabstring>
+      <callback>ddb_Delft3DWAVE_boundaries</callback>
+      <element>model.delft3dwave.boundaries.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Obstacles</tabstring>
+      <callback>ddb_Delft3DWAVE_obstacles</callback>
+      <element>model.delft3dwave.obstacles.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Physical Parameters</tabstring>
+      <element>model.delft3dwave.physicalparameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Numerical Parameters</tabstring>
+      <callback>ddb_Delft3DWAVE_numericalParameters</callback>
+      <element>model.delft3dwave.numericalparameters.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Output</tabstring>
+      <callback>ddb_Delft3DWAVE_output</callback>
+      <element>model.delft3dwave.output.xml</element>
+    </tab>
+  </element>
+</root>

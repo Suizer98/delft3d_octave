@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<root>
+  <dataproperty>
+    <name>multiplyb</name>
+    <keyword>MultiplyB</keyword>
+    <type>real</type>
+    <check>
+      <operator>ne</operator>
+      <value>1</value>
+    </check>
+    <check>
+      <variable>datasetb</variable>
+      <operator>ne</operator>
+      <value>isempty</value>
+    </check>
+  </dataproperty>
+</root>

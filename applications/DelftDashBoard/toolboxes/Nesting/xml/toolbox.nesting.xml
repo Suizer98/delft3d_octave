@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<root>
+  <toolbox>Nesting</toolbox>
+  <longname>Nesting</longname>
+  <enable>1</enable>
+  <element>
+    <position>40 10 1000 140</position>
+    <style>tabpanel</style>
+    <tab>
+      <tabstring>Nesting - 1</tabstring>
+      <callback>ddb_NestingToolbox_Delft3DFLOW_nest1</callback>
+      <formodel>delft3dflow</formodel>
+      <element>toolbox.nesting.delft3dflow.nest1.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Nesting - 2</tabstring>
+      <callback>ddb_NestingToolbox_Delft3DFLOW_nest2</callback>
+      <formodel>delft3dflow</formodel>
+      <element>toolbox.nesting.delft3dflow.nest2.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Nesting - 1</tabstring>
+      <callback>ddb_NestingToolbox_Delft3DWAVE_nest1</callback>
+      <formodel>delft3dwave</formodel>
+      <element>toolbox.nesting.delft3dwave.nest1.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Nesting - 2</tabstring>
+      <callback>ddb_NestingToolbox_Delft3DWAVE_nest2</callback>
+      <formodel>delft3dwave</formodel>
+      <element>toolbox.nesting.delft3dwave.nest2.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Nesting - 1</tabstring>
+      <callback>ddb_NestingToolbox_DFlowFM_nest1</callback>
+      <formodel>dflowfm</formodel>
+      <element>toolbox.nesting.dflowfm.nest1.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Nesting - 2</tabstring>
+      <callback>ddb_NestingToolbox_DFlowFM_nest2</callback>
+      <formodel>dflowfm</formodel>
+      <element>toolbox.nesting.dflowfm.nest2.xml</element>
+    </tab>
+    <tab>
+      <tabstring>FEWS preparation</tabstring>
+      <callback>ddb_NestingToolbox_DFlowFM_Fews</callback>
+      <formodel>dflowfm</formodel>
+      <element>toolbox.nesting.dflowfm.fews.xml</element>
+    </tab>    
+    <tab>
+      <tabstring>Nesting</tabstring>
+      <callback>ddb_dummyTabCallback</callback>
+      <formodel>fast</formodel>
+      <element>toolbox.nesting.fast.xml</element>
+    </tab>    
+    <tab>
+      <tabstring>Nesting - 1</tabstring>
+      <callback>ddb_NestingToolbox_ww3_nest1</callback>
+      <formodel>ww3</formodel>
+      <element>toolbox.nesting.ww3.nest1.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Nesting - 2</tabstring>
+      <callback>ddb_NestingToolbox_XBeach_nest2</callback>
+      <formodel>xbeach</formodel>
+      <element>toolbox.nesting.xbeach.nest2.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Nesting - 2</tabstring>
+      <callback>ddb_NestingToolbox_SFINCS_nest2</callback>
+      <formodel>sfincs</formodel>
+      <element>toolbox.nesting.sfincs.nest2.xml</element>
+    </tab>
+  </element>
+</root>

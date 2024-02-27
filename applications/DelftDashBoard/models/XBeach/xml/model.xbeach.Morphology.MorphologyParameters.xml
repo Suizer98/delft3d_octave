@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <text>morfac</text>
+    <position>70.000,107.500, 80.000, 20.000</position>
+    <tooltipstring>Morphological acceleration factor [-]</tooltipstring>
+    <variable>handles.model.xbeach.domain.morfac</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Start time morphology, in morphological time [s]</tooltipstring>
+    <style>edit</style>
+    <text>morstart</text>
+    <position>70.000,80.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.morstart</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Stop time morphology, in morphological time [s]</tooltipstring>
+    <style>edit</style>
+    <text>morstop</text>
+    <position>70.000,52.500,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.morstop</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Critical avalanching slope under water (dz/dx and dz/dy) [-]</tooltipstring>
+    <style>edit</style>
+    <text>wetslp</text>
+    <position>70.000,25.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.wetslp</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Critical avalanching slope above water (dz/dx and dz/dy) [-]</tooltipstring>
+    <style>edit</style>
+    <text>dryslp</text>
+    <position>230.000,107.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.dryslp</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Switch for hard structures [-]</tooltipstring>
+    <style>checkbox</style>
+    <text>struct</text>
+    <position>230.000, 80.000</position>
+    <variable>handles.model.xbeach.domain.struct</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Name of file containing depth of hard structure [name]</tooltipstring>
+    <style>pushselectfile</style>
+    <text>ne_layer</text>
+    <position>230.000, 52.500, 80.000, 20.000</position>
+    <variable>handles.model.xbeach.domain.ne_layer</variable>
+    <type>character</type>
+    <extension>*.*</extension>
+    <selectiontext>Select file</selectiontext>
+  </element>
+</root>

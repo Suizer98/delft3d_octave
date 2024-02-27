@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <text>Time Frame</text>
+    <position>40 10 900 160</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>130 125 120 20</position>
+    <variable>handles.model.modflowusg.domain(ad).refdate</variable>
+    <type>date</type>
+    <tooltipstring>Edit reference date</tooltipstring>
+    <text>Reference Date</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>130 100 120 20</position>
+    <variable>handles.model.modflowusg.domain(ad).starttime</variable>
+    <type>datetime</type>
+    <tooltipstring>Edit model start time</tooltipstring>
+    <text>Start Time</text>
+    <textposition>left</textposition>
+    <onchange>ddb_updateOutputTimesDelft3DFLOW</onchange>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>130 75 120 20</position>
+    <variable>handles.model.modflowusg.domain(ad).stoptime</variable>
+    <type>datetime</type>
+    <tooltipstring>Edit model stop time</tooltipstring>
+    <text>Stop Time</text>
+    <textposition>left</textposition>
+    <onchange>ddb_updateOutputTimesDelft3DFLOW</onchange>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>130 50 120 20</position>
+    <variable>handles.model.modflowusg.domain(ad).timestep</variable>
+    <type>real</type>
+    <tooltipstring>Edit time step</tooltipstring>
+    <text>Time Step (min)</text>
+    <textposition>left</textposition>
+  </element>
+</root>

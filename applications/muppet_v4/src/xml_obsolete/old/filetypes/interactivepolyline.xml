@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+  <name>interactivepolyline</name>
+  <longname>Interactive Polyline</longname>
+  <title>Interactive Polyline</title>
+  <callback>muppet_addDatasetInteractivePolyline</callback>
+  <option>
+    <name>filetype</name>
+  </option>
+  <option>
+    <name>x</name>
+  </option>
+  <option>
+    <name>y</name>
+  </option>
+</root>

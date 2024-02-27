@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>listbox</style>
+    <position>10 10 150 105</position>
+    <tooltipstring>Select drogue</tooltipstring>
+    <text>Observation Points</text>
+    <textposition>above-center</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).activeDrogue</variable>
+    <type>integer</type>
+    <onchange>ddb_Delft3DFLOW_drogues</onchange>
+    <option1>selectfromlist</option1>
+    <listtext>
+      <variable>handles.model.delft3dflow.domain(ad).drogueNames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>170 10 180 120</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>230 95 110 20</position>
+    <text>Name</text>
+    <onchange>ddb_Delft3DFLOW_drogues</onchange>
+    <option1>edit</option1>
+    <tooltipstring>Edit drogue name</tooltipstring>
+    <variable>handles.model.delft3dflow.domain(ad).drogues(handles.model.delft3dflow.domain(ad).activeDrogue).name</variable>
+    <type>string</type>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrDrogues</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>230 70 40 20</position>
+    <text>M</text>
+    <onchange>ddb_Delft3DFLOW_drogues</onchange>
+    <option1>edit</option1>
+    <tooltipstring>Edit drogue index M</tooltipstring>
+    <variable>handles.model.delft3dflow.domain(ad).drogues(handles.model.delft3dflow.domain(ad).activeDrogue).M</variable>
+    <type>integer</type>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrDrogues</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>300 70 40 20</position>
+    <text>N</text>
+    <onchange>ddb_Delft3DFLOW_drogues</onchange>
+    <option1>edit</option1>
+    <variable>handles.model.delft3dflow.domain(ad).drogues(handles.model.delft3dflow.domain(ad).activeDrogue).N</variable>
+    <type>integer</type>
+    <tooltipstring>Edit drogue index N</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrDrogues</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>230 45 110 20</position>
+    <text>Release</text>
+    <onchange>ddb_Delft3DFLOW_drogues</onchange>
+    <option1>datetime</option1>
+    <variable>handles.model.delft3dflow.domain(ad).drogues(handles.model.delft3dflow.domain(ad).activeDrogue).releaseTime</variable>
+    <type>datetime</type>
+    <tooltipstring>Edit drogue index N</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrDrogues</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>230 20 110 20</position>
+    <text>Recovery</text>
+    <onchange>ddb_Delft3DFLOW_drogues</onchange>
+    <option1>datetime</option1>
+    <variable>handles.model.delft3dflow.domain(ad).drogues(handles.model.delft3dflow.domain(ad).activeDrogue).recoveryTime</variable>
+    <type>datetime</type>
+    <tooltipstring>Edit drogue index N</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).nrDrogues</variable>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>togglebutton</style>
+    <position>360 85 70 20</position>
+    <text>Add</text>
+    <tooltipstring>Add drogue</tooltipstring>
+    <onchange>ddb_Delft3DFLOW_drogues</onchange>
+    <option1>add</option1>
+    <variable>handles.model.delft3dflow.domain(ad).addDrogue</variable>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>360 60 70 20</position>
+    <text>Delete</text>
+    <tooltipstring>Delete drogue</tooltipstring>
+    <callback>ddb_Delft3DFLOW_drogues</callback>
+    <option1>delete</option1>
+  </element>
+  <element>
+    <style>togglebutton</style>
+    <position>360 35 70 20</position>
+    <text>Select</text>
+    <tooltipstring>Select drogue</tooltipstring>
+    <onchange>ddb_Delft3DFLOW_drogues</onchange>
+    <option1>select</option1>
+    <variable>handles.model.delft3dflow.domain(ad).selectDrogue</variable>
+  </element>
+  <element>
+    <style>togglebutton</style>
+    <position>360 10 70 20</position>
+    <text>Change</text>
+    <tooltipstring>Change drogue</tooltipstring>
+    <onchange>ddb_Delft3DFLOW_drogues</onchange>
+    <option1>change</option1>
+    <variable>handles.model.delft3dflow.domain(ad).changeDrogue</variable>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>450 60 70 20</position>
+    <tooltipstring>Open drogues file</tooltipstring>
+    <text>Open</text>
+    <variable>handles.model.delft3dflow.domain(ad).droFile</variable>
+    <extension>*.dro</extension>
+    <selectiontext>Select drogues File</selectiontext>
+    <onchange>ddb_Delft3DFLOW_drogues</onchange>
+    <option1>openfile</option1>
+    <dependency>
+      <action>update</action>
+    </dependency>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>450 35 70 20</position>
+    <tooltipstring>Save drogues file</tooltipstring>
+    <text>Save</text>
+    <variable>handles.model.delft3dflow.domain(ad).droFile</variable>
+    <showfilename>no</showfilename>
+    <extension>*.dro</extension>
+    <selectiontext>Select drogues File</selectiontext>
+    <onchange>ddb_Delft3DFLOW_drogues</onchange>
+    <option1>savefile</option1>
+  </element>
+</root>

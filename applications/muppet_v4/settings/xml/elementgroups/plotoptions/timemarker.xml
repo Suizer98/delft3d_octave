@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 140</position>
+    <text>Time Marker</text>
+  </element>
+  <element>
+    <variable>timemarker.enable</variable>
+    <type>boolean</type>
+    <style>checkbox</style>
+    <position>10 100 60 20</position>
+    <text>Time Marker</text>
+  </element>
+  <element>
+    <variable>timemarker.time</variable>
+    <type>datetime</type>
+    <style>edit</style>
+    <position>150 100 120 20</position>
+    <text>Time</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>timemarker.enable</variable>
+        <operator>eq</operator>
+        <value>1</value>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>timemarker.trackoption</variable>
+    <type>string</type>
+    <style>popupmenu</style>
+    <position>70 70 130 20</position>
+    <listtext>Up to marker</listtext>
+    <listtext>From marker onward</listtext>
+    <listtext>None</listtext>
+    <listtext>Complete</listtext>
+    <listvalue>uptomarker</listvalue>
+    <listvalue>frommarker</listvalue>
+    <listvalue>none</listvalue>
+    <listvalue>complete</listvalue>
+    <text>Draw track</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>timemarker.enable</variable>
+        <operator>eq</operator>
+        <value>1</value>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <text>Show last</text>
+    <type>boolean</type>
+    <variable>timemarker.showlastposition</variable>
+    <style>checkbox</style>
+    <position>210 70 60 20</position>
+    <tooltipstring>Always show marker at last position of track when marker time is after last available track time</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>timemarker.enable</variable>
+        <operator>eq</operator>
+        <value>1</value>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>timemarker.marker</variable>
+    <type>string</type>
+    <style>selectmarker</style>
+    <position>70 40 100 20</position>
+    <text>Type</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>timemarker.enable</variable>
+        <operator>eq</operator>
+        <value>1</value>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>timemarker.size</variable>
+    <type>int</type>
+    <style>selectmarkersize</style>
+    <position>240 40 100 20</position>
+    <text>Size</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>timemarker.enable</variable>
+        <operator>eq</operator>
+        <value>1</value>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>timemarker.edgecolor</variable>
+    <type>string</type>
+    <style>selectcolor</style>
+    <position>70 10 100 20</position>
+    <includenone>yes</includenone>
+    <text>Edge Color</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>timemarker.enable</variable>
+        <operator>eq</operator>
+        <value>1</value>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>timemarker.facecolor</variable>
+    <type>string</type>
+    <style>selectcolor</style>
+    <position>240 10 100 20</position>
+    <includenone>yes</includenone>
+    <text>Face Color</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>timemarker.enable</variable>
+        <operator>eq</operator>
+        <value>1</value>
+      </check>
+    </dependency>
+  </element>
+</root>

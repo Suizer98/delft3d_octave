@@ -1,0 +1,115 @@
+NetCDF-3 Classic d:\checkouts\OpenEarthTools\matlab\io\netcdf\nctools\ncwrite_profile_tutorial_zragged_trajectory.nc {
+dimensions:
+	TIME = 4 ;
+	LATITUDE = 1 ;
+	LONGITUDE = 1 ;
+	DEPTH = 5 ;
+
+variables:
+	// Preference 'PRESERVE_FVD':  false,
+	// dimensions consistent with ncBrowse, not with native MATLAB netcdf package.
+	double TIME(TIME), shape = [4]
+		TIME:standard_name = "time" ;
+		TIME:long_name = "time" ;
+		TIME:units = "days since 1970-01-01 00:00:00+00:00" ;
+		TIME:axis = "T" ;
+	double DEPTH2(TIME,DEPTH), shape = [4 5]
+		DEPTH2:standard_name = "altitude" ;
+		DEPTH2:units = "m" ;
+		DEPTH2:positive = "down" ;
+		DEPTH2:axis = "Z" ;
+		DEPTH2:_FillValue = 9.96921e+36 ;
+		DEPTH2:reference = "sea_level" ;
+		DEPTH2:long_name = "z" ;
+		DEPTH2:actual_range = 2 18.5 ;
+		DEPTH2:coordinates = "LATITUDE LONGITUDE DEPTH2" ;
+	double time2(TIME,DEPTH), shape = [4 5]
+		time2:standard_name = "time" ;
+		time2:long_name = "time" ;
+		time2:units = "days since 1970-01-01 00:00:00+00:00" ;
+		time2:axis = "T" ;
+		time2:coordinates = "LATITUDE LONGITUDE DEPTH2 time2" ;
+	double LONGITUDE([]), shape = [1]
+		LONGITUDE:standard_name = "longitude" ;
+		LONGITUDE:long_name = "nominal Longitude" ;
+		LONGITUDE:units = "degrees_east" ;
+		LONGITUDE:axis = "X" ;
+		LONGITUDE:_FillValue = 9.96921e+36 ;
+		LONGITUDE:actual_range = 3 3 ;
+	double LATITUDE([]), shape = [1]
+		LATITUDE:standard_name = "latitude" ;
+		LATITUDE:long_name = "nominal Latitude" ;
+		LATITUDE:units = "degrees_north" ;
+		LATITUDE:axis = "Y" ;
+		LATITUDE:_FillValue = 9.96921e+36 ;
+		LATITUDE:actual_range = 52 52 ;
+	double lon1(TIME), shape = [4]
+		lon1:standard_name = "longitude" ;
+		lon1:long_name = "drift Longitude" ;
+		lon1:units = "degrees_east" ;
+		lon1:axis = "X" ;
+		lon1:_FillValue = 9.96921e+36 ;
+		lon1:actual_range = 2.98287 3.01704 ;
+	double lat1(TIME), shape = [4]
+		lat1:standard_name = "latitude" ;
+		lat1:long_name = "drift Latitude" ;
+		lat1:units = "degrees_north" ;
+		lat1:axis = "Y" ;
+		lat1:_FillValue = 9.96921e+36 ;
+		lat1:actual_range = 51.9911 52.009 ;
+	double lon2(TIME,DEPTH), shape = [4 5]
+		lon2:standard_name = "longitude" ;
+		lon2:long_name = "drift and fall Longitude" ;
+		lon2:units = "degrees_east" ;
+		lon2:axis = "X" ;
+		lon2:_FillValue = 9.96921e+36 ;
+		lon2:actual_range = 2.98287 3.01704 ;
+	double lat2(TIME,DEPTH), shape = [4 5]
+		lat2:standard_name = "latitude" ;
+		lat2:long_name = "drift and fall Latitude" ;
+		lat2:units = "degrees_north" ;
+		lat2:axis = "Y" ;
+		lat2:_FillValue = 9.96921e+36 ;
+		lat2:actual_range = 51.9911 52.009 ;
+	double TSS(TIME,DEPTH), shape = [4 5]
+		TSS:standard_name = "mass_concentration_of_suspended_matter_in_sea_water" ;
+		TSS:long_name = "TSS" ;
+		TSS:units = "kg m-3" ;
+		TSS:coordinates = "LATITUDE LONGITUDE DEPTH2 time2" ;
+		TSS:_FillValue = 9.96921e+36 ;
+		TSS:actual_range = -1.12559 1.14233 ;
+		TSS:xy_comment = "varying (lat,lon) position per profile, e.g. moving vessel" ;
+		TSS:z_comment = "varying z levels per profile, e.g. undulating z mab due to waves/tides interacting with ship" ;
+		TSS:time_comment = "significant time span during one profile, e.g. CTD dangling behind ship for an hour, " ;
+
+//global attributes:
+		:institution = "" ;
+		:history = "$HeadURL: https://svn.oss.deltares.nl/repos/openearthtools/trunk/matlab/io/netcdf/nctools/ncwrite_timeseries.m $ $Id: ncwrite_timeseries.m 8921 2013-07-19 06:13:40Z boer_g $" ;
+		:featureType = "timeSeriesProfile" ;
+		:Conventions = "CF-1.6, OceanSITES 1.1" ;
+		:terms_for_use = "These data can be used freely for research purposes provided that the following source is acknowledged: " ;
+		:disclaimer = "This data is made available in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE." ;
+		:data_type = "OceanSITES profile data" ;
+		:format_version = "1.1" ;
+		:platform_code = "" ;
+		:date_update = "$Date$" ;
+		:site_code = "" ;
+		:data_mode = "D" ;
+		:area = "North Sea" ;
+		:title = "" ;
+		:references = "" ;
+		:email = "" ;
+		:source = "" ;
+		:comment = "" ;
+		:version = "" ;
+		:time_coverage_start = "20090101T000000" ;
+		:time_coverage_end = "20091001T000120" ;
+		:geospatial_lat_min = 2.98287 ;
+		:geospatial_lat_max = 3.01704 ;
+		:geospatial_lon_min = 51.9911 ;
+		:geospatial_lon_max = 52.009 ;
+		:geospatial_vertical_min = 2 ;
+		:geospatial_vertical_max = 18.5 ;
+
+
+}

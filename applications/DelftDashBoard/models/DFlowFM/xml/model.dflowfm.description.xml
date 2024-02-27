@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <position>45 10 500 140</position>
+    <variable>handles.model.dflowfm.domain.description</variable>
+    <type>string</type>
+    <tooltipstring>Project description (optional)</tooltipstring>
+    <nrlines>10</nrlines>
+    <text>Description (max. 10 lines)</text>
+    <textposition>above-left</textposition>
+  </element>
+</root>

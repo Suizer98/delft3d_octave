@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <text>ndrifter</text>
+    <position>70.000,107.500, 80.000, 20.000</position>
+    <tooltipstring>Number of drifers [-]</tooltipstring>
+    <variable>handles.model.xbeach.domain.ndrifter</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <tooltipstring>Name of drifter data file [-]</tooltipstring>
+    <style>pushselectfile</style>
+    <text>drifterfile</text>
+    <position>70.000,80.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.drifterfile</variable>
+    <type>character</type>
+    <extension>*.*</extension>
+    <selectiontext>Select file</selectiontext>
+  </element>
+</root>

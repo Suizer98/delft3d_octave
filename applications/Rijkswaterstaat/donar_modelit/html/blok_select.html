@@ -1,0 +1,35 @@
+<html>
+   <header>
+      
+      <title>set_taxis</title>
+      <meta name="generator" content="MATLAB 7.7">
+      <meta name="date" content="2011Dec06">
+      <meta name="m-file" content="blok_select">
+      <link type="text/css" rel="stylesheet" href="./toolbox.css">
+      
+   </header>
+   <body>
+      
+      <hr>
+      <div>
+         <h2>Function blok_select</h2><pre>  Select Dia blocks with specified parameter-value pairs.
+  
+  </pre><h2>CALL:</h2><pre>   blok = blok_select(blok, varargin)
+  
+  </pre><h2>INPUT:</h2><pre>   blok: structarray with dia blokken
+   varargin: parameter-value pairs, e.g. 'sRkstyp', 'TE'
+  
+  </pre><h2>OUTPUT:</h2><pre>   blok: selected blokken
+   I: index of selected blokken
+  
+  </pre><h2>EXAMPLE:</h2><pre></pre><pre class="codeinput">   blok = repmat(emptyblok,2,1);
+   blok(1).W3H.sParcod = 'Hm0';
+   blok(2).W3H.sParcod = 'WATHTE';
+   [blok, I] = blok_select(blok, 'sParcod', 'WATHTE');
+   find(I)</pre><pre>ans =
+     2
+</pre></div>
+      <hr>
+      
+   </body>
+</html>

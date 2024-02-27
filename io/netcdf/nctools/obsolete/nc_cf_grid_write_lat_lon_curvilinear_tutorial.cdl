@@ -1,0 +1,145 @@
+// The netCDF-CF conventions for grids are defined here:
+// http://cf-pcmdi.llnl.gov/documents/cf-conventions/
+// This grid file can be loaded into matlab with QuickPlot (d3d_qp.m) and ADAGUC.knmi.nl.
+// To create this netCDF file with Matlab please see nc_cf_grid_write_lat_lon_curvilinear_tutorial
+NetCDF-3 Classic nc_cf_grid_write_lat_lon_curvilinear_tutorial.nc {
+dimensions:
+	col = 3 ;
+	row = 5 ;
+	time = 1 ;
+	bounds = 4 ;
+
+variables:
+	// Preference 'PRESERVE_FVD':  false,
+	// dimensions consistent with ncBrowse, not with native MATLAB netcdf package.
+	double time(time), shape = [1]
+		time:standard_name = "time" ;
+		time:long_name = "time" ;
+		time:units = "days since 1970-01-01 00:00:00 +08:00" ;
+		time:axis = "T" ;
+	double lon(row,col), shape = [5 3]
+		lon:standard_name = "longitude" ;
+		lon:long_name = "Longitude" ;
+		lon:units = "degrees_east" ;
+		lon:axis = "X" ;
+		lon:grid_mapping = "projection" ;
+		lon:actual_range = 2 6 ;
+		lon:bounds = "lon_bnds" ;
+	double lat(row,col), shape = [5 3]
+		lat:standard_name = "latitude" ;
+		lat:long_name = "Latitude" ;
+		lat:units = "degrees_north" ;
+		lat:axis = "Y" ;
+		lat:grid_mapping = "projection" ;
+		lat:actual_range = 50 54 ;
+		lat:bounds = "lat_bnds" ;
+	int32 projection([]), shape = [1]
+		projection:name = "WGS 84" ;
+		projection:epsg = 4326 ;
+		projection:grid_mapping_name = "latitude_longitude" ;
+		projection:semi_major_axis = 6.37814e+06 ;
+		projection:semi_minor_axis = 6.35675e+06 ;
+		projection:inverse_flattening = 298.257 ;
+		projection:proj4_params = "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs" ;
+		projection:EPSG_code = "EPSG:4326" ;
+		projection:projection_name = "Latitude Longitude" ;
+		projection:wkt = "" ;
+		projection:comment = "value is equal to EPSG code" ;
+	double lon_bnds(row,col,bounds), shape = [5 3 4]
+		lon_bnds:standard_name = "longitude" ;
+		lon_bnds:long_name = "Longitude bounds" ;
+		lon_bnds:units = "degrees_east" ;
+		lon_bnds:actual_range = 1 7 ;
+	double lat_bnds(row,col,bounds), shape = [5 3 4]
+		lat_bnds:standard_name = "latitude" ;
+		lat_bnds:long_name = "Latitude bounds" ;
+		lat_bnds:units = "degrees_north" ;
+		lat_bnds:actual_range = 49.5 54.5 ;
+	double depth(time,row,col), shape = [1 5 3]
+		depth:standard_name = "sea_floor_depth_below_geoid" ;
+		depth:long_name = "bottom depth" ;
+		depth:units = "m" ;
+		depth:actual_range = 1 114 ;
+		depth:grid_mapping = "projection" ;
+		depth:coordinates = "lat lon" ;
+		depth:_FillValue = 3.40282e+38 ;
+
+//global attributes:
+		:title = "nc_cf_grid_write_lat_lon_curvilinear_tutorial" ;
+		:institution = "Deltares" ;
+		:source = "" ;
+		:history = "$HeadURL: https://svn.oss.deltares.nl/repos/openearthtools/trunk/matlab/io/netcdf/nctools/nc_cf_grid_write_lat_lon_curvilinear_tutorial.m $ $Id: nc_cf_grid_write_lat_lon_curvilinear_tutorial.m 8907 2013-07-10 12:39:16Z boer_g $" ;
+		:references = "http://svn.oss.deltares.nl" ;
+		:email = "" ;
+		:featureType = "grid" ;
+		:comment = "" ;
+		:version = "" ;
+		:Conventions = "CF-1.6" ;
+		:terms_for_use = "These data can be used freely for research purposes provided that the following source is acknowledged: Deltares" ;
+		:disclaimer = "This data is made available in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE." ;
+		:time_coverage_start = "2000-01-01T00:00" ;
+		:time_coverage_end = "2000-01-01T00:00" ;
+
+
+data:
+
+time = 10957;
+
+lon =
+ 2, 4, 6,
+ 2, 4, 6,
+ 2, 4, 6,
+ 2, 4, 6,
+ 2, 4, 6 ;
+
+lat =
+ 50, 50, 50,
+ 51, 51, 51,
+ 52, 52, 52,
+ 53, 53, 53,
+ 54, 54, 54 ;
+
+projection = 4326;
+
+lon_bnds =
+ 1, 3, 3, 1,
+ 3, 5, 5, 3,
+ 5, 7, 7, 5,
+ 1, 3, 3, 1,
+ 3, 5, 5, 3,
+ 5, 7, 7, 5,
+ 1, 3, 3, 1,
+ 3, 5, 5, 3,
+ 5, 7, 7, 5,
+ 1, 3, 3, 1,
+ 3, 5, 5, 3,
+ 5, 7, 7, 5,
+ 1, 3, 3, 1,
+ 3, 5, 5, 3,
+ 5, 7, 7, 5 ;
+
+lat_bnds =
+ 49.5, 49.5, 50.5, 50.5,
+ 49.5, 49.5, 50.5, 50.5,
+ 49.5, 49.5, 50.5, 50.5,
+ 50.5, 50.5, 51.5, 51.5,
+ 50.5, 50.5, 51.5, 51.5,
+ 50.5, 50.5, 51.5, 51.5,
+ 51.5, 51.5, 52.5, 52.5,
+ 51.5, 51.5, 52.5, 52.5,
+ 51.5, 51.5, 52.5, 52.5,
+ 52.5, 52.5, 53.5, 53.5,
+ 52.5, 52.5, 53.5, 53.5,
+ 52.5, 52.5, 53.5, 53.5,
+ 53.5, 53.5, 54.5, 54.5,
+ 53.5, 53.5, 54.5, 54.5,
+ 53.5, 53.5, 54.5, 54.5 ;
+
+depth =
+ 1, 106, 11,
+ 102, 7, 112,
+ 3, 108, 3.40282e+38,
+ 104, 9, 114,
+ 5, 110, 15 ;
+
+}

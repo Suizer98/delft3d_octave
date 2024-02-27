@@ -1,0 +1,256 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>10 10 240 125</position>
+    <text>Background Horizontal Viscosity / Diffusivity</text>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>20 95</position>
+    <text>File</text>
+    <variable>handles.model.delft3dflow.domain(ad).uniformViscosity</variable>
+    <type>integer</type>
+    <value>0</value>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).uniformViscosity</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>20 70</position>
+    <text>Uniform</text>
+    <variable>handles.model.delft3dflow.domain(ad).uniformViscosity</variable>
+    <type>integer</type>
+    <value>1</value>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).uniformViscosity</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>80 95 50 20</position>
+    <text>File</text>
+    <variable>handles.model.delft3dflow.domain(ad).edyFile</variable>
+    <type>string</type>
+    <extension>*.edy</extension>
+    <selectiontext>Select Delft3D viscosity file</selectiontext>
+    <tooltipstring>Select viscosity file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).uniformViscosity</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>190 45 50 20</position>
+    <text>Horizontal Eddy Viscosity (m^2/s)</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).vicoUV</variable>
+    <type>real</type>
+    <tooltipstring>Enter horizontal eddy viscosity</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).uniformViscosity</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>190 20 50 20</position>
+    <text>Horizontal Eddy Diffusivity (m^2/s)</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).dicoUV</variable>
+    <type>real</type>
+    <tooltipstring>Enter horizontal eddy diffusivity</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).uniformViscosity</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>260 10 150 125</position>
+    <text>Model for 2D Turbulence</text>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>270 100</position>
+    <text>Sub-grid Scale HLES</text>
+    <variable>handles.model.delft3dflow.domain(ad).HLES</variable>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>270 75 50 20</position>
+    <text>Edit</text>
+    <callback>ddb_Delft3DFLOW_viscosity</callback>
+    <option1>edithles</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).HLES</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>420 10 240 125</position>
+    <text>Background Vertical Viscosity / Diffusivity</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>590 90 60 20</position>
+    <text>Vertical Eddy Viscosity (m^2/s)</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).vicoWW</variable>
+    <type>real</type>
+    <tooltipstring>Enter vertical eddy viscosity</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).KMax</variable>
+        <value>1</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>590 65 60 20</position>
+    <text>Vertical Eddy Diffusivity (m^2/s)</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).dicoWW</variable>
+    <type>real</type>
+    <tooltipstring>Enter vertical eddy diffusivity</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).KMax</variable>
+        <value>1</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>590 30 60 20</position>
+    <text>Ozmidov Length Scale (m)</text>
+    <textposition>left</textposition>
+    <variable>handles.model.delft3dflow.domain(ad).xlo</variable>
+    <type>real</type>
+    <tooltipstring>Edit Ozmidov length scale</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).KMax</variable>
+        <value>1</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>panel</style>
+    <position>670 10 150 125</position>
+    <text>Model for 3D Turbulence</text>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>680 95</position>
+    <text>Constant</text>
+    <variable>handles.model.delft3dflow.domain(ad).verticalTurbulenceModel</variable>
+    <type>string</type>
+    <value>Constant</value>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).KMax</variable>
+        <value>1</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>680 70</position>
+    <text>Algebraic</text>
+    <variable>handles.model.delft3dflow.domain(ad).verticalTurbulenceModel</variable>
+    <type>string</type>
+    <value>Algebraic</value>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).KMax</variable>
+        <value>1</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>680 45</position>
+    <text>K-L</text>
+    <variable>handles.model.delft3dflow.domain(ad).verticalTurbulenceModel</variable>
+    <type>string</type>
+    <value>K-L</value>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).KMax</variable>
+        <value>1</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>680 20</position>
+    <text>K-epsilon</text>
+    <variable>handles.model.delft3dflow.domain(ad).verticalTurbulenceModel</variable>
+    <type>string</type>
+    <value>K-epsilon</value>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).KMax</variable>
+        <value>1</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

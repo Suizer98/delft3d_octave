@@ -1,0 +1,248 @@
+// The netCDF-CF conventions for grids are defined here:
+// http://cf-pcmdi.llnl.gov/documents/cf-conventions/
+// This grid file can be loaded into matlab with QuickPlot (d3d_qp.m) and ADAGUC.knmi.nl.
+// To create this netCDF file with Matlab please see ncwritetutorial_grid_x_y_curvilinear
+NetCDF-3 Classic ncwritetutorial_grid_x_y_curvilinear.nc {
+dimensions:
+	col = 3 ;
+	row = 5 ;
+	time = 1 ;
+	bounds = 4 ;
+
+variables:
+	// Preference 'PRESERVE_FVD':  false,
+	// dimensions consistent with ncBrowse, not with native MATLAB netcdf package.
+	double time(time), shape = [1]
+		time:standard_name = "time" ;
+		time:long_name = "time" ;
+		time:units = "days since 1970-01-01 00:00:00+08:00" ;
+		time:axis = "T" ;
+	double x(row,col), shape = [5 3]
+		x:standard_name = "projection_x_coordinate" ;
+		x:long_name = "Easting" ;
+		x:units = "m" ;
+		x:axis = "X" ;
+		x:_FillValue = NaN ;
+		x:grid_mapping = "epsg" ;
+		x:actual_range = 314268 853681 ;
+		x:bounds = "lon_bnds" ;
+	double y(row,col), shape = [5 3]
+		y:standard_name = "projection_y_coordinate" ;
+		y:long_name = "Northing" ;
+		y:units = "m" ;
+		y:axis = "Y" ;
+		y:_FillValue = NaN ;
+		y:grid_mapping = "epsg" ;
+		y:actual_range = 5.39144e+06 6.13469e+06 ;
+		y:bounds = "lat_bnds" ;
+	double lon(row,col), shape = [5 3]
+		lon:standard_name = "longitude" ;
+		lon:long_name = "Longitude" ;
+		lon:units = "degrees_east" ;
+		lon:axis = "X" ;
+		lon:_FillValue = NaN ;
+		lon:grid_mapping = "projection" ;
+		lon:actual_range = 0.125 7.875 ;
+		lon:bounds = "lon_bnds" ;
+	double lat(row,col), shape = [5 3]
+		lat:standard_name = "latitude" ;
+		lat:long_name = "Latitude" ;
+		lat:units = "degrees_north" ;
+		lat:axis = "Y" ;
+		lat:_FillValue = NaN ;
+		lat:grid_mapping = "projection" ;
+		lat:actual_range = 48.65 55.35 ;
+		lat:bounds = "lat_bnds" ;
+	int32 epsg([]), shape = [1]
+		epsg:name = "WGS 84 / UTM zone 31N" ;
+		epsg:epsg = 32631 ;
+		epsg:epsg_name = "Transverse Mercator" ;
+		epsg:grid_mapping_name = "transverse_mercator" ;
+		epsg:semi_major_axis = 6.37814e+06 ;
+		epsg:semi_minor_axis = 6.35675e+06 ;
+		epsg:inverse_flattening = 298.257 ;
+		epsg:latitude_of_projection_origin = 0 ;
+		epsg:longitude_of_projection_origin = 3 ;
+		epsg:false_easting = 500000 ;
+		epsg:false_northing = 0 ;
+		epsg:scale_factor_at_projection_origin = 0.9996 ;
+		epsg:proj4_params = "+proj=utm +zone=31 +ellps=WGS84 +datum=WGS84 +units=m +no_defs " ;
+		epsg:EPSG_code = "EPSG:32631" ;
+		epsg:projection_name = "WGS 84 / UTM zone 31N" ;
+		epsg:wkt = "" ;
+		epsg:comment = "value is equal to EPSG code" ;
+	int32 projection([]), shape = [1]
+		projection:name = "WGS 84" ;
+		projection:epsg = 4326 ;
+		projection:grid_mapping_name = "latitude_longitude" ;
+		projection:semi_major_axis = 6.37814e+06 ;
+		projection:semi_minor_axis = 6.35675e+06 ;
+		projection:inverse_flattening = 298.257 ;
+		projection:proj4_params = "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs" ;
+		projection:EPSG_code = "EPSG:4326" ;
+		projection:projection_name = "Latitude Longitude" ;
+		projection:wkt = "" ;
+		projection:comment = "value is equal to EPSG code" ;
+	double x_bnds(row,col,bounds), shape = [5 3 4]
+		x_bnds:standard_name = "projection_x_coordinate" ;
+		x_bnds:long_name = "Easting bounds" ;
+		x_bnds:units = "m" ;
+		x_bnds:_FillValue = NaN ;
+		x_bnds:actual_range = 111663 1.07896e+06 ;
+	double y_bnds(row,col,bounds), shape = [5 3 4]
+		y_bnds:standard_name = "projection_y_coordinate" ;
+		y_bnds:long_name = "Northing bounds" ;
+		y_bnds:units = "m" ;
+		y_bnds:_FillValue = NaN ;
+		y_bnds:actual_range = 5.26121e+06 6.26352e+06 ;
+	double lon_bnds(row,col,bounds), shape = [5 3 4]
+		lon_bnds:standard_name = "longitude" ;
+		lon_bnds:long_name = "Longitude bounds" ;
+		lon_bnds:units = "degrees_east" ;
+		lon_bnds:_FillValue = NaN ;
+		lon_bnds:actual_range = -3 11 ;
+	double lat_bnds(row,col,bounds), shape = [5 3 4]
+		lat_bnds:standard_name = "latitude" ;
+		lat_bnds:long_name = "Latitude bounds" ;
+		lat_bnds:units = "degrees_north" ;
+		lat_bnds:_FillValue = NaN ;
+		lat_bnds:actual_range = 47.5 56.5 ;
+	double depth(time,row,col), shape = [1 5 3]
+		depth:standard_name = "sea_floor_depth_below_geoid" ;
+		depth:long_name = "bottom depth" ;
+		depth:units = "m" ;
+		depth:positive = "up" ;
+		depth:_FillValue = NaN ;
+		depth:actual_range = 1 114 ;
+		depth:grid_mapping = "projection epsg" ;
+		depth:coordinates = "lat lon" ;
+
+//global attributes:
+		:title = "ncwritetutorial_grid_x_y_curvilinear" ;
+		:institution = "Deltares" ;
+		:source = "" ;
+		:history = "$HeadURL: https://svn.oss.deltares.nl/repos/openearthtools/trunk/matlab/io/netcdf/nctools/ncwritetutorial_grid_x_y_curvilinear.m $ $Id: ncwritetutorial_grid_x_y_curvilinear.m 8864 2013-06-28 08:05:56Z boer_g $" ;
+		:references = "http://svn.oss.deltares.nl" ;
+		:email = "" ;
+		:featureType = "grid" ;
+		:comment = "" ;
+		:version = "" ;
+		:Conventions = "CF-1.6" ;
+		:terms_for_use = "These data can be used freely for research purposes provided that the following source is acknowledged: Deltares" ;
+		:disclaimer = "This data is made available in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE." ;
+		:time_coverage_start = "2000-01-01T00:00" ;
+		:time_coverage_end = "2000-01-01T00:00" ;
+
+
+data:
+
+time = 10957;
+
+x =
+ 442598, 646308, 853681,
+ 435233, 586876, 737737,
+ 431355, 568645, 705913,
+ 408190, 551878, 695849,
+ 314268, 502550, 680471 ;
+
+y =
+ 5.43717e+06, 5.39144e+06, 5.47692e+06,
+ 5.63133e+06, 5.61221e+06, 5.63642e+06,
+ 5.76198e+06, 5.76198e+06, 5.76576e+06,
+ 5.89323e+06, 5.91206e+06, 5.89629e+06,
+ 6.06425e+06, 6.13469e+06, 6.09107e+06 ;
+
+lon =
+ 2.2, 4.975, 7.875,
+ 2.075, 4.225, 6.375,
+ 2, 4, 6,
+ 1.625, 3.775, 5.925,
+ 0.125, 3.025, 5.8 ;
+
+lat =
+ 49.075, 48.65, 49.325,
+ 50.825, 50.65, 50.825,
+ 52, 52, 52,
+ 53.175, 53.35, 53.175,
+ 54.675, 55.35, 54.925 ;
+
+epsg = 32631;
+
+projection = 4326;
+
+x_bnds =
+ 315327, 575313, 521589, 358163,
+ 575313, 801233, 687096, 521589,
+ 801233, 1.07896e+06, 847432, 687096,
+ 358163, 521589, 500000, 361181,
+ 521589, 687096, 638819, 500000,
+ 687096, 847432, 777600, 638819,
+ 361181, 500000, 500000, 364241,
+ 500000, 638819, 635759, 500000,
+ 638819, 777600, 771475, 635759,
+ 364241, 500000, 460859, 307660,
+ 500000, 635759, 610894, 460859,
+ 635759, 771475, 765267, 610894,
+ 307660, 460859, 376889, 111663,
+ 460859, 610894, 561559, 376889,
+ 610894, 765267, 784163, 561559 ;
+
+y_bnds =
+ 5.37489e+06, 5.26121e+06, 5.51644e+06, 5.59614e+06,
+ 5.26121e+06, 5.26849e+06, 5.51964e+06, 5.51644e+06,
+ 5.26849e+06, 5.51387e+06, 5.6057e+06, 5.51964e+06,
+ 5.59614e+06, 5.51644e+06, 5.70543e+06, 5.70733e+06,
+ 5.51644e+06, 5.51964e+06, 5.70733e+06, 5.70543e+06,
+ 5.51964e+06, 5.6057e+06, 5.71302e+06, 5.70733e+06,
+ 5.70733e+06, 5.70543e+06, 5.81665e+06, 5.81853e+06,
+ 5.70543e+06, 5.70733e+06, 5.81853e+06, 5.81665e+06,
+ 5.70733e+06, 5.71302e+06, 5.82418e+06, 5.81853e+06,
+ 5.81853e+06, 5.81665e+06, 6.00594e+06, 5.93181e+06,
+ 5.81665e+06, 5.81853e+06, 6.00711e+06, 6.00594e+06,
+ 5.81853e+06, 5.82418e+06, 5.93534e+06, 6.00711e+06,
+ 5.93181e+06, 6.00594e+06, 6.26352e+06, 6.05573e+06,
+ 6.00594e+06, 6.00711e+06, 6.26218e+06, 6.26352e+06,
+ 6.00711e+06, 5.93534e+06, 6.15964e+06, 6.26218e+06 ;
+
+lon_bnds =
+ 0.5, 4, 3.3, 1,
+ 4, 7, 5.6, 3.3,
+ 7, 11, 7.9, 5.6,
+ 1, 3.3, 3, 1,
+ 3.3, 5.6, 5, 3,
+ 5.6, 7.9, 7, 5,
+ 1, 3, 3, 1,
+ 3, 5, 5, 3,
+ 5, 7, 7, 5,
+ 1, 3, 2.4, 0.1,
+ 3, 5, 4.7, 2.4,
+ 5, 7, 7, 4.7,
+ 0.1, 2.4, 1, -3,
+ 2.4, 4.7, 4, 1,
+ 4.7, 7, 7.5, 4 ;
+
+lat_bnds =
+ 48.5, 47.5, 49.8, 50.5,
+ 47.5, 47.5, 49.8, 49.8,
+ 47.5, 49.5, 50.5, 49.8,
+ 50.5, 49.8, 51.5, 51.5,
+ 49.8, 49.8, 51.5, 51.5,
+ 49.8, 50.5, 51.5, 51.5,
+ 51.5, 51.5, 52.5, 52.5,
+ 51.5, 51.5, 52.5, 52.5,
+ 51.5, 51.5, 52.5, 52.5,
+ 52.5, 52.5, 54.2, 53.5,
+ 52.5, 52.5, 54.2, 54.2,
+ 52.5, 52.5, 53.5, 54.2,
+ 53.5, 54.2, 56.5, 54.5,
+ 54.2, 54.2, 56.5, 56.5,
+ 54.2, 53.5, 55.5, 56.5 ;
+
+depth =
+ 1, 106, 11,
+ 102, 7, 112,
+ 3, 108, NaN,
+ 104, 9, 114,
+ 5, 110, 15 ;
+
+}

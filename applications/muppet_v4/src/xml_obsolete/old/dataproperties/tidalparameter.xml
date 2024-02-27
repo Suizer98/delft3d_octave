@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<root>
+  <dataproperty>
+  <name>tidalparameter</name>
+  <keyword>TidalParameter</keyword>
+  <checkfor>any</checkfor>
+  <check>
+    <variable>parameter</variable>
+    <value>samples</value>
+    <operator>eq</operator>
+  </check>
+  <check>
+    <variable>parameter</variable>
+    <value>component set</value>
+    <operator>eq</operator>
+  </check>
+  <element>
+    <style>popupmenu</style>
+    <text>Parameter</text>
+    <variable>tidalparameter</variable>
+    <type>string</type>
+    <tooltipstring>Select tidal parameter</tooltipstring>
+    <position>60 0 270 20</position>
+    <listtext>amplitude</listtext>
+    <listtext>phase</listtext>
+    <defaultvalue>amplitude</defaultvalue>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>parameter</variable>
+        <value>component set</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>parameter</variable>
+        <value>samples</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  </dataproperty>
+</root>

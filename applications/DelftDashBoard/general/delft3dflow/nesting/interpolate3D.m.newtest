@@ -1,0 +1,256 @@
+function s=interpolate3D(x,y,dplayer,d,varargin)
+%INTERPOLATE3D  One line description goes here.
+%
+%   More detailed description goes here.
+%
+%   Syntax:
+%   s = interpolate3D(x, y, dplayer, d, varargin)
+%
+%   Input:
+%   x        =
+%   y        =
+%   dplayer  =
+%   d        =
+%   varargin =
+%
+%   Output:
+%   s        =
+%
+%   Example
+%   interpolate3D
+%
+%   See also
+
+%% Copyright notice
+%   --------------------------------------------------------------------
+%   Copyright (C) 2011 Deltares
+%       Maarten van Ormondt
+%
+%       Maarten.vanOrmondt@deltares.nl
+%
+%       P.O. Box 177
+%       2600 MH Delft
+%       The Netherlands
+%
+%   This library is free software: you can redistribute it and/or modify
+%   it under the terms of the GNU General Public License as published by
+%   the Free Software Foundation, either version 3 of the License, or
+%   (at your option) any later version.
+%
+%   This library is distributed in the hope that it will be useful,
+%   but WITHOUT ANY WARRANTY; without even the implied warranty of
+%   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%   GNU General Public License for more details.
+%
+%   You should have received a copy of the GNU General Public License
+%   along with this library.  If not, see <http://www.gnu.org/licenses/>.
+%   --------------------------------------------------------------------
+
+% This tool is part of <a href="http://www.OpenEarth.eu">OpenEarthTools</a>.
+% OpenEarthTools is an online collaboration to share and manage data and
+% programming tools in an open source, version controlled environment.
+% Sign up to recieve regular updates of this function, and to contribute
+% your own tools.
+
+%% Version <http://svnbook.red-bean.com/en/1.5/svn.advanced.props.special.keywords.html>
+% Created: 02 Dec 2011
+% Created with Matlab version: 7.11.0.584 (R2010b)
+
+% $Id: interpolate3D.m 5789 2012-02-21 08:46:31Z ormondt $
+% $Date: 2012-02-21 09:46:31 +0100 (di, 21 feb 2012) $
+% $Author: ormondt $
+% $Revision: 5789 $
+% $HeadURL: https://svn.oss.deltares.nl/repos/openearthtools/trunk/matlab/applications/DelftDashBoard/general/delft3dflow/nesting/interpolate3D.m $
+% $Keywords: $
+
+% Interpolate regular 3d matrix in structure d onto vertical profiles
+% If KMax==1, take depth averaged values
+
+tp='data';
+
+if ~isempty(varargin)
+    if strcmpi(varargin{1},'u') || strcmpi(varargin{1},'v')
+        tp=varargin{1};
+    end
+end    
+
+nlevels=length(d.levels);
+levels=d.levels';
+
+if ndims(dplayer)==3
+    kmax=size(dplayer,3);
+elseif ndims(dplayer)==2
+    % Two boundary points
+    kmax=1;
+else
+    kmax=length(dplayer);
+end
+
+xd=d.lon;
+yd=d.lat;
+[xd,yd]=meshgrid(xd,yd);
+
+x(isnan(x))=1e9;
+y(isnan(y))=1e9;
+
+
+% First interpolate on different profiles in horizontal grid
+if kmax>1
+    % 3D
+    vals=zeros([size(x) kmax]);
+    vals(vals==0)=NaN;
+    for k=1:nlevels
+        vald=squeeze(d.data(:,:,k));
+        switch lower(tp(1))
+            case{'u','v'}
+                % Do NOT apply diffusion for velocities
+                vald=internaldiffusion(vald,'nst',10);
+            otherwise
+                vald=internaldiffusion(vald,'nst',10);
+        end       
+        vals(:,:,k)=interp2(xd,yd,vald,x,y);
+%        vals(isnan(vals))=-9999;
+    end
+else
+    for k=1:nlevels
+        vald=squeeze(d.data(:,:,k));
+        switch lower(tp(1))
+            case{'u','v'}
+                % Do NOT apply diffusion for velocities
+                vald=internaldiffusion(vald,'nst',10);
+            otherwise
+                vald=internaldiffusion(vald,'nst',10);
+        end
+        vals(:,:,k)=vald;
+    end
+    vals=dptavg(squeeze(vals),levels);
+    vals=interp2(xd,yd,vals,x,y);
+end
+
+% And now linearly interpolate over the vertical
+if kmax>1
+
+%     depths=levels;
+% 
+%     vals=permute(vals,[3 1 2]);
+%     dplayer=permute(dplayer,[3 1 2]);
+% 
+%     
+%     for j=1:size(dplayer,3)
+%     dpl=squeeze(dplayer(:,:,j));    
+%     vls=squeeze(vals(:,:,j));    
+%     v=interp1(depths,vls,dpl);
+%     end
+% %    s(i,j,:)=interp1(depths,temps,squeeze(dplayer(i,j,:)));
+% 
+%     %    val=squeeze(vals(i,j,:));
+%     % 3D
+%     for i=1:size(vals,1)
+%         for j=1:size(vals,2)
+%             val=squeeze(vals(i,j,:));
+%             ii=find(val>-9000);
+%             if ~isempty(ii)
+%                 i1=min(ii);
+%                 i2=max(ii);
+%                 depths=levels(i1:i2);
+%                 temps=val(i1:i2);
+%                 
+%                 if size(depths,2)>1
+%                     depths=depths';
+%                 end
+%                 
+%                 switch lower(tp(1))
+%                     case{'u','v'}
+%                         % Set velocities to 0 below where they are not available
+%                         ddep=depths(end)-depths(end-1);
+%                         ddep=1;
+%                         depths=[-100000;depths;depths(end)+ddep;100000];
+%                         temps =[temps(1);temps;0;0];
+%                     otherwise
+%                         depths=[-100000;depths;100000];
+%                         temps =[temps(1);temps;temps(end)];
+%                 end
+%                 s(i,j,:)=interp1(depths,temps,squeeze(dplayer(i,j,:)));
+%             else
+%                 s(i,j,1:kmax)=0;
+%             end
+%         end
+%     end
+
+levels=[-10000 levels 10000];
+vals=cat(3,vals(:,:,1),vals);
+vals=cat(3,vals,vals(:,:,end));
+%tic
+    s=zeros(size(vals,1),size(vals,2),kmax);
+    for k2=1:length(levels)-1
+        iin0=find(dplayer>=levels(k2) & dplayer<levels(k2+1));
+        [iin,jin,kin]=ind2sub(size(dplayer),iin0);
+        ks=zeros(size(iin))+k2;
+        indv1=sub2ind(size(vals),iin,jin,ks);
+        indv2=sub2ind(size(vals),iin,jin,ks+1);
+        dst2=dplayer(iin0)-levels(k2+1);
+        fac1=-dst2/(levels(k2+1)-levels(k2));
+        fac2=1-fac1;
+        val1=vals(indv1);
+        val2=vals(indv2);
+        s(iin0)=fac1.*val1+fac2.*val2;
+    end
+%toc
+
+%     % 3D
+%     for i=1:size(vals,1)
+%         for j=1:size(vals,2)
+%             val=squeeze(vals(i,j,:));
+%             ii=find(val>-9000);
+%             if ~isempty(ii)
+%                 i1=min(ii);
+%                 i2=max(ii);
+%                 depths=levels(i1:i2);
+%                 temps=val(i1:i2);
+%                 
+%                 if size(depths,2)>1
+%                     depths=depths';
+%                 end
+%                 
+%                 switch lower(tp(1))
+%                     case{'u','v'}
+%                         % Set velocities to 0 below where they are not available
+% %                        ddep=depths(end)-depths(end-1);
+%                         ddep=1;
+%                         depths=[-100000;depths;depths(end)+ddep;100000];
+%                         temps =[temps(1);temps;0;0];
+%                     otherwise
+%                         depths=[-100000;depths;100000];
+%                         temps =[temps(1);temps;temps(end)];
+%                 end
+%                 s(i,j,:)=interp1(depths,temps,squeeze(dplayer(i,j,:)));
+%             else
+%                 s(i,j,1:kmax)=0;
+%             end
+%         end
+%     end
+else
+    % 2D, compute depth averaged values
+    s=vals;
+end
+
+%% Depth-averaging
+function davg=dptavg(d,levels)
+kmax=length(levels);
+thck=zeros(kmax,1);
+thck(1)=0.5*levels(1);
+for i=2:kmax-1
+    thck(i)=0.5*(levels(i)-levels(i-1))+0.5*(levels(i+1)-levels(i));
+end
+thck(kmax)=thck(kmax-1);
+thckm=zeros(size(d));
+for k=1:kmax
+    dtmp=squeeze(d(:,:,k));
+    thckt=zeros(size(dtmp))+thck(k);
+    thckt(isnan(dtmp))=NaN;
+    thckm(:,:,k)=thckt;
+end
+davg=d.*thckm;
+davg=nansum(davg,3);
+davg=davg./nansum(thckm,3);
+

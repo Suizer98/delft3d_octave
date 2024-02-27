@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <text>Numerics</text>
+    <position>40 10 900 160</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>170 125 50 20</position>
+    <variable>handles.model.dflowfm.domain.cflmax</variable>
+    <type>real</type>
+    <tooltipstring>Edit maximum courant number</tooltipstring>
+    <text>Max Courant Number</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>170 100 50 20</position>
+    <variable>handles.model.dflowfm.domain.cflwavefrac</variable>
+    <type>real</type>
+    <tooltipstring>Edit wave velocity fraction, total courant vel = u + cflw*wavevelocity</tooltipstring>
+    <text>Wave Velocity Fraction</text>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Advection Type</text>
+    <position>360 125 120 20</position>
+    <tooltipstring>Select advection type</tooltipstring>
+    <variable>handles.model.dflowfm.domain.advectype</variable>
+    <type>integer</type>
+    <listtext>No</listtext>
+    <listtext>Wenneker, qu-udzt</listtext>
+    <listtext>1, q(uio-u)</listtext>
+    <listtext>Perot q(uio-u)</listtext>
+    <listtext>Perot q(ui-u)</listtext>
+    <listtext>Perot q(ui-u) without itself</listtext>
+    <listvalue>0</listvalue>
+    <listvalue>1</listvalue>
+    <listvalue>2</listvalue>
+    <listvalue>3</listvalue>
+    <listvalue>4</listvalue>
+    <listvalue>5</listvalue>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <text>Limiter Salinity Transport</text>
+    <position>360 100 120 20</position>
+    <tooltipstring>Select limiter for salinity transport</tooltipstring>
+    <variable>handles.model.dflowfm.domain.limtypsa</variable>
+    <type>integer</type>
+    <listtext>No</listtext>
+    <listtext>Min Mod</listtext>
+    <listtext>Van Leer</listtext>
+    <listtext>Kooren</listtext>
+    <listtext>Monotone Central</listtext>
+    <listvalue>0</listvalue>
+    <listvalue>1</listvalue>
+    <listvalue>2</listvalue>
+    <listvalue>3</listvalue>
+    <listvalue>4</listvalue>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>360 75 50 20</position>
+    <text>Hdam</text>
+    <variable>handles.model.dflowfm.domain.hdam</variable>
+    <type>real</type>
+    <tooltipstring>Edit threshold for minimum bottomlevel step at which to apply energy conservation factor i.c. flow contraction</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>570 125 50 20</position>
+    <variable>handles.model.dflowfm.domain.tlfsmo</variable>
+    <type>real</type>
+    <tooltipstring>Edit smoothing time (s)</tooltipstring>
+    <text>Smoothing time</text>
+  </element>
+</root>

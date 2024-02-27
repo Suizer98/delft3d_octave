@@ -1,0 +1,21 @@
+# Muppet v2.9 - File created by Maarten van Ormondt - 2007-07-13 16:14:21 
+ 
+Figure "1" 
+ 
+   Orientation p 
+   PaperSize   18 12 
+   Frame       none 
+ 
+   Subplot   "Subplot 1" 
+ 
+      Position   2   1  15  10 
+ 
+   EndSubplot 
+ 
+   OutputFile "figure1.png" 
+   Format     "png" 
+   Resolution 300 
+   Renderer   "zbuffer" 
+ 
+EndFigure 
+ 

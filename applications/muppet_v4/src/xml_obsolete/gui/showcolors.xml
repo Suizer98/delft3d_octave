@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<root>
+  <title>Colors</title>
+  <width>200</width>
+  <height>290</height>
+  <tag>showcolors</tag>
+  <element>
+    <tag>coloredpushbutton</tag>
+    <style>pushbutton</style>
+    <position>30 230 140 40</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>30 190 40 20</position>
+    <variable>r</variable>
+    <type>real</type>
+    <text>R</text>
+    <textposition>above-center</textposition>
+    <enable>0</enable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>80 190 40 20</position>
+    <variable>g</variable>
+    <type>real</type>
+    <text>G</text>
+    <textposition>above-center</textposition>
+    <enable>0</enable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>130 190 40 20</position>
+    <variable>b</variable>
+    <type>real</type>
+    <text>B</text>
+    <textposition>above-center</textposition>
+    <enable>0</enable>
+  </element>
+  <element>
+    <style>listbox</style>
+    <position>30 70 140 100</position>
+    <variable>colornumber</variable>
+    <type>integer</type>
+    <text>Colors</text>
+    <textposition>above-left</textposition>
+    <callback>muppet_showColors</callback>
+    <option1>selectcolor</option1>
+    <listtext>
+       <variable>colornames</variable>
+     </listtext>
+  </element>
+  <element>
+    <tag>ok</tag>
+    <style>pushok</style>
+    <position>100 20 70 20</position>
+  </element>
+</root>

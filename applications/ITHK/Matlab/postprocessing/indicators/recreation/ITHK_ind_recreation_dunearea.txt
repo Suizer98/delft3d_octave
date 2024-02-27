@@ -1,0 +1,5 @@
+% FILE WITH ZONE : RECREATION DUNES
+% Containing the following columns with information:
+%    - X        Centre location of the centre of the zone [m wrt Hoek van Holland]
+%    - B        Width of considered zone [m]
+59000      120000

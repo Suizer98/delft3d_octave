@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>pushselectfile</style>
+    <text>vegiefile</text>
+    <position>70.000,107.500, 80.000, 20.000</position>
+    <tooltipstring>Name of vegie species list file [-]</tooltipstring>
+    <variable>handles.model.xbeach.domain.vegiefile</variable>
+    <type>character</type>
+    <extension>*.*</extension>
+    <selectiontext>Select file</selectiontext>
+  </element>
+  <element>
+    <tooltipstring>Name of vegie species map file [-]</tooltipstring>
+    <style>pushselectfile</style>
+    <text>vegiemapfile</text>
+    <position>70.000,80.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.vegiemapfile</variable>
+    <type>character</type>
+    <extension>*.*</extension>
+    <selectiontext>Select file</selectiontext>
+  </element>
+</root>

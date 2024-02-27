@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<root>
+  <longname>Delft3D Grid</longname>
+  <title>Delft3D Grid</title>
+  <filterspec>*.grd</filterspec>
+  <callback>muppet_addDatasetDelft3DGrid</callback>
+  <dataproperty>
+    <name>filetype</name>
+  </dataproperty>
+  <dataproperty>
+    <name>filename</name>
+  </dataproperty>
+</root>

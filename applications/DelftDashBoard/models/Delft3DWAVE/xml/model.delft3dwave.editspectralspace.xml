@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<root>
+  <title>Spectral Space</title>
+  <width>400</width>
+  <height>250</height>
+  <element>
+    <style>text</style>
+    <position>10 220</position>
+    <text>Shape</text>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>120 220</position>
+    <text>JONSWAP</text>
+    <type>string</type>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).spshapetype</variable>
+    <value>jonswap</value>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>300 220 50 20</position>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).peakenhancfac</variable>
+    <type>real</type>
+    <text>Peak enh. fact.</text>
+    <textposition>left</textposition>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).spshapetype</variable>
+        <value>jonswap</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>120 195</position>
+    <text>Pierson-Moskowitz</text>
+    <type>string</type>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).spshapetype</variable>
+    <value>pierson-moskowitz</value>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>120 170</position>
+    <text>Gauss</text>
+    <type>string</type>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).spshapetype</variable>
+    <value>gauss</value>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>300 170 50 20</position>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).gaussspread</variable>
+    <type>real</type>
+    <text>Spreading</text>
+    <textposition>left</textposition>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).spshapetype</variable>
+        <value>gauss</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>10 145</position>
+    <text>Period</text>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>120 145</position>
+    <text>Peak</text>
+    <type>string</type>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).periodtype</variable>
+    <value>peak</value>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>120 120</position>
+    <text>Mean</text>
+    <type>string</type>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).periodtype</variable>
+    <value>mean</value>
+  </element>
+  <element>
+    <style>text</style>
+    <position>10 95</position>
+    <text>Directional spreading</text>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>120 95</position>
+    <text>Cosine power</text>
+    <type>string</type>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).dirspreadtype</variable>
+    <value>power</value>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>120 70</position>
+    <text>Degrees (standard deviation)</text>
+    <type>string</type>
+    <variable>handles.model.delft3dwave.domain.boundaries(handles.model.delft3dwave.domain.activeboundary).dirspreadtype</variable>
+    <value>degrees</value>
+  </element>
+  <element>
+    <style>pushok</style>
+    <position>170 10 50 20</position>
+  </element>
+  <element>
+    <style>pushcancel</style>
+    <position>110 10 50 20</position>
+  </element>
+</root>

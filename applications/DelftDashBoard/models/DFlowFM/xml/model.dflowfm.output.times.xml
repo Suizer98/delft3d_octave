@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <position>120 110 40 20</position>
+    <variable>handles.model.dflowfm.domain.mapinterval</variable>
+    <type>real</type>
+    <tooltipstring>Edit map output interval</tooltipstring>
+    <text>Map Interval (s)</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>120 85 40 20</position>
+    <variable>handles.model.dflowfm.domain.hisinterval</variable>
+    <type>real</type>
+    <tooltipstring>Edit history output interval</tooltipstring>
+    <text>His Interval (s)</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>120 60 40 20</position>
+    <variable>handles.model.dflowfm.domain.xlsinterval</variable>
+    <type>real</type>
+    <tooltipstring>Edit XLS output interval</tooltipstring>
+    <text>XLS Interval (s)</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>120 35 40 20</position>
+    <variable>handles.model.dflowfm.domain.rstinterval</variable>
+    <type>real</type>
+    <tooltipstring>Edit restart file interval</tooltipstring>
+    <text>Restart Interval (s)</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>120 10 40 20</position>
+    <variable>handles.model.dflowfm.domain.waqinterval</variable>
+    <type>real</type>
+    <tooltipstring>Edit WAQ file interval</tooltipstring>
+    <text>WAQ Interval (s)</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>300 110 200 20</position>
+    <variable>handles.model.dflowfm.domain.hisfile</variable>
+    <type>string</type>
+    <tooltipstring>Edit *_his.nc history file in NetCDF format</tooltipstring>
+    <text>History File</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>300 85 200 20</position>
+    <variable>handles.model.dflowfm.domain.mapfile</variable>
+    <type>string</type>
+    <tooltipstring>Edit *_map.nc map file in NetCDF format</tooltipstring>
+    <text>Map File</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>300 60 200 20</position>
+    <variable>handles.model.dflowfm.domain.flowgeomfile</variable>
+    <type>string</type>
+    <tooltipstring>Edit *_flowgeom.nc flow geometry file in NetCDF format</tooltipstring>
+    <text>Flow Geometry File</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>300 35 200 20</position>
+    <variable>handles.model.dflowfm.domain.waqfilebase</variable>
+    <type>string</type>
+    <tooltipstring>Edit basename (without extension) for all Delwaq files to be written</tooltipstring>
+    <text>Waq File Base</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>300 10 200 20</position>
+    <variable>handles.model.dflowfm.domain.snapshotdir</variable>
+    <type>string</type>
+    <tooltipstring>Edit directory where snapshots/screendumps are saved</tooltipstring>
+    <text>Snapshot folder</text>
+  </element>
+</root>

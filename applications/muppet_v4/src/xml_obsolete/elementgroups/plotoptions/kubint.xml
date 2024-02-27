@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 100</position>
+    <text>Area Properties</text>
+  </element>
+  <element>
+    <variable>kubfill</variable>
+    <type>boolean</type>
+    <style>checkbox</style>
+    <position>20 60 50 20</position>
+    <text>Fill Areas</text>
+  </element>
+  <element>
+    <variable>opacity</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>160 60 50 20</position>
+    <text>Opacity</text>
+    <tooltipstring>Edit opacity (only works in combination with OpenGL renderer)</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>kubfill</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>areatext</variable>
+    <type>string</type>
+    <style>popupmenu</style>
+    <position>60 35 120 20</position>
+    <listtext>Values</listtext>
+    <listtext>Polygon Names</listtext>
+    <listtext>Polygon Numbers</listtext>
+    <listtext>None</listtext>
+    <listvalue>values</listvalue>
+    <listvalue>polygonnames</listvalue>
+    <listvalue>polygonnumbers</listvalue>
+    <listvalue>none</listvalue>
+    <text>Add Text</text>
+  </element>
+  <element>
+    <variable>multiply</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>60 10 50 20</position>
+    <text>Multiply</text>
+    <tooltipstring>Edit multiplication factor</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>areatext</variable>
+        <value>values</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>decimals</variable>
+    <type>integer</type>
+    <style>edit</style>
+    <position>200 10 50 20</position>
+    <text>Decimals</text>
+    <tooltipstring>Edit number of decimals</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>areatext</variable>
+        <value>values</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>font</variable>
+    <style>selectfont</style>
+    <position>200 35 50 20</position>
+    <text>Font</text>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>areatext</variable>
+        <value>none</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+</root>

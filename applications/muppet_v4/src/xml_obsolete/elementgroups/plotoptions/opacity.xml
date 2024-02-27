@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 50</position>
+    <text>Opacity</text>
+  </element>
+  <element>
+    <variable>faceopacity</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>80 10 40 20</position>
+    <text>Face Opacity</text>
+  </element>
+  <element>
+    <variable>edgeopacity</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>200 10 40 20</position>
+    <text>Edge Opacity</text>
+  </element>
+</root>

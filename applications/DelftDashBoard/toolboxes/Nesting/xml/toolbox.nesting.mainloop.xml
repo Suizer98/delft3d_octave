@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<root>
+  <title>Mainloop: nesting and running simulations</title>
+  <width>300</width>
+  <height>175</height>
+  <element>
+    <style>popupmenu</style>
+    <position>125 125 100 20</position>
+    <variable>local_h6</variable>
+    <type>string</type>
+    <listtext>Local</listtext>
+    <listtext>H6-cluster</listtext>
+    <listvalue>local</listvalue>
+    <listvalue>h6</listvalue>
+    <tooltipstring>Local means running on your current PC, H6 is the calculation facility of Deltares</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>125 100 100 20</position>
+    <variable>username</variable>
+    <type>string</type>
+    <text>Username</text>
+    <tooltipstring>Fill here your username on the H6-clsuter</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>125 75 100 20</position>
+    <variable>password</variable>
+    <type>string</type>
+    <text>Password</text>
+    <tooltipstring>Fill here your password on the H6-clsuter</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>125 50 100 20</position>
+    <variable>h6type</variable>
+    <type>string</type>
+    <text>Calculation type</text>
+    <tooltipstring>Fill here your type on the H6-clsuter</tooltipstring>
+  </element>
+  <element>
+    <style>pushok</style>
+    <position>180 10 50 20</position>
+  </element>
+  <element>
+    <style>pushcancel</style>
+    <position>120 10 50 20</position>
+  </element>
+</root>

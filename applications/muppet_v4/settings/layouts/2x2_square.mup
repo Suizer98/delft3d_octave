@@ -1,0 +1,36 @@
+# Muppet v4.03 - File created by ormondt - 2016-03-09 09:27:18 
+ 
+Figure "2x2_portrait_wl1" 
+ 
+   PaperSize  13  13 
+ 
+   Subplot "Subplot 1" 
+ 
+      Position 1  7  5  5 
+ 
+   EndSubplot 
+ 
+   Subplot "Subplot 2" 
+ 
+      Position 7  7  5  5 
+ 
+   EndSubplot 
+ 
+   Subplot "Subplot 3" 
+ 
+      Position 1  1  5  5 
+ 
+   EndSubplot 
+ 
+   Subplot "Subplot 4" 
+ 
+      Position 7  1  5  5 
+ 
+   EndSubplot 
+ 
+   OutputFile   "figure1.png" 
+   Format       "png" 
+   Resolution   300 
+   Renderer     "zbuffer" 
+ 
+EndFigure 

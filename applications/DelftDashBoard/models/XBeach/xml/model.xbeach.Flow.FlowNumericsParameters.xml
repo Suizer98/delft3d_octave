@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <text>eps</text>
+    <position>70.000,107.500, 80.000, 20.000</position>
+    <tooltipstring>Threshold water depth above which cells are considered wet [m]</tooltipstring>
+    <variable>handles.model.xbeach.domain.eps</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Threshold velocity difference to determine conservation of energy head vs momentum [m/s]</tooltipstring>
+    <style>edit</style>
+    <text>eps_sd</text>
+    <position>70.000,80.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.eps_sd</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Threshold velocity for upwind velocity detection and for vmag2 in eq. sediment concentration [m/s]</tooltipstring>
+    <style>edit</style>
+    <text>umin</text>
+    <position>70.000,52.500,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.umin</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Threshold water depth above which Stokes drift is included [m]</tooltipstring>
+    <style>edit</style>
+    <text>hmin</text>
+    <position>70.000,25.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.hmin</variable>
+    <type>real</type>
+  </element>
+</root>

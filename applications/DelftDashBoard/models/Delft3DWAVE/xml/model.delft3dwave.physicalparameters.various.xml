@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>5 20 440 120</position>
+    <text>Processes activated</text>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>10 80</position>
+    <text>Wind Growth</text>
+    <type>integer</type>
+    <variable>handles.model.delft3dwave.domain.windgrowth</variable>
+    <callback>ddb_Delft3DWAVE_physicalParameters</callback>
+    <option1>togglewind</option1>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>10 50</position>
+    <text>Quadruplets</text>
+    <type>integer</type>
+    <variable>handles.model.delft3dwave.domain.quadruplets</variable>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dwave.domain.windgrowth</variable>
+        <value>1</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>200 80 100 20</position>
+    <text>Whitecapping</text>
+    <type>string</type>
+    <variable>handles.model.delft3dwave.domain.whitecapping</variable>
+    <listtext>
+      <variable>handles.model.delft3dwave.domain.whitecappingtypestext</variable>
+    </listtext>
+    <listvalue>
+      <variable>handles.model.delft3dwave.domain.whitecappingtypes</variable>
+    </listvalue>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+    </dependency>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>600 100</position>
+    <text>Refraction</text>
+    <type>integer</type>
+    <variable>handles.model.delft3dwave.domain.refraction</variable>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>600 75</position>
+    <text>Frequency Shift</text>
+    <type>integer</type>
+    <variable>handles.model.delft3dwave.domain.freqshift</variable>
+  </element>
+</root>

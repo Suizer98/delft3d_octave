@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<root>
+  <title>Interactive text</title>
+  <width>500</width>
+  <height>100</height>
+  <element>
+    <style>edit</style>
+    <position>40 60 440 20</position>
+    <variable>text</variable>
+    <type>string</type>
+    <text>Text</text>
+    <textposition>left</textposition>
+  </element>
+  <element>
+    <style>pushcancel</style>
+    <position>330 30 70 20</position>
+  </element>
+  <element>
+    <style>pushok</style>
+    <position>410 30 70 20</position>
+  </element>
+</root>

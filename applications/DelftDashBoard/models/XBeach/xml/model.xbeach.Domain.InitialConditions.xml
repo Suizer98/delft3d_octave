@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <text>zs0</text>
+    <position>70.000,107.500, 80.000, 20.000</position>
+    <tooltipstring>Inital water level [m]</tooltipstring>
+    <variable>handles.model.xbeach.domain.zs0</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Name of inital condition file zs [name]</tooltipstring>
+    <style>pushselectfile</style>
+    <text>zsinitfile</text>
+    <position>70.000,80.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.zsinitfile</variable>
+    <type>character</type>
+    <extension>*.*</extension>
+    <selectiontext>Select file</selectiontext>
+  </element>
+</root>

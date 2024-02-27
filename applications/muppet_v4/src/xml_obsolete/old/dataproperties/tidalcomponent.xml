@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<root>
+  <dataproperty>
+  <name>tidalcomponent</name>
+  <keyword>TidalComponent</keyword>
+  <checkfor>any</checkfor>
+  <check>
+    <variable>parameter</variable>
+    <value>samples</value>
+    <operator>eq</operator>
+  </check>
+  <element>
+    <style>popupmenu</style>
+    <text>Component</text>
+    <variable>tidalcomponent</variable>
+    <type>string</type>
+    <tooltipstring>Select tidal component</tooltipstring>
+    <position>60 0 270 20</position>
+    <callback>muppet_datasetGUI</callback>
+    <option1>selecttidalcomponent</option1>
+    <listtext>
+      <variable>tidalcomponentlist</variable>
+    </listtext>
+    <defaultvalue>M2</defaultvalue>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>parameter</variable>
+        <value>samples</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  </dataproperty>
+</root>

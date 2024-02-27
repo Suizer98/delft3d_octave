@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <text>Numerics</text>
+    <position>40 10 900 160</position>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>150 130 50 20</position>
+    <text>Alpha (-)</text>
+    <variable>handles.model.sfincs.domain(ad).input.alpha</variable>
+    <type>real</type>
+    <tooltipstring>Edit Courant coefficient alpha</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>150 105 50 20</position>
+    <text>Theta (-)</text>
+    <variable>handles.model.sfincs.domain(ad).input.theta</variable>
+    <tooltipstring>Edit smoothing coefficient theta</tooltipstring>
+    <type>real</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>150 80 50 20</position>
+    <text>Threshold Depth (m)</text>
+    <variable>handles.model.sfincs.domain(ad).input.huthresh</variable>
+    <tooltipstring>Edit threshold depth</tooltipstring>
+    <type>real</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>150 55 50 20</position>
+    <text>Stop Depth (m)</text>
+    <variable>handles.model.sfincs.domain(ad).input.stopdepth</variable>
+    <type>real</type>
+    <tooltipstring>Edit stop depth (simulation will stop when this depth is exceeded)</tooltipstring>
+  </element>
+</root>

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<root>
+  <title>Export Options</title>
+  <width>300</width>
+  <height>210</height>
+  <element>
+    <style>checkbox</style>
+    <position>20 170 50 20</position>
+    <variable>includename</variable>
+    <type>integer</type>
+    <text>Include station name in file name</text>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>20 140 50 20</position>
+    <variable>includeid</variable>
+    <type>integer</type>
+    <text>Include station ID in file name</text>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>20 110 50 20</position>
+    <variable>includedatabase</variable>
+    <type>integer</type>
+    <text>Include database in file name</text>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>20 80 50 20</position>
+    <variable>includetimestamp</variable>
+    <type>integer</type>
+    <text>Include timestamp in file name</text>
+  </element>
+  <element>
+    <style>checkbox</style>
+    <position>20 50 50 20</position>
+    <variable>exportallparameters</variable>
+    <type>integer</type>
+    <text>Export all parameters (not just selected parameter)</text>
+  </element>
+  <element>
+    <style>pushcancel</style>
+    <position>180 10 50 20</position>
+  </element>
+  <element>
+    <style>pushok</style>
+    <position>240 10 50 20</position>
+  </element>
+</root>

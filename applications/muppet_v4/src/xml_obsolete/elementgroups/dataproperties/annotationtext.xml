@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <variable>selectedtextnumber</variable>
+    <type>integer</type>
+    <style>listbox</style>
+    <position>60 30 270 100</position>
+    <listtext>
+      <variable>text</variable>
+    </listtext>
+    <tooltipstring>Select text</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>alltextselected</variable>
+        <value>0</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <variable>alltextselected</variable>
+    <type>integer</type>
+    <style>checkbox</style>
+    <position>60 0 270 20</position>
+    <listtext>
+      <variable>text</variable>
+    </listtext>
+    <text>Select All Text</text>
+    <tooltipstring>Select all texts</tooltipstring>
+  </element>
+</root>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 50</position>
+    <text>Position</text>
+  </element>
+  <element>
+    <variable>position(1)</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>30 10 50 20</position>
+    <text>X</text>
+  </element>
+  <element>
+    <variable>position(2)</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>100 10 50 20</position>
+    <text>Y</text>
+  </element>
+  <element>
+    <variable>position(3)</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>200 10 50 20</position>
+    <text>Width</text>
+  </element>
+  <element>
+    <variable>position(4)</variable>
+    <type>real</type>
+    <style>edit</style>
+    <position>290 10 50 20</position>
+    <text>Height</text>
+  </element>
+</root>

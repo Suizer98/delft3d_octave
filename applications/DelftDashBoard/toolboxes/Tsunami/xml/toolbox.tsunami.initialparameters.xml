@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<root>
+  <title>Earthquake Parameters</title>
+  <width>240</width>
+  <height>120</height>
+  <element>
+    <style>edit</style>
+    <position>180 90 50 20</position>
+    <variable>handles.toolbox.tsunami.depth</variable>
+    <type>real</type>
+    <text>Depth (km)</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit earthquake depth (km)</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>180 65 50 20</position>
+    <variable>handles.toolbox.tsunami.dip</variable>
+    <type>real</type>
+    <text>Dip (deg)</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit earthquake dip (degrees)</tooltipstring>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>180 40 50 20</position>
+    <variable>handles.toolbox.tsunami.slipRake</variable>
+    <type>real</type>
+    <text>Slip/rake (deg)</text>
+    <textposition>left</textposition>
+    <tooltipstring>Edit earthquake slip/rake (degrees)</tooltipstring>
+  </element>
+  <element>
+    <style>pushok</style>
+    <position>180 10 50 20</position>
+  </element>
+  <element>
+    <style>pushcancel</style>
+    <position>120 10 50 20</position>
+  </element>
+</root>

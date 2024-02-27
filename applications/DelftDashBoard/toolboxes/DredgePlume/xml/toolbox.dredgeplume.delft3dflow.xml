@@ -1,0 +1,275 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>listbox</style>
+    <position>10 40 150 75</position>
+    <tooltipstring>Select dredge track</tooltipstring>
+    <text>Dredge Tracks</text>
+    <textposition>above-center</textposition>
+    <variable>handles.toolbox.dredgeplume.activeDredgeTrack</variable>
+    <type>integer</type>
+    <callback>ddb_DredgePlumeToolbox</callback>
+    <option1>selecttrackfromlist</option1>
+    <listtext>
+      <variable>handles.toolbox.dredgeplume.trackNames</variable>
+    </listtext>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>40 10 120 20</position>
+    <tooltipstring>Edit dredge track name</tooltipstring>
+    <text>Name</text>
+    <textposition>left</textposition>
+    <callback>ddb_DredgePlumeToolbox</callback>
+    <option1>edittrackname</option1>
+    <variable>handles.toolbox.dredgeplume.dredgeTracks(handles.toolbox.dredgeplume.activeDredgeTrack).trackName</variable>
+    <type>string</type>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.dredgeplume.nrTracks</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>table</style>
+    <position>180 15</position>
+    <nrrows>5</nrrows>
+    <includenumbers>yes</includenumbers>
+    <callback>ddb_DredgePlumeToolbox</callback>
+    <option1>editcoordinates</option1>
+    <column>
+      <style>editreal</style>
+      <width>50</width>
+      <format>%8.2f</format>
+      <variable>handles.toolbox.dredgeplume.dredgeTracks(handles.toolbox.dredgeplume.activeDredgeTrack).x</variable>
+      <type>real</type>
+    </column>
+    <column>
+      <style>editreal</style>
+      <width>50</width>
+      <format>%8.2f</format>
+      <variable>handles.toolbox.dredgeplume.dredgeTracks(handles.toolbox.dredgeplume.activeDredgeTrack).y</variable>
+      <type>real</type>
+    </column>
+    <dependency>
+      <action>update</action>
+    </dependency>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.dredgeplume.nrTracks</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>text</style>
+    <position>200 115</position>
+    <text>X</text>
+  </element>
+  <element>
+    <style>text</style>
+    <position>250 115</position>
+    <text>Y</text>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>310 110 70 20</position>
+    <text>Add Track</text>
+    <tooltipstring>Add dredge track</tooltipstring>
+    <callback>ddb_DredgePlumeToolbox</callback>
+    <option1>addtrack</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>310 85 70 20</position>
+    <text>Delete Track</text>
+    <tooltipstring>Delete dredge track</tooltipstring>
+    <callback>ddb_DredgePlumeToolbox</callback>
+    <option1>deletetrack</option1>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>310 60 70 20</position>
+    <text>Load Tracks</text>
+    <variable>handles.toolbox.dredgeplume.trkFile</variable>
+    <callback>ddb_DredgePlumeToolbox</callback>
+    <option1>loadtrackdata</option1>
+    <showfilename>no</showfilename>
+    <fileextension>*.xml</fileextension>
+    <selectiontext>Select track file</selectiontext>
+    <tooltipstring>Select dredge track file</tooltipstring>
+  </element>
+  <element>
+    <style>pushsavefile</style>
+    <position>310 35 70 20</position>
+    <text>Save Tracks</text>
+    <variable>handles.toolbox.dredgeplume.trkFile</variable>
+    <callback>ddb_DredgePlumeToolbox</callback>
+    <option1>savetrackdata</option1>
+    <showfilename>no</showfilename>
+    <fileextension>*.xml</fileextension>
+    <selectiontext>Save track file</selectiontext>
+    <tooltipstring>Save dredge track file</tooltipstring>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.dredgeplume.nrTracks</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>table</style>
+    <position>400 40</position>
+    <nrrows>4</nrrows>
+    <includenumbers>yes</includenumbers>
+    <callback>ddb_DredgePlumeToolbox</callback>
+    <option1>edittracktable</option1>
+    <column>
+      <style>editreal</style>
+      <width>40</width>
+      <format>%8.1f</format>
+      <variable>handles.toolbox.dredgeplume.startTimes</variable>
+      <type>real</type>
+      <text>Tstart</text>
+    </column>
+    <column>
+      <style>editreal</style>
+      <width>40</width>
+      <format>%8.1f</format>
+      <variable>handles.toolbox.dredgeplume.stopTimes</variable>
+      <type>real</type>
+      <text>Tstop</text>
+    </column>
+    <column>
+      <style>editreal</style>
+      <width>40</width>
+      <format>%8.1f</format>
+      <variable>handles.toolbox.dredgeplume.startDischarges</variable>
+      <type>real</type>
+      <text>Qstart</text>
+    </column>
+    <column>
+      <style>editreal</style>
+      <width>40</width>
+      <format>%8.1f</format>
+      <variable>handles.toolbox.dredgeplume.stopDischarges</variable>
+      <type>real</type>
+      <text>Qstop</text>
+    </column>
+    <column>
+      <style>editreal</style>
+      <width>40</width>
+      <format>%8.1f</format>
+      <variable>handles.toolbox.dredgeplume.startConcentrations</variable>
+      <type>real</type>
+      <text>Cstart</text>
+    </column>
+    <column>
+      <style>editreal</style>
+      <width>40</width>
+      <format>%8.1f</format>
+      <variable>handles.toolbox.dredgeplume.stopConcentrations</variable>
+      <type>real</type>
+      <text>Cstop</text>
+    </column>
+    <column>
+      <style>editreal</style>
+      <width>50</width>
+      <format>%8.0f</format>
+      <enable>0</enable>
+      <variable>handles.toolbox.dredgeplume.lengths</variable>
+      <type>real</type>
+      <text>length (m)</text>
+    </column>
+    <column>
+      <style>editreal</style>
+      <width>50</width>
+      <format>%8.1f</format>
+      <enable>0</enable>
+      <variable>handles.toolbox.dredgeplume.speeds</variable>
+      <type>real</type>
+      <text>speed (m/s)</text>
+    </column>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.dredgeplume.nrTracks</variable>
+        <type>integer</type>
+        <value>0</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>popupmenu</style>
+    <position>780 110 110 20</position>
+    <variable>handles.toolbox.dredgeplume.activeConstituent</variable>
+    <type>string</type>
+    <callback>ddb_DredgePlumeToolbox</callback>
+    <option1>selectconstituent</option1>
+    <listtext>
+      <variable>handles.toolbox.dredgeplume.constituentList</variable>
+    </listtext>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.toolbox.dredgeplume.activeConstituent</variable>
+        <type>string</type>
+        <value>no constituents</value>
+        <operator>ne</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>440 10 110 20</position>
+    <tooltipstring>Cycle start time (yyyymmdd hhmmss)</tooltipstring>
+    <text>Cycle Start Time</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.dredgeplume.cycleStartTime</variable>
+    <type>datetime</type>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>650 10 40 20</position>
+    <tooltipstring>Cycle length (min)</tooltipstring>
+    <text>Cycle Length (min)</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.dredgeplume.cycleLength</variable>
+    <type>real</type>
+    <callback>ddb_DredgePlumeToolbox</callback>
+    <option1>editcyclelength</option1>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>770 10 30 20</position>
+    <tooltipstring>Number of Cycles</tooltipstring>
+    <text>Nr of Cycles</text>
+    <textposition>left</textposition>
+    <variable>handles.toolbox.dredgeplume.nrCycles</variable>
+    <type>integer</type>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>820 10 70 20</position>
+    <text>Generate!</text>
+    <tooltipstring>Generate discharge locations and time series</tooltipstring>
+    <callback>ddb_DredgePlumeToolbox</callback>
+    <option1>generatedischarges</option1>
+  </element>
+</root>

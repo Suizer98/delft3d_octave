@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>edit</style>
+    <text>g</text>
+    <position>70.000,107.500, 80.000, 20.000</position>
+    <tooltipstring>Gravitational acceleration [ms^-2]</tooltipstring>
+    <variable>handles.model.xbeach.domain.g</variable>
+    <type>real</type>
+  </element>
+  <element>
+    <tooltipstring>Density of water [kgm^-3]</tooltipstring>
+    <style>edit</style>
+    <text>rho</text>
+    <position>70.000,80.000,80.000,20.000</position>
+    <variable>handles.model.xbeach.domain.rho</variable>
+    <type>real</type>
+  </element>
+</root>

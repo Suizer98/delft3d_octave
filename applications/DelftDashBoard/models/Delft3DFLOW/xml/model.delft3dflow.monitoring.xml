@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <position>45 10 900 140</position>
+    <style>tabpanel</style>
+    <tab>
+      <tabstring>Stations</tabstring>
+      <callback>ddb_Delft3DFLOW_observationPoints</callback>
+      <element>model.delft3dflow.monitoring.observationpoints.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Cross Sections</tabstring>
+      <callback>ddb_Delft3DFLOW_crossSections</callback>
+      <enable>1</enable>
+      <element>model.delft3dflow.monitoring.crosssections.xml</element>
+    </tab>
+    <tab>
+      <tabstring>Drogues</tabstring>
+      <callback>ddb_Delft3DFLOW_drogues</callback>
+      <enable>1</enable>
+      <element>model.delft3dflow.monitoring.drogues.xml</element>
+    </tab>
+  </element>
+</root>

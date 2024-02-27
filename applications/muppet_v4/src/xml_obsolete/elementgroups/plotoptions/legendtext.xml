@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>panel</style>
+    <position>0 0 350 50</position>
+    <text>Legend</text>
+  </element>
+  <element>
+    <variable>legendtext</variable>
+    <type>string</type>
+    <style>edit</style>
+    <position>40 10 300 20</position>
+    <text>Text</text>
+    <tooltipstring>Edit legend text</tooltipstring>
+  </element>
+</root>

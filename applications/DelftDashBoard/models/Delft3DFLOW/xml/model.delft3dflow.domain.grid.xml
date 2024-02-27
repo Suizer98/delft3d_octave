@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<root>
+  <element>
+    <style>pushselectfile</style>
+    <position>10 110 130 20</position>
+    <tooltipstring>Select grid file</tooltipstring>
+    <text>Open grid</text>
+    <variable>handles.model.delft3dflow.domain(ad).grdFile</variable>
+    <extension>*.grd</extension>
+    <selectiontext>Select grid File</selectiontext>
+    <callback>ddb_Delft3DFLOW_grid</callback>
+    <option1>selectgrid</option1>
+  </element>
+  <element>
+    <style>pushselectfile</style>
+    <position>10 85 130 20</position>
+    <tooltipstring>Select enclosure file</tooltipstring>
+    <text>Open grid enclosure</text>
+    <variable>handles.model.delft3dflow.domain(ad).encFile</variable>
+    <extension>*.enc</extension>
+    <selectiontext>Select enclosure File</selectiontext>
+    <callback>ddb_Delft3DFLOW_grid</callback>
+    <option1>selectenclosure</option1>
+  </element>
+  <element>
+    <style>text</style>
+    <position>10 30</position>
+    <prefix>Grid points in M direction : </prefix>
+    <type>integer</type>
+    <variable>handles.model.delft3dflow.domain(ad).MMax</variable>
+  </element>
+  <element>
+    <style>text</style>
+    <position>10 10</position>
+    <prefix>Grid points in N direction : </prefix>
+    <type>integer</type>
+    <variable>handles.model.delft3dflow.domain(ad).NMax</variable>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>500 35 50 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).latitude</variable>
+    <text>Latitude (deg)</text>
+    <type>real</type>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.screenParameters.coordinateSystem.type</variable>
+        <type>string</type>
+        <value>cartesian</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>500 10 50 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).orientation</variable>
+    <type>real</type>
+    <text>Orientation (deg)</text>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>500 60 50 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).KMax</variable>
+    <type>integer</type>
+    <text>Number of layers</text>
+    <callback>ddb_Delft3DFLOW_grid</callback>
+    <option1>editkmax</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>560 60 100 20</position>
+    <text>Generate Layers</text>
+    <callback>ddb_Delft3DFLOW_grid</callback>
+    <option1>generatelayers</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>any</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).KMax</variable>
+        <type>integer</type>
+        <value>1</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>560 35 100 20</position>
+    <text>Save Layers</text>
+    <callback>ddb_Delft3DFLOW_grid</callback>
+    <option1>savelayers</option1>
+  </element>
+  <element>
+    <style>pushbutton</style>
+    <position>560 10 100 20</position>
+    <text>Load Layers</text>
+    <callback>ddb_Delft3DFLOW_grid</callback>
+    <option1>loadlayers</option1>
+  </element>
+  <element>
+    <style>table</style>
+    <position>690 25</position>
+    <nrrows>5</nrrows>
+    <includenumbers>yes</includenumbers>
+    <callback>ddb_Delft3DFLOW_grid</callback>
+    <option1>changelayers</option1>
+    <column>
+      <style>editreal</style>
+      <variable>handles.model.delft3dflow.domain(ad).thick</variable>
+      <width>50</width>
+    </column>
+  </element>
+  <element>
+    <style>text</style>
+    <position>690 5</position>
+    <prefix>Sum : </prefix>
+    <suffix>%</suffix>
+    <type>real</type>
+    <variable>handles.model.delft3dflow.domain(ad).sumLayers</variable>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>800 85</position>
+    <text>Sigma Layers</text>
+    <variable>handles.model.delft3dflow.domain(ad).layerType</variable>
+    <type>string</type>
+    <value>Sigma</value>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).layerType</variable>
+        <value>Sigma</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>radiobutton</style>
+    <position>800 65</position>
+    <text>Z Layers</text>
+    <variable>handles.model.delft3dflow.domain(ad).layerType</variable>
+    <type>string</type>
+    <value>Z</value>
+    <callback>ddb_Delft3DFLOW_grid</callback>
+    <option1>selectzmodel</option1>
+    <dependency>
+      <action>on</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).layerType</variable>
+        <value>Z</value>
+        <operator>eq</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>840 35 50 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).zTop</variable>
+    <type>real</type>
+    <text>Z top (m)</text>
+    <callback>ddb_Delft3DFLOW_grid</callback>
+    <option1>editztop</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).layerType</variable>
+        <value>Z</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).layerType</variable>
+        <value>1</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+  <element>
+    <style>edit</style>
+    <position>840 10 50 20</position>
+    <variable>handles.model.delft3dflow.domain(ad).zBot</variable>
+    <type>real</type>
+    <text>Z bottom (m)</text>
+    <callback>ddb_Delft3DFLOW_grid</callback>
+    <option1>editzbot</option1>
+    <dependency>
+      <action>enable</action>
+      <checkfor>all</checkfor>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).layerType</variable>
+        <value>Z</value>
+        <operator>eq</operator>
+      </check>
+      <check>
+        <variable>handles.model.delft3dflow.domain(ad).layerType</variable>
+        <value>1</value>
+        <operator>gt</operator>
+      </check>
+    </dependency>
+  </element>
+</root>
