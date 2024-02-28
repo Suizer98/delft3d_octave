@@ -14,7 +14,10 @@ RUN set -xe \
     && apt-get install -y --no-install-recommends \
         octave \
         octave-netcdf \
-        libnetcdf-dev 
+        libnetcdf-dev \
+        python3-pip \
+        python3.10
 
-# Copy the script into the container
+# Copy files
 COPY . .
+RUN pip install -r requirements.txt

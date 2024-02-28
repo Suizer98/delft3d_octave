@@ -6,7 +6,8 @@
 This project is mainly to free people who don't want to convert Delft3D FLOW Output using Matlab Software running the *.m scripts
 
 For now the working codes are:
-1. vs_trim2nc2.m
+1. vs_trim2nc.m
+2. vs_trih2nc.m
 
 ## Setting up Docker Ubuntu environment
 
@@ -22,7 +23,7 @@ docker exec -it delft3d-octave-delft3d-octave-1 bash  # Attach to the container'
 - After entering docker container:
 ```
 root@7e8c9bfe1c7a:/usr/src/app# ls
-root@7e8c9bfe1c7a:/usr/src/app# ./batch_trim2nc.sh
+root@7e8c9bfe1c7a:/usr/src/app# ./batch_convert.sh
 ```
 
 ## Preparing environment on Window machine
