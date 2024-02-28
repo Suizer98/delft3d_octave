@@ -9,7 +9,7 @@ for filename in $(find "$script_dir" -type f -name "trim*.dat"); do
 	else
 		log_file="$(basename "${filename%.dat}.log")"
 		echo "Writing log $log_file"
-       		octave --eval "vs_trim2nc( '$filename', 'timezone', '+08:00' )"
+       		octave --eval "vs_trim2nc( '$filename' )"
 			# octave --eval "vs_trim2nc( '$filename',  'Format', '64bit', 'epsg', 32651, 'timezone', '+08:00' )" > "$log_file"  2>&1
 	fi
 done
@@ -22,7 +22,10 @@ for filename in $(find "$script_dir" -type f -name "trih*.dat"); do
 	else
 		log_file="$(basename "${filename%.dat}.log")"
 		echo "Writing log $log_file"
-       		octave --eval "vs_trih2nc( '$filename', 'timezone', '+08:00' )"
+       		octave --eval "vs_trih2nc( '$filename' )"
 			# octave --eval "vs_trim2nc( '$filename',  'Format', '64bit', 'epsg', 32651, 'timezone', '+08:00' )" > "$log_file"  2>&1
 	fi
 done
+
+# Run Python
+python3 slicedata.py
