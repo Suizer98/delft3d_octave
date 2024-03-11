@@ -1,15 +1,27 @@
+import os
 import xarray as xr
 
-# Open the existing dataset
-dataset_trim = xr.open_dataset("trim-scsmCddb.nc")
-dataset_tirh = xr.open_dataset("trih-scsmCddb.nc")
 
-# Select the first three time steps
-subset_dataset_trim = dataset_trim.isel(time=slice(0, 3))
-subset_dataset_trih = dataset_tirh.isel(time=slice(0, 3))
+directory = os.getcwd()
+day_counts = 5 * 24
 
-# Save the subset dataset to a new NetCDF file
-subset_dataset_trim.to_netcdf("fake-trim.nc")
-subset_dataset_trih.to_netcdf("fake-trih.nc")
-print(subset_dataset_trim["time"].values)
-print(subset_dataset_trih["time"].values)
+for file in os.listdir(directory):
+    # Check if the file starts with "trim"
+    if file.startswith("trim") and file.endswith(".nc"):
+        dataset_trim = xr.open_dataset(os.path.join(directory, file))
+        subset_dataset_trim = dataset_trim.isel(time=slice(0, day_counts))
+
+        # Save the subset dataset to a new NetCDF file
+        output_filename = file.replace(".nc", "-5days.nc")
+        subset_dataset_trim.to_netcdf(os.path.join(directory, output_filename))
+        print(f"Subset dataset '{output_filename}' saved successfully.")
+
+    # Check if the file starts with "trih"
+    elif file.startswith("trih") and file.endswith(".nc"):
+        dataset_trih = xr.open_dataset(os.path.join(directory, file))
+        subset_dataset_trih = dataset_trih.isel(time=slice(0, day_counts))
+
+        # Save the subset dataset to a new NetCDF file
+        output_filename = file.replace(".nc", "-5days.nc")
+        subset_dataset_trih.to_netcdf(os.path.join(directory, output_filename))
+        print(f"Subset dataset '{output_filename}' saved successfully.")
