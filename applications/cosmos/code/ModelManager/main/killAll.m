@@ -1,2 +1,0 @@
-function killAll
-delete(timerfind);

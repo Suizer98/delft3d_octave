@@ -1,9 +1,0 @@
-% reference settings
-plus = '-plus';
-xInitial = [-200 -24.375 5.625 55.725 230.625 1950]';
-zInitial = [15 15 3 0 -3 -14.4625]';
-D50 = 225e-6;
-WL_t = 5.25;
-Hsig_t = 7.95;
-Tp_t = 12;
-ProfileFluct = 0;

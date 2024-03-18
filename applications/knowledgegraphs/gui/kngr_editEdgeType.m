@@ -1,1 +1,0 @@
-function kngr_editEdgeType

@@ -1,5 +1,0 @@
-function kngr_editVertexLabel
-
-
-
-

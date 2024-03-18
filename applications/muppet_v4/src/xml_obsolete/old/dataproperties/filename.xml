@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<root>
-  <dataproperty>
-    <name>filename</name>
-    <keyword>File</keyword>
-    <type>filename</type>
-  </dataproperty>
-</root>
