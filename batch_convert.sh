@@ -28,4 +28,4 @@ for filename in $(find "$script_dir" -type f -name "trih*.dat"); do
 done
 
 # Run Python
-python3 slicedata.py
+# python3 slicedata.py

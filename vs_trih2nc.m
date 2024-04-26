@@ -811,6 +811,37 @@ function varargout = vs_trih2nc(vsfile,varargin)
                               'Dimensions', s_t_k.dims, ...
                               'Attributes' , attr,...
                               'FillValue'  , []);
+
+    %% Wind speed and direction
+    ifld     = ifld + 1;clear attr;d3d_name = 'ZWNDSPD';
+    attr(    1)  = struct('Name', 'standard_name', 'Value', 'wind_speed');
+    attr(end+1)  = struct('Name', 'long_name'    , 'Value', vs_get_elm_def(F,d3d_name,'Description'));
+    attr(end+1)  = struct('Name', 'units'        , 'Value', 'm/s');
+    attr(end+1)  = struct('Name', 'positive'     , 'Value', 'up');
+    attr(end+1)  = struct('Name', 'coordinates'  , 'Value', coordinates);
+    attr(end+1)  = struct('Name', 'delft3d_name' , 'Value', d3d_name);
+    attr(end+1)  = struct('Name', '_FillValue'   , 'Value', single(NaN));
+    attr(end+1)  = struct('Name', 'actual_range' , 'Value', [nan nan]);
+    nc.Variables(ifld) = struct('Name'      , 'windspeed', ...
+                              'Datatype'  , OPT.type, ...
+                              'Dimensions', s_t.dims, ...
+                              'Attributes' , attr,...
+                              'FillValue'  , []);
+
+    ifld     = ifld + 1;clear attr;d3d_name = 'ZWNDDIR';
+    attr(    1)  = struct('Name', 'standard_name', 'Value', 'wind_direction');
+    attr(end+1)  = struct('Name', 'long_name'    , 'Value', vs_get_elm_def(F,d3d_name,'Description'));
+    attr(end+1)  = struct('Name', 'units'        , 'Value', 'm/s');
+    attr(end+1)  = struct('Name', 'positive'     , 'Value', 'up');
+    attr(end+1)  = struct('Name', 'coordinates'  , 'Value', coordinates);
+    attr(end+1)  = struct('Name', 'delft3d_name' , 'Value', d3d_name);
+    attr(end+1)  = struct('Name', '_FillValue'   , 'Value', single(NaN));
+    attr(end+1)  = struct('Name', 'actual_range' , 'Value', [nan nan]);
+    nc.Variables(ifld) = struct('Name'      , 'winddirection', ...
+                              'Datatype'  , OPT.type, ...
+                              'Dimensions', s_t.dims, ...
+                              'Attributes' , attr,...
+                              'FillValue'  , []);
                               
     if ~isempty(vs_get_elm_def(F,'NAMTRA')) && ~isempty(OPT.crs.ind)
         ifld     = ifld + 1;clear attr;d3d_name = 'CTR';
@@ -1246,6 +1277,16 @@ function varargout = vs_trih2nc(vsfile,varargin)
     matrix = vs_let(F,'his-series','ZWL',{OPT.ind},OPT.quiet);
     ncwrite(ncfile,'waterlevel',permute(matrix,[2 1]));
     ncwriteatt(ncfile,'waterlevel','actual_range',[min(matrix(:)) max(matrix(:))]);
+
+    disp([mfilename,': writing wind speed...'])
+    matrix = vs_let(F,'his-series','ZWNDSPD',{OPT.ind},OPT.quiet);
+    ncwrite(ncfile,'windspeed',permute(matrix,[2 1]));
+    ncwriteatt(ncfile,'windspeed','actual_range',[min(matrix(:)) max(matrix(:))]);
+
+    disp([mfilename,': writing wind direction...'])
+    matrix = vs_let(F,'his-series','ZWNDDIR',{OPT.ind},OPT.quiet);
+    ncwrite(ncfile,'winddirection',permute(matrix,[2 1]));
+    ncwriteatt(ncfile,'winddirection','actual_range',[min(matrix(:)) max(matrix(:))]);
 
     if ~isempty(vs_get_elm_def(F,'ZKFS')) % old NEFIS fles
     disp([mfilename,': writing active/inactive wl points...'])
