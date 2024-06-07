@@ -6,7 +6,8 @@ WORKDIR /usr/src/app
 
 # Set environment variables for non-interactive apt and Octave
 ENV DEBIAN_FRONTEND=noninteractive \
-    OCTAVE_NO_GUI=true
+    OCTAVE_NO_GUI=true \
+    PIP_BREAK_SYSTEM_PACKAGES=1
 
 # Install required packages
 RUN set -xe \
@@ -20,4 +21,7 @@ RUN set -xe \
 
 # Copy files
 COPY . .
-RUN pip install -r requirements.txt
+
+# Install Python packages
+RUN pip install --upgrade pip \
+    && pip install -r requirements.txt
