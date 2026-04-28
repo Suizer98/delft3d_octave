@@ -3,17 +3,16 @@
 [[_TOC_]]
 
 ## Description
-This project is mainly to free people who don't want to convert Delft3D FLOW Output using Matlab Software running the *.m scripts.
-The working targets are trim*.dat and trih*.dat generated as NEFIS structure from Delft3D software.
+This repo is mainly to free people who don't want to convert Delft3D FLOW Output by running the *.m scripts with Matlab software.
+The working targets are trim*.dat and trih*.dat generated as NEFIS structure data from Delft3D software.
 
 Tech stacks: 
 
 ![Tech stacks](https://skillicons.dev/icons?i=octave,matlab,python,docker,ubuntu,bash,)
 
-For now the working codes are:
+The working MATLAB codes are:
 1. vs_trim2nc.m
 2. vs_trih2nc.m
-3. slicedata.py
 
 ## Changes made to the *.m files
 See this [commit](https://github.com/Suizer98/delft3d_octave/commit/ce7fe84e86b2596a1729d8bb010921148964d7c1)
