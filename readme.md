@@ -3,7 +3,7 @@
 [[_TOC_]]
 
 ## Description
-This repo is mainly to free people who don't want to convert Delft3D FLOW Output by running the *.m scripts with Matlab software.
+This repo is mainly to free people who don't want to convert Delft3D FLOW Output by running the .m scripts with Matlab software.
 The working targets are trim*.dat and trih*.dat generated as NEFIS structure data from Delft3D software.
 
 Tech stacks: 
@@ -20,7 +20,7 @@ See this [commit](https://github.com/Suizer98/delft3d_octave/commit/ce7fe84e86b2
 ## Setting up Docker Ubuntu environment
 
 - Dockerfile and docker-compose.yml are created in such a way that you don't need to build environment by yourself, all you need is to run docker's command.
-- After cloning this repo, copy your desired *.dat and *.def model results from Delft3D Flow outputs into the root directory.
+- After cloning this repo, copy your *.dat and *.def model results from Delft3D Flow outputs into the root directory.
 - In your terminal simply run:
 
 ```
@@ -28,9 +28,9 @@ docker-compose up --build
 docker-compose up # If images are cached
 ```
 
-- To enter docker container:
+- To debug, enter docker container with interactive mode:
 ```
-docker exec -it delft3d-octave-delft3d-octave-1 bash  # Attach to the container's terminal
+docker exec -it delft3d-octave-delft3d-octave-1 bash
 ```
 ```
 root@7e8c9bfe1c7a:/usr/src/app# ls
